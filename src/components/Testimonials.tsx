@@ -44,7 +44,7 @@ export default function Testimonials() {
     <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-yellow-400 font-bold text-sm uppercase tracking-wide">
+          <span className="text-blue-600 font-bold text-sm uppercase tracking-wide">
             Testimonials
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">
@@ -61,11 +61,11 @@ export default function Testimonials() {
               key={index}
               className="bg-white text-black rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <Quote className="text-yellow-400 mb-4" size={40} />
+              <Quote className="text-blue-600 mb-4" size={40} />
 
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="text-yellow-400 fill-yellow-400" size={20} />
+                  <Star key={i} className="text-blue-600 fill-blue-600" size={20} />
                 ))}
               </div>
 
@@ -82,11 +82,11 @@ export default function Testimonials() {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="inline-block bg-yellow-400 rounded-2xl p-1">
+          <div className="inline-block bg-blue-600 rounded-2xl p-1">
             <div className="bg-black rounded-xl px-12 py-8">
               <h3 className="text-2xl font-bold mb-2">Ready to Experience Quality Service?</h3>
               <p className="text-gray-300 mb-6">Join thousands of satisfied customers</p>
-              <button className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold hover:bg-yellow-500 transition-colors">
+              <button className="bg-blue-600 text-black px-8 py-3 rounded-lg font-bold hover:bg-blue-500 transition-colors">
                 GET YOUR FREE QUOTE
               </button>
             </div>

@@ -45,7 +45,7 @@ export default function Blog() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-base font-bold text-black mb-3 group-hover:text-yellow-400 transition-colors">
+                <h3 className="text-base font-bold text-black mb-3 group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </h3>
 
@@ -53,7 +53,7 @@ export default function Blog() {
                   {post.excerpt.length > 80 ? post.excerpt.slice(0, 80) + '...' : post.excerpt}
                 </p>
 
-                <button className="flex items-center text-yellow-400 font-bold hover:text-yellow-500 transition-colors group text-xs">
+                <button className="flex items-center text-blue-600 font-bold hover:text-blue-500 transition-colors group text-xs">
                   Read More
                   <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>

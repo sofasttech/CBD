@@ -12,8 +12,8 @@ export default function Footer({ scrollToSection }: FooterProps) {
         <div className="max-w-5xl mx-auto relative">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-5xl font-bold mb-4">Book a <span className="text-yellow-400">free</span><br />appointment.</h3>
-              <button onClick={() => scrollToSection('contact')} className="bg-yellow-400 text-black px-6 py-2 rounded-full text-base font-semibold inline-block hover:bg-yellow-300 transition">Book now</button>
+              <h3 className="text-5xl font-bold mb-4">Book a <span className="text-blue-600">free</span><br />appointment.</h3>
+              <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-base font-semibold inline-block hover:bg-blue-500 transition">Book now</button>
             </div>
             <div>
               <h4 className="text-lg font-bold mb-3">Panel Beating</h4>
@@ -41,30 +41,30 @@ export default function Footer({ scrollToSection }: FooterProps) {
             <div>
               <h4 className="text-sm font-bold mb-3">Services</h4>
               <ul className="text-sm font-normal text-gray-400 space-y-1">
-                <li><a href="#" className="hover:text-yellow-400 transition">Panel Beating</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition">Auto Mechanical</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition">Car Servicing</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition">Tyres & Wheels</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">Panel Beating</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">Auto Mechanical</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">Car Servicing</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">Tyres & Wheels</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-sm font-bold mb-3">Company</h4>
               <ul className="text-sm font-normal text-gray-400 space-y-1">
-                <li><a href="#" className="hover:text-yellow-400 transition">About Us</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition">Testimonials</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition">Blog</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition">FAQs</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">About Us</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">Testimonials</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">Blog</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition">FAQs</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-sm font-bold mb-3">Contact & Hours</h4>
               <p className="text-sm font-normal text-gray-400 mb-2">Mon to Fri – 7:00 am – 4:30 pm<br />Closed on Public Holidays</p>
               <div className="flex gap-2">
-                <span className="text-yellow-400 text-sm">Motor Repair CPA</span>
-                <span className="text-yellow-400 text-sm">MTA Assured</span>
+                <span className="text-blue-600 text-sm">Motor Repair CPA</span>
+                <span className="text-blue-600 text-sm">MTA Assured</span>
               </div>
               <div className="mt-2">
-                <a href="https://www.facebook.com/mtroskillcollision/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-yellow-400 transition">f</a>
+                <a href="https://www.facebook.com/mtroskillcollision/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-600 transition">f</a>
               </div>
             </div>
           </div>

@@ -61,12 +61,12 @@ export default function Homepage() {
           <h1 className="text-3xl md:text-5xl font-bold text-black mb-4 leading-tight">
             Need Expert Panel Beating and Collision Repair in Auckland?
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-yellow-500 mb-6">We've Got You Covered!</p>
+          <p className="text-xl md:text-2xl font-bold text-blue-600 mb-6">We've Got You Covered!</p>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             As an MTA-approved auto garage providing <a href="#" className="underline">panel beating</a> and <a href="#" className="underline">mechanical repair</a> services, we deliver expert workmanship with care, passion, and precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => scrollToSection('services')} className="bg-yellow-400 text-black px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-yellow-300 transition">
+            <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-black px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-blue-500 transition">
               Panel Beating <ChevronRight className="w-4 h-4" />
             </button>
             <button onClick={() => scrollToSection('services')} className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition">
@@ -94,14 +94,14 @@ export default function Homepage() {
         viewport={{ once: true }}
       >
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-          <div className="bg-yellow-400 rounded-3xl p-8 hover:shadow-lg transition-shadow relative">
+          <div className="bg-blue-600 rounded-3xl p-8 hover:shadow-lg transition-shadow relative">
             <div className="absolute top-6 left-6 w-10 h-10 bg-black rounded-full flex items-center justify-center">
-              <Car className="w-6 h-6 text-yellow-400" />
+              <Car className="w-6 h-6 text-blue-600" />
             </div>
             <div className="pt-8">
               <h2 className="text-2xl font-bold mb-4">Panel Beating</h2>
               <p className="text-gray-800 mb-6">Our panel beaters repair your vehicle bodywork with precision, skill, and a flawless paint finish.</p>
-              <button onClick={() => scrollToSection('services')} className="bg-black text-yellow-400 px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-gray-800 transition mb-4">
+              <button onClick={() => scrollToSection('services')} className="bg-black text-blue-600 px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-gray-800 transition mb-4">
                 Explore Services <ChevronRight className="w-4 h-4" />
               </button>
               <div className="flex gap-2">
@@ -111,13 +111,13 @@ export default function Homepage() {
             </div>
           </div>
           <div className="bg-gray-900 text-white rounded-3xl p-8 hover:shadow-lg transition-shadow relative">
-            <div className="absolute top-6 left-6 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
+            <div className="absolute top-6 left-6 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
               <Settings className="w-6 h-6 text-black" />
             </div>
             <div className="pt-8">
               <h2 className="text-2xl font-bold mb-4">Mechanical Repairs</h2>
               <p className="text-gray-300 mb-6">MTA-approved auto garage delivering quality across all types of mechanical and electrical repairs.</p>
-              <button onClick={() => scrollToSection('services')} className="bg-yellow-400 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-yellow-300 transition mb-4">
+              <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition mb-4">
                 Explore Services <ChevronRight className="w-4 h-4" />
               </button>
               <div className="flex gap-2">
@@ -149,7 +149,7 @@ export default function Homepage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <a href="#" className="text-gray-600 hover:text-yellow-500 transition font-medium">View all</a>
+            <a href="#" className="text-gray-600 hover:text-blue-600 transition font-medium">View all</a>
           </div>
         </div>
       </motion.section>
@@ -173,12 +173,12 @@ export default function Homepage() {
               Whether it's a car, van, SUV or ute, we treat your vehicle like it's our own. Our estimators provide clear, upfront costs & advice.
             </p>
             <div className="flex gap-4">
-              <button onClick={() => scrollToSection('about')} className="bg-yellow-400 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-yellow-300 transition">Learn More <ChevronRight className="w-4 h-4" /></button>
-              <button onClick={() => scrollToSection('contact')} className="bg-yellow-400 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-yellow-300 transition">Contact us <ChevronRight className="w-4 h-4" /></button>
+              <button onClick={() => scrollToSection('about')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition">Learn More <ChevronRight className="w-4 h-4" /></button>
+              <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition">Contact us <ChevronRight className="w-4 h-4" /></button>
             </div>
             <div className="mt-6 flex items-center gap-2">
               <div className="flex">
-                {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+                {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-5 h-5 fill-blue-600 text-blue-600" />)}
               </div>
               <span className="text-sm text-gray-600">Google Reviews</span>
             </div>
@@ -221,7 +221,7 @@ export default function Homepage() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">We support insurance claims for Panel Beating and Mechanical Repairs.</h1>
-          <p className="text-xl md:text-2xl font-semibold text-yellow-500 mb-8">Get in touch today.</p>
+          <p className="text-xl md:text-2xl font-semibold text-blue-600 mb-8">Get in touch today.</p>
           <div className="max-w-3xl mx-auto mb-8">
             <p className="text-gray-700 mb-6 text-center">
               <span className="font-bold">Panel Beating Insurance</span> covers repairs to your vehicle's bodywork, including dents, scratches, and collision damage. Our team will restore your car to its pre-accident condition with care and precision.
@@ -234,7 +234,7 @@ export default function Homepage() {
             <button onClick={() => scrollToSection('contact')} className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition">
               Panel Beating Insurance <ChevronRight className="w-4 h-4" />
             </button>
-            <button onClick={() => scrollToSection('contact')} className="bg-yellow-400 text-black px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-yellow-300 transition">
+            <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-black px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-blue-500 transition">
               Auto Mechanical Insurance <ChevronRight className="w-4 h-4" />
             </button>
           </div>

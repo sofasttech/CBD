@@ -22,7 +22,7 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
             { name: 'Reviews', id: 'reviews' },
             { name: 'Contact', id: 'contact' }
           ].map(item => (
-            <button key={item.name} onClick={() => scrollToSection(item.id)} className="text-sm font-medium hover:text-yellow-500 transition">
+            <button key={item.name} onClick={() => scrollToSection(item.id)} className="text-sm font-medium hover:text-blue-600 transition">
               {item.name}
             </button>
           ))}
