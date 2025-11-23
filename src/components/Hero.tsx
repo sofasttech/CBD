@@ -15,20 +15,20 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Expert <span className="text-yellow-400">Panel Beating</span> & Mechanical Repairs
+              Need Expert <span className="text-yellow-400">Panel Beating</span> and Collision Repair in Auckland?
             </h1>
 
             <p className="text-xl text-gray-300 leading-relaxed">
-              With over 30 years of experience, we provide comprehensive automotive repair services you can trust. From minor dents to major collision repairs.
+              We’ve Got You Covered! As an MTA-approved auto garage providing panel beating and mechanical repair services, we deliver expert workmanship with care, passion and precision.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#contact" className="bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center">
                 GET A FREE QUOTE
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-black transition-all duration-200">
+              </a>
+              <a href="#services" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-black transition-all duration-200 inline-block text-center">
                 VIEW SERVICES
-              </button>
+              </a>
             </div>
 
             <div className="flex flex-wrap gap-6 pt-4">
@@ -37,8 +37,16 @@ export default function Hero() {
                 <span className="font-semibold">(09) 620-4570</span>
               </div>
               <div className="flex items-center gap-2">
+                <Phone className="text-yellow-400" size={20} />
+                <span className="font-semibold">0800 227 762</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <Clock className="text-yellow-400" size={20} />
                 <span className="font-semibold">Mon-Fri 8AM-5PM</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="text-yellow-400" size={20} />
+                <span className="font-semibold">42 Carr Road, Mount Roskill</span>
               </div>
             </div>
           </div>
@@ -71,6 +79,10 @@ export default function Hero() {
                   <button className="w-full bg-black text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors">
                     SUBMIT ENQUIRY
                   </button>
+                </div>
+                <div className="mt-4 flex items-center gap-4">
+                  <img src="https://mtroskillcollision.co.nz/wp-content/uploads/2018/06/collision-repair-logo.png" alt="Collision Repair Logo" className="h-10" />
+                  <img src="https://mtroskillcollision.co.nz/wp-content/uploads/2018/06/logo-mta-1-150x150.png" alt="MTA Logo" className="h-10" />
                 </div>
               </div>
             </div>

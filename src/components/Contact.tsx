@@ -16,6 +16,28 @@ export default function Contact() {
           </p>
         </div>
 
+        <div className="grid md:grid-cols-3 gap-8 items-start mb-8">
+          <div className="bg-white p-6 rounded-xl shadow-md">
+            <h4 className="font-bold text-lg mb-2">Panel Beating</h4>
+            <p className="text-gray-600 mb-1">Email: <a href="mailto:info@mtroskillcollision.co.nz" className="text-yellow-400">info@mtroskillcollision.co.nz</a></p>
+            <p className="text-gray-600 mb-1">Phone: <a href="tel:0800227762" className="text-yellow-400">0800 227 762</a></p>
+            <p className="text-gray-600">Address: 42 Carr Road, Mount Roskill, Auckland 1042</p>
+            <div className="mt-4">
+              <a href="#contact" className="inline-block bg-black text-white px-6 py-2 rounded-md">Book Now</a>
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-md">
+            <h4 className="font-bold text-lg mb-2">Auto Mechanic (Roskill Auto Mechanical)</h4>
+            <p className="text-gray-600 mb-1">Email: <a href="mailto:admin@roskillauto.co.nz" className="text-yellow-400">admin@roskillauto.co.nz</a></p>
+            <p className="text-gray-600 mb-1">Phone: <a href="tel:092421870" className="text-yellow-400">09 242 1870</a></p>
+            <p className="text-gray-600">Address: 2/40 Carr Road, Three Kings, Auckland 1042</p>
+            <div className="mt-4">
+              <a href="#contact" className="inline-block bg-black text-white px-6 py-2 rounded-md">Book Now</a>
+            </div>
+          </div>
+
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-bold text-black mb-8">Send Us a Message</h3>
@@ -119,9 +141,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-lg text-black mb-1">Address</h4>
                   <p className="text-gray-600">
-                    123 Mt Roskill Road<br />
-                    Mt Roskill, Auckland 1041<br />
-                    New Zealand
+                    42 Carr Road<br />
+                      Mount Roskill, Auckland 1042<br />
+                      New Zealand
                   </p>
                 </div>
               </div>
@@ -133,8 +155,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-lg text-black mb-1">Phone</h4>
                   <p className="text-gray-600">
-                    <a href="tel:096204570" className="hover:text-yellow-400 transition-colors">
-                      (09) 620-4570
+                    <a href="tel:0800227762" className="hover:text-yellow-400 transition-colors">
+                      0800 227 762
                     </a>
                   </p>
                 </div>
@@ -175,7 +197,7 @@ export default function Contact() {
                 For urgent repairs or towing assistance, please call us directly.
               </p>
               <a
-                href="tel:096204570"
+                href="tel:0800227762"
                 className="inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-500 transition-colors"
               >
                 CALL NOW

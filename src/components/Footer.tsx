@@ -1,133 +1,75 @@
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
+interface FooterProps {
+  scrollToSection: (id: string) => void;
+}
 
+export default function Footer({ scrollToSection }: FooterProps) {
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
-            <div className="text-2xl font-bold mb-6">
-              <span className="text-yellow-400">MT ROSKILL</span>
-              <br />
-              <span className="text-white">COLLISION</span>
+    <footer id="contact" className="bg-gray-900 text-white">
+      {/* Top Footer Area */}
+      <div className="px-4 py-36 bg-gray-900 relative" style={{ backgroundImage: 'url(/Footer-bg.svg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="max-w-5xl mx-auto relative">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-5xl font-bold mb-4">Book a <span className="text-yellow-400">free</span><br />appointment.</h3>
+              <button onClick={() => scrollToSection('contact')} className="bg-yellow-400 text-black px-6 py-2 rounded-full text-base font-semibold inline-block hover:bg-yellow-300 transition">Book now</button>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Auckland's trusted auto repair specialists for over 30 years. Quality workmanship, honest service, and competitive pricing.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 p-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="bg-gray-800 p-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-gray-800 p-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors">
-                <Linkedin size={20} />
-              </a>
+            <div>
+              <h4 className="text-lg font-bold mb-3">Panel Beating</h4>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Mail className="w-4 h-4" /> info@mtroskillcollision.co.nz</p>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Phone className="w-4 h-4" /> 0800 227 762</p>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2"><MapPin className="w-4 h-4" /> 42 Carr Road, Mt Roskill</p>
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {['Home', 'About Us', 'Services', 'Insurance', 'FAQs', 'Blog', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-gray-400 hover:text-yellow-400 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              {[
-                'Panel Beating',
-                'Mechanical Repairs',
-                'Spray Painting',
-                'Insurance Claims',
-                'WOF & Servicing',
-                'Custom Work',
-                'Frame Straightening',
-                'Dent Removal'
-              ].map((service) => (
-                <li key={service}>
-                  <a href="#services" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-6">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="text-yellow-400 mr-3 flex-shrink-0 mt-1" size={20} />
-                <span className="text-gray-400">
-                  123 Mt Roskill Road<br />
-                  Mt Roskill, Auckland 1041
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="text-yellow-400 mr-3 flex-shrink-0" size={20} />
-                <a href="tel:096204570" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                  (09) 620-4570
-                </a>
-              </li>
-              <li className="flex items-center">
-                <Mail className="text-yellow-400 mr-3 flex-shrink-0" size={20} />
-                <a href="mailto:info@mtroskillcollision.co.nz" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                  info@mtroskillcollision.co.nz
-                </a>
-              </li>
-            </ul>
-
-            <div className="mt-6 bg-gray-900 p-4 rounded-lg">
-              <p className="text-sm text-gray-400 mb-2">Business Hours:</p>
-              <p className="text-white font-semibold">Mon-Fri: 8AM-5PM</p>
-              <p className="text-white font-semibold">Sat: 9AM-1PM</p>
+            <div>
+              <h4 className="text-lg font-bold mb-3">Auto Mechanic</h4>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Mail className="w-4 h-4" /> admin@roskillauto.co.nz</p>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Phone className="w-4 h-4" /> 09 242 1870</p>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2"><MapPin className="w-4 h-4" /> 2/40 Carr Road<br />Three Kings Auckland 1042<br />New Zealand</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} Mt Roskill Collision. All rights reserved.
-            </p>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                Cookie Policy
-              </a>
+      {/* Bottom Footer Area */}
+      <div className="bg-black px-4 py-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <img src="/Mt-Roskill-New-Logo-Light.svg" alt="Mt Roskill Collision" className="h-12 mb-4" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold mb-3">Services</h4>
+              <ul className="text-sm font-normal text-gray-400 space-y-1">
+                <li><a href="#" className="hover:text-yellow-400 transition">Panel Beating</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition">Auto Mechanical</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition">Car Servicing</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition">Tyres & Wheels</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold mb-3">Company</h4>
+              <ul className="text-sm font-normal text-gray-400 space-y-1">
+                <li><a href="#" className="hover:text-yellow-400 transition">About Us</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition">Testimonials</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition">Blog</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition">FAQs</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold mb-3">Contact & Hours</h4>
+              <p className="text-sm font-normal text-gray-400 mb-2">Mon to Fri – 7:00 am – 4:30 pm<br />Closed on Public Holidays</p>
+              <div className="flex gap-2">
+                <span className="text-yellow-400 text-sm">Motor Repair CPA</span>
+                <span className="text-yellow-400 text-sm">MTA Assured</span>
+              </div>
+              <div className="mt-2">
+                <a href="https://www.facebook.com/mtroskillcollision/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-yellow-400 transition">f</a>
+              </div>
             </div>
           </div>
-          <div className="mt-6 text-center">
-            <div className="flex flex-wrap justify-center items-center gap-6">
-              <div className="bg-gray-800 px-4 py-2 rounded">
-                <span className="text-yellow-400 font-bold">MTA</span>
-                <span className="text-white text-sm ml-2">Approved</span>
-              </div>
-              <div className="bg-gray-800 px-4 py-2 rounded">
-                <span className="text-yellow-400 font-bold">30+</span>
-                <span className="text-white text-sm ml-2">Years Experience</span>
-              </div>
-              <div className="bg-gray-800 px-4 py-2 rounded">
-                <span className="text-yellow-400 font-bold">100%</span>
-                <span className="text-white text-sm ml-2">Satisfaction</span>
-              </div>
-            </div>
+          <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-500 text-sm">
+            © 2025 Mt Roskill Collision Centre. All rights reserved.
           </div>
         </div>
       </div>
