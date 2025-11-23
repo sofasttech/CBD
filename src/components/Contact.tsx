@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronRight, Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from './Navigation';
@@ -6,6 +6,10 @@ import Footer from './Footer';
 
 export default function Contact() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState({
     service: '',
     name: '',
@@ -92,15 +96,15 @@ export default function Contact() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-blue-600" />
-                    <a href="mailto:info@mtroskillcollision.co.nz" className="text-gray-700 hover:text-blue-600">info@mtroskillcollision.co.nz</a>
+                    <a href="mailto:info@cbdpanel.co.nz" className="text-gray-700 hover:text-blue-600">info@cbdpanel.co.nz</a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-blue-600" />
-                    <span className="font-bold text-gray-700">0800 227 763</span>
+                    <span className="font-bold text-gray-700">+64 9-309 1906</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-blue-600 mt-1" />
-                    <span className="text-gray-700">42 Carr Road, Mount Roskill, Auckland 1042</span>
+                    <span className="text-gray-700">390 Great North Road, Grey Lynn, Auckland, New Zealand</span>
                   </div>
                 </div>
               </div>
@@ -256,7 +260,7 @@ export default function Contact() {
           <h2 className="text-3xl font-bold text-center mb-8">Our Locations</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Panel Repairs - 42 Carr Road, Mount Roskill</h3>
+              <h3 className="text-xl font-bold mb-4">Panel Repairs - 390 Great North Road, Grey Lynn, Auckland</h3>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.123456!3d-36.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbDqDU!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
                 width="100%"

@@ -18,6 +18,10 @@ export default function Homepage() {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const services = [
     { image: '/collision-repair-icon-dark.svg', title: 'Collision Repairs', href: '#' },
     { image: '/headlight-icon-dark.svg', title: 'Bumper Replacement', href: '#' },
@@ -250,10 +254,13 @@ export default function Homepage() {
         </div>
       </motion.section>
 
+      {/* FAQs */}
+      
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
         viewport={{ once: true }}
       >
         <Blog />
@@ -264,7 +271,7 @@ export default function Homepage() {
         className="py-4 bg-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
         viewport={{ once: true }}
       >
         <div className="bg-gray-50 py-4">

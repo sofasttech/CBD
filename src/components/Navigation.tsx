@@ -20,10 +20,15 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
           <Link to="/" className="text-sm font-medium hover:text-blue-600 transition">
             Home
           </Link>
+          <Link to="/about" className="text-sm font-medium hover:text-blue-600 transition">
+            About
+          </Link>
           {[
-            { name: 'About', id: 'about' },
-            { name: 'Services', id: 'services' },
-            { name: 'Reviews', id: 'reviews' }
+            { name: 'Panel Beating', id: 'services' },
+            { name: 'Mechanical', id: 'services' },
+            { name: 'Insurance', id: 'services' },
+            { name: 'FAQs', id: 'faqs' },
+            { name: 'Blog', id: 'reviews' }
           ].map(item => (
             <button key={item.name} onClick={() => scrollToSection(item.id)} className="text-sm font-medium hover:text-blue-600 transition">
               {item.name}
@@ -36,7 +41,7 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
 
         <div className="hidden md:flex items-center gap-3">
           <Link to="/contact" className="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">Contact us</Link>
-          <a href="tel:0800227762" className="border-2 border-gray-900 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">0800 227 762</a>
+          <a href="tel:+6493091906" className="border-2 border-gray-900 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">+64 9-309 1906</a>
         </div>
 
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
@@ -57,10 +62,15 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
             <Link to="/" className="block py-2 font-medium text-left w-full">
               Home
             </Link>
+            <Link to="/about" className="block py-2 font-medium text-left w-full">
+              About
+            </Link>
             {[
-              { name: 'About', id: 'about' },
-              { name: 'Services', id: 'services' },
-              { name: 'Reviews', id: 'reviews' }
+              { name: 'Panel Beating', id: 'services' },
+              { name: 'Mechanical', id: 'services' },
+              { name: 'Insurance', id: 'services' },
+              { name: 'FAQs', id: 'faqs' },
+              { name: 'Blog', id: 'reviews' }
             ].map(item => (
               <button key={item.name} onClick={() => scrollToSection(item.id)} className="block py-2 font-medium text-left w-full">
                 {item.name}

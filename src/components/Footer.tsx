@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook } from 'lucide-react';
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
@@ -17,9 +17,9 @@ export default function Footer({ scrollToSection }: FooterProps) {
             </div>
             <div>
               <h4 className="text-lg font-bold mb-3 text-white">Panel Beating</h4>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Mail className="w-4 h-4" /> info@mtroskillcollision.co.nz</p>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Phone className="w-4 h-4" /> 0800 227 762</p>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2"><MapPin className="w-4 h-4" /> 42 Carr Road, Mt Roskill</p>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Mail className="w-4 h-4" /> info@cbdpanel.co.nz</p>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Phone className="w-4 h-4" /> +64 9-309 1906</p>
+              <p className="text-base font-normal text-gray-400 flex items-center gap-2"><MapPin className="w-4 h-4" /> 390 Great North Road, Grey Lynn, Auckland, New Zealand</p>
             </div>
             <div>
               <h4 className="text-lg font-bold mb-3 text-white">Auto Mechanic</h4>
@@ -64,7 +64,9 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <span className="text-blue-600 text-sm">MTA Assured</span>
               </div>
               <div className="mt-2">
-                <a href="https://www.facebook.com/mtroskillcollision/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-600 transition">f</a>
+                <a href="https://web.facebook.com/CBDPanelbeaters/?_rdc=1&_rdr#" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-600 transition">
+                  <Facebook className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>

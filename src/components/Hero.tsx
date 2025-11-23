@@ -38,7 +38,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="text-blue-600" size={20} />
-                <span className="font-semibold">0800 227 762</span>
+                <span className="font-semibold">+64 9-309 1906</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="text-blue-600" size={20} />
@@ -46,7 +46,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="text-blue-600" size={20} />
-                <span className="font-semibold">42 Carr Road, Mount Roskill</span>
+                <span className="font-semibold">390 Great North Road, Grey Lynn, Auckland, New Zealand</span>
               </div>
             </div>
           </div>
