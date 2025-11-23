@@ -11,7 +11,7 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src="/Mt-Roskill-New-Logo-Dark.svg" alt="Mt Roskill Collision" className="h-10" />
+          <img src="/logowithoutname.jpeg" alt="Mt Roskill Collision" className="h-10" />
         </div>
 
         <nav className="hidden md:flex items-center gap-6">

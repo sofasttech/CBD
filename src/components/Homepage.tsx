@@ -66,7 +66,7 @@ export default function Homepage() {
             As an MTA-approved auto garage providing <a href="#" className="underline">panel beating</a> and <a href="#" className="underline">mechanical repair</a> services, we deliver expert workmanship with care, passion, and precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-black px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-blue-500 transition">
+            <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-blue-500 transition">
               Panel Beating <ChevronRight className="w-4 h-4" />
             </button>
             <button onClick={() => scrollToSection('services')} className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition">
@@ -99,9 +99,9 @@ export default function Homepage() {
               <Car className="w-6 h-6 text-blue-600" />
             </div>
             <div className="pt-8">
-              <h2 className="text-2xl font-bold mb-4">Panel Beating</h2>
+              <h2 className="text-2xl font-bold mb-4 text-white">Panel Beating</h2>
               <p className="text-gray-800 mb-6">Our panel beaters repair your vehicle bodywork with precision, skill, and a flawless paint finish.</p>
-              <button onClick={() => scrollToSection('services')} className="bg-black text-blue-600 px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-gray-800 transition mb-4">
+              <button onClick={() => scrollToSection('services')} className="bg-black text-white px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-gray-800 transition mb-4">
                 Explore Services <ChevronRight className="w-4 h-4" />
               </button>
               <div className="flex gap-2">
@@ -117,7 +117,7 @@ export default function Homepage() {
             <div className="pt-8">
               <h2 className="text-2xl font-bold mb-4">Mechanical Repairs</h2>
               <p className="text-gray-300 mb-6">MTA-approved auto garage delivering quality across all types of mechanical and electrical repairs.</p>
-              <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition mb-4">
+              <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition mb-4">
                 Explore Services <ChevronRight className="w-4 h-4" />
               </button>
               <div className="flex gap-2">
@@ -184,7 +184,7 @@ export default function Homepage() {
             </div>
           </div>
           <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl w-full h-80 md:w-[36rem] md:h-[32rem] flex items-center justify-center relative overflow-hidden">
-            <img src="/IMG_6497-1536x1024.jpg" alt="Expert Mechanics at Work" className="w-full h-full object-cover" />
+            <img src="/shop.webp" alt="Expert Mechanics at Work" className="w-full h-full object-cover" />
           </div>
         </div>
       </motion.section>
