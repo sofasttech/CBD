@@ -1,211 +1,291 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronRight, Mail, Phone, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 export default function Contact() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    service: '',
+    name: '',
+    email: '',
+    phone: '',
+    vehicleReg: '',
+    message: '',
+    isHuman: false
+  });
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      setFormData(prev => ({ ...prev, [name]: (e.target as HTMLInputElement).checked }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.isHuman) {
+      alert('Please confirm you are a human.');
+      return;
+    }
+    console.log('Form submitted:', formData);
+    // Here you would typically send the data to a server
+    alert('Thank you for your message. We will get back to you soon!');
+  };
+
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-blue-600 font-bold text-sm uppercase tracking-wide">
-            Get In Touch
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mt-2">
-            Contact Us Today
-          </h2>
-          <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
-            Ready to get your vehicle repaired? We're here to help
+    <div className="min-h-screen bg-white font-sans scroll-smooth">
+      <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
+
+      {/* Hero */}
+      <motion.section
+        className="pt-28 pb-12 px-4"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4 leading-tight">
+            Get in Touch with Us
+          </h1>
+          <p className="text-xl md:text-2xl font-bold text-blue-600 mb-6">Need assistance with panel repairs or mechanical servicing? We're just a call away!</p>
+          <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
+            At <strong>Mt Roskill Collision Centre & Roskill Auto Mechanical</strong>, we're dedicated to providing fast, efficient, and reliable service for all your vehicle needs. Whether you're seeking panel repairs, mechanical diagnostics, or routine servicing, our experienced team is here to get you back on the road quickly and safely.
           </p>
         </div>
+      </motion.section>
 
-        <div className="grid md:grid-cols-3 gap-8 items-start mb-8">
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h4 className="font-bold text-lg mb-2">Panel Beating</h4>
-            <p className="text-gray-600 mb-1">Email: <a href="mailto:info@mtroskillcollision.co.nz" className="text-blue-600">info@mtroskillcollision.co.nz</a></p>
-            <p className="text-gray-600 mb-1">Phone: <a href="tel:0800227762" className="text-blue-600">0800 227 762</a></p>
-            <p className="text-gray-600">Address: 42 Carr Road, Mount Roskill, Auckland 1042</p>
-            <div className="mt-4">
-              <a href="#contact" className="inline-block bg-black text-white px-6 py-2 rounded-md">Book Now</a>
-            </div>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h4 className="font-bold text-lg mb-2">Auto Mechanic (Roskill Auto Mechanical)</h4>
-            <p className="text-gray-600 mb-1">Email: <a href="mailto:admin@roskillauto.co.nz" className="text-blue-600">admin@roskillauto.co.nz</a></p>
-            <p className="text-gray-600 mb-1">Phone: <a href="tel:092421870" className="text-blue-600">09 242 1870</a></p>
-            <p className="text-gray-600">Address: 2/40 Carr Road, Three Kings, Auckland 1042</p>
-            <div className="mt-4">
-              <a href="#contact" className="inline-block bg-black text-white px-6 py-2 rounded-md">Book Now</a>
-            </div>
-          </div>
-
+      {/* Shop Image */}
+      <section className="px-4 pb-12">
+        <div className="max-w-5xl mx-auto">
+          <img src="/shop.webp" alt="Mt Roskill Collision Centre Exterior with Certifications" className="w-full h-auto rounded-3xl" />
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 gap-12">
+      {/* Contact Section */}
+      <motion.section
+        className="px-4 pb-16"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          {/* Left Column: Contact Details */}
           <div>
-            <h3 className="text-2xl font-bold text-black mb-8">Send Us a Message</h3>
-            <form className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
-                    First Name
+            <h2 className="text-4xl font-bold text-black mb-8">Contact Details</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-blue-600">Panel Repairs</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-blue-600" />
+                    <a href="mailto:info@mtroskillcollision.co.nz" className="text-gray-700 hover:text-blue-600">info@mtroskillcollision.co.nz</a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                    <span className="font-bold text-gray-700">0800 227 762</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-blue-600 mt-1" />
+                    <span className="text-gray-700">42 Carr Road, Mount Roskill, Auckland 1042</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-blue-600">Mechanical Repairs</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-blue-600" />
+                    <a href="mailto:admin@roskillauto.co.nz" className="text-gray-700 hover:text-blue-600">admin@roskillauto.co.nz</a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                    <span className="font-bold text-gray-700">09 242 1870</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-blue-600 mt-1" />
+                    <span className="text-gray-700">2/40 Carr Road Three Kings Auckland 1042 New Zealand</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Get in Touch */}
+          <div>
+            <h2 className="text-4xl font-bold text-black mb-8">Get in Touch</h2>
+            <p className="text-gray-600 mb-8">
+              Fill out the form below to book a repair or ask about our services. A member of our team will get in touch with you shortly to discuss your needs.
+            </p>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium mb-2">Service Type</label>
+                <div className="flex gap-4">
+                  <label className="flex items-center bg-gray-100 rounded-full px-4 py-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="service"
+                      value="Panel Beating"
+                      onChange={handleInputChange}
+                      className="mr-2"
+                    />
+                    Panel Beating
                   </label>
+                  <label className="flex items-center bg-gray-100 rounded-full px-4 py-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="service"
+                      value="Mechanical"
+                      onChange={handleInputChange}
+                      className="mr-2"
+                    />
+                    Mechanical
+                  </label>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Name <span className="text-red-500">*</span></label>
                   <input
                     type="text"
-                    id="firstName"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                    placeholder="John"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Name*"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Last Name
-                  </label>
+                  <label className="block text-sm font-medium mb-2">Email <span className="text-red-500">*</span></label>
                   <input
-                    type="text"
-                    id="lastName"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                    placeholder="Smith"
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Email*"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
               </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                  placeholder="john.smith@example.com"
-                />
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Phone Number <span className="text-red-500">*</span></label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Phone Number*"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Vehicle Registration Number <span className="text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    name="vehicleReg"
+                    required
+                    value={formData.vehicleReg}
+                    onChange={handleInputChange}
+                    placeholder="Vehicle Registration Number*"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
               </div>
-
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                  placeholder="(09) 123-4567"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Service Required
-                </label>
-                <select
-                  id="service"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                >
-                  <option>Select a service</option>
-                  <option>Panel Beating</option>
-                  <option>Mechanical Repairs</option>
-                  <option>Spray Painting</option>
-                  <option>Insurance Claim</option>
-                  <option>WOF & Servicing</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Message
-                </label>
+                <label className="block text-sm font-medium mb-2">Message</label>
                 <textarea
-                  id="message"
-                  rows={5}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                  placeholder="Tell us about your vehicle and what service you need..."
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 ></textarea>
               </div>
-
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500 transition-colors"
-              >
-                SEND MESSAGE
-              </button>
+              <div>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="isHuman"
+                    checked={formData.isHuman}
+                    onChange={handleInputChange}
+                    required
+                    className="mr-2"
+                  />
+                  I am a human <span className="text-red-500">*</span>
+                </label>
+              </div>
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="bg-black text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition"
+                >
+                  Submit <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
             </form>
           </div>
+        </div>
+      </motion.section>
 
-          <div>
-            <h3 className="text-2xl font-bold text-black mb-8">Contact Information</h3>
-
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start bg-white p-6 rounded-xl shadow-md">
-                <div className="bg-blue-600 rounded-lg p-3 mr-4">
-                  <MapPin className="text-black" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-black mb-1">Address</h4>
-                  <p className="text-gray-600">
-                    42 Carr Road<br />
-                      Mount Roskill, Auckland 1042<br />
-                      New Zealand
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start bg-white p-6 rounded-xl shadow-md">
-                <div className="bg-blue-600 rounded-lg p-3 mr-4">
-                  <Phone className="text-black" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-black mb-1">Phone</h4>
-                  <p className="text-gray-600">
-                    <a href="tel:0800227762" className="hover:text-blue-600 transition-colors">
-                      0800 227 762
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start bg-white p-6 rounded-xl shadow-md">
-                <div className="bg-blue-600 rounded-lg p-3 mr-4">
-                  <Mail className="text-black" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-black mb-1">Email</h4>
-                  <p className="text-gray-600">
-                    <a href="mailto:info@mtroskillcollision.co.nz" className="hover:text-blue-600 transition-colors">
-                      info@mtroskillcollision.co.nz
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start bg-white p-6 rounded-xl shadow-md">
-                <div className="bg-blue-600 rounded-lg p-3 mr-4">
-                  <Clock className="text-black" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-black mb-1">Business Hours</h4>
-                  <p className="text-gray-600">
-                    Monday - Friday: 8:00 AM - 5:00 PM<br />
-                    Saturday: 9:00 AM - 1:00 PM<br />
-                    Sunday: Closed
-                  </p>
-                </div>
-              </div>
+      {/* Location Maps */}
+      <motion.section
+        className="px-4 pb-16"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">Our Locations</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Panel Repairs - 42 Carr Road, Mount Roskill</h3>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.123456!3d-36.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbDqDU!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Panel Repairs Location"
+              ></iframe>
             </div>
-
-            <div className="bg-gradient-to-br from-black to-gray-900 text-white p-8 rounded-xl">
-              <h4 className="text-xl font-bold mb-4">Emergency Service?</h4>
-              <p className="text-gray-300 mb-4">
-                For urgent repairs or towing assistance, please call us directly.
-              </p>
-              <a
-                href="tel:0800227762"
-                className="inline-block bg-blue-600 text-black px-6 py-3 rounded-lg font-bold hover:bg-blue-500 transition-colors"
-              >
-                CALL NOW
-              </a>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Mechanical Repairs - 2/40 Carr Road, Three Kings</h3>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.123456!3d-36.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbDqDU!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mechanical Repairs Location"
+              ></iframe>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.section>
+
+      <Footer scrollToSection={scrollToSection} />
+    </div>
   );
 }

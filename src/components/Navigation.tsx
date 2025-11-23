@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface NavigationProps {
   menuOpen: boolean;
@@ -16,21 +17,25 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
+          <Link to="/" className="text-sm font-medium hover:text-blue-600 transition">
+            Home
+          </Link>
           {[
-            { name: 'Home', id: 'home' },
             { name: 'About', id: 'about' },
             { name: 'Services', id: 'services' },
-            { name: 'Reviews', id: 'reviews' },
-            { name: 'Contact', id: 'contact' }
+            { name: 'Reviews', id: 'reviews' }
           ].map(item => (
             <button key={item.name} onClick={() => scrollToSection(item.id)} className="text-sm font-medium hover:text-blue-600 transition">
               {item.name}
             </button>
           ))}
+          <Link to="/contact" className="text-sm font-medium hover:text-blue-600 transition">
+            Contact
+          </Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <button onClick={() => scrollToSection('contact')} className="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">Contact us</button>
+          <Link to="/contact" className="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">Contact us</Link>
           <a href="tel:0800227762" className="border-2 border-gray-900 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">0800 227 762</a>
         </div>
 
@@ -49,17 +54,21 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
             style={{ overflow: 'hidden' }}
             className="md:hidden bg-white border-t px-4 py-4"
           >
+            <Link to="/" className="block py-2 font-medium text-left w-full">
+              Home
+            </Link>
             {[
-              { name: 'Home', id: 'home' },
               { name: 'About', id: 'about' },
               { name: 'Services', id: 'services' },
-              { name: 'Reviews', id: 'reviews' },
-              { name: 'Contact', id: 'contact' }
+              { name: 'Reviews', id: 'reviews' }
             ].map(item => (
               <button key={item.name} onClick={() => scrollToSection(item.id)} className="block py-2 font-medium text-left w-full">
                 {item.name}
               </button>
             ))}
+            <Link to="/contact" className="block py-2 font-medium text-left w-full">
+              Contact
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
