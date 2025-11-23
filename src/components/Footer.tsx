@@ -68,8 +68,16 @@ export default function Footer({ scrollToSection }: FooterProps) {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-500 text-sm">
-            © 2025 Mt Roskill Collision Centre. All rights reserved.
+          <div className="border-t border-gray-800 pt-8 mt-8">
+            <div className="flex justify-center items-center gap-8 mb-4">
+              <img src="/MTA-logo_480x480.webp" alt="MTA" className="h-12" />
+              <img src="/NZI_logo.svg.png" alt="NZI" className="h-12" />
+              <img src="/Insurance_austr_group_logo15.png" alt="Insurance Australia Group" className="h-12" />
+              <img src="/state-house-and-contents-product_default.webp" alt="State Insurance" className="h-12" />
+            </div>
+            <div className="text-center text-gray-500 text-sm">
+              © 2025 CBD Panelbeating & Mechanical. All rights reserved.
+            </div>
           </div>
         </div>
       </div>

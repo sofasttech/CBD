@@ -1,4 +1,5 @@
 import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface NavigationProps {
   menuOpen: boolean;
@@ -38,21 +39,30 @@ export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: N
         </button>
       </div>
 
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t px-4 py-4">
-          {[
-            { name: 'Home', id: 'home' },
-            { name: 'About', id: 'about' },
-            { name: 'Services', id: 'services' },
-            { name: 'Reviews', id: 'reviews' },
-            { name: 'Contact', id: 'contact' }
-          ].map(item => (
-            <button key={item.name} onClick={() => scrollToSection(item.id)} className="block py-2 font-medium text-left w-full">
-              {item.name}
-            </button>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ overflow: 'hidden' }}
+            className="md:hidden bg-white border-t px-4 py-4"
+          >
+            {[
+              { name: 'Home', id: 'home' },
+              { name: 'About', id: 'about' },
+              { name: 'Services', id: 'services' },
+              { name: 'Reviews', id: 'reviews' },
+              { name: 'Contact', id: 'contact' }
+            ].map(item => (
+              <button key={item.name} onClick={() => scrollToSection(item.id)} className="block py-2 font-medium text-left w-full">
+                {item.name}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

@@ -54,7 +54,7 @@ export default function Homepage() {
         className="pt-28 pb-12 px-4"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
@@ -86,15 +86,15 @@ export default function Homepage() {
       </motion.section>
 
       {/* Two Cards */}
-      <motion.section
-        className="px-4 pb-12"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <section className="px-4 pb-12">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-          <div className="bg-blue-600 rounded-3xl p-8 hover:shadow-lg transition-shadow relative">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-blue-600 rounded-3xl p-8 hover:shadow-lg transition-shadow relative"
+          >
             <div className="absolute top-6 left-6 w-10 h-10 bg-black rounded-full flex items-center justify-center">
               <Car className="w-6 h-6 text-blue-600" />
             </div>
@@ -105,12 +105,18 @@ export default function Homepage() {
                 Explore Services <ChevronRight className="w-4 h-4" />
               </button>
               <div className="flex gap-2">
-                <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium">Afterpay</div>
+                <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium h-8 w-20" style={{backgroundImage: 'url(/AfterPay-Logo.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium">Zip</div>
               </div>
             </div>
-          </div>
-          <div className="bg-gray-900 text-white rounded-3xl p-8 hover:shadow-lg transition-shadow relative">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-gray-900 text-white rounded-3xl p-8 hover:shadow-lg transition-shadow relative"
+          >
             <div className="absolute top-6 left-6 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
               <Settings className="w-6 h-6 text-black" />
             </div>
@@ -121,12 +127,12 @@ export default function Homepage() {
                 Explore Services <ChevronRight className="w-4 h-4" />
               </button>
               <div className="flex gap-2">
-                <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium text-black">Afterpay</div>
+                <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium h-8 w-20" style={{ backgroundImage: 'url(/AfterPay-Logo.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}></div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Services Grid */}
       <motion.section
@@ -134,7 +140,7 @@ export default function Homepage() {
         className="px-4 pb-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
       >
         <div className="max-w-5xl mx-auto">
@@ -160,14 +166,14 @@ export default function Homepage() {
         className="px-4 py-16 bg-gray-50"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">About Mount Roskill <br /> Collision Centre</h2>
             <p className="text-gray-600 mb-4">
-              Mt Roskill Collision Centre has proudly served Auckland for over 30 years. From car repairs, panel and paint to full mechanical servicing, our auto garage provides repairs, honest service, and seamless insurance work.
+              CBD Panelbeating & Mechanical has proudly served Auckland for over 30 years. From car repairs, panel and paint to full mechanical servicing, our auto garage provides repairs, honest service, and seamless insurance work.
             </p>
             <p className="text-gray-600 mb-6">
               Whether it's a car, van, SUV or ute, we treat your vehicle like it's our own. Our estimators provide clear, upfront costs & advice.
@@ -194,7 +200,7 @@ export default function Homepage() {
         className="px-4 py-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
         viewport={{ once: true }}
       >
         <div className="max-w-5xl mx-auto">
@@ -216,7 +222,7 @@ export default function Homepage() {
         className="px-4 py-16 bg-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
@@ -247,7 +253,7 @@ export default function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
         viewport={{ once: true }}
       >
         <Blog />
@@ -258,7 +264,7 @@ export default function Homepage() {
         className="py-4 bg-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
         viewport={{ once: true }}
       >
         <div className="bg-gray-50 py-4">
