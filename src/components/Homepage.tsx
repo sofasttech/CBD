@@ -183,15 +183,15 @@ export default function Homepage() {
 
       {/* Book Appointment */}
       <motion.section
-        className="px-4 py-16 bg-white"
-        style={{ backgroundImage: 'url(/wave.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+        className="px-4 py-16 bg-white relative"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">Book a <span className="text-blue-600">free</span> appointment.</h2>
+        <img src="/wave.webp" alt="" className="absolute inset-0 w-[120%] h-[120%] object-cover -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-10" />
+        <div className="max-w-5xl mx-auto text-center relative z-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black inline-block px-4 py-2 rounded">Book a <span className="text-blue-600">free</span> appointment.</h2>
           
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Booking Form */}
@@ -257,7 +257,7 @@ export default function Homepage() {
       {/* Services Grid */}
       <motion.section
         id="services"
-        className="px-4 pb-16"
+        className="px-4 pb-16 relative z-30"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
