@@ -8,77 +8,97 @@ interface NavigationProps {
   scrollToSection: (id: string) => void;
 }
 
-export default function Navigation({ menuOpen, setMenuOpen, scrollToSection }: NavigationProps) {
+export default function Navigation({ menuOpen, setMenuOpen}: NavigationProps) {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img src="/logowithoutname.jpeg" alt="Mt Roskill Collision" className="h-10" />
-        </div>
+      {/* Top Bar */}
+      <div className="max-w-7xl mx-auto px-4 py-2 border-b">
+        <div className="grid grid-cols-3 items-center">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <img src="/logowithoutname.jpeg" alt="CBD Panelbeating & Mechanical" className="h-10" />
+            <span className="text-xl font-bold">CBD Panelbeating & Mechanical</span>
+          </div>
 
-        <nav className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-sm font-medium hover:text-blue-600 transition">
-            Home
-          </Link>
-          <Link to="/about" className="text-sm font-medium hover:text-blue-600 transition">
-            About
-          </Link>
-          {[
-            { name: 'Panel Beating', id: 'services' },
-            { name: 'Mechanical', id: 'services' },
-            { name: 'Insurance', id: 'services' },
-            { name: 'FAQs', id: 'faqs' },
-            { name: 'Blog', id: 'reviews' }
-          ].map(item => (
-            <button key={item.name} onClick={() => scrollToSection(item.id)} className="text-sm font-medium hover:text-blue-600 transition">
-              {item.name}
+          {/* Navigation Links */}
+          <nav className="hidden md:flex justify-center gap-6">
+            <Link to="/" className="text-sm font-medium hover:text-blue-600 transition">
+              Home
+            </Link>
+            <Link to="/auto-repair" className="text-sm font-medium hover:text-blue-600 transition">
+              Auto Repair
+            </Link>
+            <Link to="/vehicles" className="text-sm font-medium hover:text-blue-600 transition">
+              Vehicles
+            </Link>
+            <Link to="/shop" className="text-sm font-medium hover:text-blue-600 transition">
+              Shop
+            </Link>
+            <Link to="/pages" className="text-sm font-medium hover:text-blue-600 transition">
+              Pages
+            </Link>
+          </nav>
+
+          {/* Working Hours, Support, Cart */}
+          <div className="flex items-center justify-end gap-4">
+            <div className="text-sm hidden md:block">
+              <div>1900 1088</div>
+              <div>info@example.com</div>
+            </div>
+            <button className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition">
+              Book a Service
             </button>
-          ))}
-          <Link to="/contact" className="text-sm font-medium hover:text-blue-600 transition">
-            Contact
-          </Link>
-        </nav>
-
-        <div className="hidden md:flex items-center gap-3">
-          <Link to="/contact" className="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">Contact us</Link>
-          <a href="tel:+6493091906" className="border-2 border-gray-900 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">+64 9-309 1906</a>
+            <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+              {menuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
-
-        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X /> : <Menu />}
-        </button>
       </div>
 
+
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            style={{ overflow: 'hidden' }}
-            className="md:hidden bg-white border-t px-4 py-4"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 px-4 py-4"
           >
-            <Link to="/" className="block py-2 font-medium text-left w-full">
-              Home
-            </Link>
-            <Link to="/about" className="block py-2 font-medium text-left w-full">
-              About
-            </Link>
-            {[
-              { name: 'Panel Beating', id: 'services' },
-              { name: 'Mechanical', id: 'services' },
-              { name: 'Insurance', id: 'services' },
-              { name: 'FAQs', id: 'faqs' },
-              { name: 'Blog', id: 'reviews' }
-            ].map(item => (
-              <button key={item.name} onClick={() => scrollToSection(item.id)} className="block py-2 font-medium text-left w-full">
-                {item.name}
-              </button>
-            ))}
-            <Link to="/contact" className="block py-2 font-medium text-left w-full">
-              Contact
-            </Link>
+            <button className="absolute top-4 right-4" onClick={() => setMenuOpen(false)}>
+              <X />
+            </button>
+            <div className="mt-12">
+              <Link to="/" className="block py-2 font-medium text-left w-full" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+              <Link to="/auto-repair" className="block py-2 font-medium text-left w-full" onClick={() => setMenuOpen(false)}>
+                Auto Repair
+              </Link>
+              <Link to="/vehicles" className="block py-2 font-medium text-left w-full" onClick={() => setMenuOpen(false)}>
+                Vehicles
+              </Link>
+              <Link to="/shop" className="block py-2 font-medium text-left w-full" onClick={() => setMenuOpen(false)}>
+                Shop
+              </Link>
+              <Link to="/pages" className="block py-2 font-medium text-left w-full" onClick={() => setMenuOpen(false)}>
+                Pages
+              </Link>
+              <div className="mt-4 pt-4 border-t">
+                <div className="text-sm mb-2">
+                  <div className="font-medium">Mon - Fri: 7:30 AM - 5:30 PM</div>
+                </div>
+                <div className="text-sm mb-4">
+                  <div>1900 1088</div>
+                  <div>info@example.com</div>
+                </div>
+                <button className="w-full bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition" onClick={() => setMenuOpen(false)}>
+                  Book a Service
+                </button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

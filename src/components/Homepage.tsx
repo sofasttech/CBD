@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronRight, Star, Car, Settings } from 'lucide-react';
+import { ChevronRight, Star, Settings,  Phone, Mail, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -8,8 +8,20 @@ import Blog from './Blog';
 export default function Homepage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [service, setService] = useState('Panel Beating');
 
-  const heroImages = ['/IMG_6538-2048x1365.jpg', '/IMG_7612-2048x1365.jpg'];
+  const heroImages = ['/stf.png'];
+
+  const hotspots = [
+    { top: '25%', left: '25%', title: 'Side Mirrors', desc: 'Repair or replace Side Mirrors.' },
+    { top: '33%', right: '25%', title: 'Bonnet', desc: 'Restore or replace Bonnet.' },
+    { top: '75%', left: '33%', title: 'Tires', desc: 'Check and replace tires for safety.' },
+    { top: '67%', right: '33%', title: 'Engine', desc: 'Mechanical repairs and servicing.' },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,6 +60,17 @@ export default function Homepage() {
     setMenuOpen(false);
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log({ name, email, phone, service });
+    // You can add form submission logic here, e.g., send to API
+    alert('Appointment booked! We will contact you soon.');
+    setName('');
+    setEmail('');
+    setPhone('');
+    setService('Panel Beating');
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans scroll-smooth">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
@@ -55,88 +78,181 @@ export default function Homepage() {
       {/* Hero */}
       <motion.section
         id="home"
-        className="pt-28 pb-12 px-4"
+        className="pt-36 pb-12 px-4"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-black mb-4 leading-tight">
-            Need Expert Panel Beating and Collision Repair in Auckland?
-          </h1>
-          <p className="text-xl md:text-2xl font-bold text-blue-600 mb-6">We've Got You Covered!</p>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            As an MTA-approved auto garage providing <a href="#" className="underline">panel beating</a> and <a href="#" className="underline">mechanical repair</a> services, we deliver expert workmanship with care, passion, and precision.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-blue-500 transition">
-              Panel Beating <ChevronRight className="w-4 h-4" />
-            </button>
-            <button onClick={() => scrollToSection('services')} className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition">
-              Auto Mechanical <ChevronRight className="w-4 h-4" />
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          {/* Left side text */}
+          <div>
+            <p className="text-blue-600 text-sm font-medium mb-2">Car Troubles?</p>
+            <h1 className="text-4xl md:text-6xl font-bold text-blue-600 mb-4">Automotive Repair Services</h1>
+            <p className="text-xl text-gray-700 mb-6">CBD Panelbeaters LTD is one of Auckland’s leading full service automotive repair services specializing in the full range of repairs including warrant of fitness and mechanical.</p>
+            <div className="mb-6">
+              <p className="flex items-center gap-2 text-gray-700 mb-2">
+                <span className="text-green-600">✓</span> Our Work is Guaranteed
+              </p>
+              <p className="flex items-center gap-2 text-gray-700">
+                <span className="text-green-600">✓</span> Save Time and Money
+              </p>
+            </div>
+            <button className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition">
+              View All Services
             </button>
           </div>
-        </div>
 
-        {/* Hero Image */}
-        <div className="max-w-5xl mx-auto mt-10">
-          <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl h-80 md:h-96 flex items-center justify-center relative overflow-hidden">
-            <img src={heroImages[currentImage]} alt="Mechanic and customer looking under hood" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-            </div>
+          {/* Right side image */}
+          <div className="relative">
+            <img src={heroImages[currentImage]} alt="Grey SUV" className="w-full h-auto rounded-lg" />
+            {/* Hotspots */}
+            {hotspots.map((hotspot, index) => (
+              <div
+                key={index}
+                className="absolute w-8 h-8 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
+                style={{ top: hotspot.top, left: hotspot.left, right: hotspot.right }}
+                onMouseEnter={() => setHoveredHotspot(index)}
+                onMouseLeave={() => setHoveredHotspot(null)}
+              >
+                <span className="text-red-600 font-bold text-lg">+</span>
+              </div>
+            ))}
+            {/* Tooltip */}
+            {hoveredHotspot !== null && (
+              <motion.div
+                className="absolute bg-black text-white p-2 rounded shadow-lg text-sm max-w-xs z-10 pointer-events-none"
+                style={{
+                  top: hotspots[hoveredHotspot].top,
+                  left: hotspots[hoveredHotspot].left,
+                  transform: 'translate(40px, -50%)',
+                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+              >
+                <h4 className="font-bold">{hotspots[hoveredHotspot].title}</h4>
+                <p>{hotspots[hoveredHotspot].desc}</p>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.section>
 
-      {/* Two Cards */}
-      <section className="px-4 pb-12">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-blue-600 rounded-3xl p-8 hover:shadow-lg transition-shadow relative"
-          >
-            <div className="absolute top-6 left-6 w-10 h-10 bg-black rounded-full flex items-center justify-center">
-              <Car className="w-6 h-6 text-blue-600" />
-            </div>
-            <div className="pt-8">
-              <h2 className="text-2xl font-bold mb-4 text-white">Panel Beating</h2>
-              <p className="text-gray-800 mb-6">Our panel beaters repair your vehicle bodywork with precision, skill, and a flawless paint finish.</p>
-              <button onClick={() => scrollToSection('services')} className="bg-black text-white px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-gray-800 transition mb-4">
-                Explore Services <ChevronRight className="w-4 h-4" />
-              </button>
-              <div className="flex gap-2">
-                <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium h-8 w-20" style={{backgroundImage: 'url(/AfterPay-Logo.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
-                <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium">Zip</div>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gray-900 text-white rounded-3xl p-8 hover:shadow-lg transition-shadow relative"
-          >
-            <div className="absolute top-6 left-6 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-              <Settings className="w-6 h-6 text-black" />
-            </div>
-            <div className="pt-8">
-              <h2 className="text-2xl font-bold mb-4">Mechanical Repairs</h2>
-              <p className="text-gray-300 mb-6">MTA-approved auto garage delivering quality across all types of mechanical and electrical repairs.</p>
-              <button onClick={() => scrollToSection('services')} className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition mb-4">
-                Explore Services <ChevronRight className="w-4 h-4" />
-              </button>
-              <div className="flex gap-2">
-                <div className="bg-white rounded-lg px-3 py-1 text-xs font-medium h-8 w-20" style={{ backgroundImage: 'url(/AfterPay-Logo.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}></div>
-              </div>
-            </div>
-          </motion.div>
+      {/* Cars Ribbon */}
+      <section className="w-full relative">
+        <img src="/cars.jpeg" alt="Cars" className="w-full h-auto" />
+        <div className="absolute inset-0 flex items-start justify-start md:justify-center pt-0 md:pt-8 pl-4 md:pl-0">
+          <h2 className="text-black text-lg md:text-5xl text-left drop-shadow-lg italic font-serif font-light px-4">
+            We SERVICE <span className="text-blue-600">All</span> MAKES and MODELS...<br />
+            <span className="text-black md:text-black">FOREIGN and DOMESTIC!</span>
+          </h2>
         </div>
       </section>
+
+      {/* New Section */}
+      <section className="px-4 py-16 bg-white-100">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-blue-600">We Repair All Makes of Automobiles</h2>
+          <p className="text-xl text-gray-700 mb-8 italic">We work with all makes and models of vehicles</p>
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex items-center gap-12"
+              animate={{ x: [-800, 0] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <img src="/brand-01.png" alt="Brand 1" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-02.png" alt="Brand 2" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-03.png" alt="Brand 3" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-04.png" alt="Brand 4" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-05.png" alt="Brand 5" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-06.png" alt="Brand 6" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-07.png" alt="Brand 7" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-01.png" alt="Brand 1" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-02.png" alt="Brand 2" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-03.png" alt="Brand 3" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-04.png" alt="Brand 4" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-05.png" alt="Brand 5" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-06.png" alt="Brand 6" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-07.png" alt="Brand 7" className="h-28 w-22 flex-shrink-0" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Book Appointment */}
+      <motion.section
+        className="px-4 py-16 bg-white"
+        style={{ backgroundImage: 'url(/wave.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">Book a <span className="text-blue-600">free</span> appointment.</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Booking Form */}
+            <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg border">
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Your Phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                required
+              />
+              <select
+                value={service}
+                onChange={(e) => setService(e.target.value)}
+                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              >
+                <option>Panel Beating</option>
+              </select>
+              <button type="submit" className="w-full bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition">
+                Book Appointment
+              </button>
+            </form>
+
+            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition">
+              <h3 className="text-xl font-bold mb-4 text-blue-600 flex items-center">
+                <Settings className="w-6 h-6 mr-2" />
+                Panel Beating
+              </h3>
+              <p className="mb-2 text-gray-700 flex items-center">
+                <Mail className="w-5 h-5 mr-2 text-blue-600" />
+                <strong>Email:</strong> info@cbdpanel.co.nz
+              </p>
+              <p className="mb-2 text-gray-700 flex items-center">
+                <Phone className="w-5 h-5 mr-2 text-blue-600" />
+                <strong>Phone:</strong> +64 9-309 1906
+              </p>
+              <p className="text-gray-700 flex items-start">
+                <MapPin className="w-5 h-5 mr-2 text-blue-600 mt-1" />
+                <span><strong>Address:</strong> 390 Great North Road, Grey Lynn, Auckland, New Zealand</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Services Grid */}
       <motion.section
@@ -274,23 +390,20 @@ export default function Homepage() {
         transition={{ duration: 0.6, delay: 0.9 }}
         viewport={{ once: true }}
       >
-        <div className="bg-gray-50 py-4">
-          <div className="max-w-5xl mx-auto px-4">
-            <h3 className="text-3xl md:text-4xl font-bold text-center mb-4">What our customers say about our services?</h3>
-            <p className="text-lg md:text-xl font-medium text-center text-gray-600 mb-8">Testimonials</p>
-            <div className="text-center">
-              <div className="mx-auto w-full max-w-7xl">
-                <iframe
-                  src="https://widgets.sociablekit.com/google-reviews/iframe/25625462"
-                  frameBorder="0"
-                  className="w-full h-[500px] rounded-lg"
-                  loading="lazy"
-                  title="Google Reviews"
-                ></iframe>
-              </div>
+        <section id="reviews" className="py-8 bg-neutral-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <h3 className="text-2xl font-bold mb-4">Customer Reviews</h3>
+            <div className="rounded-lg overflow-hidden shadow-sm">
+              <iframe
+                src="https://widgets.sociablekit.com/google-reviews/iframe/25625462"
+                frameBorder="0"
+                className="w-full h-[480px]"
+                loading="lazy"
+                title="Google Reviews"
+              ></iframe>
             </div>
           </div>
-        </div>
+        </section>
       </motion.section>
 
       <Footer scrollToSection={scrollToSection} />
