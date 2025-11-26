@@ -13,11 +13,11 @@ export default function Navigation({ menuOpen, setMenuOpen}: NavigationProps) {
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       {/* Top Bar */}
       <div className="max-w-7xl mx-auto px-4 py-2 border-b">
-        <div className="grid grid-cols-3 items-center">
+        <div className="flex justify-between md:grid md:grid-cols-3 items-center">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img src="/logowithoutname.jpeg" alt="CBD Panelbeating & Mechanical" className="h-10" />
-            <span className="text-xl font-bold">CBD Panelbeating & Mechanical</span>
+            <span className="hidden md:block text-xl font-bold">CBD Panelbeating & Mechanical</span>
           </div>
 
           {/* Navigation Links */}
