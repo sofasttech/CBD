@@ -76,6 +76,9 @@ export default function Homepage() {
   const [hoveredTech3, setHoveredTech3] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const [currentAboutImage, setCurrentAboutImage] = useState(0);
+  const aboutImages = ['/panel-beatt.jpg', '/car-tune-up.jpg','/headlight.webp',];
+
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
   const ref3 = useRef<HTMLDivElement>(null);
@@ -84,6 +87,8 @@ export default function Homepage() {
   const inView3 = useInView(ref3);
 
   const heroImages = ['/stf.png'];
+  const [nextHeroIndex, setNextHeroIndex] = useState(() => (heroImages.length > 1 ? 1 : 0));
+  const [slidingHero, setSlidingHero] = useState(false);
 
   const hotspots = [
     { top: '25%', left: '25%', title: 'Side Mirrors', desc: 'Repair or replace Side Mirrors.' },
@@ -93,11 +98,20 @@ export default function Homepage() {
   ];
 
   useEffect(() => {
+    if (heroImages.length <= 1) return;
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+      setNextHeroIndex((prev) => (prev + 1) % heroImages.length);
+      setSlidingHero(true);
+    }, 8000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAboutImage((prev) => (prev + 1) % aboutImages.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [aboutImages.length]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -243,8 +257,16 @@ export default function Homepage() {
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
           {/* Left Column: Image */}
-          <div className="relative -mx-4 md:mx-0">
-            <img src="/panel-beatt.jpg" alt="Rear of modern dark vehicle" className="w-full h-[32rem] md:h-[40rem] shadow-lg border-0 md:border-4 border-white" />
+          <div className="relative -mx-4 md:mx-0 overflow-hidden h-[32rem] md:h-[40rem]">
+            <motion.img
+              key={currentAboutImage}
+              src={aboutImages[currentAboutImage]}
+              alt="Rear of modern dark vehicle"
+              className="w-full h-full shadow-lg border-0 md:border-4 border-white"
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1 }}
+            />
           </div>
 
           {/* Right Column: Textual Content */}
