@@ -13,6 +13,9 @@ export default function Homepage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [service, setService] = useState('Panel Beating');
+  const [hoveredTech1, setHoveredTech1] = useState(false);
+  const [hoveredTech2, setHoveredTech2] = useState(false);
+  const [hoveredTech3, setHoveredTech3] = useState(false);
 
   const heroImages = ['/stf.png'];
 
@@ -98,9 +101,14 @@ export default function Homepage() {
                 <span className="text-green-600">✓</span> Save Time and Money
               </p>
             </div>
-            <button className="bg-gray-900 text-white px-8 py-3 font-medium hover:bg-gray-800 transition">
-              View All Services
-            </button>
+            <div className="flex gap-4">
+              <button className="bg-gray-900 text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-gray-800 transition">
+                View All Services
+              </button>
+              <button onClick={() => scrollToSection('book-appointment')} className="bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-blue-700 transition">
+                Appointment
+              </button>
+            </div>
           </div>
 
           {/* Right side image */}
@@ -198,23 +206,23 @@ export default function Homepage() {
           <div className="space-y-4 -mt-4">
             <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
             <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight">Superior Service with a Touch of Class</h2>
-            
+
             <div className="mb-10">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
               <p className="text-gray-900 leading-relaxed font-mulish font-extralight text-lg">
                 At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
-            
+
             <div >
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
               <p className="text-gray-900 leading-relaxed font-mulish font-extralight text-lg">
                 For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
               </p>
             </div>
-            
+
             <button onClick={() => scrollToSection('about')} className="bg-blue-600 text-white px-8 py-3  font-medium hover:bg-blue-700 transition inline-flex items-center gap-2">
-              Learn More  
+              Learn More
             </button>
           </div>
         </div>
@@ -230,24 +238,39 @@ export default function Homepage() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden hover:bg-black transition group">
-              <div className="absolute inset-0 flex items-start justify-end opacity-10">
-                <img src="/im1.png" alt="Precision Repairs Icon" className="w-32 h-32 md:w-72 md:h-72 invert transition group-hover:filter-none" />
+            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech1(true)} onMouseLeave={() => setHoveredTech1(false)}>
+              <div className="absolute inset-0 flex items-start justify-end opacity-100">
+                <img src="/im1.png" alt="Precision Repairs Icon" className="w-32 h-32 md:w-72 md:h-72 brightness-0 invert z-20" />
               </div>
+              <motion.div
+                className="absolute inset-0 bg-black z-5"
+                animate={{ x: hoveredTech1 ? 0 : '-100%' }}
+                transition={{ duration: 0.5 }}
+              />
               <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Precision Repairs</h3>
               <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition.</p>
             </div>
-            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden hover:bg-black transition group">
-              <div className="absolute inset-0 flex items-start justify-end opacity-10">
-                <img src="/im2.png" alt="Quality Materials Icon" className="w-32 h-32 md:w-72 md:h-72 invert transition group-hover:filter-none" />
+            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech2(true)} onMouseLeave={() => setHoveredTech2(false)}>
+              <div className="absolute inset-0 flex items-start justify-end opacity-100">
+                <img src="/im2.png" alt="Quality Materials Icon" className="w-32 h-32 md:w-72 md:h-72 brightness-0 invert z-20" />
               </div>
+              <motion.div
+                className="absolute inset-0 bg-black z-5"
+                animate={{ x: hoveredTech2 ? 0 : '-100%' }}
+                transition={{ duration: 0.5 }}
+              />
               <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Quality Materials</h3>
               <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform.</p>
             </div>
-            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden hover:bg-black transition group">
-              <div className="absolute inset-0 flex items-start justify-end opacity-10">
-                <img src="/im3.png" alt="Experienced Technicians Icon" className="w-32 h-32 md:w-72 md:h-72 invert transition group-hover:filter-none" />
+            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech3(true)} onMouseLeave={() => setHoveredTech3(false)}>
+              <div className="absolute inset-0 flex items-start justify-end opacity-100">
+                <img src="/im3.png" alt="Experienced Technicians Icon" className="w-32 h-32 md:w-72 md:h-72 brightness-0 invert z-20" />
               </div>
+              <motion.div
+                className="absolute inset-0 bg-black z-5"
+                animate={{ x: hoveredTech3 ? 0 : '-100%' }}
+                transition={{ duration: 0.5 }}
+              />
               <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Experienced Technicians</h3>
               <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">Our team of certified professionals brings decades of experience to deliver exceptional results you can trust.</p>
             </div>
@@ -255,8 +278,90 @@ export default function Homepage() {
         </div>
       </motion.section>
 
+      {/*Distinctive Services Section  */}
+      <motion.section
+        className="px-4 pt-16 pb-[3.5rem] bg-black text-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold uppercase mb-4">DISTINCTIVE SERVICE FOR DISCERNING DRIVERS</h2>
+          <p className="text-xl mb-12 uppercase font-medium">OUR SERVICES</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">01</div>
+              <div className="relative z-10 text-left">
+                <h3 className="text-2xl font-bold uppercase mb-2">MAINTENANCE</h3>
+                <p className="text-sm mb-4">Keep your vehicle running smoothly and safely, giving you peace of mind on every journey.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/tyer.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">02</div>
+              <div className="relative z-10 text-left">
+                <h3 className="text-2xl font-bold uppercase mb-2">WHEELS</h3>
+                <p className="text-sm mb-4">Upgrade your ride with precision wheel services that enhance performance and style.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">03</div>
+              <div className="relative z-10 text-left">
+                <h3 className="text-2xl font-bold uppercase mb-2">ALIGNMENT</h3>
+                <p className="text-sm mb-4">Ensure perfect alignment for a smoother, safer drive that you can feel in every turn.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">04</div>
+              <div className="relative z-10 text-left">
+                <h3 className="text-2xl font-bold uppercase mb-2">POWER COATING</h3>
+                <p className="text-sm mb-4">Protect and beautify your vehicle with durable power coating that lasts a lifetime.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/breaks.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">05</div>
+              <div className="relative z-10 text-left">
+                <h3 className="text-2xl font-bold uppercase mb-2">BRAKES</h3>
+                <p className="text-sm mb-4">Stop with confidence thanks to our expert brake services that prioritize your safety.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">06</div>
+              <div className="relative z-10 text-left">
+                <h3 className="text-2xl font-bold uppercase mb-2">ENGINE SERVICE</h3>
+                <p className="text-sm mb-4">Revive your engine's power and reliability, delivering the performance you deserve.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section className="w-screen -mt-[-2rem] relative z-50 pointer-events-none -translate-x-1/2 left-1/2 hidden md:block">
+          <img src="/Wave_White_bottom_left_shape_01.png" alt="Wave Shape" className="w-full h-auto relative z-50" />
+        </section>
+      </motion.section>
+
+
+
       {/* Book Appointment */}
       <motion.section
+        id="book-appointment"
         className="px-4 py-16 bg-white relative"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

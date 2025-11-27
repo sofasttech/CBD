@@ -45,7 +45,7 @@ export default function Navigation({ menuOpen, setMenuOpen}: NavigationProps) {
               <div>1900 1088</div>
               <div>info@example.com</div>
             </div>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition">
+            <button className="bg-blue-600 text-white px-6 py-2  text-sm font-medium hover:bg-red-700 transition">
               Book a Service
             </button>
             <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
