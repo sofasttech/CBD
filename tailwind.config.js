@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Figtree', 'sans-serif'],
+        tomorrow: ['Tomorrow', 'sans-serif'],
+        mulish: ['Mulish', 'sans-serif'],
       },
     },
   },

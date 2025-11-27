@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronRight, Star, Settings,  Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronRight, Star, Settings, Phone, Mail, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -88,7 +88,7 @@ export default function Homepage() {
           {/* Left side text */}
           <div>
             <p className="text-blue-600 text-sm font-medium mb-2">Car Troubles?</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-blue-600 mb-4">Automotive Repair Services</h1>
+            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium text-blue-600 mb-4">Automotive Repair Services</h1>
             <p className="text-xl text-gray-700 mb-6">CBD Panelbeaters LTD is one of Auckland’s leading full service automotive repair services specializing in the full range of repairs including warrant of fitness and mechanical.</p>
             <div className="mb-6">
               <p className="flex items-center gap-2 text-gray-700 mb-2">
@@ -98,7 +98,7 @@ export default function Homepage() {
                 <span className="text-green-600">✓</span> Save Time and Money
               </p>
             </div>
-            <button className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition">
+            <button className="bg-gray-900 text-white px-8 py-3 font-medium hover:bg-gray-800 transition">
               View All Services
             </button>
           </div>
@@ -142,9 +142,9 @@ export default function Homepage() {
 
       {/* Cars Ribbon */}
       <section className="w-full relative">
-        <img src="/cars.jpeg" alt="Cars" className="w-full h-auto" />
+        <img src="/cars.jpeg" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
         <div className="absolute inset-0 flex items-start justify-start md:justify-center pt-0 md:pt-8 pl-4 md:pl-0">
-          <h2 className="text-black text-lg md:text-5xl text-left drop-shadow-lg italic font-serif font-light px-4">
+          <h2 className="text-black text-lg md:text-5xl text-left drop-shadow-lg  font-['Tomorrow'] font-light px-4">
             We SERVICE <span className="text-blue-600">All</span> MAKES and MODELS...<br />
             <span className="text-black md:text-black">FOREIGN and DOMESTIC!</span>
           </h2>
@@ -152,10 +152,8 @@ export default function Homepage() {
       </section>
 
       {/* New Section */}
-      <section className="px-4 py-16 bg-white-100">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-blue-600">We Repair All Makes of Automobiles</h2>
-          <p className="text-xl text-gray-700 mb-8 italic">We work with all makes and models of vehicles</p>
+      <section className="px-2 py-14 bg-white-100">
+        <div className="max-w-8xl mx-auto text-center">
           <div className="overflow-hidden">
             <motion.div
               className="flex items-center gap-12"
@@ -181,6 +179,82 @@ export default function Homepage() {
         </div>
       </section>
 
+      {/* About Section */}
+      <motion.section
+        id="about-intro"
+        className="px-4 pt-16 pb-14 bg-white-900 text-black"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+          {/* Left Column: Image */}
+          <div className="relative">
+            <img src="/martin-katler-SsPhA7nIccs-unsplash.jpg" alt="Rear of modern dark vehicle" className="w-full h-[28rem] md:h-[44rem] shadow-lg" />
+          </div>
+
+          {/* Right Column: Textual Content */}
+          <div className="space-y-4 -mt-4">
+            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight">Superior Service with a Touch of Class</h2>
+            
+            <div className="mb-10">
+              <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
+              <p className="text-gray-900 leading-relaxed font-mulish font-extralight text-lg">
+                At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
+              </p>
+            </div>
+            
+            <div >
+              <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
+              <p className="text-gray-900 leading-relaxed font-mulish font-extralight text-lg">
+                For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
+              </p>
+            </div>
+            
+            <button onClick={() => scrollToSection('about')} className="bg-blue-600 text-white px-8 py-3  font-medium hover:bg-blue-700 transition inline-flex items-center gap-2">
+              Learn More  
+            </button>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Technical Features */}
+      <motion.section
+        className="px-0 pt-0 pb-20 bg-white-900"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden hover:bg-black transition group">
+              <div className="absolute inset-0 flex items-start justify-end opacity-10">
+                <img src="/im1.png" alt="Precision Repairs Icon" className="w-32 h-32 md:w-72 md:h-72 invert transition group-hover:filter-none" />
+              </div>
+              <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Precision Repairs</h3>
+              <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition.</p>
+            </div>
+            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden hover:bg-black transition group">
+              <div className="absolute inset-0 flex items-start justify-end opacity-10">
+                <img src="/im2.png" alt="Quality Materials Icon" className="w-32 h-32 md:w-72 md:h-72 invert transition group-hover:filter-none" />
+              </div>
+              <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Quality Materials</h3>
+              <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform.</p>
+            </div>
+            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden hover:bg-black transition group">
+              <div className="absolute inset-0 flex items-start justify-end opacity-10">
+                <img src="/im3.png" alt="Experienced Technicians Icon" className="w-32 h-32 md:w-72 md:h-72 invert transition group-hover:filter-none" />
+              </div>
+              <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Experienced Technicians</h3>
+              <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">Our team of certified professionals brings decades of experience to deliver exceptional results you can trust.</p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Book Appointment */}
       <motion.section
         className="px-4 py-16 bg-white relative"
@@ -192,7 +266,7 @@ export default function Homepage() {
         <img src="/wave.webp" alt="" className="absolute inset-0 w-[120%] h-[120%] object-cover -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-10" />
         <div className="max-w-5xl mx-auto text-center relative z-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black inline-block px-4 py-2 rounded">Book a <span className="text-blue-600">free</span> appointment.</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Booking Form */}
             <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg border">
@@ -371,7 +445,7 @@ export default function Homepage() {
       </motion.section>
 
       {/* FAQs */}
-      
+
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
