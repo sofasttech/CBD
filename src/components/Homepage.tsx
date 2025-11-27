@@ -74,6 +74,14 @@ export default function Homepage() {
   const [hoveredTech1, setHoveredTech1] = useState(false);
   const [hoveredTech2, setHoveredTech2] = useState(false);
   const [hoveredTech3, setHoveredTech3] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const ref1 = useRef<HTMLDivElement>(null);
+  const ref2 = useRef<HTMLDivElement>(null);
+  const ref3 = useRef<HTMLDivElement>(null);
+  const inView1 = useInView(ref1);
+  const inView2 = useInView(ref2);
+  const inView3 = useInView(ref3);
 
   const heroImages = ['/stf.png'];
 
@@ -93,6 +101,13 @@ export default function Homepage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -134,8 +149,9 @@ export default function Homepage() {
               <button className="bg-gray-900 text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-gray-800 transition">
                 View All Services
               </button>
-              <button onClick={() => scrollToSection('book-appointment')} className="bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-blue-700 transition">
-                Appointment
+              <button onClick={() => scrollToSection('book-appointment')} className="relative bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition group">
+                <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">Appointment</span>
               </button>
             </div>
           </div>
@@ -219,7 +235,7 @@ export default function Homepage() {
       {/* About Section */}
       <motion.section
         id="about-intro"
-        className="px-4 pt-16 pb-14 bg-white-900 text-black"
+        className="px-4 pt-0 md:pt-16 pb-14 bg-black text-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
@@ -227,8 +243,8 @@ export default function Homepage() {
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
           {/* Left Column: Image */}
-          <div className="relative">
-            <img src="/panel-beatt.jpg" alt="Rear of modern dark vehicle" className="w-full h-[28rem] md:h-[44rem] shadow-lg" />
+          <div className="relative -mx-4 md:mx-0">
+            <img src="/panel-beatt.jpg" alt="Rear of modern dark vehicle" className="w-full h-[32rem] md:h-[40rem] shadow-lg border-0 md:border-4 border-white" />
           </div>
 
           {/* Right Column: Textual Content */}
@@ -238,20 +254,21 @@ export default function Homepage() {
 
             <div className="mb-10">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p className="text-gray-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg">
                 At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
 
             <div >
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
-              <p className="text-gray-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg">
                 For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
               </p>
             </div>
 
-            <button onClick={() => scrollToSection('about')} className="bg-blue-600 text-white px-8 py-3  font-medium hover:bg-blue-700 transition inline-flex items-center gap-2">
-              Learn More
+            <button onClick={() => scrollToSection('about')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
+              <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
+              <span className="relative z-10">Learn More</span>
             </button>
           </div>
         </div>
@@ -259,7 +276,7 @@ export default function Homepage() {
 
       {/* Technical Features */}
       <motion.section
-        className="px-0 pt-0 pb-20 bg-white-900"
+        className="px-0 pt-12 pb-12 bg-white-900"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
@@ -267,41 +284,41 @@ export default function Homepage() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech1(true)} onMouseLeave={() => setHoveredTech1(false)}>
+            <div ref={ref1} className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech1(true)} onMouseLeave={() => setHoveredTech1(false)}>
               <div className="absolute inset-0 flex items-start justify-end opacity-100">
-                <img src="/im1.png" alt="Precision Repairs Icon" className="w-32 h-32 md:w-72 md:h-72 brightness-0 invert z-20" />
+                <img src="/im1.png" alt="Precision Repairs Icon" className="w-48 h-48 md:w-80 md:h-80 brightness-0 invert z-20" />
               </div>
               <motion.div
-                className="absolute inset-0 bg-black z-5"
-                animate={{ x: hoveredTech1 ? 0 : '-100%' }}
-                transition={{ duration: 0.5 }}
+                className="absolute inset-0 bg-green-600 z-5"
+                animate={{ x: (isMobile ? inView1 : hoveredTech1) ? 0 : '-100%' }}
+                transition={{ duration: isMobile ? 1 : 0.5 }}
               />
-              <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Precision Repairs</h3>
-              <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition.</p>
+              <h3 className={`text-blue-400 ${(isMobile ? inView1 : hoveredTech1) ? 'text-white' : ''} text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition`}>Precision Repairs</h3>
+              <p className={`text-gray-900 ${(isMobile ? inView1 : hoveredTech1) ? 'text-white' : ''} leading-relaxed relative z-10 transition`}>Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition.</p>
             </div>
-            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech2(true)} onMouseLeave={() => setHoveredTech2(false)}>
+            <div ref={ref2} className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech2(true)} onMouseLeave={() => setHoveredTech2(false)}>
               <div className="absolute inset-0 flex items-start justify-end opacity-100">
-                <img src="/im2.png" alt="Quality Materials Icon" className="w-32 h-32 md:w-72 md:h-72 brightness-0 invert z-20" />
+                <img src="/im2.png" alt="Quality Materials Icon" className="w-48 h-48 md:w-80 md:h-80 brightness-0 invert z-20" />
               </div>
               <motion.div
-                className="absolute inset-0 bg-black z-5"
-                animate={{ x: hoveredTech2 ? 0 : '-100%' }}
-                transition={{ duration: 0.5 }}
+                className="absolute inset-0 bg-green-600 z-5"
+                animate={{ x: (isMobile ? inView2 : hoveredTech2) ? 0 : '-100%' }}
+                transition={{ duration: isMobile ? 1 : 0.5 }}
               />
-              <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Quality Materials</h3>
-              <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform.</p>
+              <h3 className={`text-blue-400 ${(isMobile ? inView2 : hoveredTech2) ? 'text-white' : ''} text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition`}>Quality Materials</h3>
+              <p className={`text-gray-900 ${(isMobile ? inView2 : hoveredTech2) ? 'text-white' : ''} leading-relaxed relative z-10 transition`}>We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform.</p>
             </div>
-            <div className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech3(true)} onMouseLeave={() => setHoveredTech3(false)}>
+            <div ref={ref3} className="bg-white-800 p-12 shadow-lg border border-blue-500/20 relative overflow-hidden group" onMouseEnter={() => setHoveredTech3(true)} onMouseLeave={() => setHoveredTech3(false)}>
               <div className="absolute inset-0 flex items-start justify-end opacity-100">
-                <img src="/im3.png" alt="Experienced Technicians Icon" className="w-32 h-32 md:w-72 md:h-72 brightness-0 invert z-20" />
+                <img src="/im3.png" alt="Experienced Technicians Icon" className="w-48 h-48 md:w-80 md:h-80 brightness-0 invert z-20" />
               </div>
               <motion.div
-                className="absolute inset-0 bg-black z-5"
-                animate={{ x: hoveredTech3 ? 0 : '-100%' }}
-                transition={{ duration: 0.5 }}
+                className="absolute inset-0 bg-green-600 z-5"
+                animate={{ x: (isMobile ? inView3 : hoveredTech3) ? 0 : '-100%' }}
+                transition={{ duration: isMobile ? 1 : 0.5 }}
               />
-              <h3 className="text-blue-400 group-hover:text-white text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition">Experienced Technicians</h3>
-              <p className="text-gray-900 group-hover:text-white leading-relaxed relative z-10 transition">Our team of certified professionals brings decades of experience to deliver exceptional results you can trust.</p>
+              <h3 className={`text-blue-400 ${(isMobile ? inView3 : hoveredTech3) ? 'text-white' : ''} text-xl font-['Tomorrow'] font-medium mb-4 relative z-10 transition`}>Experienced Technicians</h3>
+              <p className={`text-gray-900 ${(isMobile ? inView3 : hoveredTech3) ? 'text-white' : ''} leading-relaxed relative z-10 transition`}>Our team of certified professionals brings decades of experience to deliver exceptional results you can trust.</p>
             </div>
           </div>
         </div>
@@ -310,7 +327,7 @@ export default function Homepage() {
       {/*Distinctive Services Section  */}
       <motion.section
         id="services"
-        className="px-4 pt-16 pb-[-2rem] bg-black text-white"
+        className="px-0 pt-16 pb-[5rem] bg-black text-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
@@ -320,7 +337,7 @@ export default function Homepage() {
           <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold uppercase mb-4">DISTINCTIVE SERVICE FOR DISCERNING DRIVERS</h2>
           <p className="text-xl mb-12 uppercase font-medium">OUR SERVICES</p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
               <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">01</div>
               <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">MAINTENANCE</h3>
@@ -340,7 +357,7 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/tyer.png')] bg-contain bg-center bg-no-repeat border border-white group">
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/tyer.png')] bg-contain bg-center bg-no-repeat border border-white group">
               <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">02</div>
               <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">WHEELS</h3>
@@ -360,7 +377,7 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
               <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">03</div>
               <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">ALIGNMENT</h3>
@@ -380,7 +397,7 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
               <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">04</div>
               <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">POWER COATING</h3>
@@ -400,7 +417,7 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/breaks.png')] bg-contain bg-center bg-no-repeat border border-white group">
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/breaks.png')] bg-contain bg-center bg-no-repeat border border-white group">
               <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">05</div>
               <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">BRAKES</h3>
@@ -420,7 +437,7 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
               <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">06</div>
               <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">ENGINE SERVICE</h3>
@@ -442,15 +459,12 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-        <section className="w-screen -mt-[-1rem] relative z-50 pointer-events-none -translate-x-1/2 left-1/2 hidden md:block">
-          <img src="/Wave_White_bottom_left_shape_01.png" alt="Wave Shape" className="w-full h-auto relative z-50" />
-        </section>
       </motion.section>
 
       {/* Why Choose Us */}
       <motion.section
         id="why-choose-us"
-        className="py-8 pb-0 bg-black md:bg-white md:px-4"
+        className="py-0 pb-0 bg-black"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -525,7 +539,7 @@ export default function Homepage() {
       {/* Achievements */}
       <motion.section
         id="achievements"
-        className="pt-0 py-16 bg-black md:bg-white md:px-4"
+        className="pt-0 py-16 bg-black "
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -580,8 +594,9 @@ export default function Homepage() {
             <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">HOW IT WORKS</p>
             <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4">SUPERIOR SERVICE WITH A TOUCH OF CLASS</h2>
             <div className="flex gap-4">
-              <button onClick={() => scrollToSection('book-appointment')} className="relative group bg-blue-600 text-white px-8 py-3 font-medium hover:bg-blue-700 transition">
-                APPOINTMENT
+              <button onClick={() => scrollToSection('book-appointment')} className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition">
+                <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">APPOINTMENT</span>
                 <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
                 <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
                 <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
@@ -601,42 +616,42 @@ export default function Homepage() {
               <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">01</div>
               <div className="pt-12">
                 <h3 className="text-xl font-bold uppercase mb-4">BOOK AN APPOINTMENT</h3>
-                <p className="text-gray-600">Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote.</p>
+                <p className="text-white-600">Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote.</p>
               </div>
             </div>
             <div className="p-8 shadow-lg border border-white relative">
               <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">02</div>
               <div className="pt-12">
                 <h3 className="text-xl font-bold uppercase mb-4">CHOOSE YOUR SERVICE</h3>
-                <p className="text-gray-600">Select the specific services you require from our comprehensive range of panel beating and mechanical repairs.</p>
+                <p className="text-white-600">Select the specific services you require from our comprehensive range of panel beating and mechanical repairs.</p>
               </div>
             </div>
             <div className="p-8 shadow-lg border border-white relative">
               <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">03</div>
               <div className="pt-12">
                 <h3 className="text-xl font-bold uppercase mb-4">CONFIRM YOUR REQUEST</h3>
-                <p className="text-gray-600">Receive confirmation of your booking details, including date, time, and estimated costs.</p>
+                <p className="text-white-600">Receive confirmation of your booking details, including date, time, and estimated costs.</p>
               </div>
             </div>
             <div className="p-8 shadow-lg border border-white relative">
               <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">04</div>
               <div className="pt-12">
                 <h3 className="text-xl font-bold uppercase mb-4">DROP OFF YOUR VEHICLE</h3>
-                <p className="text-gray-600">Bring your vehicle to our workshop at the scheduled time for inspection and service.</p>
+                <p className="text-white-600">Bring your vehicle to our workshop at the scheduled time for inspection and service.</p>
               </div>
             </div>
             <div className="p-8 shadow-lg border border-white relative">
               <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">05</div>
               <div className="pt-12">
                 <h3 className="text-xl font-bold uppercase mb-4">SERVICE AND REPAIR</h3>
-                <p className="text-gray-600">Our experienced technicians perform the necessary repairs and maintenance with precision and care.</p>
+                <p className="text-white-600">Our experienced technicians perform the necessary repairs and maintenance with precision and care.</p>
               </div>
             </div>
             <div className="p-8 shadow-lg border border-white relative">
               <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">06</div>
               <div className="pt-12">
                 <h3 className="text-xl font-bold uppercase mb-4">REVIEW AND PICK UP</h3>
-                <p className="text-gray-600">Review the completed work, receive your vehicle, and enjoy peace of mind with our quality guarantee.</p>
+                <p className="text-white-600">Review the completed work, receive your vehicle, and enjoy peace of mind with our quality guarantee.</p>
               </div>
             </div>
           </div>
