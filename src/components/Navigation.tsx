@@ -17,7 +17,7 @@ export default function Navigation({ menuOpen, setMenuOpen}: NavigationProps) {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img src="/logowithoutname.jpeg" alt="CBD Panelbeating & Mechanical" className="h-10" />
-            <span className="hidden md:block text-xl font-bold">CBD Panelbeating & Mechanical</span>
+            <span className="hidden md:block text-xl font-['Tomorrow']">CBD Panelbeating & Mechanical</span>
           </div>
 
           {/* Navigation Links */}
