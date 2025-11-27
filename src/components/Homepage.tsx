@@ -1,18 +1,76 @@
-import { useState, useEffect } from 'react';
-import { ChevronRight, Star, Settings, Phone, Mail, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronRight } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Blog from './Blog';
+
+const AnimatedPercentage = ({ target }: { target: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    if (inView && !started) {
+      setStarted(true);
+      const node = ref.current;
+      if (!node) return;
+      let start = 0;
+      const end = target;
+      const duration = 2000; // 2 seconds
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const current = Math.min(end, (progress / duration) * end);
+        node.textContent = Math.floor(current) + '%';
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      };
+      requestAnimationFrame(step);
+    }
+  }, [inView, started, target]);
+
+  return <span ref={ref}>0%</span>;
+};
+
+const AnimatedNumber = ({ target, suffix = '' }: { target: number; suffix?: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    if (inView && !started) {
+      setStarted(true);
+      const node = ref.current;
+      if (!node) return;
+      let start = 0;
+      const end = target;
+      const duration = 2000; // 2 seconds
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const current = Math.min(end, (progress / duration) * end);
+        if (suffix === 'K+') {
+          node.textContent = (current / 1000).toFixed(1) + 'K+';
+        } else {
+          node.textContent = Math.floor(current) + suffix;
+        }
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      };
+      requestAnimationFrame(step);
+    }
+  }, [inView, started, target, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
+};
 
 export default function Homepage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [service, setService] = useState('Panel Beating');
   const [hoveredTech1, setHoveredTech1] = useState(false);
   const [hoveredTech2, setHoveredTech2] = useState(false);
   const [hoveredTech3, setHoveredTech3] = useState(false);
@@ -37,41 +95,12 @@ export default function Homepage() {
     window.scrollTo(0, 0);
   }, []);
 
-  const services = [
-    { image: '/collision-repair-icon-dark.svg', title: 'Collision Repairs', href: '#' },
-    { image: '/headlight-icon-dark.svg', title: 'Bumper Replacement', href: '#' },
-    { image: '/headlight-icon-dark.svg', title: 'Headlight Restoration', href: '#' },
-    { image: '/car-servicing-icon-dark.svg', title: 'Car Servicing', href: '#' },
-    { image: '/tyre-dark.svg', title: 'Tyres Check & Replacement', href: '#' },
-    { image: '/car-battery-icon-dark.svg', title: 'Battery Check', href: '#' },
-  ];
-
-  const features = [
-    { image: '/care-tires.png', title: 'Quick Turn Around', desc: 'Fast, high-quality repairs we outperform large insurance shops with quicker turnaround times and precision results.' },
-    { image: '/Wrenches.png', title: 'Cost Effective', desc: 'We understand how quickly costs can add up after even a minor accident. That\'s why we offer smart, budget-friendly repair solutions.' },
-    { image: '/spray-gun-attachment.png', title: 'Experienced', desc: 'Our technicians bring decades of combined experience to every job no guesswork, just quality workmanship.' },
-    { image: '/car-polishing-tray.png', title: 'Family Orientated', desc: 'As a family-run business, we offer the kind of personal service and consistent quality big corporations can\'t match.' },
-    { image: '/kiwi-bird.png', title: '100% Kiwi-Owned', desc: 'We\'re proudly local committed to supporting our community and delivering exceptional service with every repair.' },
-    { image: '/car-pieces.png', title: 'Multiple Services, One Location', desc: 'From panel beating to mechanical work, get it all sorted in one place saving you time, money, and hassle.' },
-  ];
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setMenuOpen(false);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log({ name, email, phone, service });
-    // You can add form submission logic here, e.g., send to API
-    alert('Appointment booked! We will contact you soon.');
-    setName('');
-    setEmail('');
-    setPhone('');
-    setService('Panel Beating');
   };
 
   return (
@@ -280,7 +309,8 @@ export default function Homepage() {
 
       {/*Distinctive Services Section  */}
       <motion.section
-        className="px-4 pt-16 pb-[3.5rem] bg-black text-white"
+        id="services"
+        className="px-4 pt-16 pb-[-2rem] bg-black text-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
@@ -290,261 +320,325 @@ export default function Homepage() {
           <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold uppercase mb-4">DISTINCTIVE SERVICE FOR DISCERNING DRIVERS</h2>
           <p className="text-xl mb-12 uppercase font-medium">OUR SERVICES</p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
-              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">01</div>
-              <div className="relative z-10 text-left">
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">01</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">MAINTENANCE</h3>
                 <p className="text-sm mb-4">Keep your vehicle running smoothly and safely, giving you peace of mind on every journey.</p>
                 <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                   LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
                 </button>
               </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">MAINTENANCE</h3>
+                  <p className="text-sm">Keep your vehicle running smoothly and safely, giving you peace of mind on every journey. Our comprehensive maintenance services include regular oil changes, tire rotations, brake inspections, fluid checks, and diagnostic tests to prevent breakdowns and extend your vehicle's lifespan.</p>
+                </div>
+              </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/tyer.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
-              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">02</div>
-              <div className="relative z-10 text-left">
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/tyer.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">02</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">WHEELS</h3>
                 <p className="text-sm mb-4">Upgrade your ride with precision wheel services that enhance performance and style.</p>
                 <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                   LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
                 </button>
               </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">WHEELS</h3>
+                  <p className="text-sm">Upgrade your ride with precision wheel services that enhance performance and style. We offer wheel alignment, balancing, tire replacement, and custom rim installations to improve handling, safety, and aesthetics.</p>
+                </div>
+              </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
-              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">03</div>
-              <div className="relative z-10 text-left">
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">03</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">ALIGNMENT</h3>
                 <p className="text-sm mb-4">Ensure perfect alignment for a smoother, safer drive that you can feel in every turn.</p>
                 <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                   LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
                 </button>
               </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">ALIGNMENT</h3>
+                  <p className="text-sm">Ensure perfect alignment for a smoother, safer drive that you can feel in every turn. Proper wheel alignment improves fuel efficiency, reduces tire wear, and enhances vehicle stability and handling.</p>
+                </div>
+              </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
-              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">04</div>
-              <div className="relative z-10 text-left">
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">04</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">POWER COATING</h3>
                 <p className="text-sm mb-4">Protect and beautify your vehicle with durable power coating that lasts a lifetime.</p>
                 <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                   LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
                 </button>
               </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">POWER COATING</h3>
+                  <p className="text-sm">Our power coating service provides a durable, high-quality finish that protects your vehicle from corrosion, scratches, and fading. Using advanced electrostatic application techniques, we ensure even coverage and long-lasting color retention. Ideal for wheels, frames, and custom parts.</p>
+                </div>
+              </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/breaks.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
-              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">05</div>
-              <div className="relative z-10 text-left">
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/breaks.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">05</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">BRAKES</h3>
                 <p className="text-sm mb-4">Stop with confidence thanks to our expert brake services that prioritize your safety.</p>
                 <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                   LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
                 </button>
               </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">BRAKES</h3>
+                  <p className="text-sm">Our brake service ensures your vehicle's stopping power is at its best. We inspect, repair, and replace brake pads, rotors, calipers, and brake lines using high-quality parts. Regular maintenance prevents accidents and extends the life of your braking system.</p>
+                </div>
+              </div>
             </div>
-            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group overflow-hidden">
-              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10">06</div>
-              <div className="relative z-10 text-left">
+            <div className="relative h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">06</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                 <h3 className="text-2xl font-bold uppercase mb-2">ENGINE SERVICE</h3>
                 <p className="text-sm mb-4">Revive your engine's power and reliability, delivering the performance you deserve.</p>
                 <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                   LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
                 </button>
               </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">ENGINE SERVICE</h3>
+                  <p className="text-sm">Our comprehensive engine service includes diagnostics, tune-ups, oil changes, and major repairs. We use advanced tools to identify issues early and provide expert repairs to keep your engine running smoothly. From routine maintenance to complex overhauls, we ensure optimal performance and longevity.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <section className="w-screen -mt-[-2rem] relative z-50 pointer-events-none -translate-x-1/2 left-1/2 hidden md:block">
+        <section className="w-screen -mt-[-1rem] relative z-50 pointer-events-none -translate-x-1/2 left-1/2 hidden md:block">
           <img src="/Wave_White_bottom_left_shape_01.png" alt="Wave Shape" className="w-full h-auto relative z-50" />
         </section>
       </motion.section>
 
-
-
-      {/* Book Appointment */}
+      {/* Why Choose Us */}
       <motion.section
-        id="book-appointment"
-        className="px-4 py-16 bg-white relative"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <img src="/wave.webp" alt="" className="absolute inset-0 w-[120%] h-[120%] object-cover -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-10" />
-        <div className="max-w-5xl mx-auto text-center relative z-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black inline-block px-4 py-2 rounded">Book a <span className="text-blue-600">free</span> appointment.</h2>
-
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            {/* Booking Form */}
-            <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg border">
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                required
-              />
-              <input
-                type="tel"
-                placeholder="Your Phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                required
-              />
-              <select
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-              >
-                <option>Panel Beating</option>
-              </select>
-              <button type="submit" className="w-full bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition">
-                Book Appointment
-              </button>
-            </form>
-
-            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition">
-              <h3 className="text-xl font-bold mb-4 text-blue-600 flex items-center">
-                <Settings className="w-6 h-6 mr-2" />
-                Panel Beating
-              </h3>
-              <p className="mb-2 text-gray-700 flex items-center">
-                <Mail className="w-5 h-5 mr-2 text-blue-600" />
-                <strong>Email:</strong> info@cbdpanel.co.nz
-              </p>
-              <p className="mb-2 text-gray-700 flex items-center">
-                <Phone className="w-5 h-5 mr-2 text-blue-600" />
-                <strong>Phone:</strong> +64 9-309 1906
-              </p>
-              <p className="text-gray-700 flex items-start">
-                <MapPin className="w-5 h-5 mr-2 text-blue-600 mt-1" />
-                <span><strong>Address:</strong> 390 Great North Road, Grey Lynn, Auckland, New Zealand</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Services Grid */}
-      <motion.section
-        id="services"
-        className="px-4 pb-16 relative z-30"
+        id="why-choose-us"
+        className="py-8 pb-0 bg-black md:bg-white md:px-4"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-            {services.map((s, i) => (
-              <a key={i} href={s.href} className="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg hover:bg-gray-100 hover:translate-y-[-4px] transition group">
-                <div className="w-16 h-16 mx-auto mb-3 rounded-2xl flex items-center justify-center transition">
-                  <img src={s.image} alt={s.title} className="w-11 h-11" />
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-0 items-center">
+          {/* Left Column: Content and Persuasion */}
+          <div className="text-white p-8 h-90 md:h-[38.8rem] flex flex-col justify-center md:bg-black">
+            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">WHY CHOOSE US</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4">ATTENTION TO DETAIL, TAILORED TO YOU</h2>
+            <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg mb-8">
+              At CBD Panelbeating & Mechanical, we combine decades of expertise with a personalized approach to ensure every vehicle receives the care it deserves. Our commitment to precision and quality means your car isn't just repaired—it's restored to perfection.
+            </p>
+            {/* Trust Indicators (Progress Bars) */}
+            <div className="space-y-6">
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-white font-medium">EXPERT TECHNICIANS</span>
+                  <AnimatedPercentage target={99} />
                 </div>
-                <p className="text-sm font-bold">{s.title}</p>
-              </a>
-            ))}
+                <div className="w-full bg-gray-700 h-3 rounded-full">
+                  <motion.div
+                    className="bg-blue-600 h-3 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '99%' }}
+                    transition={{ duration: 2, delay: 0.5 }}
+                    viewport={{ once: true }}
+                  ></motion.div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-white font-medium">QUICK TURNAROUND</span>
+                  <AnimatedPercentage target={99} />
+                </div>
+                <div className="w-full bg-gray-700 h-3 rounded-full">
+                  <motion.div
+                    className="bg-blue-600 h-3 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '99%' }}
+                    transition={{ duration: 2, delay: 0.7 }}
+                    viewport={{ once: true }}
+                  ></motion.div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-white font-medium">QUALITY ASSURANCE</span>
+                  <AnimatedPercentage target={100} />
+                </div>
+                <div className="w-full bg-gray-700 h-3 rounded-full">
+                  <motion.div
+                    className="bg-blue-600 h-3 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '100%' }}
+                    transition={{ duration: 2, delay: 0.9 }}
+                    viewport={{ once: true }}
+                  ></motion.div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text-center mt-8">
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition font-medium">View all</a>
+          {/* Right Column: Visual Impact */}
+          <div className="relative h-90 md:h-[38.8rem] flex items-center justify-center">
+            <img src="/shop.webp" alt="Luxury Sports Car" className="w-full h-full object-cover shadow-lg" />
           </div>
         </div>
       </motion.section>
 
-      {/* About */}
+
+
+      {/* Achievements */}
       <motion.section
-        id="about"
-        className="px-4 py-16 bg-gray-50"
+        id="achievements"
+        className="pt-0 py-16 bg-black md:bg-white md:px-4"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">About Mount Roskill <br /> Collision Centre</h2>
-            <p className="text-gray-600 mb-4">
-              CBD Panelbeating & Mechanical has proudly served Auckland for over 30 years. From car repairs, panel and paint to full mechanical servicing, our auto garage provides repairs, honest service, and seamless insurance work.
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-0 items-center">
+          {/* Left Column: Visual Emphasis */}
+          <div className="relative h-96 md:h-[46rem] flex items-center justify-center order-2 md:order-1">
+            <img src="/tesla.jpg" alt="High-Performance Vehicle" className="w-full h-full object-cover " />
+          </div>
+          {/* Right Column: Establishing Authority */}
+          <div className="text-white p-8  h-[44rem] md:h-[46rem] flex flex-col justify-center order-1 md:order-2 md:bg-black">
+            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">ACHIEVEMENTS</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4">DRIVING IN STYLE, EXPERTLY MAINTAINED</h2>
+            <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg mb-8">
+              Our commitment to excellence is reflected in our track record of delivering top-tier automotive services across New Zealand. From routine maintenance to complex repairs, we ensure every vehicle leaves our workshops in perfect condition.
             </p>
-            <p className="text-gray-600 mb-6">
-              Whether it's a car, van, SUV or ute, we treat your vehicle like it's our own. Our estimators provide clear, upfront costs & advice.
-            </p>
+            {/* Key Statistics Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="text-center">
+                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={25} suffix="+" /></div>
+                <div className="text-sm text-gray-300">Years of Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={600} suffix="+" /></div>
+                <div className="text-sm text-gray-300">Expert Mechanics</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={9900} suffix="K+" /></div>
+                <div className="text-sm text-gray-300">Repaired Vehicles</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={80} suffix="+" /></div>
+                <div className="text-sm text-gray-300">Company Branches</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* How it works */}
+      <motion.section
+        id="how-it-works"
+        className="px-4 py-16 bg-black text-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="flex flex-col justify-center">
+            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">HOW IT WORKS</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4">SUPERIOR SERVICE WITH A TOUCH OF CLASS</h2>
             <div className="flex gap-4">
-              <button onClick={() => scrollToSection('about')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition">Learn More <ChevronRight className="w-4 h-4" /></button>
-              <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-blue-500 transition">Contact us <ChevronRight className="w-4 h-4" /></button>
+              <button onClick={() => scrollToSection('book-appointment')} className="relative group bg-blue-600 text-white px-8 py-3 font-medium hover:bg-blue-700 transition">
+                APPOINTMENT
+                <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              </button>
+              <button onClick={() => scrollToSection('services')} className="relative group bg-white text-black px-8 py-3 font-medium hover:bg-gray-100 transition">
+                OUR SERVICES
+                <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              </button>
             </div>
-            <div className="mt-6 flex items-center gap-2">
-              <div className="flex">
-                {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-5 h-5 fill-blue-600 text-blue-600" />)}
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="p-8 shadow-lg border border-white relative">
+              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">01</div>
+              <div className="pt-12">
+                <h3 className="text-xl font-bold uppercase mb-4">BOOK AN APPOINTMENT</h3>
+                <p className="text-gray-600">Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote.</p>
               </div>
-              <span className="text-sm text-gray-600">Google Reviews</span>
             </div>
-          </div>
-          <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl w-full h-80 md:w-[36rem] md:h-[32rem] flex items-center justify-center relative overflow-hidden">
-            <img src="/shop.webp" alt="Expert Mechanics at Work" className="w-full h-full object-cover" />
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Features */}
-      <motion.section
-        className="px-4 py-16"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Why Choose Us?</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-            {features.map((f, i) => (
-              <div key={i} className="text-center hover:scale-105 transition-transform">
-                <img src={f.image} alt={f.title} className="w-48 h-32 object-contain rounded-2xl mb-4 mx-auto" />
-                <h3 className="font-bold mb-2 text-black">{f.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto">{f.desc}</p>
+            <div className="p-8 shadow-lg border border-white relative">
+              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">02</div>
+              <div className="pt-12">
+                <h3 className="text-xl font-bold uppercase mb-4">CHOOSE YOUR SERVICE</h3>
+                <p className="text-gray-600">Select the specific services you require from our comprehensive range of panel beating and mechanical repairs.</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Insurance CTA */}
-      <motion.section
-        className="px-4 py-16 bg-white"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">We support insurance claims for Panel Beating and Mechanical Repairs.</h1>
-          <p className="text-xl md:text-2xl font-semibold text-blue-600 mb-8">Get in touch today.</p>
-          <div className="max-w-3xl mx-auto mb-8">
-            <p className="text-gray-700 mb-6 text-center">
-              <span className="font-bold">Panel Beating Insurance</span> covers repairs to your vehicle's bodywork, including dents, scratches, and collision damage. Our team will restore your car to its pre-accident condition with care and precision.
-            </p>
-            <p className="text-gray-700 mb-6 text-center">
-              <span className="font-bold">Mechanical Insurance</span> covers engine, transmission, and other mechanical faults keeping your car running smoothly after a breakdown. We'll guide you through the claim process from start to finish.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <button onClick={() => scrollToSection('contact')} className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition">
-              Panel Beating Insurance <ChevronRight className="w-4 h-4" />
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-black px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-blue-500 transition">
-              Auto Mechanical Insurance <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl h-[28rem] flex items-center justify-center">
-            <img src="/undercar.jpg" alt="Mechanic working under car" className="w-full h-full object-cover rounded-3xl" />
+            </div>
+            <div className="p-8 shadow-lg border border-white relative">
+              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">03</div>
+              <div className="pt-12">
+                <h3 className="text-xl font-bold uppercase mb-4">CONFIRM YOUR REQUEST</h3>
+                <p className="text-gray-600">Receive confirmation of your booking details, including date, time, and estimated costs.</p>
+              </div>
+            </div>
+            <div className="p-8 shadow-lg border border-white relative">
+              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">04</div>
+              <div className="pt-12">
+                <h3 className="text-xl font-bold uppercase mb-4">DROP OFF YOUR VEHICLE</h3>
+                <p className="text-gray-600">Bring your vehicle to our workshop at the scheduled time for inspection and service.</p>
+              </div>
+            </div>
+            <div className="p-8 shadow-lg border border-white relative">
+              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">05</div>
+              <div className="pt-12">
+                <h3 className="text-xl font-bold uppercase mb-4">SERVICE AND REPAIR</h3>
+                <p className="text-gray-600">Our experienced technicians perform the necessary repairs and maintenance with precision and care.</p>
+              </div>
+            </div>
+            <div className="p-8 shadow-lg border border-white relative">
+              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">06</div>
+              <div className="pt-12">
+                <h3 className="text-xl font-bold uppercase mb-4">REVIEW AND PICK UP</h3>
+                <p className="text-gray-600">Review the completed work, receive your vehicle, and enjoy peace of mind with our quality guarantee.</p>
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
@@ -571,7 +665,7 @@ export default function Homepage() {
       >
         <section id="reviews" className="py-8 bg-neutral-50">
           <div className="max-w-6xl mx-auto px-6">
-            <h3 className="text-2xl font-bold mb-4">Customer Reviews</h3>
+            <h3 className="text-2xl font-['Tomorrow']  mb-4">Customer Reviews</h3>
             <div className="rounded-lg overflow-hidden shadow-sm">
               <iframe
                 src="https://widgets.sociablekit.com/google-reviews/iframe/25625462"

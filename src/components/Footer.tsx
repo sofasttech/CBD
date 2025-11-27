@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook } from 'lucide-react';
+import { Facebook } from 'lucide-react';
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
@@ -8,24 +8,16 @@ export default function Footer({ scrollToSection }: FooterProps) {
   return (
     <footer id="contact" className="bg-gray-900 text-white">
       {/* Top Footer Area */}
-      <div className="px-4 py-36 bg-gray-900 relative" style={{ backgroundImage: 'url(/Footer-bg.svg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="max-w-5xl mx-auto relative">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-5xl font-bold mb-4">Book a <span className="text-blue-600">free</span><br />appointment.</h3>
-              <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-black px-6 py-2 rounded-full text-base font-semibold inline-block hover:bg-blue-500 transition">Book now</button>
-            </div>
-            <div>
-              <h4 className="text-lg font-bold mb-3 text-white">Panel Beating</h4>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Mail className="w-4 h-4" /> info@cbdpanel.co.nz</p>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Phone className="w-4 h-4" /> +64 9-309 1906</p>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2"><MapPin className="w-4 h-4" /> 390 Great North Road, Grey Lynn, Auckland, New Zealand</p>
-            </div>
-            <div>
-              <h4 className="text-lg font-bold mb-3 text-white">Auto Mechanic</h4>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Mail className="w-4 h-4" /> admin@roskillauto.co.nz</p>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2 mb-2"><Phone className="w-4 h-4" /> 09 242 1870</p>
-              <p className="text-base font-normal text-gray-400 flex items-center gap-2"><MapPin className="w-4 h-4" /> 2/40 Carr Road<br />Three Kings Auckland 1042<br />New Zealand</p>
+      <div className="px-4 py-36 bg-gray-900 relative" style={{ backgroundImage: 'url(/footer1.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="text-left bg-black bg-opacity-80 p-8 max-w-2xl mx-auto md:ml-96">
+            <h2 className="text-sm uppercase mb-4 text-blue-600">GET STARTED</h2>
+            <h1 className="text-5xl font-bold mb-4 text-white font-tomorrow">REFINE, RESTORE, RENEW ANYTHING</h1>
+            <p className="text-base mb-6 text-gray-400">We specialize in expert panel beating, mechanical repairs, and comprehensive vehicle servicing to restore your vehicle to its best condition.</p>
+            <div className="flex gap-4 justify-center">
+              <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-white px-6 py-2 r text-base font-semibold hover:bg-blue-500 transition">APPOINTMENT</button>
+              <button onClick={() => scrollToSection('services')} className="bg-white text-black px-6 py-2  text-base font-semibold hover:bg-gray-200 transition">OUR SERVICES</button>
             </div>
           </div>
         </div>

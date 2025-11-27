@@ -29,7 +29,7 @@ export default function Blog() {
     <section id="reviews" className="py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mt-2">
+          <h2 className="text-4xl md:text-5xl font-['Tomorrow']  text-black mt-2">
             News & Guides
           </h2>
         </div>
