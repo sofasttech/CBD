@@ -191,7 +191,7 @@ export default function Homepage() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
           {/* Left Column: Image */}
           <div className="relative">
-            <img src="/martin-katler-SsPhA7nIccs-unsplash.jpg" alt="Rear of modern dark vehicle" className="w-full h-[28rem] md:h-[44rem] shadow-lg" />
+            <img src="/panel-beatt.jpg" alt="Rear of modern dark vehicle" className="w-full h-[28rem] md:h-[44rem] shadow-lg" />
           </div>
 
           {/* Right Column: Textual Content */}
