@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronRight } from 'lucide-react';
-import { motion, useInView, PanInfo, Variants } from 'framer-motion';
+import { motion, useInView, PanInfo } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Blog from './Blog';
@@ -86,8 +86,6 @@ export default function Homepage() {
   const inView1 = useInView(ref1);
   const inView2 = useInView(ref2);
   const inView3 = useInView(ref3);
-  const refRight = useRef<HTMLDivElement>(null);
-  const inViewRight = useInView(refRight, { once: true });
 
   const heroImages = ['/stf.png'];
 
@@ -132,49 +130,6 @@ export default function Homepage() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setMenuOpen(false);
-  };
-
-  const revealVariants: Variants = {
-    hidden: { clipPath: 'inset(0 100% 0 0)' },
-    visible: (i: number) => ({
-      clipPath: 'inset(0 0% 0 0)',
-      transition: { duration: 0.5, delay: i * 0.06 },
-    }),
-  };
-
-  const buttonVariants: Variants = {
-    hidden: { opacity: 0, y: 8 },
-    visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.45, delay: 0.6 + i * 0.06 } }),
-  };
-
-  const revealState = isMobile ? (inViewRight ? 'visible' : 'hidden') : 'visible';
-
-  // Helper to reveal text word-by-word. Uses `revealVariants` and `revealState`.
-  const WordReveal = ({ text, startIndex = 0 }: { text: string; startIndex?: number }) => {
-    // keep spaces so words render with spacing preserved
-    const parts = text.split(/(\s+)/);
-    let wordCounter = 0;
-    return (
-      <>
-        {parts.map((part, idx) => {
-          if (/^\s+$/.test(part)) return <span key={idx}>{part}</span>;
-          const customIndex = startIndex + wordCounter;
-          wordCounter++;
-          return (
-            <motion.span
-              key={idx}
-              custom={customIndex}
-              variants={revealVariants}
-              initial="hidden"
-              animate={revealState}
-              className="inline-block mr-1 overflow-hidden"
-            >
-              <span className="inline-block">{part}</span>
-            </motion.span>
-          );
-        })}
-      </>
-    );
   };
 
   return (
@@ -350,24 +305,28 @@ export default function Homepage() {
           </div>
 
           {/* Right Column: Textual Content */}
-          <div ref={refRight} className="space-y-4 -mt-4">
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide"><WordReveal text={'About CBD Panelbeaters LTD'} startIndex={0} /></p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight"><WordReveal text={'Superior Service with a Touch of Class'} startIndex={5} /></h2>
+          <div className="space-y-4 -mt-4">
+            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight">Superior Service with a Touch of Class</h2>
 
             <div className="mb-10">
-              <h3 className="text-blue-400 text-lg font-semibold mb-2"><WordReveal text={'Core Values'} startIndex={15} /></h3>
-              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg"><WordReveal text={"At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers."} startIndex={18} /></p>
+              <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
+              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg">
+                At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
+              </p>
             </div>
 
             <div >
-              <h3 className="text-blue-400 text-lg font-semibold mb-2"><WordReveal text={'Our Story'} startIndex={60} /></h3>
-              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg"><WordReveal text={"For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection."} startIndex={62} /></p>
+              <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
+              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg">
+                For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
+              </p>
             </div>
 
-            <motion.button custom={80} variants={buttonVariants} initial="hidden" animate={revealState} onClick={() => scrollToSection('about')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
+            <button onClick={() => scrollToSection('about')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
               <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
               <span className="relative z-10">Learn More</span>
-            </motion.button>
+            </button>
           </div>
         </div>
       </motion.section>
