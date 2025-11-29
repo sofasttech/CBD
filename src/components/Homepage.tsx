@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronRight } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, PanInfo, Variants } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Blog from './Blog';
@@ -69,15 +69,16 @@ const AnimatedNumber = ({ target, suffix = '' }: { target: number; suffix?: stri
 
 export default function Homepage() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
+  const currentImage = 0;
   const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
   const [hoveredTech1, setHoveredTech1] = useState(false);
   const [hoveredTech2, setHoveredTech2] = useState(false);
   const [hoveredTech3, setHoveredTech3] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const [currentAboutImage, setCurrentAboutImage] = useState(0);
-  const aboutImages = ['/panel-beatt.jpg', '/car-tune-up.jpg','/headlight.webp',];
+  const aboutImages = ['/panel-beatt.jpg', '/car-tune-up.jpg', '/headlight.webp'];
+  const [cards, setCards] = useState<string[]>(aboutImages);
+  const [swiping, setSwiping] = useState<{ src: string | null; dir: number }>({ src: null, dir: 0 });
 
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
@@ -85,10 +86,10 @@ export default function Homepage() {
   const inView1 = useInView(ref1);
   const inView2 = useInView(ref2);
   const inView3 = useInView(ref3);
+  const refRight = useRef<HTMLDivElement>(null);
+  const inViewRight = useInView(refRight, { once: true });
 
   const heroImages = ['/stf.png'];
-  const [nextHeroIndex, setNextHeroIndex] = useState(() => (heroImages.length > 1 ? 1 : 0));
-  const [slidingHero, setSlidingHero] = useState(false);
 
   const hotspots = [
     { top: '25%', left: '25%', title: 'Side Mirrors', desc: 'Repair or replace Side Mirrors.' },
@@ -97,21 +98,22 @@ export default function Homepage() {
     { top: '67%', right: '33%', title: 'Engine', desc: 'Mechanical repairs and servicing.' },
   ];
 
-  useEffect(() => {
-    if (heroImages.length <= 1) return;
-    const interval = setInterval(() => {
-      setNextHeroIndex((prev) => (prev + 1) % heroImages.length);
-      setSlidingHero(true);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [heroImages.length]);
+  // Hero rotation removed: only one hero image is used currently.
 
+  // Card stack replaces the previous auto-rotating about image.
+  // Swiped cards are animated out then moved to the back of the stack.
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentAboutImage((prev) => (prev + 1) % aboutImages.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [aboutImages.length]);
+    if (!swiping.src) return;
+    const timer = setTimeout(() => {
+      setCards((prev) => {
+        if (prev.length <= 1) return prev;
+        // move the currently-swiped (top) card to the back
+        return [...prev.slice(1), prev[0]];
+      });
+      setSwiping({ src: null, dir: 0 });
+    }, 420);
+    return () => clearTimeout(timer);
+  }, [swiping]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -130,6 +132,49 @@ export default function Homepage() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setMenuOpen(false);
+  };
+
+  const revealVariants: Variants = {
+    hidden: { clipPath: 'inset(0 100% 0 0)' },
+    visible: (i: number) => ({
+      clipPath: 'inset(0 0% 0 0)',
+      transition: { duration: 0.5, delay: i * 0.06 },
+    }),
+  };
+
+  const buttonVariants: Variants = {
+    hidden: { opacity: 0, y: 8 },
+    visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.45, delay: 0.6 + i * 0.06 } }),
+  };
+
+  const revealState = isMobile ? (inViewRight ? 'visible' : 'hidden') : 'visible';
+
+  // Helper to reveal text word-by-word. Uses `revealVariants` and `revealState`.
+  const WordReveal = ({ text, startIndex = 0 }: { text: string; startIndex?: number }) => {
+    // keep spaces so words render with spacing preserved
+    const parts = text.split(/(\s+)/);
+    let wordCounter = 0;
+    return (
+      <>
+        {parts.map((part, idx) => {
+          if (/^\s+$/.test(part)) return <span key={idx}>{part}</span>;
+          const customIndex = startIndex + wordCounter;
+          wordCounter++;
+          return (
+            <motion.span
+              key={idx}
+              custom={customIndex}
+              variants={revealVariants}
+              initial="hidden"
+              animate={revealState}
+              className="inline-block mr-1 overflow-hidden"
+            >
+              <span className="inline-block">{part}</span>
+            </motion.span>
+          );
+        })}
+      </>
+    );
   };
 
   return (
@@ -256,42 +301,73 @@ export default function Homepage() {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
-          {/* Left Column: Image */}
-          <div className="relative -mx-4 md:mx-0 overflow-hidden h-[32rem] md:h-[40rem]">
-            <motion.img
-              key={currentAboutImage}
-              src={aboutImages[currentAboutImage]}
-              alt="Rear of modern dark vehicle"
-              className="w-full h-full shadow-lg border-0 md:border-4 border-white"
-              initial={{ x: '-100%' }}
-              animate={{ x: 0 }}
-              transition={{ duration: 1 }}
-            />
+          {/* Left Column: Card Stack (swipe top card left/right, moves to back) */}
+          <div className="relative -mx-4 md:mx-0 overflow-hidden h-[32rem] md:h-[40rem] flex items-center justify-center">
+            {cards.map((src, index) => {
+              const isTop = index === 0;
+              // slightly tighter vertical spacing between stacked cards (a bit more lift)
+              const yOffset = index * 26;
+              const scale = 1 - index * 0.02;
+              // lift the whole stack higher so cards align with the right column text
+              // use a smaller lift on mobile to avoid clipping
+              const baseYOffset = isMobile ? -160 : -300;
+              const z = cards.length - index;
+              // small horizontal offsets so cards peek out from beneath the top card
+              const xPeek = index === 1 ? -40 : index === 2 ? 40 : 0;
+              // blur background cards to make the top card pop (smaller blur on mobile)
+              const blur = isTop ? 'none' : isMobile ? 'blur(4px)' : 'blur(6px)';
+              return (
+                <motion.img
+                  key={src}
+                  src={src}
+                  alt={`About ${index}`}
+                  className="absolute w-3/4 md:w-2/3 h-[85%] md:h-[90%] object-cover shadow-lg border-0 md:border-4 border-white rounded-lg"
+                  style={{ zIndex: z, pointerEvents: isTop ? 'auto' : 'none', left: '50%', top: '50%', filter: blur }}
+                  initial={{ x: `calc(-50% + ${xPeek}px)`, y: `${baseYOffset + yOffset}px`, scale }}
+                  animate={
+                    swiping.src === src
+                      ? { x: swiping.dir * 1000, rotate: swiping.dir * 15, opacity: 0 }
+                      : { x: `calc(-50% + ${xPeek}px)`, y: `${baseYOffset + yOffset}px`, scale, rotate: 0, opacity: 1 }
+                  }
+                  transition={{ duration: 0.35 }}
+                  drag={isTop ? 'x' : false}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  whileTap={isTop ? { scale: 0.98 } : {}}
+                  onDragEnd={
+                    isTop
+                      ? (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+                        const shouldSwipe = Math.abs(info.offset.x) > 150 || Math.abs(info.velocity.x) > 500;
+                        if (shouldSwipe) {
+                          setSwiping({ src, dir: info.offset.x > 0 ? 1 : -1 });
+                        }
+                      }
+                      : undefined
+                  }
+                />
+              );
+            })}
           </div>
 
           {/* Right Column: Textual Content */}
-          <div className="space-y-4 -mt-4">
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight">Superior Service with a Touch of Class</h2>
+          <div ref={refRight} className="space-y-4 -mt-4">
+            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide"><WordReveal text={'About CBD Panelbeaters LTD'} startIndex={0} /></p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight"><WordReveal text={'Superior Service with a Touch of Class'} startIndex={5} /></h2>
 
             <div className="mb-10">
-              <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg">
-                At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
-              </p>
+              <h3 className="text-blue-400 text-lg font-semibold mb-2"><WordReveal text={'Core Values'} startIndex={15} /></h3>
+              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg"><WordReveal text={"At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers."} startIndex={18} /></p>
             </div>
 
             <div >
-              <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
-              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg">
-                For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
-              </p>
+              <h3 className="text-blue-400 text-lg font-semibold mb-2"><WordReveal text={'Our Story'} startIndex={60} /></h3>
+              <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg"><WordReveal text={"For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection."} startIndex={62} /></p>
             </div>
 
-            <button onClick={() => scrollToSection('about')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
+            <motion.button custom={80} variants={buttonVariants} initial="hidden" animate={revealState} onClick={() => scrollToSection('about')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
               <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
               <span className="relative z-10">Learn More</span>
-            </button>
+            </motion.button>
           </div>
         </div>
       </motion.section>
