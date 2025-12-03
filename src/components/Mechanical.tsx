@@ -396,28 +396,6 @@ export default function Mechanical() {
                 </div>
             </section>
 
-            {/* CTA */}
-            <section className="py-32 bg-gray-50 border-t border-gray-200">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <ScrollReveal>
-                        <h2 className="text-4xl md:text-7xl font-['Tomorrow'] font-bold mb-8">
-                            READY TO BOOK?
-                        </h2>
-                        <p className="text-xl text-gray-600 mb-12 font-light">
-                            Experience the difference of a mechanic who treats your car like their own.
-                        </p>
-                        <div className="flex flex-col md:flex-row gap-6 justify-center">
-                            <button className="px-10 py-4 bg-orange-600 text-white font-bold tracking-wider hover:bg-orange-700 transition-colors">
-                                BOOK ONLINE
-                            </button>
-                            <button className="px-10 py-4 border border-gray-900 text-gray-900 font-bold tracking-wider hover:bg-gray-900 hover:text-white transition-colors">
-                                CALL 1900 1088
-                            </button>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
             <Footer scrollToSection={scrollToSection} />
         </div >
     );
