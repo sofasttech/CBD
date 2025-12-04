@@ -1,46 +1,73 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { animate, scroll } from 'motion';
 
 export default function HorizontalScrollSection(): JSX.Element {
+    const sectionRef = useRef<HTMLElement>(null);
     const ulRef = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
-        const items = document.querySelectorAll('#horizontal-scroll-section li');
+        const section = sectionRef.current;
+        const list = ulRef.current;
+        if (!section || !list) {
+            return undefined;
+        }
 
-        if (ulRef.current && items.length > 0) {
-            const controls = animate(
-                ulRef.current,
-                {
-                    transform: ['none', `translateX(-${items.length - 1}00vw)`],
-                } as any
-            );
-            
-            const section = document.querySelector('#horizontal-scroll-section');
-            if (section) {
-                scroll(controls, { target: section });
+        const items = Array.from(section.querySelectorAll('li'));
+        const totalSlides = items.length;
+        if (totalSlides === 0) {
+            return undefined;
+        }
+
+        items.forEach((item, index) => {
+            item.setAttribute('data-index', index.toString());
+        });
+
+        const clamp = (value: number, min = 0, max = 1) => Math.min(Math.max(value, min), max);
+
+        const handleScroll = () => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const maxScroll = sectionHeight - viewportHeight;
+
+            if (maxScroll <= 0) {
+                return;
             }
 
-            const segmentLength = 1 / items.length;
-            items.forEach((item, i) => {
-                const header = item.querySelector('h2');
+            const scrollY = window.scrollY;
+            const progress = clamp((scrollY - sectionTop) / maxScroll);
+            const maxTranslate = (totalSlides - 1) * 100;
 
-                if (header && section) {
-                    scroll(animate([header] as any, { x: [800, -800] } as any), {
-                        target: section,
-                        offset: [
-                            [i * segmentLength, 1],
-                            [(i + 1) * segmentLength, 0],
-                        ],
-                    });
+            list.style.transform = `translateX(-${progress * maxTranslate}vw)`;
+            items.forEach((item, index) => {
+                const header = item.querySelector('h2');
+                if (!header) {
+                    return;
                 }
+
+                const segmentStart = index / totalSlides;
+                const segmentEnd = (index + 1) / totalSlides;
+                const segmentProgress = clamp((progress - segmentStart) / (segmentEnd - segmentStart));
+                const headerTranslate = 800 - segmentProgress * 1600;
+                header.style.transform = `translateX(${headerTranslate}px)`;
             });
-        }
+        };
+
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return (
-        <section id="horizontal-scroll-section" className='h-[500vh] relative'>
-            <ul ref={ulRef} className='flex sticky top-16 md:top-0 w-full h-screen'>
+        <section
+            id="horizontal-scroll-section"
+            ref={sectionRef}
+            className='h-[500vh] relative'
+        >
+            <ul ref={ulRef} className='flex sticky top-0 w-full h-screen will-change-transform'>
                 <li className='h-screen w-screen bg-red-400 flex flex-col justify-center overflow-hidden items-center shrink-0'>
                     <img
                         src='https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop'
