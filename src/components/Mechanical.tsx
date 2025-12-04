@@ -1,52 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Shield, Settings, Disc, Zap, Activity, Gauge } from 'lucide-react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
+import { CpuArchitecture } from './ui/cpu-architecture';
+import { Spotlight, SpotLightItem } from './ui/spotlight';
 
-const TiltCard = ({ children, className }: { children: React.ReactNode, className?: string }) => {
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
 
-    const mouseX = useSpring(x, { stiffness: 500, damping: 100 });
-    const mouseY = useSpring(y, { stiffness: 500, damping: 100 });
-
-    function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-        const { left, top, width, height } = currentTarget.getBoundingClientRect();
-        const xPct = (clientX - left) / width - 0.5;
-        const yPct = (clientY - top) / height - 0.5;
-        x.set(xPct);
-        y.set(yPct);
-    }
-
-    function handleMouseLeave() {
-        x.set(0);
-        y.set(0);
-    }
-
-    const rotateX = useTransform(mouseY, [-0.5, 0.5], ["15deg", "-15deg"]);
-    const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-15deg", "15deg"]);
-
-    return (
-        <motion.div
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-                rotateX,
-                rotateY,
-                transformStyle: "preserve-3d",
-            }}
-            className={`relative transition-all duration-200 ease-out ${className}`}
-        >
-            {children}
-        </motion.div>
-    );
-};
 
 export default function Mechanical() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
     const [activeSymptom, setActiveSymptom] = useState<number | null>(null);
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -180,11 +144,11 @@ export default function Mechanical() {
                         </div>
                     </ScrollReveal>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ perspective: "1000px" }}>
+                    <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <ScrollReveal key={index} delay={index * 0.1}>
-                                <TiltCard className="h-full">
-                                    <div className="group relative p-8 bg-white border border-gray-200 hover:border-orange-500/60 transition-colors duration-500 h-full overflow-hidden rounded-xl shadow-lg hover:shadow-xl">
+                                <SpotLightItem className="h-full bg-white border border-gray-200 rounded-xl overflow-hidden">
+                                    <div className="group relative p-8 h-full">
                                         {/* Corner Accents */}
                                         <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-orange-500 opacity-50 group-hover:opacity-100 transition-opacity" />
                                         <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-orange-500 opacity-50 group-hover:opacity-100 transition-opacity" />
@@ -214,14 +178,11 @@ export default function Mechanical() {
                                                 </li>
                                             ))}
                                         </ul>
-
-                                        {/* Background Glow */}
-                                        <div className="absolute -inset-1 bg-orange-500/20 blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
                                     </div>
-                                </TiltCard>
+                                </SpotLightItem>
                             </ScrollReveal>
                         ))}
-                    </div>
+                    </Spotlight>
                 </div>
             </section>
 
@@ -307,6 +268,9 @@ export default function Mechanical() {
 
             {/* Process / Philosophy Section */}
             <section className="py-32 bg-gray-100 relative overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none opacity-30">
+                    <CpuArchitecture />
+                </div>
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-900/10 to-transparent pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto px-4 relative z-10">

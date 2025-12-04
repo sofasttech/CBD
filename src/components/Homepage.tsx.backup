@@ -97,6 +97,8 @@ export default function Homepage() {
     { top: '67%', right: '33%', title: 'Engine', desc: 'Mechanical repairs and servicing.' },
   ];
 
+  // Hero rotation removed: only one hero image is used currently.
+
   // Card stack replaces the previous auto-rotating about image.
   // Swiped cards are animated out then moved to the back of the stack.
   useEffect(() => {
@@ -137,6 +139,24 @@ export default function Homepage() {
 
       {/* Hero - Horizontal Scroll */}
       <section id="home" className="pt-16">
+        <header className='text-white relative w-full bg-slate-950 grid place-content-center h-[80vh]'>
+          <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[length:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+
+          <h1 className='text-6xl font-bold text-center tracking-tight relative z-10'>
+            I know You Love to Scroll <br />
+            So Scroll
+          </h1>
+        </header>
+        <HorizontalScrollSection />
+        <footer className='bg-red-600 font-medium text-white grid place-content-center h-[80vh]'>
+          <p>
+            Inspired By{' '}
+            <a target='_blank' href='https://twitter.com/mattgperry'>
+              Matt Perry
+            </a>
+          </p>
+        </footer>
+      </section>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           {/* Left side text */}
           <div>
@@ -197,12 +217,7 @@ export default function Homepage() {
             )}
           </div>
         </div>
-        
-        <div className="h-24"></div>
-        
-        <HorizontalScrollSection />
-        
-      </section>
+      </motion.section>
 
       {/* Cars Ribbon */}
       <section className="w-full relative">
@@ -215,30 +230,30 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* Infinity Brand Scroll */}
-      <section className="px-2 py-14 bg-white-100 overflow-hidden">
-        <div className="max-w-8xl mx-auto">
-          <div className="relative flex overflow-hidden">
-            <div className="flex gap-0 animate-[infinite-scroll_25s_linear_infinite]">
-              <div className="flex gap-0 flex-shrink-0">
-                <img src="/brand-01.png" alt="Brand 1" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-02.png" alt="Brand 2" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-03.png" alt="Brand 3" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-04.png" alt="Brand 4" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-05.png" alt="Brand 5" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-06.png" alt="Brand 6" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-07.png" alt="Brand 7" className="h-28 w-auto mx-6 flex-shrink-0" />
-              </div>
-              <div className="flex gap-0 flex-shrink-0" aria-hidden="true">
-                <img src="/brand-01.png" alt="Brand 1" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-02.png" alt="Brand 2" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-03.png" alt="Brand 3" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-04.png" alt="Brand 4" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-05.png" alt="Brand 5" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-06.png" alt="Brand 6" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-07.png" alt="Brand 7" className="h-28 w-auto mx-6 flex-shrink-0" />
-              </div>
-            </div>
+      {/* New Section */}
+      <section className="px-2 py-14 bg-white-100">
+        <div className="max-w-8xl mx-auto text-center">
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex items-center gap-12"
+              animate={{ x: [-800, 0] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <img src="/brand-01.png" alt="Brand 1" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-02.png" alt="Brand 2" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-03.png" alt="Brand 3" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-04.png" alt="Brand 4" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-05.png" alt="Brand 5" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-06.png" alt="Brand 6" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-07.png" alt="Brand 7" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-01.png" alt="Brand 1" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-02.png" alt="Brand 2" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-03.png" alt="Brand 3" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-04.png" alt="Brand 4" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-05.png" alt="Brand 5" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-06.png" alt="Brand 6" className="h-28 w-22 flex-shrink-0" />
+              <img src="/brand-07.png" alt="Brand 7" className="h-28 w-22 flex-shrink-0" />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -378,135 +393,142 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/*Distinctive Services Section - Stacking Cards */}
-      <section id="services" className="text-white w-full bg-black">
-        <div className="text-center py-16">
+      {/*Distinctive Services Section  */}
+      <motion.section
+        id="services"
+        className="px-0 pt-16 pb-[5rem] bg-black text-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold uppercase mb-4">DISTINCTIVE SERVICE FOR DISCERNING DRIVERS</h2>
-          <p className="text-xl mb-8 uppercase font-medium">OUR SERVICES</p>
+          <p className="text-xl mb-12 uppercase font-medium">OUR SERVICES</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">01</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
+                <h3 className="text-2xl font-bold uppercase mb-2">MAINTENANCE</h3>
+                <p className="text-sm mb-4">Keep your vehicle running smoothly and safely, giving you peace of mind on every journey.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">MAINTENANCE</h3>
+                  <p className="text-sm">Keep your vehicle running smoothly and safely, giving you peace of mind on every journey. Our comprehensive maintenance services include regular oil changes, tire rotations, brake inspections, fluid checks, and diagnostic tests to prevent breakdowns and extend your vehicle's lifespan.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/tyer.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">02</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
+                <h3 className="text-2xl font-bold uppercase mb-2">WHEELS</h3>
+                <p className="text-sm mb-4">Upgrade your ride with precision wheel services that enhance performance and style.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">WHEELS</h3>
+                  <p className="text-sm">Upgrade your ride with precision wheel services that enhance performance and style. We offer wheel alignment, balancing, tire replacement, and custom rim installations to improve handling, safety, and aesthetics.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">03</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
+                <h3 className="text-2xl font-bold uppercase mb-2">ALIGNMENT</h3>
+                <p className="text-sm mb-4">Ensure perfect alignment for a smoother, safer drive that you can feel in every turn.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">ALIGNMENT</h3>
+                  <p className="text-sm">Ensure perfect alignment for a smoother, safer drive that you can feel in every turn. Proper wheel alignment improves fuel efficiency, reduces tire wear, and enhances vehicle stability and handling.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-polishing-tray.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">04</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
+                <h3 className="text-2xl font-bold uppercase mb-2">POWER COATING</h3>
+                <p className="text-sm mb-4">Protect and beautify your vehicle with durable power coating that lasts a lifetime.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">POWER COATING</h3>
+                  <p className="text-sm">Our power coating service provides a durable, high-quality finish that protects your vehicle from corrosion, scratches, and fading. Using advanced electrostatic application techniques, we ensure even coverage and long-lasting color retention. Ideal for wheels, frames, and custom parts.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/breaks.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">05</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
+                <h3 className="text-2xl font-bold uppercase mb-2">BRAKES</h3>
+                <p className="text-sm mb-4">Stop with confidence thanks to our expert brake services that prioritize your safety.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">BRAKES</h3>
+                  <p className="text-sm">Our brake service ensures your vehicle's stopping power is at its best. We inspect, repair, and replace brake pads, rotors, calipers, and brake lines using high-quality parts. Regular maintenance prevents accidents and extends the life of your braking system.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-[url('/car-pieces.png')] bg-contain bg-center bg-no-repeat border border-white group">
+              <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">06</div>
+              <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
+                <h3 className="text-2xl font-bold uppercase mb-2">ENGINE SERVICE</h3>
+                <p className="text-sm mb-4">Revive your engine's power and reliability, delivering the performance you deserve.</p>
+                <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                  LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+              <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold uppercase mb-4">ENGINE SERVICE</h3>
+                  <p className="text-sm">Our comprehensive engine service includes diagnostics, tune-ups, oil changes, and major repairs. We use advanced tools to identify issues early and provide expert repairs to keep your engine running smoothly. From routine maintenance to complex overhauls, we ensure optimal performance and longevity.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div className="w-full">
-          <div className="sm:sticky sm:top-0 w-full">
-            <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-green-600 h-[450px] w-[70%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
-                <div className="flex h-full gap-6">
-                  <div className="flex-1 flex flex-col justify-center gap-4">
-                    <div className="text-white text-2xl font-['Tomorrow'] mb-2">01</div>
-                    <h3 className="text-3xl md:text-4xl font-bold uppercase">MAINTENANCE</h3>
-                    <p className="text-base md:text-lg">Keep your vehicle running smoothly and safely, giving you peace of mind on every journey. Our comprehensive maintenance services include regular oil changes, tire rotations, brake inspections, fluid checks, and diagnostic tests to prevent breakdowns and extend your vehicle's lifespan.</p>
-                    <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-sm font-medium w-fit">
-                      LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
-                    </button>
-                  </div>
-                  <div className="hidden md:block w-1/3 relative">
-                    <img src="/car-polishing-tray.png" alt="Maintenance" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          
-          <div className="sm:sticky sm:top-2 w-full">
-            <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-blue-600 h-[450px] w-[75%] rounded-lg p-8 md:p-10 shadow-[0_-5px_16px_4px_rgba(0,0,0,0.8),0_2px_4px_-1px_rgba(0,0,0,0.06)] overflow-hidden relative">
-                <div className="flex h-full gap-6">
-                  <div className="flex-1 flex flex-col justify-center gap-4">
-                    <div className="text-white text-2xl font-['Tomorrow'] mb-2">02</div>
-                    <h3 className="text-3xl md:text-4xl font-bold uppercase">WHEELS</h3>
-                    <p className="text-base md:text-lg">Upgrade your ride with precision wheel services that enhance performance and style. We offer wheel alignment, balancing, tire replacement, and custom rim installations to improve handling, safety, and aesthetics.</p>
-                    <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-sm font-medium w-fit">
-                      LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
-                    </button>
-                  </div>
-                  <div className="hidden md:block w-1/3 relative">
-                    <img src="/tyer.png" alt="Wheels" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          
-          <div className="sm:sticky sm:top-4 w-full">
-            <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-orange-500 h-[450px] w-[80%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
-                <div className="flex h-full gap-6">
-                  <div className="flex-1 flex flex-col justify-center gap-4">
-                    <div className="text-white text-2xl font-['Tomorrow'] mb-2">03</div>
-                    <h3 className="text-3xl md:text-4xl font-bold uppercase">ALIGNMENT</h3>
-                    <p className="text-base md:text-lg">Ensure perfect alignment for a smoother, safer drive that you can feel in every turn. Proper wheel alignment improves fuel efficiency, reduces tire wear, and enhances vehicle stability and handling.</p>
-                    <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-sm font-medium w-fit">
-                      LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
-                    </button>
-                  </div>
-                  <div className="hidden md:block w-1/3 relative">
-                    <img src="/car-pieces.png" alt="Alignment" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          
-          <div className="sm:sticky sm:top-6 w-full">
-            <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-red-600 h-[450px] w-[85%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
-                <div className="flex h-full gap-6">
-                  <div className="flex-1 flex flex-col justify-center gap-4">
-                    <div className="text-white text-2xl font-['Tomorrow'] mb-2">04</div>
-                    <h3 className="text-3xl md:text-4xl font-bold uppercase">POWER COATING</h3>
-                    <p className="text-base md:text-lg">Our power coating service provides a durable, high-quality finish that protects your vehicle from corrosion, scratches, and fading. Using advanced electrostatic application techniques, we ensure even coverage and long-lasting color retention.</p>
-                    <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-sm font-medium w-fit">
-                      LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
-                    </button>
-                  </div>
-                  <div className="hidden md:block w-1/3 relative">
-                    <img src="/car-polishing-tray.png" alt="Power Coating" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          
-          <div className="sm:sticky sm:top-8 w-full">
-            <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-purple-600 h-[450px] w-[90%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
-                <div className="flex h-full gap-6">
-                  <div className="flex-1 flex flex-col justify-center gap-4">
-                    <div className="text-white text-2xl font-['Tomorrow'] mb-2">05</div>
-                    <h3 className="text-3xl md:text-4xl font-bold uppercase">BRAKES</h3>
-                    <p className="text-base md:text-lg">Our brake service ensures your vehicle's stopping power is at its best. We inspect, repair, and replace brake pads, rotors, calipers, and brake lines using high-quality parts. Regular maintenance prevents accidents and extends the life of your braking system.</p>
-                    <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-sm font-medium w-fit">
-                      LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
-                    </button>
-                  </div>
-                  <div className="hidden md:block w-1/3 relative">
-                    <img src="/breaks.png" alt="Brakes" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          
-          <div className="sm:sticky sm:top-10 w-full">
-            <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-indigo-600 h-[450px] w-[95%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
-                <div className="flex h-full gap-6">
-                  <div className="flex-1 flex flex-col justify-center gap-4">
-                    <div className="text-white text-2xl font-['Tomorrow'] mb-2">06</div>
-                    <h3 className="text-3xl md:text-4xl font-bold uppercase">ENGINE SERVICE</h3>
-                    <p className="text-base md:text-lg">Our comprehensive engine service includes diagnostics, tune-ups, oil changes, and major repairs. We use advanced tools to identify issues early and provide expert repairs to keep your engine running smoothly. From routine maintenance to complex overhauls, we ensure optimal performance and longevity.</p>
-                    <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-sm font-medium w-fit">
-                      LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
-                    </button>
-                  </div>
-                  <div className="hidden md:block w-1/3 relative">
-                    <img src="/car-pieces.png" alt="Engine Service" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
+      </motion.section>
 
       {/* Why Choose Us */}
       <motion.section
