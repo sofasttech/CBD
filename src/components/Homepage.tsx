@@ -386,9 +386,9 @@ export default function Homepage() {
         </div>
         
         <div className="w-full">
-          <div className="sm:sticky sm:top-0 w-full">
+          <div className="sticky top-0 w-full">
             <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-green-600 h-[450px] w-[70%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
+              <article className="bg-green-600 h-[450px] w-[90%] md:w-[70%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
                 <div className="flex h-full gap-6">
                   <div className="flex-1 flex flex-col justify-center gap-4">
                     <div className="text-white text-2xl font-['Tomorrow'] mb-2">01</div>
@@ -406,9 +406,9 @@ export default function Homepage() {
             </div>
           </div>
           
-          <div className="sm:sticky sm:top-2 w-full">
+          <div className="sticky top-2 w-full">
             <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-blue-600 h-[450px] w-[75%] rounded-lg p-8 md:p-10 shadow-[0_-5px_16px_4px_rgba(0,0,0,0.8),0_2px_4px_-1px_rgba(0,0,0,0.06)] overflow-hidden relative">
+              <article className="bg-blue-600 h-[450px] w-[92%] md:w-[75%] rounded-lg p-8 md:p-10 shadow-[0_-5px_16px_4px_rgba(0,0,0,0.8),0_2px_4px_-1px_rgba(0,0,0,0.06)] overflow-hidden relative">
                 <div className="flex h-full gap-6">
                   <div className="flex-1 flex flex-col justify-center gap-4">
                     <div className="text-white text-2xl font-['Tomorrow'] mb-2">02</div>
@@ -426,9 +426,9 @@ export default function Homepage() {
             </div>
           </div>
           
-          <div className="sm:sticky sm:top-4 w-full">
+          <div className="sticky top-4 w-full">
             <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-orange-500 h-[450px] w-[80%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
+              <article className="bg-orange-500 h-[450px] w-[94%] md:w-[80%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
                 <div className="flex h-full gap-6">
                   <div className="flex-1 flex flex-col justify-center gap-4">
                     <div className="text-white text-2xl font-['Tomorrow'] mb-2">03</div>
@@ -446,9 +446,9 @@ export default function Homepage() {
             </div>
           </div>
           
-          <div className="sm:sticky sm:top-6 w-full">
+          <div className="sticky top-6 w-full">
             <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-red-600 h-[450px] w-[85%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
+              <article className="bg-red-600 h-[450px] w-[96%] md:w-[85%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
                 <div className="flex h-full gap-6">
                   <div className="flex-1 flex flex-col justify-center gap-4">
                     <div className="text-white text-2xl font-['Tomorrow'] mb-2">04</div>
@@ -466,9 +466,9 @@ export default function Homepage() {
             </div>
           </div>
           
-          <div className="sm:sticky sm:top-8 w-full">
+          <div className="sticky top-8 w-full">
             <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-purple-600 h-[450px] w-[90%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
+              <article className="bg-purple-600 h-[450px] w-[98%] md:w-[90%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
                 <div className="flex h-full gap-6">
                   <div className="flex-1 flex flex-col justify-center gap-4">
                     <div className="text-white text-2xl font-['Tomorrow'] mb-2">05</div>
@@ -486,9 +486,9 @@ export default function Homepage() {
             </div>
           </div>
           
-          <div className="sm:sticky sm:top-10 w-full">
+          <div className="sticky top-10 w-full">
             <div className="w-full h-screen flex items-center justify-center">
-              <article className="bg-indigo-600 h-[450px] w-[95%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
+              <article className="bg-indigo-600 h-[450px] w-[100%] md:w-[95%] rounded-lg p-8 md:p-10 shadow-lg overflow-hidden relative">
                 <div className="flex h-full gap-6">
                   <div className="flex-1 flex flex-col justify-center gap-4">
                     <div className="text-white text-2xl font-['Tomorrow'] mb-2">06</div>
