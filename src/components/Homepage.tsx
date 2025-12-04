@@ -200,7 +200,7 @@ export default function Homepage() {
         
         <div className="h-24"></div>
         
-        <HorizontalScrollSection />
+     
         
       </section>
 
