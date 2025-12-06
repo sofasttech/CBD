@@ -199,7 +199,7 @@ export default function TipsAdvice() {
                                 <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${
                                     activeCategory === category.name ? 'text-white' : 'text-blue-600'
                                 }`} />
-                                <span className="text-sm">{category.name}</span>
+                                <span className="text-sm hidden md:inline">{category.name}</span>
                             </button>
                         ))}
                     </div>

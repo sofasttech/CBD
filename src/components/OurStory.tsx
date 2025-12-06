@@ -51,7 +51,7 @@ export default function OurStory() {
                             Est. 1990 • Auckland, NZ
                         </p>
                         <h1 className="text-5xl md:text-8xl font-['Tomorrow'] font-bold uppercase mb-8 leading-tight">
-                            Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Perfection</span>
+                            <span className="text-white">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Perfection</span>
                         </h1>
                     </motion.div>
 
@@ -241,6 +241,83 @@ export default function OurStory() {
                         <p className="text-gray-700 leading-relaxed text-lg">
                             Today, we continue to uphold the values that our founders established: integrity in every repair, transparency in every quote, and excellence in every outcome.
                         </p>
+                    </div>
+                </div>
+            </motion.section>
+
+            {/* Our Leadership Section */}
+            <motion.section
+                className="px-4 py-16 bg-white"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                viewport={{ once: true }}
+            >
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12">
+                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Leadership</p>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase">Meet Our Team</h2>
+                    </div>
+
+                    <div className='group flex max-md:flex-col justify-center gap-2 w-[80%] mx-auto mb-10 mt-3'>
+                        {[
+                            {
+                                id: '1',
+                                url: 'https://randomuser.me/api/portraits/men/32.jpg',
+                                title: 'Adrian Paul',
+                                description: 'COO & Co-Founder',
+                                tags: ['Floral', 'Highlands', 'Wildflowers', 'Colorful', 'Resilience'],
+                            },
+                            {
+                                id: '2',
+                                url: 'https://randomuser.me/api/portraits/men/45.jpg',
+                                title: 'Flualy Cual',
+                                description: 'Founder & CEO',
+                                tags: ['Twilight', 'Peaks', 'Silhouette', 'Evening Sky', 'Peaceful'],
+                            },
+                            {
+                                id: '3',
+                                url: 'https://randomuser.me/api/portraits/men/67.jpg',
+                                title: 'Naymur Rahman',
+                                description: 'CTO & Co-Founder',
+                                tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],
+                            },
+                        ].map((item) => {
+                            return (
+                                <motion.article 
+                                    key={item.id} 
+                                    className='group/article relative w-full rounded-xl overflow-hidden transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur-sm after:rounded-lg after:transition-all focus-within:ring-3 focus-within:ring-indigo-300'
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: parseInt(item.id) * 0.1 }}
+                                    viewport={{ once: true }}
+                                    whileHover={{
+                                        flex: "1 1 60%",
+                                        transition: { duration: 0.3, ease: [0.5, 0.85, 0.25, 1.15] }
+                                    }}
+                                    style={{ flex: "1 1 33.33%" }}
+                                >
+                                    <a
+                                        className='absolute inset-0 text-white z-10  p-3 flex flex-col justify-end'
+                                        href='#0'
+                                    >
+                                        <h1 className=' text-xl font-medium   md:whitespace-nowrap md:truncate md:opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 md:translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-300 group-focus-within/article:delay-300'>
+                                            {item?.title}
+                                        </h1>
+                                        <span className=' text-3xl font-medium  md:whitespace-nowrap md:truncate md:opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 md:translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-500 group-focus-within/article:delay-500'>
+                                            {item?.description}
+                                        </span>
+                                    </a>
+                                    <img
+                                        className='object-cover h-72 md:h-[420px]  w-full'
+                                        src={item?.url}
+                                        width='960'
+                                        height='480'
+                                        alt={item?.title}
+                                    />
+                                </motion.article>
+                            );
+                        })}
                     </div>
                 </div>
             </motion.section>
