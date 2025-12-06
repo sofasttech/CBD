@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Layers, Wrench, Shield, CloudSnow, Home } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function TipsAdvice() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState('All');
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -23,99 +25,115 @@ export default function TipsAdvice() {
     const tips = [
         {
             category: 'Maintenance',
-            title: 'Regular Oil Changes: The Lifeblood of Your Engine',
-            excerpt: 'Learn why regular oil changes are crucial for engine longevity and how to choose the right oil for your vehicle.',
+            title: 'Best Coolant for Your Car: A Simple Guide for Drivers',
+            excerpt: 'Choosing the right coolant protects your engine, prevents overheating, and ensures your car runs smoothly throughout the year.',
             image: '/car-tune-up.jpg',
             tips: [
-                'Change oil every 5,000-10,000 km depending on your vehicle',
-                'Use manufacturer-recommended oil grade',
-                'Check oil level monthly between changes',
-                'Watch for dark or gritty oil indicating needed change'
-            ]
+                'Green coolant for older vehicles - replace every 2 years or 40,000 km',
+                'Red/Pink coolant for newer models with long-lasting protection',
+                'Blue coolant popular with Japanese cars - works well with aluminium',
+                'Always check your owner\'s manual for the correct coolant type'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/coolant-guide'
         },
         {
             category: 'Maintenance',
-            title: 'Tire Maintenance 101',
-            excerpt: 'Proper tire care improves safety, fuel efficiency, and extends tire life. Here\'s what you need to know.',
+            title: 'How Much Engine Oil Does My Car Need? A Simple Guide for Drivers',
+            excerpt: 'Engine oil plays a crucial role in maintaining your vehicle\'s health. It reduces friction, cools engine parts, and carries away dirt and contaminants.',
             image: '/tyer.png',
             tips: [
-                'Check tire pressure monthly when tires are cold',
-                'Rotate tires every 10,000 km for even wear',
-                'Replace tires when tread depth reaches 1.5mm',
-                'Look for uneven wear patterns indicating alignment issues'
-            ]
+                'Small engines typically need 3-4 litres, larger engines 5-8 litres or more',
+                'Check oil level between MIN and MAX marks on dipstick regularly',
+                'Use the correct oil grade specified in your owner\'s manual',
+                'Change oil every 10,000-15,000 km depending on driving conditions'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/engine-oil-guide'
         },
         {
-            category: 'Safety',
-            title: 'Brake System Warning Signs',
-            excerpt: 'Recognizing brake problems early can prevent accidents and expensive repairs. Know what to listen and feel for.',
+            category: 'Maintenance',
+            title: 'How to Charge a Car Battery: A Simple Guide for Everyday Drivers',
+            excerpt: 'A flat or weak battery is one of the most common reasons a car refuses to start. Knowing how to charge a car battery safely can save time and prevent breakdowns.',
             image: '/breaks.png',
             tips: [
-                'Squealing or grinding noises when braking',
-                'Soft or spongy brake pedal feel',
-                'Vehicle pulls to one side when braking',
-                'Vibrations through brake pedal or steering wheel'
-            ]
+                'Use a suitable battery charger - charging can take 4-12 hours',
+                'Always connect positive terminal first, then negative',
+                'Jump-starting provides quick power to get the engine running',
+                'Let engine run 15+ minutes after jump-start to recharge'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/battery-charging-guide'
         },
         {
             category: 'Safety',
-            title: 'Dashboard Warning Lights Decoded',
-            excerpt: 'Understanding your dashboard warning lights helps you respond appropriately to potential vehicle issues.',
+            title: 'Why Front Bumper Repair Matters: A Practical Guide for Drivers',
+            excerpt: 'The front bumper plays a bigger role in vehicle safety and performance than many drivers realise. It absorbs impact during collisions and protects key components.',
             image: '/car-pieces.png',
             tips: [
-                'Engine light: Get diagnostics run immediately',
-                'Oil pressure warning: Stop driving and check oil level',
-                'Battery light: Charging system issue, have checked soon',
-                'Brake warning: Check brake fluid and have brakes inspected'
-            ]
+                'Modern bumpers work with airbags, sensors, and crumple zones',
+                'Damaged bumpers expose radiators, headlights, and sensors to harm',
+                'Professional repairs restore strength, alignment, and finish',
+                'Insurance often requires repairs to maintain coverage'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/bumper-repair-guide'
         },
         {
-            category: 'Seasonal',
-            title: 'Preparing Your Vehicle for Winter',
-            excerpt: 'Winter weather demands extra vehicle care. Follow these tips to stay safe on the roads.',
+            category: 'Maintenance',
+            title: 'How Hybrid Cars Work: A Practical Guide for New Zealand Drivers',
+            excerpt: 'Hybrid vehicles offer quieter driving, lower fuel use, and reduced emissions. Understanding how they work helps with servicing, repairs, and maintaining safety systems.',
             image: '/panel-beatt.jpg',
             tips: [
-                'Check battery health and terminals before cold weather',
-                'Ensure coolant is at proper concentration for freezing protection',
-                'Test heater and defroster operation',
-                'Keep windscreen washer fluid topped up with winter formula'
-            ]
+                'Combines petrol engine with electric motor for efficiency',
+                'Regenerative braking captures energy and recharges the battery',
+                'Lower fuel consumption and reduced exhaust emissions',
+                'Requires specialized care for battery, inverter, and sensors'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/hybrid-cars-guide'
         },
         {
-            category: 'Seasonal',
-            title: 'Summer Vehicle Care Tips',
-            excerpt: 'Hot weather can take a toll on your vehicle. Protect it with these summer maintenance tips.',
+            category: 'Maintenance',
+            title: 'Why Your Car Vibrates While Idling: A Driver\'s Guide',
+            excerpt: 'A smooth-running engine should stay steady when the car is stopped. If your vehicle shakes or vibrates while idling, it indicates something needs attention.',
             image: '/headlight.webp',
             tips: [
-                'Check air conditioning system performance',
-                'Inspect coolant level and condition',
-                'Verify tire pressure (increases in heat)',
-                'Test battery (heat accelerates battery failure)'
-            ]
+                'Worn or dirty spark plugs cause engine misfires and shaking',
+                'Blocked air or fuel filters reduce flow and create rough idling',
+                'Damaged engine mounts allow excessive engine movement',
+                'Vacuum leaks alter air-fuel balance causing unstable idle'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/idle-vibration-guide'
         },
         {
-            category: 'DIY',
-            title: 'Simple Checks You Can Do at Home',
-            excerpt: 'Save money and catch problems early with these simple DIY vehicle checks.',
+            category: 'Maintenance',
+            title: 'Car Using Too Much Fuel? Key Reasons and What To Do',
+            excerpt: 'Fuel costs add up quickly when your vehicle uses more petrol than usual. Understanding the factors helps you drive efficiently and identify mechanical issues.',
             image: '/car-polishing-tray.png',
             tips: [
-                'Check all lights monthly (headlights, brake lights, indicators)',
-                'Inspect windscreen wipers for cracks or streaking',
-                'Look under vehicle for fluid leaks',
-                'Check tire tread depth with a coin'
-            ]
+                'Smooth acceleration and steady speeds improve fuel economy',
+                'Underinflated tyres increase rolling resistance and fuel use',
+                'Poor maintenance like dirty filters and old spark plugs waste fuel',
+                'Short trips and stop-start traffic prevent proper engine warm-up'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/fuel-consumption-guide'
         },
         {
-            category: 'DIY',
-            title: 'How to Check Your Fluid Levels',
-            excerpt: 'Maintaining proper fluid levels is essential for vehicle health. Here\'s how to check them yourself.',
+            category: 'Safety',
+            title: 'Can Car Tyres Be Repaired? A Simple Guide for New Zealand Drivers',
+            excerpt: 'A flat or damaged tyre is common, but not every tyre needs replacing. Understanding when repair is safe helps protect your safety and saves costs.',
             image: '/shop.webp',
             tips: [
-                'Engine oil: Check with dipstick when engine is cold',
-                'Coolant: Check reservoir when cool, between min/max marks',
-                'Brake fluid: Should be clear, replace if dark or low',
-                'Power steering fluid: Check reservoir with engine running'
-            ]
+                'Punctures in the tread area up to 6mm can usually be repaired',
+                'Sidewall damage, bulges, or large holes require replacement',
+                'Professional plug and patch repair is the most reliable method',
+                'Temporary sealants should only be used to reach a workshop'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/tyre-repair-guide'
         },
         {
             category: 'Maintenance',
@@ -130,8 +148,6 @@ export default function TipsAdvice() {
             ]
         }
     ];
-
-    const categories = ['All', 'Maintenance', 'Safety', 'Seasonal', 'DIY'];
 
     const filteredTips = activeCategory === 'All'
         ? tips
@@ -160,20 +176,30 @@ export default function TipsAdvice() {
                 </div>
             </motion.section>
 
-            {/* Category Filter */}
-            <section className="px-4 py-8 bg-gray-100">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {categories.map((category) => (
+            {/* Category Filter - Floating Dock Style */}
+            <section className="px-4 py-12 bg-gray-100">
+                <div className="max-w-7xl mx-auto flex justify-center">
+                    <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-lg rounded-full px-4 py-3 shadow-lg border border-gray-200">
+                        {[
+                            { name: 'All', icon: Layers },
+                            { name: 'Maintenance', icon: Wrench },
+                            { name: 'Safety', icon: Shield },
+                            { name: 'Seasonal', icon: CloudSnow },
+                            { name: 'DIY', icon: Home }
+                        ].map((category) => (
                             <button
-                                key={category}
-                                onClick={() => setActiveCategory(category)}
-                                className={`px-6 py-2 font-['Tomorrow'] font-medium transition ${activeCategory === category
-                                        ? 'bg-blue-600 text-white'
-                                        : 'bg-white text-gray-700 hover:bg-blue-100'
-                                    }`}
+                                key={category.name}
+                                onClick={() => setActiveCategory(category.name)}
+                                className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Tomorrow'] font-medium transition-all duration-300 ${
+                                    activeCategory === category.name
+                                        ? 'bg-blue-600 text-white shadow-md scale-105'
+                                        : 'bg-transparent text-gray-700 hover:bg-blue-50 hover:scale-105'
+                                }`}
                             >
-                                {category}
+                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${
+                                    activeCategory === category.name ? 'text-white' : 'text-blue-600'
+                                }`} />
+                                <span className="text-sm">{category.name}</span>
                             </button>
                         ))}
                     </div>
@@ -216,7 +242,10 @@ export default function TipsAdvice() {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="flex items-center text-blue-600 hover:text-blue-800 transition font-medium text-sm">
+                                    <button 
+                                        onClick={() => tip.hasDetailPage && tip.detailPageRoute && navigate(tip.detailPageRoute)}
+                                        className="flex items-center text-blue-600 hover:text-blue-800 transition font-medium text-sm"
+                                    >
                                         Learn More <ChevronRight className="w-4 h-4 ml-1" />
                                     </button>
                                 </div>
