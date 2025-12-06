@@ -111,14 +111,14 @@ function AboutAccordionSection() {
 
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p className="text-black-900 leading-relaxed font-mulish font-extralight text-lg text-justify md:text-left">
                 At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
 
             <div className="mt-6">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
-              <p className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p className="text-black-900 leading-relaxed font-mulish font-extralight text-lg text-justify md:text-left">
                 For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
               </p>
             </div>
@@ -462,172 +462,92 @@ export default function Homepage() {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Technical Excellence</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black">Premium Quality Standards</h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 - Precision Repairs */}
-            <div className="card-container group perspective-1000">
-              <div className="card-content relative w-full h-96 md:h-[28rem] transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-                {/* Back */}
-                <div className="card-back absolute w-full h-full rounded-xl overflow-hidden backface-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="absolute w-40 h-[160%] bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-spin-slow" />
-                  </div>
-                  <div className="absolute inset-[2px] bg-gray-900 rounded-xl flex flex-col items-center justify-center gap-6 text-white p-6">
-                    <img src="/Precision Repairs.jpg" alt="Precision Repairs" className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg" />
-                    <strong className="text-xl font-['Tomorrow']">Precision Repairs</strong>
-                    <p className="text-center text-sm text-gray-300">State-of-the-art equipment for perfect results</p>
-                  </div>
-                </div>
-                {/* Front */}
-                <div className="card-front absolute w-full h-full rounded-xl overflow-hidden backface-hidden rotate-y-180 bg-gray-900">
-                  <div className="absolute inset-0">
-                    <div className="circle-float w-24 h-24 rounded-full bg-blue-400 absolute blur-xl animate-float" style={{ left: '10%', top: '20%' }} />
-                    <div className="circle-float w-40 h-40 rounded-full bg-blue-500 absolute blur-xl animate-float-delayed-1" style={{ left: '30%', top: '0%' }} />
-                    <div className="circle-float w-8 h-8 rounded-full bg-blue-600 absolute blur-xl animate-float-delayed-2" style={{ left: '80%', top: '-10%' }} />
-                  </div>
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
-                    <span className="bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs w-fit">Premium</span>
-                    <div className="bg-black/60 backdrop-blur-md p-4 rounded-lg shadow-xl">
-                      <h3 className="text-lg font-bold font-['Tomorrow'] mb-2">Precision Repairs</h3>
-                      <p className="text-xs text-gray-300 mb-3">Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition.</p>
-                      <p className="text-xs text-gray-400">We use advanced laser measuring systems and computerized frame straightening technology to ensure every panel, body line, and structural component is perfectly aligned. From minor dents to major collision damage, our precision approach guarantees factory-level results every time.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {[
+              {
+                title: 'Precision Repairs',
+                shortDesc: 'State-of-the-art equipment for perfect results',
+                fullDesc: 'Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition. We use advanced laser measuring systems and computerized frame straightening technology to ensure every panel, body line, and structural component is perfectly aligned.',
+                image: '/Precision Repairs.jpg'
+              },
+              {
+                title: 'Quality Materials',
+                shortDesc: 'Only the best parts and materials used',
+                fullDesc: 'We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform. All our paints are premium automotive-grade with UV protection and color-matching technology. We source genuine OEM parts and certified aftermarket components.',
+                image: '/oil.jpg'
+              },
+              {
+                title: 'Expert Technicians',
+                shortDesc: 'Decades of combined experience',
+                fullDesc: 'Our team of certified professionals brings decades of experience to deliver exceptional results you can trust. Each technician holds industry certifications and undergoes continuous training on the latest repair techniques and vehicle technologies.',
+                image: '/im3.png'
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-cover bg-center border border-gray-200 group shadow-xl rounded-xl"
+                style={{ backgroundImage: `url('${feature.image}')` }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+              >
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-60 transition-opacity duration-300 group-hover:bg-opacity-80"></div>
 
-            {/* Card 2 - Quality Materials */}
-            <div className="card-container group perspective-1000">
-              <div className="card-content relative w-full h-96 md:h-[28rem] transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-                {/* Back */}
-                <div className="card-back absolute w-full h-full rounded-xl overflow-hidden backface-hidden">                
-                  <div className="absolute inset-[2px] bg-gray-900 rounded-xl flex flex-col items-center justify-center gap-6 text-white p-6">
-                    <img src="/oil.jpg" alt="Quality Materials" className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg" />
-                    <strong className="text-xl font-['Tomorrow']">Quality Materials</strong>
-                    <p className="text-center text-sm text-gray-300">Only the best parts and materials used</p>
-                  </div>
+                {/* Number Badge */}
+                <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">
                 </div>
-                {/* Front */}
-                <div className="card-front absolute w-full h-full rounded-xl overflow-hidden backface-hidden rotate-y-180 bg-gray-900">
-                  <div className="absolute inset-0">
-                    <div className="circle-float w-24 h-24 rounded-full bg-green-400 absolute blur-xl animate-float" style={{ left: '10%', top: '20%' }} />
-                    <div className="circle-float w-40 h-40 rounded-full bg-green-500 absolute blur-xl animate-float-delayed-1" style={{ left: '30%', top: '0%' }} />
-                    <div className="circle-float w-8 h-8 rounded-full bg-green-600 absolute blur-xl animate-float-delayed-2" style={{ left: '80%', top: '-10%' }} />
-                  </div>
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
-                    <span className="bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs w-fit">Guaranteed</span>
-                    <div className="bg-black/60 backdrop-blur-md p-4 rounded-lg shadow-xl">
-                      <h3 className="text-lg font-bold font-['Tomorrow'] mb-2">Quality Materials</h3>
-                      <p className="text-xs text-gray-300 mb-3">We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform.</p>
-                      <p className="text-xs text-gray-400">All our paints are premium automotive-grade with UV protection and color-matching technology. We source genuine OEM parts and certified aftermarket components, backed by comprehensive warranties. Our commitment to quality means your vehicle will look and perform like new for years to come.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Card 3 - Experienced Technicians */}
-            <div className="card-container group perspective-1000">
-              <div className="card-content relative w-full h-96 md:h-[28rem] transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-                {/* Back */}
-                <div className="card-back absolute w-full h-full rounded-xl overflow-hidden backface-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="absolute w-40 h-[160%] bg-gradient-to-r from-transparent via-orange-500 to-transparent animate-spin-slow" />
-                  </div>
-                  <div className="absolute inset-[2px] bg-gray-900 rounded-xl flex flex-col items-center justify-center gap-6 text-white p-6">
-                    <img src="/im3.png" alt="Experienced Technicians" className="w-32 h-32 md:w-40 md:h-40 brightness-0 invert" />
-                    <strong className="text-xl font-['Tomorrow']">Expert Technicians</strong>
-                    <p className="text-center text-sm text-gray-300">Decades of combined experience</p>
+                {/* Default Content */}
+                <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
+                  <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-2 text-white">{feature.title}</h3>
+                  <p className="text-sm mb-4 text-gray-200">{feature.shortDesc}</p>
+                  <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
+                    LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
+                  </button>
+                </div>
+
+                {/* Corner Brackets */}
+                <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+                <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
+                  <div className="text-left">
+                    <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-4">{feature.title}</h3>
+                    <p className="text-sm leading-relaxed text-gray-300">{feature.fullDesc}</p>
                   </div>
                 </div>
-                {/* Front */}
-                <div className="card-front absolute w-full h-full rounded-xl overflow-hidden backface-hidden rotate-y-180 bg-gray-900">
-                  <div className="absolute inset-0">
-                    <div className="circle-float w-24 h-24 rounded-full bg-orange-400 absolute blur-xl animate-float" style={{ left: '10%', top: '20%' }} />
-                    <div className="circle-float w-40 h-40 rounded-full bg-orange-500 absolute blur-xl animate-float-delayed-1" style={{ left: '30%', top: '0%' }} />
-                    <div className="circle-float w-8 h-8 rounded-full bg-red-500 absolute blur-xl animate-float-delayed-2" style={{ left: '80%', top: '-10%' }} />
-                  </div>
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
-                    <span className="bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs w-fit">Certified</span>
-                    <div className="bg-black/60 backdrop-blur-md p-4 rounded-lg shadow-xl">
-                      <h3 className="text-lg font-bold font-['Tomorrow'] mb-2">Expert Technicians</h3>
-                      <p className="text-xs text-gray-300 mb-3">Our team of certified professionals brings decades of experience to deliver exceptional results you can trust.</p>
-                      <p className="text-xs text-gray-400">Each technician holds industry certifications and undergoes continuous training on the latest repair techniques and vehicle technologies. With over 30 years of combined experience, our team has mastered the art of panel beating, spray painting, and mechanical repairs across all vehicle makes and models.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.section>
 
-      <style>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .group:hover .group-hover\\:rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        @keyframes spin-slow {
-          0% { transform: rotateZ(0deg); }
-          100% { transform: rotateZ(360deg); }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(10px); }
-        }
-        @keyframes float-delayed-1 {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(10px); }
-        }
-        @keyframes float-delayed-2 {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(10px); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 5s linear infinite;
-        }
-        .animate-float {
-          animation: float 2.6s ease-in-out infinite;
-        }
-        .animate-float-delayed-1 {
-          animation: float-delayed-1 2.6s ease-in-out infinite;
-          animation-delay: -0.8s;
-        }
-        .animate-float-delayed-2 {
-          animation: float-delayed-2 2.6s ease-in-out infinite;
-          animation-delay: -1.8s;
-        }
-      `}</style>
-
       {/* Services Section - Stacking Cards */}
       <section id="services" className="text-black w-full bg-white">
         {/* Hero Section */}
-        <div className="h-[50vh] md:h-[60vh] w-full bg-white flex items-center justify-center sticky top-0 -mb-20">
+        <div className="sticky top-0 z-0 h-[50vh] md:h-[60vh] w-full bg-white flex items-center justify-center relative">
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e5e52e_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e52e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl px-8 font-['Tomorrow'] font-bold text-center tracking-tight leading-[120%] relative z-10 -mt-32">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl px-8 font-['Tomorrow'] font-bold text-center tracking-tight leading-[120%] relative z-10 md:mb-32">
             DISTINCTIVE SERVICE FOR <br /> DISCERNING DRIVERS
           </h1>
         </div>
 
         {/* Stacking Cards Section */}
-        <div className="w-full bg-white pt-[40rem]">
+        <div className="w-full bg-transparent pt-10 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between px-4 lg:px-16 gap-8">
             {/* Cards Stack */}
             <div className="grid gap-2 flex-1">
               {/* Card 1 - Maintenance */}
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
                 <article className="bg-green-600 h-72 w-full max-w-2xl rounded-lg rotate-3 p-6 lg:p-8 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -650,7 +570,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 2 - Wheels */}
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
                 <article className="bg-blue-600 h-72 w-full max-w-2xl rounded-lg -rotate-2 p-6 lg:p-8 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -673,7 +593,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 3 - Alignment */}
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
                 <article className="bg-orange-500 h-72 w-full max-w-2xl rounded-lg rotate-2 p-6 lg:p-8 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -696,7 +616,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 4 - Power Coating */}
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
                 <article className="bg-red-600 h-72 w-full max-w-2xl rounded-lg -rotate-3 p-6 lg:p-8 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -719,7 +639,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 5 - Brakes */}
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
                 <article className="bg-purple-600 h-72 w-full max-w-2xl rounded-lg rotate-1 p-6 lg:p-8 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -742,7 +662,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 6 - Engine Service */}
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
                 <article className="bg-indigo-600 h-72 w-full max-w-2xl rounded-lg -rotate-1 p-6 lg:p-8 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -766,7 +686,7 @@ export default function Homepage() {
             </div>
 
             {/* Sticky Side Text */}
-            <div className="hidden lg:grid sticky top-0 h-screen place-content-center">
+            <div className="hidden lg:grid sticky top-[40vh] h-[50vh] place-content-center">
               <h2 className="text-3xl lg:text-5xl px-8 font-medium font-['Tomorrow'] text-center tracking-tight leading-[120%]">
                 OUR <br /> SERVICES 😎
               </h2>
@@ -774,6 +694,8 @@ export default function Homepage() {
           </div>
         </div>
       </section>
+
+      <div className="h-40 bg-white"></div>
 
       {/* Why Choose Us */}
       <motion.section
@@ -1012,3 +934,6 @@ export default function Homepage() {
     </div>
   );
 }
+
+
+
