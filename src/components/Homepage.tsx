@@ -4,6 +4,7 @@ import { motion, useInView, PanInfo } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Blog from './Blog';
+import { Timeline } from './ui/timeline';
 
 // --- Data for the image accordion ---
 const accordionItems = [
@@ -200,6 +201,112 @@ const AnimatedNumber = ({ target, suffix = '' }: { target: number; suffix?: stri
 
   return <span ref={ref}>0{suffix}</span>;
 };
+
+function TimelineDemo() {
+  const data = [
+    {
+      title: "Book Appointment",
+      content: (
+        <div>
+          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+            Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote. Our experienced advisors will assess your requirements, provide transparent pricing, and arrange a convenient time for your service. Whether it's a minor repair or major restoration, we ensure your vehicle gets the attention it deserves with our comprehensive consultation process.
+          </p>
+          <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <clipPath id="clip-timeline-1" clipPathUnits="objectBoundingBox">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M0.0249688 0C0.0111789 0 0 0.0112775 0 0.0251889V0.851385C0 0.865297 0.0111789 0.876574 0.0249688 0.876574H0.179775V0.974811C0.179775 0.988723 0.190954 1 0.204744 1H0.975031C0.988821 1 1 0.988723 1 0.974811V0.157431C1 0.143519 0.988821 0.132242 0.975031 0.132242H0.810237V0.0251889C0.810237 0.0112775 0.799058 0 0.785268 0H0.0249688Z"
+                  fill="#D9D9D9"
+                />
+              </clipPath>
+            </defs>
+            <image
+              href="/panel-beatt.jpg"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="xMidYMid slice"
+              clipPath="url(#clip-timeline-1)"
+              className="hover:scale-105 transition-all duration-300"
+            />
+          </svg>
+        </div>
+      ),
+    },
+    {
+      title: "Service & Repair",
+      content: (
+        <div>
+          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+            Our experienced technicians perform the necessary repairs and maintenance with precision and care, utilizing advanced diagnostic tools and proven techniques to identify and resolve issues efficiently.
+          </p>
+          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+            We use state-of-the-art equipment and quality materials to ensure every repair meets our high standards. From minor tune-ups to major overhauls, our comprehensive service covers everything from engine diagnostics to bodywork restoration, guaranteeing your vehicle performs at its best with our expert craftsmanship and attention to detail.
+          </p>
+          <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <clipPath id="clip-timeline-2" clipPathUnits="objectBoundingBox">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M0.0249688 0C0.0111789 0 0 0.0112775 0 0.0251889V0.851385C0 0.865297 0.0111789 0.876574 0.0249688 0.876574H0.179775V0.974811C0.179775 0.988723 0.190954 1 0.204744 1H0.975031C0.988821 1 1 0.988723 1 0.974811V0.157431C1 0.143519 0.988821 0.132242 0.975031 0.132242H0.810237V0.0251889C0.810237 0.0112775 0.799058 0 0.785268 0H0.0249688Z"
+                  fill="#D9D9D9"
+                />
+              </clipPath>
+            </defs>
+            <image
+              href="/oil.jpg"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="xMidYMid slice"
+              clipPath="url(#clip-timeline-2)"
+              className="hover:scale-105 transition-all duration-300"
+            />
+          </svg>
+        </div>
+      ),
+    },
+    {
+      title: "Quality Check",
+      content: (
+        <div>
+          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+            Every vehicle undergoes thorough quality inspection before delivery to ensure it meets our highest standards and your complete satisfaction. Our certified inspectors meticulously check every component, from mechanical systems to bodywork, using advanced diagnostic equipment and visual inspections.
+          </p>
+          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+            We perform comprehensive testing including road tests, brake inspections, fluid level checks, and alignment verification to guarantee your vehicle is safe, reliable, and ready for the road. Only when everything passes our rigorous standards do we hand over the keys.
+          </p>
+          <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <clipPath id="clip-timeline-3" clipPathUnits="objectBoundingBox">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M0.0249688 0C0.0111789 0 0 0.0112775 0 0.0251889V0.851385C0 0.865297 0.0111789 0.876574 0.0249688 0.876574H0.179775V0.974811C0.179775 0.988723 0.190954 1 0.204744 1H0.975031C0.988821 1 1 0.988723 1 0.974811V0.157431C1 0.143519 0.988821 0.132242 0.975031 0.132242H0.810237V0.0251889C0.810237 0.0112775 0.799058 0 0.785268 0H0.0249688Z"
+                  fill="#D9D9D9"
+                />
+              </clipPath>
+            </defs>
+            <image
+              href="/im3.png"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="xMidYMid slice"
+              clipPath="url(#clip-timeline-3)"
+              className="hover:scale-105 transition-all duration-300"
+            />
+          </svg>
+        </div>
+      ),
+    },
+  ];
+  return (
+    <div className="relative w-full overflow-clip">
+      <Timeline data={data} />
+    </div>
+  );
+}
 
 export default function Homepage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -819,79 +926,13 @@ export default function Homepage() {
       {/* How it works */}
       <motion.section
         id="how-it-works"
-        className="px-4 py-16 bg-black text-white"
+        className="bg-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-          <div className="flex flex-col justify-center">
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">HOW IT WORKS</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4">SUPERIOR SERVICE WITH A TOUCH OF CLASS</h2>
-            <div className="flex gap-4">
-              <button onClick={() => scrollToSection('book-appointment')} className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition">
-                <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
-                <span className="relative z-10">APPOINTMENT</span>
-                <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-              </button>
-              <button onClick={() => scrollToSection('services')} className="relative group bg-white text-black px-8 py-3 font-medium hover:bg-gray-100 transition">
-                OUR SERVICES
-                <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-              </button>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-8 shadow-lg border border-white relative">
-              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">01</div>
-              <div className="pt-12">
-                <h3 className="text-xl font-bold uppercase mb-4">BOOK AN APPOINTMENT</h3>
-                <p className="text-white-600">Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote.</p>
-              </div>
-            </div>
-            <div className="p-8 shadow-lg border border-white relative">
-              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">02</div>
-              <div className="pt-12">
-                <h3 className="text-xl font-bold uppercase mb-4">CHOOSE YOUR SERVICE</h3>
-                <p className="text-white-600">Select the specific services you require from our comprehensive range of panel beating and mechanical repairs.</p>
-              </div>
-            </div>
-            <div className="p-8 shadow-lg border border-white relative">
-              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">03</div>
-              <div className="pt-12">
-                <h3 className="text-xl font-bold uppercase mb-4">CONFIRM YOUR REQUEST</h3>
-                <p className="text-white-600">Receive confirmation of your booking details, including date, time, and estimated costs.</p>
-              </div>
-            </div>
-            <div className="p-8 shadow-lg border border-white relative">
-              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">04</div>
-              <div className="pt-12">
-                <h3 className="text-xl font-bold uppercase mb-4">DROP OFF YOUR VEHICLE</h3>
-                <p className="text-white-600">Bring your vehicle to our workshop at the scheduled time for inspection and service.</p>
-              </div>
-            </div>
-            <div className="p-8 shadow-lg border border-white relative">
-              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">05</div>
-              <div className="pt-12">
-                <h3 className="text-xl font-bold uppercase mb-4">SERVICE AND REPAIR</h3>
-                <p className="text-white-600">Our experienced technicians perform the necessary repairs and maintenance with precision and care.</p>
-              </div>
-            </div>
-            <div className="p-8 shadow-lg border border-white relative">
-              <div className="absolute top-4 left-4 bg-blue-600 text-white text-2xl font-bold px-3 py-1 ">06</div>
-              <div className="pt-12">
-                <h3 className="text-xl font-bold uppercase mb-4">REVIEW AND PICK UP</h3>
-                <p className="text-white-600">Review the completed work, receive your vehicle, and enjoy peace of mind with our quality guarantee.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <TimelineDemo />
       </motion.section>
 
       {/* FAQs */}

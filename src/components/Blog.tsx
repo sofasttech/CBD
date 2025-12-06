@@ -1,6 +1,6 @@
 
 
-import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import { ChevronsRight } from 'lucide-react';
 
 export default function Blog() {
   const posts = [
@@ -28,12 +28,12 @@ export default function Blog() {
   ];
 
   return (
-    <section id="reviews" className="py-6 bg-black text-white">
+    <section id="reviews" className="py-6 bg-white text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-16">
           <div>
             <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
-            <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-white">
+            <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-black">
               ARTICLES FROM AUTOACE
             </h2>
           </div>
@@ -49,33 +49,30 @@ export default function Blog() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           {posts.map((post, index) => (
-            <CardContainer key={index} containerClassName="py-0" className="group max-w-sm w-full">
-              <CardBody className="bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group max-w-sm w-full h-auto relative">
-                <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                <CardItem translateZ="100" className="w-full mt-0">
-                  <div className="relative h-32 bg-gradient-to-br from-gray-600 to-gray-700 overflow-hidden">
-                    <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                  </div>
-                </CardItem>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-blue-400 text-xs font-medium uppercase">{post.category}</span>
-                    <span className="text-gray-400 text-xs">{post.date}</span>
-                  </div>
-                  <CardItem translateZ="50" as="h3" className="text-base font-bold text-white mb-3">
-                    {post.title}
-                  </CardItem>
-
-                  <CardItem translateZ="60" as="p" className="text-gray-300 leading-relaxed mb-4 text-xs">
-                    {post.excerpt}
-                  </CardItem>
-                </div>
-              </CardBody>
-            </CardContainer>
+            <div key={index} className='w-full max-w-[400px] relative mt-4 h-[400px] group mx-auto bg-white border overflow-hidden rounded-md text-black'>
+              <figure className='w-full h-full rounded-md overflow-hidden'>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className='h-full w-full scale-105 group-hover:scale-100 rounded-lg object-cover transition-all duration-300'
+                />
+              </figure>
+              <div className='absolute top-0 left-0 w-full h-full transition-all duration-300 bg-gradient-to-b from-[#0066ff25] via-[#0066ff5b] to-[#0066ff]'></div>
+              <article className='p-4 space-y-2 absolute -bottom-10 group-hover:bottom-0 transition-all duration-300'>
+                <h1 className='text-2xl font-semibold capitalize w-[90%]'>
+                  {post.title}
+                </h1>
+                <a
+                  href='#'
+                  className='text-base text-white font-normal group-hover:opacity-100 opacity-0 translate-y-2 group-hover:translate-y-0 pt-2 flex gap-1 transition-all duration-300'
+                >
+                  Read Story
+                  <span>
+                    <ChevronsRight />
+                  </span>
+                </a>
+              </article>
+            </div>
           ))}
         </div>
       </div>
