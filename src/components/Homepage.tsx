@@ -166,7 +166,7 @@ const AnimatedPercentage = ({ target }: { target: number }) => {
     }
   }, [inView, started, target]);
 
-  return <span ref={ref}>0%</span>;
+  return <span ref={ref} className="text-black">0%</span>;
 };
 
 const AnimatedNumber = ({ target, suffix = '' }: { target: number; suffix?: string }) => {
@@ -807,7 +807,7 @@ export default function Homepage() {
       {/* Why Choose Us */}
       <motion.section
         id="why-choose-us"
-        className="py-0 pb-0 bg-black"
+        className="py-0 pb-0 bg-white"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -815,17 +815,17 @@ export default function Homepage() {
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-0 items-center">
           {/* Left Column: Content and Persuasion */}
-          <div className="text-white p-8 h-90 md:h-[38.8rem] flex flex-col justify-center md:bg-black">
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">WHY CHOOSE US</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4">ATTENTION TO DETAIL, TAILORED TO YOU</h2>
-            <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg mb-8">
+          <div className="text-white p-8 h-90 md:h-[38.8rem] flex flex-col justify-center md:white">
+            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">WHY CHOOSE US</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4 text-black">ATTENTION TO DETAIL, TAILORED TO YOU</h2>
+            <p className="text-gray-900 leading-relaxed font-mulish font-bold text-lg mb-8">
               At CBD Panelbeating & Mechanical, we combine decades of expertise with a personalized approach to ensure every vehicle receives the care it deserves. Our commitment to precision and quality means your car isn't just repaired—it's restored to perfection.
             </p>
             {/* Trust Indicators (Progress Bars) */}
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between mb-2">
-                  <span className="text-white font-medium">EXPERT TECHNICIANS</span>
+                  <span className="text-black font-medium">EXPERT TECHNICIANS</span>
                   <AnimatedPercentage target={99} />
                 </div>
                 <div className="w-full bg-gray-700 h-3 rounded-full">
@@ -840,7 +840,7 @@ export default function Homepage() {
               </div>
               <div>
                 <div className="flex justify-between mb-2">
-                  <span className="text-white font-medium">QUICK TURNAROUND</span>
+                  <span className="text-black font-medium">QUICK TURNAROUND</span>
                   <AnimatedPercentage target={99} />
                 </div>
                 <div className="w-full bg-gray-700 h-3 rounded-full">
@@ -855,7 +855,7 @@ export default function Homepage() {
               </div>
               <div>
                 <div className="flex justify-between mb-2">
-                  <span className="text-white font-medium">QUALITY ASSURANCE</span>
+                  <span className="text-black font-medium">QUALITY ASSURANCE</span>
                   <AnimatedPercentage target={100} />
                 </div>
                 <div className="w-full bg-gray-700 h-3 rounded-full">
@@ -877,51 +877,7 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-
-
-      {/* Achievements */}
-      <motion.section
-        id="achievements"
-        className="pt-0 py-16 bg-black "
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-0 items-center">
-          {/* Left Column: Visual Emphasis */}
-          <div className="relative h-96 md:h-[46rem] flex items-center justify-center order-2 md:order-1">
-            <img src="/tesla.jpg" alt="High-Performance Vehicle" className="w-full h-full object-cover " />
-          </div>
-          {/* Right Column: Establishing Authority */}
-          <div className="text-white p-8  h-[44rem] md:h-[46rem] flex flex-col justify-center order-1 md:order-2 md:bg-black">
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">ACHIEVEMENTS</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4">DRIVING IN STYLE, EXPERTLY MAINTAINED</h2>
-            <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg mb-8">
-              Our commitment to excellence is reflected in our track record of delivering top-tier automotive services across New Zealand. From routine maintenance to complex repairs, we ensure every vehicle leaves our workshops in perfect condition.
-            </p>
-            {/* Key Statistics Grid */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center">
-                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={25} suffix="+" /></div>
-                <div className="text-sm text-gray-300">Years of Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={600} suffix="+" /></div>
-                <div className="text-sm text-gray-300">Expert Mechanics</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={9900} suffix="K+" /></div>
-                <div className="text-sm text-gray-300">Repaired Vehicles</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2"><AnimatedNumber target={80} suffix="+" /></div>
-                <div className="text-sm text-gray-300">Company Branches</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.section>
+      <div className="h-20 bg-white"></div>
 
       {/* How it works */}
       <motion.section

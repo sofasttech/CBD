@@ -36,7 +36,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h2 className="mb-4 max-w-4xl text-4xl md:text-7xl text-black font-['Tomorrow'] font-bold uppercase">
           How It Works
         </h2>
-        <p className="max-w-sm text-sm text-neutral-700 md:text-base">
+        <p className="max-w-sm text-sm text-neutral-700 md:text-base font-bold">
           Our streamlined process ensures your vehicle receives the best care from start to finish.
         </p>
       </div>
