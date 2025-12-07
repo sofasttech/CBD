@@ -16,6 +16,13 @@ import HybridCarsGuide from './components/HybridCarsGuide';
 import IdleVibrationGuide from './components/IdleVibrationGuide';
 import FuelConsumptionGuide from './components/FuelConsumptionGuide';
 import TyreRepairGuide from './components/TyreRepairGuide';
+import BrakeWarningGuide from './components/BrakeWarningGuide';
+import DashboardWarningLights from './components/DashboardWarningLights';
+import WinterPreparationGuide from './components/WinterPreparationGuide';
+import SummerCareGuide from './components/SummerCareGuide';
+import PanelBeatingCosts from './components/PanelBeatingCosts';
+import MinorAccidentGuide from './components/MinorAccidentGuide';
+import RepairOrReplace from './components/RepairOrReplace';
 
 function App() {
   return (
@@ -38,6 +45,13 @@ function App() {
         <Route path="/tips-advice/idle-vibration-guide" element={<IdleVibrationGuide />} />
         <Route path="/tips-advice/fuel-consumption-guide" element={<FuelConsumptionGuide />} />
         <Route path="/tips-advice/tyre-repair-guide" element={<TyreRepairGuide />} />
+        <Route path="/tips-advice/brake-warning-signs" element={<BrakeWarningGuide />} />
+        <Route path="/tips-advice/dashboard-warning-lights" element={<DashboardWarningLights />} />
+        <Route path="/tips-advice/winter-preparation-guide" element={<WinterPreparationGuide />} />
+        <Route path="/tips-advice/summer-care-guide" element={<SummerCareGuide />} />
+        <Route path="/tips-advice/panel-beating-costs" element={<PanelBeatingCosts />} />
+        <Route path="/tips-advice/minor-accident-guide" element={<MinorAccidentGuide />} />
+        <Route path="/tips-advice/repair-or-replace" element={<RepairOrReplace />} />
       </Routes>
     </Router>
   );

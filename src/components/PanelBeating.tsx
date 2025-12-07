@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import { ScrollObserver } from './ScrollObserver';
+import clsx from 'clsx';
 
 export default function PanelBeating() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [hoveredService, setHoveredService] = useState<number | null>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -31,7 +31,7 @@ export default function PanelBeating() {
             title: 'Bumper Repair',
             shortDesc: 'Expert repair and replacement of damaged bumpers for all vehicle makes.',
             fullDesc: 'Whether your bumper has minor scratches, dents, or requires complete replacement, we provide expert service. We repair plastic bumpers using specialized welding techniques and can perfectly match paint finishes. Same-day service available for minor repairs.',
-            image: '/dent_repair_1764693039882.png'
+            image: '/car-pieces.png'
         },
         {
             title: 'Chassis & Structural Repair',
@@ -55,7 +55,7 @@ export default function PanelBeating() {
             title: 'Exterior Polishing',
             shortDesc: 'Professional paint correction and polishing for a showroom shine.',
             fullDesc: 'Over time, vehicle paint develops swirl marks, oxidation, and fine scratches. Our multi-stage polishing process removes imperfections and restores depth and clarity to your paint. We offer various levels of correction from light enhancement to full paint restoration.',
-            image: '/paint_booth_1764692971281.png'
+            image: '/car-polishing-tray.png'
         },
         {
             title: 'Headlight Polishing',
@@ -73,7 +73,7 @@ export default function PanelBeating() {
             title: 'Panel Repair',
             shortDesc: 'Skilled repair or replacement of body panels for all vehicle types.',
             fullDesc: 'Damaged panels are carefully assessed to determine if repair or replacement is most cost-effective. Our craftsmen can reshape steel and aluminum panels back to original contours. When replacement is necessary, we source high-quality parts and ensure perfect fit and finish.',
-            image: '/panel_beating_hero_1764692687494.png'
+            image: '/panel-beatt.jpg'
         },
         {
             title: 'Windscreen Removal & Installation',
@@ -117,7 +117,7 @@ export default function PanelBeating() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-black text-white"
+                className="pt-24 md:pt-32 pb-16 px-4 bg-white text-black"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -130,7 +130,7 @@ export default function PanelBeating() {
                             <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
                                 Precision <span className="text-blue-400">Body Repair</span> Excellence
                             </h1>
-                            <p className="text-xl text-gray-300 leading-relaxed font-mulish font-extralight mb-8">
+                            <p className="text-xl text-gray-700 leading-relaxed font-mulish font-extralight mb-8">
                                 From minor dents to major collision repairs, our skilled panel beaters restore your vehicle to its original condition with meticulous attention to detail.
                             </p>
                             <div className="flex gap-4">
@@ -138,7 +138,7 @@ export default function PanelBeating() {
                                     <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                                     <span className="relative z-10 group-hover:text-blue-600">GET A QUOTE</span>
                                 </button>
-                                <button onClick={() => scrollToSection('services-grid')} className="relative group bg-white text-black px-8 py-3 font-medium transition">
+                                <button onClick={() => scrollToSection('services-grid')} className="relative group bg-black text-white px-8 py-3 font-medium transition">
                                     <span className="absolute left-0 top-0 h-full bg-blue-600 w-0 group-hover:w-full transition-all duration-300"></span>
                                     <span className="relative z-10 group-hover:text-white">VIEW SERVICES</span>
                                 </button>
@@ -151,65 +151,76 @@ export default function PanelBeating() {
                 </div>
             </motion.section>
 
-            {/* Services Grid */}
-            <section id="services-grid" className="px-4 py-16 bg-black text-white">
+            {/* Services Grid - Scroll Animation */}
+            <section id="services-grid" className="px-4 py-16 bg-white text-black">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Our Services</p>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase">Comprehensive Panel Beating</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-12">Comprehensive Panel Beating</h2>
+                        <p className="text-gray-400 text-sm mb-8 hidden md:block">Scroll down to explore</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-cover bg-center border border-white group"
-                                style={{ backgroundImage: `url('${service.image}')` }}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
-                                viewport={{ once: true }}
-                                onMouseEnter={() => setHoveredService(index)}
-                                onMouseLeave={() => setHoveredService(null)}
-                            >
-                                {/* Dark Overlay */}
-                                <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+                    <ScrollObserver className="relative grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-32">
+                        {(isHidden) => (
+                            <>
+                                <ScrollObserver.TriggerGroup className="md:py-[50vh]">
+                                    {services.map((service, index) => (
+                                        <ScrollObserver.Trigger id={`service-${index}`} key={index} className="relative md:scroll-mt-[50vh]">
+                                            {(isActive) => (
+                                                <div
+                                                    className={clsx(
+                                                        isActive ? "text-black" : "text-gray-400 md:text-gray-300 md:hover:text-gray-500",
+                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300 md:hover:bg-gray-50"
+                                                    )}
+                                                >
+                                                    <div className="text-blue-600 text-sm font-medium mb-2">
+                                                        {String(index + 1).padStart(2, '0')}
+                                                    </div>
+                                                    <div className="font-['Tomorrow'] text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-3 md:mb-4">
+                                                        {service.title}
+                                                    </div>
+                                                    <div className="text-base md:text-lg leading-relaxed">
+                                                        {service.fullDesc}
+                                                    </div>
+                                                    <a href={`#service-${index}`} className="absolute inset-0"></a>
+                                                </div>
+                                            )}
+                                        </ScrollObserver.Trigger>
+                                    ))}
+                                </ScrollObserver.TriggerGroup>
 
-                                {/* Number Badge */}
-                                <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">
-                                    {String(index + 1).padStart(2, '0')}
-                                </div>
-
-                                {/* Default Content */}
-                                <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
-                                    <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-2">{service.title}</h3>
-                                    <p className="text-sm mb-4">{service.shortDesc}</p>
-                                    <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
-                                        LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
-                                    </button>
-                                </div>
-
-                                {/* Corner Brackets */}
-                                <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                                <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                                <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-                                <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-
-                                {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
-                                    <div className="text-left">
-                                        <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-4">{service.title}</h3>
-                                        <p className="text-sm leading-relaxed">{service.fullDesc}</p>
+                                <div className="sticky top-0 h-[100vh] hidden md:block">
+                                    <div className={clsx({ "opacity-0 delay-100": !isHidden }, "absolute inset-0 flex items-center")}>
+                                        <div className="aspect-square w-full rounded-3xl bg-gray-100"></div>
                                     </div>
+
+                                    <ScrollObserver.ReactorGroup className="flex items-center justify-center">
+                                        {services.map((service, index) => (
+                                            <ScrollObserver.Reactor key={index} index={index} className="absolute inset-0 flex items-center justify-center p-8">
+                                                {(isActive) => (
+                                                    <div
+                                                        className={clsx(
+                                                            {
+                                                                "opacity-0 delay-100": !isActive,
+                                                                "opacity-100": isActive,
+                                                            },
+                                                            "aspect-square w-full rounded-3xl bg-cover bg-center transition-opacity duration-500"
+                                                        )}
+                                                        style={{ backgroundImage: `url('${service.image}')` }}
+                                                    ></div>
+                                                )}
+                                            </ScrollObserver.Reactor>
+                                        ))}
+                                    </ScrollObserver.ReactorGroup>
                                 </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                            </>
+                        )}
+                    </ScrollObserver>
                 </div>
             </section>
 
             {/* Process Section */}
-            <section className="px-4 py-16 bg-white">
+            <section className="px-4 py-16 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How We Work</p>
@@ -234,7 +245,7 @@ export default function PanelBeating() {
 
             {/* Why Choose Us */}
             <motion.section
-                className="px-4 py-16 bg-gray-50"
+                className="px-4 py-16 bg-white"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -282,7 +293,7 @@ export default function PanelBeating() {
             </motion.section>
 
             {/* Testimonials */}
-            <section className="px-4 py-16 bg-white">
+            <section className="px-4 py-16 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium mb-6">What Our Customers Say</h2>

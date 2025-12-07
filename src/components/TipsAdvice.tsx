@@ -123,6 +123,34 @@ export default function TipsAdvice() {
         },
         {
             category: 'Safety',
+            title: 'Brake System Warning Signs: What Every Driver Should Know',
+            excerpt: 'Your vehicle\'s braking system is one of its most important safety features. Recognising warning signs helps prevent expensive repairs and reduces accident risk.',
+            image: '/breaks.png',
+            tips: [
+                'Dashboard warning lights indicate low fluid, worn pads, or ABS issues',
+                'Squealing or grinding sounds mean brake pads need replacement',
+                'Soft or spongy pedal suggests air in lines or low fluid levels',
+                'Vibrations, pulling, or increased stopping distance require immediate attention'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/brake-warning-signs'
+        },
+        {
+            category: 'Safety',
+            title: 'Dashboard Warning Lights Decoded: What They Mean and What You Should Do',
+            excerpt: 'Modern vehicles monitor engine performance, tyre pressure, and more. Understanding dashboard warning lights helps you stay safe and avoid costly repairs.',
+            image: '/headlight.webp',
+            tips: [
+                'Red warning lights (oil, engine temp, brakes) require immediate action',
+                'Amber lights indicate developing issues - book service soon',
+                'Blue/green lights are status indicators for features like cruise control',
+                'Flashing engine light means stop immediately to prevent damage'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/dashboard-warning-lights'
+        },
+        {
+            category: 'Safety',
             title: 'Can Car Tyres Be Repaired? A Simple Guide for New Zealand Drivers',
             excerpt: 'A flat or damaged tyre is common, but not every tyre needs replacing. Understanding when repair is safe helps protect your safety and saves costs.',
             image: '/shop.webp',
@@ -136,16 +164,74 @@ export default function TipsAdvice() {
             detailPageRoute: '/tips-advice/tyre-repair-guide'
         },
         {
-            category: 'Maintenance',
-            title: 'Extending Your Vehicle\'s Lifespan',
-            excerpt: 'Simple habits that can add years to your vehicle\'s life and save you thousands in repairs.',
+            category: 'Seasonal',
+            title: 'Preparing Your Vehicle for Winter: A Practical Guide for New Zealand Drivers',
+            excerpt: 'Cold weather affects batteries, tyres, fluids, and visibility. Preparing early reduces breakdown risk and keeps your car ready for winter travel.',
+            image: '/car-tune-up.jpg',
+            tips: [
+                'Check tyre condition, tread depth, and pressure for wet roads',
+                'Test battery health - cold weather can cause weak batteries to fail',
+                'Inspect brakes, fluids, wipers, and lights for winter performance',
+                'Keep an emergency winter kit with torch, blanket, and jumper leads'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/winter-preparation-guide'
+        },
+        {
+            category: 'Seasonal',
+            title: 'Summer Vehicle Care Tips: Keep Your Car Running Smoothly in Hot Weather',
+            excerpt: 'Summer brings long road trips, heavy sunlight, and higher temperatures. Heat affects cooling systems, tyres, battery, and AC - preparation prevents breakdowns.',
             image: '/tesla.jpg',
             tips: [
-                'Follow manufacturer\'s service schedule religiously',
-                'Warm up and cool down your engine (30 seconds each)',
-                'Avoid short trips that prevent engine from reaching optimal temperature',
-                'Keep your vehicle clean inside and out to prevent rust and wear'
-            ]
+                'Check cooling system and coolant levels to prevent overheating',
+                'Monitor tyre pressure weekly - heat increases pressure and blowout risk',
+                'Service air conditioning and check battery health in hot weather',
+                'Protect paint and interior from UV damage with regular washing and waxing'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/summer-care-guide'
+        },
+        {
+            category: 'Maintenance',
+            title: 'Panel Beating Repair Costs Explained – From Small Dents to Major Damage',
+            excerpt: 'Understanding panel beating costs helps you make informed decisions. Prices vary based on damage severity, parts, labour, paint type, and insurance coverage.',
+            image: '/panel-beatt.jpg',
+            tips: [
+                'Minor dents cost less than structural collision repairs - complexity affects price',
+                'OEM parts cost more than aftermarket, luxury vehicles need specialized items',
+                'Labour includes dent removal, painting, colour matching, and reassembly',
+                'Quality repairs protect appearance, integrity, and long-term vehicle value'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/panel-beating-costs'
+        },
+        {
+            category: 'Safety',
+            title: 'Had a Minor Car Accident? How to Respond & Get Repairs in Auckland',
+            excerpt: 'Minor crashes happen often. Handling the situation correctly protects your safety, maintains insurance validity, and ensures proper repairs.',
+            image: '/car-pieces.png',
+            tips: [
+                'Check safety first, turn on hazards, move to safe place if drivable',
+                'Exchange details, take photos of damage and scene for evidence',
+                'Notify insurance provider even for small damage - assess claim vs private repair',
+                'Book inspection - minor damage can hide structural issues and sensor problems'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/minor-accident-guide'
+        },
+        {
+            category: 'Maintenance',
+            title: 'Repair or Replace? How to Know When a Panel Should Be Replaced',
+            excerpt: 'Should a damaged panel be repaired or replaced? Understanding the difference helps you make informed decisions and avoid paying for the wrong repair.',
+            image: '/car-polishing-tray.png',
+            tips: [
+                'Small to medium dents, scratches, and bumper scrapes can usually be repaired',
+                'Replace when panel is badly crushed, metal stretched, or rust penetrated deeply',
+                'Repair costs less but replacement may be better for severe structural damage',
+                'Professional inspection reveals hidden damage beneath the surface'
+            ],
+            hasDetailPage: true,
+            detailPageRoute: '/tips-advice/repair-or-replace'
         }
     ];
 
