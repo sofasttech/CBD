@@ -27,7 +27,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'Best Coolant for Your Car: A Simple Guide for Drivers',
             excerpt: 'Choosing the right coolant protects your engine, prevents overheating, and ensures your car runs smoothly throughout the year.',
-            image: '/car-tune-up.jpg',
+            image: '/coolent.jpg',
             tips: [
                 'Green coolant for older vehicles - replace every 2 years or 40,000 km',
                 'Red/Pink coolant for newer models with long-lasting protection',
@@ -41,7 +41,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'How Much Engine Oil Does My Car Need? A Simple Guide for Drivers',
             excerpt: 'Engine oil plays a crucial role in maintaining your vehicle\'s health. It reduces friction, cools engine parts, and carries away dirt and contaminants.',
-            image: '/tyer.png',
+            image: '/engineoil.jpg',
             tips: [
                 'Small engines typically need 3-4 litres, larger engines 5-8 litres or more',
                 'Check oil level between MIN and MAX marks on dipstick regularly',
@@ -55,7 +55,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'How to Charge a Car Battery: A Simple Guide for Everyday Drivers',
             excerpt: 'A flat or weak battery is one of the most common reasons a car refuses to start. Knowing how to charge a car battery safely can save time and prevent breakdowns.',
-            image: '/breaks.png',
+            image: '/carbattry.jpg',
             tips: [
                 'Use a suitable battery charger - charging can take 4-12 hours',
                 'Always connect positive terminal first, then negative',
@@ -69,7 +69,7 @@ export default function TipsAdvice() {
             category: 'Safety',
             title: 'Why Front Bumper Repair Matters: A Practical Guide for Drivers',
             excerpt: 'The front bumper plays a bigger role in vehicle safety and performance than many drivers realise. It absorbs impact during collisions and protects key components.',
-            image: '/car-pieces.png',
+            image: '/frontbumper.webp',
             tips: [
                 'Modern bumpers work with airbags, sensors, and crumple zones',
                 'Damaged bumpers expose radiators, headlights, and sensors to harm',
@@ -245,20 +245,29 @@ export default function TipsAdvice() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-black text-white"
+                className="pt-24 md:pt-32 pb-16 px-4 bg-black text-white overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
             >
-                <div className="max-w-7xl mx-auto text-center">
-                    <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Expert Guidance</p>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6">
-                        Tips & <span className="text-blue-400">Advice</span>
-                    </h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight">
-                        Professional automotive advice to help you maintain your vehicle, stay safe on the road, and save money on repairs.
-                    </p>
+                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                    <div className="text-left">
+                        <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Expert Guidance</p>
+                        <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6">
+                            Tips & <span className="text-blue-400">Advice</span>
+                        </h1>
+                        <p className="text-xl text-gray-300 leading-relaxed font-mulish font-extralight">
+                            Professional automotive advice to help you maintain your vehicle, stay safe on the road, and save money on repairs.
+                        </p>
+                    </div>
+                    <div className="flex justify-center md:justify-end md:-mr-8 md:-mb-16">
+                        <img 
+                            src="/advice.png" 
+                            alt="Automotive advice" 
+                            className="w-full max-w-xl h-auto object-contain scale-110"
+                        />
+                    </div>
                 </div>
             </motion.section>
 
@@ -297,45 +306,37 @@ export default function TipsAdvice() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredTips.map((tip, index) => (
-                            <motion.div
+                            <div
                                 key={index}
-                                className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition group"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
+                                className="relative h-[450px] overflow-hidden group bg-white border border-gray-200 rounded-md flex flex-col"
                             >
-                                <div className="overflow-hidden">
+                                <div className="w-full h-full">
                                     <img
                                         src={tip.image}
                                         alt={tip.title}
-                                        className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
+                                        className="h-full w-full scale-100 group-hover:scale-100 object-cover transition-all duration-300 rounded-md"
                                     />
                                 </div>
-                                <div className="p-6">
-                                    <div className="text-blue-600 text-xs font-medium uppercase mb-2">{tip.category}</div>
-                                    <h3 className="text-xl font-['Tomorrow'] font-medium mb-3 group-hover:text-blue-600 transition">
-                                        {tip.title}
-                                    </h3>
-                                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                                        {tip.excerpt}
-                                    </p>
-                                    <ul className="space-y-2 mb-4">
-                                        {tip.tips.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                                                <span className="text-green-600 mt-1">✓</span>
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <button 
-                                        onClick={() => tip.hasDetailPage && tip.detailPageRoute && navigate(tip.detailPageRoute)}
-                                        className="flex items-center text-blue-600 hover:text-blue-800 transition font-medium text-sm"
-                                    >
-                                        Learn More <ChevronRight className="w-4 h-4 ml-1" />
-                                    </button>
-                                </div>
-                            </motion.div>
+                                <article className="p-8 w-full h-full overflow-hidden z-10 absolute top-0 flex flex-col justify-end rounded-md bg-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    <div className="translate-y-10 group-hover:translate-y-0 transition-all duration-300 space-y-2 text-white">
+                                        <div className="text-white text-xs font-medium uppercase mb-2">{tip.category}</div>
+                                        <h1 className="text-2xl font-['Tomorrow'] font-semibold">{tip.title}</h1>
+                                        <p className="text-sm leading-relaxed">
+                                            {tip.excerpt}
+                                        </p>
+                                        <button 
+                                            onClick={() => tip.hasDetailPage && tip.detailPageRoute && navigate(tip.detailPageRoute)}
+                                            className="p-2 bg-black flex items-center gap-1 rounded-md text-white font-medium text-sm w-fit"
+                                        >
+                                            Learn More <ChevronRight className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                </article>
+                                <article className="p-4 w-full h-[25%] flex flex-col justify-end overflow-hidden absolute bottom-0 rounded-b-md bg-gradient-to-t from-blue-600 to-transparent opacity-100 group-hover:opacity-0 group-hover:-bottom-4 transition-all duration-300 text-white">
+                                    <div className="text-white text-xs font-medium uppercase mb-1">{tip.category}</div>
+                                    <h1 className="text-xl font-['Tomorrow'] font-semibold line-clamp-2">{tip.title}</h1>
+                                </article>
+                            </div>
                         ))}
                     </div>
                 </div>
