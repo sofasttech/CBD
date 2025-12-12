@@ -140,35 +140,6 @@ function AboutAccordionSection() {
   );
 }
 
-const AnimatedPercentage = ({ target }: { target: number }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    if (inView && !started) {
-      setStarted(true);
-      const node = ref.current;
-      if (!node) return;
-      let start = 0;
-      const end = target;
-      const duration = 2000; // 2 seconds
-      const step = (timestamp: number) => {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        const current = Math.min(end, (progress / duration) * end);
-        node.textContent = Math.floor(current) + '%';
-        if (progress < duration) {
-          requestAnimationFrame(step);
-        }
-      };
-      requestAnimationFrame(step);
-    }
-  }, [inView, started, target]);
-
-  return <span ref={ref} className="text-black">0%</span>;
-};
-
 const AnimatedNumber = ({ target, suffix = '' }: { target: number; suffix?: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
@@ -805,77 +776,78 @@ export default function Homepage() {
       <div className="h-40 bg-white"></div>
 
       {/* Why Choose Us */}
-      <motion.section
-        id="why-choose-us"
-        className="py-0 pb-0 bg-white"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-0 items-center">
-          {/* Left Column: Content and Persuasion */}
-          <div className="text-white p-8 h-90 md:h-[38.8rem] flex flex-col justify-center md:white">
-            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">WHY CHOOSE US</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-4 text-black">ATTENTION TO DETAIL, TAILORED TO YOU</h2>
-            <p className="text-gray-900 leading-relaxed font-mulish font-bold text-lg mb-8">
-              At CBD Panelbeating & Mechanical, we combine decades of expertise with a personalized approach to ensure every vehicle receives the care it deserves. Our commitment to precision and quality means your car isn't just repaired—it's restored to perfection.
+      <section className="py-24 bg-white text-black overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-blue-600 font-medium tracking-widest uppercase text-sm mb-3">Why Choose Us</p>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold mb-6">Excellence in Every Detail</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
+              We don't just repair cars; we restore confidence. Experience the perfect blend of technical expertise and customer-focused service.
             </p>
-            {/* Trust Indicators (Progress Bars) */}
-            <div className="space-y-6">
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-black font-medium">EXPERT TECHNICIANS</span>
-                  <AnimatedPercentage target={99} />
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Expert Craftsmanship",
+                desc: "Our certified technicians bring decades of combined experience to every repair, ensuring factory-standard results.",
+                image: "/panel-beatt.jpg"
+              },
+              {
+                title: "Advanced Technology",
+                desc: "We utilize the latest diagnostic tools and repair equipment to deliver precise, efficient, and lasting solutions.",
+                image: "/tech.jpg"
+              },
+              {
+                title: "Lifetime Guarantee",
+                desc: "We stand behind our work. Enjoy peace of mind knowing that our repairs are backed by a comprehensive warranty.",
+                image: "/shop.webp"
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50 transition-all duration-500"
+                style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              >
+                <div className="text relative z-50">
+                  <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
+                    {item.title}
+                  </h1>
+                  <p className="font-normal text-base text-gray-50 relative my-4">
+                    {item.desc}
+                  </p>
                 </div>
-                <div className="w-full bg-gray-700 h-3 rounded-full">
-                  <motion.div
-                    className="bg-blue-600 h-3 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '99%' }}
-                    transition={{ duration: 2, delay: 0.5 }}
-                    viewport={{ once: true }}
-                  ></motion.div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-black font-medium">QUICK TURNAROUND</span>
-                  <AnimatedPercentage target={99} />
-                </div>
-                <div className="w-full bg-gray-700 h-3 rounded-full">
-                  <motion.div
-                    className="bg-blue-600 h-3 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '99%' }}
-                    transition={{ duration: 2, delay: 0.7 }}
-                    viewport={{ once: true }}
-                  ></motion.div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-black font-medium">QUALITY ASSURANCE</span>
-                  <AnimatedPercentage target={100} />
-                </div>
-                <div className="w-full bg-gray-700 h-3 rounded-full">
-                  <motion.div
-                    className="bg-blue-600 h-3 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '100%' }}
-                    transition={{ duration: 2, delay: 0.9 }}
-                    viewport={{ once: true }}
-                  ></motion.div>
-                </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </div>
-          {/* Right Column: Visual Impact */}
-          <div className="relative h-90 md:h-[38.8rem] flex items-center justify-center">
-            <img src="/shop.webp" alt="Luxury Sports Car" className="w-full h-full object-cover shadow-lg" />
+          
+          {/* Stats Section */}
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
+             {[
+                { label: "Years Experience", value: 25, suffix: "+" },
+                { label: "Cars Repaired", value: 9900, suffix: "K+" },
+                { label: "Customer Rating", value: 100, suffix: "%" },
+                { label: "Expert Staff", value: 15, suffix: "+" }
+             ].map((stat, index) => (
+                <div key={index} className="text-center">
+                   <div className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-blue-500 mb-2">
+                      <AnimatedNumber target={stat.value} suffix={stat.suffix} />
+                   </div>
+                   <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
+                </div>
+             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       <div className="h-20 bg-white"></div>
 

@@ -262,7 +262,7 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-bold mb-4">Panel Repairs - 390 Great North Road, Grey Lynn, Auckland</h3>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.123456!3d-36.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbDqDU!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.7385!3d-36.8606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9d1c3d%3A0x4b0b8b8b8b8b8b8b!2zMzkwIEdyZWF0IE5vcnRoIFJvYWQsIEdyZXkgTHlubiBBdWNrbGFuZA!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
@@ -275,7 +275,7 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-bold mb-4">Mechanical Repairs - 2/40 Carr Road, Three Kings</h3>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.123456!3d-36.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbDqDU!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.7528!3d-36.9067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9d1c3d%3A0x4b0b8b8b8b8b8b8b!2zMi80MCBDYXJyIFJvYWQsIFRocmVlIEtpbmdzIEF1Y2tsYW5kIDEwNDI!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

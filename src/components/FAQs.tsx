@@ -39,6 +39,14 @@ export default function FAQs() {
                 {
                     q: "Can you match my car's paint color exactly?",
                     a: "Yes! We use computerized color matching technology to ensure a perfect match with your vehicle's original paint, including metallic and pearl finishes."
+                },
+                {
+                    q: "Do you offer mobile panel beating services?",
+                    a: "Yes, we provide mobile dent removal services for minor dents and scratches. Our technicians can come to your location for convenient repairs."
+                },
+                {
+                    q: "What types of vehicle damage can you repair?",
+                    a: "We repair all types of body damage including dents, scratches, rust, hail damage, collision repairs, and structural damage. No job is too big or small."
                 }
             ]
         },
@@ -64,27 +72,14 @@ export default function FAQs() {
                 {
                     q: "What is a timing belt and when should it be replaced?",
                     a: "A timing belt synchronizes your engine's components. Most manufacturers recommend replacement every 80,000-160,000 km. Failure can cause severe engine damage, so timely replacement is crucial."
-                }
-            ]
-        },
-        {
-            category: "Caravans & Boats",
-            questions: [
-                {
-                    q: "Do you repair boat trailers?",
-                    a: "Yes, we provide comprehensive boat trailer repairs including axle replacement, bearing services, brake repairs, and corrosion treatment. We also perform WOF checks for trailers."
                 },
                 {
-                    q: "Can you build custom trailers?",
-                    a: "Absolutely! We design and fabricate custom trailers to your exact specifications, from utility trailers to specialized car haulers. Our experienced team can bring your vision to life."
+                    q: "Do you perform transmission repairs?",
+                    a: "Yes, we handle both automatic and manual transmission repairs, including fluid changes, filter replacements, and complete rebuilds. We also offer transmission diagnostics."
                 },
                 {
-                    q: "What caravan repairs do you offer?",
-                    a: "We handle all aspects of caravan repair including structural damage, chassis repairs, panel replacement, water damage restoration, and refurbishment work."
-                },
-                {
-                    q: "Do you offer welding services?",
-                    a: "Yes, we provide expert welding services for steel, aluminum, and stainless steel. From minor repairs to major fabrication projects, our certified welders deliver quality results."
+                    q: "What causes engine overheating?",
+                    a: "Common causes include low coolant levels, faulty radiator, water pump failure, or thermostat issues. We diagnose and repair all cooling system components."
                 }
             ]
         },
@@ -110,6 +105,14 @@ export default function FAQs() {
                 {
                     q: "Are you open on weekends?",
                     a: "We're open Monday to Friday, 7:30 AM - 5:30 PM. Emergency services can be arranged by appointment. Please contact us for weekend availability."
+                },
+                {
+                    q: "Do you offer emergency repairs?",
+                    a: "Yes, we provide 24/7 emergency roadside assistance and can arrange urgent repairs for breakdowns, accidents, or safety issues."
+                },
+                {
+                    q: "How do I prepare for my vehicle service?",
+                    a: "Bring your service history, any warning lights or issues you've noticed, and be prepared to leave your vehicle for the day. We'll provide a detailed quote before starting work."
                 }
             ]
         }
