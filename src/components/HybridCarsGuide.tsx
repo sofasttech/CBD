@@ -324,10 +324,10 @@ export default function HybridCarsGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical repairs and services hybrid vehicles with attention to safety and manufacturer requirements. We handle structural repairs, bumper work, sensor alignment, and panel repairs for all major hybrid models. We understand the extra care needed around high-voltage components and modern safety systems.
+                        CBD Panel and Paint repairs and services hybrid vehicles with attention to safety and manufacturer requirements. We handle structural repairs, bumper work, sensor alignment, and panel repairs for all major hybrid models. We understand the extra care needed around high-voltage components and modern safety systems.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If your hybrid needs repairs or you want a professional inspection, our expert team at CBD Panel Beating and Mechanical is here to assist.
+                        If your hybrid needs repairs or you want a professional inspection, our expert team at CBD Panel and Paint is here to assist.
                     </p>
                     <button className="relative group bg-emerald-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

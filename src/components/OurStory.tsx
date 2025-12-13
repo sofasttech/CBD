@@ -233,7 +233,7 @@ export default function OurStory() {
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Beginning</p>
                         <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-6">Building Trust Since Day One</h2>
                         <p className="text-gray-700 leading-relaxed mb-4 text-lg">
-                            CBD Panelbeating & Mechanical began with a simple vision: to provide Auckland with honest, high-quality automotive repair services that vehicle owners could trust. What started as a small family operation has grown into one of the region's most respected automotive service centers.
+                            CBD Panel and Paint began with a simple vision: to provide Auckland with honest, high-quality automotive repair services that vehicle owners could trust. What started as a small family operation has grown into one of the region's most respected automotive service centers.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-4 text-lg">
                             Over 30 years of dedication to our craft has earned us a reputation for precision, reliability, and exceptional customer care. Every vehicle that enters our workshop receives the same meticulous attention to detail that has defined our service from the very beginning.
@@ -363,7 +363,7 @@ export default function OurStory() {
                             <div className="md:col-span-8 bg-gray-900/50 p-6 rounded-lg border border-gray-800 hover:border-blue-600 transition-colors">
                                 <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2 text-white">The Foundation</h3>
                                 <p className="text-gray-300 leading-relaxed font-mulish font-extralight text-lg">
-                                    CBD Panelbeating & Mechanical opens its doors in Auckland's CBD, establishing a reputation for quality panel beating and collision repair work.
+                                    CBD Panel and Paint opens its doors in Auckland's CBD, establishing a reputation for quality panel beating and collision repair work.
                                 </p>
                             </div>
                         </motion.div>

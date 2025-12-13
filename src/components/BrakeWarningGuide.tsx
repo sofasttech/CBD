@@ -260,10 +260,10 @@ export default function BrakeWarningGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical carries out full brake inspections and repairs for all makes and models. We check pads, discs, callipers, brake fluid, ABS sensors, and hydraulic systems to find the exact cause of the problem. With proper care, your brakes remain responsive and reliable in all conditions.
+                        CBD Panel and Paint carries out full brake inspections and repairs for all makes and models. We check pads, discs, callipers, brake fluid, ABS sensors, and hydraulic systems to find the exact cause of the problem. With proper care, your brakes remain responsive and reliable in all conditions.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If your brakes feel different or you want a safety check, our expert team at CBD Panel Beating and Mechanical is ready to assist.
+                        If your brakes feel different or you want a safety check, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
                     <button className="relative group bg-red-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

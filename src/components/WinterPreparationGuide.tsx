@@ -277,10 +277,10 @@ export default function WinterPreparationGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical offers comprehensive winter checks and servicing to ensure your vehicle remains reliable throughout the colder months. Our expert team inspects tyres, brakes, battery, fluids, lights, and mechanical components, making sure everything is winter-ready. We also handle panel repairs, bumper work, and touch-ups to protect your vehicle from winter wear.
+                        CBD Panel and Paint offers comprehensive winter checks and servicing to ensure your vehicle remains reliable throughout the colder months. Our expert team inspects tyres, brakes, battery, fluids, lights, and mechanical components, making sure everything is winter-ready. We also handle panel repairs, bumper work, and touch-ups to protect your vehicle from winter wear.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If you'd like a winter check or service before the cold weather arrives, CBD Panel Beating and Mechanical are ready to help.
+                        If you'd like a winter check or service before the cold weather arrives, CBD Panel and Paint are ready to help.
                     </p>
                     <button className="relative group bg-cyan-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

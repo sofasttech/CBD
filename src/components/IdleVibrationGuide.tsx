@@ -278,10 +278,10 @@ export default function IdleVibrationGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical diagnoses and repairs idle vibration problems for all makes and models. We check the ignition system, mounts, filters, sensors, and engine performance to find the source of the issue. Early inspection prevents further damage and keeps your vehicle running safely and smoothly.
+                        CBD Panel and Paint diagnoses and repairs idle vibration problems for all makes and models. We check the ignition system, mounts, filters, sensors, and engine performance to find the source of the issue. Early inspection prevents further damage and keeps your vehicle running safely and smoothly.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If your car shakes while idling or you are unsure what is causing it, our expert team at CBD Panel Beating and Mechanical is ready to assist.
+                        If your car shakes while idling or you are unsure what is causing it, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
                     <button className="relative group bg-purple-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

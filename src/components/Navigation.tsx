@@ -16,8 +16,8 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
         <div className="flex justify-between md:grid md:grid-cols-3 items-center">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src="/logowithoutname.jpeg" alt="CBD Panelbeating & Mechanical" className="h-10" />
-            <span className="hidden md:block text-xl font-['Tomorrow']">CBD Panelbeating & Mechanical</span>
+            <img src="/logowithoutname.jpeg" alt="CBD Panel and Paint" className="h-10" />
+            <span className="hidden md:block text-xl font-['Tomorrow']">CBD Panel and Paint</span>
           </div>
 
           {/* Navigation Links */}

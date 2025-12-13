@@ -113,7 +113,7 @@ function AboutAccordionSection() {
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
               <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
-                At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
+                At CBD Panel and Paint, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
 
@@ -407,7 +407,7 @@ export default function Homepage() {
 
       {/* Cars Ribbon */}
       <section className="w-full relative">
-        <img src="/cars.jpeg" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
+        <img src="/carsnz.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
         <div className="absolute inset-0 flex items-start justify-start md:justify-center pt-0 md:pt-8 pl-4 md:pl-0">
           <h2 className="text-black text-lg md:text-5xl text-left drop-shadow-lg  font-['Tomorrow'] font-light px-4">
             We SERVICE <span className="text-blue-600">All</span> MAKES and MODELS...<br />
@@ -512,7 +512,7 @@ export default function Homepage() {
             <div className="mb-10">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
               <p className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
-                At CBD Panelbeating & Mechanical, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
+                At CBD Panel and Paint, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
 

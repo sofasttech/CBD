@@ -262,7 +262,7 @@ export default function PanelBeatingCosts() {
                     </div>
                     <div className="bg-blue-100 border-l-4 border-blue-600 p-6 rounded">
                         <p className="text-gray-800 text-lg">
-                            <strong>Important:</strong> An in-person inspection at CBD Panel Beating and Mechanical's premises always provides the most accurate price, as hidden damage and structural alignment cannot be accurately assessed by photos alone.
+                            <strong>Important:</strong> An in-person inspection at CBD Panel and Paint's premises always provides the most accurate price, as hidden damage and structural alignment cannot be accurately assessed by photos alone.
                         </p>
                     </div>
                 </div>

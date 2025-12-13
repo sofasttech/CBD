@@ -340,10 +340,10 @@ export default function TyreRepairGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical offers professional tyre inspections, puncture repairs, replacements, and wheel alignment to keep your vehicle safe on New Zealand roads. We carefully assess the damage and recommend the safest option, whether it is repair or replacement.
+                        CBD Panel and Paint offers professional tyre inspections, puncture repairs, replacements, and wheel alignment to keep your vehicle safe on New Zealand roads. We carefully assess the damage and recommend the safest option, whether it is repair or replacement.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If you have a flat tyre or suspect damage, our expert team at CBD Panel Beating and Mechanical is ready to assist.
+                        If you have a flat tyre or suspect damage, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
                     <button className="relative group bg-indigo-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

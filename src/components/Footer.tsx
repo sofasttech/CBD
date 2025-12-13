@@ -18,7 +18,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
             <div className="lg:col-span-4">
               <img 
                 src="/logowithname.png" 
-                alt="CBD Panelbeating & Mechanical" 
+                alt="CBD Panel and Paint" 
                 className="h-28 mb-6 brightness-110"
               />
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -167,7 +167,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
             {/* Copyright */}
             <div className="text-center">
               <p className="text-gray-500 text-sm mb-2">
-                © 2025 CBD Panelbeating & Mechanical. All rights reserved.
+                © 2025 CBD Panel and Paint. All rights reserved.
               </p>
               <p className="text-gray-600 text-xs">
                 Crafted with precision and care for automotive excellence

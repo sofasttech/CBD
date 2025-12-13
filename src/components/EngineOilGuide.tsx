@@ -64,7 +64,7 @@ export default function EngineOilGuide() {
     const howToKnow = [
         'Check your owner\'s manual',
         'Look for the specification on the oil cap or under the bonnet',
-        'Ask a qualified mechanic at CBD Panel Beating and Mechanical'
+        'Ask a qualified mechanic at CBD Panel and Paint'
     ];
 
     return (
@@ -307,7 +307,7 @@ export default function EngineOilGuide() {
                             ))}
                         </div>
                         <p className="text-lg text-gray-700 mt-6 font-medium">
-                            If you notice any of these issues, check the oil immediately or seek assistance from a mechanic at CBD Panel Beating and Mechanical.
+                            If you notice any of these issues, check the oil immediately or seek assistance from a mechanic at CBD Panel and Paint.
                         </p>
                     </motion.div>
                 </div>
@@ -347,10 +347,10 @@ export default function EngineOilGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical offers routine oil changes, filter replacements, and comprehensive engine checks, utilising high-quality oils that meet manufacturer specifications. We ensure your engine has the correct amount of oil and help you maintain a vehicle that runs smoothly.
+                        CBD Panel and Paint offers routine oil changes, filter replacements, and comprehensive engine checks, utilising high-quality oils that meet manufacturer specifications. We ensure your engine has the correct amount of oil and help you maintain a vehicle that runs smoothly.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If your oil light is on or you need a service, our expert team at CBD Panel Beating and Mechanical is ready to assist.
+                        If your oil light is on or you need a service, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
                     <button className="relative group bg-amber-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

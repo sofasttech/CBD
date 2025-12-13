@@ -53,7 +53,7 @@ export default function CoolantGuide() {
     const howToCheck = [
         'Your owner\'s manual',
         'The label on the coolant reservoir',
-        'Professional advice from a trusted mechanic at CBD Panel Beating and Mechanical'
+        'Professional advice from a trusted mechanic at CBD Panel and Paint'
     ];
 
     return (
@@ -219,7 +219,7 @@ export default function CoolantGuide() {
                         </div>
                         <div className="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400">
                             <p className="text-gray-800">
-                                <strong>Important:</strong> If the radiator continues to lose coolant, have the system checked for leaks by CBD Panel Beating and Mechanical.
+                                <strong>Important:</strong> If the radiator continues to lose coolant, have the system checked for leaks by CBD Panel and Paint.
                             </p>
                         </div>
                     </motion.div>
@@ -293,10 +293,10 @@ export default function CoolantGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-8 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical provides coolant checks, flushes, and replacements for all makes and models. We use the correct coolant types recommended by manufacturers and make sure your cooling system is clean and free of blockages. A healthy cooling system protects your engine and helps you avoid unexpected breakdowns.
+                        CBD Panel and Paint provides coolant checks, flushes, and replacements for all makes and models. We use the correct coolant types recommended by manufacturers and make sure your cooling system is clean and free of blockages. A healthy cooling system protects your engine and helps you avoid unexpected breakdowns.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If you need your coolant inspected or replaced, our expert team at CBD Panel Beating and Mechanical is ready to assist you.
+                        If you need your coolant inspected or replaced, our expert team at CBD Panel and Paint is ready to assist you.
                     </p>
                     <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

@@ -298,10 +298,10 @@ export default function FuelConsumptionGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical offers comprehensive mechanical checks, servicing, wheel alignment, and diagnostic services to pinpoint the cause of high fuel consumption. We examine filters, plugs, sensors, tyres, and all systems that impact fuel efficiency. With correct maintenance, your vehicle runs cleaner, smoother, and more economically.
+                        CBD Panel and Paint offers comprehensive mechanical checks, servicing, wheel alignment, and diagnostic services to pinpoint the cause of high fuel consumption. We examine filters, plugs, sensors, tyres, and all systems that impact fuel efficiency. With correct maintenance, your vehicle runs cleaner, smoother, and more economically.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If your car is using more fuel than normal, our expert team at CBD Panel Beating and Mechanical is ready to help.
+                        If your car is using more fuel than normal, our expert team at CBD Panel and Paint is ready to help.
                     </p>
                     <button className="relative group bg-orange-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

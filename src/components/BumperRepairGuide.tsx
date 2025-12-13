@@ -202,10 +202,10 @@ export default function BumperRepairGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        Our expert team at CBD Panel Beating and Mechanical repairs front bumper damage for all vehicle makes and models. We restore the strength, alignment, and finish while ensuring the safety systems behind the bumper work as intended. Whether it is a minor scrape or a complete structural repair, we carry out the job with care and precision.
+                        Our expert team at CBD Panel and Paint repairs front bumper damage for all vehicle makes and models. We restore the strength, alignment, and finish while ensuring the safety systems behind the bumper work as intended. Whether it is a minor scrape or a complete structural repair, we carry out the job with care and precision.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If your front bumper is damaged or you want an inspection, our expert team at CBD Panel Beating and Mechanical are ready to assist.
+                        If your front bumper is damaged or you want an inspection, our expert team at CBD Panel and Paint are ready to assist.
                     </p>
                     <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

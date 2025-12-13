@@ -276,10 +276,10 @@ export default function SummerCareGuide() {
                         How We Can Help
                     </h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
-                        CBD Panel Beating and Mechanical workshop provides summer readiness checks to keep your vehicle performing at its best. We inspect coolant systems, tyres, brakes, air conditioning, filters, and general mechanical components. We also handle panel beating, bumper repair, refinishing, and bodywork if your vehicle needs cosmetic care after a long season on the road.
+                        CBD Panel and Paint workshop provides summer readiness checks to keep your vehicle performing at its best. We inspect coolant systems, tyres, brakes, air conditioning, filters, and general mechanical components. We also handle panel beating, bumper repair, refinishing, and bodywork if your vehicle needs cosmetic care after a long season on the road.
                     </p>
                     <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
-                        If you want your vehicle summer-ready or need a full check before your next trip, our expert team at CBD Panel Beating and Mechanical is ready to assist.
+                        If you want your vehicle summer-ready or need a full check before your next trip, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
                     <button className="relative group bg-orange-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
