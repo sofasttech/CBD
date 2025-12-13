@@ -66,7 +66,7 @@ export default function BatteryChargingGuide() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-gradient-to-br from-green-900 to-green-700 text-white"
+                className="min-h-[70vh] pb-16 px-4 bg-[url('/battary.webp')] bg-[size:150%] bg-center bg-no-repeat text-white relative flex flex-col justify-center items-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -87,7 +87,7 @@ export default function BatteryChargingGuide() {
             </motion.section>
 
             {/* Introduction */}
-            <section className="px-4 py-16 bg-white">
+            <section className="px-4 py-0 md:py-16 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}

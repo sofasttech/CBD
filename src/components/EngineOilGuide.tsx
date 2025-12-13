@@ -73,7 +73,7 @@ export default function EngineOilGuide() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-gradient-to-br from-gray-900 to-gray-700 text-white"
+                className="pt-24 md:pt-32 pb-16 px-4 bg-[url('/engine-oil.avif')] bg-cover bg-center bg-no-repeat text-white"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}

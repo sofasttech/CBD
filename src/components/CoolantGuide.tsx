@@ -62,7 +62,7 @@ export default function CoolantGuide() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-gradient-to-br from-blue-900 to-blue-600 text-white"
+                className="pt-24 md:pt-32 pb-16 px-4 bg-[url('/heat.jpg')] bg-cover bg-center bg-no-repeat text-white flex flex-col items-center justify-center min-h-[80vh]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}

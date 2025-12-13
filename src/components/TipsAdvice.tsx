@@ -245,13 +245,13 @@ export default function TipsAdvice() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-black text-white overflow-hidden"
+                className="pt-24 md:pt-32 pb-0 md:pb-16 px-4 bg-black text-white overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
             >
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-end">
                     <div className="text-left">
                         <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Expert Guidance</p>
                         <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6">
@@ -261,7 +261,7 @@ export default function TipsAdvice() {
                             Professional automotive advice to help you maintain your vehicle, stay safe on the road, and save money on repairs.
                         </p>
                     </div>
-                    <div className="flex justify-center md:justify-end md:-mr-8 md:-mb-16">
+                    <div className="flex justify-center md:justify-end md:-mr-8 md:-mb-16 mt- md:mt-0">
                         <img 
                             src="/advice.png" 
                             alt="Automotive advice" 

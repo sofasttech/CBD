@@ -22,61 +22,61 @@ export default function DashboardWarningLights() {
     const criticalLights = [
         {
             name: 'Oil Pressure Low',
-            symbol: '🛢️',
+            image: 'engine.png',
             meaning: 'Oil is not reaching the internal engine parts. Running without oil can destroy the engine.',
             action: 'Stop immediately. Check oil level. Do not drive if the light stays on. Arrange towing if needed.'
         },
         {
             name: 'Engine/Emissions Warning',
-            symbol: '⚠️',
+            image: 'engine-warning.png',
             meaning: 'Possible misfire, fuel mixture issue, or faulty sensor. Performance may be reduced.',
             action: 'Book diagnostics soon. If flashing, stop driving to avoid catalytic converter damage.'
         },
         {
             name: 'Battery/Alternator Warning',
-            symbol: '🔋',
+            image: 'car-battery.png',
             meaning: 'Vehicle running only on stored battery power. It could stop at any moment.',
             action: 'Drive straight to a workshop if safe. Avoid turning the engine off on stops. Check the charging system.'
         },
         {
             name: 'Brake System/Handbrake Warning',
-            symbol: '🅿️',
+            image: 'brake.png',
             meaning: 'The handbrake may be on, or the brake fluid level may be low. Pad wear or a hydraulic fault is possible.',
             action: 'First, check the handbrake. If the light remains on, do not continue driving until the vehicle has been inspected and the issue has been resolved.'
         },
         {
             name: 'ABS Warning',
-            symbol: 'ABS',
+            image: 'brake.png',
             meaning: 'Anti-lock function disabled. The brakes still work, but the wheels may lock up on hard braking.',
             action: 'Drive with caution and book a repair. Avoid emergency stops.'
         },
         {
             name: 'Engine Temperature Overheat',
-            symbol: '🌡️',
+            image: 'engine.png',
             meaning: 'Coolant is too hot. The engine can suffer head gasket damage.',
             action: 'Pull over safely. Let the engine cool. Check coolant. Do not open the radiator cap while it is hot.'
         },
         {
             name: 'Catalytic Converter Warning',
-            symbol: '🔥',
+            image: 'engine.png',
             meaning: 'The emission system is overloaded or damaged. It could overheat or clog.',
             action: 'Schedule diagnostics promptly to prevent costly damage.'
         },
         {
             name: 'DPF (Diesel Particulate Filter) Warning',
-            symbol: 'DPF',
+            image: 'engine.png',
             meaning: 'Filter partially blocked. Often from short trips.',
             action: 'Try a longer, steady highway drive. If light remains, workshop regeneration is required.'
         },
         {
             name: 'Airbag Warning/Airbag Deactivated',
-            symbol: '🎈',
+            image: 'warning.png',
             meaning: 'Airbags may not deploy in a crash. Safety compromised.',
             action: 'Get the system checked soon. Avoid driving with the airbag disabled.'
         },
         {
             name: 'Water in Fuel Filter (Diesel)',
-            symbol: '💧',
+            image: 'fuel.png',
             meaning: 'Water contaminated diesel. Can damage injectors.',
             action: 'Visit the workshop promptly to drain the filter.'
         }
@@ -85,51 +85,57 @@ export default function DashboardWarningLights() {
     const importantLights = [
         {
             name: 'Brake Pad Warning',
+            image: 'brake.png',
             meaning: 'Pads are wearing thin, and the stopping distance may increase.',
             action: 'Replace pads soon to avoid rotor damage.'
         },
         {
             name: 'Low Washer Fluid',
+            image: 'low.png',
             meaning: 'Windscreen wash is nearly empty.',
             action: 'Top up the washer fluid for clear visibility.'
         },
         {
             name: 'Tyre Pressure Low',
+            image: 'low.png',
             meaning: 'Pressure drop or puncture. Increases fuel use and tyre wear.',
             action: 'Inflate to the recommended PSI. If pressure drops again, check the tyre for damage.'
         },
         {
             name: 'Exterior Light Fault',
+            image: 'light.png',
             meaning: 'A bulb may be blown, or the connection may be faulty.',
             action: 'Replace the defective bulb. Keeps the vehicle legal for WOF.'
         },
         {
             name: 'Automatic Gearbox Warning',
+            image: 'automatic-gearbox.png',
             meaning: 'Transmission problem or overheating.',
             action: 'Avoid heavy throttle. Book an inspection before long driving.'
         },
         {
             name: 'Service Required',
+            image: 'warning.png',
             meaning: 'Routine service due or sensor detected maintenance need.',
             action: 'Book a vehicle in for service to prevent worn parts from escalating.'
         }
     ];
 
     const statusIndicators = [
-        { name: 'Front/Rear Fog Lights', meaning: 'Fog lamps in use.', action: 'Use only in heavy fog for safety. Turn off when clear.' },
-        { name: 'Cruise Control On', meaning: 'Cruise system active.', action: 'Relaxed driving on the highway. Stay alert.' },
-        { name: 'Eco Driving Indicator', meaning: 'Driving efficiently.', action: 'Helps fuel economy.' },
-        { name: 'Direction Indicators', meaning: 'Turn signals on.', action: 'Use before lane changes and turns.' },
-        { name: 'Main Beam/Dipped Beam', meaning: 'Lighting mode active.', action: 'Adjust according to driving conditions.' },
-        { name: 'Parking Assist', meaning: 'Reversing cameras or sensors are active.', action: 'Use to support, not replace driver awareness.' }
+        { name: 'Front/Rear Fog Lights', image: 'light.png', meaning: 'Fog lamps in use.', action: 'Use only in heavy fog for safety. Turn off when clear.' },
+        { name: 'Cruise Control On', image: 'car.png', meaning: 'Cruise system active.', action: 'Relaxed driving on the highway. Stay alert.' },
+        { name: 'Eco Driving Indicator', image: 'car.png', meaning: 'Driving efficiently.', action: 'Helps fuel economy.' },
+        { name: 'Direction Indicators', image: 'car-indicator.png', meaning: 'Turn signals on.', action: 'Use before lane changes and turns.' },
+        { name: 'Main Beam/Dipped Beam', image: 'light.png', meaning: 'Lighting mode active.', action: 'Adjust according to driving conditions.' },
+        { name: 'Parking Assist', image: 'car.png', meaning: 'Reversing cameras or sensors are active.', action: 'Use to support, not replace driver awareness.' }
     ];
 
     const accessWarnings = [
-        { name: 'Door/Bonnet/Boot Open', meaning: 'Something is not fully closed.', action: 'Stop and close securely.' },
-        { name: 'Key Not in Vehicle', meaning: 'Key missing or range issue.', action: 'Do not drive off. Check the key battery.' },
-        { name: 'Key Fob Battery Low', meaning: 'The remote battery is weak.', action: 'Replace soon to avoid a lockout.' },
-        { name: 'Power Steering Warning', meaning: 'Steering assistance is low. Harder to turn.', action: 'Drive carefully. Book a workshop visit.' },
-        { name: 'Frost Warning', meaning: 'Road surface may be icy.', action: 'Reduce speed and increase braking distance.' }
+        { name: 'Door/Bonnet/Boot Open', image: 'car.png', meaning: 'Something is not fully closed.', action: 'Stop and close securely.' },
+        { name: 'Key Not in Vehicle', image: 'key.png', meaning: 'Key missing or range issue.', action: 'Do not drive off. Check the key battery.' },
+        { name: 'Key Fob Battery Low', image: 'key.png', meaning: 'The remote battery is weak.', action: 'Replace soon to avoid a lockout.' },
+        { name: 'Power Steering Warning', image: 'power.png', meaning: 'Steering assistance is low. Harder to turn.', action: 'Drive carefully. Book a workshop visit.' },
+        { name: 'Frost Warning', image: 'snow.png', meaning: 'Road surface may be icy.', action: 'Reduce speed and increase braking distance.' }
     ];
 
     const whenToVisit = [
@@ -154,7 +160,7 @@ export default function DashboardWarningLights() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-gradient-to-br from-yellow-900 to-orange-700 text-white"
+                className="pt-24 md:pt-48 pb-16 px-4 bg-[url('/indi.gif')] bg-cover bg-center bg-no-repeat text-white"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -220,7 +226,7 @@ export default function DashboardWarningLights() {
                                 viewport={{ once: true }}
                             >
                                 <div className="flex items-start gap-4">
-                                    <div className="text-4xl flex-shrink-0">{light.symbol}</div>
+                                    <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-12 h-12 flex-shrink-0" />
                                     <div className="flex-1">
                                         <h3 className="text-xl font-['Tomorrow'] font-medium mb-2 text-red-600">
                                             {light.name}
@@ -270,6 +276,7 @@ export default function DashboardWarningLights() {
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
                                 viewport={{ once: true }}
                             >
+                                <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-12 h-12 mb-2" />
                                 <h3 className="text-lg font-['Tomorrow'] font-medium mb-2 text-yellow-700">
                                     {light.name}
                                 </h3>
@@ -316,6 +323,7 @@ export default function DashboardWarningLights() {
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
                                 viewport={{ once: true }}
                             >
+                                <img src={`/Dashboard Icons/${indicator.image}`} alt={indicator.name} className="w-12 h-12 mb-2" />
                                 <h3 className="text-base font-['Tomorrow'] font-medium mb-2 text-blue-700">
                                     {indicator.name}
                                 </h3>
@@ -355,6 +363,7 @@ export default function DashboardWarningLights() {
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
                                 viewport={{ once: true }}
                             >
+                                <img src={`/Dashboard Icons/${warning.image}`} alt={warning.name} className="w-12 h-12 mb-2" />
                                 <h3 className="text-base font-['Tomorrow'] font-medium mb-2 text-gray-700">
                                     {warning.name}
                                 </h3>
