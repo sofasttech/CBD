@@ -15,22 +15,22 @@ const accordionItems = [
   },
   {
     id: 2,
-    title: 'Mechanical Repairs',
+    title: 'Paint and Refinishing',
     imageUrl: '/car-tune-up.jpg',
   },
   {
     id: 3,
-    title: 'Headlight Restoration',
+    title: 'Mechanical',
     imageUrl: '/headlight.webp',
   },
   {
     id: 4,
-    title: 'Quality Service',
+    title: 'Caravan Repairs',
     imageUrl: '/shop.webp',
   },
   {
     id: 5,
-    title: 'Expert Care',
+    title: 'Boat Repairs',
     imageUrl: '/tesla.jpg',
   },
 ];
@@ -87,7 +87,7 @@ function AboutAccordionSection() {
   };
 
   return (
-    <div className="bg-white font-sans">
+    <div className="bg-white font-mulish">
       <section id="about-intro" className="container mx-auto px-4 py-12 md:py-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
@@ -113,14 +113,14 @@ function AboutAccordionSection() {
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
               <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
-                At CBD Panel and Paint, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
+                CBD Panel and Paint is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
               </p>
             </div>
 
             <div className="mt-6">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
               <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
-                For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
+                For more than 30 years, we have been proudly serving Auckland with quality panel beating, mechanical repairs, and insurance work. Whether it’s a small dent or a major collision, we approach every job with care and attention, restoring your vehicle to its best possible condition.
               </p>
             </div>
 
@@ -333,7 +333,7 @@ export default function Homepage() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans scroll-smooth">
+    <div className="min-h-screen bg-white font-mulish scroll-smooth">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero - Horizontal Scroll */}
@@ -623,141 +623,224 @@ export default function Homepage() {
         <div className="w-full bg-transparent pt-10 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between px-4 lg:px-16 gap-8">
             {/* Cards Stack */}
-            <div className="grid gap-2 flex-1">
-              {/* Card 1 - Maintenance */}
-              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
-                <article className="bg-green-600 h-72 w-full max-w-2xl rounded-lg rotate-3 p-6 lg:p-8 shadow-2xl overflow-hidden">
+            <div className="grid gap-4 flex-1">
+              {/* Card 01 - Accident Repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-green-600 h-96 w-full max-w-3xl rounded-lg rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-3xl font-['Tomorrow'] font-bold">01</span>
-                        <h3 className="text-xl lg:text-2xl font-bold font-['Tomorrow'] uppercase">Maintenance</h3>
+                        <span className="text-4xl font-['Tomorrow'] font-bold">01</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Accident Repair</h3>
                       </div>
-                      <p className="text-xs lg:text-sm">
-                        Keep your vehicle running smoothly and safely, giving you peace of mind on every journey. Our comprehensive maintenance services include regular oil changes, tire rotations, brake inspections, fluid checks, and diagnostic tests.
-                      </p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">
-                        LEARN MORE <ChevronRight className="w-3 h-3 ml-2" />
-                      </button>
+                      <p className="text-sm lg:text-base">Comprehensive collision repairs to restore your vehicle to factory standards. We handle panel replacement, frame alignment, and finish work so your car is safe and looks like new.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
                     </div>
-                    <div className="hidden md:block w-32 lg:w-40 flex-shrink-0">
-                      <img src="/car-polishing-tray.png" alt="Maintenance" className="w-full h-full object-cover rounded-lg" />
-                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Accident Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
                 </article>
               </figure>
 
-              {/* Card 2 - Wheels */}
-              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
-                <article className="bg-blue-600 h-72 w-full max-w-2xl rounded-lg -rotate-2 p-6 lg:p-8 shadow-2xl overflow-hidden">
+              {/* Card 02 - Bumper Repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-blue-600 h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-3xl font-['Tomorrow'] font-bold">02</span>
-                        <h3 className="text-xl lg:text-2xl font-bold font-['Tomorrow'] uppercase">Wheels</h3>
+                        <span className="text-4xl font-['Tomorrow'] font-bold">02</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Bumper Repair</h3>
                       </div>
-                      <p className="text-xs lg:text-sm">
-                        Upgrade your ride with precision wheel services that enhance performance and style. We offer wheel alignment, balancing, tire replacement, and custom rim installations to improve handling, safety, and aesthetics.
-                      </p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">
-                        LEARN MORE <ChevronRight className="w-3 h-3 ml-2" />
-                      </button>
+                      <p className="text-sm lg:text-base">Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
                     </div>
-                    <div className="hidden md:block w-32 lg:w-40 flex-shrink-0">
-                      <img src="/tyer.png" alt="Wheels" className="w-full h-full object-cover rounded-lg" />
-                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
                   </div>
                 </article>
               </figure>
 
-              {/* Card 3 - Alignment */}
-              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
-                <article className="bg-orange-500 h-72 w-full max-w-2xl rounded-lg rotate-2 p-6 lg:p-8 shadow-2xl overflow-hidden">
+              {/* Card 03 - Chassis and structural repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-orange-500 h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-3xl font-['Tomorrow'] font-bold">03</span>
-                        <h3 className="text-xl lg:text-2xl font-bold font-['Tomorrow'] uppercase">Alignment</h3>
+                        <span className="text-4xl font-['Tomorrow'] font-bold">03</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Chassis & Structural Repair</h3>
                       </div>
-                      <p className="text-xs lg:text-sm">
-                        Ensure perfect alignment for a smoother, safer drive that you can feel in every turn. Proper wheel alignment improves fuel efficiency, reduces tire wear, and enhances vehicle stability and handling.
-                      </p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">
-                        LEARN MORE <ChevronRight className="w-3 h-3 ml-2" />
-                      </button>
+                      <p className="text-sm lg:text-base">Frame straightening, weld repairs and structural reinforcement to restore crash integrity. Work follows manufacturer tolerances and is verified with precision measuring tools.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
                     </div>
-                    <div className="hidden md:block w-32 lg:w-40 flex-shrink-0">
-                      <img src="/car-pieces.png" alt="Alignment" className="w-full h-full object-cover rounded-lg" />
-                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/car-pieces.png'}} /></div>
                   </div>
                 </article>
               </figure>
 
-              {/* Card 4 - Power Coating */}
-              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
-                <article className="bg-red-600 h-72 w-full max-w-2xl rounded-lg -rotate-3 p-6 lg:p-8 shadow-2xl overflow-hidden">
+              {/* Card 04 - Curb Rash Repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-red-600 h-96 w-full max-w-3xl rounded-lg -rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-3xl font-['Tomorrow'] font-bold">04</span>
-                        <h3 className="text-xl lg:text-2xl font-bold font-['Tomorrow'] uppercase">Power Coating</h3>
+                        <span className="text-4xl font-['Tomorrow'] font-bold">04</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Curb Rash Repair</h3>
                       </div>
-                      <p className="text-xs lg:text-sm">
-                        Our power coating service provides a durable, high-quality finish that protects your vehicle from corrosion, scratches, and fading. Using advanced electrostatic application techniques, we ensure even coverage.
-                      </p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">
-                        LEARN MORE <ChevronRight className="w-3 h-3 ml-2" />
-                      </button>
+                      <p className="text-sm lg:text-base">Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
                     </div>
-                    <div className="hidden md:block w-32 lg:w-40 flex-shrink-0">
-                      <img src="/car-polishing-tray.png" alt="Power Coating" className="w-full h-full object-cover rounded-lg" />
-                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/tyer.png'}} /></div>
                   </div>
                 </article>
               </figure>
 
-              {/* Card 5 - Brakes */}
-              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
-                <article className="bg-purple-600 h-72 w-full max-w-2xl rounded-lg rotate-1 p-6 lg:p-8 shadow-2xl overflow-hidden">
+              {/* Card 05 - Dent Repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-purple-600 h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-3xl font-['Tomorrow'] font-bold">05</span>
-                        <h3 className="text-xl lg:text-2xl font-bold font-['Tomorrow'] uppercase">Brakes</h3>
+                        <span className="text-4xl font-['Tomorrow'] font-bold">05</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Dent Repair</h3>
                       </div>
-                      <p className="text-xs lg:text-sm">
-                        Our brake service ensures your vehicle's stopping power is at its best. We inspect, repair, and replace brake pads, rotors, calipers, and brake lines using high-quality parts. Regular maintenance prevents accidents.
-                      </p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">
-                        LEARN MORE <ChevronRight className="w-3 h-3 ml-2" />
-                      </button>
+                      <p className="text-sm lg:text-base">Paintless dent removal for minor impacts and full panel repair when needed. We prioritise preserving original paint where possible to maintain value.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
                     </div>
-                    <div className="hidden md:block w-32 lg:w-40 flex-shrink-0">
-                      <img src="/breaks.png" alt="Brakes" className="w-full h-full object-cover rounded-lg" />
-                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
                   </div>
                 </article>
               </figure>
 
-              {/* Card 6 - Engine Service */}
-              <figure className="sticky top-[40vh] h-[50vh] grid place-content-center">
-                <article className="bg-indigo-600 h-72 w-full max-w-2xl rounded-lg -rotate-1 p-6 lg:p-8 shadow-2xl overflow-hidden">
+              {/* Card 06 - Exterior Polishing */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-indigo-600 h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-3xl font-['Tomorrow'] font-bold">06</span>
-                        <h3 className="text-xl lg:text-2xl font-bold font-['Tomorrow'] uppercase">Engine Service</h3>
+                        <span className="text-4xl font-['Tomorrow'] font-bold">06</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Exterior Polishing</h3>
                       </div>
-                      <p className="text-xs lg:text-sm">
-                        Our comprehensive engine service includes diagnostics, tune-ups, oil changes, and major repairs. We use advanced tools to identify issues early and provide expert repairs to keep your engine running smoothly.
-                      </p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">
-                        LEARN MORE <ChevronRight className="w-3 h-3 ml-2" />
-                      </button>
+                      <p className="text-sm lg:text-base">Multi-stage machine polishing to remove swirls, light scratches and oxidation. Results restore gloss and improve long-term protection when combined with sealants.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
                     </div>
-                    <div className="hidden md:block w-32 lg:w-40 flex-shrink-0">
-                      <img src="/car-pieces.png" alt="Engine Service" className="w-full h-full object-cover rounded-lg" />
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                  </div>
+                </article>
+              </figure>
+
+              {/* Card 07 - Headlight Polishing */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-yellow-500 h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                  <div className="flex h-full gap-4">
+                    <div className="flex-1 flex flex-col justify-center gap-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-['Tomorrow'] font-bold">07</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Headlight Polishing</h3>
+                      </div>
+                      <p className="text-sm lg:text-base">Remove haze and yellowing to improve night visibility and restore original clarity. We seal lenses to slow future oxidation.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
                     </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/headlight.webp" alt="Headlight Polishing" className="w-full h-full object-cover rounded-lg" /></div>
+                  </div>
+                </article>
+              </figure>
+
+              {/* Card 08 - Paint and Refinishing */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-red-500 h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                  <div className="flex h-full gap-4">
+                    <div className="flex-1 flex flex-col justify-center gap-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-['Tomorrow'] font-bold">08</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Paint & Refinishing</h3>
+                      </div>
+                      <p className="text-sm lg:text-base">Full paintwork and refinishing with OEM colour matching and modern coatings. We guarantee even coverage, proper cure and long-lasting results.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                  </div>
+                </article>
+              </figure>
+
+              {/* Card 09 - Panel Repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-teal-600 h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                  <div className="flex h-full gap-4">
+                    <div className="flex-1 flex flex-col justify-center gap-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-['Tomorrow'] font-bold">09</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Panel Repair</h3>
+                      </div>
+                      <p className="text-sm lg:text-base">Meticulous metalwork and panel replacement to restore lines and gaps. We ensure doors, hoods and boot lids align correctly after repair.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Panel Repair" className="w-full h-full object-cover rounded-lg" /></div>
+                  </div>
+                </article>
+              </figure>
+
+              {/* Card 10 - Windscreen Removal and Installation */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-sky-600 h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                  <div className="flex h-full gap-4">
+                    <div className="flex-1 flex flex-col justify-center gap-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-['Tomorrow'] font-bold">10</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Windscreen Removal & Installation</h3>
+                      </div>
+                      <p className="text-sm lg:text-base">Accurate removal and fitment using OEM adhesives and correct curing. We replace chips and full windscreens with a focus on airtight seals and lane-camera recalibration if required.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
+                  </div>
+                </article>
+              </figure>
+
+              {/* Card 11 - Mechanical Repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-emerald-600 h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                  <div className="flex h-full gap-4">
+                    <div className="flex-1 flex flex-col justify-center gap-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-['Tomorrow'] font-bold">11</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Mechanical Repair</h3>
+                      </div>
+                      <p className="text-sm lg:text-base">Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/mechanical.jpg" alt="Mechanical Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/oil.jpg'}} /></div>
+                  </div>
+                </article>
+              </figure>
+
+              {/* Card 12 - WOF and Compliance */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-indigo-700 h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                  <div className="flex h-full gap-4">
+                    <div className="flex-1 flex flex-col justify-center gap-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-['Tomorrow'] font-bold">12</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">WOF & Compliance</h3>
+                      </div>
+                      <p className="text-sm lg:text-base">Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wof.jpg" alt="WOF" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
+                  </div>
+                </article>
+              </figure>
+
+              {/* Card 13 - Caravan and Board Repair */}
+              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+                <article className="bg-slate-600 h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                  <div className="flex h-full gap-4">
+                    <div className="flex-1 flex flex-col justify-center gap-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-['Tomorrow'] font-bold">13</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Caravan & Board Repair</h3>
+                      </div>
+                      <p className="text-sm lg:text-base">Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.</p>
+                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                    </div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/caravan.jpg" alt="Caravan Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
                   </div>
                 </article>
               </figure>
@@ -833,10 +916,10 @@ export default function Homepage() {
           {/* Stats Section */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
              {[
-                { label: "Years Experience", value: 25, suffix: "+" },
+                { label: "Years Experience", value: 30, suffix: "+" },
                 { label: "Cars Repaired", value: 9900, suffix: "K+" },
                 { label: "Customer Rating", value: 100, suffix: "%" },
-                { label: "Expert Staff", value: 15, suffix: "+" }
+                { label: "Expert Staff", value: 10, suffix: "+" }
              ].map((stat, index) => (
                 <div key={index} className="text-center">
                    <div className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-blue-500 mb-2">

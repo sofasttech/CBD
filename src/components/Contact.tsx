@@ -96,7 +96,7 @@ export default function Contact() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-blue-600" />
-                    <a href="mailto:info@cbdpanel.co.nz" className="text-gray-700 hover:text-blue-600">info@cbdpanel.co.nz</a>
+                    <a href="mailto:info@cbdpanel.co.nz	" className="text-gray-700 hover:text-blue-600">info@cbdpanel.co.nz	</a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-blue-600" />

@@ -116,7 +116,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Email</p>
-                    <p className="text-gray-400 text-xs">info@cbdpanel.co.nz</p>
+                    <p className="text-gray-400 text-xs">info@cbdpanel.co.nz	</p>
                   </div>
                 </div>
 
