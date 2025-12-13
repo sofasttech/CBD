@@ -22,14 +22,14 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex justify-center gap-6">
-            <Link to="/" className="text-sm font-medium hover:text-blue-600 transition">
+            <Link to="/" className="text-sm font-medium hover:text-blue-600 transition py-2">
               Home
             </Link>
-            <Link to="/our-story" className="text-sm font-medium hover:text-blue-600 transition">
+            <Link to="/our-story" className="text-sm font-medium hover:text-blue-600 transition py-2">
               Our Story
             </Link>
             <div className="relative group">
-              <button className="text-sm font-medium hover:text-blue-600 transition">
+              <button className="text-sm font-medium hover:text-blue-600 transition py-2">
                 Services
               </button>
               <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -44,17 +44,17 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
                 </Link>
               </div>
             </div>
-            <Link to="/faqs" className="text-sm font-medium hover:text-blue-600 transition">
+            <Link to="/faqs" className="text-sm font-medium hover:text-blue-600 transition py-2">
               FAQs
             </Link>
-            <Link to="/tips-advice" className="text-sm font-medium hover:text-blue-600 transition">
+            <Link to="/tips-advice" className="text-sm font-medium hover:text-blue-600 transition py-2">
               Tips & Advice
             </Link>
           </nav>
 
           {/* Working Hours, Support, Cart */}
           <div className="flex items-center justify-end gap-4">
-            <div className="text-sm hidden md:block">
+            <div className="text-sm hidden md:block py-2">
               <div>1900 1088</div>
               <div>info@example.com</div>
             </div>
