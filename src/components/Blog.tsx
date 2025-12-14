@@ -5,25 +5,28 @@ import { ChevronsRight } from 'lucide-react';
 export default function Blog() {
   const posts = [
     {
-      title: 'SUPERIOR SERVICE WITH A TOUCH OF CLASS',
-      excerpt: 'Discover how our expert panel beaters restore your vehicle to its original glory with precision craftsmanship and high-quality materials.',
+      title: 'Panel Beating Repair Costs Explained – From Small Dents to Major Damage',
+      excerpt: 'Understanding panel beating costs helps you make informed decisions. Prices vary based on damage severity, parts, labour, paint type, and insurance coverage.',
       date: 'MAY 29, 2025',
-      category: 'ASK PROJECT',
-      image: '/close-up-photo-of-mechanic-changing-antifreeze-flu-2025-03-08-13-09-02-utc-300x200.jpg'
+      category: 'PANEL BEATING',
+      image: '/panel-beatt.jpg',
+      route: '/tips-advice/panel-beating-costs'
     },
     {
-      title: 'A TRADITIONS OF AUTOMOTIVE EXCELLENCE',
-      excerpt: 'From engine diagnostics to full mechanical overhauls, our team ensures your car runs smoothly and safely on the road.',
+      title: 'Repair or Replace? How to Know When a Panel Should Be Replaced',
+      excerpt: 'Should a damaged panel be repaired or replaced? Understanding the difference helps you make informed decisions and avoid paying for the wrong repair.',
       date: 'MAY 29, 2025',
-      category: 'ASK PROJECT',
-      image: '/pouring-engine-oil-to-car-engine-fresh-oil-poured-2022-11-01-09-27-40-utc-scaled-1-300x200.jpg'
+      category: 'PANEL BEATING',
+      image: '/car-polishing-tray.png',
+      route: '/tips-advice/repair-or-replace'
     },
     {
-      title: 'DRIVING IN STYLES, EXPERTLY MAINTAINED',
-      excerpt: 'Keep your vehicle in top condition with our comprehensive maintenance services, including battery checks and tire rotations.',
+      title: 'Why Front Bumper Repair Matters: A Practical Guide for Drivers',
+      excerpt: 'The front bumper absorbs impact and protects key components; professional repairs restore strength, alignment, and finish.',
       date: 'MAY 29, 2025',
-      category: 'ASK PROJECT',
-      image: '/testing-car-battery-2021-08-26-19-52-15-utc-scaled-1-300x200.jpg'
+      category: 'PANEL BEATING',
+      image: '/frontbumper.webp',
+      route: '/tips-advice/bumper-repair-guide'
     },
   ];
 
@@ -37,14 +40,14 @@ export default function Blog() {
               ARTICLES FROM AUTOACE
             </h2>
           </div>
-          <button className="relative group bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition">
+          <a href="/tips-advice" className="relative group bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition inline-block">
             <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
             <span className="relative z-10">VIEW MORE</span>
             <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
             <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
             <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
             <div className="absolute -bottom-2 -right-2 w-0 h-0 border-r-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
-          </button>
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
@@ -63,7 +66,7 @@ export default function Blog() {
                   {post.title}
                 </h1>
                 <a
-                  href='#'
+                  href={post.route ?? '#'}
                   className='text-base text-white font-normal group-hover:opacity-100 opacity-0 translate-y-2 group-hover:translate-y-0 pt-2 flex gap-1 transition-all duration-300'
                 >
                   Read Story

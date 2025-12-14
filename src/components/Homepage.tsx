@@ -40,7 +40,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: typeof accordio
   return (
     <div
       className={`
-        relative rounded-2xl overflow-hidden cursor-pointer
+        relative rounded-2xl overflow-hidden cursor-pointer md:flex-shrink-0
         transition-all duration-700 ease-in-out
         ${isActive
           ? 'w-[280px] md:w-[400px] h-[350px] md:h-[450px]'
@@ -92,8 +92,8 @@ function AboutAccordionSection() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
           {/* Left Side: Image Accordion */}
-          <div className="w-full md:w-1/2">
-            <div className="flex flex-row items-center justify-center gap-2 md:gap-4 overflow-x-auto p-2 md:p-4">
+          <div className="w-full md:w-1/2 md:min-w-[420px] md:flex-none">
+            <div className="flex flex-row items-center justify-center md:justify-start gap-2 md:gap-4 overflow-x-auto p-2 md:p-4 md:whitespace-nowrap">
               {accordionItems.map((item, index) => (
                 <AccordionItem
                   key={item.id}
@@ -112,14 +112,14 @@ function AboutAccordionSection() {
 
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                 CBD Panel and Paint is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
               </p>
             </div>
 
             <div className="mt-6">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
-              <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                 For more than 30 years, we have been proudly serving Auckland with quality panel beating, mechanical repairs, and insurance work. Whether it’s a small dent or a major collision, we approach every job with care and attention, restoring your vehicle to its best possible condition.
               </p>
             </div>
@@ -179,7 +179,7 @@ function TimelineDemo() {
       title: "Book Appointment",
       content: (
         <div>
-          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
             Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote. Our experienced advisors will assess your requirements, provide transparent pricing, and arrange a convenient time for your service. Whether it's a minor repair or major restoration, we ensure your vehicle gets the attention it deserves with our comprehensive consultation process.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -209,10 +209,10 @@ function TimelineDemo() {
       title: "Service & Repair",
       content: (
         <div>
-          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
             Our experienced technicians perform the necessary repairs and maintenance with precision and care, utilizing advanced diagnostic tools and proven techniques to identify and resolve issues efficiently.
           </p>
-          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
             We use state-of-the-art equipment and quality materials to ensure every repair meets our high standards. From minor tune-ups to major overhauls, our comprehensive service covers everything from engine diagnostics to bodywork restoration, guaranteeing your vehicle performs at its best with our expert craftsmanship and attention to detail.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -242,10 +242,10 @@ function TimelineDemo() {
       title: "Quality Check",
       content: (
         <div>
-          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
             Every vehicle undergoes thorough quality inspection before delivery to ensure it meets our highest standards and your complete satisfaction. Our certified inspectors meticulously check every component, from mechanical systems to bodywork, using advanced diagnostic equipment and visual inspections.
           </p>
-          <p className="mb-8 text-sm font-normal text-black md:text-lg leading-relaxed">
+          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
             We perform comprehensive testing including road tests, brake inspections, fluid level checks, and alignment verification to guarantee your vehicle is safe, reliable, and ready for the road. Only when everything passes our rigorous standards do we hand over the keys.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -324,6 +324,18 @@ export default function Homepage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Inject Shapo widget script dynamically so it executes in React
+  useEffect(() => {
+    if (!document.getElementById('shapo-embed-js')) {
+      const s = document.createElement('script');
+      s.id = 'shapo-embed-js';
+      s.type = 'text/javascript';
+      s.src = 'https://cdn.shapo.io/js/embed.js';
+      s.defer = true;
+      document.body.appendChild(s);
+    }
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -337,19 +349,28 @@ export default function Homepage() {
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero - Horizontal Scroll */}
-      <section id="home" className="pt-28 px-4">
+      <section id="home" className="pt-20 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           {/* Left side text */}
           <div>
             <p className="text-blue-600 text-sm font-medium mb-2">Car Troubles?</p>
             <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium text-blue-600 mb-4">Automotive Repair Services</h1>
-            <p className="text-xl text-gray-700 mb-6">CBD Panelbeaters LTD is one of Auckland’s leading full service automotive repair services specializing in the full range of repairs including warrant of fitness and mechanical.</p>
-            <div className="mb-6">
-              <p className="flex items-center gap-2 text-gray-700 mb-2">
-                <span className="text-green-600">✓</span> Our Work is Guaranteed
+            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left mb-6">CBD Panel and Paint Limited is a Grey Lynn full-service auto repair centre handling panel beating, spray painting, mechanical servicing, WOF inspections, towing and insurance-approved repairs. We manage each job from assessment to completion to keep your vehicle safe and road-ready.</p>
+            <div className="mb-6 grid grid-cols-2 gap-2">
+              <p className="flex items-center gap-2 text-gray-700">
+                <span className="text-green-600">✓</span> Fast service
               </p>
               <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">✓</span> Save Time and Money
+                <span className="text-green-600">✓</span> Fair price
+              </p>
+              <p className="flex items-center gap-2 text-gray-700">
+                <span className="text-green-600">✓</span> Family-run
+              </p>
+              <p className="flex items-center gap-2 text-gray-700">
+                <span className="text-green-600">✓</span> Expert workmanship
+              </p>
+              <p className="flex items-center gap-2 text-gray-700 col-span-2 md:col-span-1">
+                <span className="text-green-600">✓</span> All services under one roof
               </p>
             </div>
             <div className="flex gap-4">
@@ -511,14 +532,14 @@ export default function Homepage() {
 
             <div className="mb-10">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
                 At CBD Panel and Paint, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
 
             <div >
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
-              <p className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
                 For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
               </p>
             </div>
@@ -634,7 +655,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Accident Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Comprehensive collision repairs to restore your vehicle to factory standards. We handle panel replacement, frame alignment, and finish work so your car is safe and looks like new.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Accident Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -651,7 +672,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Bumper Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
                   </div>
@@ -668,7 +689,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Chassis & Structural Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Frame straightening, weld repairs and structural reinforcement to restore crash integrity. Work follows manufacturer tolerances and is verified with precision measuring tools.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/car-pieces.png'}} /></div>
                   </div>
@@ -685,7 +706,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Curb Rash Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/tyer.png'}} /></div>
                   </div>
@@ -702,7 +723,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Dent Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Paintless dent removal for minor impacts and full panel repair when needed. We prioritise preserving original paint where possible to maintain value.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
                   </div>
@@ -719,7 +740,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Exterior Polishing</h3>
                       </div>
                       <p className="text-sm lg:text-base">Multi-stage machine polishing to remove swirls, light scratches and oxidation. Results restore gloss and improve long-term protection when combined with sealants.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
                   </div>
@@ -736,7 +757,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Headlight Polishing</h3>
                       </div>
                       <p className="text-sm lg:text-base">Remove haze and yellowing to improve night visibility and restore original clarity. We seal lenses to slow future oxidation.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/headlight.webp" alt="Headlight Polishing" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -753,7 +774,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Paint & Refinishing</h3>
                       </div>
                       <p className="text-sm lg:text-base">Full paintwork and refinishing with OEM colour matching and modern coatings. We guarantee even coverage, proper cure and long-lasting results.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
                   </div>
@@ -770,7 +791,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Panel Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Meticulous metalwork and panel replacement to restore lines and gaps. We ensure doors, hoods and boot lids align correctly after repair.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Panel Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -787,7 +808,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Windscreen Removal & Installation</h3>
                       </div>
                       <p className="text-sm lg:text-base">Accurate removal and fitment using OEM adhesives and correct curing. We replace chips and full windscreens with a focus on airtight seals and lane-camera recalibration if required.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
                   </div>
@@ -804,7 +825,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Mechanical Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/mechanical.jpg" alt="Mechanical Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/oil.jpg'}} /></div>
                   </div>
@@ -821,7 +842,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">WOF & Compliance</h3>
                       </div>
                       <p className="text-sm lg:text-base">Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wof.jpg" alt="WOF" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
                   </div>
@@ -838,7 +859,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Caravan & Board Repair</h3>
                       </div>
                       <p className="text-sm lg:text-base">Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.</p>
-                      <button className="flex items-center text-white hover:text-blue-200 transition uppercase text-xs font-medium w-fit bg-black/30 px-3 py-2 rounded-md">LEARN MORE <ChevronRight className="w-3 h-3 ml-2" /></button>
+                      
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/caravan.jpg" alt="Caravan Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
                   </div>
@@ -869,7 +890,7 @@ export default function Homepage() {
           >
             <p className="text-blue-600 font-medium tracking-widest uppercase text-sm mb-3">Why Choose Us</p>
             <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold mb-6">Excellence in Every Detail</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
+            <p className="text-black max-w-2xl mx-auto text-lg font-mulish font-semibold leading-relaxed ">
               We don't just repair cars; we restore confidence. Experience the perfect blend of technical expertise and customer-focused service.
             </p>
           </motion.div>
@@ -914,7 +935,7 @@ export default function Homepage() {
           </div>
           
           {/* Stats Section */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white-200 pt-12">
              {[
                 { label: "Years Experience", value: 30, suffix: "+" },
                 { label: "Cars Repaired", value: 9900, suffix: "K+" },
@@ -937,7 +958,7 @@ export default function Homepage() {
       {/* How it works */}
       <motion.section
         id="how-it-works"
-        className="bg-white"
+        className="bg-white -mt-12 md:mt-0"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -968,15 +989,9 @@ export default function Homepage() {
       >
         <section id="reviews" className="py-8 bg-neutral-50">
           <div className="max-w-6xl mx-auto px-6">
-            <h3 className="text-2xl font-['Tomorrow']  mb-4">Customer Reviews</h3>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold mb-6">Customer Reviews</h2>
             <div className="rounded-lg overflow-hidden shadow-sm">
-              <iframe
-                src="https://widgets.sociablekit.com/google-reviews/iframe/25625462"
-                frameBorder="0"
-                className="w-full h-[480px]"
-                loading="lazy"
-                title="Google Reviews"
-              ></iframe>
+              <div id="shapo-widget-65035ad084a4892e58a0"></div>
             </div>
           </div>
         </section>

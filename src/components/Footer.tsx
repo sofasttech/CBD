@@ -57,8 +57,6 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 ))}
               </ul>
             </div>
-
-            {/* Quick Links - Company */}
             <div className="lg:col-span-2">
               <h3 className="text-white font-bold text-base mb-6 relative inline-block">
                 Company
@@ -105,7 +103,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Phone</p>
-                    <p className="text-gray-400 text-xs">Call us for inquiries</p>
+                    <p className="text-gray-400 text-xs">093091906</p>
                   </div>
                 </div>
 
@@ -131,50 +129,28 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 </div>
               </div>
             </div>
+        </div>
+      </div>
+      {/* Full-bleed Partners & Copyright (white background) */}
+      <div className="w-full bg-white border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="mb-10 text-center">
+            <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
+              Trusted Insurance Partners
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+              <img src="/MTA-logo_480x480.webp" alt="MTA" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+              <img src="/NZI_logo.svg.png" alt="NZI" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+              <img src="/Insurance_austr_group_logo15.png" alt="Insurance Australia Group" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+              <img src="/state-house-and-contents-product_default.webp" alt="State Insurance" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+            </div>
           </div>
-
-          {/* Partners & Copyright */}
-          <div className="border-t border-gray-800 pt-12">
-            {/* Partner Logos */}
-            <div className="mb-10">
-              <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
-                Trusted Insurance Partners
-              </p>
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                <img 
-                  src="/MTA-logo_480x480.webp" 
-                  alt="MTA" 
-                  className="h-12 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" 
-                />
-                <img 
-                  src="/NZI_logo.svg.png" 
-                  alt="NZI" 
-                  className="h-12 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" 
-                />
-                <img 
-                  src="/Insurance_austr_group_logo15.png" 
-                  alt="Insurance Australia Group" 
-                  className="h-12 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" 
-                />
-                <img 
-                  src="/state-house-and-contents-product_default.webp" 
-                  alt="State Insurance" 
-                  className="h-12 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" 
-                />
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-center">
-              <p className="text-gray-500 text-sm mb-2">
-                © 2025 CBD Panel and Paint. All rights reserved.
-              </p>
-              <p className="text-gray-600 text-xs">
-                Crafted with precision and care for automotive excellence
-              </p>
-            </div>
+          <div className="text-center text-gray-700">
+            <p className="text-sm mb-2">© 2025 CBD Panel and Paint. All rights reserved.</p>
+            <p className="text-xs">Crafted with precision and care for automotive excellence</p>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

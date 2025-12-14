@@ -56,7 +56,7 @@ export default function OurStory() {
                     </motion.div>
 
                     <motion.p
-                        className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-mulish font-light"
+                        className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-mulish font-semibold "
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
@@ -156,7 +156,7 @@ export default function OurStory() {
                         <div>
                             <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">The Magic Touch</p>
                             <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-6">Restoring Glory</h2>
-                            <p className="text-gray-300 leading-relaxed mb-6 text-lg font-mulish font-light">
+                            <p className="text-gray-300 leading-relaxed mb-6 text-lg font-mulish font-semibold text-justify md:text-left">
                                 See the difference our craftsmanship makes. We take damaged vehicles and return them to their showroom condition, often exceeding the original factory finish.
                             </p>
                             <div className="flex items-center gap-4 text-sm text-gray-400">
@@ -245,82 +245,7 @@ export default function OurStory() {
                 </div>
             </motion.section>
 
-            {/* Our Leadership Section */}
-            <motion.section
-                className="px-4 py-16 bg-white"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Leadership</p>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase">Meet Our Team</h2>
-                    </div>
-
-                    <div className='group flex max-md:flex-col justify-center gap-2 w-[80%] mx-auto mb-10 mt-3'>
-                        {[
-                            {
-                                id: '1',
-                                url: 'https://randomuser.me/api/portraits/men/32.jpg',
-                                title: 'Adrian Paul',
-                                description: 'COO & Co-Founder',
-                                tags: ['Floral', 'Highlands', 'Wildflowers', 'Colorful', 'Resilience'],
-                            },
-                            {
-                                id: '2',
-                                url: 'https://randomuser.me/api/portraits/men/45.jpg',
-                                title: 'Flualy Cual',
-                                description: 'Founder & CEO',
-                                tags: ['Twilight', 'Peaks', 'Silhouette', 'Evening Sky', 'Peaceful'],
-                            },
-                            {
-                                id: '3',
-                                url: 'https://randomuser.me/api/portraits/men/67.jpg',
-                                title: 'Naymur Rahman',
-                                description: 'CTO & Co-Founder',
-                                tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],
-                            },
-                        ].map((item) => {
-                            return (
-                                <motion.article 
-                                    key={item.id} 
-                                    className='group/article relative w-full rounded-xl overflow-hidden transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur-sm after:rounded-lg after:transition-all focus-within:ring-3 focus-within:ring-indigo-300'
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: parseInt(item.id) * 0.1 }}
-                                    viewport={{ once: true }}
-                                    whileHover={{
-                                        flex: "1 1 60%",
-                                        transition: { duration: 0.3, ease: [0.5, 0.85, 0.25, 1.15] }
-                                    }}
-                                    style={{ flex: "1 1 33.33%" }}
-                                >
-                                    <a
-                                        className='absolute inset-0 text-white z-10  p-3 flex flex-col justify-end'
-                                        href='#0'
-                                    >
-                                        <h1 className=' text-xl font-medium   md:whitespace-nowrap md:truncate md:opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 md:translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-300 group-focus-within/article:delay-300'>
-                                            {item?.title}
-                                        </h1>
-                                        <span className=' text-3xl font-medium  md:whitespace-nowrap md:truncate md:opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 md:translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-500 group-focus-within/article:delay-500'>
-                                            {item?.description}
-                                        </span>
-                                    </a>
-                                    <img
-                                        className='object-cover h-72 md:h-[420px]  w-full'
-                                        src={item?.url}
-                                        width='960'
-                                        height='480'
-                                        alt={item?.title}
-                                    />
-                                </motion.article>
-                            );
-                        })}
-                    </div>
-                </div>
-            </motion.section>
+            {/* Our Leadership Section commented out */}
 
             {/* Timeline */}
             <motion.section
@@ -512,7 +437,7 @@ export default function OurStory() {
                     <div className="text-center mb-12">
                         <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Meet The Team</p>
                         <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase">Expert Technicians</h2>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6 leading-relaxed font-mulish font-extralight">
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6 leading-relaxed font-mulish font-semibold text-justify md:text-left">
                             Our team of certified professionals brings together decades of combined experience, ongoing training, and a passion for automotive excellence.
                         </p>
                     </div>
