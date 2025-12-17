@@ -160,17 +160,20 @@ export default function DashboardWarningLights() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-48 pb-16 px-4 bg-[url('/indi.gif')] bg-cover bg-center bg-no-repeat text-white"
+                className="relative pt-24 md:pt-48 pb-16 px-4 bg-[url('/indi.gif')] bg-cover bg-center bg-no-repeat text-white"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <div className="max-w-4xl mx-auto text-center">
-                    <p className="text-yellow-300 text-sm font-medium uppercase tracking-wide mb-4">Essential Knowledge</p>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                {/* Dark overlay with gradient for better text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/60 backdrop-blur-[2px]"></div>
+                
+                <div className="relative max-w-4xl mx-auto text-center">
+                    <p className="text-yellow-300 text-sm font-medium uppercase tracking-wide mb-4 drop-shadow-lg">Essential Knowledge</p>
+                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6 drop-shadow-2xl">
                         Dashboard Warning Lights <span className="text-yellow-300">Decoded</span>
                     </h1>
-                    <p className="text-xl text-yellow-100 leading-relaxed font-mulish font-extralight">
+                    <p className="text-xl text-yellow-100 leading-relaxed font-mulish font-extralight drop-shadow-lg">
                         What They Mean and What You Should Do
                     </p>
                 </div>

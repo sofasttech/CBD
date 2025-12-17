@@ -83,7 +83,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'How Hybrid Cars Work: A Practical Guide for New Zealand Drivers',
             excerpt: 'Hybrid vehicles offer quieter driving, lower fuel use, and reduced emissions. Understanding how they work helps with servicing, repairs, and maintaining safety systems.',
-            image: '/panel-beatt.jpg',
+            image: '/TipM4.jpg',
             tips: [
                 'Combines petrol engine with electric motor for efficiency',
                 'Regenerative braking captures energy and recharges the battery',
@@ -97,7 +97,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'Why Your Car Vibrates While Idling: A Driver\'s Guide',
             excerpt: 'A smooth-running engine should stay steady when the car is stopped. If your vehicle shakes or vibrates while idling, it indicates something needs attention.',
-            image: '/headlight.webp',
+            image: '/tips_m5.webp',
             tips: [
                 'Worn or dirty spark plugs cause engine misfires and shaking',
                 'Blocked air or fuel filters reduce flow and create rough idling',
@@ -111,7 +111,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'Car Using Too Much Fuel? Key Reasons and What To Do',
             excerpt: 'Fuel costs add up quickly when your vehicle uses more petrol than usual. Understanding the factors helps you drive efficiently and identify mechanical issues.',
-            image: '/car-polishing-tray.png',
+            image: '/tips_m6.png',
             tips: [
                 'Smooth acceleration and steady speeds improve fuel economy',
                 'Underinflated tyres increase rolling resistance and fuel use',
@@ -139,7 +139,7 @@ export default function TipsAdvice() {
             category: 'Safety',
             title: 'Dashboard Warning Lights Decoded: What They Mean and What You Should Do',
             excerpt: 'Modern vehicles monitor engine performance, tyre pressure, and more. Understanding dashboard warning lights helps you stay safe and avoid costly repairs.',
-            image: '/headlight.webp',
+            image: '/TipS3.webp',
             tips: [
                 'Red warning lights (oil, engine temp, brakes) require immediate action',
                 'Amber lights indicate developing issues - book service soon',
@@ -153,7 +153,7 @@ export default function TipsAdvice() {
             category: 'Safety',
             title: 'Can Car Tyres Be Repaired? A Simple Guide for New Zealand Drivers',
             excerpt: 'A flat or damaged tyre is common, but not every tyre needs replacing. Understanding when repair is safe helps protect your safety and saves costs.',
-            image: '/shop.webp',
+            image: '/Tips_s4.png',
             tips: [
                 'Punctures in the tread area up to 6mm can usually be repaired',
                 'Sidewall damage, bulges, or large holes require replacement',
@@ -167,7 +167,7 @@ export default function TipsAdvice() {
             category: 'Seasonal',
             title: 'Preparing Your Vehicle for Winter: A Practical Guide for New Zealand Drivers',
             excerpt: 'Cold weather affects batteries, tyres, fluids, and visibility. Preparing early reduces breakdown risk and keeps your car ready for winter travel.',
-            image: '/car-tune-up.jpg',
+            image: '/Tips_seasonal_1.png',
             tips: [
                 'Check tyre condition, tread depth, and pressure for wet roads',
                 'Test battery health - cold weather can cause weak batteries to fail',
@@ -181,7 +181,7 @@ export default function TipsAdvice() {
             category: 'Seasonal',
             title: 'Summer Vehicle Care Tips: Keep Your Car Running Smoothly in Hot Weather',
             excerpt: 'Summer brings long road trips, heavy sunlight, and higher temperatures. Heat affects cooling systems, tyres, battery, and AC - preparation prevents breakdowns.',
-            image: '/tesla.jpg',
+            image: '/Tips_seasonal_2.png',
             tips: [
                 'Check cooling system and coolant levels to prevent overheating',
                 'Monitor tyre pressure weekly - heat increases pressure and blowout risk',
@@ -195,7 +195,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'Panel Beating Repair Costs Explained – From Small Dents to Major Damage',
             excerpt: 'Understanding panel beating costs helps you make informed decisions. Prices vary based on damage severity, parts, labour, paint type, and insurance coverage.',
-            image: '/panel-beatt.jpg',
+            image: '/TipM7.jpg',
             tips: [
                 'Minor dents cost less than structural collision repairs - complexity affects price',
                 'OEM parts cost more than aftermarket, luxury vehicles need specialized items',
@@ -209,7 +209,7 @@ export default function TipsAdvice() {
             category: 'Safety',
             title: 'Had a Minor Car Accident? How to Respond & Get Repairs in Auckland',
             excerpt: 'Minor crashes happen often. Handling the situation correctly protects your safety, maintains insurance validity, and ensures proper repairs.',
-            image: '/car-pieces.png',
+            image: '/Tips_S5.jpg',
             tips: [
                 'Check safety first, turn on hazards, move to safe place if drivable',
                 'Exchange details, take photos of damage and scene for evidence',
@@ -223,7 +223,7 @@ export default function TipsAdvice() {
             category: 'Maintenance',
             title: 'Repair or Replace? How to Know When a Panel Should Be Replaced',
             excerpt: 'Should a damaged panel be repaired or replaced? Understanding the difference helps you make informed decisions and avoid paying for the wrong repair.',
-            image: '/car-polishing-tray.png',
+            image: '/TipM8.webp',
             tips: [
                 'Small to medium dents, scratches, and bumper scrapes can usually be repaired',
                 'Replace when panel is badly crushed, metal stretched, or rust penetrated deeply',
