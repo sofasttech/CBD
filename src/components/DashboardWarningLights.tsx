@@ -22,7 +22,7 @@ export default function DashboardWarningLights() {
     const criticalLights = [
         {
             name: 'Oil Pressure Low',
-            image: 'engine.png',
+            image: 'oil-pressure.png',
             meaning: 'Oil is not reaching the internal engine parts. Running without oil can destroy the engine.',
             action: 'Stop immediately. Check oil level. Do not drive if the light stays on. Arrange towing if needed.'
         },
@@ -46,31 +46,31 @@ export default function DashboardWarningLights() {
         },
         {
             name: 'ABS Warning',
-            image: 'brake.png',
+            image: 'abs.png',
             meaning: 'Anti-lock function disabled. The brakes still work, but the wheels may lock up on hard braking.',
             action: 'Drive with caution and book a repair. Avoid emergency stops.'
         },
         {
             name: 'Engine Temperature Overheat',
-            image: 'engine.png',
+            image: 'coolant-temp.png',
             meaning: 'Coolant is too hot. The engine can suffer head gasket damage.',
             action: 'Pull over safely. Let the engine cool. Check coolant. Do not open the radiator cap while it is hot.'
         },
         {
             name: 'Catalytic Converter Warning',
-            image: 'engine.png',
+            image: 'catalytic-converter.png',
             meaning: 'The emission system is overloaded or damaged. It could overheat or clog.',
             action: 'Schedule diagnostics promptly to prevent costly damage.'
         },
         {
             name: 'DPF (Diesel Particulate Filter) Warning',
-            image: 'engine.png',
+            image: 'dpf.png',
             meaning: 'Filter partially blocked. Often from short trips.',
             action: 'Try a longer, steady highway drive. If light remains, workshop regeneration is required.'
         },
         {
             name: 'Airbag Warning/Airbag Deactivated',
-            image: 'warning.png',
+            image: 'airbag.png',
             meaning: 'Airbags may not deploy in a crash. Safety compromised.',
             action: 'Get the system checked soon. Avoid driving with the airbag disabled.'
         },
@@ -91,19 +91,19 @@ export default function DashboardWarningLights() {
         },
         {
             name: 'Low Washer Fluid',
-            image: 'low.png',
+            image: 'washer-fluid.png',
             meaning: 'Windscreen wash is nearly empty.',
             action: 'Top up the washer fluid for clear visibility.'
         },
         {
             name: 'Tyre Pressure Low',
-            image: 'low.png',
+            image: 'tire-pressure.png',
             meaning: 'Pressure drop or puncture. Increases fuel use and tyre wear.',
             action: 'Inflate to the recommended PSI. If pressure drops again, check the tyre for damage.'
         },
         {
             name: 'Exterior Light Fault',
-            image: 'light.png',
+            image: 'bulb-out.png',
             meaning: 'A bulb may be blown, or the connection may be faulty.',
             action: 'Replace the defective bulb. Keeps the vehicle legal for WOF.'
         },
@@ -115,27 +115,27 @@ export default function DashboardWarningLights() {
         },
         {
             name: 'Service Required',
-            image: 'warning.png',
+            image: 'service.png',
             meaning: 'Routine service due or sensor detected maintenance need.',
             action: 'Book a vehicle in for service to prevent worn parts from escalating.'
         }
     ];
 
     const statusIndicators = [
-        { name: 'Front/Rear Fog Lights', image: 'light.png', meaning: 'Fog lamps in use.', action: 'Use only in heavy fog for safety. Turn off when clear.' },
-        { name: 'Cruise Control On', image: 'car.png', meaning: 'Cruise system active.', action: 'Relaxed driving on the highway. Stay alert.' },
-        { name: 'Eco Driving Indicator', image: 'car.png', meaning: 'Driving efficiently.', action: 'Helps fuel economy.' },
+        { name: 'Front/Rear Fog Lights', image: 'fog-lights.png', meaning: 'Fog lamps in use.', action: 'Use only in heavy fog for safety. Turn off when clear.' },
+        { name: 'Cruise Control On', image: 'cruise-control.png', meaning: 'Cruise system active.', action: 'Relaxed driving on the highway. Stay alert.' },
+        { name: 'Eco Driving Indicator', image: 'eco-mode.png', meaning: 'Driving efficiently.', action: 'Helps fuel economy.' },
         { name: 'Direction Indicators', image: 'car-indicator.png', meaning: 'Turn signals on.', action: 'Use before lane changes and turns.' },
-        { name: 'Main Beam/Dipped Beam', image: 'light.png', meaning: 'Lighting mode active.', action: 'Adjust according to driving conditions.' },
-        { name: 'Parking Assist', image: 'car.png', meaning: 'Reversing cameras or sensors are active.', action: 'Use to support, not replace driver awareness.' }
+        { name: 'Main Beam/Dipped Beam', image: 'high-beam.png', meaning: 'Lighting mode active.', action: 'Adjust according to driving conditions.' },
+        { name: 'Parking Assist', image: 'parking-sensors.png', meaning: 'Reversing cameras or sensors are active.', action: 'Use to support, not replace driver awareness.' }
     ];
 
     const accessWarnings = [
-        { name: 'Door/Bonnet/Boot Open', image: 'car.png', meaning: 'Something is not fully closed.', action: 'Stop and close securely.' },
+        { name: 'Door/Bonnet/Boot Open', image: 'door-open.png', meaning: 'Something is not fully closed.', action: 'Stop and close securely.' },
         { name: 'Key Not in Vehicle', image: 'key.png', meaning: 'Key missing or range issue.', action: 'Do not drive off. Check the key battery.' },
         { name: 'Key Fob Battery Low', image: 'key.png', meaning: 'The remote battery is weak.', action: 'Replace soon to avoid a lockout.' },
         { name: 'Power Steering Warning', image: 'power.png', meaning: 'Steering assistance is low. Harder to turn.', action: 'Drive carefully. Book a workshop visit.' },
-        { name: 'Frost Warning', image: 'snow.png', meaning: 'Road surface may be icy.', action: 'Reduce speed and increase braking distance.' }
+        { name: 'Frost Warning', image: 'frost.png', meaning: 'Road surface may be icy.', action: 'Reduce speed and increase braking distance.' }
     ];
 
     const whenToVisit = [
