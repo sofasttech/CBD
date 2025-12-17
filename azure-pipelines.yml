@@ -1,0 +1,39 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install -g vercel
+  displayName: 'Install Vercel CLI'
+
+- script: |
+    npm install
+  displayName: 'Install dependencies'
+
+- script: |
+    vercel pull --yes \
+      --environment=production \
+      --org=$(VERCEL_ORG_ID) \
+      --project=$(VERCEL_PROJECT_ID) \
+      --token=$(VERCEL_TOKEN)
+  displayName: 'Pull Vercel Environment'
+
+- script: |
+    vercel build --prod \
+      --org=$(VERCEL_ORG_ID) \
+      --token=$(VERCEL_TOKEN)
+  displayName: 'Build with Vercel'
+
+- script: |
+    vercel deploy --prebuilt --prod \
+      --org=$(VERCEL_ORG_ID) \
+      --token=$(VERCEL_TOKEN)
+  displayName: 'Deploy to Vercel (Production)'
