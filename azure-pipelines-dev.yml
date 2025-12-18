@@ -1,0 +1,44 @@
+trigger:
+- Dev   # trigger on dev branch
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+# 1️⃣ Install Node.js
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+# 2️⃣ Install Vercel CLI
+- script: |
+    npm install -g vercel
+  displayName: 'Install Vercel CLI'
+
+# 3️⃣ Install project dependencies
+- script: |
+    npm install
+  displayName: 'Install dependencies'
+
+# 4️⃣ Pull Vercel environment variables (optional)
+- script: |
+    vercel pull --yes \
+      --environment=development \
+      --scope=$(VERCEL_ORG_ID) \
+      --token=$(VERCEL_TOKEN)
+  displayName: 'Pull Vercel Environment'
+
+# 5️⃣ Build project
+- script: |
+    vercel build --prod \
+      --scope=$(VERCEL_ORG_ID) \
+      --token=$(VERCEL_TOKEN)
+  displayName: 'Build with Vercel'
+
+# 6️⃣ Deploy project to dev environment
+- script: |
+    vercel deploy --prebuilt --prod \
+      --scope=$(VERCEL_ORG_ID) \
+      --token=$(VERCEL_TOKEN)
+  displayName: 'Deploy to Vercel (Dev)'
