@@ -132,7 +132,7 @@ export default function DashboardWarningLights() {
 
     const accessWarnings = [
         { name: 'Door/Bonnet/Boot Open', image: 'door-open.png', meaning: 'Something is not fully closed.', action: 'Stop and close securely.' },
-        { name: 'Key Not in Vehicle', image: 'key.png', meaning: 'Key missing or range issue.', action: 'Do not drive off. Check the key battery.' },
+        { name: 'Key Not in Vehicle', image: 'key1.png', meaning: 'Key missing or range issue.', action: 'Do not drive off. Check the key battery.' },
         { name: 'Key Fob Battery Low', image: 'key.png', meaning: 'The remote battery is weak.', action: 'Replace soon to avoid a lockout.' },
         { name: 'Power Steering Warning', image: 'power.png', meaning: 'Steering assistance is low. Harder to turn.', action: 'Drive carefully. Book a workshop visit.' },
         { name: 'Frost Warning', image: 'frost.png', meaning: 'Road surface may be icy.', action: 'Reduce speed and increase braking distance.' }
