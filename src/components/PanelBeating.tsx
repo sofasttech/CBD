@@ -179,7 +179,7 @@ export default function PanelBeating() {
                                                     <div className="font-['Tomorrow'] text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-3 md:mb-4">
                                                         {service.title}
                                                     </div>
-                                                    <div className="text-base md:text-lg leading-relaxed">
+                                                    <div className="text-lg font-semibold leading-relaxed">
                                                         {service.fullDesc}
                                                     </div>
                                                     <a href={`#service-${index}`} className="absolute inset-0"></a>
@@ -224,7 +224,7 @@ export default function PanelBeating() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How We Work</p>
-                        <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-6">Our Repair Process</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Our Repair Process</h2>
                     </div>
                     <div className="grid md:grid-cols-5 gap-8">
                         {processSteps.map((step, index) => (
@@ -235,8 +235,8 @@ export default function PanelBeating() {
                                 {index < processSteps.length - 1 && (
                                     <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 -z-0"></div>
                                 )}
-                                <h3 className="font-['Tomorrow'] font-bold text-lg mb-2">{step.title}</h3>
-                                <p className="text-sm text-gray-600">{step.description}</p>
+                                <h3 className="font-['Tomorrow'] font-medium text-lg mb-2">{step.title}</h3>
+                                <p className="text-lg font-semibold text-gray-600">{step.description}</p>
                             </div>
                         ))}
                     </div>
@@ -257,34 +257,34 @@ export default function PanelBeating() {
                     </div>
                     <div>
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Why Choose Us</p>
-                        <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-6">Expert Panel Beating Since 1990</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Expert Panel Beating Since 1990</h2>
                         <div className="space-y-4">
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Insurance Approved</h3>
-                                    <p className="text-gray-700">We work with all major insurance companies and handle claims directly.</p>
+                                    <p className="text-lg font-semibold text-gray-700">We work with all major insurance companies and handle claims directly.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Quality Guaranteed</h3>
-                                    <p className="text-gray-700">All panel beating work comes with our comprehensive 12-month warranty.</p>
+                                    <p className="text-lg font-semibold text-gray-700">All panel beating work comes with our comprehensive 12-month warranty.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Modern Equipment</h3>
-                                    <p className="text-gray-700">State-of-the-art tools including computerized frame alignment and paint matching.</p>
+                                    <p className="text-lg font-semibold text-gray-700">State-of-the-art tools including computerized frame alignment and paint matching.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Experienced Craftsmen</h3>
-                                    <p className="text-gray-700">Our team brings decades of combined experience in panel beating and refinishing.</p>
+                                    <p className="text-lg font-semibold text-gray-700">Our team brings decades of combined experience in panel beating and refinishing.</p>
                                 </div>
                             </div>
                         </div>
@@ -296,7 +296,7 @@ export default function PanelBeating() {
             <section className="px-4 py-16 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium mb-6">What Our Customers Say</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">What Our Customers Say</h2>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
@@ -306,7 +306,7 @@ export default function PanelBeating() {
                         ].map((review, i) => (
                             <div key={i} className="bg-gray-50 p-6 rounded-lg shadow-sm">
                                 <div className="text-yellow-400 mb-2">{review.rating}</div>
-                                <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
+                                <p className="text-lg font-semibold text-gray-700 mb-4 italic">"{review.text}"</p>
                                 <p className="font-bold font-['Tomorrow']">- {review.name}</p>
                             </div>
                         ))}
@@ -326,7 +326,7 @@ export default function PanelBeating() {
                     <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
                         Ready To Restore Your Vehicle?
                     </h2>
-                    <p className="text-xl mb-8 leading-relaxed font-mulish font-extralight">
+                    <p className="text-lg font-semibold mb-8 leading-relaxed">
                         Get a free quote today and experience the CBD Panelbeaters difference.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">

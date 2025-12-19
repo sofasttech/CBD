@@ -152,7 +152,7 @@ export default function Mechanical() {
                                 <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
                                     SYSTEM <span className="text-blue-600">MODULES</span>
                                 </h2>
-                                <p className="text-lg text-gray-600 max-w-xl font-semibold">
+                                <p className="text-lg text-black-600 max-w-xl font-semibold">
                                     Comprehensive mechanical repairs and maintenance for all makes and models.
                                 </p>
                             </div>
@@ -229,7 +229,7 @@ export default function Mechanical() {
                             <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6 text-gray-900">
                                 WHAT'S WRONG WITH <br /> MY CAR?
                             </h2>
-                            <p className="text-lg text-gray-600 mb-8 font-semibold">
+                            <p className="text-lg text-black-600 mb-8 font-semibold">
                                 Select a symptom to see potential causes and how we can help.
                             </p>
 
@@ -317,10 +317,10 @@ export default function Mechanical() {
                             </ScrollReveal>
 
                             <ScrollReveal delay={0.2}>
-                                <p className="text-lg text-gray-600 mb-8 leading-relaxed font-semibold">
+                                <p className="text-lg text-black-600 mb-8 leading-relaxed font-semibold">
                                     Modern vehicles are complex computers on wheels. We use the latest diagnostic scanning tools to communicate directly with your car's onboard systems.
                                 </p>
-                                <p className="text-lg text-gray-600 mb-8 leading-relaxed font-semibold">
+                                <p className="text-lg text-black-600 mb-8 leading-relaxed font-semibold">
                                     Our technicians are trained to interpret complex data streams, allowing us to pinpoint issues with engine management, transmission control, and safety systems that others might miss.
                                 </p>
                             </ScrollReveal>
@@ -329,11 +329,11 @@ export default function Mechanical() {
                                 <div className="flex gap-8">
                                     <div>
                                         <div className="text-4xl font-['Tomorrow'] font-medium text-gray-900 mb-2">100%</div>
-                                        <div className="text-sm text-gray-500 uppercase tracking-wider">Accuracy</div>
+                                        <div className="text-sm text-black-600 uppercase tracking-wider">Accuracy</div>
                                     </div>
                                     <div>
                                         <div className="text-4xl font-['Tomorrow'] font-medium text-gray-900 mb-2">Latest</div>
-                                        <div className="text-sm text-gray-500 uppercase tracking-wider">Software</div>
+                                        <div className="text-sm text-black-600 uppercase tracking-wider">Software</div>
                                     </div>
                                 </div>
                             </ScrollReveal>
