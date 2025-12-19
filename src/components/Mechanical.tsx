@@ -12,6 +12,7 @@ import { Spotlight, SpotLightItem } from './ui/spotlight';
 export default function Mechanical() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeSymptom, setActiveSymptom] = useState<number | null>(null);
+    const [hoveredService, setHoveredService] = useState<number | null>(null);
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
@@ -39,37 +40,43 @@ export default function Mechanical() {
             title: 'WOF & Compliance',
             icon: <Shield className="w-8 h-8" />,
             desc: 'Comprehensive Warrant of Fitness inspections and compliance checks. We treat your vehicle like our own, ensuring it meets all safety standards.',
-            details: ['Safety Systems Check', 'Structural Inspection', 'Brake Testing', 'Tyre & Light Check']
+            details: ['Safety Systems Check', 'Structural Inspection', 'Brake Testing', 'Tyre & Light Check'],
+            image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Mechanical & Suspension',
             icon: <Settings className="w-8 h-8" />,
             desc: 'Complete mechanical repairs and suspension tuning. From shock absorbers to control arms, we restore your ride comfort and handling.',
-            details: ['Shock Absorbers', 'Suspension Bushes', 'Steering Racks', 'CV Joints']
+            details: ['Shock Absorbers', 'Suspension Bushes', 'Steering Racks', 'CV Joints'],
+            image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Brake Services',
             icon: <Disc className="w-8 h-8" />,
             desc: 'Your safety is paramount. We provide detailed brake inspections, pad replacement, and disc machining using precision equipment.',
-            details: ['Pad Replacement', 'Disc Machining', 'ABS Diagnostics', 'Fluid Flush']
+            details: ['Pad Replacement', 'Disc Machining', 'ABS Diagnostics', 'Fluid Flush'],
+            image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Auto Electrical',
             icon: <Zap className="w-8 h-8" />,
             desc: 'Advanced diagnostics for modern vehicle electronics. We solve complex wiring issues, battery drains, and sensor faults.',
-            details: ['Battery Testing', 'Alternators', 'Starter Motors', 'Wiring Repairs']
+            details: ['Battery Testing', 'Alternators', 'Starter Motors', 'Wiring Repairs'],
+            image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Engine Diagnostics',
             icon: <Activity className="w-8 h-8" />,
             desc: 'State-of-the-art scanning tools to identify engine faults accurately. We interpret error codes and perform targeted repairs.',
-            details: ['Check Engine Light', 'Performance Tuning', 'Fuel Systems', 'Ignition Systems']
+            details: ['Check Engine Light', 'Performance Tuning', 'Fuel Systems', 'Ignition Systems'],
+            image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'General Servicing',
             icon: <Gauge className="w-8 h-8" />,
             desc: 'Logbook servicing that protects your warranty. We use high-quality oils and filters to keep your engine running smoothly.',
-            details: ['Oil Change', 'Filter Replacement', 'Fluid Top-ups', 'Safety Inspection']
+            details: ['Oil Change', 'Filter Replacement', 'Fluid Top-ups', 'Safety Inspection'],
+            image: '/mechanical_hero_1764692776650.png'
         }
     ];
 
@@ -95,20 +102,20 @@ export default function Mechanical() {
                     style={{ scale, y }}
                 >
                     <ScrollReveal direction="down">
-                        <span className="inline-block py-1 px-3 rounded-full bg-orange-600/20 text-orange-400 text-sm font-medium mb-6 border border-orange-600/30 backdrop-blur-sm">
+                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600/20 text-blue-600 text-sm font-medium mb-6 border border-blue-600/30 backdrop-blur-sm">
                             PREMIUM AUTOMOTIVE CARE
                         </span>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4}>
-                        <h1 className="text-5xl md:text-8xl font-['Tomorrow'] font-bold mb-8 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight">
                             ENGINEERING <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">EXCELLENCE</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">EXCELLENCE</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.6}>
-                        <p className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-lg text-gray-600 font-semibold max-w-3xl mx-auto leading-relaxed">
                             "We treat your car or commercial vehicle like our own." <br />
                             Expert diagnostics, WOFs, and mechanical repairs.
                         </p>
@@ -129,17 +136,17 @@ export default function Mechanical() {
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <ScrollReveal>
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-orange-200 pb-8">
+                        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-blue-200 pb-8">
                             <div>
-                                <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold mb-4 text-gray-900">
-                                    SYSTEM <span className="text-orange-500">MODULES</span>
+                                <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                                    SYSTEM <span className="text-blue-600">MODULES</span>
                                 </h2>
-                                <p className="text-orange-600/80 max-w-xl font-mono text-sm tracking-wider">
-                                    // INITIALIZING DIAGNOSTIC PROTOCOLS...
+                                <p className="text-lg text-gray-600 max-w-xl font-semibold">
+                                    Comprehensive mechanical repairs and maintenance for all makes and models.
                                 </p>
                             </div>
-                            <button className="hidden md:flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors mt-4 md:mt-0 font-mono text-sm border border-orange-500/30 px-4 py-2 rounded hover:bg-orange-500/10">
-                                [VIEW_ALL_LOGS] <ChevronRight className="w-4 h-4" />
+                            <button className="hidden md:flex items-center gap-2 text-blue-600 hover:text-red-600 transition-colors mt-4 md:mt-0 font-medium text-sm border border-blue-500/30 px-4 py-2 rounded hover:bg-blue-500/10">
+                                VIEW ALL <ChevronRight className="w-4 h-4" />
                             </button>
                         </div>
                     </ScrollReveal>
@@ -147,37 +154,49 @@ export default function Mechanical() {
                     <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <ScrollReveal key={index} delay={index * 0.1}>
-                                <SpotLightItem className="h-full bg-white border border-gray-200 rounded-xl overflow-hidden">
-                                    <div className="group relative p-8 h-full">
+                                <SpotLightItem className="h-[450px] border border-gray-200 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] transition-all duration-300 relative">
+                                    {/* Background Image */}
+                                    <div 
+                                        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
+                                        style={{ backgroundImage: `url(${service.image})` }}
+                                    />
+                                    
+                                    <div 
+                                        className={`relative p-8 h-full flex flex-col transition-all duration-500 ${hoveredService === index ? 'justify-start bg-white' : 'justify-end'}`}
+                                        onMouseEnter={() => setHoveredService(index)}
+                                        onMouseLeave={() => setHoveredService(null)}
+                                    >
                                         {/* Corner Accents */}
-                                        <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-orange-500 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-orange-500 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-orange-500 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-orange-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                        <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
+                                        <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
+                                        <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
+                                        <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
 
                                         {/* Scanline Effect */}
-                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/5 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+                                        <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
 
-                                        <div className="mb-6 text-orange-500 group-hover:text-orange-400 group-hover:scale-110 transition-all duration-500 relative z-10">
+                                        <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'text-red-600 scale-110' : 'text-white'}`}>
                                             {service.icon}
                                         </div>
 
-                                        <h3 className="text-2xl font-['Tomorrow'] font-bold mb-4 text-gray-900 group-hover:text-orange-600 transition-colors relative z-10">
+                                        <h3 className={`text-2xl font-['Tomorrow'] font-medium mb-4 transition-colors relative z-10 ${hoveredService === index ? 'text-blue-600' : 'text-white'}`}>
                                             {service.title}
                                         </h3>
 
-                                        <p className="text-gray-600 mb-6 leading-relaxed text-sm relative z-10">
-                                            {service.desc}
-                                        </p>
+                                        <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
+                                            <p className="text-lg text-gray-600 mb-6 leading-relaxed font-semibold">
+                                                {service.desc}
+                                            </p>
 
-                                        <ul className="space-y-2 border-t border-gray-100 pt-6 relative z-10">
-                                            {service.details.map((detail, i) => (
-                                                <li key={i} className="flex items-center text-xs text-gray-500 font-mono">
-                                                    <span className="mr-2 text-orange-500">›</span>
-                                                    {detail}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                            <ul className="space-y-2 border-t border-gray-100 pt-6">
+                                                {service.details.map((detail, i) => (
+                                                    <li key={i} className="flex items-center text-sm text-gray-500">
+                                                        <span className="mr-2 text-blue-600">›</span>
+                                                        {detail}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </SpotLightItem>
                             </ScrollReveal>
@@ -192,11 +211,11 @@ export default function Mechanical() {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-16">
                         <div>
-                            <p className="text-orange-500 text-sm font-medium uppercase tracking-wide mb-4">Troubleshooter</p>
-                            <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-bold mb-6 text-gray-900">
+                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Troubleshooter</p>
+                            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6 text-gray-900">
                                 WHAT'S WRONG WITH <br /> MY CAR?
                             </h2>
-                            <p className="text-gray-600 mb-8 text-lg">
+                            <p className="text-lg text-gray-600 mb-8 font-semibold">
                                 Select a symptom to see potential causes and how we can help.
                             </p>
 
@@ -209,12 +228,12 @@ export default function Mechanical() {
                                 ].map((symptom) => (
                                     <div
                                         key={symptom.id}
-                                        className={`p-6 rounded-lg border cursor-pointer transition-all duration-300 ${activeSymptom === symptom.id ? 'bg-orange-50 border-orange-500' : 'bg-gray-50 border-gray-200 hover:border-gray-300'}`}
+                                        className={`p-6 rounded-lg border cursor-pointer transition-all duration-300 ${activeSymptom === symptom.id ? 'bg-blue-50 border-blue-500' : 'bg-gray-50 border-gray-200 hover:border-gray-300'}`}
                                         onClick={() => setActiveSymptom(activeSymptom === symptom.id ? null : symptom.id)}
                                     >
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-4">
-                                                <div className={`p-2 rounded-full ${activeSymptom === symptom.id ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-500'}`}>
+                                                <div className={`p-2 rounded-full ${activeSymptom === symptom.id ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-500'}`}>
                                                     {symptom.icon}
                                                 </div>
                                                 <h3 className="text-xl font-medium text-gray-900">{symptom.title}</h3>
@@ -230,7 +249,7 @@ export default function Mechanical() {
                                                     className="overflow-hidden"
                                                 >
                                                     <div className="pt-4 pl-14 text-gray-600">
-                                                        <p className="mb-2"><strong className="text-orange-600">Possible Cause:</strong> {symptom.cause}</p>
+                                                        <p className="mb-2"><strong className="text-blue-600">Possible Cause:</strong> {symptom.cause}</p>
                                                         <p><strong className="text-green-600">Our Fix:</strong> {symptom.fix}</p>
                                                     </div>
                                                 </motion.div>
@@ -242,7 +261,7 @@ export default function Mechanical() {
                         </div>
 
                         <div className="relative hidden md:block h-full min-h-[500px]">
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-purple-600/10 rounded-2xl blur-3xl" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-2xl blur-3xl" />
                             <AnimatePresence mode="wait">
                                 <motion.img
                                     key={activeSymptom || 'default'}
@@ -271,23 +290,23 @@ export default function Mechanical() {
                 <div className="absolute inset-0 pointer-events-none opacity-30">
                     <CpuArchitecture />
                 </div>
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-900/10 to-transparent pointer-events-none" />
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
                             <ScrollReveal>
-                                <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-bold mb-8 leading-tight">
+                                <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 leading-tight">
                                     ADVANCED <br />
-                                    <span className="text-orange-500">DIAGNOSTICS</span>
+                                    <span className="text-blue-600">DIAGNOSTICS</span>
                                 </h2>
                             </ScrollReveal>
 
                             <ScrollReveal delay={0.2}>
-                                <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
+                                <p className="text-lg text-gray-600 mb-8 leading-relaxed font-semibold">
                                     Modern vehicles are complex computers on wheels. We use the latest diagnostic scanning tools to communicate directly with your car's onboard systems.
                                 </p>
-                                <p className="text-gray-600 mb-8 leading-relaxed">
+                                <p className="text-lg text-gray-600 mb-8 leading-relaxed font-semibold">
                                     Our technicians are trained to interpret complex data streams, allowing us to pinpoint issues with engine management, transmission control, and safety systems that others might miss.
                                 </p>
                             </ScrollReveal>
@@ -295,11 +314,11 @@ export default function Mechanical() {
                             <ScrollReveal delay={0.4}>
                                 <div className="flex gap-8">
                                     <div>
-                                        <div className="text-4xl font-['Tomorrow'] font-bold text-gray-900 mb-2">100%</div>
+                                        <div className="text-4xl font-['Tomorrow'] font-medium text-gray-900 mb-2">100%</div>
                                         <div className="text-sm text-gray-500 uppercase tracking-wider">Accuracy</div>
                                     </div>
                                     <div>
-                                        <div className="text-4xl font-['Tomorrow'] font-bold text-gray-900 mb-2">Latest</div>
+                                        <div className="text-4xl font-['Tomorrow'] font-medium text-gray-900 mb-2">Latest</div>
                                         <div className="text-sm text-gray-500 uppercase tracking-wider">Software</div>
                                     </div>
                                 </div>
@@ -310,10 +329,10 @@ export default function Mechanical() {
                             <ScrollReveal direction="left">
                                 <div className="relative rounded-lg overflow-hidden border border-gray-200 shadow-xl">
                                     <img src="/mechanical_hero_1764692776650.png" alt="Diagnostics" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" />
-                                    <div className="absolute inset-0 bg-orange-600/10 mix-blend-overlay" />
+                                    <div className="absolute inset-0 bg-blue-600/10 mix-blend-overlay" />
                                 </div>
                             </ScrollReveal>
-                            <div className="absolute -bottom-10 -right-10 w-40 h-40 border border-orange-600/20 rounded-full animate-pulse" />
+                            <div className="absolute -bottom-10 -right-10 w-40 h-40 border border-blue-600/20 rounded-full animate-pulse" />
                             <div className="absolute -top-10 -left-10 w-20 h-20 border border-gray-300 rounded-full" />
                         </div>
                     </div>
@@ -326,9 +345,9 @@ export default function Mechanical() {
             <section className="py-24 bg-white border-t border-gray-200">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
-                        <p className="text-orange-500 text-sm font-medium uppercase tracking-wide mb-4">How It Works</p>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold mb-6 text-gray-900">
-                            YOUR SERVICE <span className="text-orange-600">JOURNEY</span>
+                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How It Works</p>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6 text-gray-900">
+                            YOUR SERVICE <span className="text-blue-600">JOURNEY</span>
                         </h2>
                     </div>
 
@@ -344,12 +363,12 @@ export default function Mechanical() {
                         ].map((item, index) => (
                             <ScrollReveal key={index} delay={index * 0.2}>
                                 <div className="relative z-10 bg-white pt-4">
-                                    <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center text-2xl font-bold text-white mb-6 mx-auto border-4 border-white shadow-lg shadow-orange-600/20">
+                                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-2xl font-bold text-white mb-6 mx-auto border-4 border-white shadow-lg shadow-blue-600/20">
                                         {item.step}
                                     </div>
                                     <div className="text-center">
-                                        <h3 className="text-xl font-['Tomorrow'] font-bold text-gray-900 mb-3">{item.title}</h3>
-                                        <p className="text-gray-600 leading-relaxed text-sm">
+                                        <h3 className="text-xl font-['Tomorrow'] font-medium text-gray-900 mb-3">{item.title}</h3>
+                                        <p className="text-lg text-gray-600 leading-relaxed font-semibold">
                                             {item.desc}
                                         </p>
                                     </div>
