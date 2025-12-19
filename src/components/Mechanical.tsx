@@ -433,7 +433,7 @@ export default function Mechanical() {
                                     >
                                         {item.title}
                                     </motion.h3>
-                                    <p className="text-lg text-gray-600 leading-relaxed font-semibold group-hover:text-gray-900 transition-colors duration-300">
+                                    <p className="text-lg text-black-600 leading-relaxed font-semibold group-hover:text-gray-900 transition-colors duration-300">
                                         {item.desc}
                                     </p>
                                 </div>

@@ -220,24 +220,83 @@ export default function PanelBeating() {
             </section>
 
             {/* Process Section */}
-            <section className="px-4 py-16 bg-gray-50">
+            <section className="px-4 py-24 bg-white border-t border-gray-200">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-16">
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How We Work</p>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Our Repair Process</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6 text-gray-900">
+                            YOUR REPAIR <span className="text-blue-600">PROCESS</span>
+                        </h2>
                     </div>
-                    <div className="grid md:grid-cols-5 gap-8">
+
+                    <div className="grid md:grid-cols-5 gap-8 relative">
+                        {/* Connecting Line with gradient animation */}
+                        <motion.div 
+                            className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 -z-0"
+                            initial={{ scaleX: 0, opacity: 0 }}
+                            whileInView={{ scaleX: 1, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
+                        />
+
                         {processSteps.map((step, index) => (
-                            <div key={index} className="text-center relative">
-                                <div className="w-16 h-16 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg z-10 relative">
-                                    {step.icon}
+                            <motion.div
+                                key={index}
+                                className="relative z-10 bg-white pt-4 group cursor-pointer"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ 
+                                    duration: 0.6, 
+                                    delay: index * 0.15,
+                                    ease: [0.25, 0.4, 0.25, 1]
+                                }}
+                                whileHover={{ 
+                                    y: -15,
+                                    transition: { duration: 0.3, ease: "easeOut" }
+                                }}
+                            >
+                                <motion.div 
+                                    className="relative w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-2xl font-bold text-white mb-6 mx-auto border-4 border-white shadow-lg shadow-blue-600/30 overflow-hidden"
+                                    initial={{ scale: 0, rotate: -90 }}
+                                    whileInView={{ scale: 1, rotate: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.7, 
+                                        delay: index * 0.15 + 0.3,
+                                        type: "spring",
+                                        stiffness: 260,
+                                        damping: 20
+                                    }}
+                                    whileHover={{ 
+                                        scale: 1.15,
+                                        rotate: 360,
+                                        boxShadow: "0 20px 60px rgba(37, 99, 235, 0.4)",
+                                        transition: { duration: 0.6 }
+                                    }}
+                                >
+                                    {/* Shine effect */}
+                                    <motion.div
+                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                        initial={{ x: "-100%" }}
+                                        whileHover={{ x: "100%" }}
+                                        transition={{ duration: 0.6 }}
+                                    />
+                                    <span className="relative z-10">{step.icon}</span>
+                                </motion.div>
+                                <div className="text-center">
+                                    <motion.h3 
+                                        className="text-xl font-['Tomorrow'] font-medium text-gray-900 mb-3"
+                                        whileHover={{ color: "#2563eb", scale: 1.05 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        {step.title}
+                                    </motion.h3>
+                                    <p className="text-lg text-gray-600 leading-relaxed font-semibold group-hover:text-gray-900 transition-colors duration-300">
+                                        {step.description}
+                                    </p>
                                 </div>
-                                {index < processSteps.length - 1 && (
-                                    <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 -z-0"></div>
-                                )}
-                                <h3 className="font-['Tomorrow'] font-medium text-lg mb-2">{step.title}</h3>
-                                <p className="text-lg font-semibold text-gray-600">{step.description}</p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
