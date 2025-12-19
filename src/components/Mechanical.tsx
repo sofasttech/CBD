@@ -176,7 +176,7 @@ export default function Mechanical() {
                                         <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
 
                                         {/* Background gradient from logo area to bottom */}
-                                        <div className={`absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/80 via-black/50 to-transparent backdrop-blur-sm transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
+                                        <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
 
                                         <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'text-blue-600 scale-110' : 'text-white'}`}>
                                             {service.icon}
