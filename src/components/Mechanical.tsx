@@ -94,7 +94,7 @@ export default function Mechanical() {
                     className="absolute inset-0 bg-cover bg-center z-0"
                     style={{ backgroundImage: "url('/mechanical_hero_1764692776650.png')" }}
                 >
-                    <div className="absolute inset-0 bg-white/80" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
                 </div>
 
                 <motion.div
@@ -102,20 +102,20 @@ export default function Mechanical() {
                     style={{ scale, y }}
                 >
                     <ScrollReveal direction="down">
-                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600/20 text-blue-600 text-sm font-medium mb-6 border border-blue-600/30 backdrop-blur-sm">
+                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm">
                             PREMIUM AUTOMOTIVE CARE
                         </span>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4}>
-                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight">
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-white">
                             ENGINEERING <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">EXCELLENCE</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">EXCELLENCE</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.6}>
-                        <p className="text-lg text-gray-600 font-semibold max-w-3xl mx-auto leading-relaxed mb-10">
+                        <p className="text-lg text-gray-200 font-semibold max-w-3xl mx-auto leading-relaxed mb-10">
                             "We treat your car or commercial vehicle like our own." <br />
                             Expert diagnostics, WOFs, and mechanical repairs.
                         </p>
