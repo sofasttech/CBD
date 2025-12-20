@@ -519,6 +519,40 @@ export default function OurStory() {
                 </div>
             </motion.section>
 
+            {/* Team Group Photo Section */}
+            <motion.section
+                className="px-4 py-16 bg-neutral-100"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+            >
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-8">
+                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Team</p>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black mb-4">
+                            Together We Deliver Excellence
+                        </h2>
+                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg max-w-3xl mx-auto">
+                            Meet the dedicated professionals who make CBD Panelbeaters LTD your trusted automotive repair partner.
+                        </p>
+                    </div>
+                    
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img 
+                            src="/shop.webp" 
+                            alt="CBD Panelbeaters Team" 
+                            className="w-full h-auto object-cover"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
+                            <p className="text-white text-lg md:text-xl font-['Tomorrow'] font-medium text-center">
+                                Your trusted team of automotive experts since 1990
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </motion.section>
+
             {/* CTA Section */}
             <motion.section
                 className="px-4 py-20 bg-white text-gray-900 border-t border-gray-200"
