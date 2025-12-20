@@ -211,8 +211,8 @@ export default function CaravansBoats() {
             <section id="services-grid" className="py-24 px-4 bg-white border-t border-gray-200">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal>
-                        <div className="text-center mb-16 flex flex-col items-center">
-                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4 text-center">Check Out Our Services Below</p>
+                        <div className="mb-16 ml-9 flex flex-col items-center">
+                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Check Out Our Services Below</p>
                             <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black mb-4 text-center">OUR SERVICES</h2>
                             <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg max-w-3xl text-center">Full range of services for all things trailer and caravan related. Simple or very complex, we pride ourselves on quality workmanship, safety, and good old fashioned service.</p>
                         </div>
@@ -223,7 +223,7 @@ export default function CaravansBoats() {
                             <ScrollReveal key={index} delay={index * 0.1}>
                                 <motion.div 
                                     className="group p-8 bg-white border-2 border-blue-600 hover:bg-blue-600 transition-all duration-150 cursor-pointer flex flex-col min-h-[480px]"
-                                    whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0 } }}
+                                    whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                                 >
                                     <div className="mb-6 text-blue-600 group-hover:text-white transition-colors duration-150">
                                         {service.icon}
