@@ -211,10 +211,10 @@ export default function CaravansBoats() {
             <section id="services-grid" className="py-24 px-4 bg-white border-t border-gray-200">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal>
-                        <div className="mb-16 ml-9 flex flex-col items-center">
-                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Check Out Our Services Below</p>
-                            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black mb-4 text-center">OUR SERVICES</h2>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg max-w-3xl text-center">Full range of services for all things trailer and caravan related. Simple or very complex, we pride ourselves on quality workmanship, safety, and good old fashioned service.</p>
+                        <div className="mb-16 flex flex-col items-center w-full">
+                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4 text-center w-full">Check Out Our Services Below</p>
+                            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black mb-4 text-center w-full">OUR SERVICES</h2>
+                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg w-full text-center">Full range of services for all things trailer and caravan related. Simple or very complex, we pride ourselves on quality workmanship, safety, and good old fashioned service.</p>
                         </div>
                     </ScrollReveal>
 

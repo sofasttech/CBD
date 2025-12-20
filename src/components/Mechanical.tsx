@@ -109,8 +109,8 @@ export default function Mechanical() {
 
                     <ScrollReveal delay={0.4}>
                         <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-white">
-                            ENGINEERING <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">EXCELLENCE</span>
+                            ENGINEERING 
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600"> EXCELLENCE</span>
                         </h1>
                     </ScrollReveal>
 
