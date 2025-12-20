@@ -37,24 +37,24 @@ export default function Mechanical() {
 
     const services = [
         {
-            title: 'WOF & Compliance',
+            title: 'Warrant Of Fitness',
             icon: <Shield className="w-8 h-8" />,
-            desc: 'Comprehensive Warrant of Fitness inspections and compliance checks. We treat your vehicle like our own, ensuring it meets all safety standards.',
-            details: ['Safety Systems Check', 'Structural Inspection', 'Brake Testing', 'Tyre & Light Check'],
+            desc: 'Its a legal requirement to have your vehicle inspected for WOF.',
+            details: ['All makes and models', 'We can collect and deliver your vehicle for you whether it is running or not', 'Loan cars available', 'We handle any type of WOF insurance claim'],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Mechanical & Suspension',
             icon: <Settings className="w-8 h-8" />,
-            desc: 'Complete mechanical repairs and suspension tuning. From shock absorbers to control arms, we restore your ride comfort and handling.',
-            details: ['Shock Absorbers', 'Suspension Bushes', 'Steering Racks', 'CV Joints'],
+            desc: 'We strive to provide professional automotive Petrol & Diesel services to the commercial and private sectors Auckland Central and Wide.',
+            details: ['We can perform car servicing to your  requirements', 'Auto Electrical Servic', 'Brake & Clutch Service', 'Electronic Fuel Injection (EFI)'],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
-            title: 'Brake Services',
+            title: 'Compliance Centre',
             icon: <Disc className="w-8 h-8" />,
-            desc: 'Your safety is paramount. We provide detailed brake inspections, pad replacement, and disc machining using precision equipment.',
-            details: ['Pad Replacement', 'Disc Machining', 'ABS Diagnostics', 'Fluid Flush'],
+            desc: 'We help with all vehicle compliance needs. We are 100% New Zealand owned and work with VTNZ to certify vehicles to current NZTA standards.',
+            details: ['Compliance services for all cars and light commercials', 'Experienced and reliable staff', 'Same Day Service', 'Undercover and secure parking with 7 day access'],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
@@ -98,24 +98,25 @@ export default function Mechanical() {
                 </div>
 
                 <motion.div
-                    className="relative z-10 text-center px-4 max-w-5xl mx-auto"
+                    className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
                     style={{ scale, y }}
                 >
+
                     <ScrollReveal direction="down">
-                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm">
+                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm text-center mx-auto">
                             PREMIUM AUTOMOTIVE CARE
                         </span>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4}>
-                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-white">
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
                             ENGINEERING 
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600"> EXCELLENCE</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.6}>
-                        <p className="text-lg text-gray-200 font-semibold max-w-3xl mx-auto leading-relaxed mb-10">
+                        <p className="text-lg text-gray-200 font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
                             "We treat your car or commercial vehicle like our own." <br />
                             Expert diagnostics, WOFs, and mechanical repairs.
                         </p>
