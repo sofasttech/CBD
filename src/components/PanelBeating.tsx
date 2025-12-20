@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollObserver } from './ScrollObserver';
 import clsx from 'clsx';
+import { ClipboardList, Wrench, Hammer, Palette, Sparkles } from 'lucide-react';
 
 export default function PanelBeating() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -87,27 +88,27 @@ export default function PanelBeating() {
         {
             title: "Assessment",
             description: "Detailed inspection and quote generation.",
-            icon: "📋"
+            icon: ClipboardList
         },
         {
             title: "Disassembly",
             description: "Removing damaged parts for access.",
-            icon: "🔧"
+            icon: Wrench
         },
         {
             title: "Repair",
             description: "Panel beating, structural alignment, and welding.",
-            icon: "🔨"
+            icon: Hammer
         },
         {
             title: "Paint",
             description: "Color matching, painting, and clear coating.",
-            icon: "🎨"
+            icon: Palette
         },
         {
             title: "Reassembly",
             description: "Fitting parts and final quality check.",
-            icon: "✨"
+            icon: Sparkles
         }
     ];
 
@@ -255,7 +256,7 @@ export default function PanelBeating() {
                                 }}
                             >
                                 <motion.div 
-                                    className="relative w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-2xl font-bold text-white mb-6 mx-auto border-4 border-white shadow-lg shadow-blue-600/30 overflow-hidden"
+                                    className="relative w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg shadow-blue-600/30 overflow-hidden"
                                     initial={{ scale: 0, rotate: -90 }}
                                     whileInView={{ scale: 1, rotate: 0 }}
                                     viewport={{ once: true }}
@@ -280,7 +281,7 @@ export default function PanelBeating() {
                                         whileHover={{ x: "100%" }}
                                         transition={{ duration: 0.6 }}
                                     />
-                                    <span className="relative z-10">{step.icon}</span>
+                                    <step.icon className="w-8 h-8 relative z-10" strokeWidth={2} />
                                 </motion.div>
                                 <div className="text-center">
                                     <motion.h3 

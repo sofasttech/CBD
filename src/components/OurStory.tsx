@@ -376,7 +376,7 @@ export default function OurStory() {
                         <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black">Our Core Values</h2>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-4 gap-8 max-w-9xl mx-auto">
                         {/* Value 1 */}
                         <motion.div
                             className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
@@ -387,9 +387,9 @@ export default function OurStory() {
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
                             <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">01</div>
-                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Integrity</h3>
+                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Integrity in every repair</h3>
                             <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
-                                Honest assessments, transparent pricing, and ethical practices in every interaction. We never recommend unnecessary repairs.
+                                We believe in doing things the right way, every time. Honest communication, fair advice, and transparent workmanship guide every project we undertake. Customers trust us because we stand by our word and our work.
                             </p>
                         </motion.div>
 
@@ -403,9 +403,9 @@ export default function OurStory() {
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
                             <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">02</div>
-                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Excellence</h3>
+                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Precision with every panel</h3>
                             <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
-                                Commitment to superior craftsmanship using quality materials and advanced techniques. Every repair meets our exacting standards.
+                                Every repair matters, whether it is a small dent or a full structural restoration. We pay attention to detail in shaping, painting, and finishing, ensuring your vehicle looks and performs as it should. Quality is built through accuracy.
                             </p>
                         </motion.div>
 
@@ -419,9 +419,25 @@ export default function OurStory() {
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
                             <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">03</div>
-                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Customer Care</h3>
+                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Excellence without compromise</h3>
                             <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
-                                Your satisfaction is our priority. We treat every vehicle as our own and every customer as family.
+                                We aim for high standards in everything we do. From modern equipment to skilled hands, we continually strive to deliver results that last. Excellence is our benchmark, not an option.
+                            </p>
+                        
+                        </motion.div>
+                        {/*value 4 */}
+                        <motion.div
+                            className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            viewport={{ once: true }}
+                            whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
+                        >
+                            <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">04</div>
+                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Care that puts customers first</h3>
+                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
+                               People come first. We listen, guide you through repair decisions, and keep the process clear and stress-free. Your satisfaction is at the heart of our service, and we take pride in the relationships we build with every person who walks through our doors.
                             </p>
                         </motion.div>
                     </div>
