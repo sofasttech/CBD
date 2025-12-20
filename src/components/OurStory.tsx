@@ -123,14 +123,14 @@ export default function OurStory() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                whileHover={{ scale: 1.02 }}
+                                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                             >
                                 {/* Image */}
                                 <div className="absolute inset-0">
                                     <img 
                                         src={photo.src} 
                                         alt={photo.caption} 
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-110"
                                     />
                                 </div>
 
