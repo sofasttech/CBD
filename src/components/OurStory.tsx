@@ -233,13 +233,13 @@ export default function OurStory() {
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Beginning</p>
                         <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-6">Building Trust Since Day One</h2>
                         <p className="text-gray-700 leading-relaxed mb-4 text-lg">
-                            CBD Panel and Paint began with a simple vision: to provide Auckland with honest, high-quality automotive repair services that vehicle owners could trust. What started as a small family operation has grown into one of the region's most respected automotive service centers.
+                            CBD Panel and Paint began with a simple vision: to provide Auckland with honest, high-quality automotive repair services that vehicle owners could trust. What started as a small family operation has grown into one of the region's most respected automotive service centres.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-4 text-lg">
-                            Over 30 years of dedication to our craft has earned us a reputation for precision, reliability, and exceptional customer care. Every vehicle that enters our workshop receives the same meticulous attention to detail that has defined our service from the very beginning.
+                            With over 30 years of dedication to our craft, we have earned a reputation for integrity, precision, excellence, and exceptional customer care. Every vehicle that enters our workshop receives the same meticulous attention to detail that has defined our service from the very beginning.
                         </p>
                         <p className="text-gray-700 leading-relaxed text-lg">
-                            Today, we continue to uphold the values that our founders established: integrity in every repair, transparency in every quote, and excellence in every outcome.
+                            Today, we continue to uphold the values that our founders established: integrity in every repair, Precision with every panel, Excellence without compromise and Care that puts customers first.
                         </p>
                     </div>
                 </div>
