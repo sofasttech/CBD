@@ -538,17 +538,23 @@ export default function OurStory() {
                         </p>
                     </div>
                     
-                    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-5xl mx-auto">
                         <img 
                             src="/shop.webp" 
                             alt="CBD Panelbeaters Team" 
-                            className="w-full h-auto object-cover"
+                            className="w-full h-[400px] md:h-[500px] object-cover"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
                             <p className="text-white text-lg md:text-xl font-['Tomorrow'] font-medium text-center">
                                 Your trusted team of automotive experts since 1990
                             </p>
                         </div>
+                    </div>
+
+                    <div className="mt-12 max-w-5xl mx-auto">
+                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-center">
+                            Our team brings together certified technicians who excel in collision repair, dent removal, and careful bodywork restoration. Our painters use advanced colour-matching technology to deliver seamless, high-quality finishes, while our skilled mechanics provide expert diagnostics, engine repairs, and complete vehicle servicing.
+                        </p>
                     </div>
                 </div>
             </motion.section>
