@@ -126,21 +126,19 @@ export default function PanelBeating() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Panel Beating Services</p>
-                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
-                                Precision <span className="text-blue-400">Body Repair</span> Excellence
+                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Panel Beating Services</p>
+                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-8">
+                                PRECISION <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">BODY REPAIR</span> EXCELLENCE
                             </h1>
-                            <p className="text-xl text-gray-700 leading-relaxed font-mulish font-extralight mb-8">
+                            <p className="text-lg text-gray-600 font-semibold leading-relaxed mb-8">
                                 From minor dents to major collision repairs, our skilled panel beaters restore your vehicle to its original condition with meticulous attention to detail.
                             </p>
                             <div className="flex gap-4">
-                                <button className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition">
-                                    <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                                    <span className="relative z-10 group-hover:text-blue-600">GET A QUOTE</span>
+                                <button className="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-red-600 transition-all duration-300 font-medium">
+                                    GET A QUOTE
                                 </button>
-                                <button onClick={() => scrollToSection('services-grid')} className="relative group bg-black text-white px-8 py-3 font-medium transition">
-                                    <span className="absolute left-0 top-0 h-full bg-blue-600 w-0 group-hover:w-full transition-all duration-300"></span>
-                                    <span className="relative z-10 group-hover:text-white">VIEW SERVICES</span>
+                                <button onClick={() => scrollToSection('services-grid')} className="px-8 py-3 bg-white border border-gray-300 text-gray-900 rounded-md hover:border-gray-400 transition-all duration-300 font-medium">
+                                    VIEW SERVICES
                                 </button>
                             </div>
                         </div>
@@ -155,9 +153,9 @@ export default function PanelBeating() {
             <section id="services-grid" className="px-4 py-16 bg-white text-black">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Our Services</p>
+                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Services</p>
                         <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-12">Comprehensive Panel Beating</h2>
-                        <p className="text-gray-400 text-sm mb-8 hidden md:block">Scroll down to explore</p>
+                        <p className="text-gray-600 text-sm font-semibold mb-8 hidden md:block">Scroll down to explore</p>
                     </div>
 
                     <ScrollObserver className="relative grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-32">
@@ -176,7 +174,7 @@ export default function PanelBeating() {
                                                     <div className="text-blue-600 text-sm font-medium mb-2">
                                                         {String(index + 1).padStart(2, '0')}
                                                     </div>
-                                                    <div className="font-['Tomorrow'] text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-3 md:mb-4">
+                                                    <div className="font-['Tomorrow'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
                                                         {service.title}
                                                     </div>
                                                     <div className="text-lg font-semibold leading-relaxed">
@@ -363,10 +361,10 @@ export default function PanelBeating() {
                             { name: "Sarah M.", text: "Fast, professional, and they handled all the insurance paperwork. Great service.", rating: "⭐⭐⭐⭐⭐" },
                             { name: "Mike R.", text: "Best panel beaters in town. The paint match was perfect.", rating: "⭐⭐⭐⭐⭐" }
                         ].map((review, i) => (
-                            <div key={i} className="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div key={i} className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                                 <div className="text-yellow-400 mb-2">{review.rating}</div>
                                 <p className="text-lg font-semibold text-gray-700 mb-4 italic">"{review.text}"</p>
-                                <p className="font-bold font-['Tomorrow']">- {review.name}</p>
+                                <p className="font-['Tomorrow'] font-medium text-gray-900">- {review.name}</p>
                             </div>
                         ))}
                     </div>
@@ -389,13 +387,11 @@ export default function PanelBeating() {
                         Get a free quote today and experience the CBD Panelbeaters difference.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="relative group bg-white text-blue-600 px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
-                            <span className="absolute left-0 top-0 h-full bg-black w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10 group-hover:text-white">REQUEST QUOTE</span>
+                        <button className="px-8 py-3 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all duration-300 font-medium">
+                            REQUEST QUOTE
                         </button>
-                        <button className="relative group bg-black text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
-                            <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10 group-hover:text-black">CALL US NOW</span>
+                        <button className="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-900 transition-all duration-300 font-medium border border-white">
+                            CALL US NOW
                         </button>
                     </div>
                 </div>
