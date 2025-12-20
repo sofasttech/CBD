@@ -382,7 +382,7 @@ export default function OurStory() {
                             className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
+                            transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
@@ -398,7 +398,7 @@ export default function OurStory() {
                             className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
+                            transition={{ duration: 0}}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
@@ -414,7 +414,7 @@ export default function OurStory() {
                             className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
+                            transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
@@ -430,7 +430,7 @@ export default function OurStory() {
                             className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
+                            transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
