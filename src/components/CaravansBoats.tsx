@@ -115,7 +115,7 @@ export default function CaravansBoats() {
             {/* Hero Slideshow */}
             <motion.section
                 ref={targetRef}
-                className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-black"
+                className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-white"
                 style={{ opacity }}
             >
                 <AnimatePresence mode="wait">
@@ -125,16 +125,15 @@ export default function CaravansBoats() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="absolute inset-0"
+                        className="absolute inset-0 z-0 opacity-30"
                     >
                         <div
-                            className="absolute inset-0 bg-cover bg-center z-0"
+                            className="absolute inset-0 bg-cover bg-center"
                             style={{ backgroundImage: `url('${heroSlides[currentSlide].image}')` }}
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-                        </div>
+                        />
                     </motion.div>
                 </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white z-10" />
 
                 <motion.div
                     className="relative z-10 px-4 mx-auto max-w-6xl"
@@ -150,28 +149,28 @@ export default function CaravansBoats() {
                             className="text-center"
                         >
                             <div className="flex justify-center mb-6">
-                                <p className="text-blue-400 text-sm font-bold uppercase tracking-wide text-center bg-blue-600/20 px-4 py-2 rounded-full border border-blue-400/30 backdrop-blur-sm">
+                                <p className="text-blue-600 text-sm font-bold uppercase tracking-[0.3em] text-center">
                                     {heroSlides[currentSlide].subtitle}
                                 </p>
                             </div>
 
                             <h1 className="text-5xl md:text-8xl font-['Tomorrow'] font-bold uppercase mb-8 leading-tight text-center">
-                                <span className="text-white">{heroSlides[currentSlide].title}</span> <br />
+                                <span className="text-gray-900">{heroSlides[currentSlide].title}</span> <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">{heroSlides[currentSlide].titleHighlight}</span>
                             </h1>
 
                             <div className="flex justify-center">
-                                <p style={{ wordSpacing: '-0.08rem' }} className="text-white leading-relaxed font-mulish font-semibold text-lg text-center max-w-3xl">
+                                <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-center max-w-3xl">
                                     {heroSlides[currentSlide].description}
                                 </p>
                             </div>
 
                             <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
                                 <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
-                                    <span className="absolute left-0 top-0 h-full bg-blue-800 w-0 group-hover:w-full transition-all duration-300"></span>
+                                    <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
                                     <span className="relative z-10">BOOK YOUR REPAIR</span>
                                 </button>
-                                <button className="relative group bg-white/10 backdrop-blur-sm border-2 border-white text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition hover:bg-white hover:text-black">
+                                <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition hover:bg-gray-800">
                                     <span className="relative z-10">GET FREE ESTIMATE</span>
                                 </button>
                             </div>
@@ -182,13 +181,13 @@ export default function CaravansBoats() {
                 {/* Navigation Arrows */}
                 <button
                     onClick={prevSlide}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white p-3 rounded-full transition"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition shadow-lg"
                 >
                     <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white p-3 rounded-full transition"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition shadow-lg"
                 >
                     <ChevronRight className="w-6 h-6" />
                 </button>
@@ -200,7 +199,7 @@ export default function CaravansBoats() {
                             key={index}
                             onClick={() => setCurrentSlide(index)}
                             className={`h-2 rounded-full transition-all duration-300 ${
-                                index === currentSlide ? 'w-12 bg-blue-600' : 'w-2 bg-white/50 hover:bg-white/80'
+                                index === currentSlide ? 'w-12 bg-blue-600' : 'w-2 bg-gray-400 hover:bg-gray-600'
                             }`}
                         />
                     ))}

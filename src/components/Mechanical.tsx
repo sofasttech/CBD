@@ -57,27 +57,6 @@ export default function Mechanical() {
             details: ['Compliance services for all cars and light commercials', 'Experienced and reliable staff', 'Same Day Service', 'Undercover and secure parking with 7 day access'],
             image: '/mechanical_hero_1764692776650.png'
         },
-        {
-            title: 'Auto Electrical',
-            icon: <Zap className="w-8 h-8" />,
-            desc: 'Advanced diagnostics for modern vehicle electronics. We solve complex wiring issues, battery drains, and sensor faults.',
-            details: ['Battery Testing', 'Alternators', 'Starter Motors', 'Wiring Repairs'],
-            image: '/mechanical_hero_1764692776650.png'
-        },
-        {
-            title: 'Engine Diagnostics',
-            icon: <Activity className="w-8 h-8" />,
-            desc: 'State-of-the-art scanning tools to identify engine faults accurately. We interpret error codes and perform targeted repairs.',
-            details: ['Check Engine Light', 'Performance Tuning', 'Fuel Systems', 'Ignition Systems'],
-            image: '/mechanical_hero_1764692776650.png'
-        },
-        {
-            title: 'General Servicing',
-            icon: <Gauge className="w-8 h-8" />,
-            desc: 'Logbook servicing that protects your warranty. We use high-quality oils and filters to keep your engine running smoothly.',
-            details: ['Oil Change', 'Filter Replacement', 'Fluid Top-ups', 'Safety Inspection'],
-            image: '/mechanical_hero_1764692776650.png'
-        }
     ];
 
     return (
@@ -166,7 +145,7 @@ export default function Mechanical() {
                     <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <ScrollReveal key={index} delay={index * 0.1}>
-                                <SpotLightItem className="h-[450px] border border-gray-200 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] transition-all duration-300 relative">
+                                <SpotLightItem className="h-[520px] border border-gray-200 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] transition-all duration-300 relative">
                                     {/* Background Image */}
                                     <div 
                                         className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
