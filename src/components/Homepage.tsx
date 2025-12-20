@@ -93,7 +93,7 @@ function AboutAccordionSection() {
 
           {/* Left Side: Image Accordion */}
           <div className="w-full md:w-1/2 md:min-w-[420px] md:flex-none">
-            <div className="flex flex-row items-center justify-center md:justify-start gap-2 md:gap-4 overflow-x-auto p-2 md:p-4 md:whitespace-nowrap">
+            <div className="flex flex-row flex-wrap items-center justify-center md:justify-start gap-2 md:gap-4 p-2 md:p-4">
               {accordionItems.map((item, index) => (
                 <AccordionItem
                   key={item.id}
