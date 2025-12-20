@@ -243,7 +243,8 @@ export default function Mechanical() {
                                     <div
                                         key={symptom.id}
                                         className={`p-6 rounded-lg border cursor-pointer transition-all duration-300 ${activeSymptom === symptom.id ? 'bg-blue-50 border-blue-500' : 'bg-gray-50 border-gray-200 hover:border-gray-300'}`}
-                                        onClick={() => setActiveSymptom(activeSymptom === symptom.id ? null : symptom.id)}
+                                        onMouseEnter={() => setActiveSymptom(symptom.id)}
+                                        onMouseLeave={() => setActiveSymptom(null)}
                                     >
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-4">
