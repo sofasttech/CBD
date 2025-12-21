@@ -185,11 +185,21 @@ export default function OurStory() {
                                     style={{ width: '100vw', maxWidth: 'none' }} // Ensure image doesn't squash
                                 />
                                 {/* Label */}
-                                <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-2 text-sm md:text-base font-medium rounded">BEFORE</div>
+                                <div 
+                                    className="absolute top-4 left-4 bg-black/70 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
+                                    style={{ opacity: sliderPosition > 15 ? 1 : 0 }}
+                                >
+                                    BEFORE
+                                </div>
                             </div>
 
                             {/* After Label */}
-                            <div className="absolute top-4 right-4 bg-blue-600/90 text-white px-3 py-2 text-sm md:text-base font-medium rounded">AFTER</div>
+                            <div 
+                                className="absolute top-4 right-4 bg-blue-600/90 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
+                                style={{ opacity: sliderPosition < 85 ? 1 : 0 }}
+                            >
+                                AFTER
+                            </div>
 
                             {/* Slider Handle */}
                             <div
