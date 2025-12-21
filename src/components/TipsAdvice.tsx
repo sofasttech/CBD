@@ -1,18 +1,147 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Layers, Wrench, Shield, CloudSnow, Home } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
+// Skeleton Card Component
+const SkeletonCard = () => (
+    <div className="relative h-[450px] overflow-hidden bg-gray-100 border border-gray-200 rounded-md animate-pulse">
+        <div className="w-full h-full bg-gray-200" />
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-300 to-transparent h-[25%]">
+            <div className="h-3 bg-gray-300 rounded w-20 mb-2" />
+            <div className="h-5 bg-gray-300 rounded w-3/4" />
+        </div>
+    </div>
+);
+
+// Lazy Image Card Component with Intersection Observer
+const LazyTipCard = ({ tip, index, onClick }: any) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        observer.disconnect();
+                    }
+                });
+            },
+            {
+                rootMargin: '100px', // Start loading earlier for smoother UX
+                threshold: 0.05 // Trigger earlier
+            }
+        );
+
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <motion.div
+            ref={cardRef}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+            className="relative h-[450px] overflow-hidden group bg-white border border-gray-200 rounded-md flex flex-col"
+        >
+            {!isVisible || !imageLoaded ? (
+                // Show skeleton while loading
+                <div className="absolute inset-0 bg-gray-200 animate-pulse z-10">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-300 to-transparent h-[25%]">
+                        <div className="h-3 bg-gray-300 rounded w-20 mb-2" />
+                        <div className="h-5 bg-gray-300 rounded w-3/4" />
+                    </div>
+                </div>
+            ) : null}
+
+            <div className="w-full h-full relative bg-gray-200">
+                {/* Blur placeholder */}
+                {isVisible && !imageLoaded && (
+                    <div
+                        className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse"
+                        style={{
+                            backgroundImage: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZSIvPjwvc3ZnPg==)',
+                            backgroundSize: 'cover'
+                        }}
+                    />
+                )}
+                {isVisible && (
+                    <img
+                        src={tip.image}
+                        alt={tip.title}
+                        loading="lazy"
+                        decoding="async"
+                        onLoad={() => setImageLoaded(true)}
+                        className={`h-full w-full scale-100 group-hover:scale-100 object-cover transition-all duration-500 rounded-md ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                            }`}
+                        style={{
+                            willChange: imageLoaded ? 'auto' : 'opacity'
+                        }}
+                    />
+                )}
+            </div>
+            <article className="p-8 w-full h-full overflow-hidden z-10 absolute top-0 flex flex-col justify-end rounded-md bg-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="translate-y-10 group-hover:translate-y-0 transition-all duration-300 space-y-2 text-white">
+                    <div className="text-white text-xs font-medium uppercase mb-2">{tip.category}</div>
+                    <h1 className="text-2xl font-['Tomorrow'] font-semibold">{tip.title}</h1>
+                    <p className="text-sm leading-relaxed">
+                        {tip.excerpt}
+                    </p>
+                    <button
+                        onClick={onClick}
+                        className="p-2 bg-black flex items-center gap-1 rounded-md text-white font-medium text-sm w-fit"
+                    >
+                        Learn More <ChevronRight className="w-4 h-4" />
+                    </button>
+                </div>
+            </article>
+            <article className="p-4 w-full h-[25%] flex flex-col justify-end overflow-hidden absolute bottom-0 rounded-b-md bg-gradient-to-t from-blue-600 to-transparent opacity-100 group-hover:opacity-0 group-hover:-bottom-4 transition-all duration-300 text-white">
+                <div className="text-white text-xs font-medium uppercase mb-1">{tip.category}</div>
+                <h1 className="text-xl font-['Tomorrow'] font-semibold line-clamp-2">{tip.title}</h1>
+            </article>
+        </motion.div>
+    );
+};
+
 export default function TipsAdvice() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState('All');
+    const [isFiltering, setIsFiltering] = useState(false);
+    const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+    const [isInitialLoad, setIsInitialLoad] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Simulate initial load time
+        const timer = setTimeout(() => {
+            setIsInitialLoad(false);
+        }, 100);
+        return () => clearTimeout(timer);
     }, []);
+
+    const handleImageLoad = (imageUrl: string) => {
+        setLoadedImages(prev => new Set(prev).add(imageUrl));
+    };
+
+    const handleCategoryChange = (category: string) => {
+        setIsFiltering(true);
+        setActiveCategory(category);
+
+        // Add small delay for smooth transition
+        setTimeout(() => {
+            setIsFiltering(false);
+        }, 300);
+    };
 
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
@@ -245,7 +374,7 @@ export default function TipsAdvice() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-0 md:pb-16 px-4 bg-black text-white overflow-hidden"
+                className="pt-24 md:pt-32 pb-0 md:pb-16 px-4 bg-white overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -253,18 +382,21 @@ export default function TipsAdvice() {
             >
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-end">
                     <div className="text-left">
-                        <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Expert Guidance</p>
-                        <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6">
-                            Tips & <span className="text-blue-400">Advice</span>
+                        <p className="mb-auto mt-auto text-blue-600 text-sm font-medium uppercase tracking-wide">Expert Guidance</p>
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-5 mt-10">
+                            Tips & <span className="text-blue-600">Advice</span>
                         </h1>
-                        <p className="text-xl text-gray-300 leading-relaxed font-mulish font-extralight">
+                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg mb-6">
                             Professional automotive advice to help you maintain your vehicle, stay safe on the road, and save money on repairs.
                         </p>
                     </div>
                     <div className="flex justify-center md:justify-end md:-mr-8 md:-mb-16 mt- md:mt-0">
-                        <img 
-                            src="/advice.png" 
-                            alt="Automotive advice" 
+                        <img
+                            src="/advice.png"
+                            alt="Automotive advice"
+                            loading="eager"
+                            fetchPriority="high"
+                            decoding="async"
                             className="w-full max-w-xl h-auto object-contain scale-110"
                         />
                     </div>
@@ -272,7 +404,7 @@ export default function TipsAdvice() {
             </motion.section>
 
             {/* Category Filter - Floating Dock Style */}
-            <section className="px-4 py-12 bg-gray-100">
+            <section className="px-4 py-12 bg-white">
                 <div className="max-w-7xl mx-auto flex justify-center">
                     <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-lg rounded-full px-4 py-3 shadow-lg border border-gray-200">
                         {[
@@ -284,16 +416,14 @@ export default function TipsAdvice() {
                         ].map((category) => (
                             <button
                                 key={category.name}
-                                onClick={() => setActiveCategory(category.name)}
-                                className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Tomorrow'] font-medium transition-all duration-300 ${
-                                    activeCategory === category.name
-                                        ? 'bg-blue-600 text-white shadow-md scale-105'
-                                        : 'bg-transparent text-gray-700 hover:bg-blue-50 hover:scale-105'
-                                }`}
+                                onClick={() => handleCategoryChange(category.name)}
+                                className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Tomorrow'] font-medium transition-all duration-300 ${activeCategory === category.name
+                                    ? 'bg-blue-600 text-white shadow-md scale-105'
+                                    : 'bg-transparent text-gray-700 hover:bg-blue-50 hover:scale-105'
+                                    }`}
                             >
-                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${
-                                    activeCategory === category.name ? 'text-white' : 'text-blue-600'
-                                }`} />
+                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeCategory === category.name ? 'text-white' : 'text-blue-600'
+                                    }`} />
                                 <span className="text-sm hidden md:inline">{category.name}</span>
                             </button>
                         ))}
@@ -304,64 +434,75 @@ export default function TipsAdvice() {
             {/* Tips Grid */}
             <section className="px-4 py-16 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredTips.map((tip, index) => (
-                            <div
-                                key={index}
-                                className="relative h-[450px] overflow-hidden group bg-white border border-gray-200 rounded-md flex flex-col"
+                    {/* Loading Overlay */}
+                    <AnimatePresence>
+                        {isFiltering && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center"
                             >
-                                <div className="w-full h-full">
-                                    <img
-                                        src={tip.image}
-                                        alt={tip.title}
-                                        className="h-full w-full scale-100 group-hover:scale-100 object-cover transition-all duration-300 rounded-md"
+                                <div className="text-center">
+                                    <motion.div
+                                        animate={{ rotate: 360 }}
+                                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                                        className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full mx-auto mb-4"
                                     />
+                                    <p className="text-gray-900 font-['Tomorrow'] font-medium">Filtering...</p>
                                 </div>
-                                <article className="p-8 w-full h-full overflow-hidden z-10 absolute top-0 flex flex-col justify-end rounded-md bg-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                    <div className="translate-y-10 group-hover:translate-y-0 transition-all duration-300 space-y-2 text-white">
-                                        <div className="text-white text-xs font-medium uppercase mb-2">{tip.category}</div>
-                                        <h1 className="text-2xl font-['Tomorrow'] font-semibold">{tip.title}</h1>
-                                        <p className="text-sm leading-relaxed">
-                                            {tip.excerpt}
-                                        </p>
-                                        <button 
-                                            onClick={() => tip.hasDetailPage && tip.detailPageRoute && navigate(tip.detailPageRoute)}
-                                            className="p-2 bg-black flex items-center gap-1 rounded-md text-white font-medium text-sm w-fit"
-                                        >
-                                            Learn More <ChevronRight className="w-4 h-4" />
-                                        </button>
-                                    </div>
-                                </article>
-                                <article className="p-4 w-full h-[25%] flex flex-col justify-end overflow-hidden absolute bottom-0 rounded-b-md bg-gradient-to-t from-blue-600 to-transparent opacity-100 group-hover:opacity-0 group-hover:-bottom-4 transition-all duration-300 text-white">
-                                    <div className="text-white text-xs font-medium uppercase mb-1">{tip.category}</div>
-                                    <h1 className="text-xl font-['Tomorrow'] font-semibold line-clamp-2">{tip.title}</h1>
-                                </article>
-                            </div>
-                        ))}
-                    </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {/* Show skeletons during initial load */}
+                    {isInitialLoad ? (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {Array.from({ length: 6 }).map((_, index) => (
+                                <SkeletonCard key={index} />
+                            ))}
+                        </div>
+                    ) : (
+                        <motion.div
+                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                            key={activeCategory}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            {filteredTips.map((tip, index) => (
+                                <LazyTipCard
+                                    key={`${tip.title}-${index}`}
+                                    tip={tip}
+                                    index={index}
+                                    onClick={() => tip.hasDetailPage && tip.detailPageRoute && navigate(tip.detailPageRoute)}
+                                />
+                            ))}
+                        </motion.div>
+                    )}
                 </div>
             </section>
 
             {/* Newsletter CTA */}
             <motion.section
-                className="px-4 py-20 bg-black text-white"
+                className="px-4 py-20 bg-white border-t border-gray-200"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6 text-black">
                         Get More Expert Tips
                     </h2>
-                    <p className="text-xl mb-8 leading-relaxed font-mulish font-extralight">
+                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-8 leading-relaxed font-mulish font-semibold text-lg">
                         Subscribe to our newsletter for monthly automotive tips, seasonal maintenance reminders, and exclusive offers.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center max-w-xl mx-auto">
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="w-full md:flex-1 px-6 py-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full md:flex-1 px-6 py-4 text-gray-900 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                         />
                         <button className="w-full md:w-auto relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                             <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

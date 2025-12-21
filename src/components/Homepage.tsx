@@ -40,14 +40,15 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: typeof accordio
   return (
     <div
       className={`
-        relative rounded-2xl overflow-hidden cursor-pointer md:flex-shrink-0
+        relative rounded-2xl overflow-hidden cursor-pointer flex-shrink-0
         transition-all duration-700 ease-in-out
         ${isActive
-          ? 'w-[280px] md:w-[400px] h-[350px] md:h-[450px]'
-          : 'w-[50px] md:w-[60px] h-[350px] md:h-[450px]'
+          ? 'w-[180px] md:w-[400px] h-[280px] md:h-[450px]'
+          : 'w-[40px] md:w-[60px] h-[280px] md:h-[450px]'
         }
       `}
       onMouseEnter={onMouseEnter}
+      onClick={onMouseEnter}
     >
       {/* Background Image */}
       <img
@@ -65,9 +66,9 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: typeof accordio
           absolute text-white font-semibold whitespace-nowrap
           transition-all duration-300 ease-in-out
           ${isActive
-            ? 'text-base md:text-lg bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 rotate-0' // Active state: horizontal, bottom-center
+            ? 'text-xs md:text-lg bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 rotate-0' // Active state: horizontal, bottom-center
             // Inactive state: vertical, positioned at the bottom, for all screen sizes
-            : 'text-sm md:text-base w-auto text-left bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 rotate-90'
+            : 'text-[10px] md:text-base w-auto text-left bottom-14 md:bottom-24 left-1/2 -translate-x-1/2 rotate-90'
           }
         `}
       >
@@ -93,7 +94,7 @@ function AboutAccordionSection() {
 
           {/* Left Side: Image Accordion */}
           <div className="w-full md:w-1/2 md:min-w-[420px] md:flex-none">
-            <div className="flex flex-row items-center justify-center md:justify-start gap-2 md:gap-4 overflow-x-auto p-2 md:p-4 md:whitespace-nowrap">
+            <div className="w-fit mx-auto flex flex-row items-center gap-1 md:gap-4 p-2 md:p-4">
               {accordionItems.map((item, index) => (
                 <AccordionItem
                   key={item.id}
@@ -112,7 +113,7 @@ function AboutAccordionSection() {
 
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
+              <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left" style={{ wordSpacing: window.innerWidth < 768 ? '-0.15rem' : '-0.08rem' }}>
                 CBD Panel and Paint is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
               </p>
             </div>
@@ -179,7 +180,7 @@ function TimelineDemo() {
       title: "Book Appointment",
       content: (
         <div>
-          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
             Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote. Our experienced advisors will assess your requirements, provide transparent pricing, and arrange a convenient time for your service. Whether it's a minor repair or major restoration, we ensure your vehicle gets the attention it deserves with our comprehensive consultation process.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -209,10 +210,10 @@ function TimelineDemo() {
       title: "Service & Repair",
       content: (
         <div>
-          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
             Our experienced technicians perform the necessary repairs and maintenance with precision and care, utilizing advanced diagnostic tools and proven techniques to identify and resolve issues efficiently.
           </p>
-          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
             We use state-of-the-art equipment and quality materials to ensure every repair meets our high standards. From minor tune-ups to major overhauls, our comprehensive service covers everything from engine diagnostics to bodywork restoration, guaranteeing your vehicle performs at its best with our expert craftsmanship and attention to detail.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -242,10 +243,10 @@ function TimelineDemo() {
       title: "Quality Check",
       content: (
         <div>
-          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
             Every vehicle undergoes thorough quality inspection before delivery to ensure it meets our highest standards and your complete satisfaction. Our certified inspectors meticulously check every component, from mechanical systems to bodywork, using advanced diagnostic equipment and visual inspections.
           </p>
-          <p className="mb-8 text-sm font-mulish font-semibold text-black md:text-lg leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
             We perform comprehensive testing including road tests, brake inspections, fluid level checks, and alignment verification to guarantee your vehicle is safe, reliable, and ready for the road. Only when everything passes our rigorous standards do we hand over the keys.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -260,7 +261,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/im3.png"
+              href="/quality.webp"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -429,10 +430,10 @@ export default function Homepage() {
       {/* Cars Ribbon */}
       <section className="w-full relative">
         <img src="/carsnz.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
-        <div className="absolute inset-0 flex items-start justify-start md:justify-center pt-0 md:pt-8 pl-4 md:pl-0">
-          <h2 className="text-black text-lg md:text-5xl text-left drop-shadow-lg  font-['Tomorrow'] font-light px-4">
+        <div className="absolute inset-0 flex items-bottom justify-center px-4">
+          <h2 className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Tomorrow'] font-medium leading-tight">
             We SERVICE <span className="text-blue-600">All</span> MAKES and MODELS...<br />
-            <span className="text-black md:text-black">FOREIGN and DOMESTIC!</span>
+            <span className="text-black">FOREIGN and DOMESTIC!</span>
           </h2>
         </div>
       </section>
@@ -527,18 +528,18 @@ export default function Homepage() {
 
           {/* Right Column: Textual Content */}
           <div className="space-y-4 -mt-4">
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
+            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
             <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight">Superior Service with a Touch of Class</h2>
 
             <div className="mb-10">
-              <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
+              <h3 className="text-blue-600 text-lg font-semibold mb-2">Core Values</h3>
               <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
                 At CBD Panel and Paint, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
 
             <div >
-              <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
+              <h3 className="text-blue-600 text-lg font-semibold mb-2">Our Story</h3>
               <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
                 For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
               </p>
@@ -562,7 +563,7 @@ export default function Homepage() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Technical Excellence</p>
+            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Technical Excellence</p>
             <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black">Premium Quality Standards</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -605,7 +606,7 @@ export default function Homepage() {
                 {/* Default Content */}
                 <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
                   <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-2 text-white">{feature.title}</h3>
-                  <p className="text-sm mb-4 text-gray-200">{feature.shortDesc}</p>
+                  <p className="text-lg mb-4 text-gray-200">{feature.shortDesc}</p>
                   <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                     LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
                   </button>
@@ -621,7 +622,7 @@ export default function Homepage() {
                 <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
                   <div className="text-left">
                     <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-4">{feature.title}</h3>
-                    <p className="text-sm leading-relaxed text-gray-300">{feature.fullDesc}</p>
+                    <p className="text-lg leading-relaxed text-gray-300">{feature.fullDesc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -635,7 +636,7 @@ export default function Homepage() {
         {/* Hero Section */}
         <div className="sticky top-0 z-0 h-[50vh] md:h-[60vh] w-full bg-white flex items-center justify-center relative">
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e5e52e_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e52e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl px-8 font-['Tomorrow'] font-bold text-center tracking-tight leading-[120%] relative z-10 md:mb-32">
+          <h1 className="text-4xl md:text-6xl px-8 font-['Tomorrow'] font-medium text-center tracking-tight leading-[120%] relative z-10 md:mb-32">
             DISTINCTIVE SERVICE FOR <br /> DISCERNING DRIVERS
           </h1>
         </div>
@@ -654,8 +655,8 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">01</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Accident Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Comprehensive collision repairs to restore your vehicle to factory standards. We handle panel replacement, frame alignment, and finish work so your car is safe and looks like new.</p>
-                      
+                      <p className="text-lg">Comprehensive collision repairs to restore your vehicle to factory standards. We handle panel replacement, frame alignment, and finish work so your car is safe and looks like new.</p>
+
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Accident Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -671,10 +672,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">02</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Bumper Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.</p>
-                      
+                      <p className="text-lg">Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -688,10 +689,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">03</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Chassis & Structural Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Frame straightening, weld repairs and structural reinforcement to restore crash integrity. Work follows manufacturer tolerances and is verified with precision measuring tools.</p>
-                      
+                      <p className="text-lg">Frame straightening, weld repairs and structural reinforcement to restore crash integrity. Work follows manufacturer tolerances and is verified with precision measuring tools.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/car-pieces.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/car-pieces.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -705,10 +706,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">04</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Curb Rash Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.</p>
-                      
+                      <p className="text-lg">Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/tyer.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/tyer.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -722,10 +723,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">05</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Dent Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Paintless dent removal for minor impacts and full panel repair when needed. We prioritise preserving original paint where possible to maintain value.</p>
-                      
+                      <p className="text-lg">Paintless dent removal for minor impacts and full panel repair when needed. We prioritise preserving original paint where possible to maintain value.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -739,10 +740,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">06</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Exterior Polishing</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Multi-stage machine polishing to remove swirls, light scratches and oxidation. Results restore gloss and improve long-term protection when combined with sealants.</p>
-                      
+                      <p className="text-lg">Multi-stage machine polishing to remove swirls, light scratches and oxidation. Results restore gloss and improve long-term protection when combined with sealants.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -756,8 +757,8 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">07</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Headlight Polishing</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Remove haze and yellowing to improve night visibility and restore original clarity. We seal lenses to slow future oxidation.</p>
-                      
+                      <p className="text-lg">Remove haze and yellowing to improve night visibility and restore original clarity. We seal lenses to slow future oxidation.</p>
+
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/headlight.webp" alt="Headlight Polishing" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -773,10 +774,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">08</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Paint & Refinishing</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Full paintwork and refinishing with OEM colour matching and modern coatings. We guarantee even coverage, proper cure and long-lasting results.</p>
-                      
+                      <p className="text-lg">Full paintwork and refinishing with OEM colour matching and modern coatings. We guarantee even coverage, proper cure and long-lasting results.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -790,8 +791,8 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">09</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Panel Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Meticulous metalwork and panel replacement to restore lines and gaps. We ensure doors, hoods and boot lids align correctly after repair.</p>
-                      
+                      <p className="text-lg">Meticulous metalwork and panel replacement to restore lines and gaps. We ensure doors, hoods and boot lids align correctly after repair.</p>
+
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Panel Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -807,10 +808,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">10</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Windscreen Removal & Installation</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Accurate removal and fitment using OEM adhesives and correct curing. We replace chips and full windscreens with a focus on airtight seals and lane-camera recalibration if required.</p>
-                      
+                      <p className="text-lg">Accurate removal and fitment using OEM adhesives and correct curing. We replace chips and full windscreens with a focus on airtight seals and lane-camera recalibration if required.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -824,10 +825,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">11</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Mechanical Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.</p>
-                      
+                      <p className="text-lg">Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/mechanical.jpg" alt="Mechanical Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/oil.jpg'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/mechanical.jpg" alt="Mechanical Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/oil.jpg' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -841,10 +842,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">12</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">WOF & Compliance</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.</p>
-                      
+                      <p className="text-lg">Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wof.jpg" alt="WOF" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wof.jpg" alt="WOF" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -858,10 +859,10 @@ export default function Homepage() {
                         <span className="text-4xl font-['Tomorrow'] font-bold">13</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Caravan & Board Repair</h3>
                       </div>
-                      <p className="text-sm lg:text-base">Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.</p>
-                      
+                      <p className="text-lg">Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.</p>
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/caravan.jpg" alt="Caravan Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/caravan.jpg" alt="Caravan Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -869,7 +870,7 @@ export default function Homepage() {
 
             {/* Sticky Side Text */}
             <div className="hidden lg:grid sticky top-[40vh] h-[50vh] place-content-center">
-              <h2 className="text-3xl lg:text-5xl px-8 font-medium font-['Tomorrow'] text-center tracking-tight leading-[120%]">
+              <h2 className="text-4xl md:text-6xl px-8 font-medium font-['Tomorrow'] text-center tracking-tight leading-[120%]">
                 OUR <br /> SERVICES 😎
               </h2>
             </div>
@@ -882,14 +883,14 @@ export default function Homepage() {
       {/* Why Choose Us */}
       <section className="py-24 bg-white text-black overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
             <p className="text-blue-600 font-medium tracking-widest uppercase text-sm mb-3">Why Choose Us</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold mb-6">Excellence in Every Detail</h2>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Excellence in Every Detail</h2>
             <p className="text-black max-w-2xl mx-auto text-lg font-mulish font-semibold leading-relaxed ">
               We don't just repair cars; we restore confidence. Experience the perfect blend of technical expertise and customer-focused service.
             </p>
@@ -919,36 +920,39 @@ export default function Homepage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2 }}
                 viewport={{ once: true }}
-                className="group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50 transition-all duration-500"
+                className="group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent transition-all duration-500"
                 style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
               >
+                {/* Dark overlay shade */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500 z-10"></div>
+
                 <div className="text relative z-50">
                   <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
                     {item.title}
                   </h1>
-                  <p className="font-normal text-base text-gray-50 relative my-4">
+                  <p className="font-normal text-lg text-gray-50 relative my-4 text-justify">
                     {item.desc}
                   </p>
                 </div>
               </motion.div>
             ))}
           </div>
-          
+
           {/* Stats Section */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white-200 pt-12">
-             {[
-                { label: "Years Experience", value: 30, suffix: "+" },
-                { label: "Cars Repaired", value: 9900, suffix: "K+" },
-                { label: "Customer Rating", value: 100, suffix: "%" },
-                { label: "Expert Staff", value: 10, suffix: "+" }
-             ].map((stat, index) => (
-                <div key={index} className="text-center">
-                   <div className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-blue-500 mb-2">
-                      <AnimatedNumber target={stat.value} suffix={stat.suffix} />
-                   </div>
-                   <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
+            {[
+              { label: "Years Experience", value: 30, suffix: "+" },
+              { label: "Cars Repaired", value: 9900, suffix: "K+" },
+              { label: "Customer Rating", value: 100, suffix: "%" },
+              { label: "Expert Staff", value: 10, suffix: "+" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-blue-500 mb-2">
+                  <AnimatedNumber target={stat.value} suffix={stat.suffix} />
                 </div>
-             ))}
+                <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -989,7 +993,7 @@ export default function Homepage() {
       >
         <section id="reviews" className="py-8 bg-neutral-50">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-bold mb-6">Customer Reviews</h2>
+            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Customer Reviews</h2>
             <div className="rounded-lg overflow-hidden shadow-sm">
               <div id="shapo-widget-65035ad084a4892e58a0"></div>
             </div>

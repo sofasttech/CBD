@@ -35,14 +35,14 @@ export default function Blog() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-16">
           <div>
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
+            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
             <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-black">
               ARTICLES FROM AUTOACE
             </h2>
           </div>
-          <a href="/tips-advice" className="relative group bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition inline-block">
+          <a href="/tips-advice" className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2">
             <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
-            <span className="relative z-10">VIEW MORE</span>
+            <span className="relative z-10">MORE</span>
             <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
             <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
             <div className="absolute -bottom-2 -left-2 w-0 h-0 border-l-4 border-b-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
@@ -52,7 +52,7 @@ export default function Blog() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           {posts.map((post, index) => (
-            <div key={index} className='w-full max-w-[400px] relative mt-4 h-[400px] group mx-auto bg-white border overflow-hidden rounded-md text-black'>
+            <div key={index} className='w-full max-w-[400px] relative mt-4 h-[400px] group mx-auto bg-white border overflow-hidden rounded-md text-white'>
               <figure className='w-full h-full rounded-md overflow-hidden'>
                 <img
                   src={post.image}

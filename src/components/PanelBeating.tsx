@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollObserver } from './ScrollObserver';
 import clsx from 'clsx';
+import { ClipboardList, Wrench, Hammer, Palette, Sparkles } from 'lucide-react';
 
 export default function PanelBeating() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -87,27 +88,27 @@ export default function PanelBeating() {
         {
             title: "Assessment",
             description: "Detailed inspection and quote generation.",
-            icon: "📋"
+            icon: ClipboardList
         },
         {
             title: "Disassembly",
             description: "Removing damaged parts for access.",
-            icon: "🔧"
+            icon: Wrench
         },
         {
             title: "Repair",
             description: "Panel beating, structural alignment, and welding.",
-            icon: "🔨"
+            icon: Hammer
         },
         {
             title: "Paint",
             description: "Color matching, painting, and clear coating.",
-            icon: "🎨"
+            icon: Palette
         },
         {
             title: "Reassembly",
             description: "Fitting parts and final quality check.",
-            icon: "✨"
+            icon: Sparkles
         }
     ];
 
@@ -126,21 +127,19 @@ export default function PanelBeating() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Panel Beating Services</p>
-                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
-                                Precision <span className="text-blue-400">Body Repair</span> Excellence
+                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Panel Beating Services</p>
+                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-8">
+                                PRECISION <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">BODY REPAIR</span> EXCELLENCE
                             </h1>
-                            <p className="text-xl text-gray-700 leading-relaxed font-mulish font-extralight mb-8">
+                            <p className="text-lg text-gray-600 font-semibold leading-relaxed mb-8">
                                 From minor dents to major collision repairs, our skilled panel beaters restore your vehicle to its original condition with meticulous attention to detail.
                             </p>
                             <div className="flex gap-4">
-                                <button className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition">
-                                    <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                                    <span className="relative z-10 group-hover:text-blue-600">GET A QUOTE</span>
+                                <button className="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-red-600 transition-all duration-300 font-medium">
+                                    GET A QUOTE
                                 </button>
-                                <button onClick={() => scrollToSection('services-grid')} className="relative group bg-black text-white px-8 py-3 font-medium transition">
-                                    <span className="absolute left-0 top-0 h-full bg-blue-600 w-0 group-hover:w-full transition-all duration-300"></span>
-                                    <span className="relative z-10 group-hover:text-white">VIEW SERVICES</span>
+                                <button onClick={() => scrollToSection('services-grid')} className="px-8 py-3 bg-white border border-gray-300 text-gray-900 rounded-md hover:border-gray-400 transition-all duration-300 font-medium">
+                                    VIEW SERVICES
                                 </button>
                             </div>
                         </div>
@@ -155,9 +154,9 @@ export default function PanelBeating() {
             <section id="services-grid" className="px-4 py-16 bg-white text-black">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <p className="text-blue-400 text-sm font-medium uppercase tracking-wide mb-4">Our Services</p>
+                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Services</p>
                         <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-12">Comprehensive Panel Beating</h2>
-                        <p className="text-gray-400 text-sm mb-8 hidden md:block">Scroll down to explore</p>
+                        <p className="text-gray-600 text-sm font-semibold mb-8 hidden md:block">Scroll down to explore</p>
                     </div>
 
                     <ScrollObserver className="relative grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-32">
@@ -170,16 +169,16 @@ export default function PanelBeating() {
                                                 <div
                                                     className={clsx(
                                                         isActive ? "text-black" : "text-gray-400 md:text-gray-300 md:hover:text-gray-500",
-                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300 md:hover:bg-gray-50"
+                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300 md:hover:bg-blue-200"
                                                     )}
                                                 >
                                                     <div className="text-blue-600 text-sm font-medium mb-2">
                                                         {String(index + 1).padStart(2, '0')}
                                                     </div>
-                                                    <div className="font-['Tomorrow'] text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-3 md:mb-4">
+                                                    <div className="font-['Tomorrow'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
                                                         {service.title}
                                                     </div>
-                                                    <div className="text-base md:text-lg leading-relaxed">
+                                                    <div className="text-lg font-semibold leading-relaxed">
                                                         {service.fullDesc}
                                                     </div>
                                                     <a href={`#service-${index}`} className="absolute inset-0"></a>
@@ -220,24 +219,83 @@ export default function PanelBeating() {
             </section>
 
             {/* Process Section */}
-            <section className="px-4 py-16 bg-gray-50">
+            <section className="px-4 py-24 bg-white border-t border-gray-200">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-16">
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How We Work</p>
-                        <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-6">Our Repair Process</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6 text-gray-900">
+                            YOUR REPAIR <span className="text-blue-600">PROCESS</span>
+                        </h2>
                     </div>
-                    <div className="grid md:grid-cols-5 gap-8">
+
+                    <div className="grid md:grid-cols-5 gap-8 relative">
+                        {/* Connecting Line with gradient animation */}
+                        <motion.div 
+                            className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 -z-0"
+                            initial={{ scaleX: 0, opacity: 0 }}
+                            whileInView={{ scaleX: 1, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
+                        />
+
                         {processSteps.map((step, index) => (
-                            <div key={index} className="text-center relative">
-                                <div className="w-16 h-16 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg z-10 relative">
-                                    {step.icon}
+                            <motion.div
+                                key={index}
+                                className="relative z-10 bg-white pt-4 group cursor-pointer"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ 
+                                    duration: 0.6, 
+                                    delay: index * 0.15,
+                                    ease: [0.25, 0.4, 0.25, 1]
+                                }}
+                                whileHover={{ 
+                                    y: -15,
+                                    transition: { duration: 0.3, ease: "easeOut" }
+                                }}
+                            >
+                                <motion.div 
+                                    className="relative w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg shadow-blue-600/30 overflow-hidden"
+                                    initial={{ scale: 0, rotate: -90 }}
+                                    whileInView={{ scale: 1, rotate: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.7, 
+                                        delay: index * 0.15 + 0.3,
+                                        type: "spring",
+                                        stiffness: 260,
+                                        damping: 20
+                                    }}
+                                    whileHover={{ 
+                                        scale: 1.15,
+                                        rotate: 360,
+                                        boxShadow: "0 20px 60px rgba(37, 99, 235, 0.4)",
+                                        transition: { duration: 0.6 }
+                                    }}
+                                >
+                                    {/* Shine effect */}
+                                    <motion.div
+                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                        initial={{ x: "-100%" }}
+                                        whileHover={{ x: "100%" }}
+                                        transition={{ duration: 0.6 }}
+                                    />
+                                    <step.icon className="w-8 h-8 relative z-10" strokeWidth={2} />
+                                </motion.div>
+                                <div className="text-center">
+                                    <motion.h3 
+                                        className="text-xl font-['Tomorrow'] font-medium text-gray-900 mb-3"
+                                        whileHover={{ color: "#2563eb", scale: 1.05 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        {step.title}
+                                    </motion.h3>
+                                    <p className="text-lg text-gray-600 leading-relaxed font-semibold group-hover:text-gray-900 transition-colors duration-300">
+                                        {step.description}
+                                    </p>
                                 </div>
-                                {index < processSteps.length - 1 && (
-                                    <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 -z-0"></div>
-                                )}
-                                <h3 className="font-['Tomorrow'] font-bold text-lg mb-2">{step.title}</h3>
-                                <p className="text-sm text-gray-600">{step.description}</p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
@@ -257,34 +315,34 @@ export default function PanelBeating() {
                     </div>
                     <div>
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Why Choose Us</p>
-                        <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-6">Expert Panel Beating Since 1990</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Expert Panel Beating Since 1990</h2>
                         <div className="space-y-4">
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Insurance Approved</h3>
-                                    <p className="text-gray-700">We work with all major insurance companies and handle claims directly.</p>
+                                    <p className="text-lg font-semibold text-gray-700">We work with all major insurance companies and handle claims directly.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Quality Guaranteed</h3>
-                                    <p className="text-gray-700">All panel beating work comes with our comprehensive 12-month warranty.</p>
+                                    <p className="text-lg font-semibold text-gray-700">All panel beating work comes with our comprehensive 12-month warranty.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Modern Equipment</h3>
-                                    <p className="text-gray-700">State-of-the-art tools including computerized frame alignment and paint matching.</p>
+                                    <p className="text-lg font-semibold text-gray-700">State-of-the-art tools including computerized frame alignment and paint matching.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Experienced Craftsmen</h3>
-                                    <p className="text-gray-700">Our team brings decades of combined experience in panel beating and refinishing.</p>
+                                    <p className="text-lg font-semibold text-gray-700">Our team brings decades of combined experience in panel beating and refinishing.</p>
                                 </div>
                             </div>
                         </div>
@@ -296,7 +354,7 @@ export default function PanelBeating() {
             <section className="px-4 py-16 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium mb-6">What Our Customers Say</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">What Our Customers Say</h2>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
@@ -304,10 +362,10 @@ export default function PanelBeating() {
                             { name: "Sarah M.", text: "Fast, professional, and they handled all the insurance paperwork. Great service.", rating: "⭐⭐⭐⭐⭐" },
                             { name: "Mike R.", text: "Best panel beaters in town. The paint match was perfect.", rating: "⭐⭐⭐⭐⭐" }
                         ].map((review, i) => (
-                            <div key={i} className="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div key={i} className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                                 <div className="text-yellow-400 mb-2">{review.rating}</div>
-                                <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
-                                <p className="font-bold font-['Tomorrow']">- {review.name}</p>
+                                <p className="text-lg font-semibold text-gray-700 mb-4 italic">"{review.text}"</p>
+                                <p className="font-['Tomorrow'] font-medium text-gray-900">- {review.name}</p>
                             </div>
                         ))}
                     </div>
@@ -326,17 +384,15 @@ export default function PanelBeating() {
                     <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
                         Ready To Restore Your Vehicle?
                     </h2>
-                    <p className="text-xl mb-8 leading-relaxed font-mulish font-extralight">
+                    <p className="text-lg font-semibold mb-8 leading-relaxed">
                         Get a free quote today and experience the CBD Panelbeaters difference.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="relative group bg-white text-blue-600 px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
-                            <span className="absolute left-0 top-0 h-full bg-black w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10 group-hover:text-white">REQUEST QUOTE</span>
+                        <button className="px-8 py-3 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all duration-300 font-medium">
+                            REQUEST QUOTE
                         </button>
-                        <button className="relative group bg-black text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
-                            <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10 group-hover:text-black">CALL US NOW</span>
+                        <button className="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-900 transition-all duration-300 font-medium border border-white">
+                            CALL US NOW
                         </button>
                     </div>
                 </div>
