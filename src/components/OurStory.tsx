@@ -50,7 +50,7 @@ export default function OurStory() {
                         <p className="text-blue-600 text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6">
                             Est. 1990 • Auckland, NZ
                         </p>
-                        <h1 className="text-5xl md:text-8xl font-['Tomorrow'] font-bold uppercase mb-8 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-8 leading-tight">
                             <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Perfection</span>
                         </h1>
                     </motion.div>

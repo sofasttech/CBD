@@ -6,6 +6,8 @@ import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
 
 export default function CaravansBoats() {
+    const CARAVAN_IMAGES_PATH = '/Caravan Images';
+
     const [menuOpen, setMenuOpen] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const targetRef = useRef(null);
@@ -20,21 +22,21 @@ export default function CaravansBoats() {
 
     const heroSlides = [
         {
-            image: '/caravan_boat_hero_1764692888890.png',
+            image: `${CARAVAN_IMAGES_PATH}/alaska-2178312_1920.jpg`,
             subtitle: 'Trailer & Caravan Specialists',
             title: 'IS YOUR CARAVAN',
             titleHighlight: 'SAFE?',
             description: 'Let the experts inspect your trailer and caravan to ensure your holidays are trouble-free with quality workmanship, safety, and good old fashioned service.'
         },
         {
-            image: '/caravan_boat_hero_1764692888890.png',
+            image: `${CARAVAN_IMAGES_PATH}/camper-6728942_1920.jpg`,
             subtitle: '100% NZ Owned & Operated',
             title: 'EXPERT TRAILER',
             titleHighlight: 'REPAIRS',
             description: 'We repair and service all commercial and domestic trailers. From WOF inspections to complete chassis replacements, we\'ve got you covered.'
         },
         {
-            image: '/caravan_boat_hero_1764692888890.png',
+            image: `${CARAVAN_IMAGES_PATH}/Land Rover.jpg`,
             subtitle: 'Free Loan Boat Trailer',
             title: 'MINIMAL',
             titleHighlight: 'DOWNTIME',
@@ -154,7 +156,7 @@ export default function CaravansBoats() {
                                 </p>
                             </div>
 
-                            <h1 className="text-5xl md:text-8xl font-['Tomorrow'] font-bold uppercase mb-8 leading-tight text-center">
+                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-8 leading-tight text-center">
                                 <span className="text-gray-900">{heroSlides[currentSlide].title}</span> <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">{heroSlides[currentSlide].titleHighlight}</span>
                             </h1>

@@ -371,7 +371,7 @@ export default function TipsAdvice() {
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-end">
                     <div className="text-left">
                         <p className="mb-auto mt-auto text-blue-600 text-sm font-medium uppercase tracking-wide">Expert Guidance</p>
-                        <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-5 mt-10">
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-5 mt-10">
                             Tips & <span className="text-blue-600">Advice</span>
                         </h1>
                         <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg mb-6">

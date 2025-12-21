@@ -70,10 +70,10 @@ export default function Mechanical() {
                 style={{ opacity }}
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center z-0 opacity-80"
+                    className="absolute inset-0 bg-cover bg-center z-0 opacity-25"
                     style={{ backgroundImage: "url('/mechanical_hero_1764692776650.png')" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/20 to-white z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-white z-10" />
 
                 <motion.div
                     className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
@@ -89,7 +89,7 @@ export default function Mechanical() {
                     <ScrollReveal delay={0.4}>
                         <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-gray-900 text-center mx-auto">
                             ENGINEERING 
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800"> EXCELLENCE</span>
+                            <span className="text-blue-600"> EXCELLENCE</span>
                         </h1>
                     </ScrollReveal>
 
