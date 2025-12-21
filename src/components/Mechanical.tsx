@@ -123,7 +123,7 @@ export default function Mechanical() {
                         <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-blue-200 pb-8">
                             <div>
                                 <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
-                                    SYSTEM <span className="text-blue-600">MODULES</span>
+                                    SERVICES <span className="text-blue-600"></span>
                                 </h2>
                                 <p className="text-lg text-black-600 max-w-xl font-semibold">
                                     Comprehensive mechanical repairs and maintenance for all makes and models.
