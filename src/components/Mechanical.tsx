@@ -40,21 +40,21 @@ export default function Mechanical() {
             title: 'Warrant Of Fitness',
             icon: <Shield className="w-8 h-8" />,
             desc: 'Its a legal requirement to have your vehicle inspected for WOF.',
-            details: ['All makes and models', 'We can collect and deliver your vehicle for you whether it is running or not', 'Loan cars available', 'We handle any type of WOF insurance claim'],
+            details: ['All makes and models', 'We can collect and deliver your vehicle for you whether it is running or not', 'Loan cars available', 'We handle any type of WOF insurance claim',],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Mechanical & Suspension',
             icon: <Settings className="w-8 h-8" />,
             desc: 'We strive to provide professional automotive Petrol & Diesel services to the commercial and private sectors Auckland Central and Wide.',
-            details: ['We can perform car servicing to your  requirements', 'Auto Electrical Servic', 'Brake & Clutch Service', 'Electronic Fuel Injection (EFI)'],
+            details: ['We can perform car servicing to your  requirements', 'Auto Electrical Servic', 'Brake & Clutch Service', 'Electronic Fuel Injection (EFI)','Engine Diagnostics & Tune-Ups','Engine Repair & Rebuilding','Exhaust Fitting & Service','Fleet Servicing & Fleet Solutions'],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Compliance Centre',
             icon: <Disc className="w-8 h-8" />,
             desc: 'We help with all vehicle compliance needs. We are 100% New Zealand owned and work with VTNZ to certify vehicles to current NZTA standards.',
-            details: ['Compliance services for all cars and light commercials', 'Experienced and reliable staff', 'Same Day Service', 'Undercover and secure parking with 7 day access'],
+            details: ['Compliance services for all cars and light commercials', 'Experienced and reliable staff', 'Same Day Service', 'Undercover and secure parking with 7 day access','Modern, clean workshop and equipment','Certificate of compliance for imported vehicles','AA inspections welcomed'],
             image: '/mechanical_hero_1764692776650.png'
         },
     ];
