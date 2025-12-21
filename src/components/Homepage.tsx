@@ -40,14 +40,15 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: typeof accordio
   return (
     <div
       className={`
-        relative rounded-2xl overflow-hidden cursor-pointer md:flex-shrink-0
+        relative rounded-2xl overflow-hidden cursor-pointer flex-shrink-0
         transition-all duration-700 ease-in-out
         ${isActive
-          ? 'w-[280px] md:w-[400px] h-[350px] md:h-[450px]'
-          : 'w-[50px] md:w-[60px] h-[350px] md:h-[450px]'
+          ? 'w-[180px] md:w-[400px] h-[280px] md:h-[450px]'
+          : 'w-[40px] md:w-[60px] h-[280px] md:h-[450px]'
         }
       `}
       onMouseEnter={onMouseEnter}
+      onClick={onMouseEnter}
     >
       {/* Background Image */}
       <img
@@ -65,9 +66,9 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: typeof accordio
           absolute text-white font-semibold whitespace-nowrap
           transition-all duration-300 ease-in-out
           ${isActive
-            ? 'text-base md:text-lg bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 rotate-0' // Active state: horizontal, bottom-center
+            ? 'text-xs md:text-lg bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 rotate-0' // Active state: horizontal, bottom-center
             // Inactive state: vertical, positioned at the bottom, for all screen sizes
-            : 'text-sm md:text-base w-auto text-left bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 rotate-90'
+            : 'text-[10px] md:text-base w-auto text-left bottom-14 md:bottom-24 left-1/2 -translate-x-1/2 rotate-90'
           }
         `}
       >
@@ -93,7 +94,7 @@ function AboutAccordionSection() {
 
           {/* Left Side: Image Accordion */}
           <div className="w-full md:w-1/2 md:min-w-[420px] md:flex-none">
-            <div className="flex flex-row flex-wrap items-center justify-center md:justify-start gap-2 md:gap-4 p-2 md:p-4">
+            <div className="w-fit mx-auto flex flex-row items-center gap-1 md:gap-4 p-2 md:p-4">
               {accordionItems.map((item, index) => (
                 <AccordionItem
                   key={item.id}
@@ -112,7 +113,7 @@ function AboutAccordionSection() {
 
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
+              <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left" style={{ wordSpacing: window.innerWidth < 768 ? '-0.15rem' : '-0.08rem' }}>
                 CBD Panel and Paint is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
               </p>
             </div>
@@ -655,7 +656,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Accident Repair</h3>
                       </div>
                       <p className="text-lg">Comprehensive collision repairs to restore your vehicle to factory standards. We handle panel replacement, frame alignment, and finish work so your car is safe and looks like new.</p>
-                      
+
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Accident Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -672,9 +673,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Bumper Repair</h3>
                       </div>
                       <p className="text-lg">Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -689,9 +690,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Chassis & Structural Repair</h3>
                       </div>
                       <p className="text-lg">Frame straightening, weld repairs and structural reinforcement to restore crash integrity. Work follows manufacturer tolerances and is verified with precision measuring tools.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/car-pieces.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/car-pieces.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -706,9 +707,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Curb Rash Repair</h3>
                       </div>
                       <p className="text-lg">Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/tyer.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/tyer.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -723,9 +724,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Dent Repair</h3>
                       </div>
                       <p className="text-lg">Paintless dent removal for minor impacts and full panel repair when needed. We prioritise preserving original paint where possible to maintain value.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/panel-beatt.jpg'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -740,9 +741,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Exterior Polishing</h3>
                       </div>
                       <p className="text-lg">Multi-stage machine polishing to remove swirls, light scratches and oxidation. Results restore gloss and improve long-term protection when combined with sealants.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -757,7 +758,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Headlight Polishing</h3>
                       </div>
                       <p className="text-lg">Remove haze and yellowing to improve night visibility and restore original clarity. We seal lenses to slow future oxidation.</p>
-                      
+
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/headlight.webp" alt="Headlight Polishing" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -774,9 +775,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Paint & Refinishing</h3>
                       </div>
                       <p className="text-lg">Full paintwork and refinishing with OEM colour matching and modern coatings. We guarantee even coverage, proper cure and long-lasting results.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -791,7 +792,7 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Panel Repair</h3>
                       </div>
                       <p className="text-lg">Meticulous metalwork and panel replacement to restore lines and gaps. We ensure doors, hoods and boot lids align correctly after repair.</p>
-                      
+
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Panel Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
@@ -808,9 +809,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Windscreen Removal & Installation</h3>
                       </div>
                       <p className="text-lg">Accurate removal and fitment using OEM adhesives and correct curing. We replace chips and full windscreens with a focus on airtight seals and lane-camera recalibration if required.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -825,9 +826,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Mechanical Repair</h3>
                       </div>
                       <p className="text-lg">Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/mechanical.jpg" alt="Mechanical Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/oil.jpg'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/mechanical.jpg" alt="Mechanical Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/oil.jpg' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -842,9 +843,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">WOF & Compliance</h3>
                       </div>
                       <p className="text-lg">Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wof.jpg" alt="WOF" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/im3.png'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wof.jpg" alt="WOF" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -859,9 +860,9 @@ export default function Homepage() {
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Caravan & Board Repair</h3>
                       </div>
                       <p className="text-lg">Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.</p>
-                      
+
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/caravan.jpg" alt="Caravan Repair" className="w-full h-full object-cover rounded-lg" onError={(e)=>{(e.target as HTMLImageElement).src='/shop.webp'}} /></div>
+                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/caravan.jpg" alt="Caravan Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
                   </div>
                 </article>
               </figure>
@@ -882,7 +883,7 @@ export default function Homepage() {
       {/* Why Choose Us */}
       <section className="py-24 bg-white text-black overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -919,36 +920,39 @@ export default function Homepage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2 }}
                 viewport={{ once: true }}
-                className="group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50 transition-all duration-500"
+                className="group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent transition-all duration-500"
                 style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
               >
+                {/* Dark overlay shade */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500 z-10"></div>
+
                 <div className="text relative z-50">
                   <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
                     {item.title}
                   </h1>
-                  <p className="font-normal text-lg text-gray-50 relative my-4">
+                  <p className="font-normal text-lg text-gray-50 relative my-4 text-justify">
                     {item.desc}
                   </p>
                 </div>
               </motion.div>
             ))}
           </div>
-          
+
           {/* Stats Section */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white-200 pt-12">
-             {[
-                { label: "Years Experience", value: 30, suffix: "+" },
-                { label: "Cars Repaired", value: 9900, suffix: "K+" },
-                { label: "Customer Rating", value: 100, suffix: "%" },
-                { label: "Expert Staff", value: 10, suffix: "+" }
-             ].map((stat, index) => (
-                <div key={index} className="text-center">
-                   <div className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-blue-500 mb-2">
-                      <AnimatedNumber target={stat.value} suffix={stat.suffix} />
-                   </div>
-                   <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
+            {[
+              { label: "Years Experience", value: 30, suffix: "+" },
+              { label: "Cars Repaired", value: 9900, suffix: "K+" },
+              { label: "Customer Rating", value: 100, suffix: "%" },
+              { label: "Expert Staff", value: 10, suffix: "+" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-blue-500 mb-2">
+                  <AnimatedNumber target={stat.value} suffix={stat.suffix} />
                 </div>
-             ))}
+                <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

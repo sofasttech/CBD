@@ -33,8 +33,8 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                 });
             },
             {
-                rootMargin: '50px', // Start loading 50px before entering viewport
-                threshold: 0.1
+                rootMargin: '100px', // Start loading earlier for smoother UX
+                threshold: 0.05 // Trigger earlier
             }
         );
 
@@ -62,8 +62,18 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                     </div>
                 </div>
             ) : null}
-            
-            <div className="w-full h-full relative">
+
+            <div className="w-full h-full relative bg-gray-200">
+                {/* Blur placeholder */}
+                {isVisible && !imageLoaded && (
+                    <div
+                        className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse"
+                        style={{
+                            backgroundImage: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZSIvPjwvc3ZnPg==)',
+                            backgroundSize: 'cover'
+                        }}
+                    />
+                )}
                 {isVisible && (
                     <img
                         src={tip.image}
@@ -71,9 +81,11 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                         loading="lazy"
                         decoding="async"
                         onLoad={() => setImageLoaded(true)}
-                        className={`h-full w-full scale-100 group-hover:scale-100 object-cover transition-all duration-300 rounded-md ${
-                            imageLoaded ? 'opacity-100' : 'opacity-0'
-                        }`}
+                        className={`h-full w-full scale-100 group-hover:scale-100 object-cover transition-all duration-500 rounded-md ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                            }`}
+                        style={{
+                            willChange: imageLoaded ? 'auto' : 'opacity'
+                        }}
                     />
                 )}
             </div>
@@ -84,7 +96,7 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                     <p className="text-sm leading-relaxed">
                         {tip.excerpt}
                     </p>
-                    <button 
+                    <button
                         onClick={onClick}
                         className="p-2 bg-black flex items-center gap-1 rounded-md text-white font-medium text-sm w-fit"
                     >
@@ -124,7 +136,7 @@ export default function TipsAdvice() {
     const handleCategoryChange = (category: string) => {
         setIsFiltering(true);
         setActiveCategory(category);
-        
+
         // Add small delay for smooth transition
         setTimeout(() => {
             setIsFiltering(false);
@@ -379,10 +391,12 @@ export default function TipsAdvice() {
                         </p>
                     </div>
                     <div className="flex justify-center md:justify-end md:-mr-8 md:-mb-16 mt- md:mt-0">
-                        <img 
-                            src="/advice.png" 
+                        <img
+                            src="/advice.png"
                             alt="Automotive advice"
                             loading="eager"
+                            fetchPriority="high"
+                            decoding="async"
                             className="w-full max-w-xl h-auto object-contain scale-110"
                         />
                     </div>
@@ -403,15 +417,13 @@ export default function TipsAdvice() {
                             <button
                                 key={category.name}
                                 onClick={() => handleCategoryChange(category.name)}
-                                className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Tomorrow'] font-medium transition-all duration-300 ${
-                                    activeCategory === category.name
-                                        ? 'bg-blue-600 text-white shadow-md scale-105'
-                                        : 'bg-transparent text-gray-700 hover:bg-blue-50 hover:scale-105'
-                                }`}
+                                className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Tomorrow'] font-medium transition-all duration-300 ${activeCategory === category.name
+                                    ? 'bg-blue-600 text-white shadow-md scale-105'
+                                    : 'bg-transparent text-gray-700 hover:bg-blue-50 hover:scale-105'
+                                    }`}
                             >
-                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${
-                                    activeCategory === category.name ? 'text-white' : 'text-blue-600'
-                                }`} />
+                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeCategory === category.name ? 'text-white' : 'text-blue-600'
+                                    }`} />
                                 <span className="text-sm hidden md:inline">{category.name}</span>
                             </button>
                         ))}
@@ -451,7 +463,7 @@ export default function TipsAdvice() {
                             ))}
                         </div>
                     ) : (
-                        <motion.div 
+                        <motion.div
                             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
                             key={activeCategory}
                             initial={{ opacity: 0, y: 20 }}
@@ -490,7 +502,7 @@ export default function TipsAdvice() {
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="w-full md:flex-1 px-6 py-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full md:flex-1 px-6 py-4 text-gray-900 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                         />
                         <button className="w-full md:w-auto relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
                             <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

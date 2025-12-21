@@ -121,15 +121,15 @@ export default function OurStory() {
                                 className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer h-[400px]"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0}}
+                                transition={{ duration: 0 }}
                                 viewport={{ once: true }}
                                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                             >
                                 {/* Image */}
                                 <div className="absolute inset-0">
-                                    <img 
-                                        src={photo.src} 
-                                        alt={photo.caption} 
+                                    <img
+                                        src={photo.src}
+                                        alt={photo.caption}
                                         className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-110"
                                     />
                                 </div>
@@ -185,7 +185,7 @@ export default function OurStory() {
                                     style={{ width: '100vw', maxWidth: 'none' }} // Ensure image doesn't squash
                                 />
                                 {/* Label */}
-                                <div 
+                                <div
                                     className="absolute top-4 left-4 bg-black/70 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
                                     style={{ opacity: sliderPosition > 15 ? 1 : 0 }}
                                 >
@@ -194,7 +194,7 @@ export default function OurStory() {
                             </div>
 
                             {/* After Label */}
-                            <div 
+                            <div
                                 className="absolute top-4 right-4 bg-blue-600/90 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
                                 style={{ opacity: sliderPosition < 85 ? 1 : 0 }}
                             >
@@ -297,7 +297,7 @@ export default function OurStory() {
                             </div>
                             <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
                                 <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2 text-gray-900">The Foundation</h3>
-                                <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg">
+                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                     CBD Panel and Paint opens its doors in Auckland's CBD, establishing a reputation for quality panel beating and collision repair work.
                                 </p>
                             </div>
@@ -319,7 +319,7 @@ export default function OurStory() {
                             </div>
                             <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
                                 <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2 text-gray-900">Expansion & Growth</h3>
-                                <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg">
+                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                     Expanded our services to include comprehensive mechanical repairs, WOF inspections, and became insurance-approved repairers for major providers.
                                 </p>
                             </div>
@@ -341,7 +341,7 @@ export default function OurStory() {
                             </div>
                             <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
                                 <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2 text-gray-900">Modernization</h3>
-                                <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg">
+                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                     Invested in cutting-edge diagnostic equipment and computerized paint matching systems. Introduced specialized services for caravans, boats, and custom trailer fabrication.
                                 </p>
                             </div>
@@ -363,7 +363,7 @@ export default function OurStory() {
                             </div>
                             <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
                                 <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2 text-gray-900">Industry Leaders</h3>
-                                <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg">
+                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                     Now recognized as one of Auckland's premier full-service automotive repair centers, serving thousands of satisfied customers with a team of expert technicians and state-of-the-art facilities.
                                 </p>
                             </div>
@@ -398,7 +398,7 @@ export default function OurStory() {
                         >
                             <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">01</div>
                             <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Integrity in every repair</h3>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
+                            <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                 We believe in doing things the right way, every time. Honest communication, fair advice, and transparent workmanship guide every project we undertake. Customers trust us because we stand by our word and our work.
                             </p>
                         </motion.div>
@@ -408,13 +408,13 @@ export default function OurStory() {
                             className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0}}
+                            transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
                             <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">02</div>
                             <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Precision with every panel</h3>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
+                            <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                 Every repair matters, whether it is a small dent or a full structural restoration. We pay attention to detail in shaping, painting, and finishing, ensuring your vehicle looks and performs as it should. Quality is built through accuracy.
                             </p>
                         </motion.div>
@@ -430,10 +430,10 @@ export default function OurStory() {
                         >
                             <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">03</div>
                             <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Excellence without compromise</h3>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
+                            <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                 We aim for high standards in everything we do. From modern equipment to skilled hands, we continually strive to deliver results that last. Excellence is our benchmark, not an option.
                             </p>
-                        
+
                         </motion.div>
                         {/*value 4 */}
                         <motion.div
@@ -446,8 +446,8 @@ export default function OurStory() {
                         >
                             <div className="text-5xl font-['Tomorrow'] font-bold text-blue-600 group-hover:text-white mb-4">04</div>
                             <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4">Care that puts customers first</h3>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg">
-                               People come first. We listen, guide you through repair decisions, and keep the process clear and stress-free. Your satisfaction is at the heart of our service, and we take pride in the relationships we build with every person who walks through our doors.
+                            <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
+                                People come first. We listen, guide you through repair decisions, and keep the process clear and stress-free. Your satisfaction is at the heart of our service, and we take pride in the relationships we build with every person who walks through our doors.
                             </p>
                         </motion.div>
                     </div>
@@ -485,7 +485,7 @@ export default function OurStory() {
                             </div>
                             <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2">Panel Beating Specialists</h3>
                             <p className="text-blue-600 mb-3 font-medium">Expert Craftsmen</p>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg">
+                            <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                 Certified technicians specializing in collision repair, dent removal, and precision bodywork restoration.
                             </p>
                         </motion.div>
@@ -503,7 +503,7 @@ export default function OurStory() {
                             </div>
                             <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2">Mechanical Experts</h3>
                             <p className="text-blue-600 mb-3 font-medium">Master Technicians</p>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg">
+                            <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                 Highly trained mechanics with expertise in diagnostics, engine repair, and comprehensive vehicle servicing.
                             </p>
                         </motion.div>
@@ -521,7 +521,7 @@ export default function OurStory() {
                             </div>
                             <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2">Paint & Finishing Team</h3>
                             <p className="text-blue-600 mb-3 font-medium">Color Matching Specialists</p>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg">
+                            <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
                                 Precision painters using computerized color matching for flawless paint refinishing and detailing.
                             </p>
                         </motion.div>
@@ -547,11 +547,11 @@ export default function OurStory() {
                             Meet the dedicated professionals who make CBD Panelbeaters LTD your trusted automotive repair partner.
                         </p>
                     </div>
-                    
+
                     <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-5xl mx-auto">
-                        <img 
-                            src="/shop.webp" 
-                            alt="CBD Panelbeaters Team" 
+                        <img
+                            src="/shop.webp"
+                            alt="CBD Panelbeaters Team"
                             className="w-full h-[400px] md:h-[500px] object-cover"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
