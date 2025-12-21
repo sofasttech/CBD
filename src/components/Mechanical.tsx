@@ -37,47 +37,26 @@ export default function Mechanical() {
 
     const services = [
         {
-            title: 'WOF & Compliance',
+            title: 'Warrant Of Fitness',
             icon: <Shield className="w-8 h-8" />,
-            desc: 'Comprehensive Warrant of Fitness inspections and compliance checks. We treat your vehicle like our own, ensuring it meets all safety standards.',
-            details: ['Safety Systems Check', 'Structural Inspection', 'Brake Testing', 'Tyre & Light Check'],
+            desc: 'Its a legal requirement to have your vehicle inspected for WOF.',
+            details: ['All makes and models', 'We can collect and deliver your vehicle for you whether it is running or not', 'Loan cars available', 'We handle any type of WOF insurance claim',],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Mechanical & Suspension',
             icon: <Settings className="w-8 h-8" />,
-            desc: 'Complete mechanical repairs and suspension tuning. From shock absorbers to control arms, we restore your ride comfort and handling.',
-            details: ['Shock Absorbers', 'Suspension Bushes', 'Steering Racks', 'CV Joints'],
+            desc: 'We strive to provide professional automotive Petrol & Diesel services to the commercial and private sectors Auckland Central and Wide.',
+            details: ['We can perform car servicing to your  requirements', 'Auto Electrical Servic', 'Brake & Clutch Service', 'Electronic Fuel Injection (EFI)','Engine Diagnostics & Tune-Ups','Engine Repair & Rebuilding','Exhaust Fitting & Service','Fleet Servicing & Fleet Solutions'],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
-            title: 'Brake Services',
+            title: 'Compliance Centre',
             icon: <Disc className="w-8 h-8" />,
-            desc: 'Your safety is paramount. We provide detailed brake inspections, pad replacement, and disc machining using precision equipment.',
-            details: ['Pad Replacement', 'Disc Machining', 'ABS Diagnostics', 'Fluid Flush'],
+            desc: 'We help with all vehicle compliance needs. We are 100% New Zealand owned and work with VTNZ to certify vehicles to current NZTA standards.',
+            details: ['Compliance services for all cars and light commercials', 'Experienced and reliable staff', 'Same Day Service', 'Undercover and secure parking with 7 day access','Modern, clean workshop and equipment','Certificate of compliance for imported vehicles','AA inspections welcomed'],
             image: '/mechanical_hero_1764692776650.png'
         },
-        {
-            title: 'Auto Electrical',
-            icon: <Zap className="w-8 h-8" />,
-            desc: 'Advanced diagnostics for modern vehicle electronics. We solve complex wiring issues, battery drains, and sensor faults.',
-            details: ['Battery Testing', 'Alternators', 'Starter Motors', 'Wiring Repairs'],
-            image: '/mechanical_hero_1764692776650.png'
-        },
-        {
-            title: 'Engine Diagnostics',
-            icon: <Activity className="w-8 h-8" />,
-            desc: 'State-of-the-art scanning tools to identify engine faults accurately. We interpret error codes and perform targeted repairs.',
-            details: ['Check Engine Light', 'Performance Tuning', 'Fuel Systems', 'Ignition Systems'],
-            image: '/mechanical_hero_1764692776650.png'
-        },
-        {
-            title: 'General Servicing',
-            icon: <Gauge className="w-8 h-8" />,
-            desc: 'Logbook servicing that protects your warranty. We use high-quality oils and filters to keep your engine running smoothly.',
-            details: ['Oil Change', 'Filter Replacement', 'Fluid Top-ups', 'Safety Inspection'],
-            image: '/mechanical_hero_1764692776650.png'
-        }
     ];
 
     return (
@@ -87,35 +66,35 @@ export default function Mechanical() {
             {/* Parallax Hero */}
             <motion.section
                 ref={targetRef}
-                className="relative h-screen flex items-center justify-center overflow-hidden"
+                className="relative h-screen flex items-center justify-center overflow-hidden bg-white"
                 style={{ opacity }}
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center z-0"
+                    className="absolute inset-0 bg-cover bg-center z-0 opacity-25"
                     style={{ backgroundImage: "url('/mechanical_hero_1764692776650.png')" }}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-                </div>
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-white z-10" />
 
                 <motion.div
-                    className="relative z-10 text-center px-4 max-w-5xl mx-auto"
+                    className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
                     style={{ scale, y }}
                 >
+
                     <ScrollReveal direction="down">
-                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm">
+                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm text-center mx-auto">
                             PREMIUM AUTOMOTIVE CARE
                         </span>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4}>
-                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-white">
-                            ENGINEERING <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">EXCELLENCE</span>
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-gray-900 text-center mx-auto">
+                            ENGINEERING 
+                            <span className="text-blue-600"> EXCELLENCE</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.6}>
-                        <p className="text-lg text-gray-200 font-semibold max-w-3xl mx-auto leading-relaxed mb-10">
+                        <p className="text-lg text-gray-700 font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
                             "We treat your car or commercial vehicle like our own." <br />
                             Expert diagnostics, WOFs, and mechanical repairs.
                         </p>
@@ -132,12 +111,6 @@ export default function Mechanical() {
                         </div>
                     </ScrollReveal>
                 </motion.div>
-
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-500">
-                    <div className="w-6 h-10 border-2 border-gray-500 rounded-full flex justify-center pt-2">
-                        <div className="w-1 h-2 bg-gray-500 rounded-full" />
-                    </div>
-                </div>
             </motion.section>
 
             {/* Services Grid (Holographic HUD Style) */}
@@ -150,7 +123,7 @@ export default function Mechanical() {
                         <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-blue-200 pb-8">
                             <div>
                                 <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
-                                    SYSTEM <span className="text-blue-600">MODULES</span>
+                                    SERVICES <span className="text-blue-600"></span>
                                 </h2>
                                 <p className="text-lg text-black-600 max-w-xl font-semibold">
                                     Comprehensive mechanical repairs and maintenance for all makes and models.
@@ -165,7 +138,7 @@ export default function Mechanical() {
                     <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <ScrollReveal key={index} delay={index * 0.1}>
-                                <SpotLightItem className="h-[450px] border border-gray-200 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] transition-all duration-300 relative">
+                                <SpotLightItem className="h-[570px] border border-gray-200 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] transition-all duration-300 relative">
                                     {/* Background Image */}
                                     <div 
                                         className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
@@ -243,7 +216,8 @@ export default function Mechanical() {
                                     <div
                                         key={symptom.id}
                                         className={`p-6 rounded-lg border cursor-pointer transition-all duration-300 ${activeSymptom === symptom.id ? 'bg-blue-50 border-blue-500' : 'bg-gray-50 border-gray-200 hover:border-gray-300'}`}
-                                        onClick={() => setActiveSymptom(activeSymptom === symptom.id ? null : symptom.id)}
+                                        onMouseEnter={() => setActiveSymptom(symptom.id)}
+                                        onMouseLeave={() => setActiveSymptom(null)}
                                     >
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-4">

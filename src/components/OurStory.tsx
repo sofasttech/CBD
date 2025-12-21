@@ -50,7 +50,7 @@ export default function OurStory() {
                         <p className="text-blue-600 text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6">
                             Est. 1990 • Auckland, NZ
                         </p>
-                        <h1 className="text-5xl md:text-8xl font-['Tomorrow'] font-bold uppercase mb-8 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-8 leading-tight">
                             <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Perfection</span>
                         </h1>
                     </motion.div>
@@ -185,11 +185,21 @@ export default function OurStory() {
                                     style={{ width: '100vw', maxWidth: 'none' }} // Ensure image doesn't squash
                                 />
                                 {/* Label */}
-                                <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-2 text-sm md:text-base font-medium rounded">BEFORE</div>
+                                <div 
+                                    className="absolute top-4 left-4 bg-black/70 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
+                                    style={{ opacity: sliderPosition > 15 ? 1 : 0 }}
+                                >
+                                    BEFORE
+                                </div>
                             </div>
 
                             {/* After Label */}
-                            <div className="absolute top-4 right-4 bg-blue-600/90 text-white px-3 py-2 text-sm md:text-base font-medium rounded">AFTER</div>
+                            <div 
+                                className="absolute top-4 right-4 bg-blue-600/90 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
+                                style={{ opacity: sliderPosition < 85 ? 1 : 0 }}
+                            >
+                                AFTER
+                            </div>
 
                             {/* Slider Handle */}
                             <div

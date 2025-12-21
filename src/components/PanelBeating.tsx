@@ -169,7 +169,7 @@ export default function PanelBeating() {
                                                 <div
                                                     className={clsx(
                                                         isActive ? "text-black" : "text-gray-400 md:text-gray-300 md:hover:text-gray-500",
-                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300 md:hover:bg-gray-50"
+                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300 md:hover:bg-blue-200"
                                                     )}
                                                 >
                                                     <div className="text-blue-600 text-sm font-medium mb-2">
