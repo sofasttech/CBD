@@ -66,15 +66,14 @@ export default function Mechanical() {
             {/* Parallax Hero */}
             <motion.section
                 ref={targetRef}
-                className="relative h-screen flex items-center justify-center overflow-hidden"
+                className="relative h-screen flex items-center justify-center overflow-hidden bg-white"
                 style={{ opacity }}
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center z-0"
+                    className="absolute inset-0 bg-cover bg-center z-0 opacity-30"
                     style={{ backgroundImage: "url('/mechanical_hero_1764692776650.png')" }}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-                </div>
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white z-10" />
 
                 <motion.div
                     className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
@@ -88,14 +87,14 @@ export default function Mechanical() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4}>
-                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
+                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-gray-900 text-center mx-auto">
                             ENGINEERING 
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600"> EXCELLENCE</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.6}>
-                        <p className="text-lg text-gray-200 font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
+                        <p className="text-lg text-gray-700 font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
                             "We treat your car or commercial vehicle like our own." <br />
                             Expert diagnostics, WOFs, and mechanical repairs.
                         </p>
@@ -112,12 +111,6 @@ export default function Mechanical() {
                         </div>
                     </ScrollReveal>
                 </motion.div>
-
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-500">
-                    <div className="w-6 h-10 border-2 border-gray-500 rounded-full flex justify-center pt-2">
-                        <div className="w-1 h-2 bg-gray-500 rounded-full" />
-                    </div>
-                </div>
             </motion.section>
 
             {/* Services Grid (Holographic HUD Style) */}
