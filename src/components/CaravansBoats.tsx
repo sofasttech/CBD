@@ -127,7 +127,7 @@ export default function CaravansBoats() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="absolute inset-0 z-0 opacity-30"
+                        className="absolute inset-0 z-0 opacity-100"
                     >
                         <div
                             className="absolute inset-0 bg-cover bg-center"
@@ -135,7 +135,7 @@ export default function CaravansBoats() {
                         />
                     </motion.div>
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white z-0" />
 
                 <motion.div
                     className="relative z-10 px-4 mx-auto max-w-6xl"
