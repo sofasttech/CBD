@@ -79,10 +79,10 @@ export default function TyreRepairGuide() {
                         <CircleDot className="w-8 h-8 text-indigo-300" />
                         <p className="text-indigo-200 text-sm font-medium uppercase tracking-wide">Safety Information</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         Can Car Tyres Be Repaired?
                     </h1>
-                    <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         A Simple Guide for New Zealand Drivers
                     </p>
                 </div>
@@ -115,7 +115,7 @@ export default function TyreRepairGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <CheckCircle className="w-8 h-8 text-green-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             When a Tyre Can Be Repaired
                         </h2>
                     </div>
@@ -149,7 +149,7 @@ export default function TyreRepairGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <XCircle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 When a Tyre Should Not Be Repaired
                             </h2>
                         </div>
@@ -187,7 +187,7 @@ export default function TyreRepairGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Wrench className="w-8 h-8 text-indigo-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Types of Safe Tyre Repairs
                         </h2>
                     </div>
@@ -197,7 +197,7 @@ export default function TyreRepairGuide() {
                     <div className="space-y-6">
                         {repairTypes.map((type, index) => (
                             <div key={index} className="bg-white border border-gray-200 p-6 hover:shadow-lg transition">
-                                <h3 className="text-xl font-['Tomorrow'] font-medium mb-3 text-indigo-600 flex items-center gap-2">
+                                <h3 className="text-xl font-['Poppins'] font-medium mb-3 text-indigo-600 flex items-center gap-2">
                                     <CheckCircle className="w-6 h-6" />
                                     {type.title}
                                 </h3>
@@ -224,7 +224,7 @@ export default function TyreRepairGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <AlertTriangle className="w-8 h-8 text-yellow-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Why You Should Not Use Temporary Sealants
                         </h2>
                     </div>
@@ -250,7 +250,7 @@ export default function TyreRepairGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <AlertTriangle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 Signs Your Tyre Needs Immediate Attention
                             </h2>
                         </div>
@@ -283,7 +283,7 @@ export default function TyreRepairGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Shield className="w-8 h-8 text-indigo-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             How to Reduce the Risk of Tyre Damage
                         </h2>
                     </div>
@@ -312,15 +312,15 @@ export default function TyreRepairGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-8 text-center">
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">6mm</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">6mm</div>
                             <div className="text-indigo-100 text-lg">Max Repairable Puncture Size</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">100%</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">100%</div>
                             <div className="text-indigo-100 text-lg">Safety Assessment Required</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">Expert</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">Expert</div>
                             <div className="text-indigo-100 text-lg">Professional Inspection</div>
                         </div>
                     </div>
@@ -336,16 +336,16 @@ export default function TyreRepairGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint offers professional tyre inspections, puncture repairs, replacements, and wheel alignment to keep your vehicle safe on New Zealand roads. We carefully assess the damage and recommend the safest option, whether it is repair or replacement.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If you have a flat tyre or suspect damage, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
-                    <button className="relative group bg-indigo-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-indigo-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-indigo-600">BOOK A TYRE INSPECTION</span>
                     </button>

@@ -72,10 +72,10 @@ export default function BumperRepairGuide() {
                         <Shield className="w-8 h-8 text-blue-400" />
                         <p className="text-blue-300 text-sm font-medium uppercase tracking-wide">Safety & Protection</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         Why Front Bumper Repair Matters
                     </h1>
-                    <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         A Practical Guide for Drivers
                     </p>
                 </div>
@@ -117,7 +117,7 @@ export default function BumperRepairGuide() {
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                                        <h3 className="text-2xl font-['Poppins'] font-medium mb-4 text-gray-900">
                                             {benefit.title}
                                         </h3>
                                         <p className="text-lg text-gray-700 leading-relaxed">
@@ -142,7 +142,7 @@ export default function BumperRepairGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <AlertTriangle className="w-8 h-8 text-orange-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             When to Get Your Bumper Checked
                         </h2>
                     </div>
@@ -174,15 +174,15 @@ export default function BumperRepairGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-8 text-center">
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">100%</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">100%</div>
                             <div className="text-blue-100 text-lg">Safety Compliance</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">24/7</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">24/7</div>
                             <div className="text-blue-100 text-lg">Protection Restored</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">Expert</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">Expert</div>
                             <div className="text-blue-100 text-lg">Precision Repairs</div>
                         </div>
                     </div>
@@ -198,16 +198,16 @@ export default function BumperRepairGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         Our expert team at CBD Panel and Paint repairs front bumper damage for all vehicle makes and models. We restore the strength, alignment, and finish while ensuring the safety systems behind the bumper work as intended. Whether it is a minor scrape or a complete structural repair, we carry out the job with care and precision.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your front bumper is damaged or you want an inspection, our expert team at CBD Panel and Paint are ready to assist.
                     </p>
-                    <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-blue-600">BOOK A BUMPER INSPECTION</span>
                     </button>
@@ -223,7 +223,7 @@ export default function BumperRepairGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-8 text-center">
                         Why Choose Professional Bumper Repair?
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -238,7 +238,7 @@ export default function BumperRepairGuide() {
                             <div key={index} className="bg-white p-6 border border-gray-200 hover:shadow-lg transition">
                                 <div className="flex items-start gap-3 mb-3">
                                     <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                                    <h3 className="text-lg font-['Tomorrow'] font-medium">{item.title}</h3>
+                                    <h3 className="text-lg font-['Poppins'] font-medium">{item.title}</h3>
                                 </div>
                                 <p className="text-gray-600">{item.description}</p>
                             </div>

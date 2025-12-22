@@ -89,10 +89,10 @@ export default function IdleVibrationGuide() {
                         <Activity className="w-8 h-8 text-purple-300" />
                         <p className="text-purple-200 text-sm font-medium uppercase tracking-wide">Diagnostic Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         Why Your Car Vibrates While Idling
                     </h1>
-                    <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         A Driver's Guide
                     </p>
                 </div>
@@ -125,7 +125,7 @@ export default function IdleVibrationGuide() {
                     >
                         <div className="flex items-center gap-3 mb-8">
                             <Settings className="w-8 h-8 text-purple-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 Common Causes of Shaking at Idle
                             </h2>
                         </div>
@@ -146,7 +146,7 @@ export default function IdleVibrationGuide() {
                                         {cause.number}
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-['Tomorrow'] font-medium mb-3 text-gray-900">
+                                        <h3 className="text-xl font-['Poppins'] font-medium mb-3 text-gray-900">
                                             {cause.title}
                                         </h3>
                                         <p className="text-gray-700 leading-relaxed">
@@ -171,7 +171,7 @@ export default function IdleVibrationGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <AlertTriangle className="w-8 h-8 text-red-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             When Shaking Might Be a Sign of a Bigger Issue
                         </h2>
                     </div>
@@ -206,7 +206,7 @@ export default function IdleVibrationGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Wrench className="w-8 h-8 text-purple-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             What You Can Do First
                         </h2>
                     </div>
@@ -236,27 +236,27 @@ export default function IdleVibrationGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-8 text-center">
                         Quick Diagnostic Reference
                     </h2>
                     <div className="grid md:grid-cols-3 gap-6">
                         <div className="bg-white bg-opacity-10 backdrop-blur p-6 text-center">
                             <Radio className="w-12 h-12 mx-auto mb-4 text-purple-200" />
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-3">Minor Shaking</h3>
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Minor Shaking</h3>
                             <p className="text-purple-100 text-sm">
                                 Often spark plugs, filters, or minor tune-up needed
                             </p>
                         </div>
                         <div className="bg-white bg-opacity-10 backdrop-blur p-6 text-center">
                             <Activity className="w-12 h-12 mx-auto mb-4 text-purple-200" />
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-3">Moderate Vibration</h3>
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Moderate Vibration</h3>
                             <p className="text-purple-100 text-sm">
                                 Engine mounts, vacuum leaks, or fuel system issues
                             </p>
                         </div>
                         <div className="bg-white bg-opacity-10 backdrop-blur p-6 text-center">
                             <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-purple-200" />
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-3">Severe Shaking</h3>
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Severe Shaking</h3>
                             <p className="text-purple-100 text-sm">
                                 Requires immediate professional diagnosis and repair
                             </p>
@@ -274,16 +274,16 @@ export default function IdleVibrationGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint diagnoses and repairs idle vibration problems for all makes and models. We check the ignition system, mounts, filters, sensors, and engine performance to find the source of the issue. Early inspection prevents further damage and keeps your vehicle running safely and smoothly.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your car shakes while idling or you are unsure what is causing it, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
-                    <button className="relative group bg-purple-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-purple-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-purple-600">BOOK A DIAGNOSTIC CHECK</span>
                     </button>

@@ -36,7 +36,7 @@ export default function Blog() {
         <div className="flex justify-between items-center mb-16">
           <div>
             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
-            <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-black">
+            <h2 className="text-4xl md:text-5xl font-['Poppins'] font-bold text-black">
               ARTICLES FROM AUTOACE
             </h2>
           </div>

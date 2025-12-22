@@ -150,10 +150,10 @@ export default function SummerCareGuide() {
                         <Sun className="w-8 h-8 text-yellow-200 animate-pulse" />
                         <p className="text-yellow-200 text-sm font-medium uppercase tracking-wide">Seasonal Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Summer Vehicle <span className="text-yellow-200">Care Tips</span>
                     </h1>
-                    <p className="text-xl text-yellow-100 leading-relaxed font-mulish font-extralight">
+                    <p className="text-xl text-yellow-100 leading-relaxed font-['Poppins'] font-extralight">
                         Keep Your Car Running Smoothly in Hot Weather
                     </p>
                 </div>
@@ -184,7 +184,7 @@ export default function SummerCareGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-4">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-4">
                             Essential Summer Care Tips
                         </h2>
                         <p className="text-lg text-gray-600">
@@ -209,7 +209,7 @@ export default function SummerCareGuide() {
                                             <tip.icon className={`w-6 h-6 ${colorClasses.icon}`} />
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-2 text-gray-900">
+                                            <h3 className="text-xl font-['Poppins'] font-medium mb-2 text-gray-900">
                                                 {tip.title}
                                             </h3>
                                             <p className="text-gray-700 leading-relaxed mb-4">
@@ -248,15 +248,15 @@ export default function SummerCareGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-8 text-center">
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">8</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">8</div>
                             <div className="text-yellow-100 text-lg">Essential Care Tips</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">100%</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">100%</div>
                             <div className="text-yellow-100 text-lg">Summer Ready</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">Safe</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">Safe</div>
                             <div className="text-yellow-100 text-lg">Hot Weather Driving</div>
                         </div>
                     </div>
@@ -272,16 +272,16 @@ export default function SummerCareGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint workshop provides summer readiness checks to keep your vehicle performing at its best. We inspect coolant systems, tyres, brakes, air conditioning, filters, and general mechanical components. We also handle panel beating, bumper repair, refinishing, and bodywork if your vehicle needs cosmetic care after a long season on the road.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If you want your vehicle summer-ready or need a full check before your next trip, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
-                    <button className="relative group bg-orange-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-orange-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-orange-600">BOOK SUMMER SERVICE</span>
                     </button>

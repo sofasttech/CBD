@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Figtree', 'sans-serif'],
-        tomorrow: ['Tomorrow', 'sans-serif'],
-        mulish: ['Mulish', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
+        tomorrow: ['Poppins', 'sans-serif'],
+        mulish: ['Poppins', 'sans-serif'],
       },
     },
   },

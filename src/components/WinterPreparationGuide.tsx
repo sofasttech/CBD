@@ -151,10 +151,10 @@ export default function WinterPreparationGuide() {
                         <Snowflake className="w-8 h-8 text-cyan-300 animate-pulse" />
                         <p className="text-cyan-300 text-sm font-medium uppercase tracking-wide">Seasonal Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Preparing Your Vehicle <span className="text-cyan-300">for Winter</span>
                     </h1>
-                    <p className="text-xl text-cyan-100 leading-relaxed font-mulish font-extralight">
+                    <p className="text-xl text-cyan-100 leading-relaxed font-['Poppins'] font-extralight">
                         A Practical Guide for New Zealand Drivers
                     </p>
                 </div>
@@ -185,7 +185,7 @@ export default function WinterPreparationGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-4">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-4">
                             Essential Winter Preparation Steps
                         </h2>
                         <p className="text-lg text-gray-600">
@@ -210,7 +210,7 @@ export default function WinterPreparationGuide() {
                                             <step.icon className={`w-6 h-6 ${colorClasses.icon}`} />
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-2 text-gray-900">
+                                            <h3 className="text-xl font-['Poppins'] font-medium mb-2 text-gray-900">
                                                 {step.title}
                                             </h3>
                                             <p className="text-gray-700 leading-relaxed mb-4">
@@ -249,15 +249,15 @@ export default function WinterPreparationGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-8 text-center">
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">8</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">8</div>
                             <div className="text-cyan-100 text-lg">Key Preparation Steps</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">100%</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">100%</div>
                             <div className="text-cyan-100 text-lg">Winter Ready</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">Safe</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">Safe</div>
                             <div className="text-cyan-100 text-lg">Cold Weather Driving</div>
                         </div>
                     </div>
@@ -273,16 +273,16 @@ export default function WinterPreparationGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint offers comprehensive winter checks and servicing to ensure your vehicle remains reliable throughout the colder months. Our expert team inspects tyres, brakes, battery, fluids, lights, and mechanical components, making sure everything is winter-ready. We also handle panel repairs, bumper work, and touch-ups to protect your vehicle from winter wear.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If you'd like a winter check or service before the cold weather arrives, CBD Panel and Paint are ready to help.
                     </p>
-                    <button className="relative group bg-cyan-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-cyan-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-cyan-600">BOOK WINTER SERVICE</span>
                     </button>

@@ -87,7 +87,7 @@ export default function Mechanical() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={0.4}>
-                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
+                            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
                                 ENGINEERING
                                 <span className="text-blue-600"> EXCELLENCE</span>
                             </h1>
@@ -122,7 +122,7 @@ export default function Mechanical() {
                         <ScrollReveal>
                             <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-blue-200 pb-8">
                                 <div>
-                                    <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4 text-gray-900">
                                         SERVICES <span className="text-blue-600"></span>
                                     </h2>
                                     <p className="text-lg text-black-600 max-w-xl font-semibold">
@@ -166,7 +166,7 @@ export default function Mechanical() {
                                                 {service.icon}
                                             </div>
 
-                                            <h3 className={`text-2xl font-['Tomorrow'] font-medium mb-4 transition-colors relative z-10 ${hoveredService === index ? 'text-blue-600' : 'text-white'}`}>
+                                            <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10 ${hoveredService === index ? 'text-blue-600' : 'text-white'}`}>
                                                 {service.title}
                                             </h3>
 
@@ -199,7 +199,7 @@ export default function Mechanical() {
                         {/* Intro Section */}
                         <section className="text-gray-900 h-screen w-full bg-white grid place-content-center sticky top-0 z-0">
                             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
-                            <h1 className='2xl:text-7xl md:text-5xl text-3xl px-8 font-["Tomorrow"] font-semibold text-center tracking-tight leading-[120%] relative z-10'>
+                            <h1 className='2xl:text-7xl md:text-5xl text-3xl px-8 font-["Poppins"] font-semibold text-center tracking-tight leading-[120%] relative z-10'>
                                 <span className="text-blue-600">Troubleshooter:</span> <br /> What's Wrong With My Car? 🔍
                             </h1>
                         </section>
@@ -211,7 +211,7 @@ export default function Mechanical() {
                                 <div className="sticky top-0 h-screen flex items-center justify-center px-8 bg-blue-200">
                                     <div className="max-w-lg">
                                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Interactive Diagnosis</p>
-                                        <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-semibold mb-6 text-gray-900">
+                                        <h2 className="text-4xl md:text-5xl font-['Poppins'] font-semibold mb-6 text-gray-900">
                                             We Pinpoint The Problem
                                         </h2>
                                         <p className="text-lg text-gray-700 mb-6 font-semibold leading-relaxed">
@@ -262,7 +262,7 @@ export default function Mechanical() {
                                                         <div className="mb-3 p-2 bg-blue-600 rounded-full w-fit">
                                                             <div className="text-white">{symptom.icon}</div>
                                                         </div>
-                                                        <h3 className="text-2xl font-['Tomorrow'] font-semibold text-white mb-2">{symptom.title}</h3>
+                                                        <h3 className="text-2xl font-['Poppins'] font-semibold text-white mb-2">{symptom.title}</h3>
                                                         <p className="text-sm text-blue-200 mb-2"><strong>Cause:</strong> {symptom.cause}</p>
                                                         <p className="text-sm text-green-300"><strong>Our Fix:</strong> {symptom.fix}</p>
                                                     </div>
@@ -304,7 +304,7 @@ export default function Mechanical() {
                         <div className="sticky top-0 h-screen grid place-content-center">
                             <div className="max-w-xl">
                                 <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm">Advanced Technology</span>
-                                <h2 className="text-5xl md:text-6xl font-['Tomorrow'] font-semibold mb-8 leading-tight">
+                                <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
                                     ADVANCED <br />
                                     <span className="text-blue-500">DIAGNOSTICS</span>
                                 </h2>
@@ -317,11 +317,11 @@ export default function Mechanical() {
 
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Tomorrow'] font-bold mb-2 text-blue-400">100%</div>
+                                        <div className="text-4xl font-['Poppins'] font-bold mb-2 text-blue-400">100%</div>
                                         <div className="text-sm uppercase tracking-wider text-gray-300">Accuracy</div>
                                     </div>
                                     <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Tomorrow'] font-bold mb-2 text-blue-400">Latest</div>
+                                        <div className="text-4xl font-['Poppins'] font-bold mb-2 text-blue-400">Latest</div>
                                         <div className="text-sm uppercase tracking-wider text-gray-300">Software</div>
                                     </div>
                                 </div>
@@ -337,7 +337,7 @@ export default function Mechanical() {
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center mb-16">
                             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How It Works</p>
-                            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6 text-gray-900">
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6 text-gray-900">
                                 YOUR SERVICE <span className="text-blue-600">JOURNEY</span>
                             </h2>
                         </div>
@@ -404,7 +404,7 @@ export default function Mechanical() {
                                     </motion.div>
                                     <div className="text-center">
                                         <motion.h3
-                                            className="text-xl font-['Tomorrow'] font-medium text-gray-900 mb-3"
+                                            className="text-xl font-['Poppins'] font-medium text-gray-900 mb-3"
                                             whileHover={{ color: "#2563eb", scale: 1.05 }}
                                             transition={{ duration: 0.2 }}
                                         >

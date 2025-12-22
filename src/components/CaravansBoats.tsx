@@ -157,23 +157,23 @@ export default function CaravansBoats() {
                                 </p>
                             </div>
 
-                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-8 leading-tight text-center">
+                            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight text-center">
                                 <span className="text-white drop-shadow-lg">{heroSlides[currentSlide].title}</span> <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 drop-shadow-lg">{heroSlides[currentSlide].titleHighlight}</span>
                             </h1>
 
                             <div className="flex justify-center">
-                                <p style={{ wordSpacing: '-0.08rem' }} className="text-white leading-relaxed font-mulish font-semibold text-lg text-center max-w-3xl drop-shadow-lg">
+                                <p style={{ wordSpacing: '-0.08rem' }} className="text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl drop-shadow-lg">
                                     {heroSlides[currentSlide].description}
                                 </p>
                             </div>
 
                             <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-                                <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition shadow-lg">
+                                <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition shadow-lg">
                                     <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
                                     <span className="relative z-10">BOOK YOUR REPAIR</span>
                                 </button>
-                                <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition hover:bg-gray-800 shadow-lg">
+                                <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition hover:bg-gray-800 shadow-lg">
                                     <span className="relative z-10">GET FREE ESTIMATE</span>
                                 </button>
                             </div>
@@ -214,8 +214,8 @@ export default function CaravansBoats() {
                     <ScrollReveal>
                         <div className="mb-16 flex flex-col items-center w-full">
                             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4 text-center w-full">Check Out Our Services Below</p>
-                            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black mb-4 text-center w-full">OUR SERVICES</h2>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg w-full text-center">Full range of services for all things trailer and caravan related. Simple or very complex, we pride ourselves on quality workmanship, safety, and good old fashioned service.</p>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black mb-4 text-center w-full">OUR SERVICES</h2>
+                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg w-full text-center">Full range of services for all things trailer and caravan related. Simple or very complex, we pride ourselves on quality workmanship, safety, and good old fashioned service.</p>
                         </div>
                     </ScrollReveal>
 
@@ -229,10 +229,10 @@ export default function CaravansBoats() {
                                     <div className="mb-6 text-blue-600 group-hover:text-white transition-colors duration-150">
                                         {service.icon}
                                     </div>
-                                    <h3 className="text-2xl font-['Tomorrow'] font-medium mb-4 text-black group-hover:text-white transition-colors">
+                                    <h3 className="text-2xl font-['Poppins'] font-medium mb-4 text-black group-hover:text-white transition-colors">
                                         {service.title}
                                     </h3>
-                                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white mb-6 leading-relaxed font-mulish font-semibold text-lg flex-grow">
+                                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black group-hover:text-white mb-6 leading-relaxed font-['Poppins'] font-semibold text-lg flex-grow">
                                         {service.desc}
                                     </p>
                                     <ul className="space-y-2 border-t border-gray-200 group-hover:border-white/30 pt-6">
@@ -265,18 +265,18 @@ export default function CaravansBoats() {
                         <div className="order-1 md:order-2">
                             <ScrollReveal>
                                 <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4 text-center md:text-left">Trailer Inspection, Repairs & Servicing</p>
-                                <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-medium mb-8 leading-tight text-black text-center md:text-left">
+                                <h2 className="text-4xl md:text-5xl font-['Poppins'] font-medium mb-8 leading-tight text-black text-center md:text-left">
                                     FREE LOAN <br />
                                     <span className="text-blue-600">BOAT TRAILER</span>
                                 </h2>
                             </ScrollReveal>
 
                             <ScrollReveal delay={0.2}>
-                                <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-center md:text-left mb-8">
+                                <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-center md:text-left mb-8">
                                     We understand that downtime means missed adventures. Trailer and caravan safety and customer service are our top priorities and we're dedicated to getting each job right.
                                 </p>
                                 <div className="p-6 bg-white border-l-4 border-blue-600 mb-8 shadow-md">
-                                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg italic text-center md:text-left">
+                                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg italic text-center md:text-left">
                                         "We provide you with a free loan boat trailer while we service or repair your current boat trailer, ensuring minimal downtime and convenience for you."
                                     </p>
                                 </div>
@@ -284,7 +284,7 @@ export default function CaravansBoats() {
 
                             <ScrollReveal delay={0.4}>
                                 <div className="flex justify-center md:justify-start">
-                                    <button className="relative group bg-blue-600 text-white px-8 py-3 font-['Tomorrow'] font-medium transition">
+                                    <button className="relative group bg-blue-600 text-white px-8 py-3 font-['Poppins'] font-medium transition">
                                         <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
                                         <span className="relative z-10">ENQUIRE NOW</span>
                                     </button>
@@ -299,18 +299,18 @@ export default function CaravansBoats() {
             <section className="py-24 bg-white border-t border-gray-200">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <ScrollReveal>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black mb-8">
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black mb-8">
                             READY FOR YOUR NEXT ADVENTURE?
                         </h2>
-                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-12 leading-relaxed font-mulish font-semibold text-lg">
+                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-12 leading-relaxed font-['Poppins'] font-semibold text-lg">
                             Our vision is to be the leader in caravan and trailer repairs and servicing. Don't let a breakdown ruin your holiday - book your repair or get a free estimate today.
                         </p>
                         <div className="flex flex-col md:flex-row gap-4 justify-center">
-                            <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                            <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                                 <span className="absolute left-0 top-0 h-full bg-blue-800 w-0 group-hover:w-full transition-all duration-300"></span>
                                 <span className="relative z-10">BOOK YOUR REPAIR</span>
                             </button>
-                            <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                            <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                                 <span className="absolute left-0 top-0 h-full bg-gray-700 w-0 group-hover:w-full transition-all duration-300"></span>
                                 <span className="relative z-10">GET FREE ESTIMATE</span>
                             </button>

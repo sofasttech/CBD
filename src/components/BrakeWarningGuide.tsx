@@ -103,10 +103,10 @@ export default function BrakeWarningGuide() {
             >
                 <div className="max-w-4xl mx-auto text-center">
                     <p className="text-red-300 text-sm font-medium uppercase tracking-wide mb-4">Critical Safety Information</p>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Brake System <span className="text-red-300">Warning Signs</span>
                     </h1>
-                    <p className="text-xl text-red-100 leading-relaxed font-mulish font-extralight">
+                    <p className="text-xl text-red-100 leading-relaxed font-['Poppins'] font-extralight">
                         What Every Driver Should Know
                     </p>
                 </div>
@@ -137,7 +137,7 @@ export default function BrakeWarningGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-4">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-4">
                             Common Warning Signs
                         </h2>
                         <p className="text-lg text-gray-600">
@@ -162,7 +162,7 @@ export default function BrakeWarningGuide() {
                                             <sign.icon className={`w-6 h-6 ${colorClasses.icon}`} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-3 text-gray-900">
+                                            <h3 className="text-xl font-['Poppins'] font-medium mb-3 text-gray-900">
                                                 {sign.title}
                                             </h3>
                                             <p className="text-gray-700 leading-relaxed">
@@ -188,7 +188,7 @@ export default function BrakeWarningGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <Shield className="w-8 h-8 text-red-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             When to Seek Professional Help
                         </h2>
                     </div>
@@ -232,15 +232,15 @@ export default function BrakeWarningGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-8 text-center">
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">8</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">8</div>
                             <div className="text-red-100 text-lg">Key Warning Signs</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">100%</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">100%</div>
                             <div className="text-red-100 text-lg">Safety Critical System</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">Fast</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">Fast</div>
                             <div className="text-red-100 text-lg">Response Time Needed</div>
                         </div>
                     </div>
@@ -256,16 +256,16 @@ export default function BrakeWarningGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint carries out full brake inspections and repairs for all makes and models. We check pads, discs, callipers, brake fluid, ABS sensors, and hydraulic systems to find the exact cause of the problem. With proper care, your brakes remain responsive and reliable in all conditions.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your brakes feel different or you want a safety check, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
-                    <button className="relative group bg-red-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-red-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-red-600">BOOK A BRAKE INSPECTION</span>
                     </button>

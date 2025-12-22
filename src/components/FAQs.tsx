@@ -134,10 +134,10 @@ export default function FAQs() {
             >
                 <div className="max-w-7xl mx-auto text-center">
                     <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Got Questions?</p>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Frequently Asked <span className="text-blue-600">Questions</span>
                     </h1>
-                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg max-w-3xl mx-auto">
+                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg max-w-3xl mx-auto">
                         Find answers to common questions about our services, processes, and policies. Can't find what you're looking for? Contact us directly.
                     </p>
                 </div>
@@ -154,7 +154,7 @@ export default function FAQs() {
                             transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium text-blue-600 mb-6 uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium text-blue-600 mb-6 uppercase">
                                 {category.category}
                             </h2>
 
@@ -178,7 +178,7 @@ export default function FAQs() {
                                                 className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition"
                                                 onClick={() => setPinnedIndex(pinnedIndex === globalIndex ? null : globalIndex)}
                                             >
-                                                <span className="font-['Tomorrow'] font-medium text-lg pr-4">{faq.q}</span>
+                                                <span className="font-['Poppins'] font-medium text-lg pr-4">{faq.q}</span>
                                                 {isOpen ? (
                                                     <Minus className="w-6 h-6 text-blue-600 flex-shrink-0" />
                                                 ) : (
@@ -214,18 +214,18 @@ export default function FAQs() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6 text-black">
+                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6 text-black">
                         Still Have Questions?
                     </h2>
-                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-12 leading-relaxed font-mulish font-semibold text-lg">
+                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-12 leading-relaxed font-['Poppins'] font-semibold text-lg">
                         Our friendly team is here to help. Contact us today for personalized assistance.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                        <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                             <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10">CONTACT US</span>
                         </button>
-                        <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition hover:bg-gray-800">
+                        <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition hover:bg-gray-800">
                             <span className="relative z-10">BOOK NOW</span>
                         </button>
                     </div>

@@ -128,7 +128,7 @@ export default function PanelBeating() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Panel Beating Services</p>
-                            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mb-8">
+                            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase leading-tight mb-8">
                                 PRECISION <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">BODY REPAIR</span> EXCELLENCE
                             </h1>
                             <p className="text-lg text-gray-600 font-semibold leading-relaxed mb-8">
@@ -155,7 +155,7 @@ export default function PanelBeating() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Services</p>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-12">Comprehensive Panel Beating</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-12">Comprehensive Panel Beating</h2>
                         <p className="text-gray-600 text-sm font-semibold mb-8 hidden md:block">Scroll down to explore</p>
                     </div>
 
@@ -175,7 +175,7 @@ export default function PanelBeating() {
                                                     <div className="text-blue-600 text-sm font-medium mb-2">
                                                         {String(index + 1).padStart(2, '0')}
                                                     </div>
-                                                    <div className="font-['Tomorrow'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
+                                                    <div className="font-['Poppins'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
                                                         {service.title}
                                                     </div>
                                                     <div className="text-lg font-semibold leading-relaxed">
@@ -223,7 +223,7 @@ export default function PanelBeating() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How We Work</p>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6 text-gray-900">
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6 text-gray-900">
                             YOUR REPAIR <span className="text-blue-600">PROCESS</span>
                         </h2>
                     </div>
@@ -285,7 +285,7 @@ export default function PanelBeating() {
                                 </motion.div>
                                 <div className="text-center">
                                     <motion.h3 
-                                        className="text-xl font-['Tomorrow'] font-medium text-gray-900 mb-3"
+                                        className="text-xl font-['Poppins'] font-medium text-gray-900 mb-3"
                                         whileHover={{ color: "#2563eb", scale: 1.05 }}
                                         transition={{ duration: 0.2 }}
                                     >
@@ -315,33 +315,33 @@ export default function PanelBeating() {
                     </div>
                     <div>
                         <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Why Choose Us</p>
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Expert Panel Beating Since 1990</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">Expert Panel Beating Since 1990</h2>
                         <div className="space-y-4">
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
-                                    <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Insurance Approved</h3>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Insurance Approved</h3>
                                     <p className="text-lg font-semibold text-gray-700">We work with all major insurance companies and handle claims directly.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
-                                    <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Quality Guaranteed</h3>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Quality Guaranteed</h3>
                                     <p className="text-lg font-semibold text-gray-700">All panel beating work comes with our comprehensive 12-month warranty.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
-                                    <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Modern Equipment</h3>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Modern Equipment</h3>
                                     <p className="text-lg font-semibold text-gray-700">State-of-the-art tools including computerized frame alignment and paint matching.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <span className="text-green-600 text-2xl">✓</span>
                                 <div>
-                                    <h3 className="font-['Tomorrow'] font-medium text-lg mb-1">Experienced Craftsmen</h3>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Experienced Craftsmen</h3>
                                     <p className="text-lg font-semibold text-gray-700">Our team brings decades of combined experience in panel beating and refinishing.</p>
                                 </div>
                             </div>
@@ -354,7 +354,7 @@ export default function PanelBeating() {
             <section className="px-4 py-16 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">What Our Customers Say</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">What Our Customers Say</h2>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
@@ -365,7 +365,7 @@ export default function PanelBeating() {
                             <div key={i} className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                                 <div className="text-yellow-400 mb-2">{review.rating}</div>
                                 <p className="text-lg font-semibold text-gray-700 mb-4 italic">"{review.text}"</p>
-                                <p className="font-['Tomorrow'] font-medium text-gray-900">- {review.name}</p>
+                                <p className="font-['Poppins'] font-medium text-gray-900">- {review.name}</p>
                             </div>
                         ))}
                     </div>
@@ -381,7 +381,7 @@ export default function PanelBeating() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Ready To Restore Your Vehicle?
                     </h2>
                     <p className="text-lg font-semibold mb-8 leading-relaxed">

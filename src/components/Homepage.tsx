@@ -88,7 +88,7 @@ function AboutAccordionSection() {
   };
 
   return (
-    <div className="bg-white font-mulish">
+    <div className="bg-white font-['Poppins']">
       <section id="about-intro" className="container mx-auto px-4 py-12 md:py-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
@@ -109,18 +109,18 @@ function AboutAccordionSection() {
           {/* Right Side: Text Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight mt-2">Superior Service with a Touch of Class</h2>
+            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase leading-tight mt-2">Superior Service with a Touch of Class</h2>
 
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left" style={{ wordSpacing: window.innerWidth < 768 ? '-0.15rem' : '-0.08rem' }}>
+              <p className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left" style={{ wordSpacing: window.innerWidth < 768 ? '-0.15rem' : '-0.08rem' }}>
                 CBD Panel and Paint is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
               </p>
             </div>
 
             <div className="mt-6">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
-              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                 For more than 30 years, we have been proudly serving Auckland with quality panel beating, mechanical repairs, and insurance work. Whether it’s a small dent or a major collision, we approach every job with care and attention, restoring your vehicle to its best possible condition.
               </p>
             </div>
@@ -180,7 +180,7 @@ function TimelineDemo() {
       title: "Book Appointment",
       content: (
         <div>
-          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
             Schedule an appointment with our team to discuss your vehicle's repair needs and get a free quote. Our experienced advisors will assess your requirements, provide transparent pricing, and arrange a convenient time for your service. Whether it's a minor repair or major restoration, we ensure your vehicle gets the attention it deserves with our comprehensive consultation process.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -210,10 +210,10 @@ function TimelineDemo() {
       title: "Service & Repair",
       content: (
         <div>
-          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
             Our experienced technicians perform the necessary repairs and maintenance with precision and care, utilizing advanced diagnostic tools and proven techniques to identify and resolve issues efficiently.
           </p>
-          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
             We use state-of-the-art equipment and quality materials to ensure every repair meets our high standards. From minor tune-ups to major overhauls, our comprehensive service covers everything from engine diagnostics to bodywork restoration, guaranteeing your vehicle performs at its best with our expert craftsmanship and attention to detail.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -243,10 +243,10 @@ function TimelineDemo() {
       title: "Quality Check",
       content: (
         <div>
-          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
             Every vehicle undergoes thorough quality inspection before delivery to ensure it meets our highest standards and your complete satisfaction. Our certified inspectors meticulously check every component, from mechanical systems to bodywork, using advanced diagnostic equipment and visual inspections.
           </p>
-          <p className="mb-8 text-lg font-mulish font-semibold text-black leading-relaxed text-justify md:text-left">
+          <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
             We perform comprehensive testing including road tests, brake inspections, fluid level checks, and alignment verification to guarantee your vehicle is safe, reliable, and ready for the road. Only when everything passes our rigorous standards do we hand over the keys.
           </p>
           <svg className="h-40 w-full md:h-60 lg:h-80" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice">
@@ -346,7 +346,7 @@ export default function Homepage() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-mulish scroll-smooth">
+    <div className="min-h-screen bg-white font-['Poppins'] scroll-smooth">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero - Horizontal Scroll */}
@@ -355,8 +355,8 @@ export default function Homepage() {
           {/* Left side text */}
           <div>
             <p className="text-blue-600 text-sm font-medium mb-2">Car Troubles?</p>
-            <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium text-blue-600 mb-4">Automotive Repair Services</h1>
-            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg text-justify md:text-left mb-6">CBD Panel and Paint Limited is a Grey Lynn full-service auto repair centre handling panel beating, spray painting, mechanical servicing, WOF inspections, towing and insurance-approved repairs. We manage each job from assessment to completion to keep your vehicle safe and road-ready.</p>
+            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium text-blue-600 mb-4">Automotive Repair Services</h1>
+            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-6">CBD Panel and Paint Limited is a Grey Lynn full-service auto repair centre handling panel beating, spray painting, mechanical servicing, WOF inspections, towing and insurance-approved repairs. We manage each job from assessment to completion to keep your vehicle safe and road-ready.</p>
             <div className="mb-6 grid grid-cols-2 gap-2">
               <p className="flex items-center gap-2 text-gray-700">
                 <span className="text-green-600">✓</span> Fast service
@@ -431,7 +431,7 @@ export default function Homepage() {
       <section className="w-full relative">
         <img src="/carsnz.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
         <div className="absolute inset-0 flex items-bottom justify-center px-4">
-          <h2 className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Tomorrow'] font-medium leading-tight">
+          <h2 className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Poppins'] font-medium leading-tight">
             We SERVICE <span className="text-blue-600">All</span> MAKES and MODELS...<br />
             <span className="text-black">FOREIGN and DOMESTIC!</span>
           </h2>
@@ -529,18 +529,18 @@ export default function Homepage() {
           {/* Right Column: Textual Content */}
           <div className="space-y-4 -mt-4">
             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase leading-tight">Superior Service with a Touch of Class</h2>
+            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase leading-tight">Superior Service with a Touch of Class</h2>
 
             <div className="mb-10">
               <h3 className="text-blue-600 text-lg font-semibold mb-2">Core Values</h3>
-              <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-['Poppins'] font-extralight text-lg">
                 At CBD Panel and Paint, we pride ourselves on delivering exceptional automotive repair services with integrity, precision, and a commitment to excellence. Our family-run business values honesty, quality workmanship, and building lasting relationships with our customers.
               </p>
             </div>
 
             <div >
               <h3 className="text-blue-600 text-lg font-semibold mb-2">Our Story</h3>
-              <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-mulish font-extralight text-lg">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black-900 leading-relaxed font-['Poppins'] font-extralight text-lg">
                 For over 30 years, we've been serving Auckland with top-tier panel beating, mechanical repairs, and insurance support. From minor dents to major collisions, we treat every vehicle as if it were our own, ensuring your car is restored to perfection.
               </p>
             </div>
@@ -564,7 +564,7 @@ export default function Homepage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Technical Excellence</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase text-black">Premium Quality Standards</h2>
+            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black">Premium Quality Standards</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -600,12 +600,12 @@ export default function Homepage() {
                 <div className="absolute inset-0 bg-black bg-opacity-60 transition-opacity duration-300 group-hover:bg-opacity-80"></div>
 
                 {/* Number Badge */}
-                <div className="absolute top-4 left-4 text-white text-2xl font-['Tomorrow'] z-10 group-hover:opacity-0 transition-opacity duration-300">
+                <div className="absolute top-4 left-4 text-white text-2xl font-['Poppins'] z-10 group-hover:opacity-0 transition-opacity duration-300">
                 </div>
 
                 {/* Default Content */}
                 <div className="relative z-10 text-left group-hover:hidden transition-opacity duration-300">
-                  <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-2 text-white">{feature.title}</h3>
+                  <h3 className="text-2xl font-['Poppins'] font-bold uppercase mb-2 text-white">{feature.title}</h3>
                   <p className="text-lg mb-4 text-gray-200">{feature.shortDesc}</p>
                   <button className="flex items-center text-white hover:text-blue-400 transition uppercase text-sm font-medium">
                     LEARN MORE <ChevronRight className="w-4 h-4 ml-2" />
@@ -621,7 +621,7 @@ export default function Homepage() {
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center text-white p-6 opacity-0 translate-x-32 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out z-30">
                   <div className="text-left">
-                    <h3 className="text-2xl font-['Tomorrow'] font-bold uppercase mb-4">{feature.title}</h3>
+                    <h3 className="text-2xl font-['Poppins'] font-bold uppercase mb-4">{feature.title}</h3>
                     <p className="text-lg leading-relaxed text-gray-300">{feature.fullDesc}</p>
                   </div>
                 </div>
@@ -636,7 +636,7 @@ export default function Homepage() {
         {/* Hero Section */}
         <div className="sticky top-0 z-0 h-[50vh] md:h-[60vh] w-full bg-white flex items-center justify-center relative">
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e5e52e_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e52e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-          <h1 className="text-4xl md:text-6xl px-8 font-['Tomorrow'] font-medium text-center tracking-tight leading-[120%] relative z-10 md:mb-32">
+          <h1 className="text-4xl md:text-6xl px-8 font-['Poppins'] font-medium text-center tracking-tight leading-[120%] relative z-10 md:mb-32">
             DISTINCTIVE SERVICE FOR <br /> DISCERNING DRIVERS
           </h1>
         </div>
@@ -652,8 +652,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">01</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Accident Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">01</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Accident Repair</h3>
                       </div>
                       <p className="text-lg">Comprehensive collision repairs to restore your vehicle to factory standards. We handle panel replacement, frame alignment, and finish work so your car is safe and looks like new.</p>
 
@@ -669,8 +669,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">02</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Bumper Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">02</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Bumper Repair</h3>
                       </div>
                       <p className="text-lg">Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.</p>
 
@@ -686,8 +686,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">03</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Chassis & Structural Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">03</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Chassis & Structural Repair</h3>
                       </div>
                       <p className="text-lg">Frame straightening, weld repairs and structural reinforcement to restore crash integrity. Work follows manufacturer tolerances and is verified with precision measuring tools.</p>
 
@@ -703,8 +703,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">04</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Curb Rash Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">04</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Curb Rash Repair</h3>
                       </div>
                       <p className="text-lg">Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.</p>
 
@@ -720,8 +720,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">05</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Dent Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">05</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Dent Repair</h3>
                       </div>
                       <p className="text-lg">Paintless dent removal for minor impacts and full panel repair when needed. We prioritise preserving original paint where possible to maintain value.</p>
 
@@ -737,8 +737,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">06</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Exterior Polishing</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">06</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Exterior Polishing</h3>
                       </div>
                       <p className="text-lg">Multi-stage machine polishing to remove swirls, light scratches and oxidation. Results restore gloss and improve long-term protection when combined with sealants.</p>
 
@@ -754,8 +754,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">07</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Headlight Polishing</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">07</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Headlight Polishing</h3>
                       </div>
                       <p className="text-lg">Remove haze and yellowing to improve night visibility and restore original clarity. We seal lenses to slow future oxidation.</p>
 
@@ -771,8 +771,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">08</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Paint & Refinishing</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">08</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Paint & Refinishing</h3>
                       </div>
                       <p className="text-lg">Full paintwork and refinishing with OEM colour matching and modern coatings. We guarantee even coverage, proper cure and long-lasting results.</p>
 
@@ -788,8 +788,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">09</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Panel Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">09</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Panel Repair</h3>
                       </div>
                       <p className="text-lg">Meticulous metalwork and panel replacement to restore lines and gaps. We ensure doors, hoods and boot lids align correctly after repair.</p>
 
@@ -805,8 +805,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">10</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Windscreen Removal & Installation</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">10</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Windscreen Removal & Installation</h3>
                       </div>
                       <p className="text-lg">Accurate removal and fitment using OEM adhesives and correct curing. We replace chips and full windscreens with a focus on airtight seals and lane-camera recalibration if required.</p>
 
@@ -822,8 +822,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">11</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Mechanical Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">11</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Mechanical Repair</h3>
                       </div>
                       <p className="text-lg">Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.</p>
 
@@ -839,8 +839,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">12</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">WOF & Compliance</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">12</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">WOF & Compliance</h3>
                       </div>
                       <p className="text-lg">Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.</p>
 
@@ -856,8 +856,8 @@ export default function Homepage() {
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Tomorrow'] font-bold">13</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Tomorrow'] uppercase">Caravan & Board Repair</h3>
+                        <span className="text-4xl font-['Poppins'] font-bold">13</span>
+                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Caravan & Board Repair</h3>
                       </div>
                       <p className="text-lg">Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.</p>
 
@@ -870,7 +870,7 @@ export default function Homepage() {
 
             {/* Sticky Side Text */}
             <div className="hidden lg:grid sticky top-[40vh] h-[50vh] place-content-center">
-              <h2 className="text-4xl md:text-6xl px-8 font-medium font-['Tomorrow'] text-center tracking-tight leading-[120%]">
+              <h2 className="text-4xl md:text-6xl px-8 font-medium font-['Poppins'] text-center tracking-tight leading-[120%]">
                 OUR <br /> SERVICES 😎
               </h2>
             </div>
@@ -890,8 +890,8 @@ export default function Homepage() {
             className="text-center mb-16"
           >
             <p className="text-blue-600 font-medium tracking-widest uppercase text-sm mb-3">Why Choose Us</p>
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Excellence in Every Detail</h2>
-            <p className="text-black max-w-2xl mx-auto text-lg font-mulish font-semibold leading-relaxed ">
+            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">Excellence in Every Detail</h2>
+            <p className="text-black max-w-2xl mx-auto text-lg font-['Poppins'] font-semibold leading-relaxed ">
               We don't just repair cars; we restore confidence. Experience the perfect blend of technical expertise and customer-focused service.
             </p>
           </motion.div>
@@ -947,7 +947,7 @@ export default function Homepage() {
               { label: "Expert Staff", value: 10, suffix: "+" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-blue-500 mb-2">
+                <div className="text-4xl md:text-5xl font-['Poppins'] font-bold text-blue-500 mb-2">
                   <AnimatedNumber target={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
@@ -993,7 +993,7 @@ export default function Homepage() {
       >
         <section id="reviews" className="py-8 bg-neutral-50">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium mb-6">Customer Reviews</h2>
+            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">Customer Reviews</h2>
             <div className="rounded-lg overflow-hidden shadow-sm">
               <div id="shapo-widget-65035ad084a4892e58a0"></div>
             </div>

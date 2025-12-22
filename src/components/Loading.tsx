@@ -38,7 +38,7 @@ export default function Loading() {
 
                 {/* Brand Name */}
                 <motion.h1
-                    className="text-3xl md:text-4xl font-['Tomorrow'] font-bold uppercase mb-4"
+                    className="text-3xl md:text-4xl font-['Poppins'] font-bold uppercase mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -49,7 +49,7 @@ export default function Loading() {
 
                 {/* Loading Text */}
                 <motion.p
-                    className="text-gray-600 font-mulish text-lg mb-8"
+                    className="text-gray-600 font-['Poppins'] text-lg mb-8"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
