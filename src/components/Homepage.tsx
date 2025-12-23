@@ -375,7 +375,7 @@ export default function Homepage() {
               </p>
             </div>
             <div className="flex gap-4">
-              <button className="bg-gray-900 text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-gray-800 transition">
+              <button className="bg-CDarkBlue text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-gray-800 transition">
                 View All Services
               </button>
               <button onClick={() => scrollToSection('book-appointment')} className="relative bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition group">
@@ -648,7 +648,7 @@ export default function Homepage() {
             <div className="grid gap-4 flex-1">
               {/* Card 01 - Accident Repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-green-600 h-96 w-full max-w-3xl rounded-lg rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CBlue h-96 w-full max-w-3xl rounded-lg rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -665,7 +665,7 @@ export default function Homepage() {
 
               {/* Card 02 - Bumper Repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-blue-600 h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CDarkBlue h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -682,7 +682,7 @@ export default function Homepage() {
 
               {/* Card 03 - Chassis and structural repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-orange-500 h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CLightBlue h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -699,7 +699,7 @@ export default function Homepage() {
 
               {/* Card 04 - Curb Rash Repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-red-600 h-96 w-full max-w-3xl rounded-lg -rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CGreen h-96 w-full max-w-3xl rounded-lg -rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -716,7 +716,7 @@ export default function Homepage() {
 
               {/* Card 05 - Dent Repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-purple-600 h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CPurple h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -733,7 +733,7 @@ export default function Homepage() {
 
               {/* Card 06 - Exterior Polishing */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-indigo-600 h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CYellow h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -750,7 +750,7 @@ export default function Homepage() {
 
               {/* Card 07 - Headlight Polishing */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-yellow-500 h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CGray h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -767,7 +767,7 @@ export default function Homepage() {
 
               {/* Card 08 - Paint and Refinishing */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-red-500 h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CPink h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -784,7 +784,7 @@ export default function Homepage() {
 
               {/* Card 09 - Panel Repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-teal-600 h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CBlue h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -801,7 +801,7 @@ export default function Homepage() {
 
               {/* Card 10 - Windscreen Removal and Installation */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-sky-600 h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CDarkBlue h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -818,7 +818,7 @@ export default function Homepage() {
 
               {/* Card 11 - Mechanical Repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-emerald-600 h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CLightBlue h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -835,7 +835,7 @@ export default function Homepage() {
 
               {/* Card 12 - WOF and Compliance */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-indigo-700 h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CGreen h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
@@ -852,7 +852,7 @@ export default function Homepage() {
 
               {/* Card 13 - Caravan and Board Repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-slate-600 h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
+                <article className="bg-CPurple h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
                       <div className="flex items-center gap-4">
