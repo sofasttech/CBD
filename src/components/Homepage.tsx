@@ -130,7 +130,7 @@ function AboutAccordionSection() {
                 const element = document.getElementById('about');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
-                <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute left-0 top-0 h-full bg-CGreen w-0 group-hover:w-full transition-all duration-300"></span>
                 <span className="relative z-10">Learn More</span>
               </button>
             </div>
@@ -379,7 +379,7 @@ export default function Homepage() {
                 View All Services
               </button>
               <button onClick={() => scrollToSection('book-appointment')} className="relative bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition group">
-                <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute left-0 top-0 h-full bg-CGreen w-0 group-hover:w-full transition-all duration-300"></span>
                 <span className="relative z-10">Appointment</span>
               </button>
             </div>

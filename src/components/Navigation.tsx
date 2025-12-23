@@ -52,7 +52,7 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
               <div>093091906</div>
               <div>info@cbdpanel.co.nz</div>
             </div>
-            <button className="bg-blue-600 text-white px-4 lg:px-6 py-2 text-sm font-medium hover:bg-red-700 transition whitespace-nowrap">
+            <button className="bg-blue-600 text-white px-4 lg:px-6 py-2 text-sm font-medium hover:bg-CGreen transition whitespace-nowrap">
               Book a Service
             </button>
             <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
