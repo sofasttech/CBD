@@ -356,18 +356,10 @@ export default function PanelBeating() {
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">What Our Customers Say</h2>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            { name: "John D.", text: "Incredible work on my Audi. You can't even tell it was in an accident. Highly recommended!", rating: "⭐⭐⭐⭐⭐" },
-                            { name: "Sarah M.", text: "Fast, professional, and they handled all the insurance paperwork. Great service.", rating: "⭐⭐⭐⭐⭐" },
-                            { name: "Mike R.", text: "Best panel beaters in town. The paint match was perfect.", rating: "⭐⭐⭐⭐⭐" }
-                        ].map((review, i) => (
-                            <div key={i} className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                                <div className="text-yellow-400 mb-2">{review.rating}</div>
-                                <p className="text-lg font-semibold text-gray-700 mb-4 italic">"{review.text}"</p>
-                                <p className="font-['Poppins'] font-medium text-gray-900">- {review.name}</p>
-                            </div>
-                        ))}
+                    <div className="max-w-6xl mx-auto">
+                        <div className="rounded-lg overflow-hidden shadow-sm">
+                            <div id="shapo-widget-65035ad084a4892e58a0"></div>
+                        </div>
                     </div>
                 </div>
             </section>
