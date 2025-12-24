@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Snowflake, Circle, Battery, Wrench, Eye, Droplets, Lightbulb, Package, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 

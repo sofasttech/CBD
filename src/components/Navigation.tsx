@@ -52,9 +52,9 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
               <div>093091906</div>
               <div>info@cbdpanel.co.nz</div>
             </div>
-            <button className="bg-blue-600 text-white px-4 lg:px-6 py-2 text-sm font-medium hover:bg-CGreen transition whitespace-nowrap">
+            <Link to="/contact" className="bg-blue-600 text-white px-4 lg:px-6 py-2 text-sm font-medium hover:bg-CGreen transition whitespace-nowrap">
               Book a Service
-            </button>
+            </Link>
             <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <X /> : <Menu />}
             </button>
@@ -107,9 +107,9 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
                   <div>093091906 </div>
                   <div>info@cbdpanel.co.nz		</div>
                 </div>
-                <button className="w-full bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition" onClick={() => setMenuOpen(false)}>
+                <Link to="/contact" className="w-full bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition block text-center" onClick={() => setMenuOpen(false)}>
                   Book a Service
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>

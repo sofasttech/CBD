@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, Info, CheckCircle, XCircle, Wrench, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -437,10 +438,10 @@ export default function DashboardWarningLights() {
                         <p className="text-2xl mb-6 font-['Poppins'] font-medium">
                             If a warning light has appeared, don't wait.
                         </p>
-                        <button className="relative group bg-yellow-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                        <Link to="/contact" className="relative group bg-yellow-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition inline-block">
                             <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10 group-hover:text-yellow-600">CONTACT US TODAY</span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </motion.section>
