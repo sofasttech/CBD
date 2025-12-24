@@ -147,7 +147,7 @@ export default function PanelBeating() {
 
     return (
         <ReactLenis root>
-            <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-600 selection:text-white">
+            <div className="min-h-screen bg-white font-sans" style={{ color: '#1F366A' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
             {/* Hero Section */}
@@ -166,7 +166,7 @@ export default function PanelBeating() {
                     style={{ scale, y }}
                 >
                     <ScrollReveal direction="down">
-                        <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm text-center mx-auto">
+                        <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm text-center mx-auto" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5', borderWidth: '1px' }}>
                             PREMIUM PANEL BEATING SERVICES
                         </span>
                     </ScrollReveal>
@@ -174,7 +174,7 @@ export default function PanelBeating() {
                     <ScrollReveal delay={0.4}>
                         <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
                             PRECISION
-                            <span className="text-blue-600"> BODY REPAIR</span> EXCELLENCE
+                            <span style={{ color: '#0C55AC' }}> BODY REPAIR</span> EXCELLENCE
                         </h1>
                     </ScrollReveal>
 
@@ -186,10 +186,10 @@ export default function PanelBeating() {
 
                     <ScrollReveal delay={0.8}>
                         <div className="flex gap-4 justify-center">
-                            <button className="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-red-600 transition-all duration-300 font-medium">
+                            <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
                                 GET A QUOTE
                             </button>
-                            <button onClick={() => scrollToSection('services-grid')} className="px-8 py-3 bg-white border border-gray-300 text-gray-900 rounded-md hover:border-gray-400 transition-all duration-300 font-medium">
+                            <button onClick={() => scrollToSection('services-grid')} className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
                                 VIEW SERVICES
                             </button>
                         </div>
@@ -198,13 +198,13 @@ export default function PanelBeating() {
             </motion.section>
 
             {/* Old Services Grid - Keep the scroll observer version */}
-            <section className="px-4 py-16 bg-white text-black">
+            <section className="px-4 py-16 bg-white">
 
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Services</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-12">Comprehensive Panel Beating</h2>
-                        <p className="text-gray-600 text-sm font-semibold mb-8 hidden md:block">Scroll down to explore</p>
+                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Our Services</p>
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-12" style={{ color: '#1F366A' }}>Comprehensive Panel Beating</h2>
+                        <p className="text-sm font-semibold mb-8 hidden md:block" style={{ color: '#B5B5B5' }}>Scroll down to explore</p>
                     </div>
 
                     <ScrollObserver className="relative grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-32">
@@ -216,11 +216,12 @@ export default function PanelBeating() {
                                             {(isActive) => (
                                                 <div
                                                     className={clsx(
-                                                        isActive ? "text-black" : "text-gray-400 md:text-gray-300 md:hover:text-gray-500",
-                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300 md:hover:bg-blue-200"
+                                                        isActive ? "" : "md:hover:opacity-70",
+                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300"
                                                     )}
+                                                    style={{ color: isActive ? '#1F366A' : '#B5B5B5', backgroundColor: isActive ? 'transparent' : 'transparent' }}
                                                 >
-                                                    <div className="text-blue-600 text-sm font-medium mb-2">
+                                                    <div className="text-sm font-medium mb-2" style={{ color: '#0C55AC' }}>
                                                         {String(index + 1).padStart(2, '0')}
                                                     </div>
                                                     <div className="font-['Poppins'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
@@ -273,16 +274,16 @@ export default function PanelBeating() {
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <ScrollReveal>
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-blue-200 pb-8">
+                        <div className="flex flex-col md:flex-row justify-between items-end mb-20 pb-8" style={{ borderBottom: '1px solid #14A0B5' }}>
                             <div>
-                                <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4 text-gray-900">
-                                    ALL <span className="text-blue-600">SERVICES</span>
+                                <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4" style={{ color: '#1F366A' }}>
+                                    ALL <span style={{ color: '#0C55AC' }}>SERVICES</span>
                                 </h2>
-                                <p className="text-lg text-black max-w-xl font-semibold">
+                                <p className="text-lg max-w-xl font-semibold" style={{ color: '#1F366A' }}>
                                     Comprehensive panel beating and refinishing for all vehicle types.
                                 </p>
                             </div>
-                            <button className="hidden md:flex items-center gap-2 text-blue-600 hover:text-red-600 transition-colors mt-4 md:mt-0 font-medium text-sm border border-blue-500/30 px-4 py-2 rounded hover:bg-blue-500/10">
+                            <button className="hidden md:flex items-center gap-2 hover:opacity-80 transition-colors mt-4 md:mt-0 font-medium text-sm border px-4 py-2 rounded" style={{ color: '#0C55AC', borderColor: '#14A0B5' }}>
                                 VIEW ALL <ChevronRight className="w-4 h-4" />
                             </button>
                         </div>
@@ -291,7 +292,7 @@ export default function PanelBeating() {
                     <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <ScrollReveal key={index} delay={index * 0.1}>
-                                <SpotLightItem className="h-[570px] border border-gray-200 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] transition-all duration-300 relative">
+                                <SpotLightItem className="h-[570px] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 relative" style={{ border: '1px solid #B5B5B5' }}>
                                     {/* Background Image */}
                                     <div
                                         className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
@@ -304,10 +305,10 @@ export default function PanelBeating() {
                                         onMouseLeave={() => setHoveredService(null)}
                                     >
                                         {/* Corner Brackets */}
-                                        <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
-                                        <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
-                                        <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
-                                        <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-blue-500 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
+                                        <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                        <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                        <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                        <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
 
                                         {/* Scan Line Effect */}
                                         <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
@@ -315,23 +316,23 @@ export default function PanelBeating() {
                                         {/* Dark Gradient Overlay */}
                                         <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
 
-                                        <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'text-blue-600 scale-110' : 'text-white'}`}>
+                                        <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'scale-110' : ''}`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
                                             {service.icon}
                                         </div>
 
-                                        <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10 ${hoveredService === index ? 'text-blue-600' : 'text-white'}`}>
+                                        <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
                                             {service.title}
                                         </h3>
 
                                         <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
-                                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-6 leading-relaxed font-['Poppins'] font-semibold text-lg">
+                                            <p style={{ wordSpacing: '-0.08rem', color: '#1F366A' }} className="mb-6 leading-relaxed font-['Poppins'] font-semibold text-lg">
                                                 {service.fullDesc}
                                             </p>
 
-                                            <ul className="space-y-2 border-t border-gray-200 pt-6">
+                                            <ul className="space-y-2 pt-6" style={{ borderTop: '1px solid #B5B5B5' }}>
                                                 {service.details.map((detail, i) => (
-                                                    <li key={i} className="flex items-center text-sm text-gray-600">
-                                                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3" />
+                                                    <li key={i} className="flex items-center text-sm" style={{ color: '#1F366A' }}>
+                                                        <div className="w-1.5 h-1.5 rounded-full mr-3" style={{ backgroundColor: '#0C55AC' }} />
                                                         {detail}
                                                     </li>
                                                 ))}
@@ -349,10 +350,10 @@ export default function PanelBeating() {
             <section className="bg-white">
                 <div className="wrapper">
                     {/* Intro Section */}
-                    <section className="text-gray-900 h-screen w-full bg-white grid place-content-center sticky top-0 z-0">
+                    <section className="h-screen w-full bg-white grid place-content-center sticky top-0 z-0" style={{ color: '#1F366A' }}>
                         <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
                         <h1 className='2xl:text-7xl md:text-5xl text-3xl px-8 font-["Poppins"] font-semibold text-center tracking-tight leading-[120%] relative z-10'>
-                            <span className="text-blue-600">Common Issues:</span> <br /> What We Fix Daily 🔧
+                            <span style={{ color: '#0C55AC' }}>Common Issues:</span> <br /> What We Fix Daily 🔧
                         </h1>
                     </section>
 
@@ -360,22 +361,22 @@ export default function PanelBeating() {
                     <section className="bg-white w-full relative z-10">
                         <div className="grid grid-cols-1 md:grid-cols-2">
                             {/* Sticky Content Side */}
-                            <div className="sticky top-0 h-screen flex items-center justify-center px-8 bg-blue-200">
+                            <div className="sticky top-0 h-screen flex items-center justify-center px-8" style={{ backgroundColor: '#FDDD7F' }}>
                                 <div className="max-w-lg">
-                                    <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Expert Diagnosis</p>
-                                    <h2 className="text-4xl md:text-5xl font-['Poppins'] font-semibold mb-6 text-gray-900">
+                                    <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Expert Diagnosis</p>
+                                    <h2 className="text-4xl md:text-5xl font-['Poppins'] font-semibold mb-6" style={{ color: '#1F366A' }}>
                                         We Fix It Right
                                     </h2>
-                                    <p className="text-lg text-gray-700 mb-6 font-semibold leading-relaxed">
+                                    <p className="text-lg mb-6 font-semibold leading-relaxed" style={{ color: '#1F366A' }}>
                                         Browse common panel beating issues and see how our expert technicians can restore your vehicle.
                                     </p>
                                     <div className="grid gap-3">
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                            <Activity className="w-6 h-6 text-blue-600" />
+                                        <div className="flex items-center gap-3" style={{ color: '#1F366A' }}>
+                                            <Activity className="w-6 h-6" style={{ color: '#0C55AC' }} />
                                             <span className="font-medium">Detailed Inspections</span>
                                         </div>
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                            <Gauge className="w-6 h-6 text-blue-600" />
+                                        <div className="flex items-center gap-3" style={{ color: '#1F366A' }}>
+                                            <Gauge className="w-6 h-6" style={{ color: '#0C55AC' }} />
                                             <span className="font-medium">Quality Repairs</span>
                                         </div>
                                     </div>
@@ -394,7 +395,7 @@ export default function PanelBeating() {
                                         key={symptom.id}
                                         className={`flex justify-center ${index % 2 === 0 ? '-skew-x-3' : 'skew-x-3'}`}
                                     >
-                                        <div className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-xl bg-gray-900 border-2 border-gray-200 hover:border-blue-500 transition-all duration-500 hover:shadow-2xl group">
+                                        <div className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-xl bg-gray-900 border-2 transition-all duration-500 hover:shadow-2xl group" style={{ borderColor: '#B5B5B5' }}>
                                             {/* Image */}
                                             <div className="relative h-80 w-full overflow-hidden">
                                                 <img
@@ -410,12 +411,12 @@ export default function PanelBeating() {
                                             {/* Overlay Content */}
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col justify-end p-6">
                                                 <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
-                                                    <div className="mb-3 p-2 bg-blue-600 rounded-full w-fit">
+                                                    <div className="mb-3 p-2 rounded-full w-fit" style={{ backgroundColor: '#0C55AC' }}>
                                                         <div className="text-white">{symptom.icon}</div>
                                                     </div>
                                                     <h3 className="text-2xl font-['Poppins'] font-semibold text-white mb-2">{symptom.title}</h3>
-                                                    <p className="text-sm text-blue-200 mb-2"><strong>Cause:</strong> {symptom.cause}</p>
-                                                    <p className="text-sm text-green-300"><strong>Our Fix:</strong> {symptom.fix}</p>
+                                                    <p className="text-sm mb-2" style={{ color: '#14A0B5' }}><strong>Cause:</strong> {symptom.cause}</p>
+                                                    <p className="text-sm" style={{ color: '#047342' }}><strong>Our Fix:</strong> {symptom.fix}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -454,10 +455,10 @@ export default function PanelBeating() {
                     {/* Sticky Content */}
                     <div className="sticky top-0 h-screen grid place-content-center">
                         <div className="max-w-xl">
-                            <span className="inline-block py-1 px-3 rounded-full bg-blue-600 text-white text-sm font-medium mb-6 border border-blue-400 backdrop-blur-sm">State-of-the-Art Facility</span>
+                            <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 border backdrop-blur-sm" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5' }}>State-of-the-Art Facility</span>
                             <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
                                 MODERN <br />
-                                <span className="text-blue-500">EQUIPMENT</span>
+                                <span style={{ color: '#14A0B5' }}>EQUIPMENT</span>
                             </h2>
                             <p className="text-lg text-gray-300 mb-6 leading-relaxed font-medium">
                                 Our facility features the latest panel beating and refinishing equipment, ensuring precision repairs that meet manufacturer specifications.
@@ -468,11 +469,11 @@ export default function PanelBeating() {
 
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                    <div className="text-4xl font-['Poppins'] font-bold mb-2 text-blue-400">30+</div>
+                                    <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>30+</div>
                                     <div className="text-sm uppercase tracking-wider text-gray-300">Years Experience</div>
                                 </div>
                                 <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                    <div className="text-4xl font-['Poppins'] font-bold mb-2 text-blue-400">100%</div>
+                                    <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>100%</div>
                                     <div className="text-sm uppercase tracking-wider text-gray-300">Guaranteed</div>
                                 </div>
                             </div>
@@ -485,16 +486,17 @@ export default function PanelBeating() {
             <section className="px-4 py-24 bg-white border-t border-gray-200">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">How We Work</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6 text-gray-900">
-                            YOUR REPAIR <span className="text-blue-600">PROCESS</span>
+                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>How We Work</p>
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>
+                            YOUR REPAIR <span style={{ color: '#0C55AC' }}>PROCESS</span>
                         </h2>
                     </div>
 
                     <div className="grid md:grid-cols-5 gap-8 relative">
                         {/* Connecting Line with gradient animation */}
                         <motion.div 
-                            className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 -z-0"
+                            className="hidden md:block absolute top-12 left-0 w-full h-0.5 -z-0"
+                            style={{ background: 'linear-gradient(to right, #0C55AC, #783E6C, #0C55AC)' }}
                             initial={{ scaleX: 0, opacity: 0 }}
                             whileInView={{ scaleX: 1, opacity: 1 }}
                             viewport={{ once: true }}
@@ -519,7 +521,8 @@ export default function PanelBeating() {
                                 }}
                             >
                                 <motion.div 
-                                    className="relative w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg shadow-blue-600/30 overflow-hidden"
+                                    className="relative w-16 h-16 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg overflow-hidden"
+                                    style={{ background: 'linear-gradient(to bottom right, #0C55AC, #1F366A)', boxShadow: '0 10px 30px rgba(12, 85, 172, 0.3)' }}
                                     initial={{ scale: 0, rotate: -90 }}
                                     whileInView={{ scale: 1, rotate: 0 }}
                                     viewport={{ once: true }}
@@ -548,13 +551,14 @@ export default function PanelBeating() {
                                 </motion.div>
                                 <div className="text-center">
                                     <motion.h3 
-                                        className="text-xl font-['Poppins'] font-medium text-gray-900 mb-3"
-                                        whileHover={{ color: "#2563eb", scale: 1.05 }}
+                                        className="text-xl font-['Poppins'] font-medium mb-3"
+                                        style={{ color: '#1F366A' }}
+                                        whileHover={{ color: "#0C55AC", scale: 1.05 }}
                                         transition={{ duration: 0.2 }}
                                     >
                                         {step.title}
                                     </motion.h3>
-                                    <p className="text-lg text-gray-600 leading-relaxed font-semibold group-hover:text-gray-900 transition-colors duration-300">
+                                    <p className="text-lg leading-relaxed font-semibold transition-colors duration-300" style={{ color: '#1F366A' }}>
                                         {step.description}
                                     </p>
                                 </div>
@@ -577,35 +581,35 @@ export default function PanelBeating() {
                         <img src="/paint_booth_1764692971281.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
                     </div>
                     <div>
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Why Choose Us</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">Expert Panel Beating Since 1990</h2>
+                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>Expert Panel Beating Since 1990</h2>
                         <div className="space-y-4">
                             <div className="flex items-start gap-4">
-                                <span className="text-green-600 text-2xl">✓</span>
+                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                 <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Insurance Approved</h3>
-                                    <p className="text-lg font-semibold text-gray-700">We work with all major insurance companies and handle claims directly.</p>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
+                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We work with all major insurance companies and handle claims directly.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
-                                <span className="text-green-600 text-2xl">✓</span>
+                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                 <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Quality Guaranteed</h3>
-                                    <p className="text-lg font-semibold text-gray-700">All panel beating work comes with our comprehensive 12-month warranty.</p>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Quality Guaranteed</h3>
+                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>All panel beating work comes with our comprehensive 12-month warranty.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
-                                <span className="text-green-600 text-2xl">✓</span>
+                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                 <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Modern Equipment</h3>
-                                    <p className="text-lg font-semibold text-gray-700">State-of-the-art tools including computerized frame alignment and paint matching.</p>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Modern Equipment</h3>
+                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>State-of-the-art tools including computerized frame alignment and paint matching.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
-                                <span className="text-green-600 text-2xl">✓</span>
+                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                 <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1">Experienced Craftsmen</h3>
-                                    <p className="text-lg font-semibold text-gray-700">Our team brings decades of combined experience in panel beating and refinishing.</p>
+                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Experienced Craftsmen</h3>
+                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our team brings decades of combined experience in panel beating and refinishing.</p>
                                 </div>
                             </div>
                         </div>
@@ -617,7 +621,7 @@ export default function PanelBeating() {
             <section className="px-4 py-16 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">What Our Customers Say</h2>
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>What Our Customers Say</h2>
                     </div>
                     <div className="max-w-6xl mx-auto">
                         <div className="rounded-lg overflow-hidden shadow-sm">
@@ -629,7 +633,8 @@ export default function PanelBeating() {
 
             {/* CTA Section */}
             <motion.section
-                className="px-4 py-20 bg-blue-600 text-white"
+                className="px-4 py-20 text-white"
+                style={{ backgroundColor: '#0C55AC' }}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -643,10 +648,10 @@ export default function PanelBeating() {
                         Get a free quote today and experience the CBD Panelbeaters difference.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="px-8 py-3 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all duration-300 font-medium">
+                        <button className="px-8 py-3 bg-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ color: '#0C55AC' }}>
                             REQUEST QUOTE
                         </button>
-                        <button className="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-900 transition-all duration-300 font-medium border border-white">
+                        <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium border" style={{ backgroundColor: '#1F366A', borderColor: 'white' }}>
                             CALL US NOW
                         </button>
                     </div>
