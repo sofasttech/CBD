@@ -89,7 +89,7 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                     />
                 )}
             </div>
-            <article className="p-8 w-full h-full overflow-hidden z-10 absolute top-0 flex flex-col justify-end rounded-md bg-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <article className="p-8 w-full h-full overflow-hidden z-10 absolute top-0 flex flex-col justify-end rounded-md bg-[#783E6C] opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <div className="translate-y-10 group-hover:translate-y-0 transition-all duration-300 space-y-2 text-white">
                     <div className="text-white text-xs font-medium uppercase mb-2">{tip.category}</div>
                     <h1 className="text-2xl font-['Poppins'] font-semibold">{tip.title}</h1>
@@ -104,7 +104,7 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                     </button>
                 </div>
             </article>
-            <article className="p-4 w-full h-[25%] flex flex-col justify-end overflow-hidden absolute bottom-0 rounded-b-md bg-gradient-to-t from-blue-600 to-transparent opacity-100 group-hover:opacity-0 group-hover:-bottom-4 transition-all duration-300 text-white">
+            <article className="p-4 w-full h-[25%] flex flex-col justify-end overflow-hidden absolute bottom-0 rounded-b-md bg-gradient-to-t from-[#783E6C] to-transparent opacity-100 group-hover:opacity-0 group-hover:-bottom-4 transition-all duration-300 text-white">
                 <div className="text-white text-xs font-medium uppercase mb-1">{tip.category}</div>
                 <h1 className="text-xl font-['Poppins'] font-semibold line-clamp-2">{tip.title}</h1>
             </article>
@@ -382,9 +382,9 @@ export default function TipsAdvice() {
             >
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-end">
                     <div className="text-left">
-                        <p className="mb-auto mt-auto text-blue-600 text-sm font-medium uppercase tracking-wide">Expert Guidance</p>
+                        <p className="mb-auto mt-auto text-[#783E6C] text-sm font-medium uppercase tracking-wide">Expert Guidance</p>
                         <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-5 mt-10">
-                            Tips & <span className="text-blue-600">Advice</span>
+                            Tips & <span className="text-[#783E6C]">Advice</span>
                         </h1>
                         <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg mb-6">
                             Professional automotive advice to help you maintain your vehicle, stay safe on the road, and save money on repairs.
@@ -418,11 +418,11 @@ export default function TipsAdvice() {
                                 key={category.name}
                                 onClick={() => handleCategoryChange(category.name)}
                                 className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Poppins'] font-medium transition-all duration-300 ${activeCategory === category.name
-                                    ? 'bg-blue-600 text-white shadow-md scale-105'
-                                    : 'bg-transparent text-gray-700 hover:bg-blue-50 hover:scale-105'
+                                    ? 'bg-[#783E6C] text-white shadow-md scale-105'
+                                    : 'bg-transparent text-gray-700 hover:bg-[#A259B7]/20 hover:scale-105'
                                     }`}
                             >
-                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeCategory === category.name ? 'text-white' : 'text-blue-600'
+                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeCategory === category.name ? 'text-white' : 'text-[#A259B7]'
                                     }`} />
                                 <span className="text-sm hidden md:inline">{category.name}</span>
                             </button>
@@ -447,7 +447,7 @@ export default function TipsAdvice() {
                                     <motion.div
                                         animate={{ rotate: 360 }}
                                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                        className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full mx-auto mb-4"
+                                        className="w-12 h-12 border-4 border-[#783E6C] border-t-transparent rounded-full mx-auto mb-4"
                                     />
                                     <p className="text-gray-900 font-['Poppins'] font-medium">Filtering...</p>
                                 </div>
@@ -502,11 +502,11 @@ export default function TipsAdvice() {
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="w-full md:flex-1 px-6 py-4 text-gray-900 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                            className="w-full md:flex-1 px-6 py-4 text-gray-900 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A259B7] focus:border-[#A259B7]"
                         />
-                        <button className="w-full md:w-auto relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                        <button className="w-full md:w-auto relative group bg-[#783E6C] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                             <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10 group-hover:text-blue-600">SUBSCRIBE</span>
+                            <span className="relative z-10 group-hover:text-[#783E6C]">SUBSCRIBE</span>
                         </button>
                     </div>
                 </div>
@@ -514,7 +514,7 @@ export default function TipsAdvice() {
 
             {/* Service CTA */}
             <motion.section
-                className="px-4 py-16 bg-blue-600 text-white"
+                className="px-4 py-16 bg-[#783E6C] text-white"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -528,7 +528,7 @@ export default function TipsAdvice() {
                         <p className="text-lg leading-relaxed font-['Poppins'] font-extralight mb-6">
                             While DIY maintenance is great, some jobs require professional expertise. Our team is ready to help with all your automotive needs.
                         </p>
-                        <Link to="/contact" className="relative group bg-white text-blue-600 px-8 py-4 font-['Poppins'] font-medium text-lg transition inline-block">
+                        <Link to="/contact" className="relative group bg-white text-[#783E6C] px-8 py-4 font-['Poppins'] font-medium text-lg transition inline-block">
                             <span className="absolute left-0 top-0 h-full bg-black w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10 group-hover:text-white">BOOK SERVICE</span>
                         </Link>

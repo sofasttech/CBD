@@ -47,11 +47,11 @@ export default function OurStory() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
                     >
-                        <p className="text-blue-600 text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6">
+                        <p className="text-CPurple text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6">
                             Est. 1990 • Auckland, NZ
                         </p>
                         <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight">
-                            <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Perfection</span>
+                            <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-CPink to-CPurple">Perfection</span>
                         </h1>
                     </motion.div>
 
@@ -85,7 +85,7 @@ export default function OurStory() {
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="text-4xl md:text-6xl font-['Poppins'] font-bold text-blue-600 mb-2">
+                                <div className="text-4xl md:text-6xl font-['Poppins'] font-bold text-CPurple mb-2">
                                     {stat.number}
                                 </div>
                                 <div className="text-sm md:text-base text-gray-600 font-medium uppercase tracking-wide">
@@ -101,9 +101,9 @@ export default function OurStory() {
             <section className="py-24 bg-neutral-100 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Behind the Scenes</p>
+                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Behind the Scenes</p>
                         <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase">
-                            Our <span className="text-blue-600">Gallery</span>
+                            Our <span className="text-CPurple">Gallery</span>
                         </h2>
                     </div>
 
@@ -154,7 +154,7 @@ export default function OurStory() {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">The Magic Touch</p>
+                            <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">The Magic Touch</p>
                             <h2 className="text-4xl md:text-5xl font-['Poppins'] font-medium mb-6">Restoring Glory</h2>
                             <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-6">
                                 See the difference our craftsmanship makes. We take damaged vehicles and return them to their showroom condition, often exceeding the original factory finish.
@@ -164,7 +164,7 @@ export default function OurStory() {
                                     <span className="w-4 h-4 bg-gray-400 rounded-full"></span> Before
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="w-4 h-4 bg-blue-600 rounded-full"></span> After
+                                    <span className="w-4 h-4 bg-CPurple rounded-full"></span> After
                                 </div>
                             </div>
                         </div>
@@ -207,7 +207,7 @@ export default function OurStory() {
                                 style={{ left: `${sliderPosition}%` }}
                             >
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-blue-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-CPurple">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" transform="rotate(90 12 12)" />
                                     </svg>
                                 </div>
@@ -240,7 +240,7 @@ export default function OurStory() {
                         <img src="/shop.webp" alt="CBD Panelbeaters Workshop" className="w-full h-auto shadow-lg" />
                     </div>
                     <div>
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Beginning</p>
+                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Our Beginning</p>
                         <h2 className="text-4xl md:text-5xl font-['Poppins'] font-medium mb-6">Building Trust Since Day One</h2>
                         <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-4">
                             CBD Panel and Paint began with a simple vision: to provide Auckland with honest, high-quality automotive repair services that vehicle owners could trust. What started as a small family operation has grown into one of the region's most respected automotive service centres.
@@ -267,7 +267,7 @@ export default function OurStory() {
             >
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Journey</p>
+                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Our Journey</p>
                         <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black">Milestones of Excellence</h2>
                     </div>
 
@@ -290,12 +290,12 @@ export default function OurStory() {
                             viewport={{ once: true }}
                         >
                             <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-blue-600 group-hover:text-blue-800 transition-colors">1990s</div>
+                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">1990s</div>
                             </div>
                             <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-blue-600 rounded-full mt-2 group-hover:scale-150 group-hover:bg-blue-800 transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
+                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
                             </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
+                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPurple transition-colors">
                                 <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">The Foundation</h3>
                                 <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                     CBD Panel and Paint opens its doors in Auckland's CBD, establishing a reputation for quality panel beating and collision repair work.
@@ -312,12 +312,12 @@ export default function OurStory() {
                             viewport={{ once: true }}
                         >
                             <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-blue-600 group-hover:text-blue-800 transition-colors">2000s</div>
+                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">2000s</div>
                             </div>
                             <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-blue-600 rounded-full mt-2 group-hover:scale-150 group-hover:bg-blue-800 transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
+                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
                             </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
+                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPink transition-colors">
                                 <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">Expansion & Growth</h3>
                                 <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                     Expanded our services to include comprehensive mechanical repairs, WOF inspections, and became insurance-approved repairers for major providers.
@@ -334,12 +334,12 @@ export default function OurStory() {
                             viewport={{ once: true }}
                         >
                             <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-blue-600 group-hover:text-blue-800 transition-colors">2010s</div>
+                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">2010s</div>
                             </div>
                             <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-blue-600 rounded-full mt-2 group-hover:scale-150 group-hover:bg-blue-800 transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
+                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
                             </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
+                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPink transition-colors">
                                 <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">Modernization</h3>
                                 <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                     Invested in cutting-edge diagnostic equipment and computerized paint matching systems. Introduced specialized services for caravans, boats, and custom trailer fabrication.
@@ -356,12 +356,12 @@ export default function OurStory() {
                             viewport={{ once: true }}
                         >
                             <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-blue-600 group-hover:text-blue-800 transition-colors">Today</div>
+                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">Today</div>
                             </div>
                             <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-blue-600 rounded-full mt-2 group-hover:scale-150 group-hover:bg-blue-800 transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
+                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
                             </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-colors">
+                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPink transition-colors">
                                 <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">Industry Leaders</h3>
                                 <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                     Now recognized as one of Auckland's premier full-service automotive repair centers, serving thousands of satisfied customers with a team of expert technicians and state-of-the-art facilities.
@@ -382,21 +382,22 @@ export default function OurStory() {
             >
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">What Drives Us</p>
+                                <div className="text-4xl font-['Poppins'] font-bold text-CPurple group-hover:text- transition-colors">2000s</div>
+                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">What Drives Us</p>
                         <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black">Our Core Values</h2>
                     </div>
 
                     <div className="grid md:grid-cols-4 gap-8 max-w-9xl mx-auto">
                         {/* Value 1 */}
                         <motion.div
-                            className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
+                            className="p-8 border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
-                            <div className="text-5xl font-['Poppins'] font-bold text-blue-600 group-hover:text-white mb-4">01</div>
+                            <div className="text-5xl font-['Poppins'] font-bold text-CPurple group-hover:text-white mb-4">01</div>
                             <h3 className="text-2xl font-['Poppins'] font-medium mb-4">Integrity in every repair</h3>
                             <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                 We believe in doing things the right way, every time. Honest communication, fair advice, and transparent workmanship guide every project we undertake. Customers trust us because we stand by our word and our work.
@@ -405,14 +406,14 @@ export default function OurStory() {
 
                         {/* Value 2 */}
                         <motion.div
-                            className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
+                            className="p-8 border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
-                            <div className="text-5xl font-['Poppins'] font-bold text-blue-600 group-hover:text-white mb-4">02</div>
+                            <div className="text-5xl font-['Poppins'] font-bold text-CPurple group-hover:text-white mb-4">02</div>
                             <h3 className="text-2xl font-['Poppins'] font-medium mb-4">Precision with every panel</h3>
                             <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                 Every repair matters, whether it is a small dent or a full structural restoration. We pay attention to detail in shaping, painting, and finishing, ensuring your vehicle looks and performs as it should. Quality is built through accuracy.
@@ -421,14 +422,14 @@ export default function OurStory() {
 
                         {/* Value 3 */}
                         <motion.div
-                            className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
+                            className="p-8 border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
-                            <div className="text-5xl font-['Poppins'] font-bold text-blue-600 group-hover:text-white mb-4">03</div>
+                            <div className="text-5xl font-['Poppins'] font-bold text-CPurple group-hover:text-white mb-4">03</div>
                             <h3 className="text-2xl font-['Poppins'] font-medium mb-4">Excellence without compromise</h3>
                             <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                 We aim for high standards in everything we do. From modern equipment to skilled hands, we continually strive to deliver results that last. Excellence is our benchmark, not an option.
@@ -437,14 +438,14 @@ export default function OurStory() {
                         </motion.div>
                         {/*value 4 */}
                         <motion.div
-                            className="p-8 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-150 group cursor-pointer"
+                            className="p-8 border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group cursor-pointer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0 }}
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.05, y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", transition: { duration: 0.15 } }}
                         >
-                            <div className="text-5xl font-['Poppins'] font-bold text-blue-600 group-hover:text-white mb-4">04</div>
+                            <div className="text-5xl font-['Poppins'] font-bold text-CPurple group-hover:text-white mb-4">04</div>
                             <h3 className="text-2xl font-['Poppins'] font-medium mb-4">Care that puts customers first</h3>
                             <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                 People come first. We listen, guide you through repair decisions, and keep the process clear and stress-free. Your satisfaction is at the heart of our service, and we take pride in the relationships we build with every person who walks through our doors.
@@ -464,7 +465,7 @@ export default function OurStory() {
             >
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Meet The Team</p>
+                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Meet The Team</p>
                         <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black">Expert Technicians</h2>
                         <p style={{ wordSpacing: '-0.08rem' }} className="text-black max-w-3xl mx-auto mt-6 leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                             Our team of certified professionals brings together decades of combined experience, ongoing training, and a passion for automotive excellence.
@@ -484,7 +485,7 @@ export default function OurStory() {
                                 <img src="/panel-beatt.jpg" alt="Panel Beating Expert" className="w-full h-80 object-cover hover:scale-110 transition duration-500" />
                             </div>
                             <h3 className="text-2xl font-['Poppins'] font-medium mb-2">Panel Beating Specialists</h3>
-                            <p className="text-blue-600 mb-3 font-medium">Expert Craftsmen</p>
+                            <p className="text-CPurple mb-3 font-medium">Expert Craftsmen</p>
                             <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                 Certified technicians specializing in collision repair, dent removal, and precision bodywork restoration.
                             </p>
@@ -502,7 +503,7 @@ export default function OurStory() {
                                 <img src="/car-tune-up.jpg" alt="Mechanical Expert" className="w-full h-80 object-cover hover:scale-110 transition duration-500" />
                             </div>
                             <h3 className="text-2xl font-['Poppins'] font-medium mb-2">Mechanical Experts</h3>
-                            <p className="text-blue-600 mb-3 font-medium">Master Technicians</p>
+                            <p className="text-CPurple mb-3 font-medium">Master Technicians</p>
                             <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                 Highly trained mechanics with expertise in diagnostics, engine repair, and comprehensive vehicle servicing.
                             </p>
@@ -520,7 +521,7 @@ export default function OurStory() {
                                 <img src="/headlight.webp" alt="Paint Specialist" className="w-full h-80 object-cover hover:scale-110 transition duration-500" />
                             </div>
                             <h3 className="text-2xl font-['Poppins'] font-medium mb-2">Paint & Finishing Team</h3>
-                            <p className="text-blue-600 mb-3 font-medium">Color Matching Specialists</p>
+                            <p className="text-CPurple mb-3 font-medium">Color Matching Specialists</p>
                             <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
                                 Precision painters using computerized color matching for flawless paint refinishing and detailing.
                             </p>
@@ -539,7 +540,7 @@ export default function OurStory() {
             >
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-8">
-                        <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Our Team</p>
+                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Our Team</p>
                         <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black mb-4">
                             Together We Deliver Excellence
                         </h2>
@@ -585,8 +586,8 @@ export default function OurStory() {
                         Join thousands of satisfied customers who trust CBD Panelbeaters LTD for all their automotive needs.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
-                            <span className="absolute left-0 top-0 h-full bg-blue-800 w-0 group-hover:w-full transition-all duration-300"></span>
+                        <button className="relative group bg-CPink text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                            <span className="absolute left-0 top-0 h-full bg-CPurple w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10">BOOK APPOINTMENT</span>
                         </button>
                         <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
