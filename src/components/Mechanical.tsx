@@ -61,13 +61,13 @@ export default function Mechanical() {
 
     return (
         <ReactLenis root>
-            <div className="min-h-screen bg-[#B5B5B5] font-sans" style={{ color: '#B48A00' }}>
+            <div className="min-h-screen bg-white font-sans" style={{ color: '#B48A00' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
                 {/* Parallax Hero */}
                 <motion.section
                     ref={targetRef}
-                    className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900"
+                    className="relative h-screen flex items-center justify-center overflow-hidden bg-white"
                     style={{ opacity }}
                 >
                     <div
@@ -114,9 +114,9 @@ export default function Mechanical() {
                 </motion.section>
 
                 {/* Services Grid (Holographic HUD Style) */}
-                <section id="services-grid" className="py-32 px-4 bg-[#B5B5B5] relative z-10 overflow-hidden">
+                <section id="services-grid" className="py-32 px-4 bg-white relative z-10 overflow-hidden">
                     {/* Background Grid Lines */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
 
                     <div className="max-w-7xl mx-auto relative z-10">
                         <ScrollReveal>
@@ -194,10 +194,10 @@ export default function Mechanical() {
 
 
                 {/* Troubleshooter - Sticky Scroll Pattern */}
-                <section className="bg-[#B5B5B5]">
+                <section className="bg-white">
                     <div className="wrapper">
                         {/* Intro Section */}
-                        <section className="h-screen w-full bg-[#B5B5B5] grid place-content-center sticky top-0 z-0" style={{ color: '#B48A00' }}>
+                        <section className="h-screen w-full bg-white grid place-content-center sticky top-0 z-0" style={{ color: '#B48A00' }}>
                             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
                             <h1 className='2xl:text-7xl md:text-5xl text-3xl px-8 font-["Poppins"] font-semibold text-center tracking-tight leading-[120%] relative z-10'>
                                 <span style={{ color: '#FDDD7F' }}>Troubleshooter:</span> <br /> What's Wrong With My Car? 🔍
@@ -205,7 +205,7 @@ export default function Mechanical() {
                         </section>
 
                         {/* Sticky Grid with Images - This will cover the intro section */}
-                        <section className="bg-[#B5B5B5] w-full relative z-10">
+                        <section className="bg-white w-full relative z-10">
                             <div className="grid grid-cols-1 md:grid-cols-2">
                                 {/* Sticky Content Side */}
                                 <div className="sticky top-0 h-screen flex items-center justify-center px-8" style={{ backgroundColor: '#FDDD7F' }}>
@@ -242,7 +242,7 @@ export default function Mechanical() {
                                             key={symptom.id}
                                             className={`flex justify-center ${index % 2 === 0 ? '-skew-x-3' : 'skew-x-3'}`}
                                         >
-                                            <div className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-xl bg-gray-900 border-2 transition-all duration-500 hover:shadow-2xl group" style={{ borderColor: '#B5B5B5' }}>
+                                            <div className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-xl bg-white border-2 transition-all duration-500 hover:shadow-2xl group" style={{ borderColor: '#B5B5B5' }}>
                                                 {/* Image */}
                                                 <div className="relative h-80 w-full overflow-hidden">
                                                     <img
@@ -257,7 +257,7 @@ export default function Mechanical() {
                                                 </div>
 
                                                 {/* Overlay Content */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col justify-end p-6">
+                                                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent flex flex-col justify-end p-6">
                                                     <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
                                                         <div className="mb-3 p-2 rounded-full w-fit" style={{ backgroundColor: '#FDDD7F' }}>
                                                             <div className="text-white">{symptom.icon}</div>
@@ -277,7 +277,7 @@ export default function Mechanical() {
                 </section>
 
                 {/* Advanced Diagnostics - Sticky Images Pattern */}
-                <section className="bg-slate-950 text-white w-full">
+                <section className="bg-white text-white w-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 px-8">
                         {/* Sticky Stacking Images */}
                         <div className="grid gap-2">
@@ -308,21 +308,21 @@ export default function Mechanical() {
                                     ADVANCED <br />
                                     <span style={{ color: '#FDDD7F' }}>DIAGNOSTICS</span>
                                 </h2>
-                                <p className="text-lg text-gray-300 mb-6 leading-relaxed font-medium">
+                                <p className="text-lg text-black mb-6 leading-relaxed font-medium">
                                     Modern vehicles are complex computers on wheels. We use the latest diagnostic scanning tools to communicate directly with your car's onboard systems.
                                 </p>
-                                <p className="text-lg text-gray-300 mb-8 leading-relaxed font-medium">
+                                <p className="text-lg text-black mb-8 leading-relaxed font-medium">
                                     Our technicians are trained to interpret complex data streams, allowing us to pinpoint issues with engine management, transmission control, and safety systems that others might miss.
                                 </p>
 
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
                                         <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#FDDD7F' }}>100%</div>
-                                        <div className="text-sm uppercase tracking-wider text-gray-300">Accuracy</div>
+                                        <div className="text-sm uppercase tracking-wider text-black">Accuracy</div>
                                     </div>
                                     <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
                                         <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#FDDD7F' }}>Latest</div>
-                                        <div className="text-sm uppercase tracking-wider text-gray-300">Software</div>
+                                        <div className="text-sm uppercase tracking-wider text-black">Software</div>
                                     </div>
                                 </div>
                             </div>
@@ -333,7 +333,7 @@ export default function Mechanical() {
 
 
                 {/* Service Process Steps */}
-                <section className="py-24 bg-[#B5B5B5] border-t border-gray-200">
+                <section className="py-24 bg-white border-t border-gray-200">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center mb-16">
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#FDDD7F' }}>How It Works</p>
@@ -361,7 +361,7 @@ export default function Mechanical() {
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    className="relative z-10 bg-[#B5B5B5] pt-4 group cursor-pointer"
+                                    className="relative z-10 bg-white pt-4 group cursor-pointer"
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
