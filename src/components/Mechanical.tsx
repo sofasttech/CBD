@@ -61,7 +61,7 @@ export default function Mechanical() {
 
     return (
         <ReactLenis root>
-            <div className="min-h-screen bg-[#B5B5B5] font-sans" style={{ color: '#B48A00' }}>
+            <div className="min-h-screen bg-white font-sans" style={{ color: '#1F366A' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
                 {/* Parallax Hero */}
@@ -81,7 +81,7 @@ export default function Mechanical() {
                     >
 
                         <ScrollReveal direction="down">
-                            <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm text-center mx-auto" style={{ backgroundColor: '#FDDD7F', borderColor: '#FDDD7F', borderWidth: '1px', color: '#B48A00' }}>
+                            <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm text-center mx-auto" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5', borderWidth: '1px' }}>
                                 PREMIUM AUTOMOTIVE CARE
                             </span>
                         </ScrollReveal>
@@ -89,7 +89,7 @@ export default function Mechanical() {
                         <ScrollReveal delay={0.4}>
                             <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
                                 ENGINEERING
-                                <span style={{ color: '#FDDD7F' }}> EXCELLENCE</span>
+                                <span style={{ color: '#0C55AC' }}> EXCELLENCE</span>
                             </h1>
                         </ScrollReveal>
 
@@ -102,10 +102,10 @@ export default function Mechanical() {
 
                         <ScrollReveal delay={0.8}>
                             <div className="flex gap-4 justify-center">
-                                <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#FDDD7F', color: '#B48A00' }}>
+                                <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
                                     Book Now
                                 </button>
-                                <button className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#FDDD7F', color: '#B48A00' }}>
+                                <button className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
                                     Learn More
                                 </button>
                             </div>
@@ -114,22 +114,22 @@ export default function Mechanical() {
                 </motion.section>
 
                 {/* Services Grid (Holographic HUD Style) */}
-                <section id="services-grid" className="py-32 px-4 bg-[#B5B5B5] relative z-10 overflow-hidden">
+                <section id="services-grid" className="py-32 px-4 bg-gray-50 relative z-10 overflow-hidden">
                     {/* Background Grid Lines */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
 
                     <div className="max-w-7xl mx-auto relative z-10">
                         <ScrollReveal>
-                            <div className="flex flex-col md:flex-row justify-between items-end mb-20 pb-8" style={{ borderBottom: '1px solid #FDDD7F' }}>
+                            <div className="flex flex-col md:flex-row justify-between items-end mb-20 pb-8" style={{ borderBottom: '1px solid #14A0B5' }}>
                                 <div>
-                                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4" style={{ color: '#B48A00' }}>
-                                        SERVICES <span style={{ color: '#FDDD7F' }}></span>
+                                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4" style={{ color: '#1F366A' }}>
+                                        SERVICES <span style={{ color: '#0C55AC' }}></span>
                                     </h2>
-                                    <p className="text-lg max-w-xl font-semibold" style={{ color: '#B48A00' }}>
+                                    <p className="text-lg max-w-xl font-semibold" style={{ color: '#1F366A' }}>
                                         Comprehensive mechanical repairs and maintenance for all makes and models.
                                     </p>
                                 </div>
-                                <button className="hidden md:flex items-center gap-2 hover:opacity-80 transition-colors mt-4 md:mt-0 font-medium text-sm border px-4 py-2 rounded" style={{ color: '#FDDD7F', borderColor: '#FDDD7F' }}>
+                                <button className="hidden md:flex items-center gap-2 hover:opacity-80 transition-colors mt-4 md:mt-0 font-medium text-sm border px-4 py-2 rounded" style={{ color: '#0C55AC', borderColor: '#14A0B5' }}>
                                     VIEW ALL <ChevronRight className="w-4 h-4" />
                                 </button>
                             </div>
@@ -138,7 +138,7 @@ export default function Mechanical() {
                         <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {services.map((service, index) => (
                                 <ScrollReveal key={index} delay={index * 0.1}>
-                                    <SpotLightItem className="h-[570px] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 relative border border-[#FDDD7F]">
+                                    <SpotLightItem className="h-[570px] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 relative border border-[#B5B5B5]">
                                         {/* Background Image */}
                                         <div
                                             className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
@@ -151,34 +151,34 @@ export default function Mechanical() {
                                             onMouseLeave={() => setHoveredService(null)}
                                         >
                                             {/* Corner Accents */}
-                                            <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#FDDD7F' }} />
-                                            <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#FDDD7F' }} />
-                                            <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#FDDD7F' }} />
-                                            <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#FDDD7F' }} />
+                                            <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                            <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                            <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                            <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
 
                                             {/* Scanline Effect */}
-                                            <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-[#FDDD7F]/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
+                                            <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
 
                                             {/* Background gradient from logo area to bottom */}
                                             <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
 
-                                            <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'scale-110' : ''}`} style={{ color: hoveredService === index ? '#FDDD7F' : 'white' }}>
+                                            <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'scale-110' : ''}`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
                                                 {service.icon}
                                             </div>
 
-                                            <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10`} style={{ color: hoveredService === index ? '#FDDD7F' : 'white' }}>
+                                            <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
                                                 {service.title}
                                             </h3>
 
                                             <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
-                                                <p className="text-lg mb-6 leading-relaxed font-semibold" style={{ color: '#B48A00' }}>
+                                                <p className="text-lg mb-6 leading-relaxed font-semibold" style={{ color: '#1F366A' }}>
                                                     {service.desc}
                                                 </p>
 
-                                                <ul className="space-y-2 pt-6" style={{ borderTop: '1px solid #FDDD7F' }}>
+                                                <ul className="space-y-2 pt-6" style={{ borderTop: '1px solid #B5B5B5' }}>
                                                     {service.details.map((detail, i) => (
-                                                        <li key={i} className="flex items-center text-sm" style={{ color: '#B48A00' }}>
-                                                            <span className="mr-2" style={{ color: '#FDDD7F' }}>›</span>
+                                                        <li key={i} className="flex items-center text-sm" style={{ color: '#1F366A' }}>
+                                                            <span className="mr-2" style={{ color: '#0C55AC' }}>›</span>
                                                             {detail}
                                                         </li>
                                                     ))}
@@ -194,36 +194,36 @@ export default function Mechanical() {
 
 
                 {/* Troubleshooter - Sticky Scroll Pattern */}
-                <section className="bg-[#B5B5B5]">
+                <section className="bg-white">
                     <div className="wrapper">
                         {/* Intro Section */}
-                        <section className="h-screen w-full bg-[#B5B5B5] grid place-content-center sticky top-0 z-0" style={{ color: '#B48A00' }}>
+                        <section className="h-screen w-full bg-white grid place-content-center sticky top-0 z-0" style={{ color: '#1F366A' }}>
                             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
                             <h1 className='2xl:text-7xl md:text-5xl text-3xl px-8 font-["Poppins"] font-semibold text-center tracking-tight leading-[120%] relative z-10'>
-                                <span style={{ color: '#FDDD7F' }}>Troubleshooter:</span> <br /> What's Wrong With My Car? 🔍
+                                <span style={{ color: '#0C55AC' }}>Troubleshooter:</span> <br /> What's Wrong With My Car? 🔍
                             </h1>
                         </section>
 
                         {/* Sticky Grid with Images - This will cover the intro section */}
-                        <section className="bg-[#B5B5B5] w-full relative z-10">
+                        <section className="bg-white w-full relative z-10">
                             <div className="grid grid-cols-1 md:grid-cols-2">
                                 {/* Sticky Content Side */}
                                 <div className="sticky top-0 h-screen flex items-center justify-center px-8" style={{ backgroundColor: '#FDDD7F' }}>
                                     <div className="max-w-lg">
-                                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#FDDD7F' }}>Interactive Diagnosis</p>
-                                        <h2 className="text-4xl md:text-5xl font-['Poppins'] font-semibold mb-6" style={{ color: '#B48A00' }}>
+                                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Interactive Diagnosis</p>
+                                        <h2 className="text-4xl md:text-5xl font-['Poppins'] font-semibold mb-6" style={{ color: '#1F366A' }}>
                                             We Pinpoint The Problem
                                         </h2>
-                                        <p className="text-lg mb-6 font-semibold leading-relaxed" style={{ color: '#B48A00' }}>
+                                        <p className="text-lg mb-6 font-semibold leading-relaxed" style={{ color: '#1F366A' }}>
                                             Select a symptom to see potential causes and how our expert technicians can help diagnose and fix the issue.
                                         </p>
                                         <div className="grid gap-3">
-                                            <div className="flex items-center gap-3" style={{ color: '#B48A00' }}>
-                                                <Activity className="w-6 h-6" style={{ color: '#FDDD7F' }} />
+                                            <div className="flex items-center gap-3" style={{ color: '#1F366A' }}>
+                                                <Activity className="w-6 h-6" style={{ color: '#0C55AC' }} />
                                                 <span className="font-medium">Real-time Diagnostics</span>
                                             </div>
-                                            <div className="flex items-center gap-3" style={{ color: '#B48A00' }}>
-                                                <Gauge className="w-6 h-6" style={{ color: '#FDDD7F' }} />
+                                            <div className="flex items-center gap-3" style={{ color: '#1F366A' }}>
+                                                <Gauge className="w-6 h-6" style={{ color: '#0C55AC' }} />
                                                 <span className="font-medium">Advanced Scanning Tools</span>
                                             </div>
                                         </div>
@@ -259,12 +259,12 @@ export default function Mechanical() {
                                                 {/* Overlay Content */}
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col justify-end p-6">
                                                     <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
-                                                        <div className="mb-3 p-2 rounded-full w-fit" style={{ backgroundColor: '#FDDD7F' }}>
+                                                        <div className="mb-3 p-2 rounded-full w-fit" style={{ backgroundColor: '#0C55AC' }}>
                                                             <div className="text-white">{symptom.icon}</div>
                                                         </div>
                                                         <h3 className="text-2xl font-['Poppins'] font-semibold text-white mb-2">{symptom.title}</h3>
-                                                        <p className="text-sm mb-2" style={{ color: '#FDDD7F' }}><strong>Cause:</strong> {symptom.cause}</p>
-                                                        <p className="text-sm" style={{ color: '#B48A00' }}><strong>Our Fix:</strong> {symptom.fix}</p>
+                                                        <p className="text-sm mb-2" style={{ color: '#14A0B5' }}><strong>Cause:</strong> {symptom.cause}</p>
+                                                        <p className="text-sm" style={{ color: '#047342' }}><strong>Our Fix:</strong> {symptom.fix}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -292,9 +292,9 @@ export default function Mechanical() {
                                         <img
                                             src={image.src}
                                             alt={image.alt}
-                                            className="transition-all duration-500 w-96 h-96 align-bottom object-cover rounded-md shadow-2xl border-2 border-[#FDDD7F]/30 group-hover:border-[#FDDD7F] group-hover:scale-105 group-hover:shadow-[#FDDD7F]/50"
+                                            className="transition-all duration-500 w-96 h-96 align-bottom object-cover rounded-md shadow-2xl border-2 border-blue-500/30 group-hover:border-blue-500 group-hover:scale-105 group-hover:shadow-blue-500/50"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#FDDD7F]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
                                     </div>
                                 </figure>
                             ))}
@@ -303,10 +303,10 @@ export default function Mechanical() {
                         {/* Sticky Content */}
                         <div className="sticky top-0 h-screen grid place-content-center">
                             <div className="max-w-xl">
-                                <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 border backdrop-blur-sm" style={{ backgroundColor: '#FDDD7F', borderColor: '#FDDD7F', color: '#B48A00' }}>Advanced Technology</span>
+                                <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 border backdrop-blur-sm" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5' }}>Advanced Technology</span>
                                 <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
                                     ADVANCED <br />
-                                    <span style={{ color: '#FDDD7F' }}>DIAGNOSTICS</span>
+                                    <span style={{ color: '#14A0B5' }}>DIAGNOSTICS</span>
                                 </h2>
                                 <p className="text-lg text-gray-300 mb-6 leading-relaxed font-medium">
                                     Modern vehicles are complex computers on wheels. We use the latest diagnostic scanning tools to communicate directly with your car's onboard systems.
@@ -317,11 +317,11 @@ export default function Mechanical() {
 
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#FDDD7F' }}>100%</div>
+                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>100%</div>
                                         <div className="text-sm uppercase tracking-wider text-gray-300">Accuracy</div>
                                     </div>
                                     <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#FDDD7F' }}>Latest</div>
+                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>Latest</div>
                                         <div className="text-sm uppercase tracking-wider text-gray-300">Software</div>
                                     </div>
                                 </div>
@@ -333,12 +333,12 @@ export default function Mechanical() {
 
 
                 {/* Service Process Steps */}
-                <section className="py-24 bg-[#B5B5B5] border-t border-gray-200">
+                <section className="py-24 bg-white border-t border-gray-200">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center mb-16">
-                            <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#FDDD7F' }}>How It Works</p>
-                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#B48A00' }}>
-                                YOUR SERVICE <span style={{ color: '#FDDD7F' }}>JOURNEY</span>
+                            <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>How It Works</p>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>
+                                YOUR SERVICE <span style={{ color: '#0C55AC' }}>JOURNEY</span>
                             </h2>
                         </div>
 
@@ -346,7 +346,7 @@ export default function Mechanical() {
                             {/* Connecting Line with gradient animation */}
                             <motion.div
                                 className="hidden md:block absolute top-12 left-0 w-full h-0.5 -z-0"
-                                style={{ background: 'linear-gradient(to right, #FDDD7F, #B48A00, #FDDD7F)' }}
+                                style={{ background: 'linear-gradient(to right, #0C55AC, #783E6C, #0C55AC)' }}
                                 initial={{ scaleX: 0, opacity: 0 }}
                                 whileInView={{ scaleX: 1, opacity: 1 }}
                                 viewport={{ once: true }}
@@ -361,7 +361,7 @@ export default function Mechanical() {
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    className="relative z-10 bg-[#B5B5B5] pt-4 group cursor-pointer"
+                                    className="relative z-10 bg-white pt-4 group cursor-pointer"
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -377,7 +377,7 @@ export default function Mechanical() {
                                 >
                                     <motion.div
                                         className="relative w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white mb-6 mx-auto border-4 border-white shadow-lg overflow-hidden"
-                                        style={{ background: 'linear-gradient(to bottom right, #FDDD7F, #B48A00)', boxShadow: '0 10px 30px rgba(244, 221, 127, 0.3)' }}
+                                        style={{ background: 'linear-gradient(to bottom right, #0C55AC, #1F366A)', boxShadow: '0 10px 30px rgba(12, 85, 172, 0.3)' }}
                                         initial={{ scale: 0, rotate: -90 }}
                                         whileInView={{ scale: 1, rotate: 0 }}
                                         viewport={{ once: true }}
@@ -407,13 +407,13 @@ export default function Mechanical() {
                                     <div className="text-center">
                                         <motion.h3
                                             className="text-xl font-['Poppins'] font-medium mb-3"
-                                            style={{ color: '#B48A00' }}
-                                            whileHover={{ color: "#FDDD7F", scale: 1.05 }}
+                                            style={{ color: '#1F366A' }}
+                                            whileHover={{ color: "#0C55AC", scale: 1.05 }}
                                             transition={{ duration: 0.2 }}
                                         >
                                             {item.title}
                                         </motion.h3>
-                                        <p className="text-lg leading-relaxed font-semibold transition-colors duration-300" style={{ color: '#B48A00' }}>
+                                        <p className="text-lg leading-relaxed font-semibold transition-colors duration-300" style={{ color: '#1F366A' }}>
                                             {item.desc}
                                         </p>
                                     </div>
