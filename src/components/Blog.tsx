@@ -36,12 +36,12 @@ export default function Blog() {
         <div className="flex justify-between items-center mb-16">
           <div>
             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
-            <h2 className="text-4xl md:text-5xl font-['Tomorrow'] font-bold text-black">
+            <h2 className="text-4xl md:text-5xl font-['Poppins'] font-bold text-black">
               ARTICLES FROM AUTOACE
             </h2>
           </div>
           <a href="/tips-advice" className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2">
-            <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute left-0 top-0 h-full bg-CGreen w-0 group-hover:w-full transition-all duration-300"></span>
             <span className="relative z-10">MORE</span>
             <div className="absolute -top-2 -left-2 w-0 h-0 border-l-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>
             <div className="absolute -top-2 -right-2 w-0 h-0 border-r-4 border-t-4 border-white group-hover:w-8 group-hover:h-8 transition-all duration-300 z-20"></div>

@@ -73,10 +73,10 @@ export default function CoolantGuide() {
                         <Droplet className="w-8 h-8 text-blue-300" />
                         <p className="text-blue-200 text-sm font-medium uppercase tracking-wide">Essential Maintenance</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         Best Coolant for Your Car
                     </h1>
-                    <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         A Simple Guide for Drivers
                     </p>
                 </div>
@@ -109,7 +109,7 @@ export default function CoolantGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Thermometer className="w-8 h-8 text-blue-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Why Coolant Matters
                         </h2>
                     </div>
@@ -128,7 +128,7 @@ export default function CoolantGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-4 text-center">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-4 text-center">
                             Main Types of Coolant
                         </h2>
                         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -148,7 +148,7 @@ export default function CoolantGuide() {
                             >
                                 <div className="flex items-center gap-3 mb-4">
                                     <span className="text-4xl">{type.icon}</span>
-                                    <h3 className="text-xl font-['Tomorrow'] font-medium">{type.color} Coolant</h3>
+                                    <h3 className="text-xl font-['Poppins'] font-medium">{type.color} Coolant</h3>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">{type.description}</p>
                             </motion.div>
@@ -166,7 +166,7 @@ export default function CoolantGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                         How to Know Which Coolant Is Right for Your Car
                     </h2>
                     <p className="text-lg text-gray-700 mb-6">
@@ -195,7 +195,7 @@ export default function CoolantGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                             How to Add Coolant to the Radiator
                         </h2>
                         <p className="text-lg text-gray-700 mb-6">
@@ -235,7 +235,7 @@ export default function CoolantGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                         What is the proper level for my coolant reservoir?
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -258,7 +258,7 @@ export default function CoolantGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <AlertTriangle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 Signs That Your Coolant Needs Inspection
                             </h2>
                         </div>
@@ -289,16 +289,16 @@ export default function CoolantGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-['Poppins'] font-extralight">
                         CBD Panel and Paint provides coolant checks, flushes, and replacements for all makes and models. We use the correct coolant types recommended by manufacturers and make sure your cooling system is clean and free of blockages. A healthy cooling system protects your engine and helps you avoid unexpected breakdowns.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If you need your coolant inspected or replaced, our expert team at CBD Panel and Paint is ready to assist you.
                     </p>
-                    <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-blue-600">BOOK AN APPOINTMENT</span>
                     </button>

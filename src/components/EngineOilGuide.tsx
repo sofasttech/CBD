@@ -84,10 +84,10 @@ export default function EngineOilGuide() {
                         <Droplet className="w-8 h-8 text-amber-400" />
                         <p className="text-amber-200 text-sm font-medium uppercase tracking-wide">Essential Maintenance</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         How Much Engine Oil Does My Car Need?
                     </h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         A Simple Guide for Drivers
                     </p>
                 </div>
@@ -120,7 +120,7 @@ export default function EngineOilGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Gauge className="w-8 h-8 text-blue-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Why the Right Oil Level Matters
                         </h2>
                     </div>
@@ -142,7 +142,7 @@ export default function EngineOilGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-4 text-center">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-4 text-center">
                             How to Know Your Car's Oil Capacity
                         </h2>
                         <p className="text-center text-gray-700 mb-6 max-w-3xl mx-auto text-lg">
@@ -176,7 +176,7 @@ export default function EngineOilGuide() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                             >
-                                <h3 className="text-xl font-['Tomorrow'] font-medium mb-3">{item.type}</h3>
+                                <h3 className="text-xl font-['Poppins'] font-medium mb-3">{item.type}</h3>
                                 <div className="text-3xl font-bold text-blue-600 mb-3">{item.capacity}</div>
                                 <p className="text-gray-600 text-sm">{item.description}</p>
                             </motion.div>
@@ -198,7 +198,7 @@ export default function EngineOilGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                         How to Check Your Oil Level
                     </h2>
                     <p className="text-lg text-gray-700 mb-6">
@@ -233,7 +233,7 @@ export default function EngineOilGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <Wrench className="w-8 h-8 text-blue-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 How to Top Up Engine Oil
                             </h2>
                         </div>
@@ -268,7 +268,7 @@ export default function EngineOilGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                         What Type of Oil Should I Use?
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -291,7 +291,7 @@ export default function EngineOilGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <AlertTriangle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 Signs Your Car May Be Low on Oil
                             </h2>
                         </div>
@@ -322,7 +322,7 @@ export default function EngineOilGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                         How Often Should I Change My Oil?
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -343,16 +343,16 @@ export default function EngineOilGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint offers routine oil changes, filter replacements, and comprehensive engine checks, utilising high-quality oils that meet manufacturer specifications. We ensure your engine has the correct amount of oil and help you maintain a vehicle that runs smoothly.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your oil light is on or you need a service, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
-                    <button className="relative group bg-amber-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-amber-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-amber-600">BOOK AN OIL CHANGE</span>
                     </button>

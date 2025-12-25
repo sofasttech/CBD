@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Layers, Wrench, Shield, CloudSnow, Home } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -89,10 +89,10 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                     />
                 )}
             </div>
-            <article className="p-8 w-full h-full overflow-hidden z-10 absolute top-0 flex flex-col justify-end rounded-md bg-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <article className="p-8 w-full h-full overflow-hidden z-10 absolute top-0 flex flex-col justify-end rounded-md bg-[#783E6C] opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <div className="translate-y-10 group-hover:translate-y-0 transition-all duration-300 space-y-2 text-white">
                     <div className="text-white text-xs font-medium uppercase mb-2">{tip.category}</div>
-                    <h1 className="text-2xl font-['Tomorrow'] font-semibold">{tip.title}</h1>
+                    <h1 className="text-2xl font-['Poppins'] font-semibold">{tip.title}</h1>
                     <p className="text-sm leading-relaxed">
                         {tip.excerpt}
                     </p>
@@ -104,9 +104,9 @@ const LazyTipCard = ({ tip, index, onClick }: any) => {
                     </button>
                 </div>
             </article>
-            <article className="p-4 w-full h-[25%] flex flex-col justify-end overflow-hidden absolute bottom-0 rounded-b-md bg-gradient-to-t from-blue-600 to-transparent opacity-100 group-hover:opacity-0 group-hover:-bottom-4 transition-all duration-300 text-white">
+            <article className="p-4 w-full h-[25%] flex flex-col justify-end overflow-hidden absolute bottom-0 rounded-b-md bg-gradient-to-t from-[#783E6C] to-transparent opacity-100 group-hover:opacity-0 group-hover:-bottom-4 transition-all duration-300 text-white">
                 <div className="text-white text-xs font-medium uppercase mb-1">{tip.category}</div>
-                <h1 className="text-xl font-['Tomorrow'] font-semibold line-clamp-2">{tip.title}</h1>
+                <h1 className="text-xl font-['Poppins'] font-semibold line-clamp-2">{tip.title}</h1>
             </article>
         </motion.div>
     );
@@ -382,11 +382,11 @@ export default function TipsAdvice() {
             >
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-end">
                     <div className="text-left">
-                        <p className="mb-auto mt-auto text-blue-600 text-sm font-medium uppercase tracking-wide">Expert Guidance</p>
-                        <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-5 mt-10">
-                            Tips & <span className="text-blue-600">Advice</span>
+                        <p className="mb-auto mt-auto text-[#783E6C] text-sm font-medium uppercase tracking-wide">Expert Guidance</p>
+                        <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-5 mt-10">
+                            Tips & <span className="text-[#783E6C]">Advice</span>
                         </h1>
-                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-mulish font-semibold text-lg mb-6">
+                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg mb-6">
                             Professional automotive advice to help you maintain your vehicle, stay safe on the road, and save money on repairs.
                         </p>
                     </div>
@@ -417,12 +417,12 @@ export default function TipsAdvice() {
                             <button
                                 key={category.name}
                                 onClick={() => handleCategoryChange(category.name)}
-                                className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Tomorrow'] font-medium transition-all duration-300 ${activeCategory === category.name
-                                    ? 'bg-blue-600 text-white shadow-md scale-105'
-                                    : 'bg-transparent text-gray-700 hover:bg-blue-50 hover:scale-105'
+                                className={`group relative flex items-center gap-2 px-4 py-2 rounded-full font-['Poppins'] font-medium transition-all duration-300 ${activeCategory === category.name
+                                    ? 'bg-[#783E6C] text-white shadow-md scale-105'
+                                    : 'bg-transparent text-gray-700 hover:bg-[#A259B7]/20 hover:scale-105'
                                     }`}
                             >
-                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeCategory === category.name ? 'text-white' : 'text-blue-600'
+                                <category.icon className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeCategory === category.name ? 'text-white' : 'text-[#A259B7]'
                                     }`} />
                                 <span className="text-sm hidden md:inline">{category.name}</span>
                             </button>
@@ -447,9 +447,9 @@ export default function TipsAdvice() {
                                     <motion.div
                                         animate={{ rotate: 360 }}
                                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                        className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full mx-auto mb-4"
+                                        className="w-12 h-12 border-4 border-[#783E6C] border-t-transparent rounded-full mx-auto mb-4"
                                     />
-                                    <p className="text-gray-900 font-['Tomorrow'] font-medium">Filtering...</p>
+                                    <p className="text-gray-900 font-['Poppins'] font-medium">Filtering...</p>
                                 </div>
                             </motion.div>
                         )}
@@ -492,21 +492,21 @@ export default function TipsAdvice() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6 text-black">
+                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6 text-black">
                         Get More Expert Tips
                     </h2>
-                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-8 leading-relaxed font-mulish font-semibold text-lg">
+                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-8 leading-relaxed font-['Poppins'] font-semibold text-lg">
                         Subscribe to our newsletter for monthly automotive tips, seasonal maintenance reminders, and exclusive offers.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center max-w-xl mx-auto">
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="w-full md:flex-1 px-6 py-4 text-gray-900 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                            className="w-full md:flex-1 px-6 py-4 text-gray-900 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A259B7] focus:border-[#A259B7]"
                         />
-                        <button className="w-full md:w-auto relative group bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                        <button className="w-full md:w-auto relative group bg-[#783E6C] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                             <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10 group-hover:text-blue-600">SUBSCRIBE</span>
+                            <span className="relative z-10 group-hover:text-[#783E6C]">SUBSCRIBE</span>
                         </button>
                     </div>
                 </div>
@@ -514,7 +514,7 @@ export default function TipsAdvice() {
 
             {/* Service CTA */}
             <motion.section
-                className="px-4 py-16 bg-blue-600 text-white"
+                className="px-4 py-16 bg-[#783E6C] text-white"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -522,32 +522,32 @@ export default function TipsAdvice() {
             >
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-4">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-4">
                             Need Professional Help?
                         </h2>
-                        <p className="text-lg leading-relaxed font-mulish font-extralight mb-6">
+                        <p className="text-lg leading-relaxed font-['Poppins'] font-extralight mb-6">
                             While DIY maintenance is great, some jobs require professional expertise. Our team is ready to help with all your automotive needs.
                         </p>
-                        <button className="relative group bg-white text-blue-600 px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                        <Link to="/contact" className="relative group bg-white text-[#783E6C] px-8 py-4 font-['Poppins'] font-medium text-lg transition inline-block">
                             <span className="absolute left-0 top-0 h-full bg-black w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10 group-hover:text-white">BOOK SERVICE</span>
-                        </button>
+                        </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-4 text-center">
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
-                            <div className="text-4xl font-['Tomorrow'] font-bold mb-2">30+</div>
+                            <div className="text-4xl font-['Poppins'] font-bold mb-2">30+</div>
                             <div className="text-sm">Years Experience</div>
                         </div>
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
-                            <div className="text-4xl font-['Tomorrow'] font-bold mb-2">600+</div>
+                            <div className="text-4xl font-['Poppins'] font-bold mb-2">600+</div>
                             <div className="text-sm">Expert Technicians</div>
                         </div>
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
-                            <div className="text-4xl font-['Tomorrow'] font-bold mb-2">9.9K+</div>
+                            <div className="text-4xl font-['Poppins'] font-bold mb-2">9.9K+</div>
                             <div className="text-sm">Happy Customers</div>
                         </div>
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
-                            <div className="text-4xl font-['Tomorrow'] font-bold mb-2">100%</div>
+                            <div className="text-4xl font-['Poppins'] font-bold mb-2">100%</div>
                             <div className="text-sm">Guaranteed Work</div>
                         </div>
                     </div>

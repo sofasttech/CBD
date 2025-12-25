@@ -99,10 +99,10 @@ export default function RepairOrReplace() {
                         <Wrench className="w-8 h-8 text-purple-300" />
                         <p className="text-purple-300 text-sm font-medium uppercase tracking-wide">Decision Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Repair or <span className="text-purple-300">Replace?</span>
                     </h1>
-                    <p className="text-xl text-purple-100 leading-relaxed font-mulish font-extralight">
+                    <p className="text-xl text-purple-100 leading-relaxed font-['Poppins'] font-extralight">
                         How to Know When a Panel Should Be Replaced
                     </p>
                 </div>
@@ -138,7 +138,7 @@ export default function RepairOrReplace() {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <CheckCircle className="w-8 h-8 text-green-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
                                 When a Panel Can Be Repaired
                             </h2>
                         </div>
@@ -154,7 +154,7 @@ export default function RepairOrReplace() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-4 text-gray-900">
                                 Repair is usually suitable when:
                             </h3>
                             <div className="space-y-3">
@@ -173,7 +173,7 @@ export default function RepairOrReplace() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-4 text-gray-900">
                                 Common repair-friendly damage includes:
                             </h3>
                             <div className="space-y-3">
@@ -213,7 +213,7 @@ export default function RepairOrReplace() {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <XCircle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
                                 When a Panel Should Be Replaced
                             </h2>
                         </div>
@@ -229,7 +229,7 @@ export default function RepairOrReplace() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-4 text-gray-900">
                                 A replacement is recommended when:
                             </h3>
                             <div className="space-y-3">
@@ -248,7 +248,7 @@ export default function RepairOrReplace() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-4 text-gray-900">
                                 Examples of replacement-worthy damage:
                             </h3>
                             <div className="space-y-3">
@@ -287,7 +287,7 @@ export default function RepairOrReplace() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <DollarSign className="w-8 h-8 text-blue-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Cost Consideration: Repair vs Replace
                         </h2>
                     </div>
@@ -319,12 +319,12 @@ export default function RepairOrReplace() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                         What About Paintless Dent Removal (PDR)?
                     </h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         <div>
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-4 text-gray-900">
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-4 text-gray-900">
                                 PDR is ideal for:
                             </h3>
                             <div className="space-y-3">
@@ -359,7 +359,7 @@ export default function RepairOrReplace() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <Search className="w-8 h-8 text-yellow-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             The Hidden Damage Most Drivers Don't See
                         </h2>
                     </div>
@@ -393,7 +393,7 @@ export default function RepairOrReplace() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                             How CBD Panel Beating & Mechanical Helps You Decide
                         </h2>
                         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -440,18 +440,18 @@ export default function RepairOrReplace() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         Final Thoughts
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-['Poppins'] font-extralight">
                         Choosing between repair and replacement depends on the severity of the damage, cost, safety, and long-term durability. Small dents and scratches are often repairable. Severe damage, structural weakness, or advanced rust usually indicates replacement. A quick assessment by a professional panel beater will give you a clear direction.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If you're unsure whether your panel should be repaired or replaced, bring your vehicle to CBD Panel Beating & Mechanical or send us photos for a quote. We'll guide you through your best option with transparency and care.
                     </p>
                     <button 
                         onClick={() => window.location.href = '/contact'}
-                        className="relative group bg-indigo-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition"
+                        className="relative group bg-indigo-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
                     >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-indigo-600">GET YOUR ASSESSMENT</span>
