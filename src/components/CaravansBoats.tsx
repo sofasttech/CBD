@@ -173,7 +173,7 @@ export default function CaravansBoats() {
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#14A0B5] to-[#0C55AC] drop-shadow-lg">{heroSlides[currentSlide].titleHighlight}</span>
                                 </h1>
 
-                                <div className="flex justify-center">
+                                <div className="hidden md:flex justify-center">
                                     <p style={{ wordSpacing: '-0.08rem' }} className="text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl drop-shadow-lg">
                                         {heroSlides[currentSlide].description}
                                     </p>

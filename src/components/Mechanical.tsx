@@ -64,54 +64,70 @@ export default function Mechanical() {
             <div className="min-h-screen bg-white font-sans" style={{ color: '#1F366A' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
-                {/* Parallax Hero */}
-                <motion.section
-                    ref={targetRef}
-                    className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900"
-                    style={{ opacity }}
-                >
-                    <div
-                        className="absolute inset-0 bg-cover bg-center z-0 opacity-40"
-                        style={{ backgroundImage: "url('/mechanic-servicing-car.jpg')" }}
-                    />
-
-                    <motion.div
-                        className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
-                        style={{ scale, y }}
+                {/* Hero Section Container */}
+                <div className="relative">
+                    <motion.section
+                        ref={targetRef}
+                        className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900"
+                        style={{ opacity }}
                     >
+                        <div
+                            className="absolute inset-0 bg-cover bg-center z-0 opacity-40"
+                            style={{ backgroundImage: "url('/mechanic-servicing-car.jpg')" }}
+                        />
 
-                        <ScrollReveal direction="down">
-                            <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm text-center mx-auto" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5', borderWidth: '1px' }}>
-                                PREMIUM AUTOMOTIVE CARE
-                            </span>
-                        </ScrollReveal>
+                        <motion.div
+                            className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
+                            style={{ scale, y }}
+                        >
 
-                        <ScrollReveal delay={0.4}>
-                            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
-                                ENGINEERING
-                                <span style={{ color: '#0C55AC' }}> EXCELLENCE</span>
-                            </h1>
-                        </ScrollReveal>
+                            <ScrollReveal direction="down">
+                                <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm text-center mx-auto" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5', borderWidth: '1px' }}>
+                                    PREMIUM AUTOMOTIVE CARE
+                                </span>
+                            </ScrollReveal>
 
-                        <ScrollReveal delay={0.6}>
-                            <p className="text-lg text-white font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
-                                "We treat your car or commercial vehicle like our own." <br />
-                                Expert diagnostics, WOFs, and mechanical repairs.
-                            </p>
-                        </ScrollReveal>
+                            <ScrollReveal delay={0.4}>
+                                <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
+                                    ENGINEERING
+                                    <span style={{ color: '#0C55AC' }}> EXCELLENCE</span>
+                                </h1>
+                            </ScrollReveal>
 
-                        <ScrollReveal delay={0.8}>
-                            <div className="flex gap-4 justify-center">
-                                <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
-                                    Book Now
-                                </button>
-                                <button className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
-                                    Learn More
-                                </button>
-                            </div>
-                        </ScrollReveal>
-                    </motion.div>
-                </motion.section>
+                            <ScrollReveal delay={0.6}>
+                                <p className="text-lg text-white font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
+                                    "We treat your car or commercial vehicle like our own." <br />
+                                    Expert diagnostics, WOFs, and mechanical repairs.
+                                </p>
+                            </ScrollReveal>
+
+                            <ScrollReveal delay={0.8}>
+                                <div className="flex gap-4 justify-center">
+                                    <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
+                                        Book Now
+                                    </button>
+                                    <button className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
+                                        Learn More
+                                    </button>
+                                </div>
+                            </ScrollReveal>
+                        </motion.div>
+                    </motion.section>
+
+                    {/* Wave Separator - positioned at bottom of hero container */}
+                    <div className="absolute bottom-0 left-0 w-full overflow-hidden z-30">
+                        <svg
+                            viewBox="0 0 1200 120"
+                            preserveAspectRatio="none"
+                            className="relative block w-full h-[60px] md:h-[100px]"
+                        >
+                            <path
+                                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+                                fill="#f9fafb"
+                            />
+                        </svg>
+                    </div>
+                </div>
 
                 {/* Services Grid (Holographic HUD Style) */}
                 <section id="services-grid" className="py-32 px-4 bg-gray-50 relative z-10 overflow-hidden">

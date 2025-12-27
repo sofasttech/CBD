@@ -6,23 +6,37 @@ interface FooterProps {
 
 export default function Footer({ scrollToSection }: FooterProps) {
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden">
+    <footer id="contact" className="relative bg-black text-white">
+      {/* Wave Separator at top of footer */}
+      <div className="relative w-full overflow-hidden bg-white" style={{ marginTop: '-80px' }}>
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[80px] md:h-[100px]"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+            fill="#111827"
+          />
+        </svg>
+      </div>
+
       {/* Hero CTA Section with Background */}
-      
+
 
       {/* Main Footer Content */}
-      <div className="relative bg-gradient-to-b from-gray-900 to-black border-t border-gray-800">
+      <div className="relative bg-gradient-to-b from-gray-900 to-black" style={{ marginTop: '-1px' }}>
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
             {/* Company Info - Takes 4 columns */}
             <div className="lg:col-span-4">
-              <img 
-                src="/logowithname.png" 
-                alt="CBD Panel and Paint" 
+              <img
+                src="/logowithname.png"
+                alt="CBD Panel and Paint"
                 className="h-28 mb-6 brightness-110"
               />
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Your trusted partner for premium automotive care since establishment. 
+                Your trusted partner for premium automotive care since establishment.
                 Delivering excellence in panel beating and mechanical services with a commitment to quality and customer satisfaction.
               </p>
               <div className="flex gap-3">
@@ -129,28 +143,28 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 </div>
               </div>
             </div>
+          </div>
         </div>
-      </div>
-      {/* Full-bleed Partners & Copyright (white background) */}
-      <div className="w-full bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="mb-10 text-center">
-            <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
-              Trusted Insurance Partners
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-              <img src="/MTA-logo_480x480.webp" alt="MTA" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
-              <img src="/NZI_logo.svg.png" alt="NZI" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
-              <img src="/Insurance_austr_group_logo15.png" alt="Insurance Australia Group" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
-              <img src="/state-house-and-contents-product_default.webp" alt="State Insurance" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+        {/* Full-bleed Partners & Copyright (white background) */}
+        <div className="w-full bg-white border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="mb-10 text-center">
+              <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
+                Trusted Insurance Partners
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+                <img src="/MTA-logo_480x480.webp" alt="MTA" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+                <img src="/NZI_logo.svg.png" alt="NZI" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+                <img src="/Insurance_austr_group_logo15.png" alt="Insurance Australia Group" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+                <img src="/state-house-and-contents-product_default.webp" alt="State Insurance" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+              </div>
+            </div>
+            <div className="text-center text-gray-700">
+              <p className="text-sm mb-2">© 2025 CBD Panel and Paint. All rights reserved.</p>
+              <p className="text-xs">Crafted with precision and care for automotive excellence</p>
             </div>
           </div>
-          <div className="text-center text-gray-700">
-            <p className="text-sm mb-2">© 2025 CBD Panel and Paint. All rights reserved.</p>
-            <p className="text-xs">Crafted with precision and care for automotive excellence</p>
-          </div>
         </div>
-      </div>
       </div>
     </footer>
   );

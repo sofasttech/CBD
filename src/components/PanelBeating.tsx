@@ -150,518 +150,562 @@ export default function PanelBeating() {
             <div className="min-h-screen font-sans" style={{ background: 'linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%)', color: '#1F366A' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
-            {/* Hero Section */}
-            <motion.section
-                ref={targetRef}
-                className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900"
-                style={{ opacity }}
-            >
-                <div
-                    className="absolute inset-0 bg-cover bg-center z-0 opacity-40"
-                    style={{ backgroundImage: "url('/panel_beating_hero_1764692687494.png')" }}
-                />
+                {/* Hero Section Container */}
+                <div className="relative">
+                    <motion.section
+                        ref={targetRef}
+                        className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900"
+                        style={{ opacity }}
+                    >
+                        <div
+                            className="absolute inset-0 bg-cover bg-center z-0 opacity-40"
+                            style={{ backgroundImage: "url('/panel_beating_hero_1764692687494.png')" }}
+                        />
 
-                <motion.div
-                    className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
-                    style={{ scale, y }}
-                >
-                    <ScrollReveal direction="down">
-                        <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm text-center mx-auto" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5', borderWidth: '1px' }}>
-                            PREMIUM PANEL BEATING SERVICES
-                        </span>
-                    </ScrollReveal>
+                        <motion.div
+                            className="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
+                            style={{ scale, y }}
+                        >
+                            <ScrollReveal direction="down">
+                                <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm text-center mx-auto" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5', borderWidth: '1px' }}>
+                                    PREMIUM PANEL BEATING SERVICES
+                                </span>
+                            </ScrollReveal>
 
-                    <ScrollReveal delay={0.4}>
-                        <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
-                            PRECISION
-                            <span style={{ color: '#0C55AC' }}> BODY REPAIR</span> EXCELLENCE
-                        </h1>
-                    </ScrollReveal>
+                            <ScrollReveal delay={0.4}>
+                                <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-8 uppercase leading-tight tracking-tight text-white text-center mx-auto">
+                                    PRECISION
+                                    <span style={{ color: '#0C55AC' }}> BODY REPAIR</span> EXCELLENCE
+                                </h1>
+                            </ScrollReveal>
 
-                    <ScrollReveal delay={0.6}>
-                        <p className="text-lg text-white font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
-                            From minor dents to major collision repairs, our skilled panel beaters restore your vehicle to its original condition with meticulous attention to detail.
-                        </p>
-                    </ScrollReveal>
+                            <ScrollReveal delay={0.6}>
+                                <p className="text-lg text-white font-semibold max-w-3xl mx-auto leading-relaxed mb-10 text-center">
+                                    From minor dents to major collision repairs, our skilled panel beaters restore your vehicle to its original condition with meticulous attention to detail.
+                                </p>
+                            </ScrollReveal>
 
-                    <ScrollReveal delay={0.8}>
-                        <div className="flex gap-4 justify-center">
-                            <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
-                                GET A QUOTE
-                            </button>
-                            <button onClick={() => scrollToSection('services-grid')} className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
-                                VIEW SERVICES
-                            </button>
-                        </div>
-                    </ScrollReveal>
-                </motion.div>
-            </motion.section>
+                            <ScrollReveal delay={0.8}>
+                                <div className="flex gap-4 justify-center">
+                                    <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
+                                        GET A QUOTE
+                                    </button>
+                                    <button onClick={() => scrollToSection('services-grid')} className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
+                                        VIEW SERVICES
+                                    </button>
+                                </div>
+                            </ScrollReveal>
+                        </motion.div>
+                    </motion.section>
 
-            {/* Old Services Grid - Keep the scroll observer version */}
-            <section className="px-4 py-16" style={{ background: 'linear-gradient(135deg, #1F366A 0%, #0C55AC 100%)' }}>
-
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
-                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#FDDD7F' }}>Our Services</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-12 text-white">Comprehensive Panel Beating</h2>
-                        <p className="text-sm font-semibold mb-8 hidden md:block" style={{ color: '#E4AEB3' }}>Scroll down to explore</p>
+                    {/* Wave Separator - positioned at bottom of hero container, outside motion.section */}
+                    <div className="absolute bottom-0 left-0 w-full overflow-hidden z-30">
+                        <svg
+                            viewBox="0 0 1200 120"
+                            preserveAspectRatio="none"
+                            className="relative block w-full h-[60px] md:h-[100px]"
+                        >
+                            <path
+                                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+                                fill="#1F366A"
+                            />
+                        </svg>
                     </div>
+                </div>
 
-                    <ScrollObserver className="relative grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-32">
-                        {(isHidden) => (
-                            <>
-                                <ScrollObserver.TriggerGroup className="md:py-[50vh]">
-                                    {services.map((service, index) => (
-                                        <ScrollObserver.Trigger id={`service-${index}`} key={index} className="relative md:scroll-mt-[50vh]">
-                                            {(isActive) => (
-                                                <div
-                                                    className={clsx(
-                                                        isActive ? "" : "md:hover:opacity-70",
-                                                        "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300"
-                                                    )}
-                                                    style={{ 
-                                                        color: isActive ? 'white' : '#B5B5B5', 
-                                                        backgroundColor: isActive ? 'rgba(20, 160, 181, 0.1)' : 'transparent',
-                                                        borderLeft: isActive ? '4px solid #14A0B5' : '4px solid transparent'
-                                                    }}
-                                                >
-                                                    <div className="text-sm font-medium mb-2" style={{ color: '#FDDD7F' }}>
-                                                        {String(index + 1).padStart(2, '0')}
-                                                    </div>
-                                                    <div className="font-['Poppins'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
-                                                        {service.title}
-                                                    </div>
-                                                    <div className="text-lg font-semibold leading-relaxed">
-                                                        {service.fullDesc}
-                                                    </div>
-                                                    <a href={`#service-${index}`} className="absolute inset-0"></a>
-                                                </div>
-                                            )}
-                                        </ScrollObserver.Trigger>
-                                    ))}
-                                </ScrollObserver.TriggerGroup>
+                {/* Old Services Grid - Keep the scroll observer version */}
+                <section className="px-4 py-16" style={{ background: 'linear-gradient(180deg, #1F366A 0%, #0C55AC 100%)' }}>
 
-                                <div className="sticky top-0 h-[100vh] hidden md:block">
-                                    <div className={clsx({ "opacity-0 delay-100": !isHidden }, "absolute inset-0 flex items-center")}>
-                                        <div className="aspect-square w-full rounded-3xl bg-gray-100"></div>
-                                    </div>
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-12">
+                            <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#FDDD7F' }}>Our Services</p>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-12 text-white">Comprehensive Panel Beating</h2>
+                            <p className="text-sm font-semibold mb-8 hidden md:block" style={{ color: '#E4AEB3' }}>Scroll down to explore</p>
+                        </div>
 
-                                    <ScrollObserver.ReactorGroup className="flex items-center justify-center">
+                        <ScrollObserver className="relative grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-32">
+                            {(isHidden) => (
+                                <>
+                                    <ScrollObserver.TriggerGroup className="md:py-[50vh]">
                                         {services.map((service, index) => (
-                                            <ScrollObserver.Reactor key={index} index={index} className="absolute inset-0 flex items-center justify-center p-8">
+                                            <ScrollObserver.Trigger id={`service-${index}`} key={index} className="relative md:scroll-mt-[50vh]">
                                                 {(isActive) => (
                                                     <div
                                                         className={clsx(
-                                                            {
-                                                                "opacity-0 delay-100": !isActive,
-                                                                "opacity-100": isActive,
-                                                            },
-                                                            "aspect-square w-full rounded-3xl bg-cover bg-center transition-opacity duration-500"
+                                                            isActive ? "" : "md:hover:opacity-70",
+                                                            "relative -mx-4 md:-mx-8 mb-6 md:-mb-4 rounded-2xl p-4 md:p-8 transition duration-300"
                                                         )}
-                                                        style={{ backgroundImage: `url('${service.image}')` }}
-                                                    ></div>
+                                                        style={{
+                                                            color: isActive ? 'white' : '#B5B5B5',
+                                                            backgroundColor: isActive ? 'rgba(20, 160, 181, 0.1)' : 'transparent',
+                                                            borderLeft: isActive ? '4px solid #14A0B5' : '4px solid transparent'
+                                                        }}
+                                                    >
+                                                        <div className="text-sm font-medium mb-2" style={{ color: '#FDDD7F' }}>
+                                                            {String(index + 1).padStart(2, '0')}
+                                                        </div>
+                                                        <div className="font-['Poppins'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
+                                                            {service.title}
+                                                        </div>
+                                                        <div className="text-lg font-semibold leading-relaxed">
+                                                            {service.fullDesc}
+                                                        </div>
+                                                        <a href={`#service-${index}`} className="absolute inset-0"></a>
+                                                    </div>
                                                 )}
-                                            </ScrollObserver.Reactor>
+                                            </ScrollObserver.Trigger>
                                         ))}
-                                    </ScrollObserver.ReactorGroup>
-                                </div>
-                            </>
-                        )}
-                    </ScrollObserver>
-                </div>
-            </section>
+                                    </ScrollObserver.TriggerGroup>
 
-            {/* New Holographic Services Grid */}
-            <section id="services-holographic" className="py-32 px-4 relative z-10 overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
-                {/* Background Grid Lines */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
-
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <ScrollReveal>
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-20 pb-8" style={{ borderBottom: '1px solid #14A0B5' }}>
-                            <div>
-                                <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4" style={{ color: '#1F366A' }}>
-                                    ALL <span style={{ color: '#0C55AC' }}>SERVICES</span>
-                                </h2>
-                                <p className="text-lg max-w-xl font-semibold" style={{ color: '#1F366A' }}>
-                                    Comprehensive panel beating and refinishing for all vehicle types.
-                                </p>
-                            </div>
-                            <button className="hidden md:flex items-center gap-2 hover:opacity-80 transition-colors mt-4 md:mt-0 font-medium text-sm border px-4 py-2 rounded" style={{ color: '#0C55AC', borderColor: '#14A0B5' }}>
-                                VIEW ALL <ChevronRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    </ScrollReveal>
-
-                    <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {services.map((service, index) => (
-                            <ScrollReveal key={index} delay={index * 0.1}>
-                                <SpotLightItem className="h-[570px] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 relative border border-[#B5B5B5]">
-                                    {/* Background Image */}
-                                    <div
-                                        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
-                                        style={{ backgroundImage: `url(${service.image})` }}
-                                    />
-
-                                    <div
-                                        className={`relative p-8 h-full flex flex-col transition-all duration-500 ${hoveredService === index ? 'justify-start bg-white' : 'justify-end'}`}
-                                        onMouseEnter={() => setHoveredService(index)}
-                                        onMouseLeave={() => setHoveredService(null)}
-                                    >
-                                        {/* Corner Brackets */}
-                                        <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                        <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                        <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                        <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-
-                                        {/* Scan Line Effect */}
-                                        <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
-
-                                        {/* Dark Gradient Overlay */}
-                                        <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
-
-                                        <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'scale-110' : ''}`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
-                                            {service.icon}
+                                    <div className="sticky top-0 h-[100vh] hidden md:block">
+                                        <div className={clsx({ "opacity-0 delay-100": !isHidden }, "absolute inset-0 flex items-center")}>
+                                            <div className="aspect-square w-full rounded-3xl bg-gray-100"></div>
                                         </div>
 
-                                        <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
-                                            {service.title}
-                                        </h3>
-
-                                        <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
-                                            <p style={{ wordSpacing: '-0.08rem', color: '#1F366A' }} className="mb-6 leading-relaxed font-['Poppins'] font-semibold text-lg">
-                                                {service.fullDesc}
-                                            </p>
-
-                                            <ul className="space-y-2 pt-6" style={{ borderTop: '1px solid #B5B5B5' }}>
-                                                {service.details.map((detail, i) => (
-                                                    <li key={i} className="flex items-center text-sm" style={{ color: '#1F366A' }}>
-                                                        <div className="w-1.5 h-1.5 rounded-full mr-3" style={{ backgroundColor: '#0C55AC' }} />
-                                                        {detail}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
+                                        <ScrollObserver.ReactorGroup className="flex items-center justify-center">
+                                            {services.map((service, index) => (
+                                                <ScrollObserver.Reactor key={index} index={index} className="absolute inset-0 flex items-center justify-center p-8">
+                                                    {(isActive) => (
+                                                        <div
+                                                            className={clsx(
+                                                                {
+                                                                    "opacity-0 delay-100": !isActive,
+                                                                    "opacity-100": isActive,
+                                                                },
+                                                                "aspect-square w-full rounded-3xl bg-cover bg-center transition-opacity duration-500"
+                                                            )}
+                                                            style={{ backgroundImage: `url('${service.image}')` }}
+                                                        ></div>
+                                                    )}
+                                                </ScrollObserver.Reactor>
+                                            ))}
+                                        </ScrollObserver.ReactorGroup>
                                     </div>
-                                </SpotLightItem>
-                            </ScrollReveal>
-                        ))}
-                    </Spotlight>
+                                </>
+                            )}
+                        </ScrollObserver>
+                    </div>
+                </section>
+
+                {/* Wave Separator - Services to All Services */}
+                <div className="relative w-full overflow-hidden" style={{ backgroundColor: '#0C55AC' }}>
+                    <svg
+                        viewBox="0 0 1200 120"
+                        preserveAspectRatio="none"
+                        className="relative block w-full h-[80px] md:h-[100px]"
+                    >
+                        <path
+                            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+                            fill="#f8f9fa"
+                        />
+                    </svg>
                 </div>
-            </section>
 
-            {/* Troubleshooter - Sticky Scroll Pattern */}
-            <section style={{ background: 'linear-gradient(to bottom, white, #f8f9fa)' }}>
-                <div className="wrapper">
-                    {/* Intro Section */}
-                    <section className="h-screen w-full grid place-content-center sticky top-0 z-0" style={{ background: 'linear-gradient(135deg, #E4AEB3 0%, #FDDD7F 100%)', color: '#1F366A' }}>
-                        <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
-                        <h1 className='2xl:text-7xl md:text-5xl text-3xl px-8 font-["Poppins"] font-semibold text-center tracking-tight leading-[120%] relative z-10'>
-                            <span style={{ color: '#0C55AC' }}>Common Issues:</span> <br /> What We Fix Daily 🔧
-                        </h1>
-                    </section>
+                {/* New Holographic Services Grid */}
+                <section id="services-holographic" className="py-32 px-4 relative z-10 overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
+                    {/* Background Grid Lines */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
 
-                    {/* Sticky Grid with Images */}
-                    <section className="w-full relative z-10" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
-                        <div className="grid grid-cols-1 md:grid-cols-2">
-                            {/* Sticky Content Side */}
-                            <div className="sticky top-0 h-screen flex items-center justify-center px-8" style={{ background: 'linear-gradient(135deg, #14A0B5 0%, #0C55AC 100%)' }}>
-                                <div className="max-w-lg">
-                                    <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#FDDD7F' }}>Expert Diagnosis</p>
-                                    <h2 className="text-4xl md:text-5xl font-['Poppins'] font-semibold mb-6 text-white">
-                                        We Fix It Right
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        <ScrollReveal>
+                            <div className="flex flex-col md:flex-row justify-between items-end mb-20 pb-8" style={{ borderBottom: '1px solid #14A0B5' }}>
+                                <div>
+                                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4" style={{ color: '#1F366A' }}>
+                                        ALL <span style={{ color: '#0C55AC' }}>SERVICES</span>
                                     </h2>
-                                    <p className="text-lg mb-6 font-semibold leading-relaxed text-white">
-                                        Browse common panel beating issues and see how our expert technicians can restore your vehicle.
+                                    <p className="text-lg max-w-xl font-semibold" style={{ color: '#1F366A' }}>
+                                        Comprehensive panel beating and refinishing for all vehicle types.
                                     </p>
-                                    <div className="grid gap-3">
-                                        <div className="flex items-center gap-3 text-white">
-                                            <Activity className="w-6 h-6" style={{ color: '#FDDD7F' }} />
-                                            <span className="font-medium">Detailed Inspections</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-white">
-                                            <Gauge className="w-6 h-6" style={{ color: '#FDDD7F' }} />
-                                            <span className="font-medium">Quality Repairs</span>
-                                        </div>
-                                    </div>
                                 </div>
+                                <button className="hidden md:flex items-center gap-2 hover:opacity-80 transition-colors mt-4 md:mt-0 font-medium text-sm border px-4 py-2 rounded" style={{ color: '#0C55AC', borderColor: '#14A0B5' }}>
+                                    VIEW ALL <ChevronRight className="w-4 h-4" />
+                                </button>
                             </div>
+                        </ScrollReveal>
 
-                            {/* Scrolling Symptoms Side */}
-                            <div className="grid gap-6 py-8 px-4">
-                                {[
-                                    { id: 1, icon: <Activity className="w-8 h-8" />, title: "Dents & Dings", cause: "Minor impacts, hail damage, or parking lot incidents.", fix: "Paintless dent removal or traditional panel beating.", image: "/dent_repair_1764693039882.png" },
-                                    { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "/paint_booth_1764692971281.png" },
-                                    { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "/panel_beating_hero_1764692687494.png" },
-                                    { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "/panel-beatt.jpg" },
-                                ].map((symptom, index) => (
-                                    <div
-                                        key={symptom.id}
-                                        className={`flex justify-center ${index % 2 === 0 ? '-skew-x-3' : 'skew-x-3'}`}
-                                    >
-                                        <div className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-xl bg-gray-900 border-2 transition-all duration-500 hover:shadow-2xl group" style={{ borderColor: '#B5B5B5' }}>
-                                            {/* Image */}
-                                            <div className="relative h-80 w-full overflow-hidden">
-                                                <img
-                                                    src={symptom.image}
-                                                    alt={symptom.title}
-                                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                    onError={(e) => {
-                                                        e.currentTarget.src = '/panel_beating_hero_1764692687494.png';
-                                                    }}
-                                                />
+                        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {services.map((service, index) => (
+                                <ScrollReveal key={index} delay={index * 0.1}>
+                                    <SpotLightItem className="h-[570px] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 relative border border-[#B5B5B5]">
+                                        {/* Background Image */}
+                                        <div
+                                            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
+                                            style={{ backgroundImage: `url(${service.image})` }}
+                                        />
+
+                                        <div
+                                            className={`relative p-8 h-full flex flex-col transition-all duration-500 ${hoveredService === index ? 'justify-start bg-white' : 'justify-end'}`}
+                                            onMouseEnter={() => setHoveredService(index)}
+                                            onMouseLeave={() => setHoveredService(null)}
+                                        >
+                                            {/* Corner Brackets */}
+                                            <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                            <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                            <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                            <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+
+                                            {/* Scan Line Effect */}
+                                            <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
+
+                                            {/* Dark Gradient Overlay */}
+                                            <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
+
+                                            <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'scale-110' : ''}`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
+                                                {service.icon}
                                             </div>
 
-                                            {/* Overlay Content */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col justify-end p-6">
-                                                <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
-                                                    <div className="mb-3 p-2 rounded-full w-fit" style={{ backgroundColor: '#0C55AC' }}>
-                                                        <div className="text-white">{symptom.icon}</div>
+                                            <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
+                                                {service.title}
+                                            </h3>
+
+                                            <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
+                                                <p style={{ wordSpacing: '-0.08rem', color: '#1F366A' }} className="mb-6 leading-relaxed font-['Poppins'] font-semibold text-lg">
+                                                    {service.fullDesc}
+                                                </p>
+
+                                                <ul className="space-y-2 pt-6" style={{ borderTop: '1px solid #B5B5B5' }}>
+                                                    {service.details.map((detail, i) => (
+                                                        <li key={i} className="flex items-center text-sm" style={{ color: '#1F366A' }}>
+                                                            <div className="w-1.5 h-1.5 rounded-full mr-3" style={{ backgroundColor: '#0C55AC' }} />
+                                                            {detail}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </SpotLightItem>
+                                </ScrollReveal>
+                            ))}
+                        </Spotlight>
+                    </div>
+                </section>
+
+                {/* Troubleshooter - Sticky Scroll Pattern */}
+                <section style={{ backgroundColor: '#E4AEB3' }}>
+                    <div className="wrapper">
+                        {/* Intro Section */}
+                        <section className="h-screen w-full grid place-content-center sticky top-0 z-0 relative" style={{ background: 'linear-gradient(180deg, #E4AEB3 0%, #FDDD7F 100%)', color: '#1F366A' }}>
+                            {/* Flipped Wave at top - white */}
+                            <div className="absolute top-0 left-0 w-full overflow-hidden z-20">
+                                <svg
+                                    viewBox="0 0 1200 120"
+                                    preserveAspectRatio="none"
+                                    className="relative block w-full h-[80px] md:h-[100px]"
+                                    style={{ transform: 'rotate(180deg)' }}
+                                >
+                                    <path
+                                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </div>
+                            <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+                            <h1 className='2xl:text-7xl md:text-5xl text-3xl px-8 font-["Poppins"] font-semibold text-center tracking-tight leading-[120%] relative z-10'>
+                                <span style={{ color: '#0C55AC' }}>Common Issues:</span> <br /> What We Fix Daily 🔧
+                            </h1>
+                        </section>
+
+                        {/* Sticky Grid with Images */}
+                        <section className="w-full relative z-10" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
+                            <div className="grid grid-cols-1 md:grid-cols-2">
+                                {/* Sticky Content Side */}
+                                <div className="sticky top-0 h-screen flex items-center justify-center px-8" style={{ background: 'linear-gradient(135deg, #14A0B5 0%, #0C55AC 100%)' }}>
+                                    <div className="max-w-lg">
+                                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#FDDD7F' }}>Expert Diagnosis</p>
+                                        <h2 className="text-4xl md:text-5xl font-['Poppins'] font-semibold mb-6 text-white">
+                                            We Fix It Right
+                                        </h2>
+                                        <p className="text-lg mb-6 font-semibold leading-relaxed text-white">
+                                            Browse common panel beating issues and see how our expert technicians can restore your vehicle.
+                                        </p>
+                                        <div className="grid gap-3">
+                                            <div className="flex items-center gap-3 text-white">
+                                                <Activity className="w-6 h-6" style={{ color: '#FDDD7F' }} />
+                                                <span className="font-medium">Detailed Inspections</span>
+                                            </div>
+                                            <div className="flex items-center gap-3 text-white">
+                                                <Gauge className="w-6 h-6" style={{ color: '#FDDD7F' }} />
+                                                <span className="font-medium">Quality Repairs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Scrolling Symptoms Side */}
+                                <div className="grid gap-6 py-8 px-4">
+                                    {[
+                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Dents & Dings", cause: "Minor impacts, hail damage, or parking lot incidents.", fix: "Paintless dent removal or traditional panel beating.", image: "/dent_repair_1764693039882.png" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "/paint_booth_1764692971281.png" },
+                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "/panel_beating_hero_1764692687494.png" },
+                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "/panel-beatt.jpg" },
+                                    ].map((symptom, index) => (
+                                        <div
+                                            key={symptom.id}
+                                            className={`flex justify-center ${index % 2 === 0 ? '-skew-x-3' : 'skew-x-3'}`}
+                                        >
+                                            <div className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-xl bg-gray-900 border-2 transition-all duration-500 hover:shadow-2xl group" style={{ borderColor: '#B5B5B5' }}>
+                                                {/* Image */}
+                                                <div className="relative h-80 w-full overflow-hidden">
+                                                    <img
+                                                        src={symptom.image}
+                                                        alt={symptom.title}
+                                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        onError={(e) => {
+                                                            e.currentTarget.src = '/panel_beating_hero_1764692687494.png';
+                                                        }}
+                                                    />
+                                                </div>
+
+                                                {/* Overlay Content */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col justify-end p-6">
+                                                    <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
+                                                        <div className="mb-3 p-2 rounded-full w-fit" style={{ backgroundColor: '#0C55AC' }}>
+                                                            <div className="text-white">{symptom.icon}</div>
+                                                        </div>
+                                                        <h3 className="text-2xl font-['Poppins'] font-semibold text-white mb-2">{symptom.title}</h3>
+                                                        <p className="text-sm mb-2" style={{ color: '#14A0B5' }}><strong>Cause:</strong> {symptom.cause}</p>
+                                                        <p className="text-sm" style={{ color: '#047342' }}><strong>Our Fix:</strong> {symptom.fix}</p>
                                                     </div>
-                                                    <h3 className="text-2xl font-['Poppins'] font-semibold text-white mb-2">{symptom.title}</h3>
-                                                    <p className="text-sm mb-2" style={{ color: '#14A0B5' }}><strong>Cause:</strong> {symptom.cause}</p>
-                                                    <p className="text-sm" style={{ color: '#047342' }}><strong>Our Fix:</strong> {symptom.fix}</p>
                                                 </div>
                                             </div>
                                         </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                {/* Advanced Diagnostics - Sticky Images Pattern */}
+                <section className="text-white w-full" style={{ background: 'linear-gradient(135deg, #1F366A 0%, #783E6C 100%)' }}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 px-8">
+                        {/* Sticky Stacking Images */}
+                        <div className="grid gap-2">
+                            {[
+                                { src: "/paint_booth_1764692971281.png", alt: "Paint Booth" },
+                                { src: "/panel_beating_hero_1764692687494.png", alt: "Panel Beating" },
+                                { src: "/dent_repair_1764693039882.png", alt: "Dent Repair" },
+                                { src: "/wheel_repair_1764693107551.png", alt: "Wheel Repair" }
+                            ].map((image, index) => (
+                                <figure key={index} className="sticky top-0 h-screen grid place-content-center">
+                                    <div className="relative group">
+                                        <img
+                                            src={image.src}
+                                            alt={image.alt}
+                                            className="transition-all duration-500 w-96 h-96 align-bottom object-cover rounded-md shadow-2xl border-2 border-blue-500/30 group-hover:border-blue-500 group-hover:scale-105 group-hover:shadow-blue-500/50"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
                                     </div>
-                                ))}
+                                </figure>
+                            ))}
+                        </div>
+
+                        {/* Sticky Content */}
+                        <div className="sticky top-0 h-screen grid place-content-center">
+                            <div className="max-w-xl">
+                                <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 border backdrop-blur-sm" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5' }}>State-of-the-Art Facility</span>
+                                <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
+                                    MODERN <br />
+                                    <span style={{ color: '#14A0B5' }}>EQUIPMENT</span>
+                                </h2>
+                                <p className="text-lg text-gray-300 mb-6 leading-relaxed font-medium">
+                                    Our facility features the latest panel beating and refinishing equipment, ensuring precision repairs that meet manufacturer specifications.
+                                </p>
+                                <p className="text-lg text-gray-300 mb-8 leading-relaxed font-medium">
+                                    From computerized frame alignment to climate-controlled paint booths, we invest in technology that delivers superior results for your vehicle.
+                                </p>
+
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
+                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>30+</div>
+                                        <div className="text-sm uppercase tracking-wider text-gray-300">Years Experience</div>
+                                    </div>
+                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
+                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>100%</div>
+                                        <div className="text-sm uppercase tracking-wider text-gray-300">Guaranteed</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </section>
-                </div>
-            </section>
-
-            {/* Advanced Diagnostics - Sticky Images Pattern */}
-            <section className="text-white w-full" style={{ background: 'linear-gradient(135deg, #1F366A 0%, #783E6C 100%)' }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 px-8">
-                    {/* Sticky Stacking Images */}
-                    <div className="grid gap-2">
-                        {[
-                            { src: "/paint_booth_1764692971281.png", alt: "Paint Booth" },
-                            { src: "/panel_beating_hero_1764692687494.png", alt: "Panel Beating" },
-                            { src: "/dent_repair_1764693039882.png", alt: "Dent Repair" },
-                            { src: "/wheel_repair_1764693107551.png", alt: "Wheel Repair" }
-                        ].map((image, index) => (
-                            <figure key={index} className="sticky top-0 h-screen grid place-content-center">
-                                <div className="relative group">
-                                    <img
-                                        src={image.src}
-                                        alt={image.alt}
-                                        className="transition-all duration-500 w-96 h-96 align-bottom object-cover rounded-md shadow-2xl border-2 border-blue-500/30 group-hover:border-blue-500 group-hover:scale-105 group-hover:shadow-blue-500/50"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
-                                </div>
-                            </figure>
-                        ))}
                     </div>
+                </section>
 
-                    {/* Sticky Content */}
-                    <div className="sticky top-0 h-screen grid place-content-center">
-                        <div className="max-w-xl">
-                            <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 border backdrop-blur-sm" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5' }}>State-of-the-Art Facility</span>
-                            <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
-                                MODERN <br />
-                                <span style={{ color: '#14A0B5' }}>EQUIPMENT</span>
+                {/* Process Section */}
+                <section className="px-4 py-24" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-16">
+                            <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>How We Work</p>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>
+                                YOUR REPAIR <span style={{ color: '#0C55AC' }}>PROCESS</span>
                             </h2>
-                            <p className="text-lg text-gray-300 mb-6 leading-relaxed font-medium">
-                                Our facility features the latest panel beating and refinishing equipment, ensuring precision repairs that meet manufacturer specifications.
-                            </p>
-                            <p className="text-lg text-gray-300 mb-8 leading-relaxed font-medium">
-                                From computerized frame alignment to climate-controlled paint booths, we invest in technology that delivers superior results for your vehicle.
-                            </p>
-
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                    <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>30+</div>
-                                    <div className="text-sm uppercase tracking-wider text-gray-300">Years Experience</div>
-                                </div>
-                                <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                    <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>100%</div>
-                                    <div className="text-sm uppercase tracking-wider text-gray-300">Guaranteed</div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Process Section */}
-            <section className="px-4 py-24" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>How We Work</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>
-                            YOUR REPAIR <span style={{ color: '#0C55AC' }}>PROCESS</span>
-                        </h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-5 gap-8 relative">
-                        {/* Connecting Line with gradient animation */}
-                        <motion.div 
-                            className="hidden md:block absolute top-12 left-0 w-full h-0.5 -z-0"
-                            style={{ background: 'linear-gradient(to right, #0C55AC, #783E6C, #0C55AC)' }}
-                            initial={{ scaleX: 0, opacity: 0 }}
-                            whileInView={{ scaleX: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
-                        />
-
-                        {processSteps.map((step, index) => (
+                        <div className="grid md:grid-cols-5 gap-8 relative">
+                            {/* Connecting Line with gradient animation */}
                             <motion.div
-                                key={index}
-                                className="relative z-10 bg-white pt-4 group cursor-pointer"
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                className="hidden md:block absolute top-12 left-0 w-full h-0.5 -z-0"
+                                style={{ background: 'linear-gradient(to right, #0C55AC, #783E6C, #0C55AC)' }}
+                                initial={{ scaleX: 0, opacity: 0 }}
+                                whileInView={{ scaleX: 1, opacity: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ 
-                                    duration: 0.6, 
-                                    delay: index * 0.15,
-                                    ease: [0.25, 0.4, 0.25, 1]
-                                }}
-                                whileHover={{ 
-                                    y: -15,
-                                    transition: { duration: 0.3, ease: "easeOut" }
-                                }}
-                            >
-                                <motion.div 
-                                    className="relative w-16 h-16 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg overflow-hidden"
-                                    style={{ background: 'linear-gradient(to bottom right, #0C55AC, #1F366A)', boxShadow: '0 10px 30px rgba(12, 85, 172, 0.3)' }}
-                                    initial={{ scale: 0, rotate: -90 }}
-                                    whileInView={{ scale: 1, rotate: 0 }}
+                                transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
+                            />
+
+                            {processSteps.map((step, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="relative z-10 bg-white pt-4 group cursor-pointer"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ 
-                                        duration: 0.7, 
-                                        delay: index * 0.15 + 0.3,
-                                        type: "spring",
-                                        stiffness: 260,
-                                        damping: 20
+                                    transition={{
+                                        duration: 0.6,
+                                        delay: index * 0.15,
+                                        ease: [0.25, 0.4, 0.25, 1]
                                     }}
-                                    whileHover={{ 
-                                        scale: 1.15,
-                                        rotate: 360,
-                                        boxShadow: "0 20px 60px rgba(37, 99, 235, 0.4)",
-                                        transition: { duration: 0.6 }
+                                    whileHover={{
+                                        y: -15,
+                                        transition: { duration: 0.3, ease: "easeOut" }
                                     }}
                                 >
-                                    {/* Shine effect */}
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                                        initial={{ x: "-100%" }}
-                                        whileHover={{ x: "100%" }}
-                                        transition={{ duration: 0.6 }}
-                                    />
-                                    <step.icon className="w-8 h-8 relative z-10" strokeWidth={2} />
-                                </motion.div>
-                                <div className="text-center">
-                                    <motion.h3 
-                                        className="text-xl font-['Poppins'] font-medium mb-3"
-                                        style={{ color: '#1F366A' }}
-                                        whileHover={{ color: "#0C55AC", scale: 1.05 }}
-                                        transition={{ duration: 0.2 }}
+                                        className="relative w-16 h-16 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg overflow-hidden"
+                                        style={{ background: 'linear-gradient(to bottom right, #0C55AC, #1F366A)', boxShadow: '0 10px 30px rgba(12, 85, 172, 0.3)' }}
+                                        initial={{ scale: 0, rotate: -90 }}
+                                        whileInView={{ scale: 1, rotate: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{
+                                            duration: 0.7,
+                                            delay: index * 0.15 + 0.3,
+                                            type: "spring",
+                                            stiffness: 260,
+                                            damping: 20
+                                        }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            rotate: 360,
+                                            boxShadow: "0 20px 60px rgba(37, 99, 235, 0.4)",
+                                            transition: { duration: 0.6 }
+                                        }}
                                     >
-                                        {step.title}
-                                    </motion.h3>
-                                    <p className="text-lg leading-relaxed font-semibold transition-colors duration-300" style={{ color: '#1F366A' }}>
-                                        {step.description}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
+                                        {/* Shine effect */}
+                                        <motion.div
+                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                            initial={{ x: "-100%" }}
+                                            whileHover={{ x: "100%" }}
+                                            transition={{ duration: 0.6 }}
+                                        />
+                                        <step.icon className="w-8 h-8 relative z-10" strokeWidth={2} />
+                                    </motion.div>
+                                    <div className="text-center">
+                                        <motion.h3
+                                            className="text-xl font-['Poppins'] font-medium mb-3"
+                                            style={{ color: '#1F366A' }}
+                                            whileHover={{ color: "#0C55AC", scale: 1.05 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            {step.title}
+                                        </motion.h3>
+                                        <p className="text-lg leading-relaxed font-semibold transition-colors duration-300" style={{ color: '#1F366A' }}>
+                                            {step.description}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Why Choose Us */}
-            <motion.section
-                className="px-4 py-16"
-                style={{ background: 'linear-gradient(135deg, #E4AEB3 10%, #FDDD7F 100%)' }}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="/paint_booth_1764692971281.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
-                    </div>
-                    <div>
-                        <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>Expert Panel Beating Since 1990</h2>
-                        <div className="space-y-4">
-                            <div className="flex items-start gap-4">
-                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
-                                <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
-                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We work with all major insurance companies and handle claims directly.</p>
+                {/* Why Choose Us */}
+                <motion.section
+                    className="px-4 py-16"
+                    style={{ background: 'linear-gradient(135deg, #E4AEB3 10%, #FDDD7F 100%)' }}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <img src="/paint_booth_1764692971281.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
+                        </div>
+                        <div>
+                            <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>Expert Panel Beating Since 1990</h2>
+                            <div className="space-y-4">
+                                <div className="flex items-start gap-4">
+                                    <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
+                                    <div>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We work with all major insurance companies and handle claims directly.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
-                                <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Quality Guaranteed</h3>
-                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>All panel beating work comes with our comprehensive 12-month warranty.</p>
+                                <div className="flex items-start gap-4">
+                                    <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
+                                    <div>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Quality Guaranteed</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>All panel beating work comes with our comprehensive 12-month warranty.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
-                                <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Modern Equipment</h3>
-                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>State-of-the-art tools including computerized frame alignment and paint matching.</p>
+                                <div className="flex items-start gap-4">
+                                    <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
+                                    <div>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Modern Equipment</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>State-of-the-art tools including computerized frame alignment and paint matching.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
-                                <div>
-                                    <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Experienced Craftsmen</h3>
-                                    <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our team brings decades of combined experience in panel beating and refinishing.</p>
+                                <div className="flex items-start gap-4">
+                                    <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
+                                    <div>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Experienced Craftsmen</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our team brings decades of combined experience in panel beating and refinishing.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </motion.section>
+                </motion.section>
 
-            {/* Testimonials */}
-            <section className="px-4 py-16" style={{ background: 'linear-gradient(to bottom, white, #f8f9fa)' }}>
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>What Our Customers Say</h2>
-                    </div>
-                    <div className="max-w-6xl mx-auto">
-                        <div className="rounded-lg overflow-hidden shadow-sm">
-                            <div id="shapo-widget-65035ad084a4892e58a0"></div>
+                {/* Testimonials */}
+                <section className="px-4 py-16" style={{ background: 'linear-gradient(to bottom, white, #f8f9fa)' }}>
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>What Our Customers Say</h2>
+                        </div>
+                        <div className="max-w-6xl mx-auto">
+                            <div className="rounded-lg overflow-hidden shadow-sm">
+                                <div id="shapo-widget-65035ad084a4892e58a0"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* CTA Section */}
-            <motion.section
-                className="px-4 py-20 text-white"
-                style={{ backgroundColor: '#0C55AC' }}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
-                        Ready To Restore Your Vehicle?
-                    </h2>
-                    <p className="text-lg font-semibold mb-8 leading-relaxed">
-                        Get a free quote today and experience the CBD Panelbeaters difference.
-                    </p>
-                    <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="px-8 py-3 bg-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ color: '#0C55AC' }}>
-                            REQUEST QUOTE
-                        </button>
-                        <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium border" style={{ backgroundColor: '#1F366A', borderColor: 'white' }}>
-                            CALL US NOW
-                        </button>
+                {/* CTA Section */}
+                <motion.section
+                    className="px-4 py-20 text-white"
+                    style={{ backgroundColor: '#0C55AC' }}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
+                            Ready To Restore Your Vehicle?
+                        </h2>
+                        <p className="text-lg font-semibold mb-8 leading-relaxed">
+                            Get a free quote today and experience the CBD Panelbeaters difference.
+                        </p>
+                        <div className="flex flex-col md:flex-row gap-4 justify-center">
+                            <button className="px-8 py-3 bg-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ color: '#0C55AC' }}>
+                                REQUEST QUOTE
+                            </button>
+                            <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium border" style={{ backgroundColor: '#1F366A', borderColor: 'white' }}>
+                                CALL US NOW
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </motion.section>
+                </motion.section>
 
                 <Footer scrollToSection={scrollToSection} />
             </div>
