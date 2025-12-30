@@ -26,6 +26,22 @@ export default function PanelBeating() {
         window.scrollTo(0, 0);
     }, []);
 
+    // Inject Shapo widget script dynamically
+    // Force reload/re-execution of the script to ensure it finds the new DOM element on route changes
+    useEffect(() => {
+        const existingScript = document.getElementById('shapo-embed-js');
+        if (existingScript) {
+            existingScript.remove();
+        }
+
+        const s = document.createElement('script');
+        s.id = 'shapo-embed-js';
+        s.type = 'text/javascript';
+        s.src = 'https://cdn.shapo.io/js/embed.js';
+        s.defer = true;
+        document.body.appendChild(s);
+    }, []);
+
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {

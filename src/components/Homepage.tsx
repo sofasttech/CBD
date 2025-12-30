@@ -81,7 +81,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: typeof accordio
 
 // --- About Accordion Section Component ---
 function AboutAccordionSection() {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleItemHover = (index: number) => {
     setActiveIndex(index);
@@ -90,10 +90,10 @@ function AboutAccordionSection() {
   return (
     <div className="bg-white font-['Poppins']">
       <section id="about-intro" className="container mx-auto px-4 py-12 md:py-24">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col xl:flex-row items-center justify-between gap-12">
 
           {/* Left Side: Image Accordion */}
-          <div className="w-full md:w-1/2 md:min-w-[420px] md:flex-none">
+          <div className="w-full xl:w-[750px] xl:flex-none">
             <div className="w-fit mx-auto flex flex-row items-center gap-1 md:gap-4 p-2 md:p-4">
               {accordionItems.map((item, index) => (
                 <AccordionItem
@@ -107,20 +107,20 @@ function AboutAccordionSection() {
           </div>
 
           {/* Right Side: Text Content */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
+          <div className="w-full xl:flex-1 text-center xl:text-left">
             <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">About CBD Panelbeaters LTD</p>
             <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase leading-tight mt-2">Superior Service with a Touch of Class</h2>
 
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
-              <p className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left" style={{ wordSpacing: window.innerWidth < 768 ? '-0.15rem' : '-0.08rem' }}>
+              <p className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify xl:text-left" style={{ wordSpacing: window.innerWidth < 768 ? '-0.15rem' : '-0.08rem' }}>
                 CBD Panel and Paint is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
               </p>
             </div>
 
             <div className="mt-6">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Our Story</h3>
-              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
+              <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify xl:text-left">
                 For more than 30 years, we have been proudly serving Auckland with quality panel beating, mechanical repairs, and insurance work. Whether it’s a small dent or a major collision, we approach every job with care and attention, restoring your vehicle to its best possible condition.
               </p>
             </div>
@@ -177,7 +177,7 @@ const AnimatedNumber = ({ target, suffix = '' }: { target: number; suffix?: stri
 function TimelineDemo() {
   const data = [
     {
-      title: "Book Appointment",
+      title: "BOOK APPOINTMENT",
       content: (
         <div>
           <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
@@ -207,7 +207,7 @@ function TimelineDemo() {
       ),
     },
     {
-      title: "Service & Repair",
+      title: "SERVICE & REPAIR",
       content: (
         <div>
           <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
@@ -240,7 +240,7 @@ function TimelineDemo() {
       ),
     },
     {
-      title: "Quality Check",
+      title: "QUALITY CHECK",
       content: (
         <div>
           <p className="mb-8 text-lg font-['Poppins'] font-semibold text-black leading-relaxed text-justify md:text-left">
@@ -430,7 +430,8 @@ export default function Homepage() {
       {/* Cars Ribbon */}
       <section className="w-full relative">
         <img src="/carsnz.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
-        <div className="absolute inset-0 flex items-bottom justify-center px-4">
+        <div className="absolute inset-0 bg-white/70 pointer-events-none"></div>
+        <div className="absolute inset-0 flex items-start justify-center px-4 pt-10 md:pt-16">
           <h2 className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Poppins'] font-medium leading-tight">
             We SERVICE <span className="text-blue-600">All</span> MAKES and MODELS...<br />
             <span className="text-black">FOREIGN and DOMESTIC!</span>
@@ -890,7 +891,7 @@ export default function Homepage() {
             className="text-center mb-16"
           >
             <p className="text-blue-600 font-medium tracking-widest uppercase text-sm mb-3">Why Choose Us</p>
-            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">Excellence in Every Detail</h2>
+            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">EXCELLENCE IN EVERY DETAIL</h2>
             <p className="text-black max-w-2xl mx-auto text-lg font-['Poppins'] font-semibold leading-relaxed ">
               We don't just repair cars; we restore confidence. Experience the perfect blend of technical expertise and customer-focused service.
             </p>
@@ -991,7 +992,7 @@ export default function Homepage() {
         transition={{ duration: 0.6, delay: 0.9 }}
         viewport={{ once: true }}
       >
-        <section id="reviews" className="py-8 bg-neutral-50">
+        <section id="reviews" className="py-8 ">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">Customer Reviews</h2>
             <div className="rounded-lg overflow-hidden shadow-sm">
