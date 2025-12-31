@@ -656,7 +656,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">01</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Accident Repair</h3>
                       </div>
-                      <p className="text-lg">Comprehensive collision repairs to restore your vehicle to factory standards. We handle panel replacement, frame alignment, and finish work so your car is safe and looks like new.</p>
+                      <p className="text-lg">Our Accident repair service handles everything from minor fender benders to major collisions. We work directly with insurance companies, provide detailed quotes, and use genuine or quality aftermarket parts. Our computerised frame alignment ensures structural integrity is fully restored..</p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Accident Repair" className="w-full h-full object-cover rounded-lg" /></div>
@@ -690,7 +690,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">03</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Chassis & Structural Repair</h3>
                       </div>
-                      <p className="text-lg">Frame straightening, weld repairs and structural reinforcement to restore crash integrity. Work follows manufacturer tolerances and is verified with precision measuring tools.</p>
+                      <p className="text-lg">Structural damage compromises vehicle safety. Our state-of-the-art frame straightening equipment and laser measuring systems ensure your vehicle's chassis is restored to exact factory specifications. We handle unibody and frame-on-frame construction.</p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/car-pieces.png' }} /></div>
@@ -724,7 +724,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">05</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Dent Repair</h3>
                       </div>
-                      <p className="text-lg">Paintless dent removal for minor impacts and full panel repair when needed. We prioritise preserving original paint where possible to maintain value.</p>
+                      <p className="text-lg">Minor dents and dings can often be repaired without repainting using our paintless dent removal (PDR) technique. This cost-effective method maintains your original paint finish. For larger dents, we offer traditional panel beating and refinishing services.</p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
@@ -741,7 +741,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">06</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Exterior Polishing</h3>
                       </div>
-                      <p className="text-lg">Multi-stage machine polishing to remove swirls, light scratches and oxidation. Results restore gloss and improve long-term protection when combined with sealants.</p>
+                      <p className="text-lg">Over time, vehicle paint develops swirl marks, oxidation, and fine scratches. Our multi-stage polishing process removes imperfections and restores depth and clarity to your paint. We offer a range of correction services, from light enhancement to full paint restoration.</p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
@@ -758,7 +758,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">07</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Headlight Polishing</h3>
                       </div>
-                      <p className="text-lg">Remove haze and yellowing to improve night visibility and restore original clarity. We seal lenses to slow future oxidation.</p>
+                      <p className="text-lg">Oxidised headlights reduce nighttime visibility and diminish your vehicle's appearance. Our restoration process involves removing the damaged outlet layer, polishing the lens to a high level of clarity, and applying a UV-protective coating. Results look like new headlights at a fraction of the replacement cost.</p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/headlight.webp" alt="Headlight Polishing" className="w-full h-full object-cover rounded-lg" /></div>
@@ -775,7 +775,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">08</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Paint & Refinishing</h3>
                       </div>
-                      <p className="text-lg">Full paintwork and refinishing with OEM colour matching and modern coatings. We guarantee even coverage, proper cure and long-lasting results.</p>
+                      <p className="text-lg">From single panel refinishing to complete resprays, our modern paint booth and computerised colour matching system ensure perfect results. We use premium automotive paints with factory-spec clear coats for lasting durability and gloss. Waterborne paint options are available. </p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
@@ -792,7 +792,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">09</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Panel Repair</h3>
                       </div>
-                      <p className="text-lg">Meticulous metalwork and panel replacement to restore lines and gaps. We ensure doors, hoods and boot lids align correctly after repair.</p>
+                      <p className="text-lg">Damaged panels are carefully assessed to determine whether repair or replacement is the most cost-effective option. Our craftsmen can reshape steel and aluminium panels back to their original contours. When replacement is necessary, we source high-quality parts and ensure a perfect fit and finish.</p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Panel Repair" className="w-full h-full object-cover rounded-lg" /></div>
@@ -809,7 +809,7 @@ export default function Homepage() {
                         <span className="text-4xl font-['Poppins'] font-bold">10</span>
                         <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Windscreen Removal & Installation</h3>
                       </div>
-                      <p className="text-lg">Accurate removal and fitment using OEM adhesives and correct curing. We replace chips and full windscreens with a focus on airtight seals and lane-camera recalibration if required.</p>
+                      <p className="text-lg">Windscreen replacement requires precision and proper technique. We use OEM-quality glass and adhesives, follow the manufacturer-specified curing times, and recalibrate advanced driver assistance systems (ADAS) if equipped. Mobile service available for insurance claims..</p>
 
                     </div>
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} /></div>
