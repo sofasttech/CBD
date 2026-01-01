@@ -165,10 +165,10 @@ export default function MinorAccidentGuide() {
                         <AlertTriangle className="w-8 h-8 text-orange-300" />
                         <p className="text-orange-300 text-sm font-medium uppercase tracking-wide">Accident Response Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Had a Minor <span className="text-orange-300">Car Accident?</span>
                     </h1>
-                    <p className="text-xl text-orange-100 leading-relaxed font-mulish font-extralight">
+                    <p className="text-xl text-orange-100 leading-relaxed font-['Poppins'] font-extralight">
                         How to Respond & Get Repairs in Auckland
                     </p>
                 </div>
@@ -202,7 +202,7 @@ export default function MinorAccidentGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-4">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-4">
                             7 Steps to Follow After a Minor Accident
                         </h2>
                     </motion.div>
@@ -220,13 +220,13 @@ export default function MinorAccidentGuide() {
                                     viewport={{ once: true }}
                                 >
                                     <div className="flex items-start gap-4 mb-4">
-                                        <div className={`${colorClasses.number} text-white w-12 h-12 rounded-full flex items-center justify-center font-['Tomorrow'] font-bold text-xl flex-shrink-0`}>
+                                        <div className={`${colorClasses.number} text-white w-12 h-12 rounded-full flex items-center justify-center font-['Poppins'] font-bold text-xl flex-shrink-0`}>
                                             {step.number}
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-3">
                                                 <step.icon className={`w-6 h-6 ${colorClasses.icon}`} />
-                                                <h3 className="text-2xl font-['Tomorrow'] font-medium text-gray-900">
+                                                <h3 className="text-2xl font-['Poppins'] font-medium text-gray-900">
                                                     {step.title}
                                                 </h3>
                                             </div>
@@ -266,7 +266,7 @@ export default function MinorAccidentGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <AlertCircle className="w-8 h-8 text-red-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Why Minor Damage Should Not Be Ignored
                         </h2>
                     </div>
@@ -300,7 +300,7 @@ export default function MinorAccidentGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                             How CBD Panel Beating & Mechanical Can Help
                         </h2>
                         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -347,23 +347,23 @@ export default function MinorAccidentGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         Final Thoughts
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-['Poppins'] font-extralight">
                         Minor accidents are stressful in the moment, but handling the steps calmly ensures a smooth repair and insurance process. With the right documentation and professional repair, your vehicle can be back on the road looking its best.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If you have had a minor accident and need guidance or a repair quote, CBD Panel Beating & Mechanical is here to help.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                        <a href="tel:093091906" className="flex items-center gap-2 bg-orange-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg hover:bg-orange-700 transition">
+                        <a href="tel:093091906" className="flex items-center gap-2 bg-orange-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-orange-700 transition">
                             <PhoneIcon className="w-5 h-5" />
                             <span>09 309 1906</span>
                         </a>
                         <button 
                             onClick={() => window.location.href = '/contact'}
-                            className="relative group bg-white text-black px-8 py-4 font-['Tomorrow'] font-medium text-lg transition"
+                            className="relative group bg-white text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition"
                         >
                             <span className="absolute left-0 top-0 h-full bg-orange-600 w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10 group-hover:text-white">CONTACT US ONLINE</span>

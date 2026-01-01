@@ -13,16 +13,16 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       {/* Top Bar */}
-      <div className="max-w-7xl mx-auto px-4 py-2 border-b">
-        <div className="flex justify-between md:grid md:[grid-template-columns:auto_1fr_auto] items-center">
+      <div className="w-full px-4 py-3 border-b">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-8">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0 min-w-fit">
             <img src="/logowithoutname.jpeg" alt="CBD Panel and Paint" className="h-10" />
-            <span className="hidden md:block text-xl font-['Tomorrow']">CBD Panel and Paint</span>
+            <span className="hidden lg:block text-xl font-['Poppins'] whitespace-nowrap">CBD Panel and Paint</span>
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex justify-center gap-4 z-10">
+          <nav className="hidden md:flex justify-center items-center gap-4 lg:gap-6 flex-1 overflow-visible ml-8">
             <Link to="/" className={`text-sm font-medium transition py-2 whitespace-nowrap ${location.pathname === '/' ? 'text-blue-600' : 'hover:text-blue-600'}`}>
               Home
             </Link>
@@ -44,18 +44,17 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
             <Link to="/faqs" className={`text-sm font-medium transition py-2 whitespace-nowrap ${location.pathname === '/faqs' ? 'text-blue-600' : 'hover:text-blue-600'}`}>
               FAQs
             </Link>
-            
           </nav>
 
-          {/* Working Hours, Support, Cart */}
-          <div className="flex items-center justify-end gap-4 md:flex-shrink-0">
-            <div className="text-sm hidden md:block py-2">
-              <div>093091906 </div>
-              <div>info@cbdpanel.co.nz		</div>
+          {/* Contact Info & CTA */}
+          <div className="flex items-center justify-end gap-3 flex-shrink-0 min-w-fit">
+            <div className="text-xs hidden xl:block text-right whitespace-nowrap">
+              <div>093091906 | 24hr: 0274593411</div>
+              <div>info@cbdpanel.co.nz</div>
             </div>
-            <button className="bg-blue-600 text-white px-4 md:px-6 py-2  text-sm font-medium hover:bg-red-700 transition">
+            <Link to="/contact" className="bg-blue-600 text-white px-4 lg:px-6 py-2 text-sm font-medium hover:bg-CGreen transition whitespace-nowrap">
               Book a Service
-            </button>
+            </Link>
             <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <X /> : <Menu />}
             </button>
@@ -105,12 +104,12 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
                   <div className="font-medium">Mon - Fri: 7:30 AM - 5:30 PM</div>
                 </div>
                 <div className="text-sm mb-4">
-                  <div>093091906 </div>
+                  <div>093091906 | 24hr: 0274593411</div>
                   <div>info@cbdpanel.co.nz		</div>
                 </div>
-                <button className="w-full bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition" onClick={() => setMenuOpen(false)}>
+                <Link to="/contact" className="w-full bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition block text-center" onClick={() => setMenuOpen(false)}>
                   Book a Service
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>

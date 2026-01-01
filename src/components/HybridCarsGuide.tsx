@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Battery, Gauge, Leaf, AlertTriangle, CheckCircle, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -76,10 +77,10 @@ export default function HybridCarsGuide() {
                         <Leaf className="w-8 h-8 text-emerald-300" />
                         <p className="text-emerald-200 text-sm font-medium uppercase tracking-wide">Modern Technology</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         How Hybrid Cars Work
                     </h1>
-                    <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         A Practical Guide for New Zealand Drivers
                     </p>
                 </div>
@@ -112,7 +113,7 @@ export default function HybridCarsGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Zap className="w-8 h-8 text-emerald-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             What Makes a Car a Hybrid
                         </h2>
                     </div>
@@ -133,7 +134,7 @@ export default function HybridCarsGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <Battery className="w-8 h-8 text-emerald-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 How the Power System Works
                             </h2>
                         </div>
@@ -155,7 +156,7 @@ export default function HybridCarsGuide() {
                                 <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
                                     {index + 1}
                                 </div>
-                                <h3 className="text-xl font-['Tomorrow'] font-medium mb-3 text-emerald-900">{step.title}</h3>
+                                <h3 className="text-xl font-['Poppins'] font-medium mb-3 text-emerald-900">{step.title}</h3>
                                 <p className="text-gray-700">{step.description}</p>
                             </motion.div>
                         ))}
@@ -174,7 +175,7 @@ export default function HybridCarsGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Settings className="w-8 h-8 text-emerald-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Main Parts of a Hybrid Vehicle
                         </h2>
                     </div>
@@ -206,7 +207,7 @@ export default function HybridCarsGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <Leaf className="w-8 h-8 text-emerald-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 Benefits of Driving a Hybrid
                             </h2>
                         </div>
@@ -239,7 +240,7 @@ export default function HybridCarsGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Gauge className="w-8 h-8 text-blue-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Hybrid Maintenance and Repairs
                         </h2>
                     </div>
@@ -263,7 +264,7 @@ export default function HybridCarsGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <AlertTriangle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 Signs Your Hybrid May Need Attention
                             </h2>
                         </div>
@@ -296,15 +297,15 @@ export default function HybridCarsGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-8 text-center">
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">50%</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">50%</div>
                             <div className="text-emerald-100 text-lg">Lower Emissions</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">30%</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">30%</div>
                             <div className="text-emerald-100 text-lg">Fuel Savings</div>
                         </div>
                         <div>
-                            <div className="text-5xl font-['Tomorrow'] font-bold mb-3">Expert</div>
+                            <div className="text-5xl font-['Poppins'] font-bold mb-3">Expert</div>
                             <div className="text-emerald-100 text-lg">Hybrid Specialists</div>
                         </div>
                     </div>
@@ -320,16 +321,16 @@ export default function HybridCarsGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint repairs and services hybrid vehicles with attention to safety and manufacturer requirements. We handle structural repairs, bumper work, sensor alignment, and panel repairs for all major hybrid models. We understand the extra care needed around high-voltage components and modern safety systems.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your hybrid needs repairs or you want a professional inspection, our expert team at CBD Panel and Paint is here to assist.
                     </p>
-                    <button className="relative group bg-emerald-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-emerald-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-emerald-600">BOOK A HYBRID SERVICE</span>
                     </button>

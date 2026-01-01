@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, Info, CheckCircle, XCircle, Wrench, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -170,10 +171,10 @@ export default function DashboardWarningLights() {
                 
                 <div className="relative max-w-4xl mx-auto text-center">
                     <p className="text-yellow-300 text-sm font-medium uppercase tracking-wide mb-4 drop-shadow-lg">Essential Knowledge</p>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6 drop-shadow-2xl">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6 drop-shadow-2xl">
                         Dashboard Warning Lights <span className="text-yellow-300">Decoded</span>
                     </h1>
-                    <p className="text-xl text-yellow-100 leading-relaxed font-mulish font-extralight drop-shadow-lg">
+                    <p className="text-xl text-yellow-100 leading-relaxed font-['Poppins'] font-extralight drop-shadow-lg">
                         What They Mean and What You Should Do
                     </p>
                 </div>
@@ -209,7 +210,7 @@ export default function DashboardWarningLights() {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <XCircle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
                                 Critical Warning Lights
                             </h2>
                         </div>
@@ -231,7 +232,7 @@ export default function DashboardWarningLights() {
                                 <div className="flex items-start gap-4">
                                     <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-12 h-12 flex-shrink-0" />
                                     <div className="flex-1">
-                                        <h3 className="text-xl font-['Tomorrow'] font-medium mb-2 text-red-600">
+                                        <h3 className="text-xl font-['Poppins'] font-medium mb-2 text-red-600">
                                             {light.name}
                                         </h3>
                                         <p className="text-gray-700 mb-3 text-sm leading-relaxed">
@@ -260,7 +261,7 @@ export default function DashboardWarningLights() {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <AlertTriangle className="w-8 h-8 text-yellow-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
                                 Important Warning Lights
                             </h2>
                         </div>
@@ -280,7 +281,7 @@ export default function DashboardWarningLights() {
                                 viewport={{ once: true }}
                             >
                                 <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-12 h-12 mb-2" />
-                                <h3 className="text-lg font-['Tomorrow'] font-medium mb-2 text-yellow-700">
+                                <h3 className="text-lg font-['Poppins'] font-medium mb-2 text-yellow-700">
                                     {light.name}
                                 </h3>
                                 <p className="text-gray-700 mb-2 text-sm">
@@ -307,7 +308,7 @@ export default function DashboardWarningLights() {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <Info className="w-8 h-8 text-blue-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
                                 Status / Feature Indicators
                             </h2>
                         </div>
@@ -327,7 +328,7 @@ export default function DashboardWarningLights() {
                                 viewport={{ once: true }}
                             >
                                 <img src={`/Dashboard Icons/${indicator.image}`} alt={indicator.name} className="w-12 h-12 mb-2" />
-                                <h3 className="text-base font-['Tomorrow'] font-medium mb-2 text-blue-700">
+                                <h3 className="text-base font-['Poppins'] font-medium mb-2 text-blue-700">
                                     {indicator.name}
                                 </h3>
                                 <p className="text-gray-600 text-sm mb-2">{indicator.meaning}</p>
@@ -350,7 +351,7 @@ export default function DashboardWarningLights() {
                     >
                         <div className="flex items-center gap-3 mb-4">
                             <Settings className="w-8 h-8 text-gray-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
                                 Access, Safety and Convenience Warnings
                             </h2>
                         </div>
@@ -367,7 +368,7 @@ export default function DashboardWarningLights() {
                                 viewport={{ once: true }}
                             >
                                 <img src={`/Dashboard Icons/${warning.image}`} alt={warning.name} className="w-12 h-12 mb-2" />
-                                <h3 className="text-base font-['Tomorrow'] font-medium mb-2 text-gray-700">
+                                <h3 className="text-base font-['Poppins'] font-medium mb-2 text-gray-700">
                                     {warning.name}
                                 </h3>
                                 <p className="text-gray-600 text-sm mb-2">{warning.meaning}</p>
@@ -389,7 +390,7 @@ export default function DashboardWarningLights() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <Wrench className="w-8 h-8 text-blue-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             When Should You Visit CBD Panel Beating & Mechanical?
                         </h2>
                     </div>
@@ -419,7 +420,7 @@ export default function DashboardWarningLights() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-8 text-center">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-8 text-center">
                         How We Can Help
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -430,17 +431,17 @@ export default function DashboardWarningLights() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-xl text-gray-300 mb-8 text-center font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 text-center font-['Poppins'] font-extralight">
                         Whether it's a minor issue or a critical problem, our expert team at CBD Panel Beating & Mechanical will identify the cause and resolve it with care.
                     </p>
                     <div className="text-center">
-                        <p className="text-2xl mb-6 font-['Tomorrow'] font-medium">
+                        <p className="text-2xl mb-6 font-['Poppins'] font-medium">
                             If a warning light has appeared, don't wait.
                         </p>
-                        <button className="relative group bg-yellow-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                        <Link to="/contact" className="relative group bg-yellow-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition inline-block">
                             <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10 group-hover:text-yellow-600">CONTACT US TODAY</span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </motion.section>

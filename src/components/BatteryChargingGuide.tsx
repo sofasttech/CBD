@@ -77,10 +77,10 @@ export default function BatteryChargingGuide() {
                         <BatteryCharging className="w-8 h-8 text-green-300" />
                         <p className="text-green-200 text-sm font-medium uppercase tracking-wide">Essential Knowledge</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         How to Charge a Car Battery
                     </h1>
-                    <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         A Simple Guide for Everyday Drivers
                     </p>
                 </div>
@@ -113,7 +113,7 @@ export default function BatteryChargingGuide() {
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Battery className="w-8 h-8 text-green-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Why Car Batteries Lose Charge
                         </h2>
                     </div>
@@ -131,7 +131,7 @@ export default function BatteryChargingGuide() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                             >
-                                <h3 className="text-lg font-['Tomorrow'] font-medium mb-3 text-green-600">{reason.title}</h3>
+                                <h3 className="text-lg font-['Poppins'] font-medium mb-3 text-green-600">{reason.title}</h3>
                                 <p className="text-gray-600 text-sm">{reason.description}</p>
                             </motion.div>
                         ))}
@@ -148,7 +148,7 @@ export default function BatteryChargingGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-6">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-6">
                             What You Need Before Charging
                         </h2>
                         <p className="text-lg text-gray-700 mb-6">
@@ -182,7 +182,7 @@ export default function BatteryChargingGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <BatteryCharging className="w-8 h-8 text-green-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             How to Charge a Car Battery Using a Charger
                         </h2>
                     </div>
@@ -218,7 +218,7 @@ export default function BatteryChargingGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <Zap className="w-8 h-8 text-yellow-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 How to Jump-Start a Car
                             </h2>
                         </div>
@@ -255,7 +255,7 @@ export default function BatteryChargingGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <Clock className="w-8 h-8 text-blue-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             How Long Should a Car Battery Take to Charge?
                         </h2>
                     </div>
@@ -279,7 +279,7 @@ export default function BatteryChargingGuide() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <AlertTriangle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                                 Signs Your Battery Needs Attention
                             </h2>
                         </div>
@@ -310,16 +310,16 @@ export default function BatteryChargingGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panelbeaters and Mechanical performs battery testing, charging, and replacements for all vehicle makes and models. We inspect the charging system, look for hidden faults, and install the correct battery according to your vehicle's requirements.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your car is struggling to start or you suspect a battery issue, our team is ready to assist.
                     </p>
-                    <button className="relative group bg-green-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-green-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-green-600">BOOK A BATTERY CHECK</span>
                     </button>

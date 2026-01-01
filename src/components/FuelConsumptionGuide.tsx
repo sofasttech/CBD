@@ -98,10 +98,10 @@ export default function FuelConsumptionGuide() {
                         <Fuel className="w-8 h-8 text-orange-300" />
                         <p className="text-orange-200 text-sm font-medium uppercase tracking-wide">Efficiency Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Tomorrow'] font-medium uppercase mb-6 text-center">
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
                         Car Using Too Much Fuel?
                     </h1>
-                    <p className="text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed font-mulish font-extralight text-center">
+                    <p className="text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
                         Key Reasons and What To Do
                     </p>
                 </div>
@@ -132,7 +132,7 @@ export default function FuelConsumptionGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-8 text-center">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-8 text-center">
                             Primary Fuel Consumption Factors
                         </h2>
                     </motion.div>
@@ -152,7 +152,7 @@ export default function FuelConsumptionGuide() {
                                         <factor.icon className="w-6 h-6 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-['Tomorrow'] font-medium mb-3 text-gray-900">
+                                        <h3 className="text-xl font-['Poppins'] font-medium mb-3 text-gray-900">
                                             {factor.title}
                                         </h3>
                                         <p className="text-gray-700 leading-relaxed">
@@ -175,7 +175,7 @@ export default function FuelConsumptionGuide() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-8 text-center">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-8 text-center">
                             Additional Contributing Factors
                         </h2>
                     </motion.div>
@@ -190,7 +190,7 @@ export default function FuelConsumptionGuide() {
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
                                 viewport={{ once: true }}
                             >
-                                <h3 className="text-xl font-['Tomorrow'] font-medium mb-3 text-orange-600 flex items-center gap-2">
+                                <h3 className="text-xl font-['Poppins'] font-medium mb-3 text-orange-600 flex items-center gap-2">
                                     <CheckCircle className="w-6 h-6" />
                                     {factor.title}
                                 </h3>
@@ -229,7 +229,7 @@ export default function FuelConsumptionGuide() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-6">
                         <AlertTriangle className="w-8 h-8 text-orange-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             When to Have Your Vehicle Checked
                         </h2>
                     </div>
@@ -259,24 +259,24 @@ export default function FuelConsumptionGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase mb-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-8 text-center">
                         Quick Fuel-Saving Tips
                     </h2>
                     <div className="grid md:grid-cols-3 gap-6">
                         <div className="bg-white bg-opacity-10 backdrop-blur p-6">
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-3">Drive Smoothly</h3>
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Drive Smoothly</h3>
                             <p className="text-orange-100 text-sm">
                                 Gentle acceleration and braking saves fuel and reduces wear on components
                             </p>
                         </div>
                         <div className="bg-white bg-opacity-10 backdrop-blur p-6">
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-3">Regular Maintenance</h3>
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Regular Maintenance</h3>
                             <p className="text-orange-100 text-sm">
                                 Keep filters, plugs, and oil fresh for optimal engine efficiency
                             </p>
                         </div>
                         <div className="bg-white bg-opacity-10 backdrop-blur p-6">
-                            <h3 className="text-xl font-['Tomorrow'] font-medium mb-3">Check Tyres Weekly</h3>
+                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Check Tyres Weekly</h3>
                             <p className="text-orange-100 text-sm">
                                 Proper tyre pressure reduces resistance and improves fuel economy
                             </p>
@@ -294,16 +294,16 @@ export default function FuelConsumptionGuide() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         How We Can Help
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
                         CBD Panel and Paint offers comprehensive mechanical checks, servicing, wheel alignment, and diagnostic services to pinpoint the cause of high fuel consumption. We examine filters, plugs, sensors, tyres, and all systems that impact fuel efficiency. With correct maintenance, your vehicle runs cleaner, smoother, and more economically.
                     </p>
-                    <p className="text-xl text-gray-300 mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your car is using more fuel than normal, our expert team at CBD Panel and Paint is ready to help.
                     </p>
-                    <button className="relative group bg-orange-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg transition">
+                    <button className="relative group bg-orange-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-orange-600">BOOK A FUEL EFFICIENCY CHECK</span>
                     </button>

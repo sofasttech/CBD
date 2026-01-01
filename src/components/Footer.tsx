@@ -1,28 +1,44 @@
-import { Facebook, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
+import { Facebook, Phone, Mail, Clock, ArrowRight, Instagram, Youtube, Linkedin, Video } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
 }
 
 export default function Footer({ scrollToSection }: FooterProps) {
+  const navigate = useNavigate();
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden">
+    <footer id="contact" className="relative bg-black text-white">
+      {/* Wave Separator at top of footer */}
+      <div className="relative w-full overflow-hidden bg-white" style={{ marginTop: '-80px' }}>
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[80px] md:h-[100px]"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+            fill="#111827"
+          />
+        </svg>
+      </div>
+
       {/* Hero CTA Section with Background */}
-      
+
 
       {/* Main Footer Content */}
-      <div className="relative bg-gradient-to-b from-gray-900 to-black border-t border-gray-800">
+      <div className="relative bg-gradient-to-b from-gray-900 to-black" style={{ marginTop: '-1px' }}>
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
             {/* Company Info - Takes 4 columns */}
             <div className="lg:col-span-4">
-              <img 
-                src="/logowithname.png" 
-                alt="CBD Panel and Paint" 
+              <img
+                src="/logowithname.png"
+                alt="CBD Panel and Paint"
                 className="h-28 mb-6 brightness-110"
               />
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Your trusted partner for premium automotive care since establishment. 
+                Your trusted partner for premium automotive care since establishment.
                 Delivering excellence in panel beating and mechanical services with a commitment to quality and customer satisfaction.
               </p>
               <div className="flex gap-3">
@@ -34,6 +50,38 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 >
                   <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-all duration-300"
+                >
+                  <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-black hover:border-black transition-all duration-300"
+                >
+                  <Video className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-red-600 hover:border-red-600 transition-all duration-300"
+                >
+                  <Youtube className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-blue-700 hover:border-blue-700 transition-all duration-300"
+                >
+                  <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
               </div>
             </div>
 
@@ -44,17 +92,26 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-600 to-transparent"></div>
               </h3>
               <ul className="space-y-3">
-                {['Panel Beating', 'Auto Mechanical', 'Car Servicing', 'Tyres & Wheels'].map((service) => (
-                  <li key={service}>
-                    <a
-                      href="#"
-                      className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
-                    >
-                      <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                      {service}
-                    </a>
-                  </li>
-                ))}
+                {['Panel Beating', 'Painting and Refinishing', 'Mechanical', 'WOF and Compliance', 'Caravan and Boat Repair'].map((service) => {
+                  const getOnClick = () => {
+                    if (service === 'Panel Beating') return () => navigate('/panel-beating');
+                    if (service === 'Mechanical') return () => navigate('/panel-beating');
+                    if (service === 'Caravan and Boat Repair') return () => navigate('/caravans-boats');
+                    return () => scrollToSection('services');
+                  };
+                  return (
+                    <li key={service}>
+                      <a
+                        href="#"
+                        onClick={getOnClick()}
+                        className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                      >
+                        <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                        {service}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="lg:col-span-2">
@@ -63,17 +120,46 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-600 to-transparent"></div>
               </h3>
               <ul className="space-y-3">
-                {['About Us', 'Testimonials', 'Blog', 'FAQs'].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
-                    >
-                      <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/our-story')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    Our Story
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/faqs')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/tips-advice')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    Tips and Advice
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/#reviews')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    Testimonials
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -103,7 +189,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Phone</p>
-                    <p className="text-gray-400 text-xs">093091906</p>
+                    <p className="text-gray-400 text-xs">093091906 | 24hr: 0274593411</p>
                   </div>
                 </div>
 
@@ -129,28 +215,28 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 </div>
               </div>
             </div>
+          </div>
         </div>
-      </div>
-      {/* Full-bleed Partners & Copyright (white background) */}
-      <div className="w-full bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="mb-10 text-center">
-            <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
-              Trusted Insurance Partners
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-              <img src="/MTA-logo_480x480.webp" alt="MTA" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
-              <img src="/NZI_logo.svg.png" alt="NZI" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
-              <img src="/Insurance_austr_group_logo15.png" alt="Insurance Australia Group" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
-              <img src="/state-house-and-contents-product_default.webp" alt="State Insurance" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+        {/* Full-bleed Partners & Copyright (white background) */}
+        <div className="w-full bg-white border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="mb-10 text-center">
+              <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
+                Trusted Insurance Partners
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+                <img src="/MTA-logo_480x480.webp" alt="MTA" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+                <img src="/NZI_logo.svg.png" alt="NZI" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+                <img src="/Insurance_austr_group_logo15.png" alt="Insurance Australia Group" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+                <img src="/state-house-and-contents-product_default.webp" alt="State Insurance" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
+              </div>
+            </div>
+            <div className="text-center text-gray-700">
+              <p className="text-sm mb-2">© 2025 CBD Panel and Paint. All rights reserved.</p>
+              <p className="text-xs">Crafted with precision and care for automotive excellence</p>
             </div>
           </div>
-          <div className="text-center text-gray-700">
-            <p className="text-sm mb-2">© 2025 CBD Panel and Paint. All rights reserved.</p>
-            <p className="text-xs">Crafted with precision and care for automotive excellence</p>
-          </div>
         </div>
-      </div>
       </div>
     </footer>
   );

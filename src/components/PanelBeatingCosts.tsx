@@ -140,10 +140,10 @@ export default function PanelBeatingCosts() {
                         <DollarSign className="w-8 h-8 text-blue-400" />
                         <p className="text-blue-400 text-sm font-medium uppercase tracking-wide">Pricing Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
                         Panel Beating Repair <span className="text-blue-400">Costs Explained</span>
                     </h1>
-                    <p className="text-xl text-gray-300 leading-relaxed font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed font-['Poppins'] font-extralight">
                         From Small Dents to Major Damage
                     </p>
                 </div>
@@ -177,7 +177,7 @@ export default function PanelBeatingCosts() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-4 text-center">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-4 text-center">
                             What Affects the Cost of Panel Beating?
                         </h2>
                     </motion.div>
@@ -199,7 +199,7 @@ export default function PanelBeatingCosts() {
                                             <factor.icon className={`w-6 h-6 ${colorClasses.icon}`} />
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-2xl font-['Tomorrow'] font-medium mb-2 text-gray-900">
+                                            <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">
                                                 {index + 1}. {factor.title}
                                             </h3>
                                             <p className="text-gray-700 leading-relaxed mb-4">
@@ -247,7 +247,7 @@ export default function PanelBeatingCosts() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <Wrench className="w-8 h-8 text-blue-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             How to Get an Accurate Quote
                         </h2>
                     </div>
@@ -279,7 +279,7 @@ export default function PanelBeatingCosts() {
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <Shield className="w-8 h-8 text-red-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Tomorrow'] font-medium uppercase">
+                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
                             Why Choosing Quality Matters
                         </h2>
                     </div>
@@ -310,7 +310,7 @@ export default function PanelBeatingCosts() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                             How We Can Help
                         </h2>
                         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -345,20 +345,20 @@ export default function PanelBeatingCosts() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Tomorrow'] font-medium uppercase mb-6">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
                         Get Your Quote Today
                     </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-mulish font-extralight">
+                    <p className="text-xl text-gray-300 leading-relaxed mb-8 font-['Poppins'] font-extralight">
                         We take the time to explain repair options, costs, and timelines so you know exactly what you're getting. Whether you are restoring a car after a collision or simply fixing a scrape that ruins the vehicle's appearance, we ensure a clean, strong finish that lasts.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                        <a href="tel:093091906" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 font-['Tomorrow'] font-medium text-lg hover:bg-blue-700 transition">
+                        <a href="tel:093091906" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-blue-700 transition">
                             <Phone className="w-5 h-5" />
                             <span>09 309 1906</span>
                         </a>
                         <button 
                             onClick={() => window.location.href = '/contact'}
-                            className="relative group bg-white text-black px-8 py-4 font-['Tomorrow'] font-medium text-lg transition"
+                            className="relative group bg-white text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition"
                         >
                             <span className="absolute left-0 top-0 h-full bg-blue-600 w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10 group-hover:text-white">CONTACT US ONLINE</span>
