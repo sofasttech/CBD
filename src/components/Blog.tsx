@@ -31,7 +31,7 @@ export default function Blog() {
   ];
 
   return (
-    <section id="reviews" className="py-6 bg-white text-black">
+    <section id="blog" className="py-6 bg-white text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-16">
           <div>

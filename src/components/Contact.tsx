@@ -66,7 +66,7 @@ export default function Contact() {
           </h1>
           <p className="text-xl md:text-2xl font-bold mb-6" style={{ color: '#0C55AC' }}>Need assistance with panel repairs or mechanical servicing? We're just a call away!</p>
           <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-            At <strong>Mt Roskill Collision Centre & Roskill Auto Mechanical</strong>, we're dedicated to providing fast, efficient, and reliable service for all your vehicle needs. Whether you're seeking panel repairs, mechanical diagnostics, or routine servicing, our experienced team is here to get you back on the road quickly and safely.
+            At <strong>CBD Panel and Paint Limited</strong>, we're dedicated to providing fast, efficient, and reliable service for all your vehicle needs. Whether you're seeking panel repairs, mechanical diagnostics, or routine servicing, our experienced team is here to get you back on the road quickly and safely.
           </p>
         </div>
       </motion.section>
@@ -102,6 +102,10 @@ export default function Contact() {
                     <Phone className="w-5 h-5" style={{ color: '#14A0B5' }} />
                     <span className="font-bold" style={{ color: '#1F366A' }}>+64 9-309 1906</span>
                   </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5" style={{ color: '#14A0B5' }} />
+                    <span className="font-bold" style={{ color: '#1F366A' }}>0274593411 (24 hr service)</span>
+                  </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 mt-1" style={{ color: '#14A0B5' }} />
                     <span style={{ color: '#1F366A' }}>390 Great North Road, Grey Lynn, Auckland, New Zealand</span>
@@ -118,6 +122,10 @@ export default function Contact() {
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5" style={{ color: '#047342' }} />
                     <span className="font-bold" style={{ color: '#1F366A' }}>09 242 1870</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5" style={{ color: '#047342' }} />
+                    <span className="font-bold" style={{ color: '#1F366A' }}>0274593411 (24 hr service)</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 mt-1" style={{ color: '#047342' }} />

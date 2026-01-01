@@ -1,10 +1,12 @@
-import { Facebook, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
+import { Facebook, Phone, Mail, Clock, ArrowRight, Instagram, Youtube, Linkedin, Video } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
 }
 
 export default function Footer({ scrollToSection }: FooterProps) {
+  const navigate = useNavigate();
   return (
     <footer id="contact" className="relative bg-black text-white">
       {/* Wave Separator at top of footer */}
@@ -48,6 +50,38 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 >
                   <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-all duration-300"
+                >
+                  <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-black hover:border-black transition-all duration-300"
+                >
+                  <Video className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-red-600 hover:border-red-600 transition-all duration-300"
+                >
+                  <Youtube className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-11 h-11 rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center hover:bg-blue-700 hover:border-blue-700 transition-all duration-300"
+                >
+                  <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
               </div>
             </div>
 
@@ -58,17 +92,26 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-600 to-transparent"></div>
               </h3>
               <ul className="space-y-3">
-                {['Panel Beating', 'Auto Mechanical', 'Car Servicing', 'Tyres & Wheels'].map((service) => (
-                  <li key={service}>
-                    <a
-                      href="#"
-                      className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
-                    >
-                      <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                      {service}
-                    </a>
-                  </li>
-                ))}
+                {['Panel Beating', 'Painting and Refinishing', 'Mechanical', 'WOF and Compliance', 'Caravan and Boat Repair'].map((service) => {
+                  const getOnClick = () => {
+                    if (service === 'Panel Beating') return () => navigate('/panel-beating');
+                    if (service === 'Mechanical') return () => navigate('/panel-beating');
+                    if (service === 'Caravan and Boat Repair') return () => navigate('/caravans-boats');
+                    return () => scrollToSection('services');
+                  };
+                  return (
+                    <li key={service}>
+                      <a
+                        href="#"
+                        onClick={getOnClick()}
+                        className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                      >
+                        <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                        {service}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="lg:col-span-2">
@@ -77,17 +120,46 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-600 to-transparent"></div>
               </h3>
               <ul className="space-y-3">
-                {['About Us', 'Testimonials', 'Blog', 'FAQs'].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
-                    >
-                      <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/our-story')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    Our Story
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/faqs')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/tips-advice')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    Tips and Advice
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => navigate('/#reviews')}
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    Testimonials
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -117,7 +189,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Phone</p>
-                    <p className="text-gray-400 text-xs">093091906</p>
+                    <p className="text-gray-400 text-xs">093091906 | 24hr: 0274593411</p>
                   </div>
                 </div>
 

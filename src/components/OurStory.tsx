@@ -108,18 +108,18 @@ export default function OurStory() {
                         </h2>
                     </div>
 
-                    <div className="relative h-[600px] w-full flex items-center justify-center">
+                    <div className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
                         {/* Scattered Photos */}
                         {[
-                            { src: "/shop.webp", rotate: -6, x: -200, y: -50, caption: "The Early Days" },
-                            { src: "/panel-beatt.jpg", rotate: 5, x: 200, y: -80, caption: "Master Craftsmen" },
-                            { src: "/car-tune-up.jpg", rotate: -3, x: -150, y: 150, caption: "Precision Tuning" },
-                            { src: "/headlight.webp", rotate: 8, x: 180, y: 120, caption: "Attention to Detail" },
-                            { src: "/shop.webp", rotate: 0, x: 0, y: 0, caption: "Our Workshop", scale: 1.2, z: 10 }
+                            { src: "/shop.webp", rotate: -6, x: -100, y: -25, caption: "The Early Days" },
+                            { src: "/panel-beatt.jpg", rotate: 5, x: 100, y: -40, caption: "Master Craftsmen" },
+                            { src: "/car-tune-up.jpg", rotate: -3, x: -75, y: 75, caption: "Precision Tuning" },
+                            { src: "/headlight.webp", rotate: 8, x: 90, y: 60, caption: "Attention to Detail" },
+                            { src: "/shop.webp", rotate: 0, x: 0, y: 0, caption: "Our Workshop", scale: 1.1, z: 10 }
                         ].map((photo, index) => (
                             <motion.div
                                 key={index}
-                                className="absolute bg-white p-4 shadow-xl rounded-sm cursor-pointer"
+                                className="absolute bg-white p-2 md:p-4 shadow-xl rounded-sm cursor-pointer"
                                 style={{ zIndex: photo.z || 1 }}
                                 initial={{ opacity: 0, scale: 0 }}
                                 whileInView={{
@@ -130,20 +130,20 @@ export default function OurStory() {
                                     y: photo.y
                                 }}
                                 whileHover={{
-                                    scale: 1.3,
+                                    scale: 1.2,
                                     zIndex: 50,
                                     rotate: 0,
                                     transition: { duration: 0.3 }
                                 }}
                                 drag
-                                dragConstraints={{ left: -300, right: 300, top: -200, bottom: 200 }}
+                                dragConstraints={{ left: -150, right: 150, top: -100, bottom: 100 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="w-64 h-48 overflow-hidden mb-3 bg-gray-200">
+                                <div className="w-32 h-24 md:w-64 md:h-48 overflow-hidden mb-2 md:mb-3 bg-gray-200">
                                     <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover pointer-events-none" />
                                 </div>
-                                <p className="font-['Caveat'] text-xl text-gray-600 text-center font-handwriting">{photo.caption}</p>
+                                <p className="font-['Caveat'] text-lg md:text-xl text-gray-600 text-center font-handwriting">{photo.caption}</p>
                             </motion.div>
                         ))}
                     </div>

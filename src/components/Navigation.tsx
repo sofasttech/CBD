@@ -49,7 +49,7 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
           {/* Contact Info & CTA */}
           <div className="flex items-center justify-end gap-3 flex-shrink-0 min-w-fit">
             <div className="text-xs hidden xl:block text-right whitespace-nowrap">
-              <div>093091906</div>
+              <div>093091906 | 24hr: 0274593411</div>
               <div>info@cbdpanel.co.nz</div>
             </div>
             <Link to="/contact" className="bg-blue-600 text-white px-4 lg:px-6 py-2 text-sm font-medium hover:bg-CGreen transition whitespace-nowrap">
@@ -104,7 +104,7 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
                   <div className="font-medium">Mon - Fri: 7:30 AM - 5:30 PM</div>
                 </div>
                 <div className="text-sm mb-4">
-                  <div>093091906 </div>
+                  <div>093091906 | 24hr: 0274593411</div>
                   <div>info@cbdpanel.co.nz		</div>
                 </div>
                 <Link to="/contact" className="w-full bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition block text-center" onClick={() => setMenuOpen(false)}>

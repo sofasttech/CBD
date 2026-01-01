@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { motion, useInView, PanInfo } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Blog from './Blog';
@@ -81,6 +82,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: typeof accordio
 
 // --- About Accordion Section Component ---
 function AboutAccordionSection() {
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleItemHover = (index: number) => {
@@ -126,10 +128,7 @@ function AboutAccordionSection() {
             </div>
 
             <div className="mt-8">
-              <button onClick={() => {
-                const element = document.getElementById('about');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
+              <button onClick={() => navigate('/our-story')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
                 <span className="absolute left-0 top-0 h-full bg-CGreen w-0 group-hover:w-full transition-all duration-300"></span>
                 <span className="relative z-10">Learn More</span>
               </button>
@@ -281,6 +280,7 @@ function TimelineDemo() {
 }
 
 export default function Homepage() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const currentImage = 0;
   const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
@@ -332,7 +332,6 @@ export default function Homepage() {
       s.id = 'shapo-embed-js';
       s.type = 'text/javascript';
       s.src = 'https://cdn.shapo.io/js/embed.js';
-      s.defer = true;
       document.body.appendChild(s);
     }
   }, []);
@@ -355,30 +354,33 @@ export default function Homepage() {
           {/* Left side text */}
           <div>
             <p className="text-blue-600 text-sm font-medium mb-2">Car Troubles?</p>
-            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium text-blue-600 mb-4">Automotive Repair Services</h1>
-            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-6">CBD Panel and Paint Limited is a Grey Lynn full-service auto repair centre handling panel beating, spray painting, mechanical servicing, WOF inspections, towing and insurance-approved repairs. We manage each job from assessment to completion to keep your vehicle safe and road-ready.</p>
+            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium text-blue-600 mb-4">We’ll power you back on the road</h1>
+            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-6">CBD Panel and Paint Limited is a full-service auto repair centre in Grey Lynn, offering panel beating, spray painting, mechanical servicing, WOF inspections, towing, and insurance-approved repairs. We oversee every job from initial assessment through to completion, ensuring your vehicle is restored safely and kept road-ready.</p>
             <div className="mb-6 grid grid-cols-2 gap-2">
               <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">✓</span> Fast service
+                <span className="text-green-600">•</span> Insurance Approved
               </p>
               <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">✓</span> Fair price
+                <span className="text-green-600">•</span> Fast service
               </p>
               <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">✓</span> Family-run
+                <span className="text-green-600">•</span> Fair price
               </p>
               <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">✓</span> Expert workmanship
+                <span className="text-green-600">•</span> Expert workmanship
+              </p>
+              <p className="flex items-center gap-2 text-gray-700">
+                <span className="text-green-600">•</span> Family-run
               </p>
               <p className="flex items-center gap-2 text-gray-700 col-span-2 md:col-span-1">
-                <span className="text-green-600">✓</span> All services under one roof
+                <span className="text-green-600">•</span> All services under one roof
               </p>
             </div>
             <div className="flex gap-4">
-              <button className="bg-CDarkBlue text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-gray-800 transition">
+              <button onClick={() => navigate('/panel-beating')} className="bg-CDarkBlue text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-gray-800 transition">
                 View All Services
               </button>
-              <button onClick={() => scrollToSection('book-appointment')} className="relative bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition group">
+              <button onClick={() => navigate('/contact')} className="relative bg-blue-600 text-white px-4 py-2 md:px-8 md:py-3 font-medium transition group">
                 <span className="absolute left-0 top-0 h-full bg-CGreen w-0 group-hover:w-full transition-all duration-300"></span>
                 <span className="relative z-10">Appointment</span>
               </button>
@@ -546,7 +548,7 @@ export default function Homepage() {
               </p>
             </div>
 
-            <button onClick={() => scrollToSection('about')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
+            <button onClick={() => navigate('/our-story')} className="relative bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2 group">
               <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
               <span className="relative z-10">Learn More</span>
             </button>
