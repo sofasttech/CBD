@@ -49,7 +49,7 @@ export default function OurStory() {
                         transition={{ delay: 0.2, duration: 0.8 }}
                     >
                         <p className="text-CPurple text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6">
-                            Est. 1990 • Auckland, NZ
+                            Est. 1995 • Auckland, NZ
                         </p>
                         <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight">
                             <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-CPink to-CPurple">Perfection</span>
@@ -506,7 +506,7 @@ export default function OurStory() {
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
                             <p className="text-white text-lg md:text-xl font-['Poppins'] font-medium text-center">
-                                Your trusted team of automotive experts since 1990
+                                Your trusted team of automotive experts since 1995
                             </p>
                         </div>
                     </div>
