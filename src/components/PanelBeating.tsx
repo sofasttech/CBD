@@ -12,6 +12,7 @@ import { Spotlight, SpotLightItem } from './ui/spotlight';
 export default function PanelBeating() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [hoveredService, setHoveredService] = useState<number | null>(null);
+    const [activeModal, setActiveModal] = useState<number | null>(null);
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
@@ -25,6 +26,18 @@ export default function PanelBeating() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    // Prevent background scroll when modal is open
+    useEffect(() => {
+        if (activeModal !== null) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [activeModal]);
 
     // Inject Shapo widget script dynamically
     // Force reload/re-execution of the script to ensure it finds the new DOM element on route changes
@@ -56,107 +69,127 @@ export default function PanelBeating() {
             icon: <Shield className="w-8 h-8" />,
             shortDesc: 'Comprehensive collision repair to restore your vehicle to pre-accident condition.',
             fullDesc: 'Our accident repair service handles everything from minor fender benders to major collisions. We work directly with insurance companies, provide detailed quotes, and use genuine or quality aftermarket parts. Our computerized frame alignment ensures structural integrity is fully restored.',
-            details: ['Insurance Claims Handling', 'Frame Alignment', 'Genuine Parts', 'Structural Integrity'],
-            image: '/panel_beating_hero_1764692687494.png'
+            details: ['Structural and chassis realignment', 'Panel straightening and replacement', 'Bumper, guard, door, and side-impact repairs', 'Sensor and safety system checks and recalibration', 'High-quality paint refinishing and blending', 'Insurance-approved repair processes'],
+            image: '/panel_beating_hero_1764692687494.png',
+            learnMore: 'Our accident repair service is designed to restore your vehicle safely, accurately, and efficiently after any type of collision. From minor fender benders to major structural damage, our team has the expertise and equipment to bring your car back to its best condition.\n\nWe work directly with insurance companies to streamline the process and reduce stress for our customers. Our team provides clear, detailed quotes and explains repair options so you understand exactly what your vehicle needs. Depending on the job, we use either genuine manufacturer parts or high-quality aftermarket components that meet strict safety and performance standards.\n\nTo ensure your vehicle\'s safety is never compromised, we use computerised frame and chassis alignment systems. This technology allows us to measure and correct even the slightest structural deviations, ensuring the vehicle is restored to factory specifications. Our certified panel beaters then carry out precise body repairs, followed by professional refinishing to achieve a seamless paint match.\n\nNo matter the extent of the damage, we focus on quality, safety, and long-lasting results. Your vehicle will leave our workshop looking great and performing the way it should, giving you confidence every time you get back on the road.'
         },
         {
             title: 'Bumper Repair',
             icon: <Wrench className="w-8 h-8" />,
             shortDesc: 'Expert repair and replacement of damaged bumpers for all vehicle makes.',
-            fullDesc: 'Whether your bumper has minor scratches, dents, or requires complete replacement, we provide expert service. We repair plastic bumpers using specialized welding techniques and can perfectly match paint finishes. Same-day service available for minor repairs.',
-            details: ['Plastic Welding', 'Perfect Paint Match', 'Same-Day Service', 'All Makes & Models'],
-            image: '/car-pieces.png'
+            fullDesc: 'Whether your bumper has minor scratches, dents, or requires complete replacement, we provide expert service. We repair plastic bumpers using specialised welding techniques and can perfectly match paint finishes. Same-day service available for minor repairs.',
+            details: ['Scratch, Dent, and Scuff Removal', 'Plastic Bumper Welding and Reshaping', 'Corner and Split Repairs', 'Full Bumper Replacement', 'High-Quality Paint Refinishing', 'Same-Day Turnaround Available'],
+            image: '/car-pieces.png',
+            learnMore: 'Your vehicle\'s bumper is one of the most common areas to suffer damage, whether from a small parking scrape or a more noticeable impact. Our bumper repair service covers everything from light cosmetic touch-ups to full bumper replacement, ensuring your vehicle looks clean, sharp, and professionally restored.\n\nWe handle all types of bumper damage, including scratches, dents, cracks, scuffs, and paint imperfections. For plastic bumpers, our team uses specialised plastic welding and reshaping techniques to restore the original form without compromising strength. This approach often saves time and cost compared to full replacement.\n\nOnce the bumper is structurally sound, our painters complete the job with precise colour matching using advanced paint-matching technology. This allows us to blend new paint seamlessly with your existing finish, ensuring the repaired area is virtually undetectable.\n\nWhether you need a quick tidy-up or a complete bumper restoration, we focus on delivering a smooth, strong, and flawless finish that keeps your vehicle looking its best.'
         },
         {
             title: 'Chassis & Structural Repair',
             icon: <Settings className="w-8 h-8" />,
             shortDesc: 'Precision structural repairs using advanced frame alignment technology.',
             fullDesc: 'Structural damage compromises vehicle safety. Our state-of-the-art frame straightening equipment and laser measuring systems ensure your vehicle\'s chassis is restored to exact factory specifications. We handle unibody and frame-on-frame construction.',
-            details: ['Laser Measuring', 'Frame Straightening', 'Factory Specs', 'Safety Certified'],
-            image: '/panel_beating_hero_1764692687494.png'
+            details: ['Laser Measuring Technology', 'Computerised Frame Straightening', 'Unibody and Frame-on-Frame Repair', 'Suspension Mounting Point Verification', 'Post-Repair Alignment Checks', 'Safety and Body Fitment Verification'],
+            image: '/panel_beating_hero_1764692687494.png',
+            learnMore: 'Structural damage affects far more than a vehicle\'s appearance — it directly impacts safety, stability, and long-term performance. Our chassis and structural repair service is designed to restore your vehicle\'s strength and alignment with absolute accuracy after an accident.\n\nWe use state-of-the-art frame straightening equipment and advanced laser measuring systems to assess and realign the chassis to exact factory specifications. These tools allow us to detect even the smallest deviations that may not be visible to the eye but can significantly affect safety systems, wheel alignment, panel fitment, and overall drivability.\n\nOur technicians are trained to work with both unibody and frame-on-frame vehicle constructions, ensuring the right method is applied for each repair. Whether your vehicle has sustained front-end, side-impact, rear, or underbody structural damage, we follow strict repair procedures to return its integrity and strength.\n\nOnce the structural work is complete, we coordinate with our panel, painting, and mechanical teams to ensure the vehicle is fully restored in terms of appearance, performance, and safety.\n\nWhen your vehicle\'s structure is compromised, precision repair is critical. Our goal is to ensure your car is solid, safe, and ready for the road with complete confidence.'
         },
         {
             title: 'Curb Rash Repair',
             icon: <Disc className="w-8 h-8" />,
             shortDesc: 'Restore damaged alloy wheels to showroom condition.',
-            fullDesc: 'Curb damage doesn\'t just look bad—it can affect wheel balance and tire wear. We repair gouges, scratches, and dents in alloy wheels, then refinish them to match the original appearance. Available in powder coat or diamond cut finishes.',
-            details: ['Alloy Wheel Repair', 'Powder Coating', 'Diamond Cut Finish', 'Wheel Balance'],
-            image: '/wheel_repair_1764693107551.png'
+            fullDesc: 'Curb damage doesn\'t just look bad — it can affect wheel balance and tyre wear. We repair gouges, scratches, and dents in alloy wheels, then refinish them to match the original appearance. Available in powder coat or diamond cut finishes.',
+            details: ['Scratch and Gouge Removal', 'Wheel Edge Reshaping', 'Cosmetic Restoration for Alloy Wheels', 'Colour Matching to Original Finish', 'Powder Coating or Diamond-Cut Options', 'Final Balancing for Smooth Driving'],
+            image: '/wheel_repair_1764693107551.png',
+            learnMore: 'Curb rash may seem like a minor cosmetic issue, but damage to your wheels can affect more than just appearance. Scratches, gouges, and edge damage can lead to wheel imbalance, uneven tyre wear, vibration while driving, and long-term weakening of the rim. Our curb rash repair service restores both the look and the performance of your alloy wheels with professional precision.\n\nWe repair all types of curb damage, including scuffs, dents, deep scratches, chipped edges, and minor deformation. Our technicians reshape the damaged area, smooth imperfections, and rebuild the wheel\'s surface to ensure proper balance and structural integrity. Once the wheel is restored, we refinish it to match the original style and colour, creating a seamless factory-quality appearance.\n\nYou can choose from powder coat, standard painted, or diamond-cut finishes, depending on your wheel type and preferred look. Each option is applied using controlled processes that ensure durability, shine, and long-lasting protection.\n\nWhether your wheel has suffered a light scuff or a deeper scrape, we bring it back to a clean, sharp finish while maintaining safe performance. Your wheels will look new again, and your vehicle will drive better as well.'
         },
         {
             title: 'Dent Repair',
             icon: <Hammer className="w-8 h-8" />,
             shortDesc: 'Paintless dent removal and traditional dent repair services.',
-            fullDesc: 'Minor dents and dings can often be repaired without repainting using our paintless dent removal (PDR) technique. This cost-effective method maintains your original paint finish. For larger dents, we provide traditional panel beating and refinishing.',
-            details: ['Paintless Dent Removal', 'No Repainting', 'Panel Beating', 'Cost-Effective'],
-            image: '/dent_repair_1764693039882.png'
+            fullDesc: 'Minor dents and dings can often be repaired without repainting using our paintless dent removal (PDR) technique. This cost-effective method maintains your original paint finish. For larger dents, we offer traditional panel beating and refinishing services.',
+            details: ['Paintless Dent Removal (PDR)', 'Traditional Panel Beating', 'Colour-Matched Refinishing', 'Hail Damage Repair', 'Car-Park Dent and Door-Ding Repair', 'Panel Reshaping and Surface Correction'],
+            image: '/dent_repair_1764693039882.png',
+            learnMore: 'Even small dents and dings can take away from the appearance of your vehicle. Our dent repair service is designed to restore your panels quickly, cleanly, and with the right method for each type of damage.\n\nFor minor dents, we use Paintless Dent Removal (PDR), a specialised technique that allows our technicians to massage the dent out from behind the panel without disturbing the paint. This method is ideal for car-park dents, hail damage, and small impacts where the paint surface is still intact. PDR is fast, cost-effective, and maintains your original factory finish, making it one of the best solutions for light cosmetic damage.\n\nWhen dents are deeper, creased, or have cracked paint, our team offers traditional panel beating and refinishing. This involves reshaping the metal, preparing the surface, and repainting the affected area using high-quality colour-matching systems. We ensure that the new finish blends seamlessly with the surrounding panels for a smooth, unified result.\n\nWhether the damage is small or more noticeable, we choose the right approach to restore your vehicle\'s appearance and value. Your car is returned looking smooth, clean, and professionally finished.'
         },
         {
             title: 'Exterior Polishing',
             icon: <Sparkles className="w-8 h-8" />,
             shortDesc: 'Professional paint correction and polishing for a showroom shine.',
-            fullDesc: 'Over time, vehicle paint develops swirl marks, oxidation, and fine scratches. Our multi-stage polishing process removes imperfections and restores depth and clarity to your paint. We offer various levels of correction from light enhancement to full paint restoration.',
-            details: ['Paint Correction', 'Swirl Mark Removal', 'Multi-Stage Process', 'Showroom Finish'],
-            image: '/car-polishing-tray.png'
+            fullDesc: 'Over time, vehicle paint develops swirl marks, oxidation, and fine scratches. Our multi-stage polishing process removes imperfections and restores depth and clarity to your paint. We offer a range of correction services, from light enhancement to full paint restoration.',
+            details: ['Swirl Mark and Oxidation Removal', 'Multi-Stage Machine Polishing', 'Paint Decontamination', 'Gloss Enhancement', 'Heavy Correction for Ageing Paint', 'Optional Wax, Sealant, or Ceramic Protection'],
+            image: '/car-polishing-tray.png',
+            learnMore: 'Your vehicle\'s paint is constantly exposed to the sun, weather, dust, and everyday wear. Over time, this leads to swirl marks, dull patches, oxidation, and fine scratches that reduce the shine and clarity of your paint. Our exterior polishing service is designed to rejuvenate your vehicle\'s finish and restore a deep, glossy appearance.\n\nWe use a multi-stage polishing process that safely removes surface imperfections while enhancing the overall condition of the paint. Our technicians carefully assess the paintwork before selecting the appropriate polishing compounds, pads, and machine techniques. This ensures the best possible result without compromising the integrity of the clear coat.\n\nWhether your car needs a light enhancement or a full paint correction, we tailor the service to suit the level of restoration required.\n\nThe result is a smoother, brighter, and more polished surface that not only looks great but also helps protect your paint from future wear. Whether preparing your vehicle for sale or simply wanting it to look its best, our polishing service brings out a crisp, like-new shine.'
         },
         {
             title: 'Headlight Polishing',
             icon: <Zap className="w-8 h-8" />,
             shortDesc: 'Restore cloudy, yellowed headlights for improved visibility and appearance.',
-            fullDesc: 'Oxidized headlights reduce nighttime visibility and diminish your vehicle\'s appearance. Our restoration process removes the damaged outer layer, polishes the lens to clarity, and applies a UV-protective coating. Results look like new headlights at a fraction of the replacement cost.',
-            details: ['UV Protection', 'Clarity Restoration', 'Cost-Effective', 'Improved Visibility'],
-            image: '/headlight.webp'
+            fullDesc: 'Oxidised headlights reduce nighttime visibility and diminish your vehicle\'s appearance. Our restoration process involves removing the damaged outer layer, polishing the lens to a high level of clarity, and applying a UV-protective coating. Results look like new headlights at a fraction of the replacement cost.',
+            details: ['Oxidation and Yellowing Removal', 'Multi-Stage Sanding and Polishing', 'Brightness and Beam Restoration', 'UV-Protective Sealant Application', 'Cost-Effective Alternative to Replacement', 'Brand-New Appearance'],
+            image: '/headlight.webp',
+            learnMore: 'Cloudy or oxidised headlights do more than affect the look of your vehicle — they significantly reduce nighttime visibility and compromise safety. Sun exposure, road debris, and ageing cause the outer layer of the headlight lens to become dull, yellowed, or hazy. Our headlight polishing service restores clarity, brightness, and a clean, modern appearance without the cost of replacing the entire unit.\n\nWe use a professional multi-step restoration process that carefully removes the damaged outer layer, smooths the lens, and polishes it to a clear finish. This restores sharp light output and enhances visibility, both in terms of distance and clarity, on the road.\n\nTo ensure long-lasting results, we apply a UV-protective coating that shields the lens from future sun damage and slows down the oxidation process.\n\nClear, bright headlights are essential for safety and appearance. Our restoration service brings your headlights back to life, improving visibility, enhancing your vehicle\'s look, and saving you money compared to full replacement.'
         },
         {
             title: 'Paint & Refinishing',
             icon: <Palette className="w-8 h-8" />,
-            shortDesc: 'Expert automotive painting with computerized color matching.',
-            fullDesc: 'From single panel refinishing to complete resprays, our modern paint booth and computerized color matching system ensures perfect results. We use premium automotive paints with factory-spec clear coats for lasting durability and gloss. Waterborne paint options available.',
-            details: ['Color Matching', 'Modern Paint Booth', 'Premium Paints', 'Factory Spec Clear Coat'],
-            image: '/paint_booth_1764692971281.png'
+            shortDesc: 'Expert automotive painting with computerised colour matching.',
+            fullDesc: 'From single panel refinishing to complete resprays, our modern paint booth and computerised colour matching system ensure perfect results. We use premium automotive paints with factory-spec clear coats for lasting durability and gloss. Waterborne paint options are available.',
+            details: ['Single-Panel Repainting and Blending', 'Full Vehicle Resprays', 'Computerised Colour Matching', 'High-Quality Base and Clear Coat', 'Waterborne Paint Options', 'Final Polishing for Smooth Finish'],
+            image: '/paint_booth_1764692971281.png',
+            learnMore: 'A flawless paint finish brings your vehicle back to life, whether you\'re refreshing a single panel or completing a full respray. Our paint and refinishing service combines skilled craftsmanship with modern technology to deliver smooth, accurate, and long-lasting results.\n\nWe operate a fully equipped modern paint booth designed to keep dust, moisture, and contaminants away from your vehicle during the painting process. This controlled environment, combined with our computerised colour-matching system, allows us to match your original paint with exceptional accuracy, ensuring repaired panels blend seamlessly with the rest of the car.\n\nWe use premium automotive paints and factory-spec clear coats that provide strong protection against UV rays, weather, and everyday wear. These products are chosen for their durability, gloss retention, and ability to maintain a fresh, high-quality finish over time. For customers who prefer environmentally friendly options, we also offer waterborne paint systems that meet modern standards without compromising on finish quality.\n\nWhether you\'re repairing accident damage, refreshing an ageing finish, or changing the look of your car, our team delivers a clean, durable, showroom-quality result every time.'
         },
         {
             title: 'Panel Repair',
             icon: <ClipboardList className="w-8 h-8" />,
             shortDesc: 'Skilled repair or replacement of body panels for all vehicle types.',
-            fullDesc: 'Damaged panels are carefully assessed to determine if repair or replacement is most cost-effective. Our craftsmen can reshape steel and aluminum panels back to original contours. When replacement is necessary, we source high-quality parts and ensure perfect fit and finish.',
-            details: ['Steel & Aluminum', 'Perfect Fit', 'Quality Parts', 'Expert Craftsmen'],
-            image: '/panel-beatt.jpg'
+            fullDesc: 'Damaged panels are carefully assessed to determine whether repair or replacement is the most cost-effective option. Our craftsmen can reshape steel and aluminium panels back to their original contours. When replacement is necessary, we source high-quality parts and ensure a perfect fit and finish.',
+            details: ['Repair vs Replacement Assessment', 'Steel and Aluminium Panel Reshaping', 'Dent Removal and Surface Correction', 'Quality Replacement Panels', 'Precision Fitting and Alignment', 'Professional Refinishing and Paint Blending'],
+            image: '/panel-beatt.jpg',
+            learnMore: 'When a vehicle panel is damaged, it needs precise attention to restore both appearance and safety. Our panel repair service begins with a thorough assessment to determine whether repairing or replacing the panel is the most practical and cost-effective option. We always choose the approach that offers the best value without compromising strength, alignment, or finish.\n\nOur skilled technicians specialise in reshaping both steel and aluminium panels, using advanced tools and proven techniques to return each panel to its original contours. We carefully remove dents, correct distortions, and restore smooth surfaces before preparing the panel for refinishing. This craftsmanship allows many panels to be repaired rather than replaced, saving time and cost while maintaining factory integrity.\n\nWhen a panel is too damaged or structurally compromised to repair, we source high-quality new or OEM-equivalent replacement parts. Every replacement panel is fitted with precision, ensuring correct alignment, smooth gaps, and a perfect match with surrounding bodywork. Once installed, the panel is refinished using our colour-matching technology for a seamless result.\n\nRegardless of the level of damage, our goal is to restore your vehicle\'s panels to a clean, accurate, and factory-quality finish that enhances both its appearance and value.'
         },
         {
             title: 'Windscreen Removal & Installation',
             icon: <Activity className="w-8 h-8" />,
             shortDesc: 'Professional windscreen replacement with proper adhesive curing.',
-            fullDesc: 'Windscreen replacement requires precision and proper technique. We use OEM-quality glass and adhesives, follow manufacturer-specified curing times, and recalibrate advanced driver assistance systems (ADAS) if equipped. Mobile service available for insurance claims.',
-            details: ['OEM Quality Glass', 'ADAS Calibration', 'Mobile Service', 'Insurance Claims'],
-            image: '/windscreen_repair_1764693203572.png'
+            fullDesc: 'Windscreen replacement requires precision and proper technique. We use OEM-quality glass and adhesives, follow the manufacturer-specified curing times, and recalibrate advanced driver assistance systems (ADAS) if equipped. Mobile service available for insurance claims.',
+            details: ['OEM-Quality Windscreen Replacement', 'Manufacturer-Specified Curing Times', 'Full ADAS Recalibration', 'Weatherproof Sealing', 'Mobile Service Available', 'Insurance Claim Support'],
+            image: '/windscreen_repair_1764693203572.png',
+            learnMore: 'Your windscreen is a critical safety component of your vehicle, contributing to structural strength, visibility, and the proper operation of modern safety systems. Proper removal and installation are essential to ensure long-lasting performance and compliance with safety standards. Our windscreen service combines precision workmanship, high-quality materials, and strict adherence to manufacturer guidelines to protect both you and your vehicle.\n\nWe supply and install OEM-quality windscreens, ensuring the glass meets the same safety, clarity, and durability standards as the original. Our technicians use premium automotive adhesives applied with exacting technique, followed by manufacturer-specified curing times to guarantee secure bonding. This ensures the windscreen performs correctly in all conditions, including during airbag deployment and when providing structural support during a collision.\n\nFor vehicles equipped with Advanced Driver Assistance Systems (ADAS) — such as lane-departure warning, forward collision alerts, and rain/light sensors — accurate recalibration is essential after windscreen replacement. We perform a full recalibration using specialised equipment to restore sensor accuracy and ensure your safety features function as intended.\n\nWe also offer a mobile windscreen replacement service, making the process more convenient and helping customers complete repairs quickly for insurance claims. Our team can liaise directly with your insurance provider, simplifying paperwork and ensuring the job proceeds smoothly.\n\nWhether your windscreen is cracked, chipped beyond repair, or requires replacement due to accident damage, we deliver a safe, accurate, and hassle-free service that keeps your vehicle road-ready and fully protected.'
         }
     ];
 
     const processSteps = [
         {
-            title: "Assessment",
-            description: "Detailed inspection and quote generation.",
+            title: "Initial Assessment",
+            description: "Full visual and structural check to identify visible and hidden damage. Photos and documentation prepared for insurance if required.",
             icon: ClipboardList
         },
         {
-            title: "Disassembly",
-            description: "Removing damaged parts for access.",
+            title: "Insurance Approval",
+            description: "We work directly with your insurer and schedule your repair immediately once approved.",
+            icon: Shield
+        },
+        {
+            title: "Disassembly & Review",
+            description: "Panels, bumpers, lights, or trims are removed to check for internal or structural damage.",
             icon: Wrench
         },
         {
             title: "Repair",
-            description: "Panel beating, structural alignment, and welding.",
+            description: "Structural, chassis, and panel repairs using computerised straightening, laser measurement, and skilled restoration.",
             icon: Hammer
         },
         {
-            title: "Paint",
-            description: "Color matching, painting, and clear coating.",
+            title: "Painting & Refinishing",
+            description: "Your vehicle is refinished in our controlled paint booth for a smooth, even, long-lasting surface.",
             icon: Palette
         },
         {
-            title: "Reassembly",
-            description: "Fitting parts and final quality check.",
+            title: "Reassembly & Checks",
+            description: "All components are refitted with precision. Quality checks ensure your vehicle is safe and roadworthy.",
+            icon: Settings
+        },
+        {
+            title: "Final Clean & Handover",
+            description: "Your vehicle is returned in top condition, fully restored and ready for the road.",
             icon: Sparkles
         }
     ];
@@ -263,10 +296,17 @@ export default function PanelBeating() {
                                                         <div className="font-['Poppins'] text-2xl md:text-3xl lg:text-4xl font-medium uppercase mb-3 md:mb-4">
                                                             {service.title}
                                                         </div>
-                                                        <div className="text-lg font-semibold leading-relaxed">
+                                                        <div className="text-lg font-semibold leading-relaxed mb-4">
                                                             {service.fullDesc}
                                                         </div>
-                                                        <a href={`#service-${index}`} className="absolute inset-0"></a>
+                                                        <button
+                                                            onClick={() => setActiveModal(index)}
+                                                            className="mt-4 px-6 py-2 rounded-md font-medium transition-all duration-300 hover:opacity-90"
+                                                            style={{ backgroundColor: '#0C55AC', color: 'white' }}
+                                                        >
+                                                            Learn More
+                                                        </button>
+                                                        <a href={`#service-${index}`} className="absolute inset-0 pointer-events-none"></a>
                                                     </div>
                                                 )}
                                             </ScrollObserver.Trigger>
@@ -317,84 +357,6 @@ export default function PanelBeating() {
                     </svg>
                 </div>
 
-                {/* New Holographic Services Grid */}
-                <section id="services-holographic" className="py-32 px-4 relative z-10 overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
-                    {/* Background Grid Lines */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
-
-                    <div className="max-w-7xl mx-auto relative z-10">
-                        <ScrollReveal>
-                            <div className="flex flex-col md:flex-row justify-between items-end mb-20 pb-8" style={{ borderBottom: '1px solid #14A0B5' }}>
-                                <div>
-                                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4" style={{ color: '#1F366A' }}>
-                                        ALL <span style={{ color: '#0C55AC' }}>SERVICES</span>
-                                    </h2>
-                                    <p className="text-lg max-w-xl font-semibold" style={{ color: '#1F366A' }}>
-                                        Comprehensive panel beating and refinishing for all vehicle types.
-                                    </p>
-                                </div>
-                                <button className="hidden md:flex items-center gap-2 hover:opacity-80 transition-colors mt-4 md:mt-0 font-medium text-sm border px-4 py-2 rounded" style={{ color: '#0C55AC', borderColor: '#14A0B5' }}>
-                                    VIEW ALL <ChevronRight className="w-4 h-4" />
-                                </button>
-                            </div>
-                        </ScrollReveal>
-
-                        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {services.map((service, index) => (
-                                <ScrollReveal key={index} delay={index * 0.1}>
-                                    <SpotLightItem className="h-[570px] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 relative border border-[#B5B5B5]">
-                                        {/* Background Image */}
-                                        <div
-                                            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
-                                            style={{ backgroundImage: `url(${service.image})` }}
-                                        />
-
-                                        <div
-                                            className={`relative p-8 h-full flex flex-col transition-all duration-500 ${hoveredService === index ? 'justify-start bg-white' : 'justify-end'}`}
-                                            onMouseEnter={() => setHoveredService(index)}
-                                            onMouseLeave={() => setHoveredService(null)}
-                                        >
-                                            {/* Corner Brackets */}
-                                            <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                            <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                            <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                            <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-
-                                            {/* Scan Line Effect */}
-                                            <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
-
-                                            {/* Dark Gradient Overlay */}
-                                            <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
-
-                                            <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'scale-110' : ''}`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
-                                                {service.icon}
-                                            </div>
-
-                                            <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
-                                                {service.title}
-                                            </h3>
-
-                                            <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
-                                                <p style={{ wordSpacing: '-0.08rem', color: '#1F366A' }} className="mb-6 leading-relaxed font-['Poppins'] font-semibold text-lg">
-                                                    {service.fullDesc}
-                                                </p>
-
-                                                <ul className="space-y-2 pt-6" style={{ borderTop: '1px solid #B5B5B5' }}>
-                                                    {service.details.map((detail, i) => (
-                                                        <li key={i} className="flex items-center text-sm" style={{ color: '#1F366A' }}>
-                                                            <div className="w-1.5 h-1.5 rounded-full mr-3" style={{ backgroundColor: '#0C55AC' }} />
-                                                            {detail}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </SpotLightItem>
-                                </ScrollReveal>
-                            ))}
-                        </Spotlight>
-                    </div>
-                </section>
 
                 {/* Troubleshooter - Sticky Scroll Pattern */}
                 <section style={{ backgroundColor: '#E4AEB3' }}>
@@ -547,19 +509,19 @@ export default function PanelBeating() {
                 </section>
 
                 {/* Process Section */}
-                <section className="px-4 py-24" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
+                <section className="px-4 py-32" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
+                    <div className="max-w-[1600px] mx-auto">
+                        <div className="text-center mb-20">
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>How We Work</p>
                             <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>
                                 YOUR REPAIR <span style={{ color: '#0C55AC' }}>PROCESS</span>
                             </h2>
                         </div>
 
-                        <div className="grid md:grid-cols-5 gap-8 relative">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-12 lg:gap-10 xl:gap-12 relative">
                             {/* Connecting Line with gradient animation */}
                             <motion.div
-                                className="hidden md:block absolute top-12 left-0 w-full h-0.5 -z-0"
+                                className="hidden xl:block absolute top-16 left-0 w-full h-0.5 -z-0"
                                 style={{ background: 'linear-gradient(to right, #0C55AC, #783E6C, #0C55AC)' }}
                                 initial={{ scaleX: 0, opacity: 0 }}
                                 whileInView={{ scaleX: 1, opacity: 1 }}
@@ -570,7 +532,7 @@ export default function PanelBeating() {
                             {processSteps.map((step, index) => (
                                 <motion.div
                                     key={index}
-                                    className="relative z-10 bg-white pt-4 group cursor-pointer"
+                                    className="relative z-10 bg-white p-6 group cursor-pointer"
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -585,7 +547,7 @@ export default function PanelBeating() {
                                     }}
                                 >
                                     <motion.div
-                                        className="relative w-16 h-16 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg overflow-hidden"
+                                        className="relative w-20 h-20 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg overflow-hidden"
                                         style={{ background: 'linear-gradient(to bottom right, #0C55AC, #1F366A)', boxShadow: '0 10px 30px rgba(12, 85, 172, 0.3)' }}
                                         initial={{ scale: 0, rotate: -90 }}
                                         whileInView={{ scale: 1, rotate: 0 }}
@@ -611,18 +573,18 @@ export default function PanelBeating() {
                                             whileHover={{ x: "100%" }}
                                             transition={{ duration: 0.6 }}
                                         />
-                                        <step.icon className="w-8 h-8 relative z-10" strokeWidth={2} />
+                                        <step.icon className="w-10 h-10 relative z-10" strokeWidth={2} />
                                     </motion.div>
                                     <div className="text-center">
                                         <motion.h3
-                                            className="text-xl font-['Poppins'] font-medium mb-3"
+                                            className="text-xl font-['Poppins'] font-medium mb-4"
                                             style={{ color: '#1F366A' }}
                                             whileHover={{ color: "#0C55AC", scale: 1.05 }}
                                             transition={{ duration: 0.2 }}
                                         >
                                             {step.title}
                                         </motion.h3>
-                                        <p className="text-lg leading-relaxed font-semibold transition-colors duration-300" style={{ color: '#1F366A' }}>
+                                        <p className="text-base leading-relaxed transition-colors duration-300" style={{ color: '#1F366A' }}>
                                             {step.description}
                                         </p>
                                     </div>
@@ -647,34 +609,51 @@ export default function PanelBeating() {
                         </div>
                         <div>
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
-                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>Expert Panel Beating Since 1990</h2>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>Expert Panel Beating Since 1995</h2>
+                            <p className="text-lg font-semibold mb-6 leading-relaxed" style={{ color: '#1F366A' }}>
+                                With decades of hands-on experience, we've built a strong reputation for quality, reliability, and genuine care. Here's what sets us apart:
+                            </p>
                             <div className="space-y-4">
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
                                         <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We work with all major insurance companies and handle claims directly.</p>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We work with all major insurance providers and handle the entire process for you, making claims simple and stress-free.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Quality Guaranteed</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>All panel beating work comes with our comprehensive 12-month warranty.</p>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Fast Service</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our efficient workflow and modern equipment allow us to complete repairs quickly without compromising on quality.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Modern Equipment</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>State-of-the-art tools including computerized frame alignment and paint matching.</p>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Fair Pricing</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We provide honest, transparent quotes and cost-effective repair options suited to your budget and needs.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Experienced Craftsmen</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our team brings decades of combined experience in panel beating and refinishing.</p>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Family-Run</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>As a family-owned and operated workshop, we take pride in offering friendly service, personal attention, and a commitment to doing the job right.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
+                                    <div>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Expert Workmanship</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our certified technicians, precision painters, and skilled mechanics deliver repairs that meet strict safety and factory-quality standards.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
+                                    <div>
+                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>All Services Under One Roof</h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>From panel beating and painting to mechanical repairs, WOFs, ADAS calibration, and towing, we provide everything you need in one place for a smooth and convenient experience.</p>
                                     </div>
                                 </div>
                             </div>
@@ -722,6 +701,101 @@ export default function PanelBeating() {
                         </div>
                     </div>
                 </motion.section>
+
+                {/* Modal for Learn More */}
+                {activeModal !== null && (
+                    <div 
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto"
+                        onClick={() => setActiveModal(null)}
+                        onWheel={(e) => e.stopPropagation()}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto shadow-2xl my-8"
+                            onClick={(e) => e.stopPropagation()}
+                            onWheel={(e) => e.stopPropagation()}
+                        >
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setActiveModal(null)}
+                                className="sticky top-4 right-4 float-right z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:rotate-90"
+                                style={{ backgroundColor: '#0C55AC', color: 'white' }}
+                            >
+                                ✕
+                            </button>
+
+                            {/* Modal Content */}
+                            <div className="p-8 md:p-12">
+                                {/* Icon and Title */}
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="p-4 rounded-full" style={{ backgroundColor: '#0C55AC', color: 'white' }}>
+                                        {services[activeModal].icon}
+                                    </div>
+                                    <h3 className="text-3xl md:text-4xl font-['Poppins'] font-semibold" style={{ color: '#1F366A' }}>
+                                        {services[activeModal].title}
+                                    </h3>
+                                </div>
+
+                                {/* Image */}
+                                <div className="mb-6 rounded-xl overflow-hidden">
+                                    <img 
+                                        src={services[activeModal].image} 
+                                        alt={services[activeModal].title}
+                                        className="w-full h-64 object-cover"
+                                    />
+                                </div>
+
+                                {/* Short Description */}
+                                <p className="text-xl font-semibold mb-4" style={{ color: '#0C55AC' }}>
+                                    {services[activeModal].shortDesc}
+                                </p>
+
+                                {/* Full Description */}
+                                <p className="text-lg mb-6 leading-relaxed" style={{ color: '#1F366A' }}>
+                                    {services[activeModal].fullDesc}
+                                </p>
+
+                                {/* Learn More Content */}
+                                <div className="bg-gray-50 rounded-xl p-6 mb-6">
+                                    <h4 className="text-2xl font-['Poppins'] font-semibold mb-4" style={{ color: '#0C55AC' }}>
+                                        In-Depth Information
+                                    </h4>
+                                    <p className="text-base leading-relaxed" style={{ color: '#1F366A' }}>
+                                        {services[activeModal].learnMore}
+                                    </p>
+                                </div>
+
+                                {/* Details List */}
+                                <div className="border-t pt-6" style={{ borderColor: '#B5B5B5' }}>
+                                    <h4 className="text-xl font-['Poppins'] font-semibold mb-4" style={{ color: '#1F366A' }}>
+                                        Key Features
+                                    </h4>
+                                    <div className="grid md:grid-cols-2 gap-3">
+                                        {services[activeModal].details.map((detail, i) => (
+                                            <div key={i} className="flex items-center gap-3">
+                                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#0C55AC' }} />
+                                                <span className="font-medium" style={{ color: '#1F366A' }}>{detail}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* CTA Button */}
+                                <div className="mt-8">
+                                    <button 
+                                        onClick={() => setActiveModal(null)}
+                                        className="px-8 py-3 rounded-md font-medium transition-all duration-300 hover:opacity-90 border"
+                                        style={{ borderColor: '#B5B5B5', color: '#1F366A' }}
+                                    >
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
 
                 <Footer scrollToSection={scrollToSection} />
             </div>
