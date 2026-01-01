@@ -343,19 +343,7 @@ export default function PanelBeating() {
                     </div>
                 </section>
 
-                {/* Wave Separator - Services to All Services */}
-                <div className="relative w-full overflow-hidden" style={{ backgroundColor: '#0C55AC' }}>
-                    <svg
-                        viewBox="0 0 1200 120"
-                        preserveAspectRatio="none"
-                        className="relative block w-full h-[80px] md:h-[100px]"
-                    >
-                        <path
-                            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
-                            fill="#f8f9fa"
-                        />
-                    </svg>
-                </div>
+
 
 
                 {/* Troubleshooter - Sticky Scroll Pattern */}
@@ -363,7 +351,7 @@ export default function PanelBeating() {
                     <div className="wrapper">
                         {/* Intro Section */}
                         <section className="h-screen w-full grid place-content-center sticky top-0 z-0 relative" style={{ background: 'linear-gradient(180deg, #E4AEB3 0%, #FDDD7F 100%)', color: '#1F366A' }}>
-                            {/* Flipped Wave at top - white */}
+                            {/* Flipped Wave at top - blue */}
                             <div className="absolute top-0 left-0 w-full overflow-hidden z-20">
                                 <svg
                                     viewBox="0 0 1200 120"
@@ -373,7 +361,7 @@ export default function PanelBeating() {
                                 >
                                     <path
                                         d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
-                                        fill="white"
+                                        fill="#0C55AC"
                                     />
                                 </svg>
                             </div>
@@ -384,7 +372,7 @@ export default function PanelBeating() {
                         </section>
 
                         {/* Sticky Grid with Images */}
-                        <section className="w-full relative z-10" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
+                        <section className="w-full relative z-10" style={{ background: 'linear-gradient(to bottom, #0C55AC, white)' }}>
                             <div className="grid grid-cols-1 md:grid-cols-2">
                                 {/* Sticky Content Side */}
                                 <div className="sticky top-0 h-screen flex items-center justify-center px-8" style={{ background: 'linear-gradient(135deg, #14A0B5 0%, #0C55AC 100%)' }}>
@@ -704,7 +692,7 @@ export default function PanelBeating() {
 
                 {/* Modal for Learn More */}
                 {activeModal !== null && (
-                    <div 
+                    <div
                         className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto"
                         onClick={() => setActiveModal(null)}
                         onWheel={(e) => e.stopPropagation()}
@@ -740,8 +728,8 @@ export default function PanelBeating() {
 
                                 {/* Image */}
                                 <div className="mb-6 rounded-xl overflow-hidden">
-                                    <img 
-                                        src={services[activeModal].image} 
+                                    <img
+                                        src={services[activeModal].image}
                                         alt={services[activeModal].title}
                                         className="w-full h-64 object-cover"
                                     />
@@ -784,7 +772,7 @@ export default function PanelBeating() {
 
                                 {/* CTA Button */}
                                 <div className="mt-8">
-                                    <button 
+                                    <button
                                         onClick={() => setActiveModal(null)}
                                         className="px-8 py-3 rounded-md font-medium transition-all duration-300 hover:opacity-90 border"
                                         style={{ borderColor: '#B5B5B5', color: '#1F366A' }}
