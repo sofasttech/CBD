@@ -13,6 +13,7 @@ import { Spotlight, SpotLightItem } from './ui/spotlight';
 export default function Mechanical() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [hoveredService, setHoveredService] = useState<number | null>(null);
+    const [selectedService, setSelectedService] = useState<number | null>(null);
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
@@ -27,6 +28,17 @@ export default function Mechanical() {
         window.scrollTo(0, 0);
     }, []);
 
+    useEffect(() => {
+        if (selectedService !== null) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [selectedService]);
+
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -37,24 +49,62 @@ export default function Mechanical() {
 
     const services = [
         {
-            title: 'Warrant Of Fitness',
+            title: 'WOF Inspections',
             icon: <Shield className="w-8 h-8" />,
-            desc: 'Its a legal requirement to have your vehicle inspected for WOF.',
-            details: ['All makes and models', 'We can collect and deliver your vehicle for you whether it is running or not', 'Loan cars available', 'We handle any type of WOF insurance claim',],
+            desc: 'Keeping your vehicle roadworthy is essential. Our Warrant of Fitness service makes the process simple, fast, and affordable with thorough safety checks on all makes and models, ensuring your vehicle meets NZ legal standards.',
+            details: [
+                '$70 all-inclusive WOF checks',
+                'All makes and models welcome',
+                'Pickup and delivery available (running or not)',
+                'Friendly and qualified inspectors',
+                'Full WOF repairs completed in-house',
+                'We manage WOF-related insurance claims',
+                'Vehicles 2000+ registered: annual WOF',
+                'Brand-new vehicles: initial at registration, next in 3 years',
+                'Pre-2000 vehicles: 6-month WOF',
+                'Light trailers & commercial: 12 months (or 6 months if 10+ years old)'
+            ],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
-            title: 'Mechanical & Suspension',
+            title: 'Mechanical Services',
             icon: <Settings className="w-8 h-8" />,
-            desc: 'We strive to provide professional automotive Petrol & Diesel services to the commercial and private sectors Auckland Central and Wide.',
-            details: ['We can perform car servicing to your  requirements', 'Auto Electrical Servic', 'Brake & Clutch Service', 'Electronic Fuel Injection (EFI)', 'Engine Diagnostics & Tune-Ups', 'Engine Repair & Rebuilding', 'Exhaust Fitting & Service', 'Fleet Servicing & Fleet Solutions'],
+            desc: 'Professional petrol and diesel mechanical services for both private and commercial vehicles. Our fully qualified mechanics deliver reliable servicing and repairs for all makes and models with modern diagnostics and quality parts.',
+            details: [
+                'Full mechanical servicing (minor, major, logbook)',
+                'Auto electrical services (alternators, starters, batteries)',
+                'Brake and clutch services (inspection, replacement, hydraulics)',
+                'Electronic Fuel Injection (EFI) diagnostics and servicing',
+                'Engine diagnostics and tune-ups with 62-point safety check',
+                'Engine repair and rebuilding',
+                'Exhaust fitting and servicing',
+                'Gearbox and transmission services',
+                'Steering system services',
+                'Tyre, wheel alignment and balancing',
+                'Windscreen and glass services',
+                'Fleet servicing and fleet solutions',
+                'Pre-purchase vehicle inspections',
+                'Roadside assistance and breakdown support'
+            ],
             image: '/mechanical_hero_1764692776650.png'
         },
         {
             title: 'Compliance Centre',
             icon: <Disc className="w-8 h-8" />,
-            desc: 'We help with all vehicle compliance needs. We are 100% New Zealand owned and work with VTNZ to certify vehicles to current NZTA standards.',
-            details: ['Compliance services for all cars and light commercials', 'Experienced and reliable staff', 'Same Day Service', 'Undercover and secure parking with 7 day access', 'Modern, clean workshop and equipment', 'Certificate of compliance for imported vehicles', 'AA inspections welcomed'],
+            desc: 'We assist with all vehicle compliance requirements, providing reliable and professional certification services. Working with VTNZ, we ensure vehicles meet current NZTA compliance standards for imported, lapsed, or de-registered vehicles.',
+            details: [
+                'Certificate of Compliance for imported vehicles',
+                'Compliance inspections for lapsed or de-registered vehicles',
+                'Support for NZTA and VTNZ compliance requirements',
+                'AA inspections welcomed',
+                'Compliance services for cars and light commercial vehicles',
+                'Assistance with compliance-related documentation',
+                'Experienced, reliable, and knowledgeable staff',
+                'Same-day service available where possible',
+                'Modern, clean workshop with up-to-date equipment',
+                'Undercover, secure parking with 7-day access',
+                'Vehicle pickup and delivery available'
+            ],
             image: '/mechanical_hero_1764692776650.png'
         },
     ];
@@ -63,6 +113,85 @@ export default function Mechanical() {
         <ReactLenis root>
             <div className="min-h-screen bg-white font-sans" style={{ color: '#1F366A' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
+
+                {/* Service Detail Modal */}
+                {selectedService !== null && (
+                    <div 
+                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                        onClick={() => setSelectedService(null)}
+                    >
+                        <motion.div 
+                            className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+                            onClick={(e) => e.stopPropagation()}
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            {/* Modal Header */}
+                            <div className="bg-gradient-to-br from-[#0C55AC] to-[#1F366A] text-white p-8 rounded-t-2xl flex-shrink-0">
+                                <div className="flex justify-between items-start">
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-3 bg-white/20 rounded-lg backdrop-blur-sm">
+                                            {services[selectedService].icon}
+                                        </div>
+                                        <div>
+                                            <h2 className="text-3xl font-['Poppins'] font-semibold mb-2">
+                                                {services[selectedService].title}
+                                            </h2>
+                                            <p className="text-white/90">
+                                                {services[selectedService].desc}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <button 
+                                        onClick={() => setSelectedService(null)}
+                                        className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                                    >
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Modal Content - Scrollable */}
+                            <div className="p-8 overflow-y-auto flex-1">
+                                <h3 className="text-xl font-['Poppins'] font-semibold mb-6" style={{ color: '#1F366A' }}>
+                                    What We Offer
+                                </h3>
+                                <ul className="space-y-4">
+                                    {services[selectedService].details.map((detail, i) => (
+                                        <motion.li 
+                                            key={i} 
+                                            className="flex items-start gap-3 p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.3, delay: i * 0.05 }}
+                                        >
+                                            <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5" style={{ backgroundColor: '#0C55AC' }}>
+                                                ✓
+                                            </span>
+                                            <span className="text-base leading-relaxed" style={{ color: '#1F366A' }}>
+                                                {detail}
+                                            </span>
+                                        </motion.li>
+                                    ))}
+                                </ul>
+
+                                {/* CTA Buttons */}
+                                <div className="flex gap-4 mt-8 pt-8 border-t" style={{ borderColor: '#B5B5B5' }}>
+                                    <button className="flex-1 px-6 py-3 text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
+                                        Book Now
+                                    </button>
+                                    <button className="flex-1 px-6 py-3 bg-white border rounded-lg hover:bg-gray-50 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
+                                        Contact Us
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
 
                 {/* Hero Section Container */}
                 <div className="relative">
@@ -191,14 +320,23 @@ export default function Mechanical() {
                                                     {service.desc}
                                                 </p>
 
-                                                <ul className="space-y-2 pt-6" style={{ borderTop: '1px solid #B5B5B5' }}>
-                                                    {service.details.map((detail, i) => (
+                                                <ul className="space-y-2 pt-6 mb-6" style={{ borderTop: '1px solid #B5B5B5' }}>
+                                                    {service.details.slice(0, 4).map((detail, i) => (
                                                         <li key={i} className="flex items-center text-sm" style={{ color: '#1F366A' }}>
                                                             <span className="mr-2" style={{ color: '#0C55AC' }}>›</span>
                                                             {detail}
                                                         </li>
                                                     ))}
                                                 </ul>
+
+                                                <button 
+                                                    onClick={() => setSelectedService(index)}
+                                                    className="w-full px-6 py-3 text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium flex items-center justify-center gap-2"
+                                                    style={{ backgroundColor: '#0C55AC' }}
+                                                >
+                                                    Learn More
+                                                    <ChevronRight className="w-4 h-4" />
+                                                </button>
                                             </div>
                                         </div>
                                     </SpotLightItem>
