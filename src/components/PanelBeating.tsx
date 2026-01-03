@@ -7,11 +7,10 @@ import { ScrollReveal } from './ScrollReveal';
 import clsx from 'clsx';
 import { ClipboardList, Wrench, Hammer, Palette, Sparkles, Activity, Gauge, Settings, Zap, Disc, Shield, ChevronRight } from 'lucide-react';
 import { ReactLenis } from 'lenis/react';
-import { Spotlight, SpotLightItem } from './ui/spotlight';
+
 
 export default function PanelBeating() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [hoveredService, setHoveredService] = useState<number | null>(null);
     const [activeModal, setActiveModal] = useState<number | null>(null);
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -188,6 +187,11 @@ export default function PanelBeating() {
             icon: Settings
         },
         {
+            title: "Quality Control & Testing",
+            description: "Comprehensive final inspection including test drive, system checks, and verification of all repairs meet our strict standards.",
+            icon: Activity
+        },
+        {
             title: "Final Clean & Handover",
             description: "Your vehicle is returned in top condition, fully restored and ready for the road.",
             icon: Sparkles
@@ -196,7 +200,7 @@ export default function PanelBeating() {
 
     return (
         <ReactLenis root>
-            <div className="min-h-screen font-sans" style={{ background: 'linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%)', color: '#1F366A' }}>
+            <div className="panel-beating-page min-h-screen font-sans" style={{ background: 'linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%)', color: '#1F366A' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
                 {/* Hero Section Container */}
@@ -442,143 +446,380 @@ export default function PanelBeating() {
                     </div>
                 </section>
 
-                {/* Advanced Diagnostics - Sticky Images Pattern */}
-                <section className="text-white w-full" style={{ background: 'linear-gradient(135deg, #1F366A 0%, #783E6C 100%)' }}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 px-8">
-                        {/* Sticky Stacking Images */}
-                        <div className="grid gap-2">
-                            {[
-                                { src: "/paint_booth_1764692971281.png", alt: "Paint Booth" },
-                                { src: "/panel_beating_hero_1764692687494.png", alt: "Panel Beating" },
-                                { src: "/dent_repair_1764693039882.png", alt: "Dent Repair" },
-                                { src: "/wheel_repair_1764693107551.png", alt: "Wheel Repair" }
-                            ].map((image, index) => (
-                                <figure key={index} className="sticky top-0 h-screen grid place-content-center">
-                                    <div className="relative group">
-                                        <img
-                                            src={image.src}
-                                            alt={image.alt}
-                                            className="transition-all duration-500 w-96 h-96 align-bottom object-cover rounded-md shadow-2xl border-2 border-blue-500/30 group-hover:border-blue-500 group-hover:scale-105 group-hover:shadow-blue-500/50"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
-                                    </div>
-                                </figure>
-                            ))}
-                        </div>
+                {/* Modern Equipment - Bento Grid Layout */}
+                <section className="py-32 px-4 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1F366A 0%, #0C55AC 100%)' }}>
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 opacity-5">
+                        <div className="absolute inset-0" style={{
+                            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,.1) 50px, rgba(255,255,255,.1) 51px)`
+                        }} />
+                    </div>
 
-                        {/* Sticky Content */}
-                        <div className="sticky top-0 h-screen grid place-content-center">
-                            <div className="max-w-xl">
-                                <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 border backdrop-blur-sm" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5' }}>State-of-the-Art Facility</span>
-                                <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
-                                    MODERN <br />
-                                    <span style={{ color: '#14A0B5' }}>EQUIPMENT</span>
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        {/* Header */}
+                        <ScrollReveal>
+                            <div className="text-center mb-16">
+                                <motion.span
+                                    className="inline-block py-2 px-6 rounded-full text-sm font-bold uppercase tracking-wider mb-6 shadow-lg"
+                                    style={{ backgroundColor: '#14A0B5', color: '#1F366A' }}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    State-of-the-Art Facility
+                                </motion.span>
+                                <h2 className="text-5xl md:text-7xl font-['Poppins'] font-black mb-6 text-white uppercase tracking-tight">
+                                    MODERN <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #14A0B5, #FDDD7F)' }}>EQUIPMENT</span>
                                 </h2>
-                                <p className="text-lg text-gray-300 mb-6 leading-relaxed font-medium">
-                                    Our facility features the latest panel beating and refinishing equipment, ensuring precision repairs that meet manufacturer specifications.
+                                <p className="text-xl text-white/80 max-w-3xl mx-auto font-medium">
+                                    Precision technology and expert craftsmanship for exceptional results
                                 </p>
-                                <p className="text-lg text-gray-300 mb-8 leading-relaxed font-medium">
-                                    From computerized frame alignment to climate-controlled paint booths, we invest in technology that delivers superior results for your vehicle.
-                                </p>
+                            </div>
+                        </ScrollReveal>
 
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>30+</div>
-                                        <div className="text-sm uppercase tracking-wider text-gray-300">Years Experience</div>
-                                    </div>
-                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>100%</div>
-                                        <div className="text-sm uppercase tracking-wider text-gray-300">Guaranteed</div>
+                        {/* Bento Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                            {/* Large Feature Card - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/20 backdrop-blur-sm"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                whileHover={{ scale: 1.02, borderColor: 'rgba(20, 160, 181, 0.8)' }}
+                            >
+                                <div className="relative h-full min-h-[500px] overflow-hidden">
+                                    <img
+                                        src="/paint_booth_1764692971281.png"
+                                        alt="Modern Paint Booth"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                                        <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#1F366A' }}>
+                                            PREMIUM FEATURE
+                                        </div>
+                                        <h3 className="text-3xl font-['Poppins'] font-black text-white mb-3">
+                                            Climate-Controlled Paint Booth
+                                        </h3>
+                                        <p className="text-white/90 font-medium leading-relaxed">
+                                            Our state-of-the-art paint booth ensures perfect finishes with controlled temperature, humidity, and air filtration for flawless results.
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
+
+                            {/* Stats Card 1 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl p-8 border-2 border-white/20"
+                                style={{ background: 'linear-gradient(135deg, rgba(20, 160, 181, 0.2), rgba(12, 85, 172, 0.2))' }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                whileHover={{ scale: 1.05, borderColor: 'rgba(253, 221, 127, 0.8)' }}
+                            >
+                                <Activity className="w-12 h-12 mb-4" style={{ color: '#FDDD7F' }} />
+                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">30+</div>
+                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Years Experience</div>
+                            </motion.div>
+
+                            {/* Stats Card 2 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl p-8 border-2 border-white/20"
+                                style={{ background: 'linear-gradient(135deg, rgba(253, 221, 127, 0.2), rgba(228, 174, 179, 0.2))' }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                whileHover={{ scale: 1.05, borderColor: 'rgba(20, 160, 181, 0.8)' }}
+                            >
+                                <Shield className="w-12 h-12 mb-4" style={{ color: '#FDDD7F' }} />
+                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">100%</div>
+                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Guaranteed</div>
+                            </motion.div>
+
+                            {/* Image Card 1 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/panel_beating_hero_1764692687494.png"
+                                        alt="Panel Beating Equipment"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h4 className="text-xl font-['Poppins'] font-bold text-white">Panel Beating Tech</h4>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 2 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/dent_repair_1764693039882.png"
+                                        alt="Dent Repair Tools"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h4 className="text-xl font-['Poppins'] font-bold text-white">Precision Repair</h4>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 3 - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/wheel_repair_1764693107551.png"
+                                        alt="Wheel Repair Equipment"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 p-8 flex items-center">
+                                        <div className="max-w-md">
+                                            <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#FDDD7F', color: '#1F366A' }}>
+                                                SPECIALIZED
+                                            </div>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Wheel Restoration</h4>
+                                            <p className="text-white/90 font-medium">Advanced equipment for alloy wheel repair and refinishing</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </div>
+
+                        {/* Bottom Features */}
+                        <ScrollReveal delay={0.6}>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Gauge className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Computerized Frame Alignment</h4>
+                                    <p className="text-white/70 text-sm">Laser-precise measurements for perfect structural restoration</p>
+                                </motion.div>
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Palette className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Advanced Color Matching</h4>
+                                    <p className="text-white/70 text-sm">Spectrophotometer technology for seamless paint blending</p>
+                                </motion.div>
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Settings className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Modern Workshop Tools</h4>
+                                    <p className="text-white/70 text-sm">Industry-leading equipment for all repair types</p>
+                                </motion.div>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </section>
 
-                {/* Process Section */}
-                <section className="px-4 py-32" style={{ background: 'linear-gradient(to bottom, #f8f9fa, white)' }}>
-                    <div className="max-w-[1600px] mx-auto">
-                        <div className="text-center mb-20">
-                            <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>How We Work</p>
-                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>
-                                YOUR REPAIR <span style={{ color: '#0C55AC' }}>PROCESS</span>
-                            </h2>
-                        </div>
+                {/* Process Section - Bold Card Grid Design */}
+                <section className="px-4 py-32 relative" style={{ backgroundColor: '#1F366A' }}>
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 opacity-10">
+                        <div className="absolute inset-0" style={{
+                            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)`
+                        }} />
+                    </div>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-12 lg:gap-10 xl:gap-12 relative">
-                            {/* Connecting Line with gradient animation */}
-                            <motion.div
-                                className="hidden xl:block absolute top-16 left-0 w-full h-0.5 -z-0"
-                                style={{ background: 'linear-gradient(to right, #0C55AC, #783E6C, #0C55AC)' }}
-                                initial={{ scaleX: 0, opacity: 0 }}
-                                whileInView={{ scaleX: 1, opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
-                            />
-
-                            {processSteps.map((step, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="relative z-10 bg-white p-6 group cursor-pointer"
-                                    initial={{ opacity: 0, y: 50 }}
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        {/* Header */}
+                        <ScrollReveal>
+                            <div className="text-center mb-16">
+                                <motion.h2
+                                    className="text-5xl md:text-7xl font-['Poppins'] font-black mb-4 uppercase tracking-tight"
+                                    style={{ color: '#FDDD7F' }}
+                                    initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{
-                                        duration: 0.6,
-                                        delay: index * 0.15,
-                                        ease: [0.25, 0.4, 0.25, 1]
-                                    }}
-                                    whileHover={{
-                                        y: -15,
-                                        transition: { duration: 0.3, ease: "easeOut" }
-                                    }}
                                 >
+                                    HOW WE <span className="text-white">WORK</span>
+                                </motion.h2>
+                                <p className="text-xl text-white/80 max-w-2xl mx-auto font-medium">
+                                    Eight steps to perfection, every single time
+                                </p>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* Process Grid - Staggered Layout */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {processSteps.map((step, index) => {
+                                const colors = [
+                                    { bg: 'linear-gradient(135deg, #0C55AC 0%, #1F366A 100%)', accent: '#FDDD7F', text: '#fff' },
+                                    { bg: 'linear-gradient(135deg, #FDDD7F 0%, #E4AEB3 100%)', accent: '#1F366A', text: '#1F366A' },
+                                    { bg: 'linear-gradient(135deg, #14A0B5 0%, #0C55AC 100%)', accent: '#FDDD7F', text: '#fff' },
+                                    { bg: 'linear-gradient(135deg, #E4AEB3 0%, #783E6C 100%)', accent: '#FDDD7F', text: '#fff' },
+                                    { bg: 'linear-gradient(135deg, #1F366A 0%, #0C55AC 100%)', accent: '#14A0B5', text: '#fff' },
+                                    { bg: 'linear-gradient(135deg, #FDDD7F 0%, #14A0B5 100%)', accent: '#1F366A', text: '#1F366A' },
+                                    { bg: 'linear-gradient(135deg, #0C55AC 0%, #14A0B5 100%)', accent: '#FDDD7F', text: '#fff' }
+                                ];
+
+                                const cardColor = colors[index % colors.length];
+                                const isLarge = index === 0 || index === 4; // Make certain cards larger
+
+                                return (
                                     <motion.div
-                                        className="relative w-20 h-20 rounded-full flex items-center justify-center text-white mb-6 mx-auto border-4 border-white shadow-lg overflow-hidden"
-                                        style={{ background: 'linear-gradient(to bottom right, #0C55AC, #1F366A)', boxShadow: '0 10px 30px rgba(12, 85, 172, 0.3)' }}
-                                        initial={{ scale: 0, rotate: -90 }}
-                                        whileInView={{ scale: 1, rotate: 0 }}
+                                        key={index}
+                                        className={`relative group cursor-pointer ${isLarge ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                                        initial={{ opacity: 0, y: 50, rotate: -2 }}
+                                        whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                                         viewport={{ once: true }}
                                         transition={{
-                                            duration: 0.7,
-                                            delay: index * 0.15 + 0.3,
-                                            type: "spring",
-                                            stiffness: 260,
-                                            damping: 20
+                                            duration: 0.6,
+                                            delay: index * 0.08,
+                                            ease: [0.25, 0.46, 0.45, 0.94]
                                         }}
                                         whileHover={{
-                                            scale: 1.15,
-                                            rotate: 360,
-                                            boxShadow: "0 20px 60px rgba(37, 99, 235, 0.4)",
-                                            transition: { duration: 0.6 }
+                                            scale: 1.03,
+                                            rotate: 1,
+                                            transition: { duration: 0.3 }
                                         }}
                                     >
-                                        {/* Shine effect */}
-                                        <motion.div
-                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                                            initial={{ x: "-100%" }}
-                                            whileHover={{ x: "100%" }}
-                                            transition={{ duration: 0.6 }}
-                                        />
-                                        <step.icon className="w-10 h-10 relative z-10" strokeWidth={2} />
-                                    </motion.div>
-                                    <div className="text-center">
-                                        <motion.h3
-                                            className="text-xl font-['Poppins'] font-medium mb-4"
-                                            style={{ color: '#1F366A' }}
-                                            whileHover={{ color: "#0C55AC", scale: 1.05 }}
-                                            transition={{ duration: 0.2 }}
+                                        <div
+                                            className="relative p-8 rounded-3xl overflow-hidden shadow-2xl h-full min-h-[320px] flex flex-col"
+                                            style={{ background: cardColor.bg }}
                                         >
-                                            {step.title}
-                                        </motion.h3>
-                                        <p className="text-base leading-relaxed transition-colors duration-300" style={{ color: '#1F366A' }}>
-                                            {step.description}
+                                            {/* Background Pattern */}
+                                            <div className="absolute inset-0 opacity-10">
+                                                <div className="absolute inset-0" style={{
+                                                    backgroundImage: `radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px)`,
+                                                    backgroundSize: '30px 30px'
+                                                }} />
+                                            </div>
+
+                                            {/* Large Step Number */}
+                                            <motion.div
+                                                className="absolute top-4 right-4 text-[120px] font-black leading-none opacity-20"
+                                                style={{ color: cardColor.accent }}
+                                                whileHover={{ opacity: 0.3 }}
+                                            >
+                                                {index + 1}
+                                            </motion.div>
+
+                                            {/* Badge */}
+                                            <div
+                                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6 w-fit shadow-lg"
+                                                style={{ backgroundColor: cardColor.accent, color: cardColor.text === '#fff' ? '#1F366A' : '#fff' }}
+                                            >
+                                                <span>Step {index + 1}</span>
+                                            </div>
+
+                                            {/* Icon */}
+                                            <motion.div
+                                                className="relative mb-6 p-6 rounded-2xl w-fit"
+                                                style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    rotate: [0, -5, 5, -5, 0],
+                                                    transition: { duration: 0.5 }
+                                                }}
+                                            >
+                                                <step.icon
+                                                    className="w-12 h-12"
+                                                    style={{ color: cardColor.accent }}
+                                                    strokeWidth={2}
+                                                />
+                                            </motion.div>
+
+                                            {/* Content */}
+                                            <div className="relative z-10 flex-1 flex flex-col">
+                                                <h3
+                                                    className="text-2xl md:text-3xl font-['Poppins'] font-black mb-4 leading-tight"
+                                                    style={{ color: cardColor.text }}
+                                                >
+                                                    {step.title}
+                                                </h3>
+
+                                                <p
+                                                    className="text-base leading-relaxed font-medium mb-6"
+                                                    style={{ color: cardColor.text === '#fff' ? 'rgba(255,255,255,0.9)' : 'rgba(31,54,106,0.9)' }}
+                                                >
+                                                    {step.description}
+                                                </p>
+                                            </div>
+
+                                            {/* Hover Shine Effect */}
+                                            <motion.div
+                                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                                                initial={{ x: '-100%', skewX: -20 }}
+                                                whileHover={{ x: '200%' }}
+                                                transition={{ duration: 0.8 }}
+                                            />
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Bottom Stats/CTA */}
+                        <ScrollReveal delay={0.6}>
+                            <motion.div
+                                className="mt-16 p-10 rounded-3xl relative overflow-hidden"
+                                style={{ background: 'linear-gradient(135deg, #FDDD7F 0%, #E4AEB3 100%)' }}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                            >
+                                {/* Pattern Background */}
+                                <div className="absolute inset-0 opacity-10">
+                                    <div className="absolute inset-0" style={{
+                                        backgroundImage: `repeating-linear-gradient(90deg, #1F366A, #1F366A 2px, transparent 2px, transparent 40px)`
+                                    }} />
+                                </div>
+
+                                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                                    <div className="flex-1 text-center md:text-left">
+                                        <h3 className="text-3xl md:text-4xl font-['Poppins'] font-black mb-3" style={{ color: '#1F366A' }}>
+                                            Ready to Get Started?
+                                        </h3>
+                                        <p className="text-lg font-semibold" style={{ color: '#1F366A', opacity: 0.8 }}>
+                                            Our team is standing by to restore your vehicle to perfection
                                         </p>
                                     </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                                    <button
+                                        className="px-10 py-4 rounded-full font-black text-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 whitespace-nowrap"
+                                        style={{ backgroundColor: '#1F366A', color: '#FDDD7F' }}
+                                    >
+                                        BOOK NOW
+                                        <ChevronRight className="w-6 h-6" />
+                                    </button>
+                                </div>
+                            </motion.div>
+                        </ScrollReveal>
                     </div>
                 </section>
 
@@ -787,6 +1028,16 @@ export default function PanelBeating() {
 
                 <Footer scrollToSection={scrollToSection} />
             </div>
+
+            {/* Custom CSS for PanelBeating page only - Override only wave separator to blue */}
+            <style>{`
+                .panel-beating-page footer > div:first-child {
+                    background-color: #0C55AC !important;
+                }
+                .panel-beating-page footer > div:first-child.bg-white {
+                    background-color: #0C55AC !important;
+                }
+            `}</style>
         </ReactLenis>
     );
 }

@@ -966,7 +966,7 @@ export default function Homepage() {
 
       <div className="h-40 bg-white"></div>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us - Bento Grid */}
       <section className="py-24 bg-white text-black overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div
@@ -982,77 +982,78 @@ export default function Homepage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Expert Craftsmanship",
-                desc: "Our certified technicians bring decades of combined experience to every repair, ensuring factory-standard results.",
-                image: "/panel-beatt.jpg"
-              },
-              {
-                title: "Advanced Technology",
-                desc: "We utilize the latest diagnostic tools and repair equipment to deliver precise, efficient, and lasting solutions.",
-                image: "/tech.jpg"
-              },
-              {
-                title: "Lifetime Guarantee",
-                desc: "We stand behind our work. Enjoy peace of mind knowing that our repairs are backed by a comprehensive warranty.",
-                image: "/shop.webp"
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
-                viewport={{ once: true }}
-                className="group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent transition-all duration-500"
-                style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-              >
-                {/* Dark overlay shade */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500 z-10"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[minmax(0,1fr)]">
+            {/* Large Item 1 */}
+            <motion.div
+              className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-2xl shadow-xl min-h-[400px] cursor-pointer"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/panel-beatt.jpg')" }} />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 p-8 text-white z-10">
+                <h3 className="text-2xl md:text-4xl font-bold font-['Poppins'] mb-3">Expert Craftsmanship</h3>
+                <p className="text-gray-200 text-lg max-w-sm">Our certified technicians bring decades of combined experience to every repair, ensuring factory-standard results.</p>
+              </div>
+            </motion.div>
 
-                <div className="text relative z-50">
-                  <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
-                    {item.title}
-                  </h1>
-                  <p className="font-normal text-lg text-gray-50 relative my-4 text-justify">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+            {/* Item 2 */}
+            <motion.div
+              className="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl shadow-xl min-h-[200px] md:min-h-[250px] cursor-pointer"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/tech.jpg')" }} />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 p-6 text-white z-10">
+                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Advanced Technology</h3>
+                <p className="text-gray-200 text-sm md:text-base max-w-md">We utilize the latest diagnostic tools and repair equipment to deliver precise and lasting solutions.</p>
+              </div>
+            </motion.div>
 
-          {/* Stats Section */}
-          <motion.div
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white-200 pt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+            {/* Item 3 */}
+            <motion.div
+              className="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl shadow-xl min-h-[200px] md:min-h-[250px] cursor-pointer"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/shop.webp')" }} />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 p-6 text-white z-10">
+                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Lifetime Guarantee</h3>
+                <p className="text-gray-200 text-sm md:text-base max-w-md">We stand behind our work. Enjoy peace of mind knowing that our repairs are backed by a comprehensive warranty.</p>
+              </div>
+            </motion.div>
+
+            {/* Stats Items */}
             {[
               { label: "Years Experience", value: 30, suffix: "+" },
               { label: "Cars Repaired", value: 9900, suffix: "K+" },
               { label: "Customer Rating", value: 100, suffix: "%" },
               { label: "Expert Staff", value: 10, suffix: "+" }
-            ].map((stat, index) => (
+            ].map((stat, i) => (
               <motion.div
-                key={index}
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={i}
+                className="md:col-span-1 bg-gray-50 rounded-2xl shadow-sm p-6 flex flex-col justify-center items-center border border-gray-100 hover:shadow-md transition-shadow min-h-[160px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
               >
-                <div className="text-4xl md:text-5xl font-['Poppins'] font-bold text-blue-500 mb-2">
+                <div className="text-3xl lg:text-4xl font-bold font-['Poppins'] text-blue-600 mb-2">
                   <AnimatedNumber target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
+                <div className="text-xs text-black font-semibold uppercase tracking-wider text-center">{stat.label}</div>
               </motion.div>
             ))}
-          </motion.div>
+
+          </div>
         </div>
       </section>
 

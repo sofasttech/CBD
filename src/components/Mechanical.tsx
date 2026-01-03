@@ -6,7 +6,6 @@ import { ReactLenis } from 'lenis/react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
-import { Spotlight, SpotLightItem } from './ui/spotlight';
 
 
 
@@ -116,13 +115,18 @@ export default function Mechanical() {
 
                 {/* Service Detail Modal */}
                 {selectedService !== null && (
-                    <div 
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                    <div
+                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
                         onClick={() => setSelectedService(null)}
+                        onWheel={(e) => e.stopPropagation()}
+                        onTouchMove={(e) => e.stopPropagation()}
                     >
-                        <motion.div 
-                            className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+                        <motion.div
+                            className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl flex flex-col relative"
+                            style={{ maxHeight: 'calc(100vh - 4rem)' }}
                             onClick={(e) => e.stopPropagation()}
+                            onWheel={(e) => e.stopPropagation()}
+                            onTouchMove={(e) => e.stopPropagation()}
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -144,9 +148,9 @@ export default function Mechanical() {
                                             </p>
                                         </div>
                                     </div>
-                                    <button 
+                                    <button
                                         onClick={() => setSelectedService(null)}
-                                        className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                                        className="p-2 hover:bg-white/20 rounded-full transition-colors flex-shrink-0"
                                     >
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -156,14 +160,14 @@ export default function Mechanical() {
                             </div>
 
                             {/* Modal Content - Scrollable */}
-                            <div className="p-8 overflow-y-auto flex-1">
+                            <div className="p-8 overflow-y-auto overflow-x-hidden flex-1">
                                 <h3 className="text-xl font-['Poppins'] font-semibold mb-6" style={{ color: '#1F366A' }}>
                                     What We Offer
                                 </h3>
                                 <ul className="space-y-4">
                                     {services[selectedService].details.map((detail, i) => (
-                                        <motion.li 
-                                            key={i} 
+                                        <motion.li
+                                            key={i}
                                             className="flex items-start gap-3 p-4 rounded-lg hover:bg-gray-50 transition-colors"
                                             initial={{ opacity: 0, x: -20 }}
                                             animate={{ opacity: 1, x: 0 }}
@@ -258,91 +262,203 @@ export default function Mechanical() {
                     </div>
                 </div>
 
-                {/* Services Grid (Holographic HUD Style) */}
-                <section id="services-grid" className="py-32 px-4 bg-gray-50 relative z-10 overflow-hidden">
-                    {/* Background Grid Lines */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
+                {/* Services Grid (Modern Card Design) */}
+                <section id="services-grid" className="py-32 px-4 relative z-10 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%)' }}>
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-0 left-0 w-full h-full" style={{
+                            backgroundImage: `radial-gradient(circle at 20% 50%, #0C55AC 2px, transparent 2px), radial-gradient(circle at 80% 80%, #14A0B5 2px, transparent 2px)`,
+                            backgroundSize: '100px 100px'
+                        }} />
+                    </div>
 
                     <div className="max-w-7xl mx-auto relative z-10">
                         <ScrollReveal>
-                            <div className="flex flex-col md:flex-row justify-between items-end mb-20 pb-8" style={{ borderBottom: '1px solid #14A0B5' }}>
-                                <div>
-                                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4" style={{ color: '#1F366A' }}>
-                                        SERVICES <span style={{ color: '#0C55AC' }}></span>
+                            <div className="text-center mb-20">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6 }}
+                                >
+                                    <span className="inline-block py-2 px-6 rounded-full text-white text-sm font-medium mb-6 shadow-lg" style={{ background: 'linear-gradient(135deg, #0C55AC 0%, #1F366A 100%)' }}>
+                                        OUR EXPERTISE
+                                    </span>
+                                    <h2 className="text-5xl md:text-7xl font-['Poppins'] font-bold mb-6 tracking-tight" style={{ color: '#1F366A' }}>
+                                        PREMIUM <span style={{ background: 'linear-gradient(135deg, #0C55AC, #14A0B5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>SERVICES</span>
                                     </h2>
-                                    <p className="text-lg max-w-xl font-semibold" style={{ color: '#1F366A' }}>
-                                        Comprehensive mechanical repairs and maintenance for all makes and models.
+                                    <p className="text-xl max-w-2xl mx-auto font-medium leading-relaxed" style={{ color: '#1F366A' }}>
+                                        Comprehensive mechanical solutions with cutting-edge technology and expert craftsmanship
                                     </p>
-                                </div>
-                                <button className="hidden md:flex items-center gap-2 hover:opacity-80 transition-colors mt-4 md:mt-0 font-medium text-sm border px-4 py-2 rounded" style={{ color: '#0C55AC', borderColor: '#14A0B5' }}>
-                                    VIEW ALL <ChevronRight className="w-4 h-4" />
-                                </button>
+                                </motion.div>
                             </div>
                         </ScrollReveal>
 
-                        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {services.map((service, index) => (
-                                <ScrollReveal key={index} delay={index * 0.1}>
-                                    <SpotLightItem className="h-[570px] rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 relative border border-[#B5B5B5]">
-                                        {/* Background Image */}
-                                        <div
-                                            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
-                                            style={{ backgroundImage: `url(${service.image})` }}
-                                        />
+                                <ScrollReveal key={index} delay={index * 0.15}>
+                                    <motion.div
+                                        className="group relative h-[600px] rounded-2xl overflow-hidden cursor-pointer"
+                                        onMouseEnter={() => setHoveredService(index)}
+                                        onMouseLeave={() => setHoveredService(null)}
+                                        whileHover={{ y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        {/* Card Container with 3D Transform */}
+                                        <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl" style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}>
 
-                                        <div
-                                            className={`relative p-8 h-full flex flex-col transition-all duration-500 ${hoveredService === index ? 'justify-start bg-white' : 'justify-end'}`}
-                                            onMouseEnter={() => setHoveredService(index)}
-                                            onMouseLeave={() => setHoveredService(null)}
-                                        >
-                                            {/* Corner Accents */}
-                                            <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                            <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                            <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
-                                            <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} style={{ borderColor: '#14A0B5' }} />
+                                            {/* Background Image Layer */}
+                                            <motion.div
+                                                className="absolute inset-0 bg-cover bg-center"
+                                                style={{ backgroundImage: `url(${service.image})` }}
+                                                animate={{
+                                                    scale: hoveredService === index ? 1.1 : 1,
+                                                }}
+                                                transition={{ duration: 0.6 }}
+                                            />
 
-                                            {/* Scanline Effect */}
-                                            <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
+                                            {/* Dynamic Gradient Overlay */}
+                                            <motion.div
+                                                className="absolute inset-0"
+                                                style={{ background: 'linear-gradient(180deg, rgba(12, 85, 172, 0.4) 0%, rgba(31, 54, 106, 0.95) 100%)' }}
+                                                animate={{
+                                                    background: hoveredService === index
+                                                        ? 'linear-gradient(180deg, rgba(12, 85, 172, 0.1) 0%, rgba(255, 255, 255, 0.98) 100%)'
+                                                        : 'linear-gradient(180deg, rgba(12, 85, 172, 0.4) 0%, rgba(31, 54, 106, 0.95) 100%)'
+                                                }}
+                                                transition={{ duration: 0.5 }}
+                                            />
 
-                                            {/* Background gradient from logo area to bottom */}
-                                            <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
+                                            {/* Content Container */}
+                                            <div className="relative h-full flex flex-col p-8">
 
-                                            <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'scale-110' : ''}`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
-                                                {service.icon}
-                                            </div>
-
-                                            <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10`} style={{ color: hoveredService === index ? '#0C55AC' : 'white' }}>
-                                                {service.title}
-                                            </h3>
-
-                                            <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
-                                                <p className="text-lg mb-6 leading-relaxed font-semibold" style={{ color: '#1F366A' }}>
-                                                    {service.desc}
-                                                </p>
-
-                                                <ul className="space-y-2 pt-6 mb-6" style={{ borderTop: '1px solid #B5B5B5' }}>
-                                                    {service.details.slice(0, 4).map((detail, i) => (
-                                                        <li key={i} className="flex items-center text-sm" style={{ color: '#1F366A' }}>
-                                                            <span className="mr-2" style={{ color: '#0C55AC' }}>›</span>
-                                                            {detail}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-
-                                                <button 
-                                                    onClick={() => setSelectedService(index)}
-                                                    className="w-full px-6 py-3 text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium flex items-center justify-center gap-2"
-                                                    style={{ backgroundColor: '#0C55AC' }}
+                                                {/* Icon Badge - Floating Effect */}
+                                                <motion.div
+                                                    className="mb-auto"
+                                                    animate={{
+                                                        y: hoveredService === index ? -5 : 0,
+                                                        rotate: hoveredService === index ? 360 : 0,
+                                                    }}
+                                                    transition={{ duration: 0.6 }}
                                                 >
-                                                    Learn More
-                                                    <ChevronRight className="w-4 h-4" />
-                                                </button>
+                                                    <div
+                                                        className="inline-flex p-4 rounded-xl shadow-lg backdrop-blur-sm"
+                                                        style={{
+                                                            background: hoveredService === index
+                                                                ? 'linear-gradient(135deg, #0C55AC, #14A0B5)'
+                                                                : 'rgba(255, 255, 255, 0.2)',
+                                                            border: '2px solid rgba(255, 255, 255, 0.3)'
+                                                        }}
+                                                    >
+                                                        <div style={{ color: 'white' }}>
+                                                            {service.icon}
+                                                        </div>
+                                                    </div>
+                                                </motion.div>
+
+                                                {/* Title & Description Section */}
+                                                <div className="mt-auto">
+                                                    <motion.div
+                                                        className="mb-4"
+                                                        animate={{
+                                                            y: hoveredService === index ? -10 : 0,
+                                                        }}
+                                                        transition={{ duration: 0.4 }}
+                                                    >
+                                                        <h3
+                                                            className="text-3xl font-['Poppins'] font-bold mb-3 leading-tight"
+                                                            style={{
+                                                                color: hoveredService === index ? '#0C55AC' : 'white',
+                                                                textShadow: hoveredService === index ? 'none' : '0 2px 10px rgba(0,0,0,0.3)'
+                                                            }}
+                                                        >
+                                                            {service.title}
+                                                        </h3>
+
+                                                        {/* Animated Underline */}
+                                                        <motion.div
+                                                            className="h-1 rounded-full"
+                                                            style={{ background: 'linear-gradient(90deg, #14A0B5, #0C55AC)' }}
+                                                            initial={{ width: 0 }}
+                                                            animate={{ width: hoveredService === index ? '100%' : '60px' }}
+                                                            transition={{ duration: 0.4 }}
+                                                        />
+                                                    </motion.div>
+
+                                                    {/* Expandable Content */}
+                                                    <motion.div
+                                                        initial={{ opacity: 0, height: 0 }}
+                                                        animate={{
+                                                            opacity: hoveredService === index ? 1 : 0,
+                                                            height: hoveredService === index ? 'auto' : 0,
+                                                        }}
+                                                        transition={{ duration: 0.4 }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        <p className="text-base mb-4 leading-relaxed font-medium" style={{ color: '#1F366A' }}>
+                                                            {service.desc}
+                                                        </p>
+
+                                                        {/* Feature List */}
+                                                        <div className="space-y-2 mb-6 p-4 rounded-lg" style={{ backgroundColor: 'rgba(12, 85, 172, 0.05)' }}>
+                                                            {service.details.slice(0, 3).map((detail, i) => (
+                                                                <motion.div
+                                                                    key={i}
+                                                                    className="flex items-start gap-2"
+                                                                    initial={{ opacity: 0, x: -10 }}
+                                                                    animate={{ opacity: 1, x: 0 }}
+                                                                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                                                                >
+                                                                    <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5" style={{ background: 'linear-gradient(135deg, #0C55AC, #14A0B5)' }}>
+                                                                        ✓
+                                                                    </span>
+                                                                    <span className="text-sm font-medium leading-tight" style={{ color: '#1F366A' }}>
+                                                                        {detail}
+                                                                    </span>
+                                                                </motion.div>
+                                                            ))}
+                                                        </div>
+
+                                                        {/* CTA Button */}
+                                                        <button
+                                                            onClick={() => setSelectedService(index)}
+                                                            className="w-full px-6 py-3 text-white rounded-lg font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 group/btn"
+                                                            style={{ background: 'linear-gradient(135deg, #0C55AC, #1F366A)' }}
+                                                        >
+                                                            Explore Service
+                                                            <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                                                        </button>
+                                                    </motion.div>
+
+                                                    {/* Hover Indicator (when not hovered) */}
+                                                    {hoveredService !== index && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0 }}
+                                                            animate={{ opacity: 1 }}
+                                                            className="flex items-center gap-2 mt-4 text-white/80 text-sm font-medium"
+                                                        >
+                                                            <span>Hover to explore</span>
+                                                            <motion.div
+                                                                animate={{ x: [0, 5, 0] }}
+                                                                transition={{ repeat: Infinity, duration: 1.5 }}
+                                                            >
+                                                                <ChevronRight className="w-4 h-4" />
+                                                            </motion.div>
+                                                        </motion.div>
+                                                    )}
+                                                </div>
                                             </div>
+
+                                            {/* Decorative Corner Elements */}
+                                            <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 rounded-tl-lg" style={{ borderColor: hoveredService === index ? '#14A0B5' : 'rgba(255,255,255,0.3)' }} />
+                                            <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 rounded-tr-lg" style={{ borderColor: hoveredService === index ? '#14A0B5' : 'rgba(255,255,255,0.3)' }} />
+                                            <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 rounded-bl-lg" style={{ borderColor: hoveredService === index ? '#14A0B5' : 'rgba(255,255,255,0.3)' }} />
+                                            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 rounded-br-lg" style={{ borderColor: hoveredService === index ? '#14A0B5' : 'rgba(255,255,255,0.3)' }} />
                                         </div>
-                                    </SpotLightItem>
+                                    </motion.div>
                                 </ScrollReveal>
                             ))}
-                        </Spotlight>
+                        </div>
                     </div>
                 </section>
 
@@ -430,57 +546,204 @@ export default function Mechanical() {
                     </div>
                 </section>
 
-                {/* Advanced Diagnostics - Sticky Images Pattern */}
-                <section className="bg-slate-950 text-white w-full">
-                    <div className="grid grid-cols-1 md:grid-cols-2 px-8">
-                        {/* Sticky Stacking Images */}
-                        <div className="grid gap-2">
-                            {[
-                                { src: "/mechanical_hero_1764692776650.png", alt: "Computer Diagnostics" },
-                                { src: "/mechanical_hero_1764692776650.png", alt: "Engine Analysis" },
-                                { src: "/mechanical_hero_1764692776650.png", alt: "Sensor Testing" },
-                                { src: "/mechanical_hero_1764692776650.png", alt: "System Calibration" }
-                            ].map((image, index) => (
-                                <figure key={index} className="sticky top-0 h-screen grid place-content-center">
-                                    <div className="relative group">
-                                        <img
-                                            src={image.src}
-                                            alt={image.alt}
-                                            className="transition-all duration-500 w-96 h-96 align-bottom object-cover rounded-md shadow-2xl border-2 border-blue-500/30 group-hover:border-blue-500 group-hover:scale-105 group-hover:shadow-blue-500/50"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
-                                    </div>
-                                </figure>
-                            ))}
-                        </div>
+                {/* Advanced Diagnostics - Bento Grid Layout */}
+                <section className="py-32 px-4 relative overflow-hidden bg-slate-950">
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 opacity-5">
+                        <div className="absolute inset-0" style={{
+                            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,.1) 50px, rgba(255,255,255,.1) 51px)`
+                        }} />
+                    </div>
 
-                        {/* Sticky Content */}
-                        <div className="sticky top-0 h-screen grid place-content-center">
-                            <div className="max-w-xl">
-                                <span className="inline-block py-1 px-3 rounded-full text-white text-sm font-medium mb-6 border backdrop-blur-sm" style={{ backgroundColor: '#0C55AC', borderColor: '#14A0B5' }}>Advanced Technology</span>
-                                <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
-                                    ADVANCED <br />
-                                    <span style={{ color: '#14A0B5' }}>DIAGNOSTICS</span>
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        {/* Header */}
+                        <ScrollReveal>
+                            <div className="text-center mb-16">
+                                <motion.span
+                                    className="inline-block py-2 px-6 rounded-full text-sm font-bold uppercase tracking-wider mb-6 shadow-lg"
+                                    style={{ backgroundColor: '#14A0B5', color: '#000' }}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    Advanced Technology
+                                </motion.span>
+                                <h2 className="text-5xl md:text-7xl font-['Poppins'] font-black mb-6 text-white uppercase tracking-tight">
+                                    ADVANCED <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #14A0B5, #FDDD7F)' }}>DIAGNOSTICS</span>
                                 </h2>
-                                <p className="text-lg text-gray-300 mb-6 leading-relaxed font-medium">
-                                    Modern vehicles are complex computers on wheels. We use the latest diagnostic scanning tools to communicate directly with your car's onboard systems.
+                                <p className="text-xl text-white/80 max-w-3xl mx-auto font-medium">
+                                    State-of-the-art diagnostic technology for precise vehicle analysis
                                 </p>
-                                <p className="text-lg text-gray-300 mb-8 leading-relaxed font-medium">
-                                    Our technicians are trained to interpret complex data streams, allowing us to pinpoint issues with engine management, transmission control, and safety systems that others might miss.
-                                </p>
+                            </div>
+                        </ScrollReveal>
 
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>100%</div>
-                                        <div className="text-sm uppercase tracking-wider text-gray-300">Accuracy</div>
-                                    </div>
-                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-white/20">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2" style={{ color: '#14A0B5' }}>Latest</div>
-                                        <div className="text-sm uppercase tracking-wider text-gray-300">Software</div>
+                        {/* Bento Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                            {/* Large Feature Card - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/20 backdrop-blur-sm"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                whileHover={{ scale: 1.02, borderColor: 'rgba(20, 160, 181, 0.8)' }}
+                            >
+                                <div className="relative h-full min-h-[500px] overflow-hidden">
+                                    <img
+                                        src="/mechanical_hero_1764692776650.png"
+                                        alt="Computer Diagnostics"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                                        <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#000' }}>
+                                            PREMIUM FEATURE
+                                        </div>
+                                        <h3 className="text-3xl font-['Poppins'] font-black text-white mb-3">
+                                            Computer Diagnostic Scanning
+                                        </h3>
+                                        <p className="text-white/90 font-medium leading-relaxed">
+                                            Our advanced diagnostic equipment communicates directly with your vehicle's onboard computer systems for accurate fault detection.
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
+
+                            {/* Stats Card 1 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl p-8 border-2 border-white/20"
+                                style={{ background: 'linear-gradient(135deg, rgba(20, 160, 181, 0.2), rgba(12, 85, 172, 0.2))' }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                whileHover={{ scale: 1.05, borderColor: 'rgba(253, 221, 127, 0.8)' }}
+                            >
+                                <Activity className="w-12 h-12 mb-4" style={{ color: '#FDDD7F' }} />
+                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">100%</div>
+                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Accuracy</div>
+                            </motion.div>
+
+                            {/* Stats Card 2 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl p-8 border-2 border-white/20"
+                                style={{ background: 'linear-gradient(135deg, rgba(253, 221, 127, 0.2), rgba(228, 174, 179, 0.2))' }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                whileHover={{ scale: 1.05, borderColor: 'rgba(20, 160, 181, 0.8)' }}
+                            >
+                                <Gauge className="w-12 h-12 mb-4" style={{ color: '#FDDD7F' }} />
+                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">Latest</div>
+                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Software</div>
+                            </motion.div>
+
+                            {/* Image Card 1 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/mechanical_hero_1764692776650.png"
+                                        alt="Engine Analysis"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h4 className="text-xl font-['Poppins'] font-bold text-white">Engine Analysis</h4>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 2 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/mechanical_hero_1764692776650.png"
+                                        alt="Sensor Testing"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h4 className="text-xl font-['Poppins'] font-bold text-white">Sensor Testing</h4>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 3 - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/mechanical_hero_1764692776650.png"
+                                        alt="System Calibration"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 p-8 flex items-center">
+                                        <div className="max-w-md">
+                                            <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#FDDD7F', color: '#000' }}>
+                                                SPECIALIZED
+                                            </div>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">System Calibration</h4>
+                                            <p className="text-white/90 font-medium">Precision calibration for engine management and safety systems</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </div>
+
+                        {/* Bottom Features */}
+                        <ScrollReveal delay={0.6}>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Zap className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Live Data Streaming</h4>
+                                    <p className="text-white/70 text-sm">Real-time monitoring of engine parameters and sensors</p>
+                                </motion.div>
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Settings className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Multi-Brand Coverage</h4>
+                                    <p className="text-white/70 text-sm">Compatible with all major vehicle manufacturers</p>
+                                </motion.div>
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Shield className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Safety System Checks</h4>
+                                    <p className="text-white/70 text-sm">Comprehensive diagnostics for ABS, airbags, and more</p>
+                                </motion.div>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </section>
 

@@ -4,9 +4,95 @@ import { CardContainer, CardBody, CardItem } from './ui/3d-card';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
+// Before/After Slider Component
+function BeforeAfterSlider({ item, index }: { item: { before: string; after: string; title: string; description: string }; index: number }) {
+    const [position, setPosition] = useState(50);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="space-y-4"
+        >
+            {/* Title */}
+            <div className="text-center">
+                <h3 className="text-2xl font-['Poppins'] font-semibold text-gray-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-gray-600 font-medium">{item.description}</p>
+            </div>
+
+            {/* Before/After Slider */}
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-xl border border-gray-300 group">
+                {/* After Image (Background) */}
+                <img
+                    src={item.after}
+                    alt={`${item.title} - After`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={(e) => {
+                        e.currentTarget.src = '/shop.webp';
+                    }}
+                />
+
+                {/* Before Image (Foreground, clipped) */}
+                <div
+                    className="absolute inset-0 w-full h-full overflow-hidden transition-all duration-100"
+                    style={{ width: `${position}%` }}
+                >
+                    <img
+                        src={item.before}
+                        alt={`${item.title} - Before`}
+                        className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-75"
+                        style={{ width: '100vw', maxWidth: 'none' }}
+                        onError={(e) => {
+                            e.currentTarget.src = '/panel_beating_hero_1764692687494.png';
+                        }}
+                    />
+                    {/* Before Label */}
+                    <div
+                        className="absolute top-3 left-3 bg-black/70 text-white px-2 py-1 text-xs md:text-sm font-medium rounded transition-opacity duration-300"
+                        style={{ opacity: position > 15 ? 1 : 0 }}
+                    >
+                        BEFORE
+                    </div>
+                </div>
+
+                {/* After Label */}
+                <div
+                    className="absolute top-3 right-3 bg-CPurple/90 text-white px-2 py-1 text-xs md:text-sm font-medium rounded transition-opacity duration-300"
+                    style={{ opacity: position < 85 ? 1 : 0 }}
+                >
+                    AFTER
+                </div>
+
+                {/* Slider Handle */}
+                <div
+                    className="absolute inset-y-0 w-1 bg-CPurple cursor-ew-resize z-20 group-hover:w-1.5 transition-all duration-100"
+                    style={{ left: `${position}%` }}
+                >
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-CPurple group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-CPurple">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" transform="rotate(90 12 12)" />
+                        </svg>
+                    </div>
+                </div>
+
+                {/* Range Input for Interaction */}
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={position}
+                    onChange={(e) => setPosition(Number(e.target.value))}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+                />
+            </div>
+        </motion.div>
+    );
+}
+
 export default function OurStory() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [sliderPosition, setSliderPosition] = useState(50);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -108,14 +194,14 @@ export default function OurStory() {
                         </h2>
                     </div>
 
-                    <div className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
+                    <div className="relative h-[400px] md:h-[700px] w-full flex items-center justify-center">
                         {/* Scattered Photos */}
                         {[
-                            { src: "/shop.webp", rotate: -6, x: -100, y: -25, caption: "The Early Days" },
-                            { src: "/panel-beatt.jpg", rotate: 5, x: 100, y: -40, caption: "Master Craftsmen" },
-                            { src: "/car-tune-up.jpg", rotate: -3, x: -75, y: 75, caption: "Precision Tuning" },
-                            { src: "/headlight.webp", rotate: 8, x: 90, y: 60, caption: "Attention to Detail" },
-                            { src: "/shop.webp", rotate: 0, x: 0, y: 0, caption: "Our Workshop", scale: 1.1, z: 10 }
+                            { src: "/shop.webp", rotate: -6, xMobile: -100, yMobile: -25, xDesktop: -220, yDesktop: -80, caption: "The Early Days" },
+                            { src: "/panel-beatt.jpg", rotate: 5, xMobile: 100, yMobile: -40, xDesktop: 240, yDesktop: -100, caption: "Master Craftsmen" },
+                            { src: "/car-tune-up.jpg", rotate: -3, xMobile: -75, yMobile: 75, xDesktop: -180, yDesktop: 140, caption: "Precision Tuning" },
+                            { src: "/headlight.webp", rotate: 8, xMobile: 90, yMobile: 60, xDesktop: 200, yDesktop: 120, caption: "Attention to Detail" },
+                            { src: "/shop.webp", rotate: 0, xMobile: 0, yMobile: 0, xDesktop: 0, yDesktop: 0, caption: "Our Workshop", scale: 1.1, z: 10 }
                         ].map((photo, index) => (
                             <motion.div
                                 key={index}
@@ -126,8 +212,8 @@ export default function OurStory() {
                                     opacity: 1,
                                     scale: photo.scale || 1,
                                     rotate: photo.rotate,
-                                    x: photo.x,
-                                    y: photo.y
+                                    x: [photo.xMobile, photo.xDesktop],
+                                    y: [photo.yMobile, photo.yDesktop]
                                 }}
                                 whileHover={{
                                     scale: 1.2,
@@ -136,7 +222,7 @@ export default function OurStory() {
                                     transition: { duration: 0.3 }
                                 }}
                                 drag
-                                dragConstraints={{ left: -150, right: 150, top: -100, bottom: 100 }}
+                                dragConstraints={{ left: -250, right: 250, top: -150, bottom: 150 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                             >
@@ -151,80 +237,60 @@ export default function OurStory() {
                 </div>
             </section>
 
-            {/* Transformation Showcase */}
+            {/* Transformation Showcase - 4 Before/After Comparisons */}
             <section className="py-24 bg-white text-gray-900">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">The Magic Touch</p>
-                            <h2 className="text-4xl md:text-5xl font-['Poppins'] font-medium mb-6">RESTORING GLORY</h2>
-                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-6">
-                                See the difference our craftsmanship makes. We take damaged vehicles and return them to their showroom condition, often exceeding the original factory finish.
-                            </p>
-                            <div className="flex items-center gap-4 text-base md:text-lg text-gray-600">
-                                <div className="flex items-center gap-2">
-                                    <span className="w-4 h-4 bg-gray-400 rounded-full"></span> Before
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="w-4 h-4 bg-CPurple rounded-full"></span> After
-                                </div>
+                    <div className="text-center mb-16">
+                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">The Magic Touch</p>
+                        <h2 className="text-4xl md:text-5xl font-['Poppins'] font-medium mb-6">RESTORING GLORY</h2>
+                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl mx-auto mb-6">
+                            See the difference our craftsmanship makes. We take damaged vehicles and return them to their showroom condition, often exceeding the original factory finish.
+                        </p>
+                        <div className="flex items-center justify-center gap-6 text-base md:text-lg text-gray-600">
+                            <div className="flex items-center gap-2">
+                                <span className="w-4 h-4 bg-gray-400 rounded-full"></span> Before
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="w-4 h-4 bg-CPurple rounded-full"></span> After
                             </div>
                         </div>
+                    </div>
 
-                        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-gray-300">
-                            {/* After Image (Background) */}
-                            <img src="/shop.webp" alt="After Repair" className="absolute inset-0 w-full h-full object-cover" />
+                    {/* Grid of 4 Before/After Sliders */}
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                before: "/dent_repair_1764693039882.png",
+                                after: "/panel_beating_hero_1764692687494.png",
+                                title: "Dent Removal",
+                                description: "Complete dent removal and paint restoration"
+                            },
+                            {
+                                before: "/panel-beatt.jpg",
+                                after: "/paint_booth_1764692971281.png",
+                                title: "Collision Repair",
+                                description: "Full structural repair and refinishing"
+                            },
+                            {
+                                before: "/wheel_repair_1764693107551.png",
+                                after: "/shop.webp",
+                                title: "Panel Beating",
+                                description: "Expert panel straightening and alignment"
+                            },
+                            {
+                                before: "/panel_beating_hero_1764692687494.png",
+                                after: "/shop.webp",
+                                title: "Paint Restoration",
+                                description: "Professional color matching and finishing"
+                            }
+                        ].map((item, index) => (
+                            <BeforeAfterSlider key={index} item={item} index={index} />
+                        ))}
+                    </div>
 
-                            {/* Before Image (Foreground, clipped) */}
-                            <div
-                                className="absolute inset-0 w-full h-full overflow-hidden"
-                                style={{ width: `${sliderPosition}%` }}
-                            >
-                                <img
-                                    src="/shop.webp"
-                                    alt="Before Repair"
-                                    className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-75"
-                                    style={{ width: '100vw', maxWidth: 'none' }} // Ensure image doesn't squash
-                                />
-                                {/* Label */}
-                                <div
-                                    className="absolute top-4 left-4 bg-black/70 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
-                                    style={{ opacity: sliderPosition > 15 ? 1 : 0 }}
-                                >
-                                    BEFORE
-                                </div>
-                            </div>
-
-                            {/* After Label */}
-                            <div
-                                className="absolute top-4 right-4 bg-blue-600/90 text-white px-3 py-2 text-sm md:text-base font-medium rounded transition-opacity duration-300"
-                                style={{ opacity: sliderPosition < 85 ? 1 : 0 }}
-                            >
-                                AFTER
-                            </div>
-
-                            {/* Slider Handle */}
-                            <div
-                                className="absolute inset-y-0 w-1 bg-blue-500 cursor-ew-resize z-20"
-                                style={{ left: `${sliderPosition}%` }}
-                            >
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-CPurple">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" transform="rotate(90 12 12)" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            {/* Range Input for Interaction */}
-                            <input
-                                type="range"
-                                min="0"
-                                max="100"
-                                value={sliderPosition}
-                                onChange={(e) => setSliderPosition(Number(e.target.value))}
-                                className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
-                            />
-                        </div>
+                    {/* Bottom Text */}
+                    <div className="mt-12 text-center">
+                        <p className="text-gray-600 italic">Drag the slider to see the transformation</p>
                     </div>
                 </div>
             </section>
@@ -259,120 +325,121 @@ export default function OurStory() {
 
             {/* Our Leadership Section commented out */}
 
-            {/* Timeline */}
-            <motion.section
-                className="px-4 py-16 bg-white text-gray-900"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-            >
+            {/* Milestones - Bento Grid */}
+            <section className="px-4 py-16 bg-gradient-to-br from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Our Journey</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black">Milestones of Excellence</h2>
+                        <h2 className="text-4xl md:text-5xl font-['Poppins'] font-medium uppercase text-black">Milestones of Excellence</h2>
                     </div>
 
-                    <div className="relative space-y-8">
-                        {/* Animated Vertical Line */}
+                    {/* Bento Grid */}
+                    <div className="grid grid-cols-12 gap-3 md:gap-4">
+                        {/* 1990s - Large Left Card */}
                         <motion.div
-                            className="absolute left-[29%] top-2 bottom-0 w-0.5 bg-blue-200 hidden md:block"
-                            initial={{ height: 0 }}
-                            whileInView={{ height: "100%" }}
-                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            className="col-span-12 md:col-span-6 md:row-span-2 p-6 md:p-8 rounded-2xl relative overflow-hidden group"
+                            style={{ background: 'linear-gradient(135deg, #E4AEB3 0%, #783E6C 100%)' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                        />
-
-                        {/* Timeline Item 1 */}
-                        <motion.div
-                            className="grid md:grid-cols-12 gap-8 items-start relative z-10 group"
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
-                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            whileHover={{ scale: 1.02 }}
                         >
-                            <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">1990s</div>
-                            </div>
-                            <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
-                            </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPurple transition-colors">
-                                <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">The Foundation</h3>
-                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+                            <div className="relative z-10">
+                                <div className="inline-block px-3 py-1 rounded-full mb-4" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                                    <span className="text-4xl md:text-6xl font-['Poppins'] font-black text-white">1990s</span>
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-['Poppins'] font-bold text-white mb-3">The Foundation</h3>
+                                <p className="text-white/90 leading-relaxed font-medium">
                                     CBD Panel and Paint opens its doors in Auckland's CBD, establishing a reputation for quality panel beating and collision repair work.
                                 </p>
                             </div>
                         </motion.div>
 
-                        {/* Timeline Item 2 */}
+                        {/* 2000s - Top Right */}
                         <motion.div
-                            className="grid md:grid-cols-12 gap-8 items-start relative z-10 group"
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="col-span-12 md:col-span-6 p-5 md:p-6 rounded-2xl relative overflow-hidden group"
+                            style={{ background: 'linear-gradient(135deg, #FDDD7F 0%, #14A0B5 100%)' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            whileHover={{ scale: 1.02 }}
                         >
-                            <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">2000s</div>
-                            </div>
-                            <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
-                            </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPink transition-colors">
-                                <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">Expansion & Growth</h3>
-                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
-                                    Expanded our services to include comprehensive mechanical repairs, WOF inspections, and became insurance-approved repairers for major providers.
+                            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12" />
+                            <div className="relative z-10">
+                                <span className="text-3xl md:text-4xl font-['Poppins'] font-black text-white opacity-90">2000s</span>
+                                <h3 className="text-xl md:text-2xl font-['Poppins'] font-bold text-white mt-2 mb-2">Expansion & Growth</h3>
+                                <p className="text-white/90 leading-relaxed font-medium text-sm md:text-base">
+                                    Expanded our services to include comprehensive mechanical repairs, WOF inspections, and became insurance-approved repairers.
                                 </p>
                             </div>
                         </motion.div>
 
-                        {/* Timeline Item 3 */}
+                        {/* 2010s - Middle Right */}
                         <motion.div
-                            className="grid md:grid-cols-12 gap-8 items-start relative z-10 group"
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="col-span-12 md:col-span-6 p-5 md:p-6 rounded-2xl relative overflow-hidden group"
+                            style={{ background: 'linear-gradient(135deg, #14A0B5 0%, #0C55AC 100%)' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            whileHover={{ scale: 1.02 }}
                         >
-                            <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">2010s</div>
-                            </div>
-                            <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
-                            </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPink transition-colors">
-                                <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">Modernization</h3>
-                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
-                                    Invested in cutting-edge diagnostic equipment and computerized paint matching systems. Introduced specialized services for caravans, boats, and custom trailer fabrication.
+                            <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mr-10 -mt-10" />
+                            <div className="relative z-10">
+                                <span className="text-3xl md:text-4xl font-['Poppins'] font-black text-white opacity-90">2010s</span>
+                                <h3 className="text-xl md:text-2xl font-['Poppins'] font-bold text-white mt-2 mb-2">Modernization</h3>
+                                <p className="text-white/90 leading-relaxed font-medium text-sm md:text-base">
+                                    Invested in cutting-edge diagnostic equipment and computerized paint matching systems. Introduced specialized services for caravans, boats, and trailers.
                                 </p>
                             </div>
                         </motion.div>
 
-                        {/* Timeline Item 4 */}
+                        {/* Today - Large Bottom Card */}
                         <motion.div
-                            className="grid md:grid-cols-12 gap-8 items-start relative z-10 group"
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="col-span-12 p-6 md:p-8 rounded-2xl relative overflow-hidden group"
+                            style={{ background: 'linear-gradient(135deg, #0C55AC 0%, #1F366A 100%)' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            whileHover={{ scale: 1.01 }}
                         >
-                            <div className="md:col-span-3 text-right">
-                                <div className="text-4xl font-['Poppins'] font-bold text-CPink group-hover:text-CPurple transition-colors">Today</div>
-                            </div>
-                            <div className="md:col-span-1 flex justify-center">
-                                <div className="w-4 h-4 bg-CPink rounded-full mt-2 group-hover:scale-150 group-hover:bg-CPurple transition-all duration-300 shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
-                            </div>
-                            <div className="md:col-span-8 bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-CPink transition-colors">
-                                <h3 className="text-2xl font-['Poppins'] font-medium mb-2 text-gray-900">Industry Leaders</h3>
-                                <p style={{ wordSpacing: '-0.15rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
+                            {/* Decorative Elements */}
+                            <div className="absolute top-0 left-1/4 w-48 h-48 bg-white/5 rounded-full -mt-24" />
+                            <div className="absolute bottom-0 right-1/4 w-36 h-36 bg-white/5 rounded-full -mb-18" />
+
+                            <div className="relative z-10 text-center">
+                                <div className="inline-block px-4 py-2 rounded-full mb-4" style={{ background: 'rgba(253, 221, 127, 0.2)', border: '2px solid rgba(253, 221, 127, 0.3)' }}>
+                                    <span className="text-4xl md:text-6xl font-['Poppins'] font-black text-white">TODAY</span>
+                                </div>
+                                <h3 className="text-3xl md:text-4xl font-['Poppins'] font-bold text-white mb-4">Industry Leaders</h3>
+                                <p className="text-white/90 leading-relaxed font-medium md:text-lg max-w-3xl mx-auto">
                                     Now recognized as one of Auckland's premier full-service automotive repair centers, serving thousands of satisfied customers with a team of expert technicians and state-of-the-art facilities.
                                 </p>
+
+                                {/* Stats Row */}
+                                <div className="grid grid-cols-3 gap-4 mt-6 max-w-xl mx-auto">
+                                    <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                                        <div className="text-2xl font-['Poppins'] font-black text-white mb-1">30+</div>
+                                        <div className="text-xs uppercase text-white/80 font-bold">Years</div>
+                                    </div>
+                                    <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                                        <div className="text-2xl font-['Poppins'] font-black text-white mb-1">5000+</div>
+                                        <div className="text-xs uppercase text-white/80 font-bold">Customers</div>
+                                    </div>
+                                    <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                                        <div className="text-2xl font-['Poppins'] font-black text-white mb-1">100%</div>
+                                        <div className="text-xs uppercase text-white/80 font-bold">Quality</div>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
                 </div>
-            </motion.section>
+            </section>
 
             {/* Core Values */}
             <motion.section
