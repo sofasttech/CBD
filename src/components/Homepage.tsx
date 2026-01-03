@@ -352,31 +352,74 @@ export default function Homepage() {
       <section id="home" className="pt-20 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           {/* Left side text */}
-          <div>
-            <p className="text-blue-600 text-sm font-medium mb-2">Car Troubles?</p>
-            <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium text-blue-600 mb-4">We’ll power you back on the road</h1>
-            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-6">CBD Panel and Paint Limited is a full-service auto repair centre in Grey Lynn, offering panel beating, spray painting, mechanical servicing, WOF inspections, towing, and insurance-approved repairs. We oversee every job from initial assessment through to completion, ensuring your vehicle is restored safely and kept road-ready.</p>
-            <div className="mb-6 grid grid-cols-2 gap-2">
-              <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">•</span> Insurance Approved
-              </p>
-              <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">•</span> Fast service
-              </p>
-              <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">•</span> Fair price
-              </p>
-              <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">•</span> Expert workmanship
-              </p>
-              <p className="flex items-center gap-2 text-gray-700">
-                <span className="text-green-600">•</span> Family-run
-              </p>
-              <p className="flex items-center gap-2 text-gray-700 col-span-2 md:col-span-1">
-                <span className="text-green-600">•</span> All services under one roof
-              </p>
-            </div>
-            <div className="flex gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            <motion.p
+              className="text-blue-600 text-sm font-medium mb-2"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              Car Troubles?
+            </motion.p>
+            <motion.h1
+              className="text-4xl md:text-6xl font-['Poppins'] font-medium text-blue-600 mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              We'll power you back on the road
+            </motion.h1>
+            <motion.p
+              style={{ wordSpacing: '-0.08rem' }}
+              className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              CBD Panel and Paint Limited is a full-service auto repair centre in Grey Lynn, offering panel beating, spray painting, mechanical servicing, WOF inspections, towing, and insurance-approved repairs. We oversee every job from initial assessment through to completion, ensuring your vehicle is restored safely and kept road-ready.
+            </motion.p>
+            <motion.div
+              className="mb-6 grid grid-cols-2 gap-2"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              {[
+                'Insurance Approved',
+                'Fast service',
+                'Fair price',
+                'Expert workmanship',
+                'Family-run',
+                'All services under one roof'
+              ].map((text, index) => (
+                <motion.p
+                  key={index}
+                  className={`flex items-center gap-2 text-gray-700 ${index === 5 ? 'col-span-2 md:col-span-1' : ''}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.5 + (index * 0.1) }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-green-600">•</span> {text}
+                </motion.p>
+              ))}
+            </motion.div>
+            <motion.div
+              className="flex gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
               <button onClick={() => navigate('/panel-beating')} className="bg-CDarkBlue text-white px-4 py-2 md:px-8 md:py-3 font-medium hover:bg-gray-800 transition">
                 View All Services
               </button>
@@ -384,23 +427,33 @@ export default function Homepage() {
                 <span className="absolute left-0 top-0 h-full bg-CGreen w-0 group-hover:w-full transition-all duration-300"></span>
                 <span className="relative z-10">Appointment</span>
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right side image */}
-          <div className="relative">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             <img src={heroImages[currentImage]} alt="Grey SUV" className="w-full h-auto rounded-lg" />
             {/* Hotspots */}
             {hotspots.map((hotspot, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="absolute w-8 h-8 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
                 style={{ top: hotspot.top, left: hotspot.left, right: hotspot.right }}
                 onMouseEnter={() => setHoveredHotspot(index)}
                 onMouseLeave={() => setHoveredHotspot(null)}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.8 + (index * 0.1) }}
+                viewport={{ once: true }}
               >
                 <span className="text-red-600 font-bold text-lg">+</span>
-              </div>
+              </motion.div>
             ))}
             {/* Tooltip */}
             {hoveredHotspot !== null && (
@@ -420,7 +473,7 @@ export default function Homepage() {
                 <p>{hotspots[hoveredHotspot].desc}</p>
               </motion.div>
             )}
-          </div>
+          </motion.div>
         </div>
 
         <div className="h-16"></div>
@@ -430,19 +483,37 @@ export default function Homepage() {
       </section>
 
       {/* Cars Ribbon */}
-      <section className="w-full relative">
+      <motion.section
+        className="w-full relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <img src="/carsnz.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
         <div className="absolute inset-0 bg-white/70 pointer-events-none"></div>
         <div className="absolute inset-0 flex items-start justify-center px-4 pt-10 md:pt-16">
-          <h2 className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Poppins'] font-medium leading-tight">
+          <motion.h2
+            className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Poppins'] font-medium leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             We SERVICE <span className="text-blue-600">All</span> MAKES and MODELS...<br />
             <span className="text-black">FOREIGN and DOMESTIC!</span>
-          </h2>
+          </motion.h2>
         </div>
-      </section>
+      </motion.section>
 
       {/* Infinity Brand Scroll */}
-      <section className="px-2 py-14 bg-white-100 overflow-hidden">
+      <motion.section
+        className="px-2 py-14 bg-white-100 overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-8xl mx-auto">
           <div className="relative flex overflow-hidden">
             <div className="flex gap-0 animate-[infinite-scroll_25s_linear_infinite]">
@@ -467,7 +538,7 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Section */}
       <AboutAccordionSection />
@@ -594,10 +665,10 @@ export default function Homepage() {
                 key={index}
                 className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-cover bg-center border border-gray-200 group shadow-xl rounded-xl"
                 style={{ backgroundImage: `url('${feature.image}')` }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
               >
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-60 transition-opacity duration-300 group-hover:bg-opacity-80"></div>
@@ -650,7 +721,13 @@ export default function Homepage() {
             {/* Cards Stack */}
             <div className="grid gap-4 flex-1">
               {/* Card 01 - Accident Repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+              <motion.figure
+                className="sticky top-[36vh] h-[70vh] grid place-content-center"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "-150px" }}
+              >
                 <article className="bg-CBlue h-96 w-full max-w-3xl rounded-lg rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -664,10 +741,16 @@ export default function Homepage() {
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Accident Repair" className="w-full h-full object-cover rounded-lg" /></div>
                   </div>
                 </article>
-              </figure>
+              </motion.figure>
 
               {/* Card 02 - Bumper Repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
+              <motion.figure
+                className="sticky top-[36vh] h-[70vh] grid place-content-center"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "-150px" }}
+              >
                 <article className="bg-CDarkBlue h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
                   <div className="flex h-full gap-4">
                     <div className="flex-1 flex flex-col justify-center gap-3">
@@ -681,7 +764,7 @@ export default function Homepage() {
                     <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
                   </div>
                 </article>
-              </figure>
+              </motion.figure>
 
               {/* Card 03 - Chassis and structural repair */}
               <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
@@ -883,7 +966,7 @@ export default function Homepage() {
 
       <div className="h-40 bg-white"></div>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us - Bento Grid */}
       <section className="py-24 bg-white text-black overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div
@@ -899,63 +982,77 @@ export default function Homepage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Expert Craftsmanship",
-                desc: "Our certified technicians bring decades of combined experience to every repair, ensuring factory-standard results.",
-                image: "/panel-beatt.jpg"
-              },
-              {
-                title: "Advanced Technology",
-                desc: "We utilize the latest diagnostic tools and repair equipment to deliver precise, efficient, and lasting solutions.",
-                image: "/tech.jpg"
-              },
-              {
-                title: "Lifetime Guarantee",
-                desc: "We stand behind our work. Enjoy peace of mind knowing that our repairs are backed by a comprehensive warranty.",
-                image: "/shop.webp"
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                viewport={{ once: true }}
-                className="group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent transition-all duration-500"
-                style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-              >
-                {/* Dark overlay shade */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500 z-10"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[minmax(0,1fr)]">
+            {/* Large Item 1 */}
+            <motion.div
+              className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-2xl shadow-xl min-h-[400px] cursor-pointer"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/panel-beatt.jpg')" }} />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 p-8 text-white z-10">
+                <h3 className="text-2xl md:text-4xl font-bold font-['Poppins'] mb-3">Expert Craftsmanship</h3>
+                <p className="text-gray-200 text-lg max-w-sm">Our certified technicians bring decades of combined experience to every repair, ensuring factory-standard results.</p>
+              </div>
+            </motion.div>
 
-                <div className="text relative z-50">
-                  <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
-                    {item.title}
-                  </h1>
-                  <p className="font-normal text-lg text-gray-50 relative my-4 text-justify">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+            {/* Item 2 */}
+            <motion.div
+              className="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl shadow-xl min-h-[200px] md:min-h-[250px] cursor-pointer"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/tech.jpg')" }} />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 p-6 text-white z-10">
+                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Advanced Technology</h3>
+                <p className="text-gray-200 text-sm md:text-base max-w-md">We utilize the latest diagnostic tools and repair equipment to deliver precise and lasting solutions.</p>
+              </div>
+            </motion.div>
 
-          {/* Stats Section */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white-200 pt-12">
+            {/* Item 3 */}
+            <motion.div
+              className="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl shadow-xl min-h-[200px] md:min-h-[250px] cursor-pointer"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/shop.webp')" }} />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 p-6 text-white z-10">
+                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Lifetime Guarantee</h3>
+                <p className="text-gray-200 text-sm md:text-base max-w-md">We stand behind our work. Enjoy peace of mind knowing that our repairs are backed by a comprehensive warranty.</p>
+              </div>
+            </motion.div>
+
+            {/* Stats Items */}
             {[
               { label: "Years Experience", value: 30, suffix: "+" },
               { label: "Cars Repaired", value: 9900, suffix: "K+" },
               { label: "Customer Rating", value: 100, suffix: "%" },
               { label: "Expert Staff", value: 10, suffix: "+" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-['Poppins'] font-bold text-blue-500 mb-2">
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                className="md:col-span-1 bg-gray-50 rounded-2xl shadow-sm p-6 flex flex-col justify-center items-center border border-gray-100 hover:shadow-md transition-shadow min-h-[160px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
+              >
+                <div className="text-3xl lg:text-4xl font-bold font-['Poppins'] text-blue-600 mb-2">
                   <AnimatedNumber target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-black uppercase tracking-wider">{stat.label}</div>
-              </div>
+                <div className="text-xs text-black font-semibold uppercase tracking-wider text-center">{stat.label}</div>
+              </motion.div>
             ))}
+
           </div>
         </div>
       </section>

@@ -5,14 +5,13 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
 import { ReactLenis } from 'lenis/react';
-import { Spotlight, SpotLightItem } from './ui/spotlight';
+import { Carousel, Card } from './ui/apple-cards-carousel';
 
 export default function CaravansBoats() {
     const CARAVAN_IMAGES_PATH = '/Caravan Images';
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [hoveredService, setHoveredService] = useState<number | null>(null);
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
@@ -219,83 +218,84 @@ export default function CaravansBoats() {
                     </div>
                 </motion.section>
 
-                {/* Services Grid - Holographic HUD Style */}
-                <section id="services-grid" className="py-32 px-4 bg-gradient-to-b from-[#1F366A]/5 to-white relative z-10 overflow-hidden">
-                    {/* Background Grid Lines */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#14A0B5_1px,transparent_1px),linear-gradient(to_bottom,#14A0B5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-10 pointer-events-none" />
-
-                    <div className="max-w-7xl mx-auto relative z-10">
+                {/* Services Carousel - Apple Cards */}
+                <section id="services-grid" className="py-20 bg-white relative z-40 overflow-hidden">
+                    <div className="max-w-7xl mx-auto px-4 relative z-10 mb-16">
                         <ScrollReveal>
-                            <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-[#14A0B5]/30 pb-8">
-                                <div>
-                                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-4 text-[#1F366A]">
-                                        OUR <span className="text-[#0C55AC]">SERVICES</span>
-                                    </h2>
-                                    <p className="text-lg text-[#1F366A] max-w-xl font-semibold">
-                                        From routine maintenance to custom fabrication, we deliver comprehensive solutions for trailers, caravans, and boat trailers with certified expertise and quality materials.
-                                    </p>
+                            <div className="text-center flex flex-col items-center">
+                                {/* Modern Badge */}
+                                <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#E8F4F8] border border-[#0C55AC]/20 mb-6">
+                                    <span className="text-[#0C55AC] text-xs font-bold uppercase tracking-widest">EXPERT SOLUTIONS</span>
                                 </div>
-                                <button className="hidden md:flex items-center gap-2 text-[#0C55AC] hover:text-[#14A0B5] transition-colors mt-4 md:mt-0 font-medium text-sm border border-[#0C55AC]/30 px-4 py-2 rounded hover:bg-[#0C55AC]/10">
-                                    VIEW ALL <ChevronRight className="w-4 h-4" />
-                                </button>
+
+                                {/* Heading */}
+                                <h2 className="text-5xl md:text-7xl font-['Poppins'] font-bold mb-6 text-center">
+                                    <span className="text-[#1F366A]">Our </span>
+                                    <span className="text-[#0C55AC]">Services</span>
+                                </h2>
+
+                                {/* Description */}
+                                <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto font-normal leading-relaxed mb-3 text-center">
+                                    From precision repairs to custom fabrication—delivering comprehensive solutions for{' '}
+                                    <span className="text-[#0C55AC] font-semibold">trailers</span>,{' '}
+                                    <span className="text-[#0C55AC] font-semibold">caravans</span>, and{' '}
+                                    <span className="text-[#0C55AC] font-semibold">boat trailers</span>{' '}
+                                    with certified expertise.
+                                </p>
+
+                                {/* Subtitle */}
+                                <p className="text-sm text-gray-500 mt-3 font-normal text-center">
+                                    ✨ Swipe through our services • Click to explore details
+                                </p>
                             </div>
                         </ScrollReveal>
+                    </div>
 
-                        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {services.map((service, index) => (
-                                <ScrollReveal key={index} delay={index * 0.1}>
-                                    <SpotLightItem className="h-[570px] border border-[#B5B5B5]/50 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(12,85,172,0.3)] transition-all duration-300 relative">
-                                        {/* Background Image */}
-                                        <div
-                                            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`}
-                                            style={{ backgroundImage: `url(${service.image})` }}
-                                        />
-
-                                        <div
-                                            className={`relative p-8 h-full flex flex-col transition-all duration-500 ${hoveredService === index ? 'justify-start bg-white' : 'justify-end'}`}
-                                            onMouseEnter={() => setHoveredService(index)}
-                                            onMouseLeave={() => setHoveredService(null)}
-                                        >
-                                            {/* Corner Brackets */}
-                                            <div className={`absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#14A0B5] transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
-                                            <div className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#14A0B5] transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
-                                            <div className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#14A0B5] transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
-                                            <div className={`absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#14A0B5] transition-opacity ${hoveredService === index ? 'opacity-100' : 'opacity-50'}`} />
-
-                                            {/* Scan Line Effect */}
-                                            <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-[#14A0B5]/5 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none ${hoveredService === index ? 'translate-y-full' : '-translate-y-full'}`} />
-
-                                            {/* Dark Gradient Overlay */}
-                                            <div className={`absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black via-black/90 to-transparent transition-opacity duration-500 ${hoveredService === index ? 'opacity-0' : 'opacity-100'}`} />
-
-                                            <div className={`mb-4 transition-all duration-500 relative z-10 ${hoveredService === index ? 'text-[#0C55AC] scale-110' : 'text-white'}`}>
+                    <Carousel items={services.map((service, index) => (
+                        <Card
+                            key={index}
+                            card={{
+                                src: service.image,
+                                title: service.title,
+                                category: "",
+                                content: (
+                                    <div className="space-y-6">
+                                        <div className="flex items-center gap-4 mb-2">
+                                            <div className="p-3 rounded-full bg-[#0C55AC]/10 text-[#0C55AC]">
                                                 {service.icon}
                                             </div>
-
-                                            <h3 className={`text-2xl font-['Poppins'] font-medium mb-4 transition-colors relative z-10 ${hoveredService === index ? 'text-[#0C55AC]' : 'text-white'}`}>
-                                                {service.title}
-                                            </h3>
-
-                                            <div className={`transition-all duration-500 ease-in-out relative z-10 ${hoveredService === index ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
-                                                <p style={{ wordSpacing: '-0.08rem' }} className="text-[#1F366A] mb-6 leading-relaxed font-['Poppins'] font-semibold text-lg">
-                                                    {service.desc}
-                                                </p>
-
-                                                <ul className="space-y-2 border-t border-[#B5B5B5]/50 pt-6">
-                                                    {service.details.map((detail, i) => (
-                                                        <li key={i} className="flex items-center text-sm text-[#1F366A]">
-                                                            <div className="w-1.5 h-1.5 bg-[#14A0B5] rounded-full mr-3" />
-                                                            {detail}
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                            <div>
+                                                <p className="text-sm text-[#14A0B5] font-bold uppercase tracking-widest">Certified Service Specialist</p>
                                             </div>
                                         </div>
-                                    </SpotLightItem>
-                                </ScrollReveal>
-                            ))}
-                        </Spotlight>
-                    </div>
+
+                                        <p className="text-lg text-gray-700 leading-relaxed font-['Poppins']">
+                                            {service.desc}
+                                        </p>
+
+                                        <div className="border-t border-gray-200 pt-6">
+                                            <h4 className="text-lg font-['Poppins'] font-semibold text-[#1F366A] mb-4">What We Offer:</h4>
+                                            <ul className="grid md:grid-cols-2 gap-3">
+                                                {service.details.map((detail, i) => (
+                                                    <li key={i} className="flex items-start text-gray-700">
+                                                        <div className="w-2 h-2 bg-[#14A0B5] rounded-full mt-2 mr-3 flex-shrink-0" />
+                                                        <span className="text-sm">{detail}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-r from-[#0C55AC]/10 to-[#14A0B5]/10 p-6 rounded-lg mt-6">
+                                            <p className="text-[#1F366A] font-['Poppins'] font-semibold text-center">
+                                                🔧 Expert technicians with 20+ years of experience
+                                            </p>
+                                        </div>
+                                    </div>
+                                ),
+                            }}
+                            index={index}
+                        />
+                    ))} />
                 </section>
 
                 {/* Statistics & Trust Section */}
@@ -443,57 +443,204 @@ export default function CaravansBoats() {
                     </div>
                 </section>
 
-                {/* Advanced Diagnostics - Sticky Images Pattern */}
-                <section className="bg-[#1F366A] text-white w-full">
-                    <div className="grid grid-cols-1 md:grid-cols-2 px-8">
-                        {/* Sticky Stacking Images */}
-                        <div className="grid gap-2">
-                            {[
-                                { src: "/caravan_boat_hero_1764692888890.png", alt: "Trailer Inspection" },
-                                { src: "/caravan_boat_hero_1764692888890.png", alt: "Structural Analysis" },
-                                { src: "/caravan_boat_hero_1764692888890.png", alt: "Safety Testing" },
-                                { src: "/caravan_boat_hero_1764692888890.png", alt: "Component Calibration" }
-                            ].map((image, index) => (
-                                <figure key={index} className="sticky top-0 h-screen grid place-content-center">
-                                    <div className="relative group">
-                                        <img
-                                            src={image.src}
-                                            alt={image.alt}
-                                            className="transition-all duration-500 w-96 h-96 align-bottom object-cover rounded-md shadow-2xl border-2 border-[#14A0B5]/30 group-hover:border-[#14A0B5] group-hover:scale-105 group-hover:shadow-[#14A0B5]/50"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0C55AC]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
-                                    </div>
-                                </figure>
-                            ))}
-                        </div>
+                {/* Thorough Safety Checks - Bento Grid Layout */}
+                <section className="py-32 px-4 relative overflow-hidden bg-[#1F366A]">
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 opacity-5">
+                        <div className="absolute inset-0" style={{
+                            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,.1) 50px, rgba(255,255,255,.1) 51px)`
+                        }} />
+                    </div>
 
-                        {/* Sticky Content */}
-                        <div className="sticky top-0 h-screen grid place-content-center">
-                            <div className="max-w-xl">
-                                <span className="inline-block py-1 px-3 rounded-full bg-[#0C55AC] text-white text-sm font-medium mb-6 border border-[#14A0B5] backdrop-blur-sm">Expert Inspection</span>
-                                <h2 className="text-5xl md:text-6xl font-['Poppins'] font-semibold mb-8 leading-tight">
-                                    THOROUGH <br />
-                                    <span className="text-[#14A0B5]">SAFETY CHECKS</span>
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        {/* Header */}
+                        <ScrollReveal>
+                            <div className="text-center mb-16">
+                                <motion.span
+                                    className="inline-block py-2 px-6 rounded-full text-sm font-bold uppercase tracking-wider mb-6 shadow-lg"
+                                    style={{ backgroundColor: '#14A0B5', color: '#000' }}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    Expert Inspection
+                                </motion.span>
+                                <h2 className="text-5xl md:text-7xl font-['Poppins'] font-black mb-6 text-white uppercase tracking-tight">
+                                    THOROUGH <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #14A0B5, #FDDD7F)' }}>SAFETY CHECKS</span>
                                 </h2>
-                                <p className="text-lg text-[#B5B5B5] mb-6 leading-relaxed font-medium">
-                                    Every caravan and trailer undergoes our comprehensive 50-point safety inspection covering structural integrity, brake systems, electrical wiring, suspension components, wheel bearings, lighting systems, and load distribution to ensure complete roadworthiness.
+                                <p className="text-xl text-white/80 max-w-3xl mx-auto font-medium">
+                                    Comprehensive 50-point inspections for complete peace of mind
                                 </p>
-                                <p className="text-lg text-[#B5B5B5] mb-8 leading-relaxed font-medium">
-                                    Our certified technicians use advanced diagnostic equipment to identify wear patterns, stress fractures, corrosion, and potential failure points before they become safety hazards. We provide detailed inspection reports with photographic evidence and prioritized recommendations for your peace of mind.
-                                </p>
+                            </div>
+                        </ScrollReveal>
 
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-[#14A0B5]/30">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2 text-[#14A0B5]">100%</div>
-                                        <div className="text-sm uppercase tracking-wider text-[#B5B5B5]">Safety First</div>
-                                    </div>
-                                    <div className="bg-white/10 p-6 backdrop-blur rounded-lg border border-[#14A0B5]/30">
-                                        <div className="text-4xl font-['Poppins'] font-bold mb-2 text-[#14A0B5]">Expert</div>
-                                        <div className="text-sm uppercase tracking-wider text-[#B5B5B5]">Technicians</div>
+                        {/* Bento Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                            {/* Large Feature Card - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/20 backdrop-blur-sm"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                whileHover={{ scale: 1.02, borderColor: 'rgba(20, 160, 181, 0.8)' }}
+                            >
+                                <div className="relative h-full min-h-[500px] overflow-hidden">
+                                    <img
+                                        src="/caravan_boat_hero_1764692888890.png"
+                                        alt="Trailer Inspection"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                                        <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#000' }}>
+                                            PREMIUM FEATURE
+                                        </div>
+                                        <h3 className="text-3xl font-['Poppins'] font-black text-white mb-3">
+                                            50-Point Safety Inspection
+                                        </h3>
+                                        <p className="text-white/90 font-medium leading-relaxed">
+                                            Comprehensive inspection covering structural integrity, brake systems, electrical wiring, suspension, wheel bearings, and more.
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
+
+                            {/* Stats Card 1 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl p-8 border-2 border-white/20"
+                                style={{ background: 'linear-gradient(135deg, rgba(20, 160, 181, 0.2), rgba(12, 85, 172, 0.2))' }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                whileHover={{ scale: 1.05, borderColor: 'rgba(253, 221, 127, 0.8)' }}
+                            >
+                                <ShieldCheck className="w-12 h-12 mb-4" style={{ color: '#FDDD7F' }} />
+                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">100%</div>
+                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Safety First</div>
+                            </motion.div>
+
+                            {/* Stats Card 2 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl p-8 border-2 border-white/20"
+                                style={{ background: 'linear-gradient(135deg, rgba(253, 221, 127, 0.2), rgba(228, 174, 179, 0.2))' }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                whileHover={{ scale: 1.05, borderColor: 'rgba(20, 160, 181, 0.8)' }}
+                            >
+                                <Activity className="w-12 h-12 mb-4" style={{ color: '#FDDD7F' }} />
+                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">Expert</div>
+                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Technicians</div>
+                            </motion.div>
+
+                            {/* Image Card 1 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/caravan_boat_hero_1764692888890.png"
+                                        alt="Structural Analysis"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h4 className="text-xl font-['Poppins'] font-bold text-white">Structural Analysis</h4>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 2 */}
+                            <motion.div
+                                className="relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/caravan_boat_hero_1764692888890.png"
+                                        alt="Safety Testing"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h4 className="text-xl font-['Poppins'] font-bold text-white">Safety Testing</h4>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 3 - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/caravan_boat_hero_1764692888890.png"
+                                        alt="Component Calibration"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 p-8 flex items-center">
+                                        <div className="max-w-md">
+                                            <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#FDDD7F', color: '#000' }}>
+                                                SPECIALIZED
+                                            </div>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Component Calibration</h4>
+                                            <p className="text-white/90 font-medium">Advanced diagnostics with photo documentation and detailed reports</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </div>
+
+                        {/* Bottom Features */}
+                        <ScrollReveal delay={0.6}>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Gauge className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Brake System Analysis</h4>
+                                    <p className="text-white/70 text-sm">Comprehensive testing of hydraulic and mechanical brake components</p>
+                                </motion.div>
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Zap className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Electrical Diagnostics</h4>
+                                    <p className="text-white/70 text-sm">Full wiring inspection and electrical system testing</p>
+                                </motion.div>
+                                <motion.div
+                                    className="p-6 rounded-2xl border-2 border-white/20 backdrop-blur-sm"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
+                                >
+                                    <Settings className="w-10 h-10 mb-4" style={{ color: '#14A0B5' }} />
+                                    <h4 className="text-xl font-['Poppins'] font-bold text-white mb-2">Structural Integrity</h4>
+                                    <p className="text-white/70 text-sm">Detailed chassis, suspension, and coupling inspections</p>
+                                </motion.div>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </section>
 

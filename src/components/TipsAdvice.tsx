@@ -369,7 +369,7 @@ export default function TipsAdvice() {
         : tips.filter(tip => tip.category === activeCategory);
 
     return (
-        <div className="min-h-screen bg-white font-sans scroll-smooth">
+        <div className="tips-advice-page min-h-screen bg-white font-sans scroll-smooth">
             <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
             {/* Hero Section */}
@@ -555,6 +555,16 @@ export default function TipsAdvice() {
             </motion.section>
 
             <Footer scrollToSection={scrollToSection} />
+
+            {/* Custom CSS for TipsAdvice page only - Override wave separator to purple */}
+            <style>{`
+                .tips-advice-page footer > div:first-child {
+                    background-color: #783E6C !important;
+                }
+                .tips-advice-page footer > div:first-child.bg-white {
+                    background-color: #783E6C !important;
+                }
+            `}</style>
         </div>
     );
 }
