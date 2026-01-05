@@ -1,4 +1,4 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -12,6 +12,35 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
   const location = useLocation();
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
+      {/* Phone Number Bar - Top */}
+      <div className="hidden md:block w-full bg-gray-100 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 py-2">
+          <div className="flex justify-end items-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-blue-600" />
+              <span className="text-gray-700">Telephone:</span>
+              <a href="tel:093091906" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                (09) 309 1906
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-blue-600" />
+              <span className="text-gray-700">Mobile:</span>
+              <a href="tel:0274593411" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                027 459 3411
+              </a>
+              <span className="text-gray-500 text-xs">(24 Hr Service)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-blue-600" />
+              <a href="mailto:info@cbdpanel.co.nz" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                info@cbdpanel.co.nz
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Top Bar */}
       <div className="w-full px-4 py-3 border-b">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-8">
@@ -48,10 +77,7 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
 
           {/* Contact Info & CTA */}
           <div className="flex items-center justify-end gap-3 flex-shrink-0 min-w-fit">
-            <div className="text-xs hidden xl:block text-right whitespace-nowrap">
-              <div>093091906 | 24hr: 0274593411</div>
-              <div>info@cbdpanel.co.nz</div>
-            </div>
+
             <Link to="/contact" className="bg-blue-600 text-white px-4 lg:px-6 py-2 text-sm font-medium hover:bg-CGreen transition whitespace-nowrap">
               Book a Service
             </Link>

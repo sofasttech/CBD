@@ -37,7 +37,7 @@ export default function Blog() {
           <div>
             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
             <h2 className="text-4xl md:text-5xl font-['Poppins'] font-bold text-black">
-              ARTICLES FROM AUTOACE
+              Tips & Advice
             </h2>
           </div>
           <a href="/tips-advice" className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2">

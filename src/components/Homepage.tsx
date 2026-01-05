@@ -490,8 +490,8 @@ export default function Homepage() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <img src="/carsnz.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
-        <div className="absolute inset-0 bg-white/70 pointer-events-none"></div>
+        <img src="/carsbg.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
+        <div className="absolute inset-0 pointer-events-none"></div>
         <div className="absolute inset-0 flex items-start justify-center px-4 pt-10 md:pt-16">
           <motion.h2
             className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Poppins'] font-medium leading-tight"

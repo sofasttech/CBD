@@ -168,7 +168,7 @@ export default function DashboardWarningLights() {
             >
                 {/* Dark overlay with gradient for better text visibility */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/60 backdrop-blur-[2px]"></div>
-                
+
                 <div className="relative max-w-4xl mx-auto text-center">
                     <p className="text-yellow-300 text-sm font-medium uppercase tracking-wide mb-4 drop-shadow-lg">Essential Knowledge</p>
                     <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6 drop-shadow-2xl">
@@ -182,64 +182,83 @@ export default function DashboardWarningLights() {
 
             {/* Introduction */}
             <motion.section
-                className="px-4 py-16 bg-white"
+                className="px-4 py-16 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
             >
-                <div className="max-w-4xl mx-auto">
-                    <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                        Modern vehicles are equipped with advanced dashboard warning systems that monitor various aspects, including engine performance and tyre pressure. These lights appear for a reason. Some are simple reminders, while others are warnings that should never be ignored. Understanding them helps you stay safe, protect your vehicle, and avoid costly repairs.
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                        Below is a comprehensive guide to the most common dashboard symbols New Zealand drivers encounter, along with their meanings and the appropriate action to take.
-                    </p>
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-200 rounded-full blur-3xl opacity-20"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-20"></div>
+
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100">
+                        <p className="text-xl text-gray-800 leading-relaxed mb-6 font-medium">
+                            Modern vehicles are equipped with advanced dashboard warning systems that monitor various aspects, including engine performance and tyre pressure. These lights appear for a reason. Some are simple reminders, while others are warnings that should never be ignored.
+                        </p>
+                        <p className="text-xl text-gray-800 leading-relaxed font-medium">
+                            Below is a comprehensive guide to the most common dashboard symbols New Zealand drivers encounter, along with their meanings and the appropriate action to take.
+                        </p>
+                    </div>
                 </div>
             </motion.section>
 
             {/* Critical Warning Lights */}
-            <section className="px-4 py-16 bg-red-50">
-                <div className="max-w-6xl mx-auto">
+            <section className="px-4 py-20 bg-gradient-to-br from-red-500 via-red-600 to-orange-600 relative overflow-hidden">
+                {/* Animated background */}
+                <div className="absolute inset-0">
+                    <div className="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-20 right-10 w-80 h-80 bg-yellow-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div
-                        className="mb-12"
+                        className="mb-16 text-center"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <XCircle className="w-8 h-8 text-red-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
+                        <div className="inline-flex items-center gap-4 mb-6 bg-white/20 backdrop-blur-md px-8 py-4 rounded-full border-2 border-white/30">
+                            <XCircle className="w-10 h-10 text-white" />
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-bold uppercase text-white">
                                 Critical Warning Lights
                             </h2>
                         </div>
-                        <p className="text-lg text-gray-700">
-                            <strong className="text-red-600">Stop the vehicle as soon as it is safe</strong> - These indicate a serious fault or risk of damage. Continuing to drive may be unsafe.
+                        <p className="text-xl text-white/95 max-w-3xl mx-auto font-medium drop-shadow-lg">
+                            <strong className="text-yellow-300">⚠️ Stop the vehicle as soon as it is safe</strong> - These indicate a serious fault or risk of damage.
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {criticalLights.map((light, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-white border-l-4 border-red-600 p-6 shadow-md hover:shadow-lg transition"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl hover:shadow-yellow-200/50 transition-all duration-300 hover:-translate-y-3 border border-white/50"
+                                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
+                                whileHover={{ scale: 1.02 }}
                             >
-                                <div className="flex items-start gap-4">
-                                    <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-12 h-12 flex-shrink-0" />
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-['Poppins'] font-medium mb-2 text-red-600">
-                                            {light.name}
-                                        </h3>
-                                        <p className="text-gray-700 mb-3 text-sm leading-relaxed">
-                                            <strong>Meaning:</strong> {light.meaning}
+                                <div className="flex items-start gap-4 mb-4">
+                                    <div className="p-4 bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl flex-shrink-0 shadow-lg">
+                                        <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-14 h-14" />
+                                    </div>
+                                    <h3 className="text-xl font-['Poppins'] font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent pt-2">
+                                        {light.name}
+                                    </h3>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="bg-gradient-to-r from-gray-50 to-red-50 p-4 rounded-xl">
+                                        <p className="text-gray-700 text-sm leading-relaxed">
+                                            <span className="font-bold text-red-700">💡 Meaning:</span> {light.meaning}
                                         </p>
-                                        <p className="text-gray-900 text-sm leading-relaxed bg-red-50 p-3 rounded border-l-2 border-red-400">
-                                            <strong>Action:</strong> {light.action}
+                                    </div>
+                                    <div className="bg-gradient-to-r from-red-50 via-orange-50 to-yellow-50 p-4 rounded-xl">
+                                        <p className="text-gray-900 text-sm leading-relaxed font-medium">
+                                            <span className="font-bold text-orange-700">🔧 Action:</span> {light.action}
                                         </p>
                                     </div>
                                 </div>
@@ -250,46 +269,63 @@ export default function DashboardWarningLights() {
             </section>
 
             {/* Important Warning Lights */}
-            <section className="px-4 py-16 bg-yellow-50">
-                <div className="max-w-6xl mx-auto">
+            <section className="px-4 py-20 bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500 relative overflow-hidden">
+                {/* Animated background */}
+                <div className="absolute inset-0">
+                    <div className="absolute top-10 right-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-10 left-20 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div
-                        className="mb-12"
+                        className="mb-16 text-center"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <AlertTriangle className="w-8 h-8 text-yellow-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
+                        <div className="inline-flex items-center gap-4 mb-6 bg-white/20 backdrop-blur-md px-8 py-4 rounded-full border-2 border-white/30">
+                            <AlertTriangle className="w-10 h-10 text-white" />
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-bold uppercase text-white">
                                 Important Warning Lights
                             </h2>
                         </div>
-                        <p className="text-lg text-gray-700">
+                        <p className="text-xl text-white/95 max-w-3xl mx-auto font-medium drop-shadow-lg">
                             Check soon to avoid bigger faults - These relate to wear, maintenance, or developing faults.
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {importantLights.map((light, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-white border-l-4 border-yellow-600 p-6 shadow-sm hover:shadow-md transition"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl hover:shadow-amber-200/50 transition-all duration-300 hover:-translate-y-3 border border-white/50"
+                                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
+                                whileHover={{ scale: 1.02 }}
                             >
-                                <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-12 h-12 mb-2" />
-                                <h3 className="text-lg font-['Poppins'] font-medium mb-2 text-yellow-700">
-                                    {light.name}
-                                </h3>
-                                <p className="text-gray-700 mb-2 text-sm">
-                                    <strong>Meaning:</strong> {light.meaning}
-                                </p>
-                                <p className="text-gray-900 text-sm bg-yellow-50 p-3 rounded border-l-2 border-yellow-400">
-                                    <strong>Action:</strong> {light.action}
-                                </p>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="p-4 bg-gradient-to-br from-yellow-100 to-amber-100 rounded-2xl shadow-lg">
+                                        <img src={`/Dashboard Icons/${light.image}`} alt={light.name} className="w-12 h-12" />
+                                    </div>
+                                    <h3 className="text-lg font-['Poppins'] font-bold bg-gradient-to-r from-yellow-700 to-orange-700 bg-clip-text text-transparent">
+                                        {light.name}
+                                    </h3>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="bg-gradient-to-r from-gray-50 to-yellow-50 p-4 rounded-xl">
+                                        <p className="text-gray-700 text-sm leading-relaxed">
+                                            <span className="font-bold text-yellow-700">💡 Meaning:</span> {light.meaning}
+                                        </p>
+                                    </div>
+                                    <div className="bg-gradient-to-r from-yellow-50 to-amber-50 p-4 rounded-xl">
+                                        <p className="text-gray-900 text-sm leading-relaxed font-medium">
+                                            <span className="font-bold text-amber-700">🔧 Action:</span> {light.action}
+                                        </p>
+                                    </div>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -297,42 +333,55 @@ export default function DashboardWarningLights() {
             </section>
 
             {/* Status / Feature Indicators */}
-            <section className="px-4 py-16 bg-blue-50">
-                <div className="max-w-6xl mx-auto">
+            <section className="px-4 py-20 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 relative overflow-hidden">
+                {/* Animated background */}
+                <div className="absolute inset-0">
+                    <div className="absolute top-16 left-16 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-16 right-16 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.75s' }}></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div
-                        className="mb-12"
+                        className="mb-16 text-center"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <Info className="w-8 h-8 text-blue-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
-                                Status / Feature Indicators
+                        <div className="inline-flex items-center gap-4 mb-6 bg-white/20 backdrop-blur-md px-8 py-4 rounded-full border-2 border-white/30">
+                            <Info className="w-10 h-10 text-white" />
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-bold uppercase text-white">
+                                Status Indicators
                             </h2>
                         </div>
-                        <p className="text-lg text-gray-700">
-                            Not faults – just information. These lights appear when a driver has activated a setting.
+                        <p className="text-xl text-white/95 max-w-3xl mx-auto font-medium drop-shadow-lg">
+                            ℹ️ Not faults – just information. These lights appear when a driver has activated a setting.
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {statusIndicators.map((indicator, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-white border-l-4 border-blue-500 p-5 shadow-sm hover:shadow-md transition"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl hover:shadow-cyan-200/50 transition-all duration-300 hover:-translate-y-3 border border-white/50"
+                                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
+                                whileHover={{ scale: 1.02 }}
                             >
-                                <img src={`/Dashboard Icons/${indicator.image}`} alt={indicator.name} className="w-12 h-12 mb-2" />
-                                <h3 className="text-base font-['Poppins'] font-medium mb-2 text-blue-700">
-                                    {indicator.name}
-                                </h3>
-                                <p className="text-gray-600 text-sm mb-2">{indicator.meaning}</p>
-                                <p className="text-gray-800 text-sm">{indicator.action}</p>
+                                <div className="flex flex-col items-center text-center">
+                                    <div className="p-4 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl mb-4 shadow-lg">
+                                        <img src={`/Dashboard Icons/${indicator.image}`} alt={indicator.name} className="w-12 h-12" />
+                                    </div>
+                                    <h3 className="text-base font-['Poppins'] font-bold bg-gradient-to-r from-blue-700 to-cyan-700 bg-clip-text text-transparent mb-3">
+                                        {indicator.name}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm mb-2 leading-relaxed">{indicator.meaning}</p>
+                                    <div className="w-full bg-gradient-to-r from-blue-50 to-cyan-50 p-3 rounded-xl">
+                                        <p className="text-gray-800 text-sm font-medium">{indicator.action}</p>
+                                    </div>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -340,39 +389,55 @@ export default function DashboardWarningLights() {
             </section>
 
             {/* Access, Safety and Convenience Warnings */}
-            <section className="px-4 py-16 bg-gray-50">
-                <div className="max-w-6xl mx-auto">
+            <section className="px-4 py-20 bg-gradient-to-br from-slate-600 via-gray-700 to-zinc-700 relative overflow-hidden">
+                {/* Animated background */}
+                <div className="absolute inset-0">
+                    <div className="absolute top-12 right-12 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-12 left-12 w-80 h-80 bg-slate-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.2s' }}></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div
-                        className="mb-12"
+                        className="mb-16 text-center"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <Settings className="w-8 h-8 text-gray-600" />
-                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase">
-                                Access, Safety and Convenience Warnings
+                        <div className="inline-flex items-center gap-4 mb-6 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border-2 border-white/20">
+                            <Settings className="w-10 h-10 text-white" />
+                            <h2 className="text-3xl md:text-5xl font-['Poppins'] font-bold uppercase text-white">
+                                Safety & Convenience
                             </h2>
                         </div>
+                        <p className="text-xl text-white/90 max-w-3xl mx-auto font-medium drop-shadow-lg">
+                            Additional warnings to keep you informed and secure
+                        </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {accessWarnings.map((warning, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-white border-l-4 border-gray-500 p-5 shadow-sm hover:shadow-md transition"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl hover:shadow-slate-300/50 transition-all duration-300 hover:-translate-y-3 border border-white/50"
+                                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
+                                whileHover={{ scale: 1.02 }}
                             >
-                                <img src={`/Dashboard Icons/${warning.image}`} alt={warning.name} className="w-12 h-12 mb-2" />
-                                <h3 className="text-base font-['Poppins'] font-medium mb-2 text-gray-700">
-                                    {warning.name}
-                                </h3>
-                                <p className="text-gray-600 text-sm mb-2">{warning.meaning}</p>
-                                <p className="text-gray-800 text-sm">{warning.action}</p>
+                                <div className="flex flex-col items-center text-center">
+                                    <div className="p-4 bg-gradient-to-br from-gray-100 to-slate-100 rounded-2xl mb-4 shadow-lg">
+                                        <img src={`/Dashboard Icons/${warning.image}`} alt={warning.name} className="w-12 h-12" />
+                                    </div>
+                                    <h3 className="text-base font-['Poppins'] font-bold bg-gradient-to-r from-gray-800 to-slate-800 bg-clip-text text-transparent mb-3">
+                                        {warning.name}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm mb-2 leading-relaxed">{warning.meaning}</p>
+                                    <div className="w-full bg-gradient-to-r from-gray-50 to-slate-50 p-3 rounded-xl">
+                                        <p className="text-gray-800 text-sm font-medium">{warning.action}</p>
+                                    </div>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -397,13 +462,13 @@ export default function DashboardWarningLights() {
                     <p className="text-lg text-gray-700 mb-6">You should book your vehicle when:</p>
                     <div className="grid md:grid-cols-2 gap-4 mb-8">
                         {whenToVisit.map((item, index) => (
-                            <div key={index} className="flex items-start gap-3 bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <div key={index} className="flex items-start gap-3 bg-blue-50 p-4 rounded-lg">
                                 <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
                                 <p className="text-gray-800">{item}</p>
                             </div>
                         ))}
                     </div>
-                    <div className="bg-blue-100 border-l-4 border-blue-600 p-6 rounded">
+                    <div className="bg-blue-100 p-6 rounded">
                         <p className="text-gray-800 text-lg">
                             Dashboard lights are your vehicle speaking to you. Early attention prevents breakdowns, improves safety, and saves money long term.
                         </p>
