@@ -1,0 +1,131 @@
+// Replacement for Core Values section (lines 452-555 in OurStory.tsx)
+            {/* Core Values - Bold Card Grid Design */}
+            <section className="px-4 py-32 relative" style={{ backgroundColor: '#783E6C' }}>
+                {/* Animated Background */}
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0" style={{
+                        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)`
+                    }} />
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    {/* Header */}
+                    <div className="text-center mb-16">
+                        <motion.h2
+                            className="text-5xl md:text-7xl font-['Poppins'] font-black mb-4 uppercase tracking-tight"
+                            style={{ color: '#E4AEB3' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            OUR CORE <span className="text-white">VALUES</span>
+                        </motion.h2>
+                        <p className="text-xl text-white/80 max-w-2xl mx-auto font-medium">
+                            The principles that drive excellence in everything we do
+                        </p>
+                    </div>
+
+                    {/* Process Grid - Staggered Layout */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            { icon: Heart, title: "Integrity in every repair", description: "We believe in doing things the right way, every time. Honest communication, fair advice, and transparent workmanship guide every project we undertake. Customers trust us because we stand by our word and our work." },
+                            { icon: Target, title: "Precision with every panel", description: "Every repair matters, whether it is a small dent or a full structural restoration. We pay attention to detail in shaping, painting, and finishing, ensuring your vehicle looks and performs as it should. Quality is built through accuracy." },
+                            { icon: Award, title: "Excellence without compromise", description: "We aim for high standards in everything we do. From modern equipment to skilled hands, we continually strive to deliver results that last. Excellence is our benchmark, not an option." },
+                            { icon: Users, title: "Care that puts customers first", description: "People come first. We listen, guide you through repair decisions, and keep the process clear and stress-free. Your satisfaction is at the heart of our service, and we take pride in the relationships we build with every person who walks through our doors." }
+                        ].map((value, index) => {
+                            const colors = [
+                                { bg: 'linear-gradient(135deg, #E4AEB3 0%, #783E6C 100%)', accent: '#fff', text: '#fff' },
+                                { bg: 'linear-gradient(135deg, #783E6C 0%, #E4AEB3 100%)', accent: '#fff', text: '#fff' },
+                                { bg: 'linear-gradient(135deg, #E4AEB3 0%, #783E6C 100%)', accent: '#fff', text: '#fff' },
+                                { bg: 'linear-gradient(135deg, #783E6C 0%, #E4AEB3 100%)', accent: '#fff', text: '#fff' }
+                            ];
+
+                            const cardColor = colors[index % colors.length];
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    className="relative group cursor-pointer"
+                                    initial={{ opacity: 0, y: 50, rotate: -2 }}
+                                    whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.6,
+                                        delay: index * 0.08,
+                                        ease: [0.25, 0.46, 0.45, 0.94]
+                                    }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        rotate: 1,
+                                        transition: { duration: 0.3 }
+                                    }}
+                                >
+                                    <div
+                                        className="relative p-8 rounded-3xl overflow-hidden shadow-2xl h-full min-h-[400px] flex flex-col"
+                                        style={{ background: cardColor.bg }}
+                                    >
+                                        {/* Background Pattern */}
+                                        <div className="absolute inset-0 opacity-10">
+                                            <div className="absolute inset-0" style={{
+                                                backgroundImage: `radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px)`,
+                                                backgroundSize: '30px 30px'
+                                            }} />
+                                        </div>
+
+                                        {/* Large Step Number */}
+                                        <motion.div
+                                            className="absolute top-4 right-4 text-[120px] font-black leading-none opacity-20"
+                                            style={{ color: cardColor.accent }}
+                                            whileHover={{ opacity: 0.3 }}
+                                        >
+                                            {index + 1}
+                                        </motion.div>
+
+                                        {/* Icon */}
+                                        <motion.div
+                                            className="relative mb-6 p-6 rounded-2xl w-fit"
+                                            style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}
+                                            whileHover={{
+                                                scale: 1.1,
+                                                rotate: [0, -5, 5, -5, 0],
+                                                transition: { duration: 0.5 }
+                                            }}
+                                        >
+                                            <value.icon
+                                                className="w-12 h-12"
+                                                style={{ color: cardColor.accent }}
+                                                strokeWidth={2}
+                                            />
+                                        </motion.div>
+
+                                        {/* Content */}
+                                        <div className="relative z-10 flex-1 flex flex-col">
+                                            <h3
+                                                className="text-2xl md:text-3xl font-['Poppins'] font-black mb-4 leading-tight"
+                                                style={{ color: cardColor.text }}
+                                            >
+                                                {value.title}
+                                            </h3>
+
+                                            <p
+                                                className="text-base leading-relaxed font-medium mb-6"
+                                                style={{ color: 'rgba(255,255,255,0.9)' }}
+                                            >
+                                                {value.description}
+                                            </p>
+                                        </div>
+
+                                        {/* Hover Shine Effect */}
+                                        <motion.div
+                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                                            initial={{ x: '-100%', skewX: -20 }}
+                                            whileHover={{ x: '200%' }}
+                                            transition={{ duration: 0.8 }}
+                                        />
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>

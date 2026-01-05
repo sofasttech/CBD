@@ -583,7 +583,35 @@ export default function PanelBeating() {
                                 </div>
                             </motion.div>
 
-                            {/* Image Card 3 - Spans 2 columns */}
+                            {/* Image Card 3 - Computerized Diagnostics - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/panel_beating_hero_1764692687494.png"
+                                        alt="Computerized Diagnostics"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 p-8 flex items-center">
+                                        <div className="max-w-md">
+                                            <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#fff' }}>
+                                                TECHNOLOGY
+                                            </div>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Computerized Diagnostics</h4>
+                                            <p className="text-white/90 font-medium">Advanced scanning tools for accurate vehicle assessment</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 4 - Wheel Restoration - Spans 2 columns */}
                             <motion.div
                                 className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
                                 initial={{ opacity: 0, y: 50 }}
