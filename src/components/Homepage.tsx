@@ -227,7 +227,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="public/Home Page Images/panel-beatt.jpg"
+              href="public/Home Page Images/pannel-3.jpg"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -997,7 +997,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="/panel-beatt.jpg" alt="Panel Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img src=" /Home Page Images/pannel-3.jpg" alt="Panel Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                   </div>
                 </article>
@@ -1152,7 +1152,7 @@ export default function Homepage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/panel-beatt.jpg')" }} />
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('Home Page Images/panel.png')" }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-8 text-white z-10">
                 <h3 className="text-2xl md:text-4xl font-bold font-['Poppins'] mb-3">Expert Craftsmanship</h3>

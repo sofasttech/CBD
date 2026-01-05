@@ -696,7 +696,7 @@ export default function Mechanical() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/Mechanical page images/Compliance Centre.jpg"
+                                        src="/Mechanical page images/Computerized Diagnostics.jpg"
                                         alt="Computerized Diagnostics"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />

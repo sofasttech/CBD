@@ -9,7 +9,7 @@ export default function Blog() {
       excerpt: 'Understanding panel beating costs helps you make informed decisions. Prices vary based on damage severity, parts, labour, paint type, and insurance coverage.',
       date: 'MAY 29, 2025',
       category: 'PANEL BEATING',
-      image: '/panel-beatt.jpg',
+      image: '/Home%20Page%20Images/pannel-4.jpg',
       route: '/tips-advice/panel-beating-costs'
     },
     {
