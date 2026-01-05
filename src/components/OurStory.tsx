@@ -37,8 +37,8 @@ function BeforeAfterSlider({ item, index }: { item: { before: string; after: str
 
                 {/* Before Image (Foreground, clipped) */}
                 <div
-                    className="absolute inset-0 w-full h-full overflow-hidden transition-all duration-100"
-                    style={{ width: `${position}%` }}
+                    className="absolute inset-0 overflow-hidden transition-all duration-100"
+                    style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                 >
                     <img
                         src={item.before}
@@ -292,10 +292,10 @@ export default function OurStory() {
                         ].map((item, index) => (
                             <BeforeAfterSlider key={index} item={item} index={index} />
                         ))}
-                        
+
                         {/* 5th item - centered on its own row */}
                         <div className="md:col-span-2 max-w-2xl mx-auto w-full">
-                            <BeforeAfterSlider 
+                            <BeforeAfterSlider
                                 item={{
                                     before: "public/Our stories page images/Pic 5 - Before.jpg",
                                     after: "public/Our stories page images/Pic 5 - After.jpg",
@@ -536,7 +536,7 @@ export default function OurStory() {
 
                                         {/* Icon */}
                                         <motion.div
-                                            className="relative mb-6 p-6 rounded-2xl w-fit"
+                                            className="relative mb-6 p-6 rounded-2xl w-fit mx-auto"
                                             style={{ backgroundColor: 'rgba(255,255,255,0.3)' }}
                                             whileHover={{
                                                 scale: 1.1,
@@ -552,7 +552,7 @@ export default function OurStory() {
                                         </motion.div>
 
                                         {/* Content */}
-                                        <div className="relative z-10 flex-1 flex flex-col">
+                                        <div className="relative z-10 flex-1 flex flex-col text-center">
                                             <h3
                                                 className="text-2xl md:text-3xl font-['Poppins'] font-black mb-4 leading-tight"
                                                 style={{ color: cardColor.text }}
@@ -561,7 +561,7 @@ export default function OurStory() {
                                             </h3>
 
                                             <p
-                                                className="text-base leading-relaxed font-medium"
+                                                className="text-base leading-relaxed font-medium text-justify"
                                                 style={{ color: 'rgba(255,255,255,0.9)' }}
                                             >
                                                 {value.description}
