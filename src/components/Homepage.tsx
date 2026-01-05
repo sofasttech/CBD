@@ -194,7 +194,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/panel-beatt.jpg"
+              href="public/Home Page Images/book.png"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -227,7 +227,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/oil.jpg"
+              href="public/Home Page Images/panel-beatt.jpg"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"

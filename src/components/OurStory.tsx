@@ -44,7 +44,6 @@ function BeforeAfterSlider({ item, index }: { item: { before: string; after: str
                         src={item.before}
                         alt={`${item.title} - Before`}
                         className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-75"
-                        style={{ width: '100vw', maxWidth: 'none' }}
                         onError={(e) => {
                             e.currentTarget.src = '/panel_beating_hero_1764692687494.png';
                         }}
@@ -122,7 +121,7 @@ export default function OurStory() {
                         y: useTransform(useScroll().scrollY, [0, 500], [0, 200])
                     }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/75 to-white z-10" />
 
                 <motion.div
                     className="relative z-20 text-center px-4 max-w-5xl mx-auto"
@@ -135,17 +134,17 @@ export default function OurStory() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
                     >
-                        <p className="text-CPurple text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6">
+                        <p className="text-CPurple text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6 drop-shadow-lg">
                             Est. 1995 • Auckland, NZ
                         </p>
-                        <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight">
-                            <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-CPink to-CPurple">Perfection</span>
+                        <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight drop-shadow-xl">
+                            <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-CPink to-CPurple" style={{ WebkitTextStroke: '1px rgba(120, 62, 108, 0.3)' }}>Perfection</span>
                         </h1>
                     </motion.div>
 
                     <motion.p
                         style={{ wordSpacing: '-0.08rem' }}
-                        className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl mx-auto"
+                        className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl mx-auto drop-shadow-md"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
@@ -263,36 +262,49 @@ export default function OurStory() {
                         </div>
                     </div>
 
-                    {/* Grid of 4 Before/After Sliders */}
+                    {/* Grid of 5 Before/After Sliders */}
                     <div className="grid md:grid-cols-2 gap-8">
                         {[
                             {
-                                before: "/dent_repair_1764693039882.png",
-                                after: "/panel_beating_hero_1764692687494.png",
+                                before: "public/Our stories page images/Picture 1 - Before.jpg",
+                                after: "public/Our stories page images/Picture 1 - After.jpg",
                                 title: "Dent Removal",
                                 description: "Complete dent removal and paint restoration"
                             },
                             {
-                                before: "/panel-beatt.jpg",
-                                after: "/paint_booth_1764692971281.png",
+                                before: "public/Our stories page images/Pic 2 - Before.jpg",
+                                after: "public/Our stories page images/Pic 2 - After.jpg",
                                 title: "Collision Repair",
                                 description: "Full structural repair and refinishing"
                             },
                             {
-                                before: "/wheel_repair_1764693107551.png",
-                                after: "/shop.webp",
+                                before: "public/Our stories page images/Picture 3 - Before.jpg",
+                                after: "public/Our stories page images/Picture 3 - After.jpg",
                                 title: "Panel Beating",
                                 description: "Expert panel straightening and alignment"
                             },
                             {
-                                before: "/panel_beating_hero_1764692687494.png",
-                                after: "/shop.webp",
+                                before: "public/Our stories page images/Pic 4 - Before.jpg",
+                                after: "public/Our stories page images/Pic 4 - After.jpg",
                                 title: "Paint Restoration",
                                 description: "Professional color matching and finishing"
                             }
                         ].map((item, index) => (
                             <BeforeAfterSlider key={index} item={item} index={index} />
                         ))}
+                        
+                        {/* 5th item - centered on its own row */}
+                        <div className="md:col-span-2 max-w-2xl mx-auto w-full">
+                            <BeforeAfterSlider 
+                                item={{
+                                    before: "public/Our stories page images/Pic 5 - Before.jpg",
+                                    after: "public/Our stories page images/Pic 5 - After.jpg",
+                                    title: "Side Panel Restoration",
+                                    description: "Complete rocker panel repair and refinishing"
+                                }}
+                                index={4}
+                            />
+                        </div>
                     </div>
 
                     {/* Bottom Text */}
