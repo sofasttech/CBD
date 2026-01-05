@@ -92,7 +92,6 @@ export default function Contact() {
             <h2 className="text-4xl font-bold mb-8" style={{ color: '#1F366A' }}>Contact Details</h2>
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-6" style={{ color: '#14A0B5' }}>Panel Repairs</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5" style={{ color: '#14A0B5' }} />
@@ -100,7 +99,7 @@ export default function Contact() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5" style={{ color: '#14A0B5' }} />
-                    <span className="font-bold" style={{ color: '#1F366A' }}>+64 9-309 1906</span>
+                    <span className="font-bold" style={{ color: '#1F366A' }}>09-309 1906</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5" style={{ color: '#14A0B5' }} />
@@ -108,27 +107,6 @@ export default function Contact() {
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 mt-1" style={{ color: '#14A0B5' }} />
-                    <span style={{ color: '#1F366A' }}>390 Great North Road, Grey Lynn, Auckland, New Zealand</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-6" style={{ color: '#047342' }}>Mechanical Repairs</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5" style={{ color: '#047342' }} />
-                    <a href="mailto:mailto:info@cbdpanel.co.nz" className="hover:opacity-80" style={{ color: '#1F366A' }}>info@cbdpanel.co.nz</a>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5" style={{ color: '#047342' }} />
-                    <span className="font-bold" style={{ color: '#1F366A' }}>09 242 1870</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5" style={{ color: '#047342' }} />
-                    <span className="font-bold" style={{ color: '#1F366A' }}>0274593411 (24 hr service)</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 mt-1" style={{ color: '#047342' }} />
                     <span style={{ color: '#1F366A' }}>390 Great North Road, Grey Lynn, Auckland, New Zealand</span>
                   </div>
                 </div>
@@ -271,10 +249,10 @@ export default function Contact() {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8" style={{ color: '#1F366A' }}>Our Locations</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: '#14A0B5' }}>Panel Repairs - 390 Great North Road, Grey Lynn, Auckland</h3>
+          <h2 className="text-3xl font-bold text-center mb-8" style={{ color: '#1F366A' }}>Our Location</h2>
+          <div className="flex justify-center">
+            <div className="max-w-2xl w-full">
+              <h3 className="text-xl font-bold mb-4 text-center" style={{ color: '#14A0B5' }}>CBD Panel and Paint - 390 Great North Road, Grey Lynn, Auckland</h3>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.7385!3d-36.8606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9d1c3d%3A0x4b0b8b8b8b8b8b8b!2zMzkwIEdyZWF0IE5vcnRoIFJvYWQsIEdyZXkgTHlubiBBdWNrbGFuZA!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
                 width="100%"
@@ -284,19 +262,6 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Panel Repairs Location"
-              ></iframe>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: '#047342' }}>Mechanical Repairs - 390 Great North Road, Grey Lynn, Auckland</h3>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.123456789012!2d174.7385!3d-36.8606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9d1c3d%3A0x4b0b8b8b8b8b8b8b!2zMzkwIEdyZWF0IE5vcnRoIFJvYWQsIEdyZXkgTHlubiBBdWNrbGFuZA!5e0!3m2!1sen!2snz!4v1234567890123!5m2!1sen!2snz"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mechanical Repairs Location"
               ></iframe>
             </div>
           </div>

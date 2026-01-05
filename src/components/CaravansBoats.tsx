@@ -79,35 +79,35 @@ export default function CaravansBoats() {
             icon: <Anchor className="w-8 h-8" />,
             desc: 'Comprehensive caravan repair services covering all components from axles to electrical systems. Our certified technicians use OEM-quality parts and follow manufacturer specifications to ensure your caravan remains safe, reliable, and roadworthy for all your adventures.',
             details: ['Complete Axle Overhaul & Replacement', 'Advanced Brake System Diagnostics', 'Drawbar Structural Repairs', 'Full Chassis Rebuilds & Reinforcement', 'Suspension Upgrades', 'Safety Chain Installation'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/Caravan Repairs & Maintenance.jpg'
         },
         {
             title: 'Boat Trailer Services',
             icon: <Droplets className="w-8 h-8" />,
             desc: 'Specialized boat trailer servicing designed for marine environments. We understand the unique challenges of saltwater exposure and provide corrosion-resistant solutions, comprehensive WOF inspections, and preventative maintenance to extend your trailer\'s lifespan.',
             details: ['Marine-Grade WOF Certifications', 'Wheel Bearing Repack & Replacement', 'Hydraulic Brake System Service', 'Galvanizing & Rust Prevention', 'Roller & Skid Repairs', 'Submersion-Ready Modifications'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/Trailer-service.webp'
         },
         {
             title: 'Custom Modifications',
             icon: <PenTool className="w-8 h-8" />,
             desc: 'Transform your trailer to perfectly match your requirements. Whether you need increased load capacity, specialized storage solutions, or unique features, our design team works with you to create practical, durable modifications that enhance functionality and value.',
             details: ['CAD Design & Engineering', 'Load Capacity Enhancement', 'Custom Storage Solutions', 'Height & Width Adjustments', 'Specialized Equipment Mounts', 'Aerodynamic Improvements'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/Caravan-mod.webp'
         },
         {
             title: 'Custom Trailer Fabrication',
             icon: <Hammer className="w-8 h-8" />,
             desc: 'Built from the ground up to your exact specifications. We fabricate commercial-grade and specialty trailers for unique applications - from heavy machinery transport to motorsport equipment. Every build is engineered for maximum durability and compliance.',
             details: ['Engineered Custom Designs', 'Heavy-Duty Commercial Units', 'Specialty Application Trailers', 'Multi-Axle Configurations', 'Certified Load Ratings', 'Full Compliance Documentation'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/trailerfab.jpg'
         },
         {
             title: 'Deck Replacement & Upgrades',
             icon: <Truck className="w-8 h-8" />,
             desc: 'Premium decking solutions using marine-grade plywood, heavy-duty truck flooring, or composite materials. We ensure proper drainage, anti-slip surfaces, and long-term protection against weather and load stresses for commercial and recreational use.',
             details: ['Marine-Grade Plywood Installation', 'Heavy-Duty Truck Decking', 'Anti-Slip Surface Treatment', 'Weather-Sealed Edge Protection', 'Load Distribution Engineering', 'Composite Deck Options'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/deck.webp'
         },
         {
             title: 'Professional Welding Services',
@@ -221,7 +221,7 @@ export default function CaravansBoats() {
                 {/* Services Carousel - Apple Cards */}
                 <section id="services-grid" className="py-20 bg-white relative z-40 overflow-hidden">
                     <div className="max-w-7xl mx-auto px-4 relative z-10 mb-16">
-                        <ScrollReveal>
+                        <ScrollReveal width="100%">
                             <div className="text-center flex flex-col items-center">
                                 {/* Modern Badge */}
                                 <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#E8F4F8] border border-[#0C55AC]/20 mb-6">
@@ -580,6 +580,35 @@ export default function CaravansBoats() {
                                 </div>
                             </motion.div>
 
+                            {/* New Card - Custom Fabrication */}
+                            <motion.div
+                                className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.45 }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/public/Caravan Images/trailerfab.jpg"
+                                        alt="Custom Fabrication"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        onError={(e) => { (e.target as HTMLImageElement).src = '/caravan_boat_hero_1764692888890.png' }}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 p-8 flex items-center">
+                                        <div className="max-w-md">
+                                            <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#000' }}>
+                                                BESPOKE BUILD
+                                            </div>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Custom Trailer Fabrication</h4>
+                                            <p className="text-white/90 font-medium">Built from the ground up to your exact specifications. We fabricate commercial-grade and specialty trailers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+
                             {/* Image Card 3 - Spans 2 columns */}
                             <motion.div
                                 className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
@@ -823,28 +852,54 @@ export default function CaravansBoats() {
                         <div className="mt-16 w-full flex flex-col items-center justify-center">
                             <ScrollReveal>
                                 {/* Why Choose Us Grid */}
-                                <div className="grid md:grid-cols-3 gap-6 mb-16 w-full max-w-5xl mx-auto px-4">
-                                    <div className="bg-white p-6 rounded-xl shadow-lg border border-[#14A0B5]/20 hover:border-[#14A0B5] transition-all duration-300 hover:shadow-xl text-center">
-                                        <div className="w-12 h-12 bg-[#0C55AC]/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                                            <Anchor className="w-6 h-6 text-[#0C55AC]" />
-                                        </div>
-                                        <h4 className="text-lg font-semibold text-[#1F366A] mb-2 text-center">Expert Technicians</h4>
-                                        <p className="text-[#B5B5B5] text-sm text-center">Certified professionals with 20+ years of hands-on trailer and caravan experience.</p>
-                                    </div>
-                                    <div className="bg-white p-6 rounded-xl shadow-lg border border-[#14A0B5]/20 hover:border-[#14A0B5] transition-all duration-300 hover:shadow-xl text-center">
-                                        <div className="w-12 h-12 bg-[#14A0B5]/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                                            <ShieldCheck className="w-6 h-6 text-[#14A0B5]" />
-                                        </div>
-                                        <h4 className="text-lg font-semibold text-[#1F366A] mb-2 text-center">Quality Guaranteed</h4>
-                                        <p className="text-[#B5B5B5] text-sm text-center">All repairs backed by comprehensive warranty using OEM-quality parts.</p>
-                                    </div>
-                                    <div className="bg-white p-6 rounded-xl shadow-lg border border-[#14A0B5]/20 hover:border-[#14A0B5] transition-all duration-300 hover:shadow-xl text-center">
-                                        <div className="w-12 h-12 bg-[#0C55AC]/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                                            <Truck className="w-6 h-6 text-[#0C55AC]" />
-                                        </div>
-                                        <h4 className="text-lg font-semibold text-[#1F366A] mb-2 text-center">Fast Turnaround</h4>
-                                        <p className="text-[#B5B5B5] text-sm text-center">Most repairs completed within 24-48 hours with free loan trailers available.</p>
-                                    </div>
+                                <div className="grid md:grid-cols-3 gap-8 mb-16 w-full max-w-6xl mx-auto px-4">
+                                    {[
+                                        {
+                                            title: "Expert Technicians",
+                                            desc: "Certified professionals with 20+ years of hands-on trailer and caravan experience.",
+                                            Icon: Anchor,
+                                            gradient: "from-[#0C55AC] to-[#1F366A]",
+                                            iconColor: "text-[#0C55AC]"
+                                        },
+                                        {
+                                            title: "Quality Guaranteed",
+                                            desc: "All repairs backed by comprehensive warranty using OEM-quality parts.",
+                                            Icon: ShieldCheck,
+                                            gradient: "from-[#14A0B5] to-[#0C55AC]",
+                                            iconColor: "text-[#14A0B5]"
+                                        },
+                                        {
+                                            title: "Fast Turnaround",
+                                            desc: "Most repairs completed within 24-48 hours with free loan trailers available.",
+                                            Icon: Truck,
+                                            gradient: "from-[#1F366A] to-[#14A0B5]",
+                                            iconColor: "text-[#1F366A]"
+                                        }
+                                    ].map((item, index) => (
+                                        <motion.div
+                                            key={index}
+                                            className="group relative p-8 rounded-3xl bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-15px_rgba(12,85,172,0.3)] border border-gray-100 overflow-hidden transition-all duration-500"
+                                            whileHover={{ y: -5 }}
+                                        >
+                                            {/* Permanent Gradient Background */}
+                                            <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient}`} />
+
+                                            <div className="relative z-10 flex flex-col items-center">
+                                                {/* Icon Container - Always White */}
+                                                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-lg transition-transform duration-500 group-hover:scale-110">
+                                                    <item.Icon className={`w-8 h-8 ${item.iconColor}`} />
+                                                </div>
+
+                                                <h4 className="text-xl font-['Poppins'] font-bold text-white mb-3">
+                                                    {item.title}
+                                                </h4>
+
+                                                <p className="text-white/90 text-center text-sm leading-relaxed font-medium">
+                                                    {item.desc}
+                                                </p>
+                                            </div>
+                                        </motion.div>
+                                    ))}
                                 </div>
 
                                 <div className="w-full flex flex-col items-center justify-center text-center px-4">

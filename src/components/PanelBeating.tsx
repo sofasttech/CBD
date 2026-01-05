@@ -8,6 +8,78 @@ import clsx from 'clsx';
 import { ClipboardList, Wrench, Hammer, Palette, Sparkles, Activity, Gauge, Settings, Zap, Disc, Shield, ChevronRight } from 'lucide-react';
 import { ReactLenis } from 'lenis/react';
 
+const testimonials = [
+    { name: "Fiona Goulden", text: "Thank you so much for looking after me and my RAV so well. I knew it would be a good job as I am a returning client and you have always treated me so well previously. Great service, on time and I really do appreciate your going to the bother of sourcing an excellent second hand part required for the repair that was a third of the price of a new one. The use of a courtesy car and having my car washed and vacuumed before my collecting it is also very much appreciated. Please pass my thanks to your team." },
+    { name: "Grant", text: "I just wanted to say thanks to you and everyone who worked on the Mercedes. It looks fantastic, and I very much appreciate the price you gave me on the wheels and the roof." },
+    { name: "Eric Freeman", text: "Just a quick note to thank you and your crew for the repair work on my damaged Captiva. Without CBD I doubt it would have been as painless for me as it was. Especially grateful that you had the patience and contacts to resolve the antenna issue. Merry Xmas and best of luck for the new year." },
+    { name: "Nivé", text: "Thank You again for everything!!! Was in a super hurry the other day with an appointment I needed to be at soon after grabbing car. The car is perfect and runs wonderfully. Appreciate you. Till next time" },
+    { name: "Fraz", text: "Thank you so much the car looks and feels great." },
+    { name: "Steve", text: "Thanks so much for the fantastic work you did on my Skoda. Where others had told me that there was nothing wrong, you took me seriously when I talked about the intermittent problems starting the car, and you kept me informed of the options along the way. The car has run perfectly since you replaced the throttle sensor and the battery, and it runs like new again. I'm simply delighted." },
+    { name: "Customer", text: "Thank you for that information – it's very helpful! And like the idea of a Friday update. I'll extend my rental and let the insurance company know." },
+    { name: "George and Muireen Campbell", text: "Huge thanks for the wonderful job you did on our silver Blade…. not just outside, but inside too! We are very grateful." }
+];
+
+function TestimonialsCarousel() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        }, 5000); // Change testimonial every 5 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="relative max-w-4xl mx-auto">
+            <div className="overflow-hidden">
+                <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border-l-4"
+                    style={{ borderLeftColor: '#0C55AC' }}
+                >
+                    <div className="flex items-center gap-2 mb-6">
+                        {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-2xl" style={{ color: '#FDDD7F' }}>★</span>
+                        ))}
+                    </div>
+                    <p className="text-gray-700 text-lg md:text-xl mb-6 leading-relaxed italic">"{testimonials[currentIndex].text}"</p>
+                    <div className="flex items-center gap-4 pt-6 border-t" style={{ borderTopColor: '#E4AEB3' }}>
+                        <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-xl" style={{ backgroundColor: '#0C55AC' }}>
+                            {testimonials[currentIndex].name.charAt(0)}
+                        </div>
+                        <div>
+                            <p className="font-['Poppins'] font-semibold text-lg" style={{ color: '#1F366A' }}>{testimonials[currentIndex].name}</p>
+                            <p className="text-sm" style={{ color: '#14A0B5' }}>Verified Customer</p>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+
+            {/* Progress Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+                {testimonials.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrentIndex(index)}
+                        className="transition-all duration-300"
+                        style={{
+                            width: currentIndex === index ? '32px' : '12px',
+                            height: '12px',
+                            borderRadius: '6px',
+                            backgroundColor: currentIndex === index ? '#0C55AC' : '#B5B5B5',
+                            opacity: currentIndex === index ? 1 : 0.5
+                        }}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
 
 export default function PanelBeating() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -38,8 +110,6 @@ export default function PanelBeating() {
         };
     }, [activeModal]);
 
-    // Inject Shapo widget script dynamically
-    // Force reload/re-execution of the script to ensure it finds the new DOM element on route changes
     useEffect(() => {
         const existingScript = document.getElementById('shapo-embed-js');
         if (existingScript) {
@@ -52,6 +122,20 @@ export default function PanelBeating() {
         s.src = 'https://cdn.shapo.io/js/embed.js';
         s.defer = true;
         document.body.appendChild(s);
+    }, []);
+
+    // Handle hash navigation for auto-scrolling to sections
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            // Wait for page to fully load
+            setTimeout(() => {
+                const element = document.getElementById(hash.substring(1));
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -69,7 +153,7 @@ export default function PanelBeating() {
             shortDesc: 'Comprehensive collision repair to restore your vehicle to pre-accident condition.',
             fullDesc: 'Our accident repair service handles everything from minor fender benders to major collisions. We work directly with insurance companies, provide detailed quotes, and use genuine or quality aftermarket parts. Our computerized frame alignment ensures structural integrity is fully restored.',
             details: ['Structural and chassis realignment', 'Panel straightening and replacement', 'Bumper, guard, door, and side-impact repairs', 'Sensor and safety system checks and recalibration', 'High-quality paint refinishing and blending', 'Insurance-approved repair processes'],
-            image: '/panel_beating_hero_1764692687494.png',
+            image: 'public/Home Page Images/Accident repair.jpg',
             learnMore: 'Our accident repair service is designed to restore your vehicle safely, accurately, and efficiently after any type of collision. From minor fender benders to major structural damage, our team has the expertise and equipment to bring your car back to its best condition.\n\nWe work directly with insurance companies to streamline the process and reduce stress for our customers. Our team provides clear, detailed quotes and explains repair options so you understand exactly what your vehicle needs. Depending on the job, we use either genuine manufacturer parts or high-quality aftermarket components that meet strict safety and performance standards.\n\nTo ensure your vehicle\'s safety is never compromised, we use computerised frame and chassis alignment systems. This technology allows us to measure and correct even the slightest structural deviations, ensuring the vehicle is restored to factory specifications. Our certified panel beaters then carry out precise body repairs, followed by professional refinishing to achieve a seamless paint match.\n\nNo matter the extent of the damage, we focus on quality, safety, and long-lasting results. Your vehicle will leave our workshop looking great and performing the way it should, giving you confidence every time you get back on the road.'
         },
         {
@@ -78,7 +162,7 @@ export default function PanelBeating() {
             shortDesc: 'Expert repair and replacement of damaged bumpers for all vehicle makes.',
             fullDesc: 'Whether your bumper has minor scratches, dents, or requires complete replacement, we provide expert service. We repair plastic bumpers using specialised welding techniques and can perfectly match paint finishes. Same-day service available for minor repairs.',
             details: ['Scratch, Dent, and Scuff Removal', 'Plastic Bumper Welding and Reshaping', 'Corner and Split Repairs', 'Full Bumper Replacement', 'High-Quality Paint Refinishing', 'Same-Day Turnaround Available'],
-            image: '/car-pieces.png',
+            image: 'public/Home Page Images/Bumper Repair.jpg',
             learnMore: 'Your vehicle\'s bumper is one of the most common areas to suffer damage, whether from a small parking scrape or a more noticeable impact. Our bumper repair service covers everything from light cosmetic touch-ups to full bumper replacement, ensuring your vehicle looks clean, sharp, and professionally restored.\n\nWe handle all types of bumper damage, including scratches, dents, cracks, scuffs, and paint imperfections. For plastic bumpers, our team uses specialised plastic welding and reshaping techniques to restore the original form without compromising strength. This approach often saves time and cost compared to full replacement.\n\nOnce the bumper is structurally sound, our painters complete the job with precise colour matching using advanced paint-matching technology. This allows us to blend new paint seamlessly with your existing finish, ensuring the repaired area is virtually undetectable.\n\nWhether you need a quick tidy-up or a complete bumper restoration, we focus on delivering a smooth, strong, and flawless finish that keeps your vehicle looking its best.'
         },
         {
@@ -87,7 +171,7 @@ export default function PanelBeating() {
             shortDesc: 'Precision structural repairs using advanced frame alignment technology.',
             fullDesc: 'Structural damage compromises vehicle safety. Our state-of-the-art frame straightening equipment and laser measuring systems ensure your vehicle\'s chassis is restored to exact factory specifications. We handle unibody and frame-on-frame construction.',
             details: ['Laser Measuring Technology', 'Computerised Frame Straightening', 'Unibody and Frame-on-Frame Repair', 'Suspension Mounting Point Verification', 'Post-Repair Alignment Checks', 'Safety and Body Fitment Verification'],
-            image: '/panel_beating_hero_1764692687494.png',
+            image: 'public/Home Page Images/Chassis and structural repair.jpg',
             learnMore: 'Structural damage affects far more than a vehicle\'s appearance — it directly impacts safety, stability, and long-term performance. Our chassis and structural repair service is designed to restore your vehicle\'s strength and alignment with absolute accuracy after an accident.\n\nWe use state-of-the-art frame straightening equipment and advanced laser measuring systems to assess and realign the chassis to exact factory specifications. These tools allow us to detect even the smallest deviations that may not be visible to the eye but can significantly affect safety systems, wheel alignment, panel fitment, and overall drivability.\n\nOur technicians are trained to work with both unibody and frame-on-frame vehicle constructions, ensuring the right method is applied for each repair. Whether your vehicle has sustained front-end, side-impact, rear, or underbody structural damage, we follow strict repair procedures to return its integrity and strength.\n\nOnce the structural work is complete, we coordinate with our panel, painting, and mechanical teams to ensure the vehicle is fully restored in terms of appearance, performance, and safety.\n\nWhen your vehicle\'s structure is compromised, precision repair is critical. Our goal is to ensure your car is solid, safe, and ready for the road with complete confidence.'
         },
         {
@@ -404,10 +488,10 @@ export default function PanelBeating() {
                                 {/* Scrolling Symptoms Side */}
                                 <div className="grid gap-6 py-8 px-4">
                                     {[
-                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Dents & Dings", cause: "Minor impacts, hail damage, or parking lot incidents.", fix: "Paintless dent removal or traditional panel beating.", image: "/dent_repair_1764693039882.png" },
-                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "/paint_booth_1764692971281.png" },
-                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "/panel_beating_hero_1764692687494.png" },
-                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "/panel-beatt.jpg" },
+                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Dents & Dings", cause: "Minor impacts, hail damage, or parking lot incidents.", fix: "Paintless dent removal or traditional panel beating.", image: "public/Panel Beating images/dentfix.jpg" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "public/Panel Beating images/polishcarimg01.png" },
+                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "public/Panel Beating images/carcol.jpeg" },
+                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "public/Panel Beating images/carbodyshop1_1.jpg" },
                                     ].map((symptom, index) => (
                                         <div
                                             key={symptom.id}
@@ -490,7 +574,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[500px] overflow-hidden">
                                     <img
-                                        src="/paint_booth_1764692971281.png"
+                                        src="public/Panel Beating images/paint-booth-ventilation-fans.jpg"
                                         alt="Modern Paint Booth"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -550,7 +634,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/panel_beating_hero_1764692687494.png"
+                                        src="public/Panel Beating images/brightonpw.jpg"
                                         alt="Panel Beating Equipment"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -572,7 +656,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/dent_repair_1764693039882.png"
+                                        src="public/Panel Beating images/vehicle-service-CRSAutomotive-Hamiltoin.jpg"
                                         alt="Dent Repair Tools"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -583,7 +667,35 @@ export default function PanelBeating() {
                                 </div>
                             </motion.div>
 
-                            {/* Image Card 3 - Spans 2 columns */}
+                            {/* Image Card 3 - Computerized Diagnostics - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="/public/Panel Beating images/Computer-Diagnostics.jpeg"
+                                        alt="Computerized Diagnostics"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 p-8 flex items-center">
+                                        <div className="max-w-md">
+                                            <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#fff' }}>
+                                                TECHNOLOGY
+                                            </div>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Computerized Diagnostics</h4>
+                                            <p className="text-white/90 font-medium">Advanced scanning tools for accurate vehicle assessment</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 4 - Wheel Restoration - Spans 2 columns */}
                             <motion.div
                                 className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
                                 initial={{ opacity: 0, y: 50 }}
@@ -594,7 +706,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/wheel_repair_1764693107551.png"
+                                        src="public/Panel Beating images/WheelMaster.jpg"
                                         alt="Wheel Repair Equipment"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -765,7 +877,7 @@ export default function PanelBeating() {
                                                 </h3>
 
                                                 <p
-                                                    className="text-base leading-relaxed font-medium mb-6"
+                                                    className="text-base leading-relaxed font-medium mb-6 text-justify"
                                                     style={{ color: cardColor.text === '#fff' ? 'rgba(255,255,255,0.9)' : 'rgba(31,54,106,0.9)' }}
                                                 >
                                                     {step.description}
@@ -834,7 +946,7 @@ export default function PanelBeating() {
                 >
                     <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="/paint_booth_1764692971281.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
+                            <img src="public/Panel Beating images/future-trends-panel-beating.jpeg" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
                         </div>
                         <div>
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
@@ -846,43 +958,43 @@ export default function PanelBeating() {
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We work with all major insurance providers and handle the entire process for you, making claims simple and stress-free.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>We work with all major insurance providers and handle the entire process for you, making claims simple and stress-free.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Fast Service</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our efficient workflow and modern equipment allow us to complete repairs quickly without compromising on quality.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Fast Service</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>Our efficient workflow and modern equipment allow us to complete repairs quickly without compromising on quality.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Fair Pricing</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We provide honest, transparent quotes and cost-effective repair options suited to your budget and needs.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Fair Pricing</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>We provide honest, transparent quotes and cost-effective repair options suited to your budget and needs.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Family-Run</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>As a family-owned and operated workshop, we take pride in offering friendly service, personal attention, and a commitment to doing the job right.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Family-Run</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>As a family-owned and operated workshop, we take pride in offering friendly service, personal attention, and a commitment to doing the job right.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Expert Workmanship</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our certified technicians, precision painters, and skilled mechanics deliver repairs that meet strict safety and factory-quality standards.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Expert Workmanship</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>Our certified technicians, precision painters, and skilled mechanics deliver repairs that meet strict safety and factory-quality standards.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>All Services Under One Roof</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>From panel beating and painting to mechanical repairs, WOFs, ADAS calibration, and towing, we provide everything you need in one place for a smooth and convenient experience.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>All Services Under One Roof</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>From panel beating and painting to mechanical repairs, WOFs, ADAS calibration, and towing, we provide everything you need in one place for a smooth and convenient experience.</p>
                                     </div>
                                 </div>
                             </div>
@@ -891,16 +1003,13 @@ export default function PanelBeating() {
                 </motion.section>
 
                 {/* Testimonials */}
-                <section className="px-4 py-16" style={{ background: 'linear-gradient(to bottom, white, #f8f9fa)' }}>
+                <section id="testimonials" className="px-4 py-16" style={{ background: 'linear-gradient(to bottom, white, #f8f9fa)' }}>
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-12">
                             <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>What Our Customers Say</h2>
+                            <p className="text-lg font-medium" style={{ color: '#0C55AC' }}>Real feedback from satisfied customers</p>
                         </div>
-                        <div className="max-w-6xl mx-auto">
-                            <div className="rounded-lg overflow-hidden shadow-sm">
-                                <div id="shapo-widget-65035ad084a4892e58a0"></div>
-                            </div>
-                        </div>
+                        <TestimonialsCarousel />
                     </div>
                 </section>
 

@@ -63,7 +63,7 @@ export default function Mechanical() {
                 'Pre-2000 vehicles: 6-month WOF',
                 'Light trailers & commercial: 12 months (or 6 months if 10+ years old)'
             ],
-            image: '/mechanical_hero_1764692776650.png'
+            image: '/Mechanical%20page%20images/wof.png'
         },
         {
             title: 'Mechanical Services',
@@ -85,7 +85,7 @@ export default function Mechanical() {
                 'Pre-purchase vehicle inspections',
                 'Roadside assistance and breakdown support'
             ],
-            image: '/mechanical_hero_1764692776650.png'
+            image: '/Mechanical%20page%20images/Mechanical%20Services.jpg'
         },
         {
             title: 'Compliance Centre',
@@ -104,7 +104,7 @@ export default function Mechanical() {
                 'Undercover, secure parking with 7-day access',
                 'Vehicle pickup and delivery available'
             ],
-            image: '/mechanical_hero_1764692776650.png'
+            image: '/Mechanical%20page%20images/Compliance%20Centre.jpg'
         },
     ];
 
@@ -273,21 +273,23 @@ export default function Mechanical() {
                     </div>
 
                     <div className="max-w-7xl mx-auto relative z-10">
-                        <ScrollReveal>
-                            <div className="text-center mb-20">
+                        <ScrollReveal width="100%">
+                            <div className="text-center mb-20 w-full" style={{ textAlign: 'center' }}>
                                 <motion.div
+                                    className="flex flex-col items-center w-full"
+                                    style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', width: '100%' }}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6 }}
                                 >
-                                    <span className="inline-block py-2 px-6 rounded-full text-white text-sm font-medium mb-6 shadow-lg" style={{ background: 'linear-gradient(135deg, #0C55AC 0%, #1F366A 100%)' }}>
+                                    <span className="inline-block py-2 px-6 rounded-full text-white text-sm font-medium mb-6 shadow-lg" style={{ background: 'linear-gradient(135deg, #0C55AC 0%, #1F366A 100%)', textAlign: 'center' }}>
                                         OUR EXPERTISE
                                     </span>
-                                    <h2 className="text-5xl md:text-7xl font-['Poppins'] font-bold mb-6 tracking-tight" style={{ color: '#1F366A' }}>
+                                    <h2 className="text-5xl md:text-7xl font-['Poppins'] font-bold mb-6 tracking-tight text-center w-full" style={{ color: '#1F366A', textAlign: 'center', width: '100%' }}>
                                         PREMIUM <span style={{ background: 'linear-gradient(135deg, #0C55AC, #14A0B5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>SERVICES</span>
                                     </h2>
-                                    <p className="text-xl max-w-2xl mx-auto font-medium leading-relaxed" style={{ color: '#1F366A' }}>
+                                    <p className="text-xl max-w-2xl font-medium leading-relaxed text-center w-full" style={{ color: '#1F366A', textAlign: 'center', width: '100%', maxWidth: '48rem', margin: '0 auto' }}>
                                         Comprehensive mechanical solutions with cutting-edge technology and expert craftsmanship
                                     </p>
                                 </motion.div>
@@ -650,7 +652,7 @@ export default function Mechanical() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/mechanical_hero_1764692776650.png"
+                                        src="/Mechanical page images/Mechanical Services.jpg"
                                         alt="Engine Analysis"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -672,7 +674,7 @@ export default function Mechanical() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/mechanical_hero_1764692776650.png"
+                                        src="/Mechanical page images/Sensor Testing.jpg"
                                         alt="Sensor Testing"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -683,7 +685,35 @@ export default function Mechanical() {
                                 </div>
                             </motion.div>
 
-                            {/* Image Card 3 - Spans 2 columns */}
+                            {/* Image Card 3 - Computerized Diagnostics - Spans 2 columns */}
+                            <motion.div
+                                className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <div className="relative h-full min-h-[280px] overflow-hidden">
+                                    <img
+                                        src="public/Mechanical page images/Computer-Diagnostics.jpeg"
+                                        alt="Computerized Diagnostics"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 p-8 flex items-center">
+                                        <div className="max-w-md">
+                                            <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#fff' }}>
+                                                TECHNOLOGY
+                                            </div>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Computerized Diagnostics</h4>
+                                            <p className="text-white/90 font-medium">Advanced scanning tools for accurate vehicle assessment</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Card 4 - System Calibration - Spans 2 columns */}
                             <motion.div
                                 className="md:col-span-2 relative group overflow-hidden rounded-3xl border-2 border-white/20"
                                 initial={{ opacity: 0, y: 50 }}
@@ -694,7 +724,7 @@ export default function Mechanical() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/mechanical_hero_1764692776650.png"
+                                        src="/Mechanical page images/System Calibration.jpg"
                                         alt="System Calibration"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -845,3 +875,4 @@ export default function Mechanical() {
         </ReactLenis>
     );
 }
+

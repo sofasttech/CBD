@@ -9,7 +9,7 @@ export default function Blog() {
       excerpt: 'Understanding panel beating costs helps you make informed decisions. Prices vary based on damage severity, parts, labour, paint type, and insurance coverage.',
       date: 'MAY 29, 2025',
       category: 'PANEL BEATING',
-      image: '/panel-beatt.jpg',
+      image: '/Home%20Page%20Images/pannel-4.jpg',
       route: '/tips-advice/panel-beating-costs'
     },
     {
@@ -37,7 +37,7 @@ export default function Blog() {
           <div>
             <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
             <h2 className="text-4xl md:text-5xl font-['Poppins'] font-bold text-black">
-              ARTICLES FROM AUTOACE
+              Tips & Advice
             </h2>
           </div>
           <a href="/tips-advice" className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2">

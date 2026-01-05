@@ -12,27 +12,27 @@ const accordionItems = [
   {
     id: 1,
     title: 'Panel Beating',
-    imageUrl: '/panel-beatt.jpg',
+    imageUrl: '/public/Home Page Images/panel-beatt.jpg',
   },
   {
     id: 2,
     title: 'Paint and Refinishing',
-    imageUrl: '/car-tune-up.jpg',
+    imageUrl: '/public/Home Page Images/Paint and Refinishing.jpg',
   },
   {
     id: 3,
     title: 'Mechanical',
-    imageUrl: '/headlight.webp',
+    imageUrl: '/public/Home Page Images/Mechanic.jpg',
   },
   {
     id: 4,
     title: 'Caravan Repairs',
-    imageUrl: '/shop.webp',
+    imageUrl: '/public/Home Page Images/Caravan Repairs.jpg',
   },
   {
     id: 5,
     title: 'Boat Repairs',
-    imageUrl: '/tesla.jpg',
+    imageUrl: '/public/Home Page Images/Boat Repairs.jpg',
   },
 ];
 
@@ -194,7 +194,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/panel-beatt.jpg"
+              href="public/Home Page Images/book.png"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -227,7 +227,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/oil.jpg"
+              href="public/Home Page Images/pannel-3.jpg"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -490,8 +490,8 @@ export default function Homepage() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <img src="/carsnz.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
-        <div className="absolute inset-0 bg-white/70 pointer-events-none"></div>
+        <img src="/carsbg.png" alt="Cars" className="w-full h-44 md:h-auto object-cover object-center" />
+        <div className="absolute inset-0 pointer-events-none"></div>
         <div className="absolute inset-0 flex items-start justify-center px-4 pt-10 md:pt-16">
           <motion.h2
             className="text-black text-xl sm:text-3xl md:text-5xl lg:text-6xl text-center drop-shadow-lg font-['Poppins'] font-medium leading-tight"
@@ -652,13 +652,13 @@ export default function Homepage() {
                 title: 'Quality Materials',
                 shortDesc: 'Only the best parts and materials used',
                 fullDesc: 'We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform. All our paints are premium automotive-grade with UV protection and color-matching technology. We source genuine OEM parts and certified aftermarket components.',
-                image: '/oil.jpg'
+                image: 'public/Home Page Images/quality material.png'
               },
               {
                 title: 'Expert Technicians',
                 shortDesc: 'Decades of combined experience',
                 fullDesc: 'Our team of certified professionals brings decades of experience to deliver exceptional results you can trust. Each technician holds industry certifications and undergoes continuous training on the latest repair techniques and vehicle technologies.',
-                image: '/im3.png'
+                image: '/public/Home Page Images/Expert Technicians.jpg'
               }
             ].map((feature, index) => (
               <motion.div
@@ -710,7 +710,7 @@ export default function Homepage() {
         {/* Hero Section */}
         <div className="sticky top-0 z-0 h-[50vh] md:h-[60vh] w-full bg-white flex items-center justify-center relative">
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#e5e5e52e_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e52e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-          <h1 className="text-4xl md:text-6xl px-8 font-['Poppins'] font-medium text-center tracking-tight leading-[120%] relative z-10 md:mb-32">
+          <h1 className="text-4xl md:text-6xl px-8 font-['Poppins'] font-medium text-center tracking-tight leading-[120%] relative z-10 -mt-8 md:mt-0 md:mb-32">
             DISTINCTIVE SERVICE FOR <br /> DISCERNING DRIVERS
           </h1>
         </div>
@@ -722,244 +722,405 @@ export default function Homepage() {
             <div className="grid gap-4 flex-1">
               {/* Card 01 - Accident Repair */}
               <motion.figure
-                className="sticky top-[36vh] h-[70vh] grid place-content-center"
+                className="sticky top-[28vh] h-[70vh] grid place-content-center"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true, margin: "-150px" }}
               >
-                <article className="bg-CBlue h-96 w-full max-w-3xl rounded-lg rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">01</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Accident Repair</h3>
+                <article className="bg-gradient-to-br from-CBlue to-blue-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-3 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  {/* Content Side - Left */}
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    {/* Number Badge */}
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">01</span>
                       </div>
-                      <p className="text-lg">Our Accident repair service handles everything from minor fender benders to major collisions. We work directly with insurance companies, provide detailed quotes, and use genuine or quality aftermarket parts. Our computerised frame alignment ensures structural integrity is fully restored..</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Accident Repair" className="w-full h-full object-cover rounded-lg" /></div>
+
+                    {/* Title */}
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Accident Repair
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Our Accident repair service handles everything from minor fender benders to major collisions. We work directly with insurance companies and use genuine or quality aftermarket parts.
+                    </p>
+
+                    {/* Features */}
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Insurance Approved</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Frame Alignment</span>
+                    </div>
+                  </div>
+
+                  {/* Image Side - Right */}
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="/public/Home Page Images/Accident repair.jpg" alt="Accident Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    </div>
                   </div>
                 </article>
               </motion.figure>
 
               {/* Card 02 - Bumper Repair */}
               <motion.figure
-                className="sticky top-[36vh] h-[70vh] grid place-content-center"
+                className="sticky top-[28vh] h-[70vh] grid place-content-center"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true, margin: "-150px" }}
               >
-                <article className="bg-CDarkBlue h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">02</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Bumper Repair</h3>
+                <article className="bg-gradient-to-br from-CDarkBlue to-blue-900 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">02</span>
                       </div>
-                      <p className="text-lg">Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/BumperRepair.jpg" alt="Bumper Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Bumper Repair
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Repair, reshape and refinish bumpers damaged by impacts. We restore structural mounting points and paint so the bumper fits and protects as intended.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Impact Repair</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Refinishing</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="/public/Home Page Images/Bumper Repair.jpg" alt="Bumper Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
+                    </div>
                   </div>
                 </article>
               </motion.figure>
 
               {/* Card 03 - Chassis and structural repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CLightBlue h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">03</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Chassis & Structural Repair</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CLightBlue to-cyan-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">03</span>
                       </div>
-                      <p className="text-lg">Structural damage compromises vehicle safety. Our state-of-the-art frame straightening equipment and laser measuring systems ensure your vehicle's chassis is restored to exact factory specifications. We handle unibody and frame-on-frame construction.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/chassis.jpg" alt="Chassis Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/car-pieces.png' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Chassis & Structural Repair
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Structural damage compromises vehicle safety. Our state-of-the-art frame straightening equipment and laser measuring systems ensure your vehicle's chassis is restored to exact factory specifications.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Frame Alignment</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Laser Measuring</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="public/Home Page Images/Chassis and structural repair.jpg" alt="Chassis Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/car-pieces.png' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 04 - Curb Rash Repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CGreen h-96 w-full max-w-3xl rounded-lg -rotate-3 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">04</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Curb Rash Repair</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CGreen to-green-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-3 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">04</span>
                       </div>
-                      <p className="text-lg">Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/tyer.png' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Curb Rash Repair
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Wheel refurbishment to remove scuffs, bends and paint loss. Our process restores balance and cosmetics so rims look showroom-fresh and perform safely.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Wheel Refurbishment</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Showroom Finish</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/tyer.png' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 05 - Dent Repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CPurple h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">05</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Dent Repair</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CPurple to-purple-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">05</span>
                       </div>
-                      <p className="text-lg">Minor dents and dings can often be repaired without repainting using our paintless dent removal (PDR) technique. This cost-effective method maintains your original paint finish. For larger dents, we offer traditional panel beating and refinishing services.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/dent.jpg" alt="Dent Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Dent Repair
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Minor dents and dings can often be repaired without repainting using our paintless dent removal (PDR) technique. This cost-effective method maintains your original paint finish.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Paintless Removal</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Panel Beating</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="public/Home Page Images/Dent Repair.jpg" alt="Dent Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 06 - Exterior Polishing */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CYellow h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">06</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Exterior Polishing</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CYellow to-yellow-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">06</span>
                       </div>
-                      <p className="text-lg">Over time, vehicle paint develops swirl marks, oxidation, and fine scratches. Our multi-stage polishing process removes imperfections and restores depth and clarity to your paint. We offer a range of correction services, from light enhancement to full paint restoration.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/polish.jpg" alt="Exterior Polishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Exterior Polishing
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Our multi-stage polishing process removes imperfections and restores depth and clarity to your paint. We offer a range of correction services from light enhancement to full restoration.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Multi-Stage Process</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Paint Correction</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="public/Home Page Images/Exterior Polishing.jpg" alt="Exterior Polishing" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 07 - Headlight Polishing */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CGray h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">07</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Headlight Polishing</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CGray to-gray-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">07</span>
                       </div>
-                      <p className="text-lg">Oxidised headlights reduce nighttime visibility and diminish your vehicle's appearance. Our restoration process involves removing the damaged outlet layer, polishing the lens to a high level of clarity, and applying a UV-protective coating. Results look like new headlights at a fraction of the replacement cost.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/headlight.webp" alt="Headlight Polishing" className="w-full h-full object-cover rounded-lg" /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Headlight Polishing
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Oxidised headlights reduce nighttime visibility and diminish your vehicle's appearance. Our restoration process restores clarity and applies UV-protective coating.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">UV Protection</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Lens Restoration</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="/headlight.webp" alt="Headlight Polishing" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 08 - Paint and Refinishing */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CPink h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">08</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Paint & Refinishing</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CPink to-pink-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">08</span>
                       </div>
-                      <p className="text-lg">From single panel refinishing to complete resprays, our modern paint booth and computerised colour matching system ensure perfect results. We use premium automotive paints with factory-spec clear coats for lasting durability and gloss. Waterborne paint options are available. </p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/paint.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Paint & Refinishing
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      From single panel refinishing to complete resprays, our modern paint booth and computerised colour matching system ensure perfect results with premium automotive paints.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Color Matching</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Premium Paints</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="public/Home Page Images/Paint and Refinishing.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 09 - Panel Repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CBlue h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">09</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Panel Repair</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CBlue to-blue-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">09</span>
                       </div>
-                      <p className="text-lg">Damaged panels are carefully assessed to determine whether repair or replacement is the most cost-effective option. Our craftsmen can reshape steel and aluminium panels back to their original contours. When replacement is necessary, we source high-quality parts and ensure a perfect fit and finish.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/panel-beatt.jpg" alt="Panel Repair" className="w-full h-full object-cover rounded-lg" /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Panel Repair
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Damaged panels are carefully assessed to determine whether repair or replacement is the most cost-effective option. Our craftsmen reshape steel and aluminium panels to their original contours.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Panel Reshaping</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Perfect Fit</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src=" /Home Page Images/pannel-3.jpg" alt="Panel Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 10 - Windscreen Removal and Installation */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CDarkBlue h-96 w-full max-w-3xl rounded-lg -rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">10</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Windscreen Removal & Installation</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CDarkBlue to-blue-900 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">10</span>
                       </div>
-                      <p className="text-lg">Windscreen replacement requires precision and proper technique. We use OEM-quality glass and adhesives, follow the manufacturer-specified curing times, and recalibrate advanced driver assistance systems (ADAS) if equipped. Mobile service available for insurance claims..</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/windscreen.jpg" alt="Windscreen" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Windscreen Removal & Installation
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Windscreen replacement requires precision and proper technique. We use OEM-quality glass and adhesives, and recalibrate ADAS systems if equipped.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">OEM Glass</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">ADAS Calibration</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="public/Home Page Images/vehicle Windscreen Removal and Installation.jpg" alt="Windscreen" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 11 - Mechanical Repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CLightBlue h-96 w-full max-w-3xl rounded-lg rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">11</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Mechanical Repair</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CLightBlue to-cyan-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">11</span>
                       </div>
-                      <p className="text-lg">Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/mechanical.jpg" alt="Mechanical Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/oil.jpg' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Mechanical Repair
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Diagnostics, scheduled servicing and major mechanical repairs carried out by our certified team. We supply and fit quality parts and provide detailed estimates before work begins.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Diagnostics</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Quality Parts</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="/public/Home Page Images/Mechanic.jpg" alt="Mechanical Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/oil.jpg' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 12 - WOF and Compliance */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CGreen h-96 w-full max-w-3xl rounded-lg -rotate-2 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">12</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">WOF & Compliance</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CGreen to-green-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">12</span>
                       </div>
-                      <p className="text-lg">Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/wof.jpg" alt="WOF" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      WOF & Compliance
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Complete WOF inspections and corrective repairs to ensure vehicles meet local regulations. We document findings and carry out required fixes efficiently.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">WOF Inspections</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Compliance Repairs</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="public/Home Page Images/WOF.jpg" alt="WOF" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
 
               {/* Card 13 - Caravan and Board Repair */}
-              <figure className="sticky top-[36vh] h-[70vh] grid place-content-center">
-                <article className="bg-CPurple h-96 w-full max-w-3xl rounded-lg rotate-1 p-8 lg:p-10 shadow-2xl overflow-hidden">
-                  <div className="flex h-full gap-4">
-                    <div className="flex-1 flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-['Poppins'] font-bold">13</span>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-['Poppins'] uppercase">Caravan & Board Repair</h3>
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+                <article className="bg-gradient-to-br from-CPurple to-purple-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl font-['Poppins'] font-extrabold text-white">13</span>
                       </div>
-                      <p className="text-lg">Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.</p>
-
+                      <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
-                    <div className="hidden md:block w-40 lg:w-48 flex-shrink-0"><img src="/caravan.jpg" alt="Caravan Repair" className="w-full h-full object-cover rounded-lg" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} /></div>
+                    <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
+                      Caravan & Board Repair
+                    </h3>
+                    <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
+                      Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Waterproofing</span>
+                      <span className="px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full text-white text-sm border border-white/20">Large Format</span>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex md:w-[40%] items-center justify-center">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <img src="public/Home Page Images/Caravan Repairs.jpg" alt="Caravan Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                    </div>
                   </div>
                 </article>
               </figure>
             </div>
 
-            {/* Sticky Side Text */}
-            <div className="hidden lg:grid sticky top-[40vh] h-[50vh] place-content-center">
-              <h2 className="text-4xl md:text-6xl px-8 font-medium font-['Poppins'] text-center tracking-tight leading-[120%]">
-                OUR <br /> SERVICES 😎
-              </h2>
-            </div>
+            {/* Sticky Side Text - Removed */}
           </div>
         </div>
       </section>
@@ -991,7 +1152,7 @@ export default function Homepage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/panel-beatt.jpg')" }} />
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('Home Page Images/panel.png')" }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-8 text-white z-10">
                 <h3 className="text-2xl md:text-4xl font-bold font-['Poppins'] mb-3">Expert Craftsmanship</h3>
@@ -1026,8 +1187,8 @@ export default function Homepage() {
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/shop.webp')" }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-6 text-white z-10">
-                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Lifetime Guarantee</h3>
-                <p className="text-gray-200 text-sm md:text-base max-w-md">We stand behind our work. Enjoy peace of mind knowing that our repairs are backed by a comprehensive warranty.</p>
+                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Customer Focused</h3>
+                <p className="text-gray-200 text-sm md:text-base max-w-md">We value long-term relationships, providing honest advice and treating every vehicle as if it were our own.</p>
               </div>
             </motion.div>
 

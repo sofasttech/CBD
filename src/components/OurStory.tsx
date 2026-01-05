@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CardContainer, CardBody, CardItem } from './ui/3d-card';
+import { Heart, Target, Award, Users } from 'lucide-react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -36,14 +37,13 @@ function BeforeAfterSlider({ item, index }: { item: { before: string; after: str
 
                 {/* Before Image (Foreground, clipped) */}
                 <div
-                    className="absolute inset-0 w-full h-full overflow-hidden transition-all duration-100"
-                    style={{ width: `${position}%` }}
+                    className="absolute inset-0 overflow-hidden transition-all duration-100"
+                    style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                 >
                     <img
                         src={item.before}
                         alt={`${item.title} - Before`}
                         className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-75"
-                        style={{ width: '100vw', maxWidth: 'none' }}
                         onError={(e) => {
                             e.currentTarget.src = '/panel_beating_hero_1764692687494.png';
                         }}
@@ -121,7 +121,7 @@ export default function OurStory() {
                         y: useTransform(useScroll().scrollY, [0, 500], [0, 200])
                     }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/75 to-white z-10" />
 
                 <motion.div
                     className="relative z-20 text-center px-4 max-w-5xl mx-auto"
@@ -134,17 +134,17 @@ export default function OurStory() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
                     >
-                        <p className="text-CPurple text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6">
+                        <p className="text-CPurple text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6 drop-shadow-lg">
                             Est. 1995 • Auckland, NZ
                         </p>
-                        <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight">
-                            <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-CPink to-CPurple">Perfection</span>
+                        <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight drop-shadow-xl">
+                            <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-CPink to-CPurple" style={{ WebkitTextStroke: '1px rgba(120, 62, 108, 0.3)' }}>Perfection</span>
                         </h1>
                     </motion.div>
 
                     <motion.p
                         style={{ wordSpacing: '-0.08rem' }}
-                        className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl mx-auto"
+                        className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl mx-auto drop-shadow-md"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
@@ -194,51 +194,57 @@ export default function OurStory() {
                         </h2>
                     </div>
 
-                    <div className="relative h-[400px] md:h-[700px] w-full flex items-center justify-center">
+                    <div className="relative h-[500px] md:h-[800px] w-full flex items-center justify-center">
                         {/* Scattered Photos */}
                         {[
-                            { src: "/shop.webp", rotate: -6, xMobile: -100, yMobile: -25, xDesktop: -220, yDesktop: -80, caption: "The Early Days" },
-                            { src: "/panel-beatt.jpg", rotate: 5, xMobile: 100, yMobile: -40, xDesktop: 240, yDesktop: -100, caption: "Master Craftsmen" },
-                            { src: "/car-tune-up.jpg", rotate: -3, xMobile: -75, yMobile: 75, xDesktop: -180, yDesktop: 140, caption: "Precision Tuning" },
-                            { src: "/headlight.webp", rotate: 8, xMobile: 90, yMobile: 60, xDesktop: 200, yDesktop: 120, caption: "Attention to Detail" },
-                            { src: "/shop.webp", rotate: 0, xMobile: 0, yMobile: 0, xDesktop: 0, yDesktop: 0, caption: "Our Workshop", scale: 1.1, z: 10 }
-                        ].map((photo, index) => (
-                            <motion.div
-                                key={index}
-                                className="absolute bg-white p-2 md:p-4 shadow-xl rounded-sm cursor-pointer"
-                                style={{ zIndex: photo.z || 1 }}
-                                initial={{ opacity: 0, scale: 0 }}
-                                whileInView={{
-                                    opacity: 1,
-                                    scale: photo.scale || 1,
-                                    rotate: photo.rotate,
-                                    x: [photo.xMobile, photo.xDesktop],
-                                    y: [photo.yMobile, photo.yDesktop]
-                                }}
-                                whileHover={{
-                                    scale: 1.2,
-                                    zIndex: 50,
-                                    rotate: 0,
-                                    transition: { duration: 0.3 }
-                                }}
-                                drag
-                                dragConstraints={{ left: -250, right: 250, top: -150, bottom: 150 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                            >
-                                <div className="w-32 h-24 md:w-64 md:h-48 overflow-hidden mb-2 md:mb-3 bg-gray-200">
-                                    <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover pointer-events-none" />
-                                </div>
-                                <p className="font-['Caveat'] text-lg md:text-xl text-gray-600 text-center font-handwriting">{photo.caption}</p>
-                            </motion.div>
-                        ))}
+                            { src: "/shop.webp", rotate: -6, xMobile: -70, yMobile: -55, xDesktop: -280, yDesktop: -140, caption: "The Early Days" },
+                            { src: "/panel-beatt.jpg", rotate: 5, xMobile: 75, yMobile: -60, xDesktop: 290, yDesktop: -150, caption: "Master Craftsmen" },
+                            { src: "/car-tune-up.jpg", rotate: -3, xMobile: -65, yMobile: 30, xDesktop: -220, yDesktop: 80, caption: "Precision Tuning" },
+                            { src: "/headlight.webp", rotate: 8, xMobile: 70, yMobile: 25, xDesktop: 250, yDesktop: 60, caption: "Attention to Detail" },
+                            { src: "/paint.jpg", rotate: -8, xMobile: -72, yMobile: 80, xDesktop: -260, yDesktop: 200, caption: "Paint Perfection" },
+                            { src: "/mechanical.jpg", rotate: 7, xMobile: 68, yMobile: 75, xDesktop: 220, yDesktop: 190, caption: "Mechanical Excellence" },
+                            { src: "/chassis.jpg", rotate: -5, xMobile: 0, yMobile: -85, xDesktop: 0, yDesktop: -220, caption: "Structural Integrity" },
+                            { src: "/shop.webp", rotate: 0, xMobile: 0, yMobile: 0, xDesktop: 0, yDesktop: 0, caption: "Our Workshop", scale: 1.15, z: 10 }
+                        ].map((photo, index) => {
+                            const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+                            return (
+                                <motion.div
+                                    key={index}
+                                    className="absolute bg-white p-2 md:p-4 shadow-xl rounded-sm cursor-pointer"
+                                    style={{ zIndex: photo.z || 1 }}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        scale: photo.scale || 1,
+                                        rotate: photo.rotate,
+                                        x: isMobile ? photo.xMobile : photo.xDesktop,
+                                        y: isMobile ? photo.yMobile : photo.yDesktop
+                                    }}
+                                    whileHover={{
+                                        scale: 1.2,
+                                        zIndex: 50,
+                                        rotate: 0,
+                                        transition: { duration: 0.3 }
+                                    }}
+                                    drag
+                                    dragConstraints={{ left: -300, right: 300, top: -200, bottom: 200 }}
+                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="w-32 h-24 md:w-64 md:h-48 overflow-hidden mb-2 md:mb-3 bg-gray-200">
+                                        <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover pointer-events-none" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                                    </div>
+                                    <p className="font-['Caveat'] text-lg md:text-xl text-gray-600 text-center font-handwriting">{photo.caption}</p>
+                                </motion.div>
+                            );
+                        })}
                     </div>
-                    <p className="text-center text-gray-500 mt-8 italic">Drag photos to explore our memories</p>
                 </div>
+                <p className="text-center text-gray-500 mt-8 italic">Drag photos to explore our memories</p>
             </section>
 
             {/* Transformation Showcase - 4 Before/After Comparisons */}
-            <section className="py-24 bg-white text-gray-900">
+            < section className="py-24 bg-white text-gray-900" >
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">The Magic Touch</p>
@@ -256,36 +262,49 @@ export default function OurStory() {
                         </div>
                     </div>
 
-                    {/* Grid of 4 Before/After Sliders */}
+                    {/* Grid of 5 Before/After Sliders */}
                     <div className="grid md:grid-cols-2 gap-8">
                         {[
                             {
-                                before: "/dent_repair_1764693039882.png",
-                                after: "/panel_beating_hero_1764692687494.png",
+                                before: "/Our stories page images/Picture 1 - Before.jpg",
+                                after: "/Our stories page images/Picture 1 - After.jpg",
                                 title: "Dent Removal",
                                 description: "Complete dent removal and paint restoration"
                             },
                             {
-                                before: "/panel-beatt.jpg",
-                                after: "/paint_booth_1764692971281.png",
+                                before: "/Our stories page images/Pic 2 - Before.jpg",
+                                after: "/Our stories page images/Pic 2 - After.jpg",
                                 title: "Collision Repair",
                                 description: "Full structural repair and refinishing"
                             },
                             {
-                                before: "/wheel_repair_1764693107551.png",
-                                after: "/shop.webp",
+                                before: "/Our stories page images/Picture 3 - Before.jpg",
+                                after: "/Our stories page images/Picture 3 - After.jpg",
                                 title: "Panel Beating",
                                 description: "Expert panel straightening and alignment"
                             },
                             {
-                                before: "/panel_beating_hero_1764692687494.png",
-                                after: "/shop.webp",
+                                before: "/Our stories page images/Pic 4 - Before.jpg",
+                                after: "/Our stories page images/Pic 4 - After.jpg",
                                 title: "Paint Restoration",
                                 description: "Professional color matching and finishing"
                             }
                         ].map((item, index) => (
                             <BeforeAfterSlider key={index} item={item} index={index} />
                         ))}
+
+                        {/* 5th item - centered on its own row */}
+                        <div className="md:col-span-2 max-w-2xl mx-auto w-full">
+                            <BeforeAfterSlider
+                                item={{
+                                    before: "public/Our stories page images/Pic 5 - Before.jpg",
+                                    after: "public/Our stories page images/Pic 5 - After.jpg",
+                                    title: "Side Panel Restoration",
+                                    description: "Complete rocker panel repair and refinishing"
+                                }}
+                                index={4}
+                            />
+                        </div>
                     </div>
 
                     {/* Bottom Text */}
@@ -293,12 +312,13 @@ export default function OurStory() {
                         <p className="text-gray-600 italic">Drag the slider to see the transformation</p>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Company History */}
-            <motion.section
+            < motion.section
                 className="px-4 py-16 bg-white"
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 50 }
+                }
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
@@ -321,7 +341,7 @@ export default function OurStory() {
                         </p>
                     </div>
                 </div>
-            </motion.section>
+            </motion.section >
 
             {/* Our Leadership Section commented out */}
 
@@ -441,110 +461,127 @@ export default function OurStory() {
                 </div>
             </section>
 
-            {/* Core Values */}
-            <motion.section
-                className="px-4 py-16 bg-white"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
-                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">What Drives Us</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black">Our Core Values</h2>
+            {/* Core Values - Bold Card Grid Design */}
+            <section className="px-4 py-32 relative bg-white">
+                {/* Animated Background */}
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0" style={{
+                        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)`
+                    }} />
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    {/* Header */}
+                    <div className="text-center mb-16">
+                        <motion.h2
+                            className="text-5xl md:text-7xl font-['Poppins'] font-black mb-4 uppercase tracking-tight"
+                            style={{ color: '#783E6C' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            OUR CORE <span style={{ color: '#E4AEB3' }}>VALUES</span>
+                        </motion.h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+                            The principles that drive excellence in everything we do
+                        </p>
                     </div>
 
-                    <div className="grid md:grid-cols-4 gap-8 max-w-9xl mx-auto">
-                        {/* Value 1 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            viewport={{ once: true }}
-                            className="h-full"
-                        >
-                            <CardContainer containerClassName="py-0 block h-full">
-                                <CardBody className="bg-white border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group/card relative min-h-[550px] rounded-xl p-8 border hover:shadow-2xl hover:shadow-CPurple/[0.4] flex flex-col justify-center">
-                                    <CardItem translateZ="50" className="w-full">
-                                        <h3 className="text-3xl md:text-4xl font-['Poppins'] font-medium mb-4 group-hover/card:text-white">Integrity in every repair</h3>
-                                    </CardItem>
-                                    <CardItem translateZ="60" className="w-full">
-                                        <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover/card:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
-                                            We believe in doing things the right way, every time. Honest communication, fair advice, and transparent workmanship guide every project we undertake. Customers trust us because we stand by our word and our work.
-                                        </p>
-                                    </CardItem>
-                                </CardBody>
-                            </CardContainer>
-                        </motion.div>
+                    {/* Values Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            { icon: Heart, title: "Integrity in every repair", description: "We believe in doing things the right way, every time. Honest communication, fair advice, and transparent workmanship guide every project we undertake. Customers trust us because we stand by our word and our work." },
+                            { icon: Target, title: "Precision with every panel", description: "Every repair matters, whether it is a small dent or a full structural restoration. We pay attention to detail in shaping, painting, and finishing, ensuring your vehicle looks and performs as it should. Quality is built through accuracy." },
+                            { icon: Award, title: "Excellence without compromise", description: "We aim for high standards in everything we do. From modern equipment to skilled hands, we continually strive to deliver results that last. Excellence is our benchmark, not an option." },
+                            { icon: Users, title: "Care that puts customers first", description: "People come first. We listen, guide you through repair decisions, and keep the process clear and stress-free. Your satisfaction is at the heart of our service, and we take pride in the relationships we build with every person who walks through our doors." }
+                        ].map((value, index) => {
+                            const colors = [
+                                { bg: 'linear-gradient(135deg, #E4AEB3 0%, #783E6C 100%)', accent: '#fff', text: '#fff' },
+                                { bg: 'linear-gradient(135deg, #783E6C 0%, #E4AEB3 100%)', accent: '#fff', text: '#fff' },
+                                { bg: 'linear-gradient(135deg, #E4AEB3 0%, #783E6C 100%)', accent: '#fff', text: '#fff' },
+                                { bg: 'linear-gradient(135deg, #783E6C 0%, #E4AEB3 100%)', accent: '#fff', text: '#fff' }
+                            ];
 
-                        {/* Value 2 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            viewport={{ once: true }}
-                            className="h-full"
-                        >
-                            <CardContainer containerClassName="py-0 block h-full">
-                                <CardBody className="bg-white border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group/card relative min-h-[550px] rounded-xl p-8 border hover:shadow-2xl hover:shadow-CPurple/[0.4] flex flex-col justify-center">
-                                    <CardItem translateZ="50" className="w-full">
-                                        <h3 className="text-3xl md:text-4xl font-['Poppins'] font-medium mb-4 group-hover/card:text-white">Precision with every panel</h3>
-                                    </CardItem>
-                                    <CardItem translateZ="60" className="w-full">
-                                        <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover/card:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
-                                            Every repair matters, whether it is a small dent or a full structural restoration. We pay attention to detail in shaping, painting, and finishing, ensuring your vehicle looks and performs as it should. Quality is built through accuracy.
-                                        </p>
-                                    </CardItem>
-                                </CardBody>
-                            </CardContainer>
-                        </motion.div>
+                            const cardColor = colors[index];
 
-                        {/* Value 3 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            viewport={{ once: true }}
-                            className="h-full"
-                        >
-                            <CardContainer containerClassName="py-0 block h-full">
-                                <CardBody className="bg-white border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group/card relative min-h-[550px] rounded-xl p-8 border hover:shadow-2xl hover:shadow-CPurple/[0.4] flex flex-col justify-center">
-                                    <CardItem translateZ="50" className="w-full">
-                                        <h3 className="text-3xl md:text-4xl font-['Poppins'] font-medium mb-4 group-hover/card:text-white">Excellence without compromise</h3>
-                                    </CardItem>
-                                    <CardItem translateZ="60" className="w-full">
-                                        <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover/card:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
-                                            We aim for high standards in everything we do. From modern equipment to skilled hands, we continually strive to deliver results that last. Excellence is our benchmark, not an option.
-                                        </p>
-                                    </CardItem>
-                                </CardBody>
-                            </CardContainer>
-                        </motion.div>
-                        {/*value 4 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            viewport={{ once: true }}
-                            className="h-full"
-                        >
-                            <CardContainer containerClassName="py-0 block h-full">
-                                <CardBody className="bg-white border-2 border-CPurple hover:bg-CPurple hover:text-white transition-all duration-150 group/card relative min-h-[550px] rounded-xl p-8 border hover:shadow-2xl hover:shadow-CPurple/[0.4] flex flex-col justify-center">
-                                    <CardItem translateZ="50" className="w-full">
-                                        <h3 className="text-3xl md:text-4xl font-['Poppins'] font-medium mb-4 group-hover/card:text-white">Care that puts customers first</h3>
-                                    </CardItem>
-                                    <CardItem translateZ="60" className="w-full">
-                                        <p style={{ wordSpacing: '-0.15rem' }} className="text-black group-hover/card:text-white leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-left">
-                                            People come first. We listen, guide you through repair decisions, and keep the process clear and stress-free. Your satisfaction is at the heart of our service, and we take pride in the relationships we build with every person who walks through our doors.
-                                        </p>
-                                    </CardItem>
-                                </CardBody>
-                            </CardContainer>
-                        </motion.div>
+                            return (
+                                <motion.div
+                                    key={index}
+                                    className="relative group cursor-pointer"
+                                    initial={{ opacity: 0, y: 50, rotate: -2 }}
+                                    whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.6,
+                                        delay: index * 0.08,
+                                        ease: [0.25, 0.46, 0.45, 0.94]
+                                    }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        rotate: 1,
+                                        transition: { duration: 0.3 }
+                                    }}
+                                >
+                                    <div
+                                        className="relative p-8 rounded-3xl overflow-hidden shadow-2xl h-full min-h-[400px] flex flex-col"
+                                        style={{ background: cardColor.bg }}
+                                    >
+                                        {/* Background Pattern */}
+                                        <div className="absolute inset-0 opacity-10">
+                                            <div className="absolute inset-0" style={{
+                                                backgroundImage: `radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px)`,
+                                                backgroundSize: '30px 30px'
+                                            }} />
+                                        </div>
+
+                                        {/* Icon */}
+                                        <motion.div
+                                            className="relative mb-6 p-6 rounded-2xl w-fit mx-auto"
+                                            style={{ backgroundColor: 'rgba(255,255,255,0.3)' }}
+                                            whileHover={{
+                                                scale: 1.1,
+                                                rotate: [0, -5, 5, -5, 0],
+                                                transition: { duration: 0.5 }
+                                            }}
+                                        >
+                                            <value.icon
+                                                className="w-12 h-12"
+                                                style={{ color: '#fff' }}
+                                                strokeWidth={2.5}
+                                            />
+                                        </motion.div>
+
+                                        {/* Content */}
+                                        <div className="relative z-10 flex-1 flex flex-col text-center">
+                                            <h3
+                                                className="text-2xl md:text-3xl font-['Poppins'] font-black mb-4 leading-tight"
+                                                style={{ color: cardColor.text }}
+                                            >
+                                                {value.title}
+                                            </h3>
+
+                                            <p
+                                                className="text-base leading-relaxed font-medium text-justify"
+                                                style={{ color: 'rgba(255,255,255,0.9)' }}
+                                            >
+                                                {value.description}
+                                            </p>
+                                        </div>
+
+                                        {/* Hover Shine Effect */}
+                                        <motion.div
+                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                                            initial={{ x: '-100%', skewX: -20 }}
+                                            whileHover={{ x: '200%' }}
+                                            transition={{ duration: 0.8 }}
+                                        />
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
-            </motion.section>
+            </section>
 
             {/* Team Group Photo Section */}
             <motion.section
@@ -615,6 +652,6 @@ export default function OurStory() {
             </motion.section>
 
             <Footer scrollToSection={scrollToSection} />
-        </div>
+        </div >
     );
 }
