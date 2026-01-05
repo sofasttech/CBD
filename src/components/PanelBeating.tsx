@@ -877,7 +877,7 @@ export default function PanelBeating() {
                                                 </h3>
 
                                                 <p
-                                                    className="text-base leading-relaxed font-medium mb-6"
+                                                    className="text-base leading-relaxed font-medium mb-6 text-justify"
                                                     style={{ color: cardColor.text === '#fff' ? 'rgba(255,255,255,0.9)' : 'rgba(31,54,106,0.9)' }}
                                                 >
                                                     {step.description}
