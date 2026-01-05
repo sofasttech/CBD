@@ -79,35 +79,35 @@ export default function CaravansBoats() {
             icon: <Anchor className="w-8 h-8" />,
             desc: 'Comprehensive caravan repair services covering all components from axles to electrical systems. Our certified technicians use OEM-quality parts and follow manufacturer specifications to ensure your caravan remains safe, reliable, and roadworthy for all your adventures.',
             details: ['Complete Axle Overhaul & Replacement', 'Advanced Brake System Diagnostics', 'Drawbar Structural Repairs', 'Full Chassis Rebuilds & Reinforcement', 'Suspension Upgrades', 'Safety Chain Installation'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/Caravan Repairs & Maintenance.jpg'
         },
         {
             title: 'Boat Trailer Services',
             icon: <Droplets className="w-8 h-8" />,
             desc: 'Specialized boat trailer servicing designed for marine environments. We understand the unique challenges of saltwater exposure and provide corrosion-resistant solutions, comprehensive WOF inspections, and preventative maintenance to extend your trailer\'s lifespan.',
             details: ['Marine-Grade WOF Certifications', 'Wheel Bearing Repack & Replacement', 'Hydraulic Brake System Service', 'Galvanizing & Rust Prevention', 'Roller & Skid Repairs', 'Submersion-Ready Modifications'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/Trailer-service.webp'
         },
         {
             title: 'Custom Modifications',
             icon: <PenTool className="w-8 h-8" />,
             desc: 'Transform your trailer to perfectly match your requirements. Whether you need increased load capacity, specialized storage solutions, or unique features, our design team works with you to create practical, durable modifications that enhance functionality and value.',
             details: ['CAD Design & Engineering', 'Load Capacity Enhancement', 'Custom Storage Solutions', 'Height & Width Adjustments', 'Specialized Equipment Mounts', 'Aerodynamic Improvements'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/Caravan-mod.webp'
         },
         {
             title: 'Custom Trailer Fabrication',
             icon: <Hammer className="w-8 h-8" />,
             desc: 'Built from the ground up to your exact specifications. We fabricate commercial-grade and specialty trailers for unique applications - from heavy machinery transport to motorsport equipment. Every build is engineered for maximum durability and compliance.',
             details: ['Engineered Custom Designs', 'Heavy-Duty Commercial Units', 'Specialty Application Trailers', 'Multi-Axle Configurations', 'Certified Load Ratings', 'Full Compliance Documentation'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/trailerfab.jpg'
         },
         {
             title: 'Deck Replacement & Upgrades',
             icon: <Truck className="w-8 h-8" />,
             desc: 'Premium decking solutions using marine-grade plywood, heavy-duty truck flooring, or composite materials. We ensure proper drainage, anti-slip surfaces, and long-term protection against weather and load stresses for commercial and recreational use.',
             details: ['Marine-Grade Plywood Installation', 'Heavy-Duty Truck Decking', 'Anti-Slip Surface Treatment', 'Weather-Sealed Edge Protection', 'Load Distribution Engineering', 'Composite Deck Options'],
-            image: '/caravan_boat_hero_1764692888890.png'
+            image: 'public/Caravan Images/deck.webp'
         },
         {
             title: 'Professional Welding Services',
