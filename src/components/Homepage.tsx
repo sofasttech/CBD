@@ -1187,8 +1187,8 @@ export default function Homepage() {
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/shop.webp')" }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-6 text-white z-10">
-                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Lifetime Guarantee</h3>
-                <p className="text-gray-200 text-sm md:text-base max-w-md">We stand behind our work. Enjoy peace of mind knowing that our repairs are backed by a comprehensive warranty.</p>
+                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Customer Focused</h3>
+                <p className="text-gray-200 text-sm md:text-base max-w-md">We value long-term relationships, providing honest advice and treating every vehicle as if it were our own.</p>
               </div>
             </motion.div>
 
