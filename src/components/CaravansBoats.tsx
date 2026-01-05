@@ -221,7 +221,7 @@ export default function CaravansBoats() {
                 {/* Services Carousel - Apple Cards */}
                 <section id="services-grid" className="py-20 bg-white relative z-40 overflow-hidden">
                     <div className="max-w-7xl mx-auto px-4 relative z-10 mb-16">
-                        <ScrollReveal>
+                        <ScrollReveal width="100%">
                             <div className="text-center flex flex-col items-center">
                                 {/* Modern Badge */}
                                 <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#E8F4F8] border border-[#0C55AC]/20 mb-6">

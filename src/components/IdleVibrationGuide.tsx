@@ -1,157 +1,65 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Activity, AlertTriangle, Wrench, CheckCircle, Settings, Radio } from 'lucide-react';
+import { Activity, AlertTriangle, Wrench, CheckCircle, Settings } from 'lucide-react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function IdleVibrationGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        setMenuOpen(false);
-    };
+    useEffect(() => { window.scrollTo(0, 0); }, []);
+    const scrollToSection = (id: string) => { const element = document.getElementById(id); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); };
 
     const causes = [
-        {
-            number: '1',
-            title: 'Worn or Dirty Spark Plugs',
-            description: 'Spark plugs ignite the fuel and air mixture in the engine. When they are worn or dirty, the engine misfires. This creates uneven running and noticeable shaking when the vehicle is at a standstill. Replacing spark plugs is a straightforward fix and often restores smooth idling.'
-        },
-        {
-            number: '2',
-            title: 'Blocked Air or Fuel Filters',
-            description: 'Engines need clean air and fuel to run properly. A blocked filter reduces the flow, causing the engine to struggle at low speeds. This can lead to rough idling, hesitation, or uneven vibration.'
-        },
-        {
-            number: '3',
-            title: 'Engine Mount Problems',
-            description: 'Engine mounts hold the engine in place and absorb vibration. When a mount wears out or breaks, the engine moves more than it should. This often manifests as shaking when the car is stopped, especially when in gear.'
-        },
-        {
-            number: '4',
-            title: 'Vacuum Leaks',
-            description: 'Modern engines rely on a sealed vacuum system. A leaking hose or cracked connection allows extra air to enter. This alters the air-fuel balance, resulting in a rough idle or stalling.'
-        },
-        {
-            number: '5',
-            title: 'Faulty Ignition or Fuel System Components',
-            description: 'Coils, injectors, and sensors can wear or fail over time. When these parts do not deliver fuel or spark correctly, the engine becomes unstable at idle.'
-        },
-        {
-            number: '6',
-            title: 'Low or Old Engine Oil',
-            description: 'Thick or dirty oil can affect how the engine runs. If the oil level is low, the engine may work harder and produce vibration. Regular oil changes help avoid this.'
-        },
-        {
-            number: '7',
-            title: 'Problems With the Exhaust System',
-            description: 'A damaged exhaust manifold or a loose section can create vibration. It may also cause noise, fumes, or reduced performance.'
-        }
+        { icon: '🔌', title: 'Worn Spark Plugs', description: 'Spark plugs ignite fuel. When worn, the engine misfires and shakes.' },
+        { icon: '🔧', title: 'Engine Mount Problems', description: 'Mounts absorb vibration. When worn, the engine moves more than it should.' },
+        { icon: '💨', title: 'Vacuum Leaks', description: 'Leaking hoses alter air-fuel balance, causing rough idle.' },
+        { icon: '🛢️', title: 'Low Engine Oil', description: 'Low or dirty oil affects engine running and creates vibration.' }
     ];
 
-    const seriousSigns = [
-        'Strong vibration that gets worse over time',
-        'Engine warning lights',
-        'Strange smells or smoke',
-        'Loss of power',
-        'Stalling at traffic lights'
-    ];
-
-    const diyChecks = [
-        'Look at the oil level',
-        'Check whether the air filter is dirty',
-        'Listen for hissing sounds from hoses',
-        'Notice if the vibration happens only in gear or in all conditions'
-    ];
+    const seriousSigns = ['Strong vibration getting worse', 'Engine warning lights', 'Strange smells or smoke', 'Loss of power', 'Stalling at traffic lights'];
 
     return (
         <div className="min-h-screen bg-white font-sans scroll-smooth">
             <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
-            {/* Hero Section */}
-            <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-gradient-to-br from-purple-900 to-purple-700 text-white"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-7xl mx-auto">
+            <motion.section className="pt-24 md:pt-32 pb-16 px-4 bg-gradient-to-br from-[#783E6C] via-[#E4AEB3] to-[#783E6C] text-white relative" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }}>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/30"></div>
+                <div className="max-w-7xl mx-auto relative z-10">
                     <div className="flex items-center gap-3 mb-6 justify-center">
-                        <Activity className="w-8 h-8 text-purple-300" />
-                        <p className="text-purple-200 text-sm font-medium uppercase tracking-wide">Diagnostic Guide</p>
+                        <Activity className="w-10 h-10 text-white" />
+                        <p className="text-white text-sm font-medium uppercase tracking-wide drop-shadow-lg">Diagnostic Guide</p>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center">
-                        Why Your Car Vibrates While Idling
+                    <h1 className="text-4xl md:text-7xl font-['Poppins'] font-medium uppercase mb-6 text-center drop-shadow-2xl">
+                        Why Your Car <span className="text-white">Vibrates</span> at Idle
                     </h1>
-                    <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center">
-                        A Driver's Guide
-                    </p>
+                    <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-['Poppins'] font-extralight text-center drop-shadow-lg">A Driver's Guide</p>
                 </div>
             </motion.section>
 
-            {/* Introduction */}
-            <section className="px-4 py-16 bg-white">
-                <div className="max-w-4xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                            A smooth-running engine should stay steady when the car is stopped. If the vehicle begins to shake or vibrate while idling, it indicates that something in the engine or supporting systems is not functioning properly. The cause may be small or more serious, but it is always worth checking before the issue grows.
-                        </p>
+            <section className="px-4 py-16 bg-gradient-to-br from-white via-[#E4AEB3]/10 to-[#783E6C]/10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-[#783E6C]/20 rounded-full blur-3xl opacity-20"></div>
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-[#783E6C]/20">
+                            <p className="text-xl text-gray-800 leading-relaxed font-medium">A smooth-running engine should stay steady when the car is stopped. If the vehicle begins to shake or vibrate while idling, it indicates that something in the engine or supporting systems is not functioning properly. The cause may be small or more serious, but it is always worth checking before the issue grows.</p>
+                        </div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Common Causes */}
-            <section className="px-4 py-16 bg-gray-50">
+            <section className="px-4 py-20 bg-white relative overflow-hidden">
                 <div className="max-w-6xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="flex items-center gap-3 mb-8">
-                            <Settings className="w-8 h-8 text-purple-600" />
-                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
-                                Common Causes of Shaking at Idle
-                            </h2>
-                        </div>
+                    <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-bold uppercase mb-4 bg-gradient-to-r from-[#783E6C] to-[#E4AEB3] bg-clip-text text-transparent">Common Causes</h2>
                     </motion.div>
-
-                    <div className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
                         {causes.map((cause, index) => (
-                            <motion.div
-                                key={index}
-                                className="bg-white border border-gray-200 p-6 hover:shadow-lg transition"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
-                                viewport={{ once: true }}
-                            >
+                            <motion.div key={index} className="bg-white backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#783E6C]/20" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
                                 <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                                        {cause.number}
-                                    </div>
+                                    <div className="text-5xl">{cause.icon}</div>
                                     <div>
-                                        <h3 className="text-xl font-['Poppins'] font-medium mb-3 text-gray-900">
-                                            {cause.title}
-                                        </h3>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            {cause.description}
-                                        </p>
+                                        <h3 className="text-xl font-['Poppins'] font-bold mb-3 bg-gradient-to-r from-[#783E6C] to-[#E4AEB3] bg-clip-text text-transparent">{cause.title}</h3>
+                                        <p className="text-gray-700 leading-relaxed">{cause.description}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -160,132 +68,43 @@ export default function IdleVibrationGuide() {
                 </div>
             </section>
 
-            {/* Serious Signs */}
-            <motion.section
-                className="px-4 py-16 bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
+            <motion.section className="px-4 py-20 bg-gradient-to-br from-red-500 via-red-600 to-orange-600 relative overflow-hidden" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <div className="inline-flex items-center gap-4 mb-8 bg-white/20 backdrop-blur-md px-8 py-4 rounded-full border-2 border-white/30">
+                        <AlertTriangle className="w-10 h-10 text-white" />
+                        <h2 className="text-3xl md:text-5xl font-['Poppins'] font-bold uppercase text-white">Serious Signs</h2>
+                    </div>
+                    <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                        <div className="grid md:grid-cols-2 gap-4">
+                            {seriousSigns.map((sign, index) => (
+                                <motion.div key={index} className="flex items-start gap-3 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl shadow-md" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: index * 0.1 }} viewport={{ once: true }}>
+                                    <AlertTriangle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
+                                    <p className="text-gray-800 font-medium">{sign}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section className="px-4 py-16 bg-gradient-to-br from-[#783E6C] to-[#E4AEB3] text-white relative overflow-hidden" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="max-w-4xl mx-auto">
-                    <div className="flex items-center gap-3 mb-6">
-                        <AlertTriangle className="w-8 h-8 text-red-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
-                            When Shaking Might Be a Sign of a Bigger Issue
-                        </h2>
-                    </div>
-                    <p className="text-lg text-gray-700 mb-6">
-                        Some symptoms should be checked right away.
-                    </p>
-                    <div className="grid md:grid-cols-2 gap-4 mb-6">
-                        {seriousSigns.map((sign, index) => (
-                            <div
-                                key={index}
-                                className="flex items-start gap-3 p-4 bg-red-50 border-l-4 border-red-500"
-                            >
-                                <AlertTriangle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                                <p className="text-gray-800">{sign}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="text-lg text-gray-700 font-medium">
-                        These signs may indicate electrical faults, internal engine wear, or fuel system issues that should not be overlooked.
-                    </p>
-                </div>
-            </motion.section>
-
-            {/* DIY Checks */}
-            <motion.section
-                className="px-4 py-16 bg-purple-50"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-4xl mx-auto">
-                    <div className="flex items-center gap-3 mb-6">
-                        <Wrench className="w-8 h-8 text-purple-600" />
-                        <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase">
-                            What You Can Do First
-                        </h2>
-                    </div>
-                    <p className="text-lg text-gray-700 mb-6">
-                        You can carry out a few simple checks before visiting a workshop.
-                    </p>
-                    <div className="space-y-3">
-                        {diyChecks.map((check, index) => (
-                            <div key={index} className="flex items-start gap-3 p-4 bg-white border border-purple-200">
-                                <CheckCircle className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
-                                <p className="text-gray-700 text-lg">{check}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="text-lg text-gray-700 mt-6">
-                        These observations help identify the cause more quickly.
-                    </p>
-                </div>
-            </motion.section>
-
-            {/* Quick Reference */}
-            <motion.section
-                className="px-4 py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium uppercase mb-8 text-center">
-                        Quick Diagnostic Reference
-                    </h2>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <div className="bg-white bg-opacity-10 backdrop-blur p-6 text-center">
-                            <Radio className="w-12 h-12 mx-auto mb-4 text-purple-200" />
-                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Minor Shaking</h3>
-                            <p className="text-purple-100 text-sm">
-                                Often spark plugs, filters, or minor tune-up needed
-                            </p>
-                        </div>
-                        <div className="bg-white bg-opacity-10 backdrop-blur p-6 text-center">
-                            <Activity className="w-12 h-12 mx-auto mb-4 text-purple-200" />
-                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Moderate Vibration</h3>
-                            <p className="text-purple-100 text-sm">
-                                Engine mounts, vacuum leaks, or fuel system issues
-                            </p>
-                        </div>
-                        <div className="bg-white bg-opacity-10 backdrop-blur p-6 text-center">
-                            <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-purple-200" />
-                            <h3 className="text-xl font-['Poppins'] font-medium mb-3">Severe Shaking</h3>
-                            <p className="text-purple-100 text-sm">
-                                Requires immediate professional diagnosis and repair
-                            </p>
-                        </div>
+                    <div className="grid md:grid-cols-3 gap-8 text-center">
+                        <div><Activity className="w-12 h-12 mx-auto mb-4" /><h3 className="text-xl font-['Poppins'] font-medium mb-3">Minor Shaking</h3><p className="text-white/90 text-sm">Often spark plugs or filters</p></div>
+                        <div><Settings className="w-12 h-12 mx-auto mb-4" /><h3 className="text-xl font-['Poppins'] font-medium mb-3">Moderate</h3><p className="text-white/90 text-sm">Engine mounts or leaks</p></div>
+                        <div><AlertTriangle className="w-12 h-12 mx-auto mb-4" /><h3 className="text-xl font-['Poppins'] font-medium mb-3">Severe</h3><p className="text-white/90 text-sm">Immediate diagnosis needed</p></div>
                     </div>
                 </div>
             </motion.section>
 
-            {/* How We Can Help */}
-            <motion.section
-                className="px-4 py-16 bg-black text-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
+            <motion.section className="px-4 py-16 bg-black text-white" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">
-                        How We Can Help
-                    </h2>
-                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">
-                        CBD Panel and Paint diagnoses and repairs idle vibration problems for all makes and models. We check the ignition system, mounts, filters, sensors, and engine performance to find the source of the issue. Early inspection prevents further damage and keeps your vehicle running safely and smoothly.
-                    </p>
-                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
-                        If your car shakes while idling or you are unsure what is causing it, our expert team at CBD Panel and Paint is ready to assist.
-                    </p>
-                    <button className="relative group bg-purple-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                    <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">How We Can Help</h2>
+                    <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">CBD Panel and Paint diagnoses and repairs idle vibration problems for all makes and models. We check the ignition system, mounts, filters, sensors, and engine performance to find the source of the issue.</p>
+                    <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">If your car shakes while idling or you are unsure what is causing it, our expert team at CBD Panel and Paint is ready to assist.</p>
+                    <button className="relative group bg-[#783E6C] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                        <span className="relative z-10 group-hover:text-purple-600">BOOK A DIAGNOSTIC CHECK</span>
+                        <span className="relative z-10 group-hover:text-[#783E6C]">BOOK A DIAGNOSTIC CHECK</span>
                     </button>
                 </div>
             </motion.section>

@@ -153,11 +153,11 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <li>
                   <a
                     href="#"
-                    onClick={() => navigate('/#reviews')}
+                    onClick={() => navigate('/panel-beating#testimonials')}
                     className="text-gray-400 text-sm hover:text-blue-400 transition-colors inline-flex items-center gap-2 group cursor-pointer"
                   >
                     <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                    Testimonials
+                    What Our Customers Say
                   </a>
                 </li>
               </ul>
