@@ -400,10 +400,10 @@ export default function CaravansBoats() {
                                 {/* Scrolling Symptoms Side */}
                                 <div className="grid gap-6 py-8 px-4">
                                     {[
-                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Brake Problems", cause: "Worn brake pads, rusted drums, air in hydraulic lines, or corroded calipers from saltwater exposure.", fix: "Complete brake system overhaul including pad/shoe replacement, drum resurfacing, hydraulic line bleeding, caliper rebuild, and corrosion treatment with marine-grade protection.", image: "/caravan_boat_hero_1764692888890.png" },
-                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Bearing Failure", cause: "Inadequate lubrication, water ingress from boat ramp submersion, excessive loads, or wear from high mileage.", fix: "Professional bearing removal, inspection of races and hubs, repacking with marine-grade grease, seal replacement, and proper torque specification to manufacturer standards.", image: "/caravan_boat_hero_1764692888890.png" },
-                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Electrical Faults", cause: "Corroded connectors, damaged wiring harness, blown fuses, faulty LED lights, or grounding issues.", fix: "Comprehensive electrical diagnostics using multimeter testing, wiring harness replacement, connector cleaning and sealing, light fixture upgrades, and proper ground connection establishment.", image: "/caravan_boat_hero_1764692888890.png" },
-                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Coupling Wear", cause: "Worn coupling ball, stretched safety chains, damaged jockey wheel, or deteriorated handbrake mechanism.", fix: "Coupling ball replacement to correct size specification, safety chain inspection and renewal, jockey wheel bearing service, handbrake cable adjustment or replacement, and full hitch mechanism lubrication.", image: "/caravan_boat_hero_1764692888890.png" },
+                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Brake Problems", cause: "Worn brake pads, rusted drums, air in hydraulic lines, or corroded calipers from saltwater exposure.", fix: "Complete brake system overhaul including pad/shoe replacement, drum resurfacing, hydraulic line bleeding, caliper rebuild, and corrosion treatment with marine-grade protection.", image: "public/Caravan Images/Braking-Issues.jpg" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Bearing Failure", cause: "Inadequate lubrication, water ingress from boat ramp submersion, excessive loads, or wear from high mileage.", fix: "Professional bearing removal, inspection of races and hubs, repacking with marine-grade grease, seal replacement, and proper torque specification to manufacturer standards.", image: "public/Caravan Images/bearing.jpg" },
+                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Electrical Faults", cause: "Corroded connectors, damaged wiring harness, blown fuses, faulty LED lights, or grounding issues.", fix: "Comprehensive electrical diagnostics using multimeter testing, wiring harness replacement, connector cleaning and sealing, light fixture upgrades, and proper ground connection establishment.", image: "public/Caravan Images/feature-image-car-electrical-issues.jpg" },
+                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Coupling Wear", cause: "Worn coupling ball, stretched safety chains, damaged jockey wheel, or deteriorated handbrake mechanism.", fix: "Coupling ball replacement to correct size specification, safety chain inspection and renewal, jockey wheel bearing service, handbrake cable adjustment or replacement, and full hitch mechanism lubrication.", image: "public/Caravan Images/coupling.webp" },
                                     ].map((symptom, index) => (
                                         <div
                                             key={symptom.id}
@@ -487,7 +487,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[500px] overflow-hidden">
                                     <img
-                                        src="/caravan_boat_hero_1764692888890.png"
+                                        src="public/Caravan Images/50.jpg"
                                         alt="Trailer Inspection"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -547,7 +547,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/caravan_boat_hero_1764692888890.png"
+                                        src="public/Caravan Images/StructuralAnalysis.jpg"
                                         alt="Structural Analysis"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -569,7 +569,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/caravan_boat_hero_1764692888890.png"
+                                        src="public/Caravan Images/Safety Testing.jpg"
                                         alt="Safety Testing"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -591,7 +591,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/caravan_boat_hero_1764692888890.png"
+                                        src="public/Caravan Images/hands-pointing-bar-chart-close-up.jpg"
                                         alt="Component Calibration"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -655,7 +655,7 @@ export default function CaravansBoats() {
                             <div className="order-2 md:order-1 relative">
                                 <ScrollReveal direction="right">
                                     <div className="relative rounded-xl overflow-hidden shadow-xl border-2 border-[#14A0B5]/20">
-                                        <img src="/caravan_boat_hero_1764692888890.png" alt="Loan Trailer" className="w-full h-auto hover:scale-105 transition-all duration-500" />
+                                        <img src="public/Caravan Images/boats.webp" alt="Loan Trailer" className="w-full h-auto hover:scale-105 transition-all duration-500" />
                                         {/* Overlay Badge */}
                                         <div className="absolute top-4 left-4 bg-[#0C55AC] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                                             FREE SERVICE
