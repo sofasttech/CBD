@@ -8,6 +8,78 @@ import clsx from 'clsx';
 import { ClipboardList, Wrench, Hammer, Palette, Sparkles, Activity, Gauge, Settings, Zap, Disc, Shield, ChevronRight } from 'lucide-react';
 import { ReactLenis } from 'lenis/react';
 
+const testimonials = [
+    { name: "Fiona Goulden", text: "Thank you so much for looking after me and my RAV so well. I knew it would be a good job as I am a returning client and you have always treated me so well previously. Great service, on time and I really do appreciate your going to the bother of sourcing an excellent second hand part required for the repair that was a third of the price of a new one. The use of a courtesy car and having my car washed and vacuumed before my collecting it is also very much appreciated. Please pass my thanks to your team." },
+    { name: "Grant", text: "I just wanted to say thanks to you and everyone who worked on the Mercedes. It looks fantastic, and I very much appreciate the price you gave me on the wheels and the roof." },
+    { name: "Eric Freeman", text: "Just a quick note to thank you and your crew for the repair work on my damaged Captiva. Without CBD I doubt it would have been as painless for me as it was. Especially grateful that you had the patience and contacts to resolve the antenna issue. Merry Xmas and best of luck for the new year." },
+    { name: "Nivé", text: "Thank You again for everything!!! Was in a super hurry the other day with an appointment I needed to be at soon after grabbing car. The car is perfect and runs wonderfully. Appreciate you. Till next time" },
+    { name: "Fraz", text: "Thank you so much the car looks and feels great." },
+    { name: "Steve", text: "Thanks so much for the fantastic work you did on my Skoda. Where others had told me that there was nothing wrong, you took me seriously when I talked about the intermittent problems starting the car, and you kept me informed of the options along the way. The car has run perfectly since you replaced the throttle sensor and the battery, and it runs like new again. I'm simply delighted." },
+    { name: "Customer", text: "Thank you for that information – it's very helpful! And like the idea of a Friday update. I'll extend my rental and let the insurance company know." },
+    { name: "George and Muireen Campbell", text: "Huge thanks for the wonderful job you did on our silver Blade…. not just outside, but inside too! We are very grateful." }
+];
+
+function TestimonialsCarousel() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        }, 5000); // Change testimonial every 5 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="relative max-w-4xl mx-auto">
+            <div className="overflow-hidden">
+                <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border-l-4"
+                    style={{ borderLeftColor: '#0C55AC' }}
+                >
+                    <div className="flex items-center gap-2 mb-6">
+                        {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-2xl" style={{ color: '#FDDD7F' }}>★</span>
+                        ))}
+                    </div>
+                    <p className="text-gray-700 text-lg md:text-xl mb-6 leading-relaxed italic">"{testimonials[currentIndex].text}"</p>
+                    <div className="flex items-center gap-4 pt-6 border-t" style={{ borderTopColor: '#E4AEB3' }}>
+                        <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-xl" style={{ backgroundColor: '#0C55AC' }}>
+                            {testimonials[currentIndex].name.charAt(0)}
+                        </div>
+                        <div>
+                            <p className="font-['Poppins'] font-semibold text-lg" style={{ color: '#1F366A' }}>{testimonials[currentIndex].name}</p>
+                            <p className="text-sm" style={{ color: '#14A0B5' }}>Verified Customer</p>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+
+            {/* Progress Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+                {testimonials.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrentIndex(index)}
+                        className="transition-all duration-300"
+                        style={{
+                            width: currentIndex === index ? '32px' : '12px',
+                            height: '12px',
+                            borderRadius: '6px',
+                            backgroundColor: currentIndex === index ? '#0C55AC' : '#B5B5B5',
+                            opacity: currentIndex === index ? 1 : 0.5
+                        }}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
 
 export default function PanelBeating() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -38,8 +110,6 @@ export default function PanelBeating() {
         };
     }, [activeModal]);
 
-    // Inject Shapo widget script dynamically
-    // Force reload/re-execution of the script to ensure it finds the new DOM element on route changes
     useEffect(() => {
         const existingScript = document.getElementById('shapo-embed-js');
         if (existingScript) {
@@ -52,6 +122,20 @@ export default function PanelBeating() {
         s.src = 'https://cdn.shapo.io/js/embed.js';
         s.defer = true;
         document.body.appendChild(s);
+    }, []);
+
+    // Handle hash navigation for auto-scrolling to sections
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            // Wait for page to fully load
+            setTimeout(() => {
+                const element = document.getElementById(hash.substring(1));
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -919,16 +1003,13 @@ export default function PanelBeating() {
                 </motion.section>
 
                 {/* Testimonials */}
-                <section className="px-4 py-16" style={{ background: 'linear-gradient(to bottom, white, #f8f9fa)' }}>
+                <section id="testimonials" className="px-4 py-16" style={{ background: 'linear-gradient(to bottom, white, #f8f9fa)' }}>
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-12">
                             <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6" style={{ color: '#1F366A' }}>What Our Customers Say</h2>
+                            <p className="text-lg font-medium" style={{ color: '#0C55AC' }}>Real feedback from satisfied customers</p>
                         </div>
-                        <div className="max-w-6xl mx-auto">
-                            <div className="rounded-lg overflow-hidden shadow-sm">
-                                <div id="shapo-widget-65035ad084a4892e58a0"></div>
-                            </div>
-                        </div>
+                        <TestimonialsCarousel />
                     </div>
                 </section>
 

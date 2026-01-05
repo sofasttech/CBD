@@ -273,21 +273,23 @@ export default function Mechanical() {
                     </div>
 
                     <div className="max-w-7xl mx-auto relative z-10">
-                        <ScrollReveal>
-                            <div className="text-center mb-20">
+                        <ScrollReveal width="100%">
+                            <div className="text-center mb-20 w-full" style={{ textAlign: 'center' }}>
                                 <motion.div
+                                    className="flex flex-col items-center w-full"
+                                    style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', width: '100%' }}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6 }}
                                 >
-                                    <span className="inline-block py-2 px-6 rounded-full text-white text-sm font-medium mb-6 shadow-lg" style={{ background: 'linear-gradient(135deg, #0C55AC 0%, #1F366A 100%)' }}>
+                                    <span className="inline-block py-2 px-6 rounded-full text-white text-sm font-medium mb-6 shadow-lg" style={{ background: 'linear-gradient(135deg, #0C55AC 0%, #1F366A 100%)', textAlign: 'center' }}>
                                         OUR EXPERTISE
                                     </span>
-                                    <h2 className="text-5xl md:text-7xl font-['Poppins'] font-bold mb-6 tracking-tight" style={{ color: '#1F366A' }}>
+                                    <h2 className="text-5xl md:text-7xl font-['Poppins'] font-bold mb-6 tracking-tight text-center w-full" style={{ color: '#1F366A', textAlign: 'center', width: '100%' }}>
                                         PREMIUM <span style={{ background: 'linear-gradient(135deg, #0C55AC, #14A0B5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>SERVICES</span>
                                     </h2>
-                                    <p className="text-xl max-w-2xl mx-auto font-medium leading-relaxed" style={{ color: '#1F366A' }}>
+                                    <p className="text-xl max-w-2xl font-medium leading-relaxed text-center w-full" style={{ color: '#1F366A', textAlign: 'center', width: '100%', maxWidth: '48rem', margin: '0 auto' }}>
                                         Comprehensive mechanical solutions with cutting-edge technology and expert craftsmanship
                                     </p>
                                 </motion.div>
