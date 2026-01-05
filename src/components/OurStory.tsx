@@ -266,26 +266,26 @@ export default function OurStory() {
                     <div className="grid md:grid-cols-2 gap-8">
                         {[
                             {
-                                before: "public/Our stories page images/Picture 1 - Before.jpg",
-                                after: "public/Our stories page images/Picture 1 - After.jpg",
+                                before: "/Our stories page images/Picture 1 - Before.jpg",
+                                after: "/Our stories page images/Picture 1 - After.jpg",
                                 title: "Dent Removal",
                                 description: "Complete dent removal and paint restoration"
                             },
                             {
-                                before: "public/Our stories page images/Pic 2 - Before.jpg",
-                                after: "public/Our stories page images/Pic 2 - After.jpg",
+                                before: "/Our stories page images/Pic 2 - Before.jpg",
+                                after: "/Our stories page images/Pic 2 - After.jpg",
                                 title: "Collision Repair",
                                 description: "Full structural repair and refinishing"
                             },
                             {
-                                before: "public/Our stories page images/Picture 3 - Before.jpg",
-                                after: "public/Our stories page images/Picture 3 - After.jpg",
+                                before: "/Our stories page images/Picture 3 - Before.jpg",
+                                after: "/Our stories page images/Picture 3 - After.jpg",
                                 title: "Panel Beating",
                                 description: "Expert panel straightening and alignment"
                             },
                             {
-                                before: "public/Our stories page images/Pic 4 - Before.jpg",
-                                after: "public/Our stories page images/Pic 4 - After.jpg",
+                                before: "/Our stories page images/Pic 4 - Before.jpg",
+                                after: "/Our stories page images/Pic 4 - After.jpg",
                                 title: "Paint Restoration",
                                 description: "Professional color matching and finishing"
                             }
