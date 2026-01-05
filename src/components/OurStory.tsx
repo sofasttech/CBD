@@ -37,8 +37,8 @@ function BeforeAfterSlider({ item, index }: { item: { before: string; after: str
 
                 {/* Before Image (Foreground, clipped) */}
                 <div
-                    className="absolute inset-0 w-full h-full overflow-hidden transition-all duration-100"
-                    style={{ width: `${position}%` }}
+                    className="absolute inset-0 overflow-hidden transition-all duration-100"
+                    style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                 >
                     <img
                         src={item.before}
@@ -292,10 +292,10 @@ export default function OurStory() {
                         ].map((item, index) => (
                             <BeforeAfterSlider key={index} item={item} index={index} />
                         ))}
-                        
+
                         {/* 5th item - centered on its own row */}
                         <div className="md:col-span-2 max-w-2xl mx-auto w-full">
-                            <BeforeAfterSlider 
+                            <BeforeAfterSlider
                                 item={{
                                     before: "public/Our stories page images/Pic 5 - Before.jpg",
                                     after: "public/Our stories page images/Pic 5 - After.jpg",
