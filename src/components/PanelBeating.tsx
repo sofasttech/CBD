@@ -488,10 +488,10 @@ export default function PanelBeating() {
                                 {/* Scrolling Symptoms Side */}
                                 <div className="grid gap-6 py-8 px-4">
                                     {[
-                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Dents & Dings", cause: "Minor impacts, hail damage, or parking lot incidents.", fix: "Paintless dent removal or traditional panel beating.", image: "/dent_repair_1764693039882.png" },
-                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "public/Home Page Images/panel-beatt.jpg" },
-                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "public/Home Page Images/Accident repair.jpg" },
-                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "public/Home Page Images/Paint and Refinishing.jpg" },
+                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Dents & Dings", cause: "Minor impacts, hail damage, or parking lot incidents.", fix: "Paintless dent removal or traditional panel beating.", image: "public/Panel Beating images/dentfix.jpg" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "public/Panel Beating images/polishcarimg01.png" },
+                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "public/Panel Beating images/carcol.jpeg" },
+                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "public/Panel Beating images/carbodyshop1_1.jpg" },
                                     ].map((symptom, index) => (
                                         <div
                                             key={symptom.id}
@@ -574,7 +574,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[500px] overflow-hidden">
                                     <img
-                                        src="/paint_booth_1764692971281.png"
+                                        src="public/Panel Beating images/paint-booth-ventilation-fans.jpg"
                                         alt="Modern Paint Booth"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -634,7 +634,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/panel_beating_hero_1764692687494.png"
+                                        src="public/Panel Beating images/brightonpw.jpg"
                                         alt="Panel Beating Equipment"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -656,7 +656,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/dent_repair_1764693039882.png"
+                                        src="public/Panel Beating images/vehicle-service-CRSAutomotive-Hamiltoin.jpg"
                                         alt="Dent Repair Tools"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -706,7 +706,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/wheel_repair_1764693107551.png"
+                                        src="public/Panel Beating images/WheelMaster.jpg"
                                         alt="Wheel Repair Equipment"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -946,7 +946,7 @@ export default function PanelBeating() {
                 >
                     <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="/paint_booth_1764692971281.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
+                            <img src="public/Panel Beating images/future-trends-panel-beating.jpeg" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
                         </div>
                         <div>
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
