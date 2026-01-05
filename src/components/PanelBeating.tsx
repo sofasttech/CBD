@@ -874,43 +874,43 @@ export default function PanelBeating() {
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We work with all major insurance providers and handle the entire process for you, making claims simple and stress-free.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Insurance Approved</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>We work with all major insurance providers and handle the entire process for you, making claims simple and stress-free.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Fast Service</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our efficient workflow and modern equipment allow us to complete repairs quickly without compromising on quality.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Fast Service</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>Our efficient workflow and modern equipment allow us to complete repairs quickly without compromising on quality.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Fair Pricing</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>We provide honest, transparent quotes and cost-effective repair options suited to your budget and needs.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Fair Pricing</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>We provide honest, transparent quotes and cost-effective repair options suited to your budget and needs.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Family-Run</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>As a family-owned and operated workshop, we take pride in offering friendly service, personal attention, and a commitment to doing the job right.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Family-Run</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>As a family-owned and operated workshop, we take pride in offering friendly service, personal attention, and a commitment to doing the job right.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>Expert Workmanship</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>Our certified technicians, precision painters, and skilled mechanics deliver repairs that meet strict safety and factory-quality standards.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>Expert Workmanship</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>Our certified technicians, precision painters, and skilled mechanics deliver repairs that meet strict safety and factory-quality standards.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <span className="text-2xl" style={{ color: '#047342' }}>✓</span>
                                     <div>
-                                        <h3 className="font-['Poppins'] font-medium text-lg mb-1" style={{ color: '#1F366A' }}>All Services Under One Roof</h3>
-                                        <p className="text-lg font-semibold" style={{ color: '#1F366A' }}>From panel beating and painting to mechanical repairs, WOFs, ADAS calibration, and towing, we provide everything you need in one place for a smooth and convenient experience.</p>
+                                        <h3 className="font-['Poppins'] font-semibold text-lg mb-1" style={{ color: '#1F366A' }}>All Services Under One Roof</h3>
+                                        <p className="text-lg " style={{ color: '#1F366A' }}>From panel beating and painting to mechanical repairs, WOFs, ADAS calibration, and towing, we provide everything you need in one place for a smooth and convenient experience.</p>
                                     </div>
                                 </div>
                             </div>

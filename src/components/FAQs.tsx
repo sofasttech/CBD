@@ -222,108 +222,155 @@ export default function FAQs() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-16 px-4 bg-white"
+                className="pt-24 md:pt-32 pb-16 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
             >
-                <div className="max-w-7xl mx-auto text-center">
-                    <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-4">Got Questions?</p>
+                {/* Decorative circles */}
+                <div className="absolute top-10 right-10 w-64 h-64 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+                <div className="absolute bottom-10 left-10 w-64 h-64 bg-purple-200 rounded-full blur-3xl opacity-30"></div>
+
+                <div className="max-w-7xl mx-auto text-center relative z-10">
+                    <motion.p
+                        className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium uppercase tracking-wide mb-4 px-6 py-2 rounded-full"
+                        initial={{ scale: 0.8 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        Got Questions?
+                    </motion.p>
                     <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6">
-                        Frequently Asked <span className="text-blue-600">Questions</span>
+                        Frequently Asked <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Questions</span>
                     </h1>
-                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg max-w-3xl mx-auto">
+                    <p style={{ wordSpacing: '-0.08rem' }} className="text-gray-700 leading-relaxed font-['Poppins'] font-semibold text-lg max-w-3xl mx-auto">
                         Find answers to common questions about our services, processes, and policies. Can't find what you're looking for? Contact us directly.
                     </p>
                 </div>
             </motion.section>
 
             {/* FAQs by Category */}
-            <section className="px-4 py-16 bg-gray-50">
+            <section className="px-4 py-16 bg-gradient-to-b from-white via-blue-50/30 to-purple-50/30">
                 <div className="max-w-5xl mx-auto space-y-12">
-                    {faqs.map((category, categoryIndex) => (
-                        <motion.div
-                            key={categoryIndex}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-medium text-blue-600 mb-6 uppercase">
-                                {category.category}
-                            </h2>
+                    {faqs.map((category, categoryIndex) => {
+                        // Define colors for each category
+                        const categoryColors = [
+                            { gradient: 'from-blue-600 to-cyan-600', bg: 'bg-blue-50', border: 'border-blue-300', accent: 'text-blue-600' },
+                            { gradient: 'from-purple-600 to-pink-600', bg: 'bg-purple-50', border: 'border-purple-300', accent: 'text-purple-600' },
+                            { gradient: 'from-green-600 to-teal-600', bg: 'bg-green-50', border: 'border-green-300', accent: 'text-green-600' },
+                        ];
+                        const colors = categoryColors[categoryIndex % categoryColors.length];
 
-                            <div className="space-y-4">
-                                {category.questions.map((faq, faqIndex) => {
-                                    const globalIndex = categoryIndex * 100 + faqIndex;
-                                    const isOpen = hoveredIndex === globalIndex || pinnedIndex === globalIndex;
+                        return (
+                            <motion.div
+                                key={categoryIndex}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                                viewport={{ once: true }}
+                                className={`${colors.bg} p-6 md:p-8 rounded-2xl shadow-lg`}
+                            >
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className={`h-1 w-16 bg-gradient-to-r ${colors.gradient} rounded-full`}></div>
+                                    <h2 className={`text-3xl md:text-4xl font-['Poppins'] font-bold bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent uppercase`}>
+                                        {category.category}
+                                    </h2>
+                                </div>
 
-                                    return (
-                                        <motion.div
-                                            key={faqIndex}
-                                            className="border border-gray-300 hover:border-blue-600 transition bg-white"
-                                            initial={{ opacity: 0 }}
-                                            whileInView={{ opacity: 1 }}
-                                            transition={{ duration: 0.3, delay: faqIndex * 0.05 }}
-                                            viewport={{ once: true }}
-                                            onMouseEnter={() => setHoveredIndex(globalIndex)}
-                                            onMouseLeave={() => setHoveredIndex(null)}
-                                        >
-                                            <button
-                                                className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition"
-                                                onClick={() => setPinnedIndex(pinnedIndex === globalIndex ? null : globalIndex)}
-                                            >
-                                                <span className="font-['Poppins'] font-medium text-lg pr-4">{faq.q}</span>
-                                                {isOpen ? (
-                                                    <Minus className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                                                ) : (
-                                                    <Plus className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                                                )}
-                                            </button>
+                                <div className="space-y-4">
+                                    {category.questions.map((faq, faqIndex) => {
+                                        const globalIndex = categoryIndex * 100 + faqIndex;
+                                        const isOpen = hoveredIndex === globalIndex || pinnedIndex === globalIndex;
 
+                                        return (
                                             <motion.div
-                                                initial={false}
-                                                animate={{ height: isOpen ? 'auto' : 0 }}
-                                                transition={{ duration: 0.3 }}
-                                                className="overflow-hidden"
+                                                key={faqIndex}
+                                                className={`border-2 ${isOpen ? colors.border : 'border-white'} hover:${colors.border} transition-all duration-300 bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1`}
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.3, delay: faqIndex * 0.05 }}
+                                                viewport={{ once: true }}
+                                                onMouseEnter={() => setHoveredIndex(globalIndex)}
+                                                onMouseLeave={() => setHoveredIndex(null)}
                                             >
-                                                <div className="px-6 pb-4 text-gray-700 leading-relaxed">
-                                                    {faq.a}
-                                                </div>
+                                                <button
+                                                    className={`w-full px-6 py-5 flex justify-between items-center text-left transition-colors duration-300 rounded-t-xl ${isOpen ? colors.bg : 'hover:bg-gray-50'}`}
+                                                    onClick={() => setPinnedIndex(pinnedIndex === globalIndex ? null : globalIndex)}
+                                                >
+                                                    <span className={`font-['Poppins'] font-semibold text-lg pr-4 ${isOpen ? colors.accent : 'text-gray-800'}`}>{faq.q}</span>
+                                                    <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${isOpen ? `bg-gradient-to-r ${colors.gradient}` : 'bg-gray-200'} transition-all duration-300`}>
+                                                        {isOpen ? (
+                                                            <Minus className="w-5 h-5 text-white" />
+                                                        ) : (
+                                                            <Plus className="w-5 h-5 text-gray-600" />
+                                                        )}
+                                                    </div>
+                                                </button>
+
+                                                <motion.div
+                                                    initial={false}
+                                                    animate={{ height: isOpen ? 'auto' : 0 }}
+                                                    transition={{ duration: 0.3 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="px-6 pb-5 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                                                        {faq.a}
+                                                    </div>
+                                                </motion.div>
                                             </motion.div>
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
-                        </motion.div>
-                    ))}
+                                        );
+                                    })}
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </section>
 
             {/* CTA Section */}
             <motion.section
-                className="px-4 py-20 bg-white border-t border-gray-200"
+                className="px-4 py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600 relative overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
             >
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6 text-black">
+                {/* Animated background elements */}
+                <div className="absolute top-0 left-0 w-full h-full">
+                    <div className="absolute top-10 left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
+                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-pink-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
+                </div>
+
+                <div className="max-w-4xl mx-auto text-center relative z-10">
+                    <motion.h2
+                        className="text-4xl md:text-6xl font-['Poppins'] font-bold uppercase mb-6 text-white drop-shadow-lg"
+                        initial={{ scale: 0.9 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         Still Have Questions?
-                    </h2>
-                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-12 leading-relaxed font-['Poppins'] font-semibold text-lg">
+                    </motion.h2>
+                    <p style={{ wordSpacing: '-0.08rem' }} className="text-white/90 mb-12 leading-relaxed font-['Poppins'] font-medium text-lg">
                         Our friendly team is here to help. Contact us today for personalized assistance.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="relative group bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
-                            <span className="absolute left-0 top-0 h-full bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10">CONTACT US</span>
-                        </button>
-                        <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition hover:bg-gray-800">
+                        <motion.button
+                            className="relative group bg-white text-blue-600 px-10 py-4 rounded-full font-['Poppins'] font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl overflow-hidden"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <span className="absolute left-0 top-0 h-full bg-gradient-to-r from-pink-500 to-purple-500 w-0 group-hover:w-full transition-all duration-500 rounded-full"></span>
+                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">CONTACT US</span>
+                        </motion.button>
+                        <motion.button
+                            className="relative group bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-['Poppins'] font-bold text-lg transition-all duration-300 hover:bg-white hover:text-blue-600 shadow-xl hover:shadow-2xl"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
                             <span className="relative z-10">BOOK NOW</span>
-                        </button>
+                        </motion.button>
                     </div>
                 </div>
             </motion.section>
