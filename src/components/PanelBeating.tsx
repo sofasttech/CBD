@@ -153,7 +153,7 @@ export default function PanelBeating() {
             shortDesc: 'Comprehensive collision repair to restore your vehicle to pre-accident condition.',
             fullDesc: 'Our accident repair service handles everything from minor fender benders to major collisions. We work directly with insurance companies, provide detailed quotes, and use genuine or quality aftermarket parts. Our computerized frame alignment ensures structural integrity is fully restored.',
             details: ['Structural and chassis realignment', 'Panel straightening and replacement', 'Bumper, guard, door, and side-impact repairs', 'Sensor and safety system checks and recalibration', 'High-quality paint refinishing and blending', 'Insurance-approved repair processes'],
-            image: '/panel_beating_hero_1764692687494.png',
+            image: 'public/Home Page Images/Accident repair.jpg',
             learnMore: 'Our accident repair service is designed to restore your vehicle safely, accurately, and efficiently after any type of collision. From minor fender benders to major structural damage, our team has the expertise and equipment to bring your car back to its best condition.\n\nWe work directly with insurance companies to streamline the process and reduce stress for our customers. Our team provides clear, detailed quotes and explains repair options so you understand exactly what your vehicle needs. Depending on the job, we use either genuine manufacturer parts or high-quality aftermarket components that meet strict safety and performance standards.\n\nTo ensure your vehicle\'s safety is never compromised, we use computerised frame and chassis alignment systems. This technology allows us to measure and correct even the slightest structural deviations, ensuring the vehicle is restored to factory specifications. Our certified panel beaters then carry out precise body repairs, followed by professional refinishing to achieve a seamless paint match.\n\nNo matter the extent of the damage, we focus on quality, safety, and long-lasting results. Your vehicle will leave our workshop looking great and performing the way it should, giving you confidence every time you get back on the road.'
         },
         {
@@ -162,7 +162,7 @@ export default function PanelBeating() {
             shortDesc: 'Expert repair and replacement of damaged bumpers for all vehicle makes.',
             fullDesc: 'Whether your bumper has minor scratches, dents, or requires complete replacement, we provide expert service. We repair plastic bumpers using specialised welding techniques and can perfectly match paint finishes. Same-day service available for minor repairs.',
             details: ['Scratch, Dent, and Scuff Removal', 'Plastic Bumper Welding and Reshaping', 'Corner and Split Repairs', 'Full Bumper Replacement', 'High-Quality Paint Refinishing', 'Same-Day Turnaround Available'],
-            image: '/car-pieces.png',
+            image: 'public/Home Page Images/Bumper Repair.jpg',
             learnMore: 'Your vehicle\'s bumper is one of the most common areas to suffer damage, whether from a small parking scrape or a more noticeable impact. Our bumper repair service covers everything from light cosmetic touch-ups to full bumper replacement, ensuring your vehicle looks clean, sharp, and professionally restored.\n\nWe handle all types of bumper damage, including scratches, dents, cracks, scuffs, and paint imperfections. For plastic bumpers, our team uses specialised plastic welding and reshaping techniques to restore the original form without compromising strength. This approach often saves time and cost compared to full replacement.\n\nOnce the bumper is structurally sound, our painters complete the job with precise colour matching using advanced paint-matching technology. This allows us to blend new paint seamlessly with your existing finish, ensuring the repaired area is virtually undetectable.\n\nWhether you need a quick tidy-up or a complete bumper restoration, we focus on delivering a smooth, strong, and flawless finish that keeps your vehicle looking its best.'
         },
         {
@@ -171,7 +171,7 @@ export default function PanelBeating() {
             shortDesc: 'Precision structural repairs using advanced frame alignment technology.',
             fullDesc: 'Structural damage compromises vehicle safety. Our state-of-the-art frame straightening equipment and laser measuring systems ensure your vehicle\'s chassis is restored to exact factory specifications. We handle unibody and frame-on-frame construction.',
             details: ['Laser Measuring Technology', 'Computerised Frame Straightening', 'Unibody and Frame-on-Frame Repair', 'Suspension Mounting Point Verification', 'Post-Repair Alignment Checks', 'Safety and Body Fitment Verification'],
-            image: '/panel_beating_hero_1764692687494.png',
+            image: 'public/Home Page Images/Chassis and structural repair.jpg',
             learnMore: 'Structural damage affects far more than a vehicle\'s appearance — it directly impacts safety, stability, and long-term performance. Our chassis and structural repair service is designed to restore your vehicle\'s strength and alignment with absolute accuracy after an accident.\n\nWe use state-of-the-art frame straightening equipment and advanced laser measuring systems to assess and realign the chassis to exact factory specifications. These tools allow us to detect even the smallest deviations that may not be visible to the eye but can significantly affect safety systems, wheel alignment, panel fitment, and overall drivability.\n\nOur technicians are trained to work with both unibody and frame-on-frame vehicle constructions, ensuring the right method is applied for each repair. Whether your vehicle has sustained front-end, side-impact, rear, or underbody structural damage, we follow strict repair procedures to return its integrity and strength.\n\nOnce the structural work is complete, we coordinate with our panel, painting, and mechanical teams to ensure the vehicle is fully restored in terms of appearance, performance, and safety.\n\nWhen your vehicle\'s structure is compromised, precision repair is critical. Our goal is to ensure your car is solid, safe, and ready for the road with complete confidence.'
         },
         {
@@ -489,9 +489,9 @@ export default function PanelBeating() {
                                 <div className="grid gap-6 py-8 px-4">
                                     {[
                                         { id: 1, icon: <Activity className="w-8 h-8" />, title: "Dents & Dings", cause: "Minor impacts, hail damage, or parking lot incidents.", fix: "Paintless dent removal or traditional panel beating.", image: "/dent_repair_1764693039882.png" },
-                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "/paint_booth_1764692971281.png" },
-                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "/panel_beating_hero_1764692687494.png" },
-                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "/panel-beatt.jpg" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Scratches & Scuffs", cause: "Key scratches, brush damage, or contact marks.", fix: "Paint touch-up or full panel respray with color matching.", image: "public/Home Page Images/panel-beatt.jpg" },
+                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Collision Damage", cause: "Vehicle accidents affecting body panels and structure.", fix: "Comprehensive repair with frame alignment if needed.", image: "public/Home Page Images/Accident repair.jpg" },
+                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Rust Damage", cause: "Corrosion from moisture, salt, or age.", fix: "Rust removal, panel replacement, and protective coating.", image: "public/Home Page Images/Paint and Refinishing.jpg" },
                                     ].map((symptom, index) => (
                                         <div
                                             key={symptom.id}
@@ -678,7 +678,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/panel_beating_hero_1764692687494.png"
+                                        src="/public/Panel Beating images/Computer-Diagnostics.jpeg"
                                         alt="Computerized Diagnostics"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
