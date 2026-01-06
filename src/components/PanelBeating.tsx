@@ -171,7 +171,7 @@ export default function PanelBeating() {
             shortDesc: 'Precision structural repairs using advanced frame alignment technology.',
             fullDesc: 'Structural damage compromises vehicle safety. Our state-of-the-art frame straightening equipment and laser measuring systems ensure your vehicle\'s chassis is restored to exact factory specifications. We handle unibody and frame-on-frame construction.',
             details: ['Laser Measuring Technology', 'Computerised Frame Straightening', 'Unibody and Frame-on-Frame Repair', 'Suspension Mounting Point Verification', 'Post-Repair Alignment Checks', 'Safety and Body Fitment Verification'],
-            image: 'public/Home Page Images/Chassis and structural repair.jpg',
+            image: '/Home%20Page%20Images/Chassis%20and%20structural%20repair.jpg',
             learnMore: 'Structural damage affects far more than a vehicle\'s appearance — it directly impacts safety, stability, and long-term performance. Our chassis and structural repair service is designed to restore your vehicle\'s strength and alignment with absolute accuracy after an accident.\n\nWe use state-of-the-art frame straightening equipment and advanced laser measuring systems to assess and realign the chassis to exact factory specifications. These tools allow us to detect even the smallest deviations that may not be visible to the eye but can significantly affect safety systems, wheel alignment, panel fitment, and overall drivability.\n\nOur technicians are trained to work with both unibody and frame-on-frame vehicle constructions, ensuring the right method is applied for each repair. Whether your vehicle has sustained front-end, side-impact, rear, or underbody structural damage, we follow strict repair procedures to return its integrity and strength.\n\nOnce the structural work is complete, we coordinate with our panel, painting, and mechanical teams to ensure the vehicle is fully restored in terms of appearance, performance, and safety.\n\nWhen your vehicle\'s structure is compromised, precision repair is critical. Our goal is to ensure your car is solid, safe, and ready for the road with complete confidence.'
         },
         {
@@ -574,7 +574,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[500px] overflow-hidden">
                                     <img
-                                        src="public/Panel Beating images/paint-booth-ventilation-fans.jpg"
+                                        src="/Panel%20Beating%20images/paint-booth-ventilation-fans.jpg"
                                         alt="Modern Paint Booth"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -634,7 +634,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Panel Beating images/brightonpw.jpg"
+                                        src="/Panel%20Beating%20images/brightonpw.jpg"
                                         alt="Panel Beating Equipment"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -656,7 +656,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Panel Beating images/vehicle-service-CRSAutomotive-Hamiltoin.jpg"
+                                        src="/Panel%20Beating%20images/vehicle-service-CRSAutomotive-Hamiltoin.jpg"
                                         alt="Dent Repair Tools"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -678,7 +678,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/public/Panel Beating images/Computer-Diagnostics.jpeg"
+                                        src="/Panel%20Beating%20images/Computer-Diagnostics.jpeg"
                                         alt="Computerized Diagnostics"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -706,7 +706,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Panel Beating images/WheelMaster.jpg"
+                                        src="/Panel%20Beating%20images/WheelMaster.jpg"
                                         alt="Wheel Repair Equipment"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -946,7 +946,7 @@ export default function PanelBeating() {
                 >
                     <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="public/Panel Beating images/future-trends-panel-beating.jpeg" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
+                            <img src="/Panel%20Beating%20images/future-trends-panel-beating.jpeg" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
                         </div>
                         <div>
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
