@@ -487,7 +487,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[500px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/50.jpg"
+                                        src="/Caravan%20Images/50.jpg"
                                         alt="Trailer Inspection"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -547,7 +547,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/StructuralAnalysis.jpg"
+                                        src="/Caravan%20Images/StructuralAnalysis.jpg"
                                         alt="Structural Analysis"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -569,7 +569,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/Safety Testing.jpg"
+                                        src="/Caravan%20Images/Safety%20Testing.jpg"
                                         alt="Safety Testing"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -591,7 +591,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/public/Caravan Images/trailerfab.jpg"
+                                        src="/Caravan%20Images/trailerfab.jpg"
                                         alt="Custom Fabrication"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         onError={(e) => { (e.target as HTMLImageElement).src = '/caravan_boat_hero_1764692888890.png' }}
@@ -620,7 +620,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/hands-pointing-bar-chart-close-up.jpg"
+                                        src="/Caravan%20Images/hands-pointing-bar-chart-close-up.jpg"
                                         alt="Component Calibration"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -684,7 +684,7 @@ export default function CaravansBoats() {
                             <div className="order-2 md:order-1 relative">
                                 <ScrollReveal direction="right">
                                     <div className="relative rounded-xl overflow-hidden shadow-xl border-2 border-[#14A0B5]/20">
-                                        <img src="public/Caravan Images/boats.webp" alt="Loan Trailer" className="w-full h-auto hover:scale-105 transition-all duration-500" />
+                                        <img src="/Caravan%20Images/boats.webp" alt="Loan Trailer" className="w-full h-auto hover:scale-105 transition-all duration-500" />
                                         {/* Overlay Badge */}
                                         <div className="absolute top-4 left-4 bg-[#0C55AC] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                                             FREE SERVICE

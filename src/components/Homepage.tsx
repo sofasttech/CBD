@@ -7,32 +7,31 @@ import Footer from './Footer';
 import Blog from './Blog';
 import { Timeline } from './ui/timeline';
 
-// --- Data for the image accordion ---
 const accordionItems = [
   {
     id: 1,
     title: 'Panel Beating',
-    imageUrl: '/public/Home Page Images/panel-beatt.jpg',
+    imageUrl: '/Home%20Page%20Images/panel-beatt.jpg',
   },
   {
     id: 2,
     title: 'Paint and Refinishing',
-    imageUrl: '/public/Home Page Images/Paint and Refinishing.jpg',
+    imageUrl: '/Home%20Page%20Images/Paint%20and%20Refinishing.jpg',
   },
   {
     id: 3,
     title: 'Mechanical',
-    imageUrl: '/public/Home Page Images/Mechanic.jpg',
+    imageUrl: '/Home%20Page%20Images/Mechanic.jpg',
   },
   {
     id: 4,
     title: 'Caravan Repairs',
-    imageUrl: '/public/Home Page Images/Caravan Repairs.jpg',
+    imageUrl: '/Home%20Page%20Images/Caravan%20Repairs.jpg',
   },
   {
     id: 5,
     title: 'Boat Repairs',
-    imageUrl: '/public/Home Page Images/Boat Repairs.jpg',
+    imageUrl: '/Home%20Page%20Images/Boat%20Repairs.jpg',
   },
 ];
 
@@ -227,7 +226,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="public/Home Page Images/pannel-3.jpg"
+              href="/Home%20Page%20Images/pannel-3.jpg"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -652,13 +651,13 @@ export default function Homepage() {
                 title: 'Quality Materials',
                 shortDesc: 'Only the best parts and materials used',
                 fullDesc: 'We use only the highest quality materials and parts to guarantee durability and longevity in every repair we perform. All our paints are premium automotive-grade with UV protection and color-matching technology. We source genuine OEM parts and certified aftermarket components.',
-                image: 'public/Home Page Images/quality material.png'
+                image: '/Home%20Page%20Images/quality%20material.png'
               },
               {
                 title: 'Expert Technicians',
                 shortDesc: 'Decades of combined experience',
                 fullDesc: 'Our team of certified professionals brings decades of experience to deliver exceptional results you can trust. Each technician holds industry certifications and undergoes continuous training on the latest repair techniques and vehicle technologies.',
-                image: '/public/Home Page Images/Expert Technicians.jpg'
+                image: '/Home%20Page%20Images/Expert%20Technicians.jpg'
               }
             ].map((feature, index) => (
               <motion.div
@@ -759,7 +758,7 @@ export default function Homepage() {
                   {/* Image Side - Right */}
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="/public/Home Page Images/Accident repair.jpg" alt="Accident Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img src="/Home%20Page%20Images/Accident%20repair.jpg" alt="Accident Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
                     </div>
                   </div>
                 </article>
@@ -794,7 +793,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="/public/Home Page Images/Bumper Repair.jpg" alt="Bumper Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
+                      <img src="/Home%20Page%20Images/Bumper%20Repair.jpg" alt="Bumper Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
                     </div>
                   </div>
                 </article>
@@ -823,7 +822,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="public/Home Page Images/Chassis and structural repair.jpg" alt="Chassis Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/car-pieces.png' }} />
+                      <img src="/Home%20Page%20Images/Chassis%20and%20structural%20repair.jpg" alt="Chassis Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/car-pieces.png' }} />
                     </div>
                   </div>
                 </article>
@@ -881,7 +880,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="public/Home Page Images/Dent Repair.jpg" alt="Dent Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
+                      <img src="/Home%20Page%20Images/Dent%20Repair.jpg" alt="Dent Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
                     </div>
                   </div>
                 </article>
@@ -910,7 +909,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="public/Home Page Images/Exterior Polishing.jpg" alt="Exterior Polishing" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                      <img src="/Home%20Page%20Images/Exterior%20Polishing.jpg" alt="Exterior Polishing" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
                     </div>
                   </div>
                 </article>
@@ -968,7 +967,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="public/Home Page Images/Paint and Refinishing.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                      <img src="/Home%20Page%20Images/Paint%20and%20Refinishing.jpg" alt="Paint and Refinishing" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
                     </div>
                   </div>
                 </article>
@@ -997,7 +996,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src=" /Home Page Images/pannel-3.jpg" alt="Panel Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img src="/Home%20Page%20Images/pannel-3.jpg" alt="Panel Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/panel-beatt.jpg' }} />
                     </div>
                   </div>
                 </article>
@@ -1026,7 +1025,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="public/Home Page Images/vehicle Windscreen Removal and Installation.jpg" alt="Windscreen" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} />
+                      <img src="/Home%20Page%20Images/vehicle%20Windscreen%20Removal%20and%20Installation.jpg" alt="Windscreen" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
                     </div>
                   </div>
                 </article>
@@ -1055,7 +1054,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="/public/Home Page Images/Mechanic.jpg" alt="Mechanical Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/oil.jpg' }} />
+                      <img src="/Home%20Page%20Images/Mechanic.jpg" alt="Mechanical Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/oil.jpg' }} />
                     </div>
                   </div>
                 </article>
@@ -1084,7 +1083,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="public/Home Page Images/WOF.jpg" alt="WOF" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/im3.png' }} />
+                      <img src="/Home%20Page%20Images/wof.jpg" alt="WOF" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/car-tune-up.jpg' }} />
                     </div>
                   </div>
                 </article>
@@ -1113,7 +1112,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="public/Home Page Images/Caravan Repairs.jpg" alt="Caravan Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                      <img src="/Home%20Page%20Images/Caravan%20Repairs.jpg" alt="Caravan Repair" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
                     </div>
                   </div>
                 </article>
