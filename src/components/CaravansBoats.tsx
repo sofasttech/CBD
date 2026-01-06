@@ -79,35 +79,35 @@ export default function CaravansBoats() {
             icon: <Anchor className="w-8 h-8" />,
             desc: 'Comprehensive caravan repair services covering all components from axles to electrical systems. Our certified technicians use OEM-quality parts and follow manufacturer specifications to ensure your caravan remains safe, reliable, and roadworthy for all your adventures.',
             details: ['Complete Axle Overhaul & Replacement', 'Advanced Brake System Diagnostics', 'Drawbar Structural Repairs', 'Full Chassis Rebuilds & Reinforcement', 'Suspension Upgrades', 'Safety Chain Installation'],
-            image: 'public/Caravan Images/Caravan Repairs & Maintenance.jpg'
+            image: '/Caravan%20Images/Caravan%20Repairs%20%26%20Maintenance.jpg'
         },
         {
             title: 'Boat Trailer Services',
             icon: <Droplets className="w-8 h-8" />,
             desc: 'Specialized boat trailer servicing designed for marine environments. We understand the unique challenges of saltwater exposure and provide corrosion-resistant solutions, comprehensive WOF inspections, and preventative maintenance to extend your trailer\'s lifespan.',
             details: ['Marine-Grade WOF Certifications', 'Wheel Bearing Repack & Replacement', 'Hydraulic Brake System Service', 'Galvanizing & Rust Prevention', 'Roller & Skid Repairs', 'Submersion-Ready Modifications'],
-            image: 'public/Caravan Images/Trailer-service.webp'
+            image: '/Caravan%20Images/Trailer-service.webp'
         },
         {
             title: 'Custom Modifications',
             icon: <PenTool className="w-8 h-8" />,
             desc: 'Transform your trailer to perfectly match your requirements. Whether you need increased load capacity, specialized storage solutions, or unique features, our design team works with you to create practical, durable modifications that enhance functionality and value.',
             details: ['CAD Design & Engineering', 'Load Capacity Enhancement', 'Custom Storage Solutions', 'Height & Width Adjustments', 'Specialized Equipment Mounts', 'Aerodynamic Improvements'],
-            image: 'public/Caravan Images/Caravan-mod.webp'
+            image: '/Caravan%20Images/Caravan-mod.webp'
         },
         {
             title: 'Custom Trailer Fabrication',
             icon: <Hammer className="w-8 h-8" />,
             desc: 'Built from the ground up to your exact specifications. We fabricate commercial-grade and specialty trailers for unique applications - from heavy machinery transport to motorsport equipment. Every build is engineered for maximum durability and compliance.',
             details: ['Engineered Custom Designs', 'Heavy-Duty Commercial Units', 'Specialty Application Trailers', 'Multi-Axle Configurations', 'Certified Load Ratings', 'Full Compliance Documentation'],
-            image: 'public/Caravan Images/trailerfab.jpg'
+            image: '/Caravan%20Images/trailerfab.jpg'
         },
         {
             title: 'Deck Replacement & Upgrades',
             icon: <Truck className="w-8 h-8" />,
             desc: 'Premium decking solutions using marine-grade plywood, heavy-duty truck flooring, or composite materials. We ensure proper drainage, anti-slip surfaces, and long-term protection against weather and load stresses for commercial and recreational use.',
             details: ['Marine-Grade Plywood Installation', 'Heavy-Duty Truck Decking', 'Anti-Slip Surface Treatment', 'Weather-Sealed Edge Protection', 'Load Distribution Engineering', 'Composite Deck Options'],
-            image: 'public/Caravan Images/deck.webp'
+            image: '/Caravan%20Images/deck.webp'
         },
         {
             title: 'Professional Welding Services',
@@ -400,10 +400,10 @@ export default function CaravansBoats() {
                                 {/* Scrolling Symptoms Side */}
                                 <div className="grid gap-6 py-8 px-4">
                                     {[
-                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Brake Problems", cause: "Worn brake pads, rusted drums, air in hydraulic lines, or corroded calipers from saltwater exposure.", fix: "Complete brake system overhaul including pad/shoe replacement, drum resurfacing, hydraulic line bleeding, caliper rebuild, and corrosion treatment with marine-grade protection.", image: "public/Caravan Images/Braking-Issues.jpg" },
-                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Bearing Failure", cause: "Inadequate lubrication, water ingress from boat ramp submersion, excessive loads, or wear from high mileage.", fix: "Professional bearing removal, inspection of races and hubs, repacking with marine-grade grease, seal replacement, and proper torque specification to manufacturer standards.", image: "public/Caravan Images/bearing.jpg" },
-                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Electrical Faults", cause: "Corroded connectors, damaged wiring harness, blown fuses, faulty LED lights, or grounding issues.", fix: "Comprehensive electrical diagnostics using multimeter testing, wiring harness replacement, connector cleaning and sealing, light fixture upgrades, and proper ground connection establishment.", image: "public/Caravan Images/feature-image-car-electrical-issues.jpg" },
-                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Coupling Wear", cause: "Worn coupling ball, stretched safety chains, damaged jockey wheel, or deteriorated handbrake mechanism.", fix: "Coupling ball replacement to correct size specification, safety chain inspection and renewal, jockey wheel bearing service, handbrake cable adjustment or replacement, and full hitch mechanism lubrication.", image: "public/Caravan Images/coupling.webp" },
+                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Brake Problems", cause: "Worn brake pads, rusted drums, air in hydraulic lines, or corroded calipers from saltwater exposure.", fix: "Complete brake system overhaul including pad/shoe replacement, drum resurfacing, hydraulic line bleeding, caliper rebuild, and corrosion treatment with marine-grade protection.", image: "/Caravan%20Images/Braking-Issues.jpg" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Bearing Failure", cause: "Inadequate lubrication, water ingress from boat ramp submersion, excessive loads, or wear from high mileage.", fix: "Professional bearing removal, inspection of races and hubs, repacking with marine-grade grease, seal replacement, and proper torque specification to manufacturer standards.", image: "/Caravan%20Images/bearing.jpg" },
+                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Electrical Faults", cause: "Corroded connectors, damaged wiring harness, blown fuses, faulty LED lights, or grounding issues.", fix: "Comprehensive electrical diagnostics using multimeter testing, wiring harness replacement, connector cleaning and sealing, light fixture upgrades, and proper ground connection establishment.", image: "/Caravan%20Images/feature-image-car-electrical-issues.jpg" },
+                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Coupling Wear", cause: "Worn coupling ball, stretched safety chains, damaged jockey wheel, or deteriorated handbrake mechanism.", fix: "Coupling ball replacement to correct size specification, safety chain inspection and renewal, jockey wheel bearing service, handbrake cable adjustment or replacement, and full hitch mechanism lubrication.", image: "/Caravan%20Images/coupling.webp" },
                                     ].map((symptom, index) => (
                                         <div
                                             key={symptom.id}

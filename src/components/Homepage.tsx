@@ -193,7 +193,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="public/Home Page Images/book.png"
+              href="/Home%20Page%20Images/book.png"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -851,7 +851,7 @@ export default function Homepage() {
                   </div>
                   <div className="hidden md:flex md:w-[40%] items-center justify-center">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                      <img src="/wheel_rim.jpg" alt="Curb Rash" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/tyer.png' }} />
+                      <img src="/Panel%20Beating%20images/WheelMaster.jpg" alt="Curb Rash" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { (e.target as HTMLImageElement).src = '/tyer.png' }} />
                     </div>
                   </div>
                 </article>
