@@ -297,8 +297,8 @@ export default function OurStory() {
                         <div className="md:col-span-2 max-w-2xl mx-auto w-full">
                             <BeforeAfterSlider
                                 item={{
-                                    before: "public/Our stories page images/Pic 5 - Before.jpg",
-                                    after: "public/Our stories page images/Pic 5 - After.jpg",
+                                    before: "/Our%20stories%20page%20images/Pic%205%20-%20Before.jpg",
+                                    after: "/Our%20stories%20page%20images/Pic%205%20-%20After.jpg",
                                     title: "Side Panel Restoration",
                                     description: "Complete rocker panel repair and refinishing"
                                 }}
