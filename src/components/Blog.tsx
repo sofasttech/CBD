@@ -35,9 +35,9 @@ export default function Blog() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-16">
           <div>
-            <p className="text-blue-600 text-sm font-medium uppercase tracking-wide mb-2">BLOG & NEWS</p>
+            
             <h2 className="text-4xl md:text-5xl font-['Poppins'] font-bold text-black">
-              Tips & Advice
+              TIPS & ADVICE
             </h2>
           </div>
           <a href="/tips-advice" className="relative group bg-blue-600 text-white px-8 py-3 font-medium transition inline-flex items-center gap-2">
