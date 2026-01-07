@@ -598,7 +598,7 @@ export default function OurStory() {
                             Together We Deliver Excellence
                         </h2>
                         <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg max-w-3xl mx-auto">
-                            Meet the dedicated professionals who make CBD Panelbeaters LTD your trusted automotive repair partner.
+                            Meet the dedicated professionals who make CBD Panel and Paint Ltd your trusted automotive repair partner.
                         </p>
                     </div>
 

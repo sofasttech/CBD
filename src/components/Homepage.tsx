@@ -116,7 +116,7 @@ function AboutAccordionSection() {
             <div className="mt-8">
               <h3 className="text-blue-400 text-lg font-semibold mb-2">Core Values</h3>
               <p className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify xl:text-left" style={{ wordSpacing: window.innerWidth < 768 ? '-0.15rem' : '-0.08rem' }}>
-                CBD Panel and Paint is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
+                CBD Panel and Paint Ltd is shaped by values we put into practice every day: integrity, precision, excellence, and genuine customer care. As a family-operated workshop, we are committed to honest guidance, skilled workmanship, and repairs done right from the start. Our goal is to deliver results that last, while building trust and long-term relationships with every driver who chooses us.
               </p>
             </div>
 
@@ -1101,7 +1101,7 @@ export default function Homepage() {
                       <div className="h-12 w-1 bg-gradient-to-b from-white/80 to-transparent rounded-full"></div>
                     </div>
                     <h3 className="text-3xl lg:text-4xl font-['Poppins'] font-extrabold text-white mb-4 uppercase tracking-tight leading-tight">
-                      Caravan & Board Repair
+                      Caravan & Boat Repair
                     </h3>
                     <p className="text-white/95 text-base lg:text-lg leading-relaxed mb-6 font-light">
                       Structural and cosmetic repairs for caravans and motorhomes, including panel replacement and waterproofing. We cater to large format repairs with specialist tools and experience.
