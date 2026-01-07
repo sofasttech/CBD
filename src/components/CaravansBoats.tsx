@@ -79,35 +79,35 @@ export default function CaravansBoats() {
             icon: <Anchor className="w-8 h-8" />,
             desc: 'Comprehensive caravan repair services covering all components from axles to electrical systems. Our certified technicians use OEM-quality parts and follow manufacturer specifications to ensure your caravan remains safe, reliable, and roadworthy for all your adventures.',
             details: ['Complete Axle Overhaul & Replacement', 'Advanced Brake System Diagnostics', 'Drawbar Structural Repairs', 'Full Chassis Rebuilds & Reinforcement', 'Suspension Upgrades', 'Safety Chain Installation'],
-            image: 'public/Caravan Images/Caravan Repairs & Maintenance.jpg'
+            image: '/Caravan%20Images/Caravan%20Repairs%20%26%20Maintenance.jpg'
         },
         {
             title: 'Boat Trailer Services',
             icon: <Droplets className="w-8 h-8" />,
             desc: 'Specialized boat trailer servicing designed for marine environments. We understand the unique challenges of saltwater exposure and provide corrosion-resistant solutions, comprehensive WOF inspections, and preventative maintenance to extend your trailer\'s lifespan.',
             details: ['Marine-Grade WOF Certifications', 'Wheel Bearing Repack & Replacement', 'Hydraulic Brake System Service', 'Galvanizing & Rust Prevention', 'Roller & Skid Repairs', 'Submersion-Ready Modifications'],
-            image: 'public/Caravan Images/Trailer-service.webp'
+            image: '/Caravan%20Images/Trailer-service.webp'
         },
         {
             title: 'Custom Modifications',
             icon: <PenTool className="w-8 h-8" />,
             desc: 'Transform your trailer to perfectly match your requirements. Whether you need increased load capacity, specialized storage solutions, or unique features, our design team works with you to create practical, durable modifications that enhance functionality and value.',
             details: ['CAD Design & Engineering', 'Load Capacity Enhancement', 'Custom Storage Solutions', 'Height & Width Adjustments', 'Specialized Equipment Mounts', 'Aerodynamic Improvements'],
-            image: 'public/Caravan Images/Caravan-mod.webp'
+            image: '/Caravan%20Images/Caravan-mod.webp'
         },
         {
             title: 'Custom Trailer Fabrication',
             icon: <Hammer className="w-8 h-8" />,
             desc: 'Built from the ground up to your exact specifications. We fabricate commercial-grade and specialty trailers for unique applications - from heavy machinery transport to motorsport equipment. Every build is engineered for maximum durability and compliance.',
             details: ['Engineered Custom Designs', 'Heavy-Duty Commercial Units', 'Specialty Application Trailers', 'Multi-Axle Configurations', 'Certified Load Ratings', 'Full Compliance Documentation'],
-            image: 'public/Caravan Images/trailerfab.jpg'
+            image: '/Caravan%20Images/trailerfab.jpg'
         },
         {
             title: 'Deck Replacement & Upgrades',
             icon: <Truck className="w-8 h-8" />,
             desc: 'Premium decking solutions using marine-grade plywood, heavy-duty truck flooring, or composite materials. We ensure proper drainage, anti-slip surfaces, and long-term protection against weather and load stresses for commercial and recreational use.',
             details: ['Marine-Grade Plywood Installation', 'Heavy-Duty Truck Decking', 'Anti-Slip Surface Treatment', 'Weather-Sealed Edge Protection', 'Load Distribution Engineering', 'Composite Deck Options'],
-            image: 'public/Caravan Images/deck.webp'
+            image: '/Caravan%20Images/deck.webp'
         },
         {
             title: 'Professional Welding Services',
@@ -400,10 +400,10 @@ export default function CaravansBoats() {
                                 {/* Scrolling Symptoms Side */}
                                 <div className="grid gap-6 py-8 px-4">
                                     {[
-                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Brake Problems", cause: "Worn brake pads, rusted drums, air in hydraulic lines, or corroded calipers from saltwater exposure.", fix: "Complete brake system overhaul including pad/shoe replacement, drum resurfacing, hydraulic line bleeding, caliper rebuild, and corrosion treatment with marine-grade protection.", image: "public/Caravan Images/Braking-Issues.jpg" },
-                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Bearing Failure", cause: "Inadequate lubrication, water ingress from boat ramp submersion, excessive loads, or wear from high mileage.", fix: "Professional bearing removal, inspection of races and hubs, repacking with marine-grade grease, seal replacement, and proper torque specification to manufacturer standards.", image: "public/Caravan Images/bearing.jpg" },
-                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Electrical Faults", cause: "Corroded connectors, damaged wiring harness, blown fuses, faulty LED lights, or grounding issues.", fix: "Comprehensive electrical diagnostics using multimeter testing, wiring harness replacement, connector cleaning and sealing, light fixture upgrades, and proper ground connection establishment.", image: "public/Caravan Images/feature-image-car-electrical-issues.jpg" },
-                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Coupling Wear", cause: "Worn coupling ball, stretched safety chains, damaged jockey wheel, or deteriorated handbrake mechanism.", fix: "Coupling ball replacement to correct size specification, safety chain inspection and renewal, jockey wheel bearing service, handbrake cable adjustment or replacement, and full hitch mechanism lubrication.", image: "public/Caravan Images/coupling.webp" },
+                                        { id: 1, icon: <Activity className="w-8 h-8" />, title: "Brake Problems", cause: "Worn brake pads, rusted drums, air in hydraulic lines, or corroded calipers from saltwater exposure.", fix: "Complete brake system overhaul including pad/shoe replacement, drum resurfacing, hydraulic line bleeding, caliper rebuild, and corrosion treatment with marine-grade protection.", image: "/Caravan%20Images/Braking-Issues.jpg" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Bearing Failure", cause: "Inadequate lubrication, water ingress from boat ramp submersion, excessive loads, or wear from high mileage.", fix: "Professional bearing removal, inspection of races and hubs, repacking with marine-grade grease, seal replacement, and proper torque specification to manufacturer standards.", image: "/Caravan%20Images/bearing.jpg" },
+                                        { id: 3, icon: <Zap className="w-8 h-8" />, title: "Electrical Faults", cause: "Corroded connectors, damaged wiring harness, blown fuses, faulty LED lights, or grounding issues.", fix: "Comprehensive electrical diagnostics using multimeter testing, wiring harness replacement, connector cleaning and sealing, light fixture upgrades, and proper ground connection establishment.", image: "/Caravan%20Images/feature-image-car-electrical-issues.jpg" },
+                                        { id: 4, icon: <Settings className="w-8 h-8" />, title: "Coupling Wear", cause: "Worn coupling ball, stretched safety chains, damaged jockey wheel, or deteriorated handbrake mechanism.", fix: "Coupling ball replacement to correct size specification, safety chain inspection and renewal, jockey wheel bearing service, handbrake cable adjustment or replacement, and full hitch mechanism lubrication.", image: "/Caravan%20Images/coupling.webp" },
                                     ].map((symptom, index) => (
                                         <div
                                             key={symptom.id}
@@ -487,7 +487,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[500px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/50.jpg"
+                                        src="/Caravan%20Images/50.jpg"
                                         alt="Trailer Inspection"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -547,7 +547,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/StructuralAnalysis.jpg"
+                                        src="/Caravan%20Images/StructuralAnalysis.jpg"
                                         alt="Structural Analysis"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -569,7 +569,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/Safety Testing.jpg"
+                                        src="/Caravan%20Images/Safety%20Testing.jpg"
                                         alt="Safety Testing"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -591,7 +591,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/public/Caravan Images/trailerfab.jpg"
+                                        src="/Caravan%20Images/trailerfab.jpg"
                                         alt="Custom Fabrication"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         onError={(e) => { (e.target as HTMLImageElement).src = '/caravan_boat_hero_1764692888890.png' }}
@@ -620,7 +620,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="public/Caravan Images/hands-pointing-bar-chart-close-up.jpg"
+                                        src="/Caravan%20Images/hands-pointing-bar-chart-close-up.jpg"
                                         alt="Component Calibration"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -673,7 +673,88 @@ export default function CaravansBoats() {
                     </div>
                 </section>
 
-                
+                {/* Feature Section: Loan Trailer */}
+                <section className="py-24 bg-gradient-to-br from-[#14A0B5]/10 via-white to-[#0C55AC]/5 relative overflow-hidden">
+                    {/* Decorative Background Elements */}
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-[#14A0B5]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0C55AC]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+                    <div className="max-w-7xl mx-auto px-4 relative z-10">
+                        <div className="grid md:grid-cols-2 gap-16 items-center">
+                            <div className="order-2 md:order-1 relative">
+                                <ScrollReveal direction="right">
+                                    <div className="relative rounded-xl overflow-hidden shadow-xl border-2 border-[#14A0B5]/20">
+                                        <img src="/Caravan%20Images/boats.webp" alt="Loan Trailer" className="w-full h-auto hover:scale-105 transition-all duration-500" />
+                                        {/* Overlay Badge */}
+                                        <div className="absolute top-4 left-4 bg-[#0C55AC] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                                            FREE SERVICE
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
+                            </div>
+
+                            <div className="order-1 md:order-2">
+                                <ScrollReveal>
+                                    <p className="text-[#14A0B5] text-sm font-medium uppercase tracking-wide mb-4 text-center md:text-left">Trailer Inspection, Repairs & Servicing</p>
+                                    <h2 className="text-4xl md:text-5xl font-['Poppins'] font-medium mb-8 leading-tight text-[#1F366A] text-center md:text-left">
+                                        FREE LOAN <br />
+                                        <span className="text-[#0C55AC]">BOAT TRAILER</span>
+                                    </h2>
+                                </ScrollReveal>
+
+                                <ScrollReveal delay={0.2}>
+                                    <p style={{ wordSpacing: '-0.08rem' }} className="text-[#1F366A] leading-relaxed font-['Poppins'] font-semibold text-lg text-center md:text-left mb-6">
+                                        We understand that downtime means missed fishing trips, delayed deliveries, or postponed family adventures. That's why we prioritize fast turnaround times without compromising on quality workmanship or safety standards.
+                                    </p>
+                                    <div className="p-6 bg-white border-l-4 border-[#0C55AC] mb-6 shadow-md">
+                                        <p style={{ wordSpacing: '-0.08rem' }} className="text-[#1F366A] leading-relaxed font-['Poppins'] font-semibold text-lg italic text-center md:text-left">
+                                            "We provide complimentary loan boat trailers (subject to availability) while we service or repair yours. Our courtesy trailers are regularly maintained, WOF certified, and suitable for most standard boat configurations up to 6 meters."
+                                        </p>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-2 h-2 bg-[#14A0B5] rounded-full mt-2"></div>
+                                            <div>
+                                                <h4 className="font-semibold text-[#1F366A] mb-1">Fast Service</h4>
+                                                <p className="text-sm text-[#B5B5B5]">Most repairs completed within 24-48 hours</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-2 h-2 bg-[#14A0B5] rounded-full mt-2"></div>
+                                            <div>
+                                                <h4 className="font-semibold text-[#1F366A] mb-1">Mobile Service</h4>
+                                                <p className="text-sm text-[#B5B5B5]">On-site inspections available in Auckland region</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-2 h-2 bg-[#14A0B5] rounded-full mt-2"></div>
+                                            <div>
+                                                <h4 className="font-semibold text-[#1F366A] mb-1">After-Hours Drop-off</h4>
+                                                <p className="text-sm text-[#B5B5B5]">Secure drop-off area for your convenience</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-2 h-2 bg-[#14A0B5] rounded-full mt-2"></div>
+                                            <div>
+                                                <h4 className="font-semibold text-[#1F366A] mb-1">Warranty Backed</h4>
+                                                <p className="text-sm text-[#B5B5B5]">All repairs covered by comprehensive warranty</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
+
+                                <ScrollReveal delay={0.4}>
+                                    <div className="flex justify-center md:justify-start">
+                                        <button className="relative group bg-[#0C55AC] text-white px-8 py-3 font-['Poppins'] font-medium transition rounded-md">
+                                            <span className="absolute left-0 top-0 h-full bg-[#1F366A] w-0 group-hover:w-full transition-all duration-300 rounded-md"></span>
+                                            <span className="relative z-10">ENQUIRE NOW</span>
+                                        </button>
+                                    </div>
+                                </ScrollReveal>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Service Process Steps */}
                 <section className="py-24 bg-gradient-to-b from-white via-[#14A0B5]/5 to-white border-t border-[#B5B5B5]/30 relative overflow-hidden">
