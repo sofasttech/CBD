@@ -698,7 +698,7 @@ export default function OurStory() {
                         Experience The Difference
                     </h2>
                     <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-8 leading-relaxed font-['Poppins'] font-semibold text-lg">
-                        Join thousands of satisfied customers who trust CBD Panelbeaters LTD for all their automotive needs.
+                        Join thousands of satisfied customers who trust CBD Panel and Paint LTD for all their automotive needs.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
                         <button className="relative group bg-CPink text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
