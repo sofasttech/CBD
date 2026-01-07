@@ -619,8 +619,8 @@ export default function PanelBeating() {
                                 whileHover={{ scale: 1.05, borderColor: 'rgba(20, 160, 181, 0.8)' }}
                             >
                                 <Shield className="w-12 h-12 mb-4" style={{ color: '#FDDD7F' }} />
-                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">100%</div>
-                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Guaranteed</div>
+                                <div className="text-5xl font-['Poppins'] font-black mb-2 text-white">2000+</div>
+                                <div className="text-sm uppercase tracking-wider font-bold" style={{ color: '#14A0B5' }}>Jobs Completed</div>
                             </motion.div>
 
                             {/* Image Card 1 */}

@@ -110,47 +110,109 @@ export default function OurStory() {
         <div className="min-h-screen bg-white font-sans scroll-smooth">
             <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
-            {/* Parallax Hero Section */}
-            <div className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-white">
+            {/* Hero Section - Clean & Modern */}
+            <div className="relative h-screen overflow-hidden bg-white">
+                {/* Large Background Image */}
                 <motion.div
-                    className="absolute inset-0 z-0 opacity-100"
+                    className="absolute inset-0"
                     style={{
                         backgroundImage: "url('/shop.webp')",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        y: useTransform(useScroll().scrollY, [0, 500], [0, 200])
+                        y: useTransform(useScroll().scrollY, [0, 500], [0, 150])
                     }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/75 to-white z-10" />
+                
+                {/* Gradient Overlay - Lighter for better image visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                
+                {/* Content - Bottom Aligned */}
+                <div className="relative z-20 h-full flex items-end">
+                    <div className="max-w-7xl mx-auto px-6 pb-20 w-full">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="max-w-4xl"
+                        >
+                            {/* Eyebrow */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.3, duration: 0.8 }}
+                                className="mb-6"
+                            >
+                                <span className="inline-block bg-CPink/90 text-white text-xs md:text-sm font-bold uppercase tracking-[0.3em] px-5 py-2 rounded-full">
+                                    Est. 1995 • Auckland, NZ
+                                </span>
+                            </motion.div>
 
+                            {/* Main Heading */}
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5, duration: 0.8 }}
+                                className="text-5xl md:text-6xl lg:text-7xl font-['Poppins'] font-black uppercase leading-[0.9] mb-6"
+                            >
+                                <span className="block text-white">Crafting</span>
+                                <span className="block text-CPink">Perfection</span>
+                            </motion.h1>
+
+                            {/* Subtitle */}
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.7, duration: 0.8 }}
+                                className="text-white text-base md:text-lg leading-relaxed font-['Poppins'] font-normal max-w-2xl mb-8"
+                            >
+                                More than just repairs. We are the custodians of automotive excellence, blending traditional craftsmanship with cutting-edge innovation.
+                            </motion.p>
+
+                            {/* Stats Bar */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.9, duration: 0.8 }}
+                                className="flex flex-wrap gap-8 md:gap-12"
+                            >
+                                {[
+                                    { number: "30+", label: "Years of Excellence" },
+                                    { number: "5,000+", label: "Happy Customers" },
+                                    { number: "100%", label: "Satisfaction" }
+                                ].map((stat, index) => (
+                                    <div key={index} className="group">
+                                        <div className="flex items-baseline gap-2 mb-1">
+                                            <span className="text-4xl md:text-5xl font-['Poppins'] font-black text-CPink group-hover:text-CPurple transition-colors duration-300">
+                                                {stat.number}
+                                            </span>
+                                        </div>
+                                        <div className="text-white/80 text-sm md:text-base font-medium uppercase tracking-wide">
+                                            {stat.label}
+                                        </div>
+                                    </div>
+                                ))}
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* Scroll Indicator */}
                 <motion.div
-                    className="relative z-20 text-center px-4 max-w-5xl mx-auto"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2, duration: 0.8, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
+                    className="absolute bottom-8 right-8 z-20"
                 >
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.8 }}
-                    >
-                        <p className="text-CPurple text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6 drop-shadow-lg">
-                            Est. 1995 • Auckland, NZ
-                        </p>
-                        <h1 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-8 leading-tight drop-shadow-xl">
-                            <span className="text-gray-900">Crafting</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-CPink to-CPurple" style={{ WebkitTextStroke: '1px rgba(120, 62, 108, 0.3)' }}>Perfection</span>
-                        </h1>
-                    </motion.div>
-
-                    <motion.p
-                        style={{ wordSpacing: '-0.08rem' }}
-                        className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-center max-w-3xl mx-auto drop-shadow-md"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
-                    >
-                        More than just repairs. We are the custodians of automotive excellence, blending traditional craftsmanship with cutting-edge innovation.
-                    </motion.p>
+                    <div className="flex items-center gap-3 text-white/60">
+                        <span className="text-xs uppercase tracking-widest font-bold hidden md:block">Scroll to Explore</span>
+                        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
+                            <motion.div
+                                animate={{ y: [0, 12, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="w-1 h-2 bg-white/60 rounded-full"
+                            />
+                        </div>
+                    </div>
                 </motion.div>
             </div>
 

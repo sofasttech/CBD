@@ -32,7 +32,6 @@ export default function CaravansBoats() {
         },
         {
             image: `${CARAVAN_IMAGES_PATH}/camper-6728942_1920.jpg`,
-            subtitle: '100% NZ Owned & Operated Since 2003',
             title: 'PRECISION',
             titleHighlight: 'CRAFTSMANSHIP',
             description: 'From minor adjustments to major rebuilds, our certified technicians deliver exceptional results. We specialize in WOF certifications, structural repairs, custom modifications, and complete chassis replacements using premium materials and advanced welding techniques.'
@@ -79,7 +78,7 @@ export default function CaravansBoats() {
             icon: <Anchor className="w-8 h-8" />,
             desc: 'Comprehensive caravan repair services covering all components from axles to electrical systems. Our certified technicians use OEM-quality parts and follow manufacturer specifications to ensure your caravan remains safe, reliable, and roadworthy for all your adventures.',
             details: ['Complete Axle Overhaul & Replacement', 'Advanced Brake System Diagnostics', 'Drawbar Structural Repairs', 'Full Chassis Rebuilds & Reinforcement', 'Suspension Upgrades', 'Safety Chain Installation'],
-            image: '/Caravan%20Images/Caravan%20Repairs%20%26%20Maintenance.jpg'
+            image: '/Caravan Images/Caravan Repairs & Maintenance.jpg'
         },
         {
             title: 'Boat Trailer Services',
