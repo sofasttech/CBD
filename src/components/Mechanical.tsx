@@ -38,6 +38,14 @@ export default function Mechanical() {
         };
     }, [selectedService]);
 
+    const handleServiceHover = (index: number) => {
+        setHoveredService(index);
+    };
+
+    const handleServiceLeave = () => {
+        setHoveredService(null);
+    };
+
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -50,60 +58,106 @@ export default function Mechanical() {
         {
             title: 'WOF Inspections',
             icon: <Shield className="w-8 h-8" />,
-            desc: 'Keeping your vehicle roadworthy is essential. Our Warrant of Fitness service makes the process simple, fast, and affordable with thorough safety checks on all makes and models, ensuring your vehicle meets NZ legal standards.',
-            details: [
-                '$70 all-inclusive WOF checks',
-                'All makes and models welcome',
-                'Pickup and delivery available (running or not)',
-                'Friendly and qualified inspectors',
-                'Full WOF repairs completed in-house',
-                'We manage WOF-related insurance claims',
-                'Vehicles 2000+ registered: annual WOF',
-                'Brand-new vehicles: initial at registration, next in 3 years',
-                'Pre-2000 vehicles: 6-month WOF',
-                'Light trailers & commercial: 12 months (or 6 months if 10+ years old)'
+            intro: 'Keeping your vehicle roadworthy is essential, and our Warrant of Fitness (WOF) service under the name Grey Lynn WOF and Compliance Centre makes the process simple, fast, and affordable. We carry out thorough safety checks on all makes and models, ensuring your vehicle meets New Zealand\'s legal standards and is safe for everyday driving.',
+            description: 'Our experienced team inspects key components, including brakes, tyres, suspension, lights, steering, windscreens, seatbelts, and overall structural condition. If your vehicle requires repairs to meet WOF standards, we can complete the work on-site and recheck it promptly, allowing you to get back on the road without delay.',
+            sections: [
+                {
+                    title: 'How Often Is a WOF Required?',
+                    content: 'WOF frequency depends on your vehicle\'s age and first registration date:',
+                    items: [
+                        'Vehicles first registered in 2000 or newer – every 12 months',
+                        'Brand-new vehicles – initial WOF at registration, next due in 3 years, then annually',
+                        'Vehicles first registered before 1 January 2000 – every 6 months',
+                        'Light trailers (up to 3500 kg) – every 12 months',
+                        'Light commercial vehicles – generally every 12 months, or 6 months when over 10 years old'
+                    ]
+                },
+                {
+                    title: 'Why Choose Our WOF Service',
+                    items: [
+                        '$70 all-inclusive WOF checks',
+                        'All makes and models welcome',
+                        'Pickup and delivery available (running or not)',
+                        'Friendly and qualified inspectors',
+                        'Full WOF repairs completed in-house',
+                        'We manage WOF-related insurance claims'
+                    ]
+                }
             ],
             image: '/Mechanical%20page%20images/wof.png'
         },
         {
             title: 'Mechanical Services',
             icon: <Settings className="w-8 h-8" />,
-            desc: 'Professional petrol and diesel mechanical services for both private and commercial vehicles. Our fully qualified mechanics deliver reliable servicing and repairs for all makes and models with modern diagnostics and quality parts.',
-            details: [
-                'Full mechanical servicing (minor, major, logbook)',
-                'Auto electrical services (alternators, starters, batteries)',
-                'Brake and clutch services (inspection, replacement, hydraulics)',
-                'Electronic Fuel Injection (EFI) diagnostics and servicing',
-                'Engine diagnostics and tune-ups with 62-point safety check',
-                'Engine repair and rebuilding',
-                'Exhaust fitting and servicing',
-                'Gearbox and transmission services',
-                'Steering system services',
-                'Tyre, wheel alignment and balancing',
-                'Windscreen and glass services',
-                'Fleet servicing and fleet solutions',
-                'Pre-purchase vehicle inspections',
-                'Roadside assistance and breakdown support'
+            intro: 'At CBD Panel & Paint, our mechanical arm, Grey Lynn Suspension and Mechanical, offers professional petrol and diesel mechanical services for both private and commercial vehicles throughout Auckland Central and its surrounding areas. Our fully qualified mechanics deliver reliable servicing and repairs for all makes and models, utilising high-quality parts, modern diagnostics, and proven workmanship.',
+            description: 'Whether it\'s routine maintenance or complex mechanical repairs, we focus on safety, performance, and long-term reliability.',
+            sections: [
+                {
+                    title: 'Our Mechanical Services Include',
+                    items: [
+                        'Full Mechanical Servicing',
+                        'Auto Electrical Services',
+                        'Brake and Clutch Services',
+                        'Electronic Fuel Injection (EFI) Services',
+                        'Engine Diagnostics and Tune-Ups',
+                        'Engine Repair and Rebuilding',
+                        'Exhaust Fitting and Servicing',
+                        'Gearbox and Transmission Services',
+                        'Steering Services',
+                        'Tyre, Wheel Alignment and Balancing',
+                        'Windscreen and Glass Services',
+                        'Fleet Servicing and Fleet Solutions',
+                        'Pre-Purchase Vehicle Inspections',
+                        'Roadside Assistance and Breakdown Support'
+                    ]
+                },
+                {
+                    title: 'Why Choose Us for Mechanical Repairs?',
+                    items: [
+                        'All makes and models serviced',
+                        'Petrol and diesel vehicle expertise',
+                        'Vehicle pickup and delivery available (running or not)',
+                        'Friendly and experienced mechanical team',
+                        'Same-day service available for selected repairs',
+                        'WOF repairs and insurance claims handled in-house',
+                        'High-quality parts and manufacturer-approved fluids used'
+                    ]
+                }
             ],
             image: '/Mechanical%20page%20images/Mechanical%20Services.jpg'
         },
         {
             title: 'Compliance Centre',
             icon: <Disc className="w-8 h-8" />,
-            desc: 'We assist with all vehicle compliance requirements, providing reliable and professional certification services. Working with VTNZ, we ensure vehicles meet current NZTA compliance standards for imported, lapsed, or de-registered vehicles.',
-            details: [
-                'Certificate of Compliance for imported vehicles',
-                'Compliance inspections for lapsed or de-registered vehicles',
-                'Support for NZTA and VTNZ compliance requirements',
-                'AA inspections welcomed',
-                'Compliance services for cars and light commercial vehicles',
-                'Assistance with compliance-related documentation',
-                'Experienced, reliable, and knowledgeable staff',
-                'Same-day service available where possible',
-                'Modern, clean workshop with up-to-date equipment',
-                'Undercover, secure parking with 7-day access',
-                'Vehicle pickup and delivery available'
+            intro: 'Our Compliance Centre, under the name Grey Lynn WOF and Compliance Centre, are here to assist with all your vehicle compliance requirements, providing reliable and professional certification services for cars and light commercial vehicles. Working in coordination with VTNZ, we ensure vehicles meet current NZTA compliance standards, helping you complete the process smoothly and without unnecessary delays.',
+            description: 'Whether your vehicle is newly imported, has a lapsed registration, or has been de-registered, our experienced team will guide you through every step to achieve compliance and certification.',
+            sections: [
+                {
+                    title: 'Our Vehicle Compliance Services Include',
+                    items: [
+                        'Certificate of Compliance for imported vehicles',
+                        'Compliance inspections for lapsed or de-registered vehicles',
+                        'Support for NZTA and VTNZ compliance requirements',
+                        'AA inspections welcomed',
+                        'Compliance services for cars and light commercial vehicles',
+                        'Assistance with compliance-related documentation'
+                    ]
+                },
+                {
+                    title: 'Why Choose Us for Vehicle Compliance?',
+                    items: [
+                        'Compliance services for all makes and models',
+                        'Experienced, reliable, and knowledgeable staff',
+                        'Same-day service available where possible',
+                        'Modern, clean workshop with up-to-date equipment',
+                        'Undercover, secure parking with 7-day access',
+                        'Vehicle pickup and delivery available (running or not)',
+                        'Friendly, customer-focused team',
+                        'Convenient and stress-free compliance process'
+                    ]
+                }
             ],
+            footer: 'We understand that vehicle compliance can feel complex, especially for imported or deregistered vehicles. Our goal is to make the process clear, efficient, and fully compliant with New Zealand regulations, so you can get your vehicle certified and back on the road with confidence. If you need help with vehicle compliance or guidance on the next steps, our team is ready to assist.',
             image: '/Mechanical%20page%20images/Compliance%20Centre.jpg'
         },
     ];
@@ -113,44 +167,42 @@ export default function Mechanical() {
             <div className="min-h-screen bg-white font-sans" style={{ color: '#1F366A' }}>
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
-                {/* Service Detail Modal */}
+                {/* Service Detail Modal (Click) */}
                 {selectedService !== null && (
                     <div
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+                        className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto"
                         onClick={() => setSelectedService(null)}
                         onWheel={(e) => e.stopPropagation()}
                         onTouchMove={(e) => e.stopPropagation()}
                     >
                         <motion.div
-                            className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl flex flex-col relative"
-                            style={{ maxHeight: 'calc(100vh - 4rem)' }}
+                            className="bg-white rounded-2xl max-w-5xl w-full my-8 shadow-2xl flex flex-col relative"
+                            style={{ maxHeight: 'calc(100vh - 2rem)' }}
                             onClick={(e) => e.stopPropagation()}
                             onWheel={(e) => e.stopPropagation()}
                             onTouchMove={(e) => e.stopPropagation()}
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
                             transition={{ duration: 0.3 }}
                         >
-                            {/* Modal Header */}
-                            <div className="bg-gradient-to-br from-[#0C55AC] to-[#1F366A] text-white p-8 rounded-t-2xl flex-shrink-0">
-                                <div className="flex justify-between items-start">
-                                    <div className="flex items-center gap-4">
-                                        <div className="p-3 bg-white/20 rounded-lg backdrop-blur-sm">
+                            {/* Modal Header - Fixed */}
+                            <div className="bg-gradient-to-br from-[#0C55AC] to-[#1F366A] text-white p-6 md:p-8 rounded-t-2xl flex-shrink-0 sticky top-0 z-10">
+                                <div className="flex justify-between items-start gap-4">
+                                    <div className="flex items-start gap-4 flex-1">
+                                        <div className="p-3 bg-white/20 rounded-lg backdrop-blur-sm flex-shrink-0">
                                             {services[selectedService].icon}
                                         </div>
-                                        <div>
-                                            <h2 className="text-3xl font-['Poppins'] font-semibold mb-2">
+                                        <div className="flex-1 min-w-0">
+                                            <h2 className="text-2xl md:text-3xl font-['Poppins'] font-bold mb-2">
                                                 {services[selectedService].title}
                                             </h2>
-                                            <p className="text-white/90">
-                                                {services[selectedService].desc}
-                                            </p>
                                         </div>
                                     </div>
                                     <button
                                         onClick={() => setSelectedService(null)}
                                         className="p-2 hover:bg-white/20 rounded-full transition-colors flex-shrink-0"
+                                        aria-label="Close modal"
                                     >
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -160,38 +212,77 @@ export default function Mechanical() {
                             </div>
 
                             {/* Modal Content - Scrollable */}
-                            <div className="p-8 overflow-y-auto overflow-x-hidden flex-1">
-                                <h3 className="text-xl font-['Poppins'] font-semibold mb-6" style={{ color: '#1F366A' }}>
-                                    What We Offer
-                                </h3>
-                                <ul className="space-y-4">
-                                    {services[selectedService].details.map((detail, i) => (
-                                        <motion.li
-                                            key={i}
-                                            className="flex items-start gap-3 p-4 rounded-lg hover:bg-gray-50 transition-colors"
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.3, delay: i * 0.05 }}
-                                        >
-                                            <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5" style={{ backgroundColor: '#0C55AC' }}>
-                                                ✓
-                                            </span>
-                                            <span className="text-base leading-relaxed" style={{ color: '#1F366A' }}>
-                                                {detail}
-                                            </span>
-                                        </motion.li>
-                                    ))}
-                                </ul>
-
-                                {/* CTA Buttons */}
-                                <div className="flex gap-4 mt-8 pt-8 border-t" style={{ borderColor: '#B5B5B5' }}>
-                                    <button className="flex-1 px-6 py-3 text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
-                                        Book Now
-                                    </button>
-                                    <button className="flex-1 px-6 py-3 bg-white border rounded-lg hover:bg-gray-50 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
-                                        Contact Us
-                                    </button>
+                            <div className="p-6 md:p-8 overflow-y-auto overflow-x-hidden flex-1 space-y-6">
+                                {/* Intro Section */}
+                                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-100">
+                                    <p className="text-base md:text-lg leading-relaxed font-medium mb-4" style={{ color: '#1F366A' }}>
+                                        {services[selectedService].intro}
+                                    </p>
+                                    <p className="text-base md:text-lg leading-relaxed font-medium" style={{ color: '#1F366A' }}>
+                                        {services[selectedService].description}
+                                    </p>
                                 </div>
+
+                                {/* Service Image */}
+                                <div className="rounded-xl overflow-hidden shadow-lg">
+                                    <img 
+                                        src={services[selectedService].image} 
+                                        alt={services[selectedService].title}
+                                        className="w-full h-64 object-cover"
+                                    />
+                                </div>
+
+                                {/* Sections */}
+                                {services[selectedService].sections.map((section, sIdx) => (
+                                    <div key={sIdx}>
+                                        <h3 className="text-xl md:text-2xl font-['Poppins'] font-bold mb-4 flex items-center gap-2" style={{ color: '#1F366A' }}>
+                                            <span className="w-1 h-8 rounded-full" style={{ backgroundColor: '#0C55AC' }}></span>
+                                            {section.title}
+                                        </h3>
+                                        {section.content && (
+                                            <p className="text-base leading-relaxed font-medium mb-4" style={{ color: '#1F366A' }}>
+                                                {section.content}
+                                            </p>
+                                        )}
+                                        <div className="grid gap-3">
+                                            {section.items.map((item, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    className="flex items-start gap-3 p-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-gray-100"
+                                                    initial={{ opacity: 0, x: -20 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    transition={{ duration: 0.3, delay: i * 0.03 }}
+                                                >
+                                                    <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 shadow-md" style={{ backgroundColor: '#0C55AC' }}>
+                                                        ✓
+                                                    </span>
+                                                    <span className="text-base leading-relaxed font-medium flex-1" style={{ color: '#1F366A' }}>
+                                                        {item}
+                                                    </span>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {/* Footer Text if exists */}
+                                {services[selectedService].footer && (
+                                    <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-xl border-2 border-indigo-100">
+                                        <p className="text-base leading-relaxed font-medium" style={{ color: '#1F366A' }}>
+                                            {services[selectedService].footer}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* CTA Buttons - Fixed at Bottom */}
+                            <div className="flex flex-col sm:flex-row gap-4 p-6 md:p-8 border-t-2 bg-gray-50 rounded-b-2xl flex-shrink-0 sticky bottom-0" style={{ borderColor: '#E5E7EB' }}>
+                                <button className="flex-1 px-6 py-4 text-white rounded-xl hover:opacity-90 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5" style={{ backgroundColor: '#0C55AC' }}>
+                                    Book Now
+                                </button>
+                                <button className="flex-1 px-6 py-4 bg-white border-2 rounded-xl hover:bg-gray-50 transition-all duration-300 font-bold text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5" style={{ borderColor: '#0C55AC', color: '#1F366A' }}>
+                                    Contact Us
+                                </button>
                             </div>
                         </motion.div>
                     </div>
@@ -296,13 +387,14 @@ export default function Mechanical() {
                             </div>
                         </ScrollReveal>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {services.map((service, index) => (
-                                <ScrollReveal key={index} delay={index * 0.15}>
+                                <ScrollReveal key={index} delay={index * 0.15} width="100%">
                                     <motion.div
-                                        className="group relative h-[600px] rounded-2xl overflow-hidden cursor-pointer"
-                                        onMouseEnter={() => setHoveredService(index)}
-                                        onMouseLeave={() => setHoveredService(null)}
+                                        className="group relative h-[600px] w-full rounded-2xl overflow-hidden cursor-pointer"
+                                        onMouseEnter={() => handleServiceHover(index)}
+                                        onMouseLeave={handleServiceLeave}
+                                        onClick={() => setSelectedService(index)}
                                         whileHover={{ y: -10 }}
                                         transition={{ duration: 0.3 }}
                                     >
@@ -387,67 +479,20 @@ export default function Mechanical() {
                                                         />
                                                     </motion.div>
 
-                                                    {/* Expandable Content */}
+                                                    {/* Hover Indicator */}
                                                     <motion.div
-                                                        initial={{ opacity: 0, height: 0 }}
-                                                        animate={{
-                                                            opacity: hoveredService === index ? 1 : 0,
-                                                            height: hoveredService === index ? 'auto' : 0,
-                                                        }}
-                                                        transition={{ duration: 0.4 }}
-                                                        className="overflow-hidden"
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 1 }}
+                                                        className="flex items-center gap-2 mt-4 text-white/80 text-sm font-medium"
                                                     >
-                                                        <p className="text-base mb-4 leading-relaxed font-medium" style={{ color: '#1F366A' }}>
-                                                            {service.desc}
-                                                        </p>
-
-                                                        {/* Feature List */}
-                                                        <div className="space-y-2 mb-6 p-4 rounded-lg" style={{ backgroundColor: 'rgba(12, 85, 172, 0.05)' }}>
-                                                            {service.details.slice(0, 3).map((detail, i) => (
-                                                                <motion.div
-                                                                    key={i}
-                                                                    className="flex items-start gap-2"
-                                                                    initial={{ opacity: 0, x: -10 }}
-                                                                    animate={{ opacity: 1, x: 0 }}
-                                                                    transition={{ duration: 0.3, delay: i * 0.1 }}
-                                                                >
-                                                                    <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5" style={{ background: 'linear-gradient(135deg, #0C55AC, #14A0B5)' }}>
-                                                                        ✓
-                                                                    </span>
-                                                                    <span className="text-sm font-medium leading-tight" style={{ color: '#1F366A' }}>
-                                                                        {detail}
-                                                                    </span>
-                                                                </motion.div>
-                                                            ))}
-                                                        </div>
-
-                                                        {/* CTA Button */}
-                                                        <button
-                                                            onClick={() => setSelectedService(index)}
-                                                            className="w-full px-6 py-3 text-white rounded-lg font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 group/btn"
-                                                            style={{ background: 'linear-gradient(135deg, #0C55AC, #1F366A)' }}
-                                                        >
-                                                            Explore Service
-                                                            <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                                                        </button>
-                                                    </motion.div>
-
-                                                    {/* Hover Indicator (when not hovered) */}
-                                                    {hoveredService !== index && (
+                                                        <span>Click for details</span>
                                                         <motion.div
-                                                            initial={{ opacity: 0 }}
-                                                            animate={{ opacity: 1 }}
-                                                            className="flex items-center gap-2 mt-4 text-white/80 text-sm font-medium"
+                                                            animate={{ scale: [1, 1.2, 1] }}
+                                                            transition={{ repeat: Infinity, duration: 2 }}
                                                         >
-                                                            <span>Hover to explore</span>
-                                                            <motion.div
-                                                                animate={{ x: [0, 5, 0] }}
-                                                                transition={{ repeat: Infinity, duration: 1.5 }}
-                                                            >
-                                                                <ChevronRight className="w-4 h-4" />
-                                                            </motion.div>
+                                                            <ChevronRight className="w-4 h-4" />
                                                         </motion.div>
-                                                    )}
+                                                    </motion.div>
                                                 </div>
                                             </div>
 
