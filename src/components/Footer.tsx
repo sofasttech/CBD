@@ -33,7 +33,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
             {/* Company Info - Takes 4 columns */}
             <div className="lg:col-span-4">
               <img
-                src="/logowithname.png"
+                src="/blackbgtxt.png"
                 alt="CBD Panel and Paint"
                 className="h-44 w-64 mb-6 brightness-110 object-contain -ml-4"
               />

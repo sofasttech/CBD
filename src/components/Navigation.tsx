@@ -46,7 +46,7 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-8">
           {/* Logo */}
           <div className="flex items-center gap-2 flex-shrink-0 min-w-fit">
-            <img src="/logowithoutname.jpeg" alt="CBD Panel and Paint" className="h-10" />
+            <img src="/newbgnologonotxt.png" alt="CBD Panel and Paint" className="h-10" />
             <span className="hidden lg:block text-xl font-['Poppins'] whitespace-nowrap">CBD Panel and Paint</span>
           </div>
 
