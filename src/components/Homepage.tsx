@@ -16,7 +16,7 @@ const accordionItems = [
   {
     id: 2,
     title: 'Paint and Refinishing',
-    imageUrl: '/Home%20Page%20Images/Paint%20and%20Refinishing.jpg',
+    imageUrl: '/color.jpeg',
   },
   {
     id: 3,
