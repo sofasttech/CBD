@@ -256,9 +256,6 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <h3 className="text-center text-gray-500 text-sm md:text-base uppercase tracking-wider mb-6 font-['Poppins'] font-semibold">
                 We support claims with all major insurance companies
               </h3>
-              <div className="flex justify-center mb-8">
-                <img src="/MTA-logo_480x480.webp" alt="MTA Assured" className="h-16 md:h-20 object-contain" />
-              </div>
               <p className="text-center text-gray-500 text-sm md:text-base uppercase tracking-wider mb-6 font-['Poppins'] font-semibold">
                 Trusted Insurance Partners
               </p>
