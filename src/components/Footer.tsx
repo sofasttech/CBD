@@ -253,7 +253,13 @@ export default function Footer({ scrollToSection }: FooterProps) {
         <div className="w-full bg-white border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-10 text-center">
-              <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
+              <h3 className="text-center text-gray-500 text-sm md:text-base uppercase tracking-wider mb-6 font-['Poppins'] font-semibold">
+                We support claims with all major insurance companies
+              </h3>
+              <div className="flex justify-center mb-8">
+                <img src="/MTA-logo_480x480.webp" alt="MTA Assured" className="h-16 md:h-20 object-contain" />
+              </div>
+              <p className="text-center text-gray-500 text-sm md:text-base uppercase tracking-wider mb-6 font-['Poppins'] font-semibold">
                 Trusted Insurance Partners
               </p>
               <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
