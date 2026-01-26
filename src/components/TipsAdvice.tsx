@@ -539,11 +539,11 @@ export default function TipsAdvice() {
                             <div className="text-sm">Years in Business</div>
                         </div>
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
-                            <div className="text-4xl font-['Poppins'] font-bold mb-2">600+</div>
+                            <div className="text-4xl font-['Poppins'] font-bold mb-2">10+</div>
                             <div className="text-sm">Expert Technicians</div>
                         </div>
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
-                            <div className="text-4xl font-['Poppins'] font-bold mb-2">9.9K+</div>
+                            <div className="text-4xl font-['Poppins'] font-bold mb-2">10K+</div>
                             <div className="text-sm">Happy Customers</div>
                         </div>
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
