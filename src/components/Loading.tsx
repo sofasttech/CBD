@@ -44,7 +44,7 @@ export default function Loading() {
                     transition={{ duration: 0.5 }}
                 >
                     <span className="text-gray-900">CBD</span>{' '}
-                    <span className="text-blue-600">Panelbeating</span>
+                    <span className="text-blue-600">Panel and Paint</span>
                 </motion.h1>
 
                 {/* Loading Text */}
