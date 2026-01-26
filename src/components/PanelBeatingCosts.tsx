@@ -352,9 +352,9 @@ export default function PanelBeatingCosts() {
                         We take the time to explain repair options, costs, and timelines so you know exactly what you're getting. Whether you are restoring a car after a collision or simply fixing a scrape that ruins the vehicle's appearance, we ensure a clean, strong finish that lasts.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                        <a href="tel:093091906" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-blue-700 transition">
+                        <a href="tel:093605023" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-blue-700 transition">
                             <Phone className="w-5 h-5" />
-                            <span>09 309 1906</span>
+                            <span>09 360 5023</span>
                         </a>
                         <button 
                             onClick={() => window.location.href = '/contact'}

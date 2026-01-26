@@ -1,5 +1,5 @@
 import { Facebook, Phone, Mail, Clock, ArrowRight, Instagram, Youtube, Linkedin, Video } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
@@ -7,6 +7,9 @@ interface FooterProps {
 
 export default function Footer({ scrollToSection }: FooterProps) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isCaravansPage = location.pathname === '/caravans-boats';
+  const isMechanicalPage = location.pathname === '/mechanical';
   return (
     <footer id="contact" className="relative bg-black text-white">
       {/* Wave Separator at top of footer */}
@@ -177,7 +180,8 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Business Hours</p>
-                    <p className="text-gray-400 text-xs">Monday - Friday: 7:00 AM - 4:30 PM</p>
+                    <p className="text-gray-400 text-xs">Monday – Friday: 7.00 AM – 4.30 PM</p>
+                    <p className="text-gray-400 text-xs">Saturday and Sunday – By Appointment Only</p>
                     <p className="text-gray-400 text-xs">Closed on Public Holidays</p>
                   </div>
                 </div>
@@ -189,7 +193,16 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Phone</p>
-                    <p className="text-gray-400 text-xs">093091906 | 24hr: 0274593411</p>
+                    {isCaravansPage ? (
+                      <>
+                        <p className="text-gray-400 text-xs">Telephone: (09) 360 5023</p>
+                        <p className="text-gray-400 text-xs">Mobile: 027 459 3411 (24 Hr Service)</p>
+                      </>
+                    ) : isMechanicalPage ? (
+                      <p className="text-gray-400 text-xs">093605023</p>
+                    ) : (
+                      <p className="text-gray-400 text-xs">093605023 | 24hr: 0274593411</p>
+                    )}
                   </div>
                 </div>
 
@@ -200,19 +213,38 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Email</p>
-                    <p className="text-gray-400 text-xs">info@cbdpanel.co.nz	</p>
+                    {isMechanicalPage ? (
+                      <p className="text-gray-400 text-xs">info@glsm.co.nz</p>
+                    ) : isCaravansPage ? (
+                      <p className="text-gray-400 text-xs">info@thetrailerandcaravanrepairshop.co.nz</p>
+                    ) : (
+                      <p className="text-gray-400 text-xs">info@cbdpanel.co.nz	</p>
+                    )}
                   </div>
                 </div>
 
-                {/* Certifications */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="px-3 py-1.5 bg-blue-600/10 border border-blue-600/30 rounded-full text-blue-400 text-xs font-semibold">
-                    Motor Repair CPA
-                  </span>
-                  <span className="px-3 py-1.5 bg-blue-600/10 border border-blue-600/30 rounded-full text-blue-400 text-xs font-semibold">
-                    MTA Assured
-                  </span>
-                </div>
+                {/* Website - Only for Mechanical page */}
+                {isMechanicalPage && (
+                  <div className="flex items-start gap-3 group">
+                    <div className="mt-1 p-2 rounded-lg bg-blue-600/10 border border-blue-600/20 group-hover:bg-blue-600/20 transition-colors">
+                      <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm mb-1">Website</p>
+                      <a href="https://greylynnwofcentre.co.nz/" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-xs hover:text-blue-400 transition-colors">greylynnwofcentre.co.nz</a>
+                    </div>
+                  </div>
+                )}
+
+                {/* Certifications - Hide on Caravan page */}
+                {!isCaravansPage && (
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    <img src="/MTA-logo_480x480.webp" alt="MTA Assured" className="h-10 w-auto object-contain" />
+                  </div>
+                )}
+
               </div>
             </div>
           </div>
@@ -221,11 +253,13 @@ export default function Footer({ scrollToSection }: FooterProps) {
         <div className="w-full bg-white border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-10 text-center">
-              <p className="text-center text-gray-500 text-xs uppercase tracking-wider mb-6 font-semibold">
+              <h3 className="text-center text-gray-500 text-sm md:text-base uppercase tracking-wider mb-6 font-['Poppins'] font-semibold">
+                We support claims with all major insurance companies
+              </h3>
+              <p className="text-center text-gray-500 text-sm md:text-base uppercase tracking-wider mb-6 font-['Poppins'] font-semibold">
                 Trusted Insurance Partners
               </p>
               <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-                <img src="/MTA-logo_480x480.webp" alt="MTA" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
                 <img src="/NZI_logo.svg.png" alt="NZI" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
                 <img src="/Insurance_austr_group_logo15.png" alt="Insurance Australia Group" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />
                 <img src="/state-house-and-contents-product_default.webp" alt="State Insurance" className="h-14 md:h-16 opacity-100 transition-opacity duration-300 object-contain" />

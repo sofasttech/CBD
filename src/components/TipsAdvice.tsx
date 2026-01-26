@@ -536,7 +536,7 @@ export default function TipsAdvice() {
                     <div className="grid grid-cols-2 gap-4 text-center">
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
                             <div className="text-4xl font-['Poppins'] font-bold mb-2">30+</div>
-                            <div className="text-sm">Years Experience</div>
+                            <div className="text-sm">Years in Business</div>
                         </div>
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">
                             <div className="text-4xl font-['Poppins'] font-bold mb-2">600+</div>

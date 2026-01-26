@@ -1193,8 +1193,8 @@ export default function Homepage() {
 
             {/* Stats Items */}
             {[
-              { label: "Years Experience", value: 30, suffix: "+" },
-              { label: "Cars Repaired", value: 9900, suffix: "K+" },
+              { label: "Years in Business", value: 30, suffix: "+" },
+              { label: "Cars Repaired", value: 10000, suffix: "K+" },
               { label: "Customer Rating", value: 100, suffix: "%" },
               { label: "Expert Staff", value: 10, suffix: "+" }
             ].map((stat, i) => (

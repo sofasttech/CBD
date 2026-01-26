@@ -144,6 +144,16 @@ export default function Contact() {
                     />
                     Mechanical
                   </label>
+                  <label className="flex items-center rounded-full px-4 py-2 cursor-pointer" style={{ backgroundColor: '#FDDD7F' }}>
+                    <input
+                      type="radio"
+                      name="service"
+                      value="Caravan and Boat"
+                      onChange={handleInputChange}
+                      className="mr-2"
+                    />
+                    Caravan and Boat
+                  </label>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-6">

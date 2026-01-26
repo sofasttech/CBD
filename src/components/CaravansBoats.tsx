@@ -308,7 +308,7 @@ export default function CaravansBoats() {
                             <ScrollReveal delay={0}>
                                 <div className="p-6">
                                     <div className="text-5xl md:text-6xl font-['Poppins'] font-bold text-[#14A0B5] mb-2">20+</div>
-                                    <div className="text-white font-medium uppercase tracking-wider text-sm">Years Experience</div>
+                                    <div className="text-white font-medium uppercase tracking-wider text-sm">Years in Business</div>
                                     <p className="text-[#B5B5B5] text-xs mt-2">Serving NZ since 2003</p>
                                 </div>
                             </ScrollReveal>

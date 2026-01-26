@@ -221,8 +221,8 @@ export default function OurStory() {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
                         {[
-                            { number: "30+", label: "Years Experience" },
-                            { number: "5k+", label: "Happy Customers" },
+                            { number: "30+", label: "Years in Business" },
+                            { number: "10K", label: "HAPPY CUSTOMERS" },
                             { number: "100%", label: "Satisfaction" },
                             { number: "24/7", label: "Support" }
                         ].map((stat, index) => (
@@ -506,10 +506,10 @@ export default function OurStory() {
                                 <div className="grid grid-cols-3 gap-4 mt-6 max-w-xl mx-auto">
                                     <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.1)' }}>
                                         <div className="text-2xl font-['Poppins'] font-black text-white mb-1">30+</div>
-                                        <div className="text-xs uppercase text-white/80 font-bold">Years</div>
+                                        <div className="text-xs uppercase text-white/80 font-bold">Years in Business</div>
                                     </div>
                                     <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.1)' }}>
-                                        <div className="text-2xl font-['Poppins'] font-black text-white mb-1">5000+</div>
+                                        <div className="text-2xl font-['Poppins'] font-black text-white mb-1">10K+</div>
                                         <div className="text-xs uppercase text-white/80 font-bold">Customers</div>
                                     </div>
                                     <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.1)' }}>
