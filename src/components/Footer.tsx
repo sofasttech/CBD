@@ -54,7 +54,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   <Facebook className="w-5 h-5 text-white transition-transform" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/cbdpanel/"
                   target="_blank"
                   rel="noreferrer"
                   className="group w-11 h-11 rounded-lg bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 border border-pink-600 flex items-center justify-center hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 transition-all duration-300 hover:scale-110"
@@ -62,7 +62,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   <Instagram className="w-5 h-5 text-white transition-transform" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@cbd.panelbeating/"
                   target="_blank"
                   rel="noreferrer"
                   className="group w-11 h-11 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:bg-gray-900 transition-all duration-300 hover:scale-110"
@@ -70,7 +70,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   <Video className="w-5 h-5 text-white transition-transform" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@CBDPanelPaintLtd"
                   target="_blank"
                   rel="noreferrer"
                   className="group w-11 h-11 rounded-lg bg-red-600 border border-red-600 flex items-center justify-center hover:bg-red-700 hover:border-red-700 transition-all duration-300 hover:scale-110"
@@ -78,7 +78,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   <Youtube className="w-5 h-5 text-white transition-transform" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/cbd-panel-paint-ltd/"
                   target="_blank"
                   rel="noreferrer"
                   className="group w-11 h-11 rounded-lg bg-blue-700 border border-blue-700 flex items-center justify-center hover:bg-blue-800 hover:border-blue-800 transition-all duration-300 hover:scale-110"
