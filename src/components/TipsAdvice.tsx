@@ -392,7 +392,7 @@ export default function TipsAdvice() {
                     </div>
                     <div className="flex justify-center md:justify-end md:-mr-8 md:-mb-16 mt- md:mt-0">
                         <img
-                            src="/advice.png"
+                            src="/IMG_9029-removebg-preview.png"
                             alt="Automotive advice"
                             loading="eager"
                             fetchPriority="high"
