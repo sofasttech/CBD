@@ -515,24 +515,48 @@ export default function Homepage() {
       >
         <div className="max-w-8xl mx-auto">
           <div className="relative flex overflow-hidden">
-            <div className="flex gap-0 animate-[infinite-scroll_25s_linear_infinite]">
-              <div className="flex gap-0 flex-shrink-0">
-                <img src="/brand-01.png" alt="Brand 1" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-02.png" alt="Brand 2" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-03.png" alt="Brand 3" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-04.png" alt="Brand 4" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-05.png" alt="Brand 5" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-06.png" alt="Brand 6" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-07.png" alt="Brand 7" className="h-28 w-auto mx-6 flex-shrink-0" />
+            <div className="flex gap-0 animate-[infinite-scroll_40s_linear_infinite]">
+              <div className="flex gap-0 flex-shrink-0 items-center">
+                <img src="/tesla-logo.png" alt="Tesla" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/toyota-logo.png" alt="Toyota" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/ford-logo.png" alt="Ford" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/honda-logo.png" alt="Honda" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/bmw-logo.png" alt="BMW" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/subaru-logo.png" alt="Subaru" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/hyundai-logo.png" alt="Hyundai" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/audi-logo.png" alt="Audi" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/jeep-logo.png" alt="Jeep" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/mazda-logo.png" alt="Mazda" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/lexus-logo.png" alt="Lexus" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/suzuki-logo.png" alt="Suzuki" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/fiat-logo.png" alt="Fiat" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/kia-logo.png" alt="Kia" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/mercedes-logo.png" alt="Mercedes-Benz" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/volkswagen-logo.png" alt="Volkswagen" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/volvo-logo.png" alt="Volvo" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/mini-logo.png" alt="Mini" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/ktm-logo.png" alt="KTM" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
               </div>
-              <div className="flex gap-0 flex-shrink-0" aria-hidden="true">
-                <img src="/brand-01.png" alt="Brand 1" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-02.png" alt="Brand 2" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-03.png" alt="Brand 3" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-04.png" alt="Brand 4" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-05.png" alt="Brand 5" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-06.png" alt="Brand 6" className="h-28 w-auto mx-6 flex-shrink-0" />
-                <img src="/brand-07.png" alt="Brand 7" className="h-28 w-auto mx-6 flex-shrink-0" />
+              <div className="flex gap-0 flex-shrink-0 items-center" aria-hidden="true">
+                <img src="/tesla-logo.png" alt="Tesla" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/toyota-logo.png" alt="Toyota" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/ford-logo.png" alt="Ford" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/honda-logo.png" alt="Honda" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/bmw-logo.png" alt="BMW" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/subaru-logo.png" alt="Subaru" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/hyundai-logo.png" alt="Hyundai" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/audi-logo.png" alt="Audi" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/jeep-logo.png" alt="Jeep" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/mazda-logo.png" alt="Mazda" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/lexus-logo.png" alt="Lexus" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/suzuki-logo.png" alt="Suzuki" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/fiat-logo.png" alt="Fiat" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/kia-logo.png" alt="Kia" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/mercedes-logo.png" alt="Mercedes-Benz" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/volkswagen-logo.png" alt="Volkswagen" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/volvo-logo.png" alt="Volvo" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/mini-logo.png" alt="Mini" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
+                <img src="/ktm-logo.png" alt="KTM" className="h-20 w-auto mx-8 flex-shrink-0 object-contain" />
               </div>
             </div>
           </div>
