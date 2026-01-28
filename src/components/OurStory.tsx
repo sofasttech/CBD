@@ -252,21 +252,22 @@ export default function OurStory() {
                     <div className="text-center mb-16">
                         <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Behind the Scenes</p>
                         <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase">
-                            Our <span className="text-CPurple">Gallery</span>
+                            Our <span className="text-CPurple">Team</span>
                         </h2>
                     </div>
 
                     <div className="relative h-[500px] md:h-[800px] w-full flex items-center justify-center">
                         {/* Scattered Photos */}
                         {[
-                            { src: "/shop.webp", rotate: -6, xMobile: -70, yMobile: -55, xDesktop: -280, yDesktop: -140, caption: "The Early Days" },
-                            { src: "/panel-beatt.jpg", rotate: 5, xMobile: 75, yMobile: -60, xDesktop: 290, yDesktop: -150, caption: "Master Craftsmen" },
-                            { src: "/car-tune-up.jpg", rotate: -3, xMobile: -65, yMobile: 30, xDesktop: -220, yDesktop: 80, caption: "Precision Tuning" },
-                            { src: "/headlight.webp", rotate: 8, xMobile: 70, yMobile: 25, xDesktop: 250, yDesktop: 60, caption: "Attention to Detail" },
-                            { src: "/paint.jpg", rotate: -8, xMobile: -72, yMobile: 80, xDesktop: -260, yDesktop: 200, caption: "Paint Perfection" },
-                            { src: "/mechanical.jpg", rotate: 7, xMobile: 68, yMobile: 75, xDesktop: 220, yDesktop: 190, caption: "Mechanical Excellence" },
-                            { src: "/chassis.jpg", rotate: -5, xMobile: 0, yMobile: -85, xDesktop: 0, yDesktop: -220, caption: "Structural Integrity" },
-                            { src: "/shop.webp", rotate: 0, xMobile: 0, yMobile: 0, xDesktop: 0, yDesktop: 0, caption: "Our Workshop", scale: 1.15, z: 10 }
+                            { src: "/jpegmini_optimized/IMG_9136.jpg", rotate: -6, xMobile: -70, yMobile: -55, xDesktop: -280, yDesktop: -140, caption: "The Early Days" },
+                            { src: "/jpegmini_optimized/IMG_9078.jpg", rotate: 5, xMobile: 75, yMobile: -60, xDesktop: 290, yDesktop: -150, caption: "Master Craftsmen" },
+                            { src: "/jpegmini_optimized/IMG_9083.jpg", rotate: -3, xMobile: -65, yMobile: 30, xDesktop: -220, yDesktop: 80, caption: "Precision Tuning" },
+                            { src: "/jpegmini_optimized/IMG_9122.jpg", rotate: 8, xMobile: 70, yMobile: 25, xDesktop: 250, yDesktop: 60, caption: "Attention to Detail" },
+                            { src: "/jpegmini_optimized/IMG_9050.jpg", rotate: -8, xMobile: -72, yMobile: 80, xDesktop: -260, yDesktop: 200, caption: "Paint Perfection" },
+                            { src: "/jpegmini_optimized/IMG_9091.jpg", rotate: 7, xMobile: 68, yMobile: 75, xDesktop: 220, yDesktop: 190, caption: "Mechanical Excellence" },
+                            { src: "/jpegmini_optimized/IMG_9111.jpg", rotate: -5, xMobile: 0, yMobile: -85, xDesktop: 0, yDesktop: -220, caption: "Structural Integrity" },
+                            { src: "/jpegmini_optimized/IMG_9043.jpg", rotate: 4, xMobile: -75, yMobile: -20, xDesktop: -300, yDesktop: -50, caption: "Expert Team" },
+                            { src: "/jpegmini_optimized/IMG_9130.jpg", rotate: 0, xMobile: 0, yMobile: 0, xDesktop: 0, yDesktop: 0, caption: "Our Workshop", scale: 1.15, z: 10 }
                         ].map((photo, index) => {
                             const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
                             return (
