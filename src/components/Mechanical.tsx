@@ -124,7 +124,7 @@ export default function Mechanical() {
                     ]
                 }
             ],
-            image: '/Mechanical%20page%20images/Mechanical%20Services.jpg'
+            image: '/jpegmini_optimized/IMG_9078.jpg'
         },
         {
             title: 'Compliance Centre',
@@ -551,7 +551,7 @@ export default function Mechanical() {
                                 <div className="grid gap-6 py-8 px-4">
                                     {[
                                         { id: 1, icon: <Activity className="w-8 h-8" />, title: "Check Engine Light", cause: "Could be anything from a loose gas cap to a catalytic converter issue.", fix: "We run a full computer diagnostic scan to pinpoint the error code.", image: "/symptom_engine_light.png" },
-                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Squealing Brakes", cause: "Worn brake pads or debris caught in the caliper.", fix: "Brake inspection and pad replacement if necessary.", image: "/symptom_brakes.png" },
+                                        { id: 2, icon: <Disc className="w-8 h-8" />, title: "Squealing Brakes", cause: "Worn brake pads or debris caught in the caliper.", fix: "Brake inspection and pad replacement if necessary.", image: "/jpegmini_optimized/IMG_9083.jpg" },
                                         { id: 3, icon: <Zap className="w-8 h-8" />, title: "Car Won't Start", cause: "Dead battery, bad starter, or alternator failure.", fix: "Battery test and charging system analysis.", image: "/symptom_battery.png" },
                                         { id: 4, icon: <Settings className="w-8 h-8" />, title: "Vibration at Speed", cause: "Unbalanced wheels or suspension issues.", fix: "Wheel balancing and suspension check.", image: "/symptom_vibration.png" },
                                     ].map((symptom, index) => (
@@ -697,7 +697,7 @@ export default function Mechanical() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/Mechanical page images/Mechanical Services.jpg"
+                                        src="/jpegmini_optimized/IMG_9078.jpg"
                                         alt="Engine Analysis"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
