@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 
     const { name, email, phone, vehicleReg, service, message } = req.body;
 
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_TO) {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
         return res.status(500).json({ error: 'Server configuration error: Missing email credentials' });
     }
 

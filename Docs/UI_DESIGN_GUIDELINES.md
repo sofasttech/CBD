@@ -511,6 +511,6 @@ export default function NewPage() {
 
 ---
 
-**Last Updated**: December 20, 2025  
+**Last Updated**: December 20, 2026  
 **Version**: 1.0  
 **Maintained by**: CBD Panelbeating Development Team

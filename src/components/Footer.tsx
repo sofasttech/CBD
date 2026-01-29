@@ -267,7 +267,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               </div>
             </div>
             <div className="text-center text-gray-700">
-              <p className="text-sm mb-2">© 2025 CBD Panel and Paint. All rights reserved.</p>
+              <p className="text-sm mb-2">© 2026 CBD Panel and Paint. All rights reserved.</p>
               <p className="text-xs">Crafted with precision and care for automotive excellence</p>
             </div>
           </div>
