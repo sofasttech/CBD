@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react";
 import { Suspense, lazy, useState, useEffect } from 'react';
 import Loading from './components/Loading';
 
@@ -63,37 +64,37 @@ function App() {
 
   return (
     <Router>
+      <Analytics />
       <Suspense fallback={<Loading />}>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/our-story" element={<OurStory />} />
-        <Route path="/panel-beating" element={<PanelBeating />} />
-        <Route path="/mechanical" element={<Mechanical />} />
-        <Route path="/caravans-boats" element={<CaravansBoats />} />
-        <Route path="/faqs" element={<FAQs />} />
-        <Route path="/tips-advice" element={<TipsAdvice />} />
-        <Route path="/tips-advice/coolant-guide" element={<CoolantGuide />} />
-        <Route path="/tips-advice/engine-oil-guide" element={<EngineOilGuide />} />
-        <Route path="/tips-advice/battery-charging-guide" element={<BatteryChargingGuide />} />
-        <Route path="/tips-advice/bumper-repair-guide" element={<BumperRepairGuide />} />
-        <Route path="/tips-advice/hybrid-cars-guide" element={<HybridCarsGuide />} />
-        <Route path="/tips-advice/idle-vibration-guide" element={<IdleVibrationGuide />} />
-        <Route path="/tips-advice/fuel-consumption-guide" element={<FuelConsumptionGuide />} />
-        <Route path="/tips-advice/tyre-repair-guide" element={<TyreRepairGuide />} />
-        <Route path="/tips-advice/brake-warning-signs" element={<BrakeWarningGuide />} />
-        <Route path="/tips-advice/dashboard-warning-lights" element={<DashboardWarningLights />} />
-        <Route path="/tips-advice/winter-preparation-guide" element={<WinterPreparationGuide />} />
-        <Route path="/tips-advice/summer-care-guide" element={<SummerCareGuide />} />
-        <Route path="/tips-advice/panel-beating-costs" element={<PanelBeatingCosts />} />
-        <Route path="/tips-advice/minor-accident-guide" element={<MinorAccidentGuide />} />
-        <Route path="/tips-advice/repair-or-replace" element={<RepairOrReplace />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/our-story" element={<OurStory />} />
+          <Route path="/panel-beating" element={<PanelBeating />} />
+          <Route path="/mechanical" element={<Mechanical />} />
+          <Route path="/caravans-boats" element={<CaravansBoats />} />
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/tips-advice" element={<TipsAdvice />} />
+          <Route path="/tips-advice/coolant-guide" element={<CoolantGuide />} />
+          <Route path="/tips-advice/engine-oil-guide" element={<EngineOilGuide />} />
+          <Route path="/tips-advice/battery-charging-guide" element={<BatteryChargingGuide />} />
+          <Route path="/tips-advice/bumper-repair-guide" element={<BumperRepairGuide />} />
+          <Route path="/tips-advice/hybrid-cars-guide" element={<HybridCarsGuide />} />
+          <Route path="/tips-advice/idle-vibration-guide" element={<IdleVibrationGuide />} />
+          <Route path="/tips-advice/fuel-consumption-guide" element={<FuelConsumptionGuide />} />
+          <Route path="/tips-advice/tyre-repair-guide" element={<TyreRepairGuide />} />
+          <Route path="/tips-advice/brake-warning-signs" element={<BrakeWarningGuide />} />
+          <Route path="/tips-advice/dashboard-warning-lights" element={<DashboardWarningLights />} />
+          <Route path="/tips-advice/winter-preparation-guide" element={<WinterPreparationGuide />} />
+          <Route path="/tips-advice/summer-care-guide" element={<SummerCareGuide />} />
+          <Route path="/tips-advice/panel-beating-costs" element={<PanelBeatingCosts />} />
+          <Route path="/tips-advice/minor-accident-guide" element={<MinorAccidentGuide />} />
+          <Route path="/tips-advice/repair-or-replace" element={<RepairOrReplace />} />
+        </Routes>
       </Suspense>
     </Router>
   );
 }
 
 export default App;
-
