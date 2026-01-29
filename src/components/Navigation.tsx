@@ -45,10 +45,10 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
       <div className="w-full px-4 py-3 border-b">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-8">
           {/* Logo */}
-          <div className="flex items-center gap-2 flex-shrink-0 min-w-fit">
+          <Link to="/" className="flex items-center gap-2 flex-shrink-0 min-w-fit">
             <img src="/newbgnologonotxt.png" alt="CBD Panel and Paint" className="h-10" />
             <span className="hidden lg:block text-xl font-['Poppins'] whitespace-nowrap">CBD Panel and Paint</span>
-          </div>
+          </Link>
 
           {/* Navigation Links */}
           <nav className="hidden md:flex justify-center items-center gap-4 lg:gap-6 flex-1 overflow-visible ml-8">
