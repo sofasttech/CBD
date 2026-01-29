@@ -122,10 +122,10 @@ export default function OurStory() {
                         y: useTransform(useScroll().scrollY, [0, 500], [0, 150])
                     }}
                 />
-                
+
                 {/* Gradient Overlay - Lighter for better image visibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                
+
                 {/* Content - Bottom Aligned */}
                 <div className="relative z-20 h-full flex items-end">
                     <div className="max-w-7xl mx-auto px-6 pb-20 w-full">
@@ -247,64 +247,66 @@ export default function OurStory() {
             </section>
 
             {/* Digital Scrapbook Section */}
-            <section className="py-24 bg-neutral-100 overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Behind the Scenes</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase">
-                            Our <span className="text-CPurple">Team</span>
-                        </h2>
-                    </div>
+            {false && (
+                <section className="py-24 bg-neutral-100 overflow-hidden">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div className="text-center mb-16">
+                            <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Behind the Scenes</p>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase">
+                                Our <span className="text-CPurple">Team</span>
+                            </h2>
+                        </div>
 
-                    <div className="relative h-[500px] md:h-[800px] w-full flex items-center justify-center">
-                        {/* Scattered Photos */}
-                        {[
-                            { src: "/jpegmini_optimized/IMG_9136.jpg", rotate: -6, xMobile: -70, yMobile: -55, xDesktop: -280, yDesktop: -140, caption: "The Early Days" },
-                            { src: "/jpegmini_optimized/IMG_9078.jpg", rotate: 5, xMobile: 75, yMobile: -60, xDesktop: 290, yDesktop: -150, caption: "Master Craftsmen" },
-                            { src: "/jpegmini_optimized/IMG_9083.jpg", rotate: -3, xMobile: -65, yMobile: 30, xDesktop: -220, yDesktop: 80, caption: "Precision Tuning" },
-                            { src: "/jpegmini_optimized/IMG_9122.jpg", rotate: 8, xMobile: 70, yMobile: 25, xDesktop: 250, yDesktop: 60, caption: "Attention to Detail" },
-                            { src: "/jpegmini_optimized/IMG_9050.jpg", rotate: -8, xMobile: -72, yMobile: 80, xDesktop: -260, yDesktop: 200, caption: "Paint Perfection" },
-                            { src: "/jpegmini_optimized/IMG_9091.jpg", rotate: 7, xMobile: 68, yMobile: 75, xDesktop: 220, yDesktop: 190, caption: "Mechanical Excellence" },
-                            { src: "/jpegmini_optimized/IMG_9111.jpg", rotate: -5, xMobile: 0, yMobile: -85, xDesktop: 0, yDesktop: -220, caption: "Structural Integrity" },
-                            { src: "/jpegmini_optimized/IMG_9043.jpg", rotate: 4, xMobile: -75, yMobile: -20, xDesktop: -300, yDesktop: -50, caption: "Expert Team" },
-                            { src: "/jpegmini_optimized/IMG_9130.jpg", rotate: 0, xMobile: 0, yMobile: 0, xDesktop: 0, yDesktop: 0, caption: "Our Workshop", scale: 1.15, z: 10 }
-                        ].map((photo, index) => {
-                            const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-                            return (
-                                <motion.div
-                                    key={index}
-                                    className="absolute bg-white p-2 md:p-4 shadow-xl rounded-sm cursor-pointer"
-                                    style={{ zIndex: photo.z || 1 }}
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    whileInView={{
-                                        opacity: 1,
-                                        scale: photo.scale || 1,
-                                        rotate: photo.rotate,
-                                        x: isMobile ? photo.xMobile : photo.xDesktop,
-                                        y: isMobile ? photo.yMobile : photo.yDesktop
-                                    }}
-                                    whileHover={{
-                                        scale: 1.2,
-                                        zIndex: 50,
-                                        rotate: 0,
-                                        transition: { duration: 0.3 }
-                                    }}
-                                    drag
-                                    dragConstraints={{ left: -300, right: 300, top: -200, bottom: 200 }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <div className="w-32 h-24 md:w-64 md:h-48 overflow-hidden mb-2 md:mb-3 bg-gray-200">
-                                        <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover pointer-events-none" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
-                                    </div>
-                                    <p className="font-['Caveat'] text-lg md:text-xl text-gray-600 text-center font-handwriting">{photo.caption}</p>
-                                </motion.div>
-                            );
-                        })}
+                        <div className="relative h-[500px] md:h-[800px] w-full flex items-center justify-center">
+                            {/* Scattered Photos */}
+                            {[
+                                { src: "/jpegmini_optimized/IMG_9136.jpg", rotate: -6, xMobile: -70, yMobile: -55, xDesktop: -280, yDesktop: -140, caption: "The Early Days" },
+                                { src: "/jpegmini_optimized/IMG_9078.jpg", rotate: 5, xMobile: 75, yMobile: -60, xDesktop: 290, yDesktop: -150, caption: "Master Craftsmen" },
+                                { src: "/jpegmini_optimized/IMG_9083.jpg", rotate: -3, xMobile: -65, yMobile: 30, xDesktop: -220, yDesktop: 80, caption: "Precision Tuning" },
+                                { src: "/jpegmini_optimized/IMG_9122.jpg", rotate: 8, xMobile: 70, yMobile: 25, xDesktop: 250, yDesktop: 60, caption: "Attention to Detail" },
+                                { src: "/jpegmini_optimized/IMG_9050.jpg", rotate: -8, xMobile: -72, yMobile: 80, xDesktop: -260, yDesktop: 200, caption: "Paint Perfection" },
+                                { src: "/jpegmini_optimized/IMG_9091.jpg", rotate: 7, xMobile: 68, yMobile: 75, xDesktop: 220, yDesktop: 190, caption: "Mechanical Excellence" },
+                                { src: "/jpegmini_optimized/IMG_9111.jpg", rotate: -5, xMobile: 0, yMobile: -85, xDesktop: 0, yDesktop: -220, caption: "Structural Integrity" },
+                                { src: "/jpegmini_optimized/IMG_9043.jpg", rotate: 4, xMobile: -75, yMobile: -20, xDesktop: -300, yDesktop: -50, caption: "Expert Team" },
+                                { src: "/jpegmini_optimized/IMG_9130.jpg", rotate: 0, xMobile: 0, yMobile: 0, xDesktop: 0, yDesktop: 0, caption: "Our Workshop", scale: 1.15, z: 10 }
+                            ].map((photo, index) => {
+                                const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        className="absolute bg-white p-2 md:p-4 shadow-xl rounded-sm cursor-pointer"
+                                        style={{ zIndex: photo.z || 1 }}
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        whileInView={{
+                                            opacity: 1,
+                                            scale: photo.scale || 1,
+                                            rotate: photo.rotate,
+                                            x: isMobile ? photo.xMobile : photo.xDesktop,
+                                            y: isMobile ? photo.yMobile : photo.yDesktop
+                                        }}
+                                        whileHover={{
+                                            scale: 1.2,
+                                            zIndex: 50,
+                                            rotate: 0,
+                                            transition: { duration: 0.3 }
+                                        }}
+                                        drag
+                                        dragConstraints={{ left: -300, right: 300, top: -200, bottom: 200 }}
+                                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <div className="w-32 h-24 md:w-64 md:h-48 overflow-hidden mb-2 md:mb-3 bg-gray-200">
+                                            <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover pointer-events-none" onError={(e) => { (e.target as HTMLImageElement).src = '/shop.webp' }} />
+                                        </div>
+                                        <p className="font-['Caveat'] text-lg md:text-xl text-gray-600 text-center font-handwriting">{photo.caption}</p>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
                     </div>
-                </div>
-                <p className="text-center text-gray-500 mt-8 italic">Drag photos to explore our memories</p>
-            </section>
+                    <p className="text-center text-gray-500 mt-8 italic">Drag photos to explore our memories</p>
+                </section>
+            )}
 
             {/* Transformation Showcase - 4 Before/After Comparisons */}
             < section className="py-24 bg-white text-gray-900" >
@@ -647,44 +649,46 @@ export default function OurStory() {
             </section>
 
             {/* Team Group Photo Section */}
-            <motion.section
-                className="px-4 py-16 bg-neutral-100"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-8">
-                        <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Our Team</p>
-                        <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black mb-4">
-                            Together We Deliver Excellence
-                        </h2>
-                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg max-w-3xl mx-auto">
-                            Meet the dedicated professionals who make CBD Panel and Paint Ltd your trusted automotive repair partner.
-                        </p>
-                    </div>
+            {false && (
+                <motion.section
+                    className="px-4 py-16 bg-neutral-100"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-8">
+                            <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Our Team</p>
+                            <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase text-black mb-4">
+                                Together We Deliver Excellence
+                            </h2>
+                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg max-w-3xl mx-auto">
+                                Meet the dedicated professionals who make CBD Panel and Paint Ltd your trusted automotive repair partner.
+                            </p>
+                        </div>
 
-                    <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-5xl mx-auto">
-                        <img
-                            src="/shop.webp"
-                            alt="CBD Panelbeaters Team"
-                            className="w-full h-[400px] md:h-[500px] object-cover"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
-                            <p className="text-white text-lg md:text-xl font-['Poppins'] font-medium text-center">
-                                Your trusted team of automotive experts since 1995
+                        <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-5xl mx-auto">
+                            <img
+                                src="/shop.webp"
+                                alt="CBD Panelbeaters Team"
+                                className="w-full h-[400px] md:h-[500px] object-cover"
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
+                                <p className="text-white text-lg md:text-xl font-['Poppins'] font-medium text-center">
+                                    Your trusted team of automotive experts since 1995
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="mt-12 max-w-5xl mx-auto">
+                            <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-center">
+                                Our team brings together certified technicians who excel in collision repair, dent removal, and careful bodywork restoration. Our painters use advanced colour-matching technology to deliver seamless, high-quality finishes, while our skilled mechanics provide expert diagnostics, engine repairs, and complete vehicle servicing.
                             </p>
                         </div>
                     </div>
-
-                    <div className="mt-12 max-w-5xl mx-auto">
-                        <p style={{ wordSpacing: '-0.08rem' }} className="text-black leading-relaxed font-['Poppins'] font-semibold text-lg text-justify md:text-center">
-                            Our team brings together certified technicians who excel in collision repair, dent removal, and careful bodywork restoration. Our painters use advanced colour-matching technology to deliver seamless, high-quality finishes, while our skilled mechanics provide expert diagnostics, engine repairs, and complete vehicle servicing.
-                        </p>
-                    </div>
-                </div>
-            </motion.section>
+                </motion.section>
+            )}
 
             {/* CTA Section */}
             <motion.section

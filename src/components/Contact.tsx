@@ -7,6 +7,8 @@ import Footer from './Footer';
 export default function Contact() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -37,19 +39,46 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.isHuman) {
       alert('Please confirm you are a human.');
       return;
     }
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to a server
-    alert('Thank you for your message. We will get back to you soon!');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setShowSuccessModal(true);
+        setFormData({
+          service: '',
+          name: '',
+          email: '',
+          phone: '',
+          vehicleReg: '',
+          message: '',
+          isHuman: false
+        });
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans scroll-smooth">
+    <div className="min-h-screen bg-white font-sans scroll-smooth relative">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero */}
@@ -279,6 +308,34 @@ export default function Contact() {
       </motion.section>
 
       <Footer scrollToSection={scrollToSection} />
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 text-center"
+          >
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+            <p className="text-gray-600 mb-8">
+              Thank you for reaching out. We have received your message and will get back to you shortly.
+            </p>
+            <button
+              onClick={() => setShowSuccessModal(false)}
+              className="w-full bg-[#0C55AC] text-white py-3 rounded-xl font-semibold hover:bg-[#1F366A] transition-colors"
+            >
+              Close
+            </button>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

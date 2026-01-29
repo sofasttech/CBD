@@ -1,3 +1,4 @@
+import { IconBrandTiktok } from '@tabler/icons-react';
 import { Facebook, Phone, Mail, Clock, ArrowRight, Instagram, Youtube, Linkedin, Video } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -67,7 +68,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   rel="noreferrer"
                   className="group w-11 h-11 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:bg-gray-900 transition-all duration-300 hover:scale-110"
                 >
-                  <Video className="w-5 h-5 text-white transition-transform" />
+                  <IconBrandTiktok className="w-5 h-5 text-white transition-transform" />
                 </a>
                 <a
                   href="https://www.youtube.com/@CBDPanelPaintLtd"
