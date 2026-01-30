@@ -200,7 +200,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                         <p className="text-gray-400 text-xs">Mobile: 027 459 3411 (24 Hr Service)</p>
                       </>
                     ) : isMechanicalPage ? (
-                      <p className="text-gray-400 text-xs">093605023</p>
+                      <p className="text-gray-400 text-xs">(09) 360 5023</p>
                     ) : (
                       <p className="text-gray-400 text-xs">(09) 309 1906 | 24hr: 0274593411</p>
                     )}

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -296,7 +297,7 @@ export default function PanelBeating() {
                     >
                         <div
                             className="absolute inset-0 bg-cover bg-center z-0 opacity-40"
-                            style={{ backgroundImage: "url('/panel_beating_hero_1764692687494.png')" }}
+                            style={{ backgroundImage: "url('/jpegmini_optimized/IMG_4918.jpg')" }}
                         />
 
                         <motion.div
@@ -922,13 +923,14 @@ export default function PanelBeating() {
                                             Our team is standing by to restore your vehicle to perfection
                                         </p>
                                     </div>
-                                    <button
+                                    <Link
+                                        to="/contact"
                                         className="px-10 py-4 rounded-full font-black text-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 whitespace-nowrap"
                                         style={{ backgroundColor: '#1F366A', color: '#FDDD7F' }}
                                     >
                                         BOOK NOW
                                         <ChevronRight className="w-6 h-6" />
-                                    </button>
+                                    </Link>
                                 </div>
                             </motion.div>
                         </ScrollReveal>
@@ -946,7 +948,7 @@ export default function PanelBeating() {
                 >
                     <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="/Panel%20Beating%20images/future-trends-panel-beating.jpeg" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
+                            <img src="/jpegmini_optimized/IMG_9064.jpg" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
                         </div>
                         <div>
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>

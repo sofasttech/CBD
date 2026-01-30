@@ -93,7 +93,7 @@ export default function MinorAccidentGuide() {
                     <p className="text-xl text-gray-300 leading-relaxed mb-8 font-['Poppins'] font-extralight">CBD Panel and Paint assists through the full post-accident process. We provide free damage checks, insurance claim support, fast quotes, and high-quality panel beating and paint refinishing.</p>
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">If you have had a minor accident and need guidance or a repair quote, CBD Panel and Paint is here to help.</p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                        <a href="tel:093605023" className="flex items-center gap-2 bg-[#FDDD7F] text-black px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-[#FDDD7F]/90 transition">
+                        <a href="tel:(09) 360 5023" className="flex items-center gap-2 bg-[#FDDD7F] text-black px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-[#FDDD7F]/90 transition">
                             <PhoneIcon className="w-5 h-5" />
                             <span>09 360 5023</span>
                         </a>

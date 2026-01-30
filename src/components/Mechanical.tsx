@@ -225,8 +225,8 @@ export default function Mechanical() {
 
                                 {/* Service Image */}
                                 <div className="rounded-xl overflow-hidden shadow-lg">
-                                    <img 
-                                        src={services[selectedService].image} 
+                                    <img
+                                        src={services[selectedService].image}
                                         alt={services[selectedService].title}
                                         className="w-full h-64 object-cover"
                                     />
@@ -297,7 +297,7 @@ export default function Mechanical() {
                     >
                         <div
                             className="absolute inset-0 bg-cover bg-center z-0 opacity-40"
-                            style={{ backgroundImage: "url('/mechanic-servicing-car.jpg')" }}
+                            style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9083.jpg')", backgroundPosition: 'center 30%' }}
                         />
 
                         <motion.div
@@ -741,8 +741,8 @@ export default function Mechanical() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/Mechanical%20page%20images/Computer-Diagnostics.jpeg"
-                                        alt="Computerized Diagnostics"
+                                        src="/jpegmini_optimized/IMG_9111.jpg"
+                                        alt="Wheel Alignment"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
@@ -751,8 +751,8 @@ export default function Mechanical() {
                                             <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#14A0B5', color: '#fff' }}>
                                                 TECHNOLOGY
                                             </div>
-                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Computerized Diagnostics</h4>
-                                            <p className="text-white/90 font-medium">Advanced scanning tools for accurate vehicle assessment</p>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Wheel Alignment</h4>
+                                            <p className="text-white/90 font-medium">State-of-the-art 3D alignment for precision handling</p>
                                         </div>
                                     </div>
                                 </div>
@@ -769,8 +769,8 @@ export default function Mechanical() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/Mechanical page images/System Calibration.jpg"
-                                        alt="System Calibration"
+                                        src="/jpegmini_optimized/IMG_9121.jpg"
+                                        alt="Wheel Repair"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
@@ -779,8 +779,8 @@ export default function Mechanical() {
                                             <div className="inline-block px-4 py-2 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: '#FDDD7F', color: '#000' }}>
                                                 SPECIALIZED
                                             </div>
-                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">System Calibration</h4>
-                                            <p className="text-white/90 font-medium">Precision calibration for engine management and safety systems</p>
+                                            <h4 className="text-2xl font-['Poppins'] font-black text-white mb-3">Wheel Repair</h4>
+                                            <p className="text-white/90 font-medium">Expert alloy wheel repair and restoration services</p>
                                         </div>
                                     </div>
                                 </div>

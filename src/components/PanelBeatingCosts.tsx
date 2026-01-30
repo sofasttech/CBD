@@ -210,10 +210,10 @@ export default function PanelBeatingCosts() {
                                     <div className="ml-4">
                                         <p className="text-gray-700 font-medium mb-3">
                                             {factor.title === 'Type and Severity of Damage' ? 'Common examples include:' :
-                                             factor.title === 'Parts and Materials' ? 'Costs may include:' :
-                                             factor.title === 'Labour and Repair Time' ? 'This often includes:' :
-                                             factor.title === 'Paint Type and Colour' ? 'Key points:' :
-                                             'Considerations:'}
+                                                factor.title === 'Parts and Materials' ? 'Costs may include:' :
+                                                    factor.title === 'Labour and Repair Time' ? 'This often includes:' :
+                                                        factor.title === 'Paint Type and Colour' ? 'Key points:' :
+                                                            'Considerations:'}
                                         </p>
                                         <ul className="space-y-2 mb-4">
                                             {factor.examples.map((example, i) => (
@@ -352,11 +352,11 @@ export default function PanelBeatingCosts() {
                         We take the time to explain repair options, costs, and timelines so you know exactly what you're getting. Whether you are restoring a car after a collision or simply fixing a scrape that ruins the vehicle's appearance, we ensure a clean, strong finish that lasts.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                        <a href="tel:093605023" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-blue-700 transition">
+                        <a href="tel:(09) 360 5023" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg hover:bg-blue-700 transition">
                             <Phone className="w-5 h-5" />
                             <span>09 360 5023</span>
                         </a>
-                        <button 
+                        <button
                             onClick={() => window.location.href = '/contact'}
                             className="relative group bg-white text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition"
                         >

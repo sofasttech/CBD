@@ -5,13 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Blog from './Blog';
+import Reviews from './Reviews';
 import { Timeline } from './ui/timeline';
 
 const accordionItems = [
   {
     id: 1,
     title: 'Panel Beating',
-    imageUrl: '/Home%20Page%20Images/panel-beatt.jpg',
+    imageUrl: '/jpegmini_optimized/IMG_9039.jpg',
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ const accordionItems = [
   {
     id: 3,
     title: 'Mechanical',
-    imageUrl: '/Home%20Page%20Images/Mechanic.jpg',
+    imageUrl: '/jpegmini_optimized/IMG_9078.jpg',
   },
   {
     id: 4,
@@ -226,7 +227,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/Home%20Page%20Images/pannel-3.jpg"
+              href="/jpegmini_optimized/IMG_5641.jpg"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -259,7 +260,7 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/quality.webp"
+              href="/jpegmini_optimized/IMG_7238.jpg"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
@@ -664,7 +665,7 @@ export default function Homepage() {
                 title: 'Precision Repairs',
                 shortDesc: 'State-of-the-art equipment for perfect results',
                 fullDesc: 'Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition. We use advanced laser measuring systems and computerized frame straightening technology to ensure every panel, body line, and structural component is perfectly aligned.',
-                image: '/Precision Repairs.jpg'
+                image: '/jpegmini_optimized/IMG_9051.jpg'
               },
               {
                 title: 'Quality Materials',
@@ -676,13 +677,14 @@ export default function Homepage() {
                 title: 'Expert Technicians',
                 shortDesc: 'Decades of combined experience',
                 fullDesc: 'Our team of certified professionals brings decades of experience to deliver exceptional results you can trust. Each technician holds industry certifications and undergoes continuous training on the latest repair techniques and vehicle technologies.',
-                image: '/Home%20Page%20Images/Expert%20Technicians.jpg'
+                image: '/jpegmini_optimized/IMG_9060.jpg',
+                bgPosition: 'center 20%'
               }
             ].map((feature, index) => (
               <motion.div
                 key={index}
                 className="relative overflow-hidden h-96 flex flex-col justify-end p-6 bg-cover bg-center border border-gray-200 group shadow-xl rounded-xl"
-                style={{ backgroundImage: `url('${feature.image}')` }}
+                style={{ backgroundImage: `url('${feature.image}')`, backgroundPosition: feature.bgPosition }}
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -740,7 +742,7 @@ export default function Homepage() {
             <div className="grid gap-4 flex-1">
               {/* Card 01 - Accident Repair */}
               <motion.figure
-                className="sticky top-[28vh] h-[70vh] grid place-content-center"
+                className="sticky top-[28vh] h-[70vh] grid place-content-center z-10"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
@@ -785,7 +787,7 @@ export default function Homepage() {
 
               {/* Card 02 - Bumper Repair */}
               <motion.figure
-                className="sticky top-[28vh] h-[70vh] grid place-content-center"
+                className="sticky top-[28vh] h-[70vh] grid place-content-center z-20"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
@@ -819,7 +821,7 @@ export default function Homepage() {
               </motion.figure>
 
               {/* Card 03 - Chassis and structural repair */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-30">
                 <article className="bg-gradient-to-br from-CLightBlue to-cyan-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -848,7 +850,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 04 - Curb Rash Repair */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-40">
                 <article className="bg-gradient-to-br from-CGreen to-green-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-3 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -877,7 +879,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 05 - Dent Repair */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-50">
                 <article className="bg-gradient-to-br from-CPurple to-purple-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -906,7 +908,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 06 - Exterior Polishing */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[60]">
                 <article className="bg-gradient-to-br from-CYellow to-yellow-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -935,7 +937,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 07 - Headlight Polishing */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[70]">
                 <article className="bg-gradient-to-br from-CGray to-gray-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -964,7 +966,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 08 - Paint and Refinishing */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[80]">
                 <article className="bg-gradient-to-br from-CPink to-pink-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -993,7 +995,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 09 - Panel Repair */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[90]">
                 <article className="bg-gradient-to-br from-CBlue to-blue-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -1022,7 +1024,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 10 - Windscreen Removal and Installation */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[100]">
                 <article className="bg-gradient-to-br from-CDarkBlue to-blue-900 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -1051,7 +1053,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 11 - Mechanical Repair */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[110]">
                 <article className="bg-gradient-to-br from-CLightBlue to-cyan-600 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -1080,7 +1082,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 12 - WOF and Compliance */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[120]">
                 <article className="bg-gradient-to-br from-CGreen to-green-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl -rotate-2 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -1109,7 +1111,7 @@ export default function Homepage() {
               </figure>
 
               {/* Card 13 - Caravan and Board Repair */}
-              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center">
+              <figure className="sticky top-[28vh] h-[70vh] grid place-content-center z-[130]">
                 <article className="bg-gradient-to-br from-CPurple to-purple-700 h-[28rem] md:h-[24rem] w-full max-w-5xl rounded-3xl rotate-1 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 group flex p-6 lg:p-8 gap-6">
                   <div className="w-full md:w-[60%] flex flex-col justify-center">
                     <div className="inline-flex items-center gap-3 mb-6">
@@ -1170,7 +1172,7 @@ export default function Homepage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('Home Page Images/panel.png')" }} />
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9228.jpg')" }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-8 text-white z-10">
                 <h3 className="text-2xl md:text-4xl font-bold font-['Poppins'] mb-3">Expert Craftsmanship</h3>
@@ -1186,7 +1188,7 @@ export default function Homepage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/tech.jpg')" }} />
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9190.jpg')" }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-6 text-white z-10">
                 <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Advanced Technology</h3>
@@ -1274,7 +1276,7 @@ export default function Homepage() {
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium mb-6">Customer Reviews</h2>
             <div className="rounded-lg overflow-hidden shadow-sm">
-              <div id="shapo-widget-65035ad084a4892e58a0"></div>
+              <Reviews />
             </div>
           </div>
         </section>

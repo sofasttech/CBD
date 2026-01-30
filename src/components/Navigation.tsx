@@ -20,8 +20,8 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-blue-600" />
               <span className="text-gray-700">Telephone:</span>
-              <a href={isMechanicalPage ? "tel:093605023" : "tel:093091906"} className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                {isMechanicalPage ? "093605023" : "(09) 309 1906"}
+              <a href={isMechanicalPage ? "tel:(09) 360 5023" : "tel:093091906"} className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                {isMechanicalPage ? "(09) 360 5023" : "(09) 309 1906"}
               </a>
             </div>
             <div className="flex items-center gap-2">
@@ -131,7 +131,7 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
                   <div className="font-medium">Mon - Fri: 7:30 AM - 5:30 PM</div>
                 </div>
                 <div className="text-sm mb-4">
-                  <div>093605023 | 24hr: 0274593411</div>
+                  <div>(09) 360 5023 | 24hr: 0274593411</div>
                   <div>info@cbdpanel.co.nz		</div>
                 </div>
                 <Link to="/contact" className="w-full bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition block text-center" onClick={() => setMenuOpen(false)}>
