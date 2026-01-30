@@ -202,7 +202,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                     ) : isMechanicalPage ? (
                       <p className="text-gray-400 text-xs">093605023</p>
                     ) : (
-                      <p className="text-gray-400 text-xs">093605023 | 24hr: 0274593411</p>
+                      <p className="text-gray-400 text-xs">(09) 309 1906 | 24hr: 0274593411</p>
                     )}
                   </div>
                 </div>

@@ -216,7 +216,7 @@ export default function PanelBeating() {
             shortDesc: 'Expert automotive painting with computerised colour matching.',
             fullDesc: 'From single panel refinishing to complete resprays, our modern paint booth and computerised colour matching system ensure perfect results. We use premium automotive paints with factory-spec clear coats for lasting durability and gloss. Waterborne paint options are available.',
             details: ['Single-Panel Repainting and Blending', 'Full Vehicle Resprays', 'Computerised Colour Matching', 'High-Quality Base and Clear Coat', 'Waterborne Paint Options', 'Final Polishing for Smooth Finish'],
-            image: '/paint_booth_1764692971281.png',
+            image: '/CBD_jpg/IMG_5642.jpg',
             learnMore: 'A flawless paint finish brings your vehicle back to life, whether you\'re refreshing a single panel or completing a full respray. Our paint and refinishing service combines skilled craftsmanship with modern technology to deliver smooth, accurate, and long-lasting results.\n\nWe operate a fully equipped modern paint booth designed to keep dust, moisture, and contaminants away from your vehicle during the painting process. This controlled environment, combined with our computerised colour-matching system, allows us to match your original paint with exceptional accuracy, ensuring repaired panels blend seamlessly with the rest of the car.\n\nWe use premium automotive paints and factory-spec clear coats that provide strong protection against UV rays, weather, and everyday wear. These products are chosen for their durability, gloss retention, and ability to maintain a fresh, high-quality finish over time. For customers who prefer environmentally friendly options, we also offer waterborne paint systems that meet modern standards without compromising on finish quality.\n\nWhether you\'re repairing accident damage, refreshing an ageing finish, or changing the look of your car, our team delivers a clean, durable, showroom-quality result every time.'
         },
         {
@@ -225,7 +225,7 @@ export default function PanelBeating() {
             shortDesc: 'Skilled repair or replacement of body panels for all vehicle types.',
             fullDesc: 'Damaged panels are carefully assessed to determine whether repair or replacement is the most cost-effective option. Our craftsmen can reshape steel and aluminium panels back to their original contours. When replacement is necessary, we source high-quality parts and ensure a perfect fit and finish.',
             details: ['Repair vs Replacement Assessment', 'Steel and Aluminium Panel Reshaping', 'Dent Removal and Surface Correction', 'Quality Replacement Panels', 'Precision Fitting and Alignment', 'Professional Refinishing and Paint Blending'],
-            image: '/panel-beatt.jpg',
+            image: '/CBD_jpg/IMG_9214.jpg',
             learnMore: 'When a vehicle panel is damaged, it needs precise attention to restore both appearance and safety. Our panel repair service begins with a thorough assessment to determine whether repairing or replacing the panel is the most practical and cost-effective option. We always choose the approach that offers the best value without compromising strength, alignment, or finish.\n\nOur skilled technicians specialise in reshaping both steel and aluminium panels, using advanced tools and proven techniques to return each panel to its original contours. We carefully remove dents, correct distortions, and restore smooth surfaces before preparing the panel for refinishing. This craftsmanship allows many panels to be repaired rather than replaced, saving time and cost while maintaining factory integrity.\n\nWhen a panel is too damaged or structurally compromised to repair, we source high-quality new or OEM-equivalent replacement parts. Every replacement panel is fitted with precision, ensuring correct alignment, smooth gaps, and a perfect match with surrounding bodywork. Once installed, the panel is refinished using our colour-matching technology for a seamless result.\n\nRegardless of the level of damage, our goal is to restore your vehicle\'s panels to a clean, accurate, and factory-quality finish that enhances both its appearance and value.'
         },
         {
@@ -574,7 +574,7 @@ export default function PanelBeating() {
                             >
                                 <div className="relative h-full min-h-[500px] overflow-hidden">
                                     <img
-                                        src="/Panel%20Beating%20images/paint-booth-ventilation-fans.jpg"
+                                        src="/CBD_jpg/IMG_5642.jpg"
                                         alt="Modern Paint Booth"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />

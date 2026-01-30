@@ -10,6 +10,7 @@ interface NavigationProps {
 
 export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
   const location = useLocation();
+  const isMechanicalPage = location.pathname === '/mechanical';
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       {/* Phone Number Bar - Top */}
@@ -19,8 +20,8 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-blue-600" />
               <span className="text-gray-700">Telephone:</span>
-              <a href="tel:093091906" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                (09) 309 1906
+              <a href={isMechanicalPage ? "tel:093605023" : "tel:093091906"} className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                {isMechanicalPage ? "093605023" : "(09) 309 1906"}
               </a>
             </div>
             <div className="flex items-center gap-2">
