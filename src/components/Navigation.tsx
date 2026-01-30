@@ -19,8 +19,8 @@ export default function Navigation({ menuOpen, setMenuOpen }: NavigationProps) {
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-blue-600" />
               <span className="text-gray-700">Telephone:</span>
-              <a href="tel:093605023" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                (09) 360 5023
+              <a href="tel:093091906" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                (09) 309 1906
               </a>
             </div>
             <div className="flex items-center gap-2">
