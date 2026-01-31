@@ -328,52 +328,7 @@ export default function FAQs() {
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <motion.section
-                className="px-4 py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600 relative overflow-hidden"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-            >
-                {/* Animated background elements */}
-                <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="absolute top-10 left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
-                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-pink-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
-                </div>
 
-                <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <motion.h2
-                        className="text-4xl md:text-6xl font-['Poppins'] font-bold uppercase mb-6 text-white drop-shadow-lg"
-                        initial={{ scale: 0.9 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        Still Have Questions?
-                    </motion.h2>
-                    <p style={{ wordSpacing: '-0.08rem' }} className="text-white/90 mb-12 leading-relaxed font-['Poppins'] font-medium text-lg">
-                        Our friendly team is here to help. Contact us today for personalized assistance.
-                    </p>
-                    <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <motion.button
-                            className="relative group bg-white text-blue-600 px-10 py-4 rounded-full font-['Poppins'] font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl overflow-hidden"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <span className="absolute left-0 top-0 h-full bg-gradient-to-r from-pink-500 to-purple-500 w-0 group-hover:w-full transition-all duration-500 rounded-full"></span>
-                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">CONTACT US</span>
-                        </motion.button>
-                        <motion.button
-                            className="relative group bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-['Poppins'] font-bold text-lg transition-all duration-300 hover:bg-white hover:text-blue-600 shadow-xl hover:shadow-2xl"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <span className="relative z-10">BOOK NOW</span>
-                        </motion.button>
-                    </div>
-                </div>
-            </motion.section>
 
             <Footer scrollToSection={scrollToSection} />
         </div>

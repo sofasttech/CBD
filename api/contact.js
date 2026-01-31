@@ -1,4 +1,21 @@
 import nodemailer from 'nodemailer';
+import multer from 'multer';
+
+// Configure multer for memory storage
+const upload = multer({ storage: multer.memoryStorage() });
+
+// Helper method to wait for a middleware to execute before continuing
+// and to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+    return new Promise((resolve, reject) => {
+        fn(req, res, (result) => {
+            if (result instanceof Error) {
+                return reject(result);
+            }
+            return resolve(result);
+        });
+    });
+}
 
 export default async function handler(req, res) {
     // Add CORS headers
@@ -20,7 +37,16 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
+    // Run multer middleware to parse request body and files
+    try {
+        await runMiddleware(req, res, upload.array('images', 5));
+    } catch (error) {
+        console.error('Error parsing form data:', error);
+        return res.status(500).json({ error: 'Error processing upload' });
+    }
+
     const { name, email, phone, vehicleReg, service, message } = req.body;
+    const files = req.files || [];
 
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
         return res.status(500).json({ error: 'Server configuration error: Missing email credentials' });
@@ -78,6 +104,10 @@ export default async function handler(req, res) {
       <p><strong>Message:</strong></p>
       <p>${message}</p>
     `,
+        attachments: files.map(file => ({
+            filename: file.originalname,
+            content: file.buffer
+        }))
     };
 
     try {

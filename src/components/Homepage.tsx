@@ -12,7 +12,7 @@ const accordionItems = [
   {
     id: 1,
     title: 'Panel Beating',
-    imageUrl: '/jpegmini_optimized/IMG_9039.jpg',
+    imageUrl: '/jpegmini_optimized/IMG_9051.jpg',
   },
   {
     id: 2,
@@ -665,7 +665,7 @@ export default function Homepage() {
                 title: 'Precision Repairs',
                 shortDesc: 'State-of-the-art equipment for perfect results',
                 fullDesc: 'Our state-of-the-art equipment ensures every repair is done with pinpoint accuracy, restoring your vehicle to its original condition. We use advanced laser measuring systems and computerized frame straightening technology to ensure every panel, body line, and structural component is perfectly aligned.',
-                image: '/jpegmini_optimized/IMG_9051.jpg'
+                image: '/jpegmini_optimized/IMG_9039.jpg'
               },
               {
                 title: 'Quality Materials',
@@ -677,7 +677,7 @@ export default function Homepage() {
                 title: 'Expert Technicians',
                 shortDesc: 'Decades of combined experience',
                 fullDesc: 'Our team of certified professionals brings decades of experience to deliver exceptional results you can trust. Each technician holds industry certifications and undergoes continuous training on the latest repair techniques and vehicle technologies.',
-                image: '/jpegmini_optimized/IMG_9060.jpg',
+                image: '/jpegmini_optimized/tech.png',
                 bgPosition: 'center 20%'
               }
             ].map((feature, index) => (
@@ -1172,11 +1172,11 @@ export default function Homepage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9228.jpg')" }} />
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9190.jpg')" }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-8 text-white z-10">
-                <h3 className="text-2xl md:text-4xl font-bold font-['Poppins'] mb-3">Expert Craftsmanship</h3>
-                <p className="text-gray-200 text-lg max-w-sm">Our certified technicians bring decades of combined experience to every repair, ensuring factory-standard results.</p>
+                <h3 className="text-2xl md:text-4xl font-bold font-['Poppins'] mb-3">Advanced Technology</h3>
+                <p className="text-gray-200 text-lg max-w-sm">We utilize the latest diagnostic tools and repair equipment to deliver precise and lasting solutions.</p>
               </div>
             </motion.div>
 
@@ -1188,11 +1188,11 @@ export default function Homepage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9190.jpg')" }} />
+              <div className="absolute inset-0 bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9228.jpg')", backgroundSize: '100%' }} />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 p-6 text-white z-10">
-                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Advanced Technology</h3>
-                <p className="text-gray-200 text-sm md:text-base max-w-md">We utilize the latest diagnostic tools and repair equipment to deliver precise and lasting solutions.</p>
+                <h3 className="text-xl md:text-2xl font-bold font-['Poppins'] mb-1">Expert Craftsmanship</h3>
+                <p className="text-gray-200 text-sm md:text-base max-w-md">Our certified technicians bring decades of combined experience to every repair, ensuring factory-standard results.</p>
               </div>
             </motion.div>
 

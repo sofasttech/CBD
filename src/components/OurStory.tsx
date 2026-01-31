@@ -390,7 +390,7 @@ export default function OurStory() {
             >
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <img src="/jpegmini_optimized/IMG_4938.jpg" alt="CBD Panelbeaters Workshop" className="w-full h-auto shadow-lg" />
+                        <img src="/jpegmini_optimized/cbd.png" alt="CBD Panelbeaters Workshop" className="w-full h-auto shadow-lg" />
                     </div>
                     <div>
                         <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">Our Beginning</p>

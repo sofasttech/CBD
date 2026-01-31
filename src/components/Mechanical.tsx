@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronRight, Shield, Settings, Disc, Zap, Activity, Gauge } from 'lucide-react';
 import { ReactLenis } from 'lenis/react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
@@ -297,7 +298,7 @@ export default function Mechanical() {
                     >
                         <div
                             className="absolute inset-0 bg-cover bg-center z-0 opacity-40"
-                            style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9083.jpg')", backgroundPosition: 'center 30%' }}
+                            style={{ backgroundImage: "url('/jpegmini_optimized/IMG_9077.jpg')", backgroundPosition: 'center 30%' }}
                         />
 
                         <motion.div
@@ -327,10 +328,14 @@ export default function Mechanical() {
 
                             <ScrollReveal delay={0.8}>
                                 <div className="flex gap-4 justify-center">
-                                    <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
+                                    <Link to="/contact" className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium inline-block" style={{ backgroundColor: '#0C55AC' }}>
                                         Book Now
-                                    </button>
-                                    <button className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
+                                    </Link>
+                                    <button
+                                        onClick={() => scrollToSection('services-grid')}
+                                        className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium"
+                                        style={{ borderColor: '#B5B5B5', color: '#1F366A' }}
+                                    >
                                         Learn More
                                     </button>
                                 </div>

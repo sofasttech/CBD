@@ -1,15 +1,18 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   font-family: sans-serif;
+  overflow-x: clip;
+  width: 100%;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
+  overflow-x: clip;
+  position: relative;
+  width: 100%;
 }
 
 @layer utilities {
@@ -17,6 +20,7 @@ body {
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX(-100%);
     }

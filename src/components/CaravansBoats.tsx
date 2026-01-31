@@ -322,8 +322,8 @@ export default function CaravansBoats() {
                             <ScrollReveal delay={0.2}>
                                 <div className="p-6">
                                     <div className="text-5xl md:text-6xl font-['Poppins'] font-bold text-[#14A0B5] mb-2">100%</div>
-                                    <div className="text-white font-medium uppercase tracking-wider text-sm">NZ Owned</div>
-                                    <p className="text-[#B5B5B5] text-xs mt-2">Local family business</p>
+                                    <div className="text-white font-medium uppercase tracking-wider text-sm">Customer Satisfaction</div>
+                                    <p className="text-[#B5B5B5] text-xs mt-2">Guaranteed results</p>
                                 </div>
                             </ScrollReveal>
                             <ScrollReveal delay={0.3}>
@@ -672,7 +672,7 @@ export default function CaravansBoats() {
                     </div>
                 </section>
 
-            
+
 
                 {/* Service Process Steps */}
                 <section className="py-24 bg-gradient-to-b from-white via-[#14A0B5]/5 to-white border-t border-[#B5B5B5]/30 relative overflow-hidden">

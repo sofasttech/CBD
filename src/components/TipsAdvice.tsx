@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Layers, Wrench, Shield, CloudSnow, Home } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -374,7 +374,7 @@ export default function TipsAdvice() {
 
             {/* Hero Section */}
             <motion.section
-                className="pt-24 md:pt-32 pb-0 md:pb-16 px-4 bg-white overflow-hidden"
+                className="pt-24 md:pt-32 pb-0 md:pb-16 px-4 bg-[#fcf6ff] overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -528,10 +528,13 @@ export default function TipsAdvice() {
                         <p className="text-lg leading-relaxed font-['Poppins'] font-extralight mb-6">
                             While DIY maintenance is great, some jobs require professional expertise. Our team is ready to help with all your automotive needs.
                         </p>
-                        <Link to="/contact" className="relative group bg-white text-[#783E6C] px-8 py-4 font-['Poppins'] font-medium text-lg transition inline-block">
+                        <button
+                            onClick={() => navigate('/contact')}
+                            className="relative group bg-white text-[#783E6C] px-8 py-4 font-['Poppins'] font-medium text-lg transition inline-block"
+                        >
                             <span className="absolute left-0 top-0 h-full bg-black w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10 group-hover:text-white">BOOK SERVICE</span>
-                        </Link>
+                        </button>
                     </div>
                     <div className="grid grid-cols-2 gap-4 text-center">
                         <div className="bg-white bg-opacity-10 p-6 backdrop-blur">

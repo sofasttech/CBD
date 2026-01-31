@@ -1,7 +1,9 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-require('dotenv').config();
+const multer = require('multer');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,8 +20,11 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-app.post('/api/contact', (req, res) => {
+const upload = multer({ storage: multer.memoryStorage() });
+
+app.post('/api/contact', upload.array('images', 5), (req, res) => {
     const { name, email, phone, vehicleReg, service, message } = req.body;
+    const files = req.files || [];
 
     // Determine recipient based on service type
     let recipientEmail = 'info@cbdpanel.co.nz';
@@ -65,6 +70,10 @@ app.post('/api/contact', (req, res) => {
       <p><strong>Message:</strong></p>
       <p>${message}</p>
     `,
+        attachments: files.map(file => ({
+            filename: file.originalname,
+            content: file.buffer
+        }))
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
