@@ -4,15 +4,10 @@
 
 html {
   font-family: sans-serif;
-  overflow-x: clip;
-  width: 100%;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  overflow-x: clip;
-  position: relative;
-  width: 100%;
 }
 
 @layer utilities {
