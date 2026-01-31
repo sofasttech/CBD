@@ -949,7 +949,7 @@ export default function PanelBeating() {
                 >
                     <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="/jpegmini_optimized/extech.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
+                            <img src="/jpegmini_optimized/newown.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
                         </div>
                         <div>
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
