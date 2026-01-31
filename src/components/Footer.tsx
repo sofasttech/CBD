@@ -4,9 +4,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
+  topBgColor?: string;
 }
 
-export default function Footer({ scrollToSection }: FooterProps) {
+export default function Footer({ scrollToSection, topBgColor = 'bg-white' }: FooterProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const isCaravansPage = location.pathname === '/caravans-boats';
@@ -14,7 +15,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
   return (
     <footer id="contact" className="relative bg-black text-white">
       {/* Wave Separator at top of footer */}
-      <div className="relative w-full overflow-hidden bg-white" style={{ marginTop: '-80px' }}>
+      <div className={`relative w-full overflow-hidden ${topBgColor}`} style={{ marginTop: '-80px' }}>
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"

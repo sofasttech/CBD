@@ -300,7 +300,7 @@ export default function BrakeWarningGuide() {
                 </div>
             </motion.section>
 
-            <Footer scrollToSection={scrollToSection} />
+            <Footer scrollToSection={scrollToSection} topBgColor="bg-black" />
         </div>
     );
 }

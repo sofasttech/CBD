@@ -397,7 +397,7 @@ export default function CoolantGuide() {
                 </div>
             </motion.section>
 
-            <Footer scrollToSection={scrollToSection} />
+            <Footer scrollToSection={scrollToSection} topBgColor="bg-black" />
         </div>
     );
 }

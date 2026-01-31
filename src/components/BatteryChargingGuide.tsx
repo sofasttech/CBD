@@ -432,7 +432,7 @@ export default function BatteryChargingGuide() {
                 </div>
             </motion.section>
 
-            <Footer scrollToSection={scrollToSection} />
+            <Footer scrollToSection={scrollToSection} topBgColor="bg-black" />
         </div>
     );
 }
