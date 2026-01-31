@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Battery, BatteryCharging, AlertTriangle, CheckCircle, Zap, Clock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function BatteryChargingGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -420,7 +422,10 @@ export default function BatteryChargingGuide() {
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your car is struggling to start or you suspect a battery issue, our team is ready to assist.
                     </p>
-                    <button className="relative group bg-[#047342] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                    <button
+                        onClick={() => navigate('/contact')}
+                        className="relative group bg-[#047342] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                    >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-[#047342]">BOOK A BATTERY CHECK</span>
                     </button>

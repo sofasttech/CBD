@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { DollarSign, AlertCircle, Wrench, Paintbrush, Clock, Shield, CheckCircle, Phone } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function PanelBeatingCosts() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -357,7 +359,7 @@ export default function PanelBeatingCosts() {
                             <span>09 360 5023</span>
                         </a>
                         <button
-                            onClick={() => window.location.href = '/contact'}
+                            onClick={() => navigate('/contact')}
                             className="relative group bg-white text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition"
                         >
                             <span className="absolute left-0 top-0 h-full bg-blue-600 w-0 group-hover:w-full transition-all duration-300"></span>

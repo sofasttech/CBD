@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, AlertTriangle, Wrench, CheckCircle, Settings } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function IdleVibrationGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
     useEffect(() => { window.scrollTo(0, 0); }, []);
     const scrollToSection = (id: string) => { const element = document.getElementById(id); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); };
 
@@ -102,7 +104,10 @@ export default function IdleVibrationGuide() {
                     <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">How We Can Help</h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">CBD Panel and Paint diagnoses and repairs idle vibration problems for all makes and models. We check the ignition system, mounts, filters, sensors, and engine performance to find the source of the issue.</p>
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">If your car shakes while idling or you are unsure what is causing it, our expert team at CBD Panel and Paint is ready to assist.</p>
-                    <button className="relative group bg-[#783E6C] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                    <button
+                        onClick={() => navigate('/contact')}
+                        className="relative group bg-[#783E6C] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                    >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-[#783E6C]">BOOK A DIAGNOSTIC CHECK</span>
                     </button>

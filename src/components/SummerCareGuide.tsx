@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Droplets, Circle, Wind, Battery, Wrench, Shield, Package } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function SummerCareGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
     useEffect(() => { window.scrollTo(0, 0); }, []);
     const scrollToSection = (id: string) => { const element = document.getElementById(id); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); };
 
@@ -84,7 +86,10 @@ export default function SummerCareGuide() {
                     <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">How We Can Help</h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">CBD Panel and Paint workshop provides summer readiness checks to keep your vehicle performing at its best. We inspect coolant systems, tyres, brakes, air conditioning, filters, and general mechanical components. We also handle panel beating, bumper repair, refinishing, and bodywork if your vehicle needs cosmetic care after a long season on the road.</p>
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">If you want your vehicle summer-ready or need a full check before your next trip, our expert team at CBD Panel and Paint is ready to assist.</p>
-                    <button className="relative group bg-[#FDDD7F] text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                    <button
+                        onClick={() => navigate('/contact')}
+                        className="relative group bg-[#FDDD7F] text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                    >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-[#FDDD7F]">BOOK SUMMER SERVICE</span>
                     </button>

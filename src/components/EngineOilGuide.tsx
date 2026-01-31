@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Droplet, Gauge, AlertTriangle, CheckCircle, Wrench } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function EngineOilGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -467,7 +469,10 @@ export default function EngineOilGuide() {
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If your oil light is on or you need a service, our expert team at CBD Panel and Paint is ready to assist.
                     </p>
-                    <button className="relative group bg-amber-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                    <button
+                        onClick={() => navigate('/contact')}
+                        className="relative group bg-amber-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                    >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-amber-600">BOOK AN OIL CHANGE</span>
                     </button>

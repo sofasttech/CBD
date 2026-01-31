@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, DollarSign, Wrench, AlertTriangle, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function RepairOrReplace() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -449,8 +451,8 @@ export default function RepairOrReplace() {
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">
                         If you're unsure whether your panel should be repaired or replaced, bring your vehicle to CBD Panel Beating & Mechanical or send us photos for a quote. We'll guide you through your best option with transparency and care.
                     </p>
-                    <button 
-                        onClick={() => window.location.href = '/contact'}
+                    <button
+                        onClick={() => navigate('/contact')}
                         className="relative group bg-indigo-600 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
                     >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>

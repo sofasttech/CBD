@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, Phone as PhoneIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function MinorAccidentGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
     useEffect(() => { window.scrollTo(0, 0); }, []);
     const scrollToSection = (id: string) => { const element = document.getElementById(id); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); };
 
@@ -97,7 +99,7 @@ export default function MinorAccidentGuide() {
                             <PhoneIcon className="w-5 h-5" />
                             <span>09 360 5023</span>
                         </a>
-                        <button onClick={() => window.location.href = '/contact'} className="relative group bg-white text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                        <button onClick={() => navigate('/contact')} className="relative group bg-white text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition">
                             <span className="absolute left-0 top-0 h-full bg-[#FDDD7F] w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10">CONTACT US ONLINE</span>
                         </button>

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Fuel, TrendingUp, AlertTriangle, CheckCircle, Gauge, Settings } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function FuelConsumptionGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -116,7 +118,10 @@ export default function FuelConsumptionGuide() {
                     <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">How We Can Help</h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">CBD Panel and Paint offers comprehensive mechanical checks, servicing, wheel alignment, and diagnostic services to pinpoint the cause of high fuel consumption. We examine filters, plugs, sensors, tyres, and all systems that impact fuel efficiency. With correct maintenance, your vehicle runs cleaner, smoother, and more economically.</p>
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">If your car is using more fuel than normal, our expert team at CBD Panel and Paint is ready to help.</p>
-                    <button className="relative group bg-[#FDDD7F] text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                    <button
+                        onClick={() => navigate('/contact')}
+                        className="relative group bg-[#FDDD7F] text-black px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                    >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-[#FDDD7F]">BOOK A FUEL EFFICIENCY CHECK</span>
                     </button>

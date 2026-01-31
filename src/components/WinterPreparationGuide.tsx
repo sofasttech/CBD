@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Snowflake, Circle, Battery, Wrench, Eye, Droplets, Lightbulb, Package } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function WinterPreparationGuide() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
     useEffect(() => { window.scrollTo(0, 0); }, []);
     const scrollToSection = (id: string) => { const element = document.getElementById(id); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); };
 
@@ -83,7 +85,10 @@ export default function WinterPreparationGuide() {
                     <h2 className="text-3xl md:text-5xl font-['Poppins'] font-medium uppercase mb-6">How We Can Help</h2>
                     <p className="text-xl text-gray-300 leading-relaxed mb-6 font-['Poppins'] font-extralight">CBD Panel and Paint offers comprehensive winter checks and servicing to ensure your vehicle remains reliable throughout the colder months. Our expert team inspects tyres, brakes, battery, fluids, lights, and mechanical components, making sure everything is winter-ready.</p>
                     <p className="text-xl text-gray-300 mb-8 font-['Poppins'] font-extralight">If you'd like a winter check or service before the cold weather arrives, CBD Panel and Paint are ready to help.</p>
-                    <button className="relative group bg-[#14A0B5] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                    <button
+                        onClick={() => navigate('/contact')}
+                        className="relative group bg-[#14A0B5] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                    >
                         <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
                         <span className="relative z-10 group-hover:text-[#14A0B5]">BOOK WINTER SERVICE</span>
                     </button>
