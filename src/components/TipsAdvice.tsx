@@ -483,34 +483,7 @@ export default function TipsAdvice() {
                 </div>
             </section>
 
-            {/* Newsletter CTA */}
-            <motion.section
-                className="px-4 py-20 bg-white border-t border-gray-200"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-['Poppins'] font-medium uppercase mb-6 text-black">
-                        Get More Expert Tips
-                    </h2>
-                    <p style={{ wordSpacing: '-0.08rem' }} className="text-black mb-8 leading-relaxed font-['Poppins'] font-semibold text-lg">
-                        Subscribe to our newsletter for monthly automotive tips, seasonal maintenance reminders, and exclusive offers.
-                    </p>
-                    <div className="flex flex-col md:flex-row gap-4 justify-center items-center max-w-xl mx-auto">
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="w-full md:flex-1 px-6 py-4 text-gray-900 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A259B7] focus:border-[#A259B7]"
-                        />
-                        <button className="w-full md:w-auto relative group bg-[#783E6C] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
-                            <span className="absolute left-0 top-0 h-full bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-                            <span className="relative z-10 group-hover:text-[#783E6C]">SUBSCRIBE</span>
-                        </button>
-                    </div>
-                </div>
-            </motion.section>
+
 
             {/* Service CTA */}
             <motion.section
