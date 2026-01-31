@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Anchor, Hammer, ShieldCheck, Truck, Droplets, PenTool, ChevronLeft, ChevronRight, Activity, Gauge, Settings, Zap, Disc } from 'lucide-react';
 import Navigation from './Navigation';
@@ -8,6 +9,7 @@ import { ReactLenis } from 'lenis/react';
 import { Carousel, Card } from './ui/apple-cards-carousel';
 
 export default function CaravansBoats() {
+    const navigate = useNavigate();
     const CARAVAN_IMAGES_PATH = '/Caravan Images';
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -92,21 +94,22 @@ export default function CaravansBoats() {
             icon: <PenTool className="w-8 h-8" />,
             desc: 'Transform your trailer to perfectly match your requirements. Whether you need increased load capacity, specialized storage solutions, or unique features, our design team works with you to create practical, durable modifications that enhance functionality and value.',
             details: ['CAD Design & Engineering', 'Load Capacity Enhancement', 'Custom Storage Solutions', 'Height & Width Adjustments', 'Specialized Equipment Mounts', 'Aerodynamic Improvements'],
-            image: '/Caravan%20Images/Caravan-mod.webp'
+            image: '/jpegmini_optimized/Refurb_trailer.jpg',
+            imageClassName: 'object-contain bg-white p-8'
         },
         {
             title: 'Custom Trailer Fabrication',
             icon: <Hammer className="w-8 h-8" />,
             desc: 'Built from the ground up to your exact specifications. We fabricate commercial-grade and specialty trailers for unique applications - from heavy machinery transport to motorsport equipment. Every build is engineered for maximum durability and compliance.',
             details: ['Engineered Custom Designs', 'Heavy-Duty Commercial Units', 'Specialty Application Trailers', 'Multi-Axle Configurations', 'Certified Load Ratings', 'Full Compliance Documentation'],
-            image: '/Caravan%20Images/trailerfab.jpg'
+            image: '/jpegmini_optimized/cstom.png'
         },
         {
             title: 'Deck Replacement & Upgrades',
             icon: <Truck className="w-8 h-8" />,
             desc: 'Premium decking solutions using marine-grade plywood, heavy-duty truck flooring, or composite materials. We ensure proper drainage, anti-slip surfaces, and long-term protection against weather and load stresses for commercial and recreational use.',
             details: ['Marine-Grade Plywood Installation', 'Heavy-Duty Truck Decking', 'Anti-Slip Surface Treatment', 'Weather-Sealed Edge Protection', 'Load Distribution Engineering', 'Composite Deck Options'],
-            image: '/Caravan%20Images/deck.webp'
+            image: '/jpegmini_optimized/DomesticTrailer.jpg'
         },
         {
             title: 'Professional Welding Services',
@@ -178,11 +181,17 @@ export default function CaravansBoats() {
                                 </div>
 
                                 <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-                                    <button className="relative group bg-[#0C55AC] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition shadow-lg rounded-md">
+                                    <button
+                                        onClick={() => navigate('/contact')}
+                                        className="relative group bg-[#0C55AC] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition shadow-lg rounded-md"
+                                    >
                                         <span className="absolute left-0 top-0 h-full bg-[#1F366A] w-0 group-hover:w-full transition-all duration-300 rounded-md"></span>
                                         <span className="relative z-10">BOOK YOUR REPAIR</span>
                                     </button>
-                                    <button className="relative group bg-[#1F366A] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition hover:bg-[#0C55AC] shadow-lg rounded-md border-2 border-[#14A0B5]">
+                                    <button
+                                        onClick={() => navigate('/contact')}
+                                        className="relative group bg-[#1F366A] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition hover:bg-[#0C55AC] shadow-lg rounded-md border-2 border-[#14A0B5]"
+                                    >
                                         <span className="relative z-10">GET FREE ESTIMATE</span>
                                     </button>
                                 </div>
@@ -590,7 +599,7 @@ export default function CaravansBoats() {
                             >
                                 <div className="relative h-full min-h-[280px] overflow-hidden">
                                     <img
-                                        src="/Caravan%20Images/trailerfab.jpg"
+                                        src="/jpegmini_optimized/cstom.png"
                                         alt="Custom Fabrication"
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         onError={(e) => { (e.target as HTMLImageElement).src = '/caravan_boat_hero_1764692888890.png' }}
@@ -828,11 +837,17 @@ export default function CaravansBoats() {
                                         Don't risk safety or miss out on precious travel time. Get your trailer or caravan professionally serviced before your next journey. Contact us today for expert advice and transparent pricing.
                                     </p>
                                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                                        <button className="relative group bg-[#0C55AC] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition rounded-md overflow-hidden">
+                                        <button
+                                            onClick={() => navigate('/contact')}
+                                            className="relative group bg-[#0C55AC] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition rounded-md overflow-hidden"
+                                        >
                                             <span className="absolute left-0 top-0 h-full bg-[#1F366A] w-0 group-hover:w-full transition-all duration-300"></span>
                                             <span className="relative z-10">BOOK YOUR REPAIR</span>
                                         </button>
-                                        <button className="relative group bg-[#1F366A] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition rounded-md border-2 border-[#14A0B5] overflow-hidden">
+                                        <button
+                                            onClick={() => navigate('/contact')}
+                                            className="relative group bg-[#1F366A] text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition rounded-md border-2 border-[#14A0B5] overflow-hidden"
+                                        >
                                             <span className="absolute left-0 top-0 h-full bg-[#0C55AC] w-0 group-hover:w-full transition-all duration-300"></span>
                                             <span className="relative z-10">GET FREE ESTIMATE</span>
                                         </button>

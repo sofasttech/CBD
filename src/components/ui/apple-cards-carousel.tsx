@@ -25,6 +25,7 @@ type Card = {
     title: string;
     category: string;
     content: React.ReactNode;
+    imageClassName?: string;
 };
 
 export const CarouselContext = createContext<{
@@ -266,7 +267,7 @@ export const Card = ({
                     src={card.src}
                     alt={card.title}
                     fill
-                    className="object-cover absolute z-10 inset-0 h-full w-full"
+                    className={cn("object-cover absolute z-10 inset-0 h-full w-full", card.imageClassName)}
                 />
             </motion.button>
         </>

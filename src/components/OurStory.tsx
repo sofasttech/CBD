@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CardContainer, CardBody, CardItem } from './ui/3d-card';
 import { Heart, Target, Award, Users } from 'lucide-react';
@@ -92,6 +93,7 @@ function BeforeAfterSlider({ item, index }: { item: { before: string; after: str
 }
 
 export default function OurStory() {
+    const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
@@ -706,11 +708,17 @@ export default function OurStory() {
                         Join thousands of satisfied customers who trust CBD Panel and Paint LTD for all their automotive needs.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button className="relative group bg-CPink text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                        <button
+                            onClick={() => navigate('/contact')}
+                            className="relative group bg-CPink text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                        >
                             <span className="absolute left-0 top-0 h-full bg-CPurple w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10">BOOK APPOINTMENT</span>
                         </button>
-                        <button className="relative group bg-gray-900 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition">
+                        <button
+                            onClick={() => navigate('/panel-beating')}
+                            className="relative group bg-gray-900 text-white px-8 py-4 font-['Poppins'] font-medium text-lg transition"
+                        >
                             <span className="absolute left-0 top-0 h-full bg-gray-700 w-0 group-hover:w-full transition-all duration-300"></span>
                             <span className="relative z-10">VIEW SERVICES</span>
                         </button>

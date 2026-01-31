@@ -283,7 +283,7 @@ export default function Homepage() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const currentImage = 0;
-  const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
+
   const [isMobile, setIsMobile] = useState(false);
 
   const aboutImages = ['/panel-beatt.jpg', '/car-tune-up.jpg', '/headlight.webp'];
@@ -292,12 +292,7 @@ export default function Homepage() {
 
   const heroImages = ['/stf.png'];
 
-  const hotspots = [
-    { top: '25%', left: '25%', title: 'Side Mirrors', desc: 'Repair or replace Side Mirrors.' },
-    { top: '33%', right: '25%', title: 'Bonnet', desc: 'Restore or replace Bonnet.' },
-    { top: '75%', left: '33%', title: 'Tires', desc: 'Check and replace tires for safety.' },
-    { top: '67%', right: '33%', title: 'Engine', desc: 'Mechanical repairs and servicing.' },
-  ];
+
 
   // Card stack replaces the previous auto-rotating about image.
   // Swiped cards are animated out then moved to the back of the stack.
@@ -439,40 +434,7 @@ export default function Homepage() {
             viewport={{ once: true }}
           >
             <img src={heroImages[currentImage]} alt="Grey SUV" className="w-full h-auto rounded-lg" />
-            {/* Hotspots */}
-            {hotspots.map((hotspot, index) => (
-              <motion.div
-                key={index}
-                className="absolute w-8 h-8 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
-                style={{ top: hotspot.top, left: hotspot.left, right: hotspot.right }}
-                onMouseEnter={() => setHoveredHotspot(index)}
-                onMouseLeave={() => setHoveredHotspot(null)}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.8 + (index * 0.1) }}
-                viewport={{ once: true }}
-              >
-                <span className="text-red-600 font-bold text-lg">+</span>
-              </motion.div>
-            ))}
-            {/* Tooltip */}
-            {hoveredHotspot !== null && (
-              <motion.div
-                className="absolute bg-black text-white p-2 rounded shadow-lg text-sm max-w-xs z-10 pointer-events-none"
-                style={{
-                  top: hotspots[hoveredHotspot].top,
-                  left: hotspots[hoveredHotspot].left,
-                  transform: 'translate(40px, -50%)',
-                }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
-              >
-                <h4 className="font-bold">{hotspots[hoveredHotspot].title}</h4>
-                <p>{hotspots[hoveredHotspot].desc}</p>
-              </motion.div>
-            )}
+
           </motion.div>
         </div>
 

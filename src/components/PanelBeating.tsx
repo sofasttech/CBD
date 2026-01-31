@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -83,6 +83,7 @@ function TestimonialsCarousel() {
 }
 
 export default function PanelBeating() {
+    const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeModal, setActiveModal] = useState<number | null>(null);
     const targetRef = useRef(null);
@@ -325,7 +326,7 @@ export default function PanelBeating() {
 
                             <ScrollReveal delay={0.8}>
                                 <div className="flex gap-4 justify-center">
-                                    <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
+                                    <button onClick={() => navigate('/contact')} className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ backgroundColor: '#0C55AC' }}>
                                         GET A QUOTE
                                     </button>
                                     <button onClick={() => scrollToSection('services-grid')} className="px-8 py-3 bg-white border rounded-md hover:opacity-80 transition-all duration-300 font-medium" style={{ borderColor: '#B5B5B5', color: '#1F366A' }}>
@@ -352,7 +353,7 @@ export default function PanelBeating() {
                 </div>
 
                 {/* Old Services Grid - Keep the scroll observer version */}
-                <section className="px-4 py-16" style={{ background: 'linear-gradient(180deg, #1F366A 0%, #0C55AC 100%)' }}>
+                <section id="services-grid" className="px-4 py-16" style={{ background: 'linear-gradient(180deg, #1F366A 0%, #0C55AC 100%)' }}>
 
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-12">
@@ -948,7 +949,7 @@ export default function PanelBeating() {
                 >
                     <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="/jpegmini_optimized/IMG_9064.jpg" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
+                            <img src="/jpegmini_optimized/extech.png" alt="Workshop" className="w-full h-auto rounded-lg shadow-lg" />
                         </div>
                         <div>
                             <p className="text-sm font-medium uppercase tracking-wide mb-4" style={{ color: '#0C55AC' }}>Why Choose Us</p>
@@ -1032,10 +1033,18 @@ export default function PanelBeating() {
                             Get a free quote today and experience the CBD Panelbeaters difference.
                         </p>
                         <div className="flex flex-col md:flex-row gap-4 justify-center">
-                            <button className="px-8 py-3 bg-white rounded-md hover:opacity-90 transition-all duration-300 font-medium" style={{ color: '#0C55AC' }}>
+                            <button
+                                onClick={() => navigate('/contact')}
+                                className="px-8 py-3 bg-white rounded-md hover:opacity-90 transition-all duration-300 font-medium"
+                                style={{ color: '#0C55AC' }}
+                            >
                                 REQUEST QUOTE
                             </button>
-                            <button className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium border" style={{ backgroundColor: '#1F366A', borderColor: 'white' }}>
+                            <button
+                                onClick={() => window.location.href = 'tel:093091906'}
+                                className="px-8 py-3 text-white rounded-md hover:opacity-90 transition-all duration-300 font-medium border"
+                                style={{ backgroundColor: '#1F366A', borderColor: 'white' }}
+                            >
                                 CALL US NOW
                             </button>
                         </div>
