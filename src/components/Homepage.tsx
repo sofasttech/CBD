@@ -345,7 +345,7 @@ export default function Homepage() {
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero - Horizontal Scroll */}
-      <section id="home" className="pt-20 px-4">
+      <section id="home" className="pt-32 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           {/* Left side text */}
           <motion.div
