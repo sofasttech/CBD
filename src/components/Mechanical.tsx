@@ -125,7 +125,7 @@ export default function Mechanical() {
                     ]
                 }
             ],
-            image: '/jpegmini_optimized/IMG_9078.jpg'
+            image: '/jpegmini_optimized/IMG_9096.jpg'
         },
         {
             title: 'Compliance Centre',

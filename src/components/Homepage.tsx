@@ -227,12 +227,13 @@ function TimelineDemo() {
               </clipPath>
             </defs>
             <image
-              href="/jpegmini_optimized/IMG_5641.jpg"
+              href="/jpegmini_optimized/paint.png"
               width="100%"
               height="100%"
               preserveAspectRatio="xMidYMid slice"
               clipPath="url(#clip-timeline-2)"
               className="hover:scale-105 transition-all duration-300"
+              transform="translate(0, -10%)"
             />
           </svg>
         </div>
