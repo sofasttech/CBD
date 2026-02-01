@@ -44,7 +44,7 @@ function BeforeAfterSlider({ item, index }: { item: { before: string; after: str
                     <img
                         src={item.before}
                         alt={`${item.title} - Before`}
-                        className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-75"
+                        className="absolute inset-0 w-full h-full object-cover"
                         onError={(e) => {
                             e.currentTarget.src = '/panel_beating_hero_1764692687494.png';
                         }}
