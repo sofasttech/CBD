@@ -269,7 +269,11 @@ export default function Footer({ scrollToSection, topBgColor = 'bg-white' }: Foo
             </div>
             <div className="text-center text-gray-700">
               <p className="text-sm mb-2">© 2026 CBD Panel and Paint. All rights reserved.</p>
-              <p className="text-xs">Crafted with precision and care for automotive excellence</p>
+              <p className="text-xs mb-4">Crafted with precision and care for automotive excellence</p>
+              <div className="flex items-center justify-center gap-2 mt-4">
+                <p className="text-xs text-gray-600">Designed and Developed by</p>
+                <img src="/companylogo.png" alt="Sofat Tech" className="h-8 object-contain" />
+              </div>
             </div>
           </div>
         </div>
