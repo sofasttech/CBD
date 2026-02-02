@@ -61,21 +61,21 @@ export default async function handler(req, res) {
     });
 
     // Determine recipient based on service type
-    let recipientEmail = 'pramudithapaypal@gmail.com';
-    const bccEmail = '';
+    let recipientEmail = 'info@cbdpanel.co.nz';
+    const bccEmail = 'chandana@cbdpanel.co.nz';
 
     switch (service) {
         case 'Panel Beating':
-            recipientEmail = 'pramudithapaypal@gmail.com';
+            recipientEmail = 'info@cbdpanel.co.nz';
             break;
         case 'Mechanical':
-            recipientEmail = 'pramudithapaypal@gmail.com';
+            recipientEmail = 'info@glsm.co.nz';
             break;
         case 'Caravan and Boat':
-            recipientEmail = 'pramudithapaypal@gmail.com';
+            recipientEmail = 'info@thetrailerandcaravanrepairshop.co.nz';
             break;
         default:
-            recipientEmail = 'pramudithapaypal@gmail.com';
+            recipientEmail = 'info@cbdpanel.co.nz';
     }
 
     const mailOptions = {
