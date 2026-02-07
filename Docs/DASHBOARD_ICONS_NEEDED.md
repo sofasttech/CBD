@@ -66,4 +66,4 @@ Download these specific dashboard warning light icons and save them to: `public/
 1. Save all icons to: `f:\CBD Pannel\CBD Panelbeating Mechanical\public\Dashboard Icons\`
 2. Verify file names match exactly (case-sensitive on some systems)
 3. Test the webpage to ensure all icons load correctly
-4. The code will automatically use the new icons once they're in place
+4. The code will automatically use the new icons once they're in place remove this page
