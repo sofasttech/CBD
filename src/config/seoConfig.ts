@@ -39,5 +39,20 @@ export const pageSEO = {
     title: 'Car Care Tips & Auto Repair Advice | CBD Panel Beaters Auckland',
     description: 'Expert car care tips and auto repair advice from Auckland\'s professional panel beaters. Learn about maintenance, winter preparation, warning lights & more. Free expert guides.',
     keywords: 'car care tips Auckland, auto repair advice NZ, car maintenance tips, vehicle care guide, panel beating advice, automotive tips New Zealand'
+  },
+  winterPrep: {
+    title: 'Winter Car Preparation Guide Auckland | Keep Your Vehicle Ready for NZ Winter',
+    description: 'Essential winter car preparation tips for Auckland drivers. Learn how to prepare your vehicle for cold, wet conditions. Expert advice from professional mechanics.',
+    keywords: 'winter car preparation Auckland, winter car tips NZ, car maintenance winter, vehicle winterization Auckland'
+  },
+  summerCare: {
+    title: 'Summer Car Care Guide Auckland | Protect Your Vehicle in NZ Heat',
+    description: 'Protect your car during Auckland summer. Expert tips on cooling system care, paint protection, and heat damage prevention from professional panel beaters.',
+    keywords: 'summer car care Auckland, car heat protection NZ, summer vehicle maintenance, car cooling system Auckland'
+  },
+  dashboardLights: {
+    title: 'Dashboard Warning Lights Guide | What They Mean & What to Do - Auckland',
+    description: 'Complete guide to dashboard warning lights. Learn what each symbol means and when to seek professional help. Expert automotive advice from Auckland mechanics.',
+    keywords: 'dashboard warning lights Auckland, car warning symbols, check engine light Auckland, automotive diagnostics NZ'
   }
 };
