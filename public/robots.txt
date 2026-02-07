@@ -1,0 +1,22 @@
+# robots.txt for CBD Panel and Paint
+# https://cbdpanelandpaint.co.nz
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://cbdpanelandpaint.co.nz/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Disallow: /api/

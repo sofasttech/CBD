@@ -7,6 +7,8 @@ import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
 import { ReactLenis } from 'lenis/react';
 import { Carousel, Card } from './ui/apple-cards-carousel';
+import { SEO } from './SEO';
+import { pageSEO } from '../config/seoConfig';
 
 export default function CaravansBoats() {
     const navigate = useNavigate();
@@ -124,6 +126,7 @@ export default function CaravansBoats() {
         <ReactLenis root>
             {/* Brand Colors: Primary #0C55AC, Dark #1F366A, Teal #14A0B5, Grey #B5B5B5 */}
             <div className="min-h-screen bg-white text-[#1F366A] font-['Poppins'] selection:bg-[#0C55AC] selection:text-white">
+                <SEO {...pageSEO.caravansBoats} />
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
                 {/* Hero Slideshow */}

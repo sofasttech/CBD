@@ -3,6 +3,8 @@ import { ChevronRight, Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import { SEO } from './SEO';
+import { pageSEO } from '../config/seoConfig';
 
 export default function Contact() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -160,6 +162,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white font-sans scroll-smooth relative">
+      <SEO {...pageSEO.contact} />
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero */}

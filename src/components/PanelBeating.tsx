@@ -8,6 +8,8 @@ import { ScrollReveal } from './ScrollReveal';
 import clsx from 'clsx';
 import { ClipboardList, Wrench, Hammer, Palette, Sparkles, Activity, Gauge, Settings, Zap, Disc, Shield, ChevronRight } from 'lucide-react';
 import { ReactLenis } from 'lenis/react';
+import { SEO } from './SEO';
+import { pageSEO } from '../config/seoConfig';
 
 const testimonials = [
     { name: "Fiona Goulden", text: "Thank you so much for looking after me and my RAV so well. I knew it would be a good job as I am a returning client and you have always treated me so well previously. Great service, on time and I really do appreciate your going to the bother of sourcing an excellent second hand part required for the repair that was a third of the price of a new one. The use of a courtesy car and having my car washed and vacuumed before my collecting it is also very much appreciated. Please pass my thanks to your team." },
@@ -287,6 +289,7 @@ export default function PanelBeating() {
     return (
         <ReactLenis root>
             <div className="panel-beating-page min-h-screen font-sans" style={{ background: 'linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%)', color: '#1F366A' }}>
+                <SEO {...pageSEO.panelBeating} />
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
                 {/* Hero Section Container */}

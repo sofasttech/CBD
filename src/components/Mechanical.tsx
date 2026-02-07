@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
+import { SEO } from './SEO';
+import { pageSEO } from '../config/seoConfig';
 
 
 
@@ -166,6 +168,7 @@ export default function Mechanical() {
     return (
         <ReactLenis root>
             <div className="min-h-screen bg-white font-sans" style={{ color: '#1F366A' }}>
+                <SEO {...pageSEO.mechanical} />
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
                 {/* Service Detail Modal (Click) */}

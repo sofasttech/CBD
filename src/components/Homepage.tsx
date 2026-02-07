@@ -7,6 +7,8 @@ import Footer from './Footer';
 import Blog from './Blog';
 import Reviews from './Reviews';
 import { Timeline } from './ui/timeline';
+import { SEO } from './SEO';
+import { pageSEO } from '../config/seoConfig';
 
 const accordionItems = [
   {
@@ -342,6 +344,7 @@ export default function Homepage() {
 
   return (
     <div className="min-h-screen bg-white font-['Poppins'] scroll-smooth">
+      <SEO {...pageSEO.home} />
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero - Horizontal Scroll */}
