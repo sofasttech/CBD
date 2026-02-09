@@ -5,6 +5,8 @@ import Loading from './components/Loading';
 
 // Lazy load all components for better performance
 const Homepage = lazy(() => import('./components/Homepage'));
+const AboutPage = lazy(() => import('./components/AboutPage'));
+
 
 const Contact = lazy(() => import('./components/Contact'));
 const OurStory = lazy(() => import('./components/OurStory'));
@@ -68,7 +70,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Homepage />} />
-
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/panel-beating" element={<PanelBeating />} />
