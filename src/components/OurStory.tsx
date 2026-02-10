@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { CardContainer, CardBody, CardItem } from './ui/3d-card';
+
 import { Heart, Target, Award, Users } from 'lucide-react';
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -98,6 +98,20 @@ export default function OurStory() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+    }, []);
+
+    // Handle hash navigation for auto-scrolling to sections
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            // Wait for page to fully load
+            setTimeout(() => {
+                const element = document.getElementById(hash.substring(1));
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -311,7 +325,7 @@ export default function OurStory() {
             )}
 
             {/* Transformation Showcase - 4 Before/After Comparisons */}
-            < section className="py-24 bg-white text-gray-900" >
+            < section id="restoring-glory" className="py-24 bg-white text-gray-900" >
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <p className="text-CPurple text-sm font-medium uppercase tracking-wide mb-4">The Magic Touch</p>

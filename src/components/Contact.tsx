@@ -162,7 +162,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white font-sans scroll-smooth relative">
-      <SEO {...pageSEO.contact} />
+      <SEO {...pageSEO.contact} canonicalUrl="https://cbdpanelandpaint.co.nz/contact" />
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />
 
       {/* Hero */}

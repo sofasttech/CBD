@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
 import { Suspense, lazy, useState, useEffect } from 'react';
 import Loading from './components/Loading';
@@ -72,6 +72,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/contacts" element={<Contact />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/panel-beating" element={<PanelBeating />} />
           <Route path="/mechanical" element={<Mechanical />} />
@@ -93,6 +94,9 @@ function App() {
           <Route path="/tips-advice/panel-beating-costs" element={<PanelBeatingCosts />} />
           <Route path="/tips-advice/minor-accident-guide" element={<MinorAccidentGuide />} />
           <Route path="/tips-advice/repair-or-replace" element={<RepairOrReplace />} />
+          {/* Redirect legacy testimonials pages */}
+          <Route path="/testimonials/*" element={<Navigate to="/panel-beating#testimonials" replace />} />
+          <Route path="/before-after/*" element={<Navigate to="/our-story#restoring-glory" replace />} />
         </Routes>
       </Suspense>
     </Router>
