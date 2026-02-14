@@ -182,25 +182,28 @@ Replace placeholder values with your actual business info:
 
 ---
 
-## 📞 Keywords to Rank For
+## 📞 Enterprise Keywords Strategy
 
-### Priority 1 (High Volume, High Intent)
+### Priority 1: Core & High Intent
 - panel beaters Auckland ⭐⭐⭐⭐⭐
-- auto body repair Auckland ⭐⭐⭐⭐⭐
-- smash repairs Auckland ⭐⭐⭐⭐
-- panel beating Auckland ⭐⭐⭐⭐
+- collision repair Auckland ⭐⭐⭐⭐⭐
+- car painting Auckland ⭐⭐⭐⭐⭐
+- accident repair Auckland ⭐⭐⭐⭐⭐
+- WOF Grey Lynn ⭐⭐⭐⭐⭐
 
-### Priority 2 (Medium Volume, High Intent)
-- car dent repair Auckland ⭐⭐⭐⭐
-- collision repair Auckland ⭐⭐⭐
-- panel beaters near me ⭐⭐⭐⭐
-- insurance car repairs Auckland ⭐⭐⭐
+### Priority 2: Service Specific
+- mechanics Grey Lynn ⭐⭐⭐⭐
+- caravan repairs Auckland ⭐⭐⭐⭐
+- boat trailer repairs ⭐⭐⭐⭐
+- rust removal for WOF ⭐⭐⭐⭐
+- chassis straightening ⭐⭐⭐
 
-### Priority 3 (Long-tail, Specific)
-- caravan repairs Auckland ⭐⭐⭐
-- boat panel beating Auckland ⭐⭐
+### Priority 3: Value & Long-Tail
 - cheap panel beaters Auckland ⭐⭐⭐
-- best panel beaters Auckland ⭐⭐⭐⭐
+- affordable collision repair ⭐⭐⭐
+- insurance approved repairer ⭐⭐⭐
+- private car repairs ⭐⭐⭐
+- paintless dent removal Auckland ⭐⭐⭐
 
 ---
 

@@ -6,9 +6,9 @@ export const pageSEO = {
     keywords: 'panel beaters Auckland, panel beaters New Zealand, panel beating Auckland, auto body repair Auckland, smash repairs Auckland, car paint Auckland, dent removal Auckland, insurance repairs NZ, collision repair Auckland, best panel beaters Auckland'
   },
   panelBeating: {
-    title: 'Professional Panel Beating Auckland | Expert Auto Body Repair & Dent Removal',
-    description: 'Expert panel beating services in Auckland. Specialising in dent removal, collision repair, insurance claims & auto body restoration. State-of-the-art equipment. Free quotes. Book today!',
-    keywords: 'panel beating Auckland, panel beaters Auckland, auto body repair, dent removal Auckland, collision repair Auckland, car dent repair, smash repairs Auckland, panel beating services NZ, professional panel beaters, insurance panel beating'
+    title: 'Panel Beaters Auckland | Smash Repairs & Car Painting | CBD Panel',
+    description: 'Auckland\'s trusted panel beaters. Expert mostly smash repairs, car painting, rust removal, and dent repair. Insurance approved. Free quotes.',
+    keywords: 'panel beaters Auckland, smash repairs, car painting Auckland, collision repair, respray cost Auckland, scratch repair, dent removal, chassis straightening, insurance panel beater, rust removal Auckland'
   },
   mechanical: {
     title: 'Mechanical Services Auckland | Car Servicing & Repairs | CBD Panel and Paint',
@@ -16,9 +16,9 @@ export const pageSEO = {
     keywords: 'car servicing Auckland, mechanical repairs Auckland, brake repair Auckland, engine diagnostics, WOF Auckland, car maintenance Auckland, auto mechanics Auckland, vehicle servicing NZ'
   },
   caravansBoats: {
-    title: 'Caravan & Boat Repairs Auckland | Panel Beating & Paint Specialists',
-    description: 'Specialist caravan and boat repairs in Auckland. Panel beating, fibreglass repair, paint refinishing & insurance work. Expert technicians. Quality guaranteed. Free assessments available.',
-    keywords: 'caravan repairs Auckland, boat repairs Auckland, caravan panel beating, boat fibreglass repair, caravan insurance repairs, boat paint Auckland, RV repairs NZ, marine repairs Auckland'
+    title: 'Caravan Repairs Auckland | Boat Trailer Repairs & WOF | CBD Panel',
+    description: 'Expert caravan repairs and boat trailer services in Auckland. Certified waterproofing, rust repairs, WOFs, chassis straightening & modifications. Get a free quote.',
+    keywords: 'caravan repairs Auckland, boat trailer repairs, trailer WOF Auckland, caravan waterproofing, trailer rust repair, boat trailer welding, caravan awning repairs, trailer axle replacement, brake controllers, self-containment Auckland'
   },
   contact: {
     title: 'Contact CBD Panel and Paint Auckland | Get Your Free Quote Today',

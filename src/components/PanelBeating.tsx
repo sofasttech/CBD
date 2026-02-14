@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navigation from './Navigation';
@@ -97,6 +98,36 @@ export default function PanelBeating() {
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
     const y = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
+
+    const panelBeatingSchema = {
+        "@context": "https://schema.org",
+        "@type": "AutoBodyShop",
+        "name": "CBD Panel and Paint - Smash Repairs & Car Painting",
+        "image": "https://cbdpanelandpaint.co.nz/newbgnologo.png",
+        "description": "Auckland's trusted panel beaters. Expert smash repairs, car painting, rust removal, and dent repair. Insurance approved.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "390 Great North Road",
+            "addressLocality": "Grey Lynn",
+            "addressRegion": "Auckland",
+            "postalCode": "1021",
+            "addressCountry": "NZ"
+        },
+        "priceRange": "$$",
+        "telephone": "+64-9-309-1906",
+        "areaServed": {
+            "@type": "City",
+            "name": "Auckland"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "07:30",
+                "closes": "17:00"
+            }
+        ]
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -288,6 +319,11 @@ export default function PanelBeating() {
 
     return (
         <ReactLenis root>
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(panelBeatingSchema)}
+                </script>
+            </Helmet>
             <div className="panel-beating-page min-h-screen font-sans" style={{ background: 'linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%)', color: '#1F366A' }}>
                 <SEO {...pageSEO.panelBeating} />
                 <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollToSection={scrollToSection} />

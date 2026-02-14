@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Anchor, Hammer, ShieldCheck, Truck, Droplets, PenTool, ChevronLeft, ChevronRight, Activity, Gauge, Settings, Zap, Disc } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { ScrollReveal } from './ScrollReveal';
@@ -25,6 +26,28 @@ export default function CaravansBoats() {
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
     const y = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
+
+    const caravanSchema = {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "CBD Panel and Paint - Caravan & Boat Trailer Specialists",
+        "image": "https://cbdpanelandpaint.co.nz/newbgnologo.png",
+        "description": "Certified caravan repairs and boat trailer services in Auckland. WOF, waterproofing, rust repairs, and chassis straightening.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "390 Great North Road",
+            "addressLocality": "Grey Lynn",
+            "addressRegion": "Auckland",
+            "postalCode": "1021",
+            "addressCountry": "NZ"
+        },
+        "priceRange": "$$",
+        "telephone": "+64-9-309-1906",
+        "areaServed": {
+            "@type": "City",
+            "name": "Auckland"
+        }
+    };
 
     const heroSlides = [
         {
@@ -124,6 +147,11 @@ export default function CaravansBoats() {
 
     return (
         <ReactLenis root>
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(caravanSchema)}
+                </script>
+            </Helmet>
             {/* Brand Colors: Primary #0C55AC, Dark #1F366A, Teal #14A0B5, Grey #B5B5B5 */}
             <div className="min-h-screen bg-white text-[#1F366A] font-['Poppins'] selection:bg-[#0C55AC] selection:text-white">
                 <SEO {...pageSEO.caravansBoats} />

@@ -12,28 +12,29 @@ All pages now have optimized:
 - Canonical URLs
 - Geographic targeting (Auckland, New Zealand)
 
-### 2. **Schema.org JSON-LD Markup**
-Added structured data for:
-- **AutoRepair** schema - Business type, services, hours
-- **LocalBusiness** schema - Location, contact info
-- **Service** schema - Individual service offerings
-- **AggregateRating** schema - Customer reviews
+### 2. **Enterprise Schema.org JSON-LD Markup**
+Added robust "Enterprise-Level" structured data:
+- **AutoRepair (Enhanced):**
+  - `areaServed`: Detailed list of suburbs (Grey Lynn, Ponsonby, etc.)
+  - `openingHoursSpecification`: Precise operating hours
+  - `priceRange`: Value indicator ($$)
+  - `paymentAccepted`: Payment methods (Cash, Card, Insurance)
+- **Service Links:** Integrated service offerings directly into the schema
+- **GeoCoordinates:** Precise latitude/longitude for map integration
+- **Social Proof:** `sameAs` links to social profiles
 
 ### 3. **SEO Files Created**
 - ✅ `/public/robots.txt` - Search engine crawling instructions
 - ✅ `/public/sitemap.xml` - Complete site structure
 - ✅ `/src/components/SEO.tsx` - Dynamic SEO component
 
-### 4. **Target Keywords**
+### 4. **Enterprise Target Keywords**
 Primary keywords optimized for:
-- panel beaters Auckland
-- panel beaters New Zealand
-- panel beating Auckland
-- auto body repair Auckland
-- smash repairs Auckland
-- dent removal Auckland
-- insurance repairs NZ
-- collision repair Auckland
+- **Core:** panel beaters Auckland, collision repair, smash repairs, car painting, accident repair
+- **Local:** panel beaters Grey Lynn, mechanics Grey Lynn, car service Ponsonby, auto repair Kingsland
+- **Mechanical:** WOF Auckland, car servicing, wheel alignment, brake repairs, suspension diagnostics
+- **Niche:** caravan repairs Auckland, boat trailer repairs, chassis straightening, rust removal for WOF
+- **Value:** cheap panel beaters Auckland, insurance approved repairer, private work welcome
 
 ---
 
